@@ -1,0 +1,409 @@
+[
+  {
+    "question_id": "DOC03-QA-011",
+    "source_doc_id": "DOC03",
+    "level": "L1",
+    "question_type": "direct retrieval",
+    "question": "What is the voltage efficiency of the C-C electrode at 100 mA/cm2?",
+    "reference_answer": "The C-C electrode exhibits a voltage efficiency of 70% at 100 mA/cm2, which is the lowest among the three tested electrodes due to its high charge-transfer resistance of 3.82 ohm cm2.",
+    "reference_answer_points": [
+      "VE is 70%",
+      "Condition: 100 mA/cm2",
+      "Lowest among three electrodes",
+      "Attributed to high Rct of 3.82 ohm cm2"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-002"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-008"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-012",
+    "source_doc_id": "DOC03",
+    "level": "L1",
+    "question_type": "direct retrieval",
+    "question": "What is the surface roughness (Ra) of the MC-C electrode?",
+    "reference_answer": "The MC-C electrode has a surface roughness Ra of 11.2 um, which represents an increase from 8.4 um for the untreated C-C electrode due to mild acid etching that introduces surface defects and microporosity.",
+    "reference_answer_points": [
+      "MC-C Ra: 11.2 um",
+      "C-C Ra: 8.4 um (baseline)",
+      "Increase due to acid etching",
+      "Surface defects and microporosity introduced"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-004"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-010"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-013",
+    "source_doc_id": "DOC03",
+    "level": "L2",
+    "question_type": "comparison",
+    "question": "At 100 mA/cm2, how does the coulombic efficiency of the BMC-C electrode compare to that of the C-C electrode, and what accounts for this difference?",
+    "reference_answer": "At 100 mA/cm2, the BMC-C electrode achieves a coulombic efficiency of 97%, which is 3 percentage points higher than the C-C electrode's 94%. The improved CE in BMC-C is attributed to its lower charge-transfer resistance (1.34 vs 3.82 ohm cm2) and enhanced surface hydrophilicity (contact angle 92.8 vs 130.4 deg), which together reduce concentration polarization and minimize vanadium crossover through more efficient electrochemical reactions at the electrode surface.",
+    "reference_answer_points": [
+      "BMC-C CE: 97%, C-C CE: 94%",
+      "Difference: 3 percentage points",
+      "BMC-C Rct: 1.34 ohm cm2 vs C-C: 3.82 ohm cm2",
+      "BMC-C contact angle: 92.8 deg vs C-C: 130.4 deg",
+      "Lower polarization and reduced crossover"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-009",
+      "DOC03-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-007",
+      "DOC03-EFU-006",
+      "DOC03-EFU-003",
+      "DOC03-EFU-001"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-014",
+    "source_doc_id": "DOC03",
+    "level": "L2",
+    "question_type": "condition-constrained retrieval",
+    "question": "What is the percentage reduction in charge-transfer resistance when comparing MC-C to C-C, and what modification process enables this reduction?",
+    "reference_answer": "The MC-C electrode achieves a 43.2% reduction in charge-transfer resistance compared to C-C, decreasing from 3.82 ohm cm2 to 2.17 ohm cm2. This reduction is enabled by mild acid etching with HNO3 at 80 C, which introduces oxygen-containing functional groups and increases surface polarity, thereby improving wettability and creating additional active sites for vanadium redox reactions.",
+    "reference_answer_points": [
+      "43.2% reduction from C-C to MC-C",
+      "Rct decreases from 3.82 to 2.17 ohm cm2",
+      "Mild acid etching with HNO3 at 80 C",
+      "Oxygen-containing functional groups introduced",
+      "Improved wettability and additional active sites"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-005",
+      "DOC03-EFU-015"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-015",
+    "source_doc_id": "DOC03",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "At 100 mA/cm2, which electrode simultaneously achieves the lowest contact angle, lowest charge-transfer resistance, and highest energy efficiency, and what are the specific values for each metric?",
+    "reference_answer": "The BMC-C electrode simultaneously achieves the best performance across all three metrics at 100 mA/cm2: the lowest contact angle of 92.8 deg (vs 102 deg for MC-C and 130.4 deg for C-C), the lowest charge-transfer resistance of 1.34 ohm cm2 (vs 2.17 ohm cm2 for MC-C and 3.82 ohm cm2 for C-C), and the highest energy efficiency of 82.5% (vs 73.9% for MC-C and 65.8% for C-C). These combined improvements result from the synergistic effects of boron doping and thermal treatment at 750 C, which enhance both surface hydrophilicity and electronic structure for catalytic activity.",
+    "reference_answer_points": [
+      "BMC-C is the best electrode across all three metrics",
+      "Contact angle: 92.8 deg (lowest)",
+      "Rct: 1.34 ohm cm2 (lowest)",
+      "EE: 82.5% at 100 mA/cm2 (highest)",
+      "Synergistic boron doping + thermal treatment at 750 C"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-002",
+      "DOC03-FACT-003",
+      "DOC03-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-003",
+      "DOC03-EFU-006",
+      "DOC03-EFU-009"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-016",
+    "source_doc_id": "DOC03",
+    "level": "L3",
+    "question_type": "multi-parameter analysis",
+    "question": "How do the combined modifications of acid etching and boron doping sequentially influence surface wettability, charge-transfer kinetics, and ultimately energy efficiency in the progression from C-C to MC-C to BMC-C?",
+    "reference_answer": "The progression from C-C to MC-C to BMC-C demonstrates a systematic improvement chain: (1) Acid etching in MC-C reduces contact angle from 130.4 deg to 102 deg by introducing oxygen functional groups, while BMC-C further reduces it to 92.8 deg through boron incorporation that adds polar sites and modifies electronic structure. (2) For charge-transfer resistance, MC-C achieves 43.2% reduction (3.82 to 2.17 ohm cm2) through surface roughening and oxygen groups, while BMC-C achieves 64.9% reduction (3.82 to 1.34 ohm cm2) via boron's ability to lower activation energy and create favorable adsorption sites. (3) These combined effects translate to EE improvement from 65.8% (C-C) to 73.9% (MC-C) to 82.5% (BMC-C) at 100 mA/cm2, with CE increasing from 94% to 96% to 97% and VE from 70% to 77% to 85%.",
+    "reference_answer_points": [
+      "Contact angle: 130.4 -> 102 -> 92.8 deg",
+      "Rct: 3.82 -> 2.17 -> 1.34 ohm cm2",
+      "EE: 65.8% -> 73.9% -> 82.5% at 100 mA/cm2",
+      "Acid etching introduces oxygen groups (MC-C)",
+      "Boron doping adds polar sites + modifies electronic structure (BMC-C)",
+      "CE and VE both improve progressively"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-002",
+      "DOC03-FACT-003",
+      "DOC03-FACT-001",
+      "DOC03-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-009",
+      "DOC03-EFU-003",
+      "DOC03-EFU-006",
+      "DOC03-EFU-007",
+      "DOC03-EFU-008"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-017",
+    "source_doc_id": "DOC03",
+    "level": "L4",
+    "question_type": "comparison",
+    "question": "Perform a comprehensive five-dimensional comparison of C-C, MC-C, and BMC-C electrodes across contact angle, charge-transfer resistance, coulombic efficiency, voltage efficiency, and energy efficiency at 100 mA/cm2. Which electrode is optimal for each dimension and what is the overall performance ranking?",
+    "reference_answer": "The comprehensive five-dimensional comparison at 100 mA/cm2 shows BMC-C is optimal in all dimensions: (1) Contact angle: C-C 130.4 deg > MC-C 102 deg > BMC-C 92.8 deg, with BMC-C being most hydrophilic; (2) Charge-transfer resistance: C-C 3.82 > MC-C 2.17 > BMC-C 1.34 ohm cm2, with BMC-C having fastest kinetics; (3) Coulombic efficiency: C-C 94% < MC-C 96% < BMC-C 97%; (4) Voltage efficiency: C-C 70% < MC-C 77% < BMC-C 85%; (5) Energy efficiency: C-C 65.8% < MC-C 73.9% < BMC-C 82.5%. BMC-C achieves the highest EE with a 16.7 percentage point advantage over C-C. The overall ranking is BMC-C > MC-C > C-C, with each modification step (acid etching then boron doping) providing monotonic improvement across all metrics.",
+    "reference_answer_points": [
+      "Contact angle ranking: C-C (130.4) > MC-C (102) > BMC-C (92.8) deg",
+      "Rct ranking: C-C (3.82) > MC-C (2.17) > BMC-C (1.34) ohm cm2",
+      "CE ranking: C-C (94%) < MC-C (96%) < BMC-C (97%)",
+      "VE ranking: C-C (70%) < MC-C (77%) < BMC-C (85%)",
+      "EE ranking: C-C (65.8%) < MC-C (73.9%) < BMC-C (82.5%)",
+      "BMC-C optimal in all five dimensions",
+      "Overall: BMC-C > MC-C > C-C"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-002",
+      "DOC03-FACT-003",
+      "DOC03-FACT-001",
+      "DOC03-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-009",
+      "DOC03-EFU-008",
+      "DOC03-EFU-007",
+      "DOC03-EFU-006",
+      "DOC03-EFU-003",
+      "DOC03-EFU-011"
+    ]
+  },
+  {
+    "question_id": "DOC03-QA-018",
+    "source_doc_id": "DOC03",
+    "level": "L5",
+    "question_type": "mechanism explanation",
+    "question": "Trace the complete causal mechanism chain from surface modification (acid etching and boron doping) through physical property changes to electrochemical performance improvements and ultimately to energy efficiency gains in the BMC-C electrode relative to C-C.",
+    "reference_answer": "The complete causal chain is: (1) Mild acid etching introduces oxygen-containing functional groups and creates surface defects, increasing roughness from Ra 8.4 um to 11.2 um and reducing contact angle from 130.4 deg to 102 deg. (2) Boron doping at 750 C further incorporates boron heteroatoms into the carbon lattice, increasing roughness to Ra 14.7 um and reducing contact angle to 92.8 deg. (3) The increased roughness creates additional triple-phase boundaries that enhance geometric current density capability. (4) Boron doping modifies electronic structure, lowering activation energy for electron transfer and creating favorable active sites for vanadium ion adsorption. (5) These combined effects reduce Rct from 3.82 ohm cm2 (C-C) to 2.17 ohm cm2 (MC-C) to 1.34 ohm cm2 (BMC-C). (6) Lower Rct reduces overpotential, increasing VE from 70% (C-C) to 77% (MC-C) to 85% (BMC-C). (7) Improved surface hydrophilicity enhances electrolyte access, increasing CE from 94% to 96% to 97%. (8) The combined CE and VE improvements yield EE gains from 65.8% (C-C) to 73.9% (MC-C) to 82.5% (BMC-C) at 100 mA/cm2.",
+    "reference_answer_points": [
+      "Acid etching: oxygen groups + surface defects, Ra 8.4 -> 11.2 um",
+      "Boron doping: B heteroatoms in carbon lattice, Ra -> 14.7 um",
+      "Contact angle: 130.4 -> 102 -> 92.8 deg",
+      "Triple-phase boundaries increase geometric current density",
+      "Electronic structure modification lowers activation energy",
+      "Rct: 3.82 -> 2.17 -> 1.34 ohm cm2",
+      "VE: 70% -> 77% -> 85%",
+      "CE: 94% -> 96% -> 97%",
+      "EE: 65.8% -> 73.9% -> 82.5% at 100 mA/cm2"
+    ],
+    "expected_facts": [
+      "DOC03-FACT-006",
+      "DOC03-FACT-010",
+      "DOC03-FACT-004",
+      "DOC03-FACT-002",
+      "DOC03-FACT-003"
+    ],
+    "expected_efus": [
+      "DOC03-EFU-006",
+      "DOC03-EFU-020",
+      "DOC03-EFU-019",
+      "DOC03-EFU-010",
+      "DOC03-EFU-009",
+      "DOC03-EFU-015"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-011",
+    "source_doc_id": "DOC04",
+    "level": "L1",
+    "question_type": "direct retrieval",
+    "question": "What is the range of net energy efficiency achieved at 200 mA/cm2 with 1.6 mol/L vanadium concentration and flow rates of 60-100 mL/min?",
+    "reference_answer": "At 200 mA/cm2 with 1.6 mol/L vanadium concentration and flow rates of 60-100 mL/min, the net energy efficiency ranges from 74% to 78%. This represents a moderate efficiency reduction compared to the 80% net EE achieved at 100 mA/cm2, reflecting the increased overpotential and kinetic limitations at higher current density.",
+    "reference_answer_points": [
+      "Net EE range: 74-78%",
+      "Condition: 200 mA/cm2",
+      "Vanadium concentration: 1.6 mol/L",
+      "Flow rate: 60-100 mL/min",
+      "Lower than ~80% at 100 mA/cm2"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-009"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-012",
+    "source_doc_id": "DOC04",
+    "level": "L1",
+    "question_type": "direct retrieval",
+    "question": "Why is H2SO4 concentration of 3.0 mol/L considered optimal for VRFB electrolyte performance?",
+    "reference_answer": "H2SO4 concentration of 3.0 mol/L is considered optimal because it provides the best balance between proton conductivity and viscosity. At this concentration, proton conductivity is substantially improved, enabling faster reaction kinetics and lower charge-transfer overpotential. Additionally, 3.0 mol/L H2SO4 provides adequate buffering capacity to maintain vanadium ion solubility across the full state-of-charge range, preventing precipitation issues that occur at lower acid concentrations.",
+    "reference_answer_points": [
+      "Optimal balance between proton conductivity and viscosity",
+      "Faster reaction kinetics",
+      "Lower charge-transfer overpotential",
+      "Adequate buffering capacity",
+      "Maintains vanadium ion solubility across full SOC"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-004"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-008"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-013",
+    "source_doc_id": "DOC04",
+    "level": "L2",
+    "question_type": "comparison",
+    "question": "How does increasing the flow rate from 10 mL/min to 100 mL/min affect pumping power, mass transfer limitations, and the trade-off between electrochemical performance and parasitic losses?",
+    "reference_answer": "Increasing flow rate from 10 mL/min to 100 mL/min has the following effects: (1) Pumping power increases nonlinearly from approximately 5 mW to 50 mW, representing a 10-fold increase. (2) At 10 mL/min, significant mass transfer limitations occur, particularly at higher current densities, where vanadium species depletion at the electrode surface causes elevated concentration overpotential. At 100 mL/min, mass transfer is substantially improved, minimizing concentration polarization. (3) However, the trade-off is that while gross EE increases with flow rate due to better mass transfer, net EE peaks at intermediate flow rates (40-60 mL/min) because the additional pumping energy at 100 mL/min partially offsets the electrochemical gains, creating an optimal operating window that balances performance with parasitic losses.",
+    "reference_answer_points": [
+      "Pumping power: 5 mW at 10 mL/min to 50 mW at 100 mL/min",
+      "10-fold increase in pumping power",
+      "10 mL/min: mass transfer limitations at high current density",
+      "100 mL/min: minimized concentration polarization",
+      "Net EE peaks at intermediate flow rates (40-60 mL/min)",
+      "Diminishing returns beyond optimal flow rate"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-001",
+      "DOC04-FACT-002"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-001",
+      "DOC04-EFU-006",
+      "DOC04-EFU-010"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-014",
+    "source_doc_id": "DOC04",
+    "level": "L2",
+    "question_type": "comparison",
+    "question": "What is the difference between gross EE and net EE in this study, and why does net EE always fall below gross EE across all tested conditions?",
+    "reference_answer": "Gross EE ranges from 78% to 87% while net EE ranges from 72% to 83% across all tested conditions. Net EE always falls below gross EE because net EE accounts for pumping energy consumption as a parasitic loss. The difference between gross and net EE represents the energy consumed by the peristaltic pump to circulate electrolyte, which ranges from approximately 5 mW at 10 mL/min to 50 mW at 100 mL/min. The pumping penalty is most significant at high flow rates where improved mass transfer (which increases gross EE) is partially or fully offset by increased pumping power, explaining why the gap between gross and net EE widens at elevated flow rates.",
+    "reference_answer_points": [
+      "Gross EE range: 78-87%",
+      "Net EE range: 72-83%",
+      "Net EE < Gross EE due to pumping losses",
+      "Pumping power: 5-50 mW depending on flow rate",
+      "Gap widens at high flow rates",
+      "Pumping loss is parasitic energy consumption"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-002",
+      "DOC04-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-002",
+      "DOC04-EFU-003",
+      "DOC04-EFU-010"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-015",
+    "source_doc_id": "DOC04",
+    "level": "L3",
+    "question_type": "degradation analysis",
+    "question": "At the condition of 3.0 mol/L vanadium with 2.0 mol/L H2SO4, what specific degradation mechanism occurs during prolonged charge cycles at high state of charge, and how does it affect system performance?",
+    "reference_answer": "At 3.0 mol/L vanadium with 2.0 mol/L H2SO4, vanadium precipitation occurs during prolonged charge cycles approaching upper state-of-charge limits. The degradation mechanism proceeds as follows: (1) The low H2SO4 concentration (2.0 mol/L) provides insufficient proton concentration and buffering capacity to maintain vanadium ion solubility at high SOC. (2) As charging progresses, V(V) species concentration increases and the electrolyte pH shifts, reducing solubility. (3) Vanadium pentoxide (V2O5) or other insoluble vanadium compounds precipitate from solution, reducing the amount of active material available for electrochemical reactions. (4) The precipitates can block flow channels, increase pressure drop, and cause non-uniform electrolyte distribution, leading to capacity fade and reduced cycle life.",
+    "reference_answer_points": [
+      "Vanadium precipitation occurs at high SOC",
+      "Condition: 3.0 mol/L V + 2.0 mol/L H2SO4",
+      "Low H2SO4 gives insufficient proton concentration and buffering",
+      "V(V) concentration increases during charging",
+      "V2O5 or insoluble vanadium compounds precipitate",
+      "Precipitates block flow channels",
+      "Causes capacity fade and reduced cycle life"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-007"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-015",
+      "DOC04-EFU-019"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-016",
+    "source_doc_id": "DOC04",
+    "level": "L3",
+    "question_type": "degradation analysis",
+    "question": "At 5.0 mol/L H2SO4 concentration, what degradation mechanism affects the membrane and what are the resulting consequences for VRFB performance?",
+    "reference_answer": "At 5.0 mol/L H2SO4, accelerated membrane chemical attack occurs through the following mechanism: (1) The highly acidic environment causes degradation of the Nafion membrane polymer backbone through chemical attack on the sulfonate groups and perfluorinated backbone. (2) This degradation creates larger pores and defects in the membrane structure, reducing its selectivity. (3) The compromised membrane allows increased vanadium crossover between the positive and negative half-cells. (4) Increased crossover leads to capacity fade due to self-discharge reactions between V(II) and V(V) species that cross the membrane. (5) The system also experiences increased self-discharge rates and reduced coulombic efficiency, ultimately decreasing the overall energy efficiency and cycle stability of the VRFB.",
+    "reference_answer_points": [
+      "Accelerated membrane chemical attack at 5.0 mol/L H2SO4",
+      "Degradation of Nafion polymer backbone",
+      "Creates larger pores and defects in membrane",
+      "Increased vanadium crossover",
+      "Capacity fade from self-discharge",
+      "Reduced coulombic efficiency",
+      "Decreased cycle stability"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-008"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-016"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-017",
+    "source_doc_id": "DOC04",
+    "level": "L4",
+    "question_type": "multi-parameter analysis",
+    "question": "Across all tested vanadium concentrations (1.2-3.0 mol/L), H2SO4 concentrations (2.0-5.0 mol/L), and flow rates (10-100 mL/min), perform a横向比较 of net EE outcomes and identify the optimal operating window for stationary energy storage applications.",
+    "reference_answer": "The横向比较 across all tested conditions reveals the following patterns: (1) Vanadium concentration effect: 1.2-1.5 mol/L yields moderate net EE (75-79%) due to low viscosity but higher relative pumping penalty; 1.6 mol/L achieves the highest net EE (~80-83%) as the optimal balance of conductivity and viscosity; 2.0-3.0 mol/L shows reduced net EE (72-76%) due to high viscosity requiring elevated flow rates and pumping costs. (2) H2SO4 concentration effect: 2.0 mol/L gives lower net EE due to proton insufficiency and precipitation risk; 3.0 mol/L provides optimal net EE through best conductivity-viscosity balance; 4.0-5.0 mol/L causes net EE decline due to membrane attack and excessive viscosity. (3) Flow rate effect: 10 mL/min limits net EE through mass transfer limitations; 40-60 mL/min achieves peak net EE by balancing mass transfer and pumping; 100 mL/min reduces net EE due to high pumping losses. The optimal operating window for stationary energy storage is: vanadium 1.5-1.8 mol/L (preferably 1.6), H2SO4 3.0 mol/L, flow rate 40-60 mL/min, and current density 50-100 mA/cm2, yielding net EE above 80%.",
+    "reference_answer_points": [
+      "Vanadium: 1.6 mol/L optimal (~80-83% net EE)",
+      "H2SO4: 3.0 mol/L optimal",
+      "Flow rate: 40-60 mL/min optimal",
+      "Low V (1.2-1.5): moderate EE, high relative pumping penalty",
+      "High V (2.0-3.0): high viscosity, needs high flow rate",
+      "Low H2SO4 (2.0): proton insufficiency, precipitation",
+      "High H2SO4 (5.0): membrane chemical attack",
+      "Low flow (10): mass transfer limitations",
+      "High flow (100): excessive pumping losses",
+      "Optimal window: 1.5-1.8 mol/L V, 3.0 mol/L H2SO4, 40-60 mL/min, 50-100 mA/cm2"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-003",
+      "DOC04-FACT-004",
+      "DOC04-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-005",
+      "DOC04-EFU-007",
+      "DOC04-EFU-008",
+      "DOC04-EFU-011",
+      "DOC04-EFU-020"
+    ]
+  },
+  {
+    "question_id": "DOC04-QA-018",
+    "source_doc_id": "DOC04",
+    "level": "L5",
+    "question_type": "mechanism explanation",
+    "question": "Trace the complete causal degradation chain starting from low flow rate (10 mL/min) operation through intermediate physical and electrochemical processes to eventual capacity loss, and explain how this informs flow rate selection for long-term VRFB operation.",
+    "reference_answer": "The complete causal degradation chain from low flow rate operation is: (1) At 10 mL/min, electrolyte velocity is insufficient to maintain uniform reactant distribution across the electrode surface. (2) This causes non-uniform current distribution, with regions near the flow inlet experiencing higher current density and regions near the outlet suffering from vanadium species depletion. (3) The localized high current density areas accelerate electrode degradation through enhanced electrochemical oxidation and structural damage to the carbon felt. (4) The depletion regions develop elevated concentration overpotential, forcing the cell to operate at higher voltages that increase side reactions and reduce efficiency. (5) Over extended cycling, the combination of localized electrode degradation and increased overpotential leads to progressive capacity loss and reduced cycle life. (6) Additionally, the mass transfer coefficient scales with the square root of flow velocity in the laminar regime, so reducing flow rate disproportionately impairs mass transfer. This mechanism chain informs flow rate selection by demonstrating that while low flow rates minimize pumping losses, they must be balanced against the risk of non-uniform current distribution and accelerated degradation. The recommended minimum flow rate is 40 mL/min for stable long-term operation, which provides sufficient mass transfer while keeping pumping power at manageable levels (approximately 15-20 mW).",
+    "reference_answer_points": [
+      "10 mL/min: insufficient electrolyte velocity",
+      "Non-uniform current distribution develops",
+      "Inlet: high current density; outlet: species depletion",
+      "Localized electrode degradation from oxidation",
+      "Depletion regions: elevated overpotential",
+      "Progressive capacity loss over extended cycling",
+      "Mass transfer coefficient proportional to sqrt(flow velocity)",
+      "Recommended minimum: 40 mL/min",
+      "Pumping power at 40 mL/min: ~15-20 mW",
+      "Balances mass transfer with manageable pumping losses"
+    ],
+    "expected_facts": [
+      "DOC04-FACT-010",
+      "DOC04-FACT-006"
+    ],
+    "expected_efus": [
+      "DOC04-EFU-017",
+      "DOC04-EFU-012",
+      "DOC04-EFU-018",
+      "DOC04-EFU-006"
+    ]
+  }
+]

@@ -1,0 +1,667 @@
+{
+  "efus": [
+    {
+      "gold_id": "DOC03-EFU-001",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.1 Surface Wettability and Morphology",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The C-C electrode exhibits a contact angle of 130.4 deg indicating strong hydrophobic character",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "contact_angle", "value": 130.4, "unit": "deg", "canonical_id": "measurement:contact_angle_cc_130_4_deg"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The C-C electrode exhibited a contact angle of 130.4 deg, indicating strong hydrophobic character typical of untreated carbon felts."
+    },
+    {
+      "gold_id": "DOC03-EFU-002",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.1 Surface Wettability and Morphology",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The MC-C electrode shows a contact angle of 102 deg after mild acid etching treatment",
+      "entities": [
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "contact_angle", "value": 102, "unit": "deg", "canonical_id": "measurement:contact_angle_mcc_102_deg"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The MC-C electrode showed a substantially reduced contact angle of 102 deg, demonstrating that mild acid etching effectively introduced oxygen-containing functional groups and increased surface polarity."
+    },
+    {
+      "gold_id": "DOC03-EFU-003",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.1 Surface Wettability and Morphology",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The BMC-C electrode achieves a contact angle of 92.8 deg with boron doping and thermal treatment",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "contact_angle", "value": 92.8, "unit": "deg", "canonical_id": "measurement:contact_angle_bmc_c_92_8_deg"}
+      ],
+      "mechanisms": ["modification:boron_doping"],
+      "evidence_text": "The BMC-C electrode achieved the lowest contact angle of 92.8 deg, suggesting that boron doping further enhanced the surface hydrophilicity through additional polar sites and modified electronic structure."
+    },
+    {
+      "gold_id": "DOC03-EFU-004",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.2 Charge-Transfer Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The C-C electrode has a charge-transfer resistance of 3.82 ohm cm2",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "Rct", "value": 3.82, "unit": "ohm cm2", "canonical_id": "measurement:rct_cc_3_82_ohm_cm2"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The C-C electrode presented the highest Rct value of 3.82 ohm cm2, reflecting the inherently poor electrocatalytic activity of untreated carbon surfaces toward vanadium redox reactions."
+    },
+    {
+      "gold_id": "DOC03-EFU-005",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.2 Charge-Transfer Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The MC-C electrode demonstrates a charge-transfer resistance of 2.17 ohm cm2 after mild acid etching",
+      "entities": [
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "Rct", "value": 2.17, "unit": "ohm cm2", "canonical_id": "measurement:rct_mcc_2_17_ohm_cm2"}
+      ],
+      "mechanisms": ["modification:acid_etching"],
+      "evidence_text": "The MC-C electrode demonstrated a substantially reduced Rct of 2.17 ohm cm2, representing a 43.2% decrease relative to C-C."
+    },
+    {
+      "gold_id": "DOC03-EFU-006",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.2 Charge-Transfer Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The BMC-C electrode achieves a charge-transfer resistance of 1.34 ohm cm2 with boron doping",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "Rct", "value": 1.34, "unit": "ohm cm2", "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"}
+      ],
+      "mechanisms": ["modification:boron_doping"],
+      "evidence_text": "The BMC-C electrode achieved the lowest Rct of 1.34 ohm cm2, corresponding to a 64.9% reduction compared to C-C and a 38.2% reduction compared to MC-C."
+    },
+    {
+      "gold_id": "DOC03-EFU-007",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.3 Coulombic Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 100 mA/cm2, the C-C electrode achieves a coulombic efficiency of 94%, the MC-C electrode attains 96%, and the BMC-C electrode reaches 97%",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 94, "unit": "%", "canonical_id": "measurement:ce_cc_94_percent"},
+        {"metric_type": "CE", "value": 96, "unit": "%", "canonical_id": "measurement:ce_mcc_96_percent"},
+        {"metric_type": "CE", "value": 97, "unit": "%", "canonical_id": "measurement:ce_bmc_c_97_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the C-C electrode achieved a CE of 94%, while the MC-C electrode attained 96%, and the BMC-C electrode reached 97%."
+    },
+    {
+      "gold_id": "DOC03-EFU-008",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.4 Voltage Efficiency and Energy Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 100 mA/cm2, C-C electrode shows VE of 70%, MC-C shows 77%, and BMC-C shows 85%",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "VE", "value": 70, "unit": "%", "canonical_id": "measurement:ve_cc_70_percent"},
+        {"metric_type": "VE", "value": 77, "unit": "%", "canonical_id": "measurement:ve_mcc_77_percent"},
+        {"metric_type": "VE", "value": 85, "unit": "%", "canonical_id": "measurement:ve_bmc_c_85_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The C-C electrode exhibited a VE of 70%, consistent with the significant overpotential associated with its high charge-transfer resistance. The MC-C electrode demonstrated improved VE of 77%, reflecting the reduced kinetic limitations achieved through surface roughening and oxygen functionalization. The BMC-C electrode achieved the highest VE of 85%."
+    },
+    {
+      "gold_id": "DOC03-EFU-009",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.4 Voltage Efficiency and Energy Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 100 mA/cm2, C-C delivers EE of 65.8%, MC-C achieves 73.9%, and BMC-C reaches 82.5%",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "EE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ee_cc_65_8_percent"},
+        {"metric_type": "EE", "value": 73.9, "unit": "%", "canonical_id": "measurement:ee_mcc_73_9_percent"},
+        {"metric_type": "EE", "value": 82.5, "unit": "%", "canonical_id": "measurement:ee_bmc_c_82_5_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the C-C electrode delivered an EE of 65.8%, calculated from 94% CE and 70% VE. The MC-C electrode achieved an EE of 73.9%, derived from 96% CE and 77% VE. The BMC-C electrode reached an EE of 82.5%, computed from 97% CE and 85% VE."
+    },
+    {
+      "gold_id": "DOC03-EFU-010",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.1 Surface Wettability and Morphology",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Surface roughness Ra increases from 8.4 um for C-C to 11.2 um for MC-C to 14.7 um for BMC-C",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "surface_roughness", "value": 8.4, "unit": "um", "canonical_id": "measurement:ra_cc_8_4_um"},
+        {"metric_type": "surface_roughness", "value": 11.2, "unit": "um", "canonical_id": "measurement:ra_mcc_11_2_um"},
+        {"metric_type": "surface_roughness", "value": 14.7, "unit": "um", "canonical_id": "measurement:ra_bmc_c_14_7_um"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The C-C electrode displayed a mean roughness Ra of 8.4 um, characteristic of the relatively smooth fiber surfaces of commercial carbon felt. The MC-C electrode exhibited increased roughness with Ra of 11.2 um. The BMC-C electrode showed the highest roughness with Ra of 14.7 um."
+    },
+    {
+      "gold_id": "DOC03-EFU-011",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.4 Voltage Efficiency and Energy Efficiency",
+      "relation_type": "COMPARISON",
+      "claim": "BMC-C electrode achieves 16.7 percentage point higher EE than C-C electrode at 100 mA/cm2",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "EE", "value": 82.5, "unit": "%", "canonical_id": "measurement:ee_bmc_c_82_5_percent"},
+        {"metric_type": "EE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ee_cc_65_8_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The 16.7 percentage point improvement in EE from C-C to BMC-C underscores the practical significance of the progressive modification strategy for enhancing the round-trip energy storage efficiency of VRFB systems."
+    },
+    {
+      "gold_id": "DOC03-EFU-012",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.2 Charge-Transfer Resistance",
+      "relation_type": "COMPARISON",
+      "claim": "BMC-C reduces charge-transfer resistance by 64.9% compared to C-C and by 38.2% compared to MC-C",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "Rct", "value": 1.34, "unit": "ohm cm2", "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"},
+        {"metric_type": "Rct", "value": 3.82, "unit": "ohm cm2", "canonical_id": "measurement:rct_cc_3_82_ohm_cm2"},
+        {"metric_type": "Rct", "value": 2.17, "unit": "ohm cm2", "canonical_id": "measurement:rct_mcc_2_17_ohm_cm2"}
+      ],
+      "mechanisms": ["modification:boron_doping", "modification:acid_etching"],
+      "evidence_text": "The BMC-C electrode achieved the lowest Rct of 1.34 ohm cm2, corresponding to a 64.9% reduction compared to C-C and a 38.2% reduction compared to MC-C."
+    },
+    {
+      "gold_id": "DOC03-EFU-013",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.5 Performance at Varied Current Densities",
+      "relation_type": "COMPARISON",
+      "claim": "Performance gap between modified and unmodified electrodes widens as current density increases from 50 to 500 mA/cm2",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 50, "unit": "mA/cm2", "canonical_id": "condition:current_density_50_ma_cm2"},
+        {"quantity_type": "current_density", "value": 500, "unit": "mA/cm2", "canonical_id": "condition:current_density_500_ma_cm2"}
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "As current density increased to 200 mA/cm2, the performance gap between the modified and unmodified electrodes widened, with BMC-C maintaining substantially higher VE and EE values compared to C-C."
+    },
+    {
+      "gold_id": "DOC03-EFU-014",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 2.1 Electrode Preparation",
+      "relation_type": "COMPOSITION",
+      "claim": "The BMC-C electrode contains boron heteroatoms incorporated into the carbon lattice through heat treatment at 750 C",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "dopant:boron", "name": "boron", "type": "DOPANT"}
+      ],
+      "conditions": [
+        {"quantity_type": "temperature", "value": 750, "unit": "C", "canonical_id": "condition:temperature_750_c"}
+      ],
+      "measurements": [],
+      "mechanisms": ["modification:boron_doping"],
+      "evidence_text": "The etched felt was soaked in a boric acid solution (0.3 mol/L) for 2 hours, dried at 80 C, and then heat-treated at 750 C under argon atmosphere for 2 hours to incorporate boron heteroatoms into the carbon lattice."
+    },
+    {
+      "gold_id": "DOC03-EFU-015",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.1 Surface Wettability and Morphology",
+      "relation_type": "COMPOSITION",
+      "claim": "MC-C electrode surface contains oxygen-containing functional groups introduced by HNO3 etching at 80 C",
+      "entities": [
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "reagent:nitric_acid", "name": "HNO3", "type": "REAGENT"}
+      ],
+      "conditions": [
+        {"quantity_type": "concentration", "value": 5.0, "unit": "mol/L", "canonical_id": "condition:concentration_5_mol_l"},
+        {"quantity_type": "temperature", "value": 80, "unit": "C", "canonical_id": "condition:temperature_80_c"}
+      ],
+      "measurements": [],
+      "mechanisms": ["modification:acid_etching", "modification:oxidation"],
+      "evidence_text": "The MC-C electrode was prepared by immersing the commercial carbon felt in a 5.0 mol/L HNO3 solution at 80 C for 6 hours, followed by thorough washing with deionized water and drying at 120 C overnight."
+    },
+    {
+      "gold_id": "DOC03-EFU-016",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.6 Degradation Mechanisms and Stability",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "C-C electrode exhibits gradual performance degradation over 200 cycles through progressive oxidation and loss of active surface area",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": ["degradation:active_surface_loss", "degradation:oxidation"],
+      "evidence_text": "The C-C electrode exhibited gradual performance degradation characterized by increasing overpotential and declining VE over 200 cycles. This degradation pattern is consistent with the progressive oxidation and loss of limited active surface area on untreated carbon felt."
+    },
+    {
+      "gold_id": "DOC03-EFU-017",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.6 Degradation Mechanisms and Stability",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "MC-C electrode shows performance decline after extended cycling due to gradual leaching of oxygen functional groups under acidic and oxidizing conditions",
+      "entities": [
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": ["degradation:oxygen_group_leaching", "degradation:active_surface_loss"],
+      "evidence_text": "The MC-C electrode showed improved stability compared to C-C, though some performance decline was observed after extended cycling, potentially associated with the gradual leaching or reduction of oxygen functional groups under the strongly acidic and oxidizing environment of the positive half-cell."
+    },
+    {
+      "gold_id": "DOC03-EFU-018",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.6 Degradation Mechanisms and Stability",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Vanadium crossover is influenced by electrode overpotential through local concentration polarization effects",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": ["degradation:vanadium_crossover", "degradation:concentration_polarization"],
+      "evidence_text": "The reduced overpotential on BMC-C decreases the extent of concentration polarization during charge, which modestly reduces the driving force for vanadium ion crossover from the positive to negative half-cell."
+    },
+    {
+      "gold_id": "DOC03-EFU-019",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.7 Mechanistic Insights",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "The correlation between surface roughness and electrochemical performance suggests increased triple-phase boundaries facilitate redox reactions",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "surface_roughness", "value": 8.4, "unit": "um", "canonical_id": "measurement:ra_cc_8_4_um"},
+        {"metric_type": "surface_roughness", "value": 11.2, "unit": "um", "canonical_id": "measurement:ra_mcc_11_2_um"},
+        {"metric_type": "surface_roughness", "value": 14.7, "unit": "um", "canonical_id": "measurement:ra_bmc_c_14_7_um"}
+      ],
+      "mechanisms": ["mechanism:triple_phase_boundary"],
+      "evidence_text": "The correlation between surface roughness and electrochemical performance suggests that the increased Ra from 8.4 um to 14.7 um creates additional triple-phase boundaries where the electrode, electrolyte, and reactant species meet."
+    },
+    {
+      "gold_id": "DOC03-EFU-020",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.7 Mechanistic Insights",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Boron doping modifies electronic structure to lower activation energy for electron transfer between electrode and vanadium species",
+      "entities": [
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "dopant:boron", "name": "boron", "type": "DOPANT"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [],
+      "measurements": [
+        {"metric_type": "Rct", "value": 1.34, "unit": "ohm cm2", "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"}
+      ],
+      "mechanisms": ["modification:boron_doping", "mechanism:electron_transfer"],
+      "evidence_text": "Boron doping modifies the electronic structure to lower the activation energy for electron transfer between the electrode and vanadium species."
+    },
+    {
+      "gold_id": "DOC03-EFU-021",
+      "source_doc_id": "DOC03",
+      "source_section": "Section 3.8 Design Implications",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "MC-C offers favorable cost-performance balance with 73.9% EE while BMC-C provides maximum performance at 82.5% EE for high-efficiency applications",
+      "entities": [
+        {"canonical_id": "electrode:c_c", "name": "C-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:mc_c", "name": "MC-C", "type": "ELECTRODE"},
+        {"canonical_id": "electrode:bmc_c", "name": "BMC-C", "type": "ELECTRODE"},
+        {"canonical_id": "system:vrfb", "name": "VRFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "EE", "value": 73.9, "unit": "%", "canonical_id": "measurement:ee_mcc_73_9_percent"},
+        {"metric_type": "EE", "value": 82.5, "unit": "%", "canonical_id": "measurement:ee_bmc_c_82_5_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "For cost-sensitive applications, the MC-C treatment offers a favorable balance between performance improvement and processing cost, achieving a 73.9% EE at 100 mA/cm2 with a relatively simple acid etching procedure. For high-efficiency applications, the BMC-C electrode provides state-of-the-art performance with 82.5% EE at 100 mA/cm2, though the additional boron doping and thermal treatment steps increase manufacturing complexity."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC03-FACT-001",
+      "source_doc_id": "DOC03",
+      "claim": "BMC-C electrode achieves the lowest charge-transfer resistance of 1.34 ohm cm2 among the three tested electrode types",
+      "required_entities": ["electrode:bmc_c", "electrode:c_c", "electrode:mc_c", "system:vrfb"],
+      "required_conditions": [],
+      "required_metrics": [
+        {"metric_type": "Rct", "value": 1.34, "unit": "ohm cm2", "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"},
+        {"metric_type": "Rct", "value": 3.82, "unit": "ohm cm2", "canonical_id": "measurement:rct_cc_3_82_ohm_cm2"},
+        {"metric_type": "Rct", "value": 2.17, "unit": "ohm cm2", "canonical_id": "measurement:rct_mcc_2_17_ohm_cm2"}
+      ],
+      "required_mechanisms": ["modification:boron_doping", "modification:acid_etching"],
+      "supporting_efus": ["DOC03-EFU-004", "DOC03-EFU-005", "DOC03-EFU-006"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC03-FACT-002",
+      "source_doc_id": "DOC03",
+      "claim": "At 100 mA/cm2, energy efficiency increases progressively from C-C at 65.8% to MC-C at 73.9% to BMC-C at 82.5%",
+      "required_entities": ["electrode:c_c", "electrode:mc_c", "electrode:bmc_c", "system:vrfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "required_metrics": [
+        {"metric_type": "EE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ee_cc_65_8_percent"},
+        {"metric_type": "EE", "value": 73.9, "unit": "%", "canonical_id": "measurement:ee_mcc_73_9_percent"},
+        {"metric_type": "EE", "value": 82.5, "unit": "%", "canonical_id": "measurement:ee_bmc_c_82_5_percent"}
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": ["DOC03-EFU-009"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC03-FACT-003",
+      "source_doc_id": "DOC03",
+      "claim": "Contact angle decreases from 130.4 deg for C-C to 102 deg for MC-C to 92.8 deg for BMC-C",
+      "required_entities": ["electrode:c_c", "electrode:mc_c", "electrode:bmc_c"],
+      "required_conditions": [],
+      "required_metrics": [
+        {"metric_type": "contact_angle", "value": 130.4, "unit": "deg", "canonical_id": "measurement:contact_angle_cc_130_4_deg"},
+        {"metric_type": "contact_angle", "value": 102, "unit": "deg", "canonical_id": "measurement:contact_angle_mcc_102_deg"},
+        {"metric_type": "contact_angle", "value": 92.8, "unit": "deg", "canonical_id": "measurement:contact_angle_bmc_c_92_8_deg"}
+      ],
+      "required_mechanisms": ["modification:acid_etching", "modification:boron_doping"],
+      "supporting_efus": ["DOC03-EFU-001", "DOC03-EFU-002", "DOC03-EFU-003"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC03-FACT-004",
+      "source_doc_id": "DOC03",
+      "claim": "Surface roughness Ra increases progressively from 8.4 um for C-C to 11.2 um for MC-C to 14.7 um for BMC-C due to acid etching and boron incorporation",
+      "required_entities": ["electrode:c_c", "electrode:mc_c", "electrode:bmc_c"],
+      "required_conditions": [],
+      "required_metrics": [
+        {"metric_type": "surface_roughness", "value": 8.4, "unit": "um", "canonical_id": "measurement:ra_cc_8_4_um"},
+        {"metric_type": "surface_roughness", "value": 11.2, "unit": "um", "canonical_id": "measurement:ra_mcc_11_2_um"},
+        {"metric_type": "surface_roughness", "value": 14.7, "unit": "um", "canonical_id": "measurement:ra_bmc_c_14_7_um"}
+      ],
+      "required_mechanisms": ["modification:acid_etching", "modification:boron_doping"],
+      "supporting_efus": ["DOC03-EFU-010"],
+      "difficulty": "L2",
+      "fact_type": "COMPOSITION"
+    },
+    {
+      "fact_id": "DOC03-FACT-005",
+      "source_doc_id": "DOC03",
+      "claim": "BMC-C electrode demonstrates the highest cycling stability due to covalently incorporated boron providing durable catalytic sites compared to surface-bound oxygen groups on MC-C",
+      "required_entities": ["electrode:bmc_c", "electrode:mc_c", "electrode:c_c", "system:vrfb"],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": ["degradation:oxygen_group_leaching", "modification:boron_doping"],
+      "supporting_efus": ["DOC03-EFU-016", "DOC03-EFU-017", "DOC03-EFU-018"],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC03-FACT-006",
+      "source_doc_id": "DOC03",
+      "claim": "Boron doping modifies electronic structure to lower activation energy for electron transfer and creates favorable active sites for vanadium ion adsorption",
+      "required_entities": ["electrode:bmc_c", "dopant:boron", "system:vrfb"],
+      "required_conditions": [],
+      "required_metrics": [
+        {"metric_type": "Rct", "value": 1.34, "unit": "ohm cm2", "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"}
+      ],
+      "required_mechanisms": ["modification:boron_doping", "mechanism:electron_transfer"],
+      "supporting_efus": ["DOC03-EFU-006", "DOC03-EFU-020"],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC03-FACT-007",
+      "source_doc_id": "DOC03",
+      "claim": "MC-C electrode provides favorable cost-performance balance while BMC-C electrode offers maximum efficiency for high-performance VRFB applications",
+      "required_entities": ["electrode:mc_c", "electrode:bmc_c", "system:vrfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "required_metrics": [
+        {"metric_type": "EE", "value": 73.9, "unit": "%", "canonical_id": "measurement:ee_mcc_73_9_percent"},
+        {"metric_type": "EE", "value": 82.5, "unit": "%", "canonical_id": "measurement:ee_bmc_c_82_5_percent"}
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": ["DOC03-EFU-021"],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC03-FACT-008",
+      "source_doc_id": "DOC03",
+      "claim": "The performance gap between modified and unmodified electrodes widens at high current densities up to 500 mA/cm2",
+      "required_entities": ["electrode:c_c", "electrode:mc_c", "electrode:bmc_c", "system:vrfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 500, "unit": "mA/cm2", "canonical_id": "condition:current_density_500_ma_cm2"}
+      ],
+      "required_metrics": [],
+      "required_mechanisms": ["mechanism:charge_transfer_kinetics"],
+      "supporting_efus": ["DOC03-EFU-013"],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC03-FACT-009",
+      "source_doc_id": "DOC03",
+      "claim": "At 100 mA/cm2, coulombic efficiency follows the order C-C 94% < MC-C 96% < BMC-C 97%",
+      "required_entities": ["electrode:c_c", "electrode:mc_c", "electrode:bmc_c", "system:vrfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 100, "unit": "mA/cm2", "canonical_id": "condition:current_density_100_ma_cm2"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 94, "unit": "%", "canonical_id": "measurement:ce_cc_94_percent"},
+        {"metric_type": "CE", "value": 96, "unit": "%", "canonical_id": "measurement:ce_mcc_96_percent"},
+        {"metric_type": "CE", "value": 97, "unit": "%", "canonical_id": "measurement:ce_bmc_c_97_percent"}
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": ["DOC03-EFU-007"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC03-FACT-010",
+      "source_doc_id": "DOC03",
+      "claim": "The increased surface roughness from 8.4 um to 14.7 um creates additional triple-phase boundaries that increase geometric current density capability",
+      "required_entities": ["electrode:c_c", "electrode:bmc_c"],
+      "required_conditions": [],
+      "required_metrics": [
+        {"metric_type": "surface_roughness", "value": 8.4, "unit": "um", "canonical_id": "measurement:ra_cc_8_4_um"},
+        {"metric_type": "surface_roughness", "value": 14.7, "unit": "um", "canonical_id": "measurement:ra_bmc_c_14_7_um"}
+      ],
+      "required_mechanisms": ["mechanism:triple_phase_boundary"],
+      "supporting_efus": ["DOC03-EFU-019"],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    }
+  ],
+  "qas": [
+    {
+      "question_id": "DOC03-QA-001",
+      "source_doc_id": "DOC03",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the charge-transfer resistance of the BMC-C electrode?",
+      "reference_answer": "The BMC-C electrode has a charge-transfer resistance of 1.34 ohm cm2.",
+      "reference_answer_points": ["1.34 ohm cm2"],
+      "expected_facts": ["DOC03-FACT-001"],
+      "expected_efus": ["DOC03-EFU-006"]
+    },
+    {
+      "question_id": "DOC03-QA-002",
+      "source_doc_id": "DOC03",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the contact angles of C-C, MC-C, and BMC-C electrodes?",
+      "reference_answer": "The C-C electrode has a contact angle of 130.4 deg, the MC-C electrode has 102 deg, and the BMC-C electrode has 92.8 deg.",
+      "reference_answer_points": ["C-C: 130.4 deg", "MC-C: 102 deg", "BMC-C: 92.8 deg"],
+      "expected_facts": ["DOC03-FACT-003"],
+      "expected_efus": ["DOC03-EFU-001", "DOC03-EFU-002", "DOC03-EFU-003"]
+    },
+    {
+      "question_id": "DOC03-QA-003",
+      "source_doc_id": "DOC03",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the energy efficiencies of C-C, MC-C, and BMC-C electrodes at 100 mA/cm2?",
+      "reference_answer": "At 100 mA/cm2, the C-C electrode delivers 65.8% EE, the MC-C electrode achieves 73.9% EE, and the BMC-C electrode reaches 82.5% EE.",
+      "reference_answer_points": ["C-C: 65.8%", "MC-C: 73.9%", "BMC-C: 82.5%"],
+      "expected_facts": ["DOC03-FACT-002"],
+      "expected_efus": ["DOC03-EFU-009"]
+    },
+    {
+      "question_id": "DOC03-QA-004",
+      "source_doc_id": "DOC03",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "At 100 mA/cm2, which electrode achieves the highest energy efficiency and what is the CE and VE that contribute to this EE?",
+      "reference_answer": "The BMC-C electrode achieves the highest energy efficiency of 82.5% at 100 mA/cm2, with a CE of 97% and VE of 85%.",
+      "reference_answer_points": ["BMC-C has highest EE", "EE: 82.5%", "CE: 97%", "VE: 85%"],
+      "expected_facts": ["DOC03-FACT-002", "DOC03-FACT-009"],
+      "expected_efus": ["DOC03-EFU-007", "DOC03-EFU-008", "DOC03-EFU-009"]
+    },
+    {
+      "question_id": "DOC03-QA-005",
+      "source_doc_id": "DOC03",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the percentage reduction in Rct from C-C to BMC-C electrode?",
+      "reference_answer": "The BMC-C electrode achieves a 64.9% reduction in charge-transfer resistance compared to C-C (from 3.82 ohm cm2 to 1.34 ohm cm2), and a 38.2% reduction compared to MC-C (from 2.17 ohm cm2 to 1.34 ohm cm2).",
+      "reference_answer_points": ["64.9% reduction vs C-C", "38.2% reduction vs MC-C", "from 3.82 to 1.34 ohm cm2"],
+      "expected_facts": ["DOC03-FACT-001"],
+      "expected_efus": ["DOC03-EFU-012"]
+    },
+    {
+      "question_id": "DOC03-QA-006",
+      "source_doc_id": "DOC03",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does surface roughness differ among C-C, MC-C, and BMC-C electrodes?",
+      "reference_answer": "Surface roughness increases progressively: C-C has Ra of 8.4 um, MC-C has Ra of 11.2 um, and BMC-C has Ra of 14.7 um. The increase is attributed to acid etching creating surface defects and microporosity, with further increase from boron incorporation and thermal treatment.",
+      "reference_answer_points": ["C-C: 8.4 um", "MC-C: 11.2 um", "BMC-C: 14.7 um", "acid etching creates defects", "boron incorporation increases roughness further"],
+      "expected_facts": ["DOC03-FACT-004"],
+      "expected_efus": ["DOC03-EFU-010"]
+    },
+    {
+      "question_id": "DOC03-QA-007",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "Why does BMC-C electrode demonstrate better cycling stability compared to MC-C electrode?",
+      "reference_answer": "BMC-C demonstrates better cycling stability because boron is covalently incorporated into the carbon lattice, providing more durable catalytic sites compared to the surface-bound oxygen functional groups on MC-C which can gradually leach or reduce under the strongly acidic and oxidizing environment of the positive half-cell. Additionally, BMC-C's improved wettability mitigates uneven current distribution and localized degradation.",
+      "reference_answer_points": ["Boron is covalently incorporated into carbon lattice", "More durable than surface-bound oxygen groups", "Oxygen groups leach under acidic/oxidizing conditions", "Improved wettability reduces uneven current distribution"],
+      "expected_facts": ["DOC03-FACT-005"],
+      "expected_efus": ["DOC03-EFU-017", "DOC03-EFU-018"]
+    },
+    {
+      "question_id": "DOC03-QA-008",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "How does boron doping contribute to the lower charge-transfer resistance in BMC-C electrode?",
+      "reference_answer": "Boron doping modifies the electronic structure of the carbon lattice, creating favorable active sites with enhanced adsorption properties for vanadium ions and lowering the activation energy for electron transfer between the electrode and vanadium species. This complements the surface area expansion from acid etching, resulting in Rct of 1.34 ohm cm2 compared to 2.17 ohm cm2 for MC-C and 3.82 ohm cm2 for C-C.",
+      "reference_answer_points": ["Modifies electronic structure", "Creates favorable active sites", "Enhances vanadium ion adsorption", "Lowers activation energy for electron transfer", "Rct: 1.34 vs 2.17 vs 3.82 ohm cm2"],
+      "expected_facts": ["DOC03-FACT-006"],
+      "expected_efus": ["DOC03-EFU-006", "DOC03-EFU-020"]
+    },
+    {
+      "question_id": "DOC03-QA-009",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "design rationale",
+      "question": "Which electrode offers the best trade-off between performance and manufacturing cost, and why?",
+      "reference_answer": "MC-C offers the best cost-performance trade-off for cost-sensitive applications, achieving 73.9% EE at 100 mA/cm2 with a relatively simple acid etching procedure. BMC-C provides the highest efficiency at 82.5% EE but requires additional boron doping and thermal treatment steps that increase manufacturing complexity and cost. The choice depends on application requirements for operating current density, cycle life, and economic constraints.",
+      "reference_answer_points": ["MC-C for cost-sensitive: 73.9% EE", "Simple acid etching for MC-C", "BMC-C for max efficiency: 82.5% EE", "BMC-C requires boron doping + thermal treatment", "Choice depends on application requirements"],
+      "expected_facts": ["DOC03-FACT-007"],
+      "expected_efus": ["DOC03-EFU-021"]
+    },
+    {
+      "question_id": "DOC03-QA-010",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "How does increased surface roughness contribute to improved electrochemical performance in the modified electrodes?",
+      "reference_answer": "Increased surface roughness from 8.4 um (C-C) to 14.7 um (BMC-C) creates additional triple-phase boundaries where electrode, electrolyte, and reactant species meet. These expanded interfacial zones provide more simultaneous redox reaction sites, effectively increasing geometric current density capability. The rougher surface also promotes turbulent flow patterns within the porous electrode, enhancing mass transfer of vanadium species to and from active sites.",
+      "reference_answer_points": ["Creates additional triple-phase boundaries", "More simultaneous reaction sites", "Increases geometric current density capability", "Promotes turbulent flow patterns", "Enhances mass transfer"],
+      "expected_facts": ["DOC03-FACT-010"],
+      "expected_efus": ["DOC03-EFU-019"]
+    }
+  ]
+}

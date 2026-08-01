@@ -1,0 +1,6 @@
+system,queries,precision@1,hit@5,direct_hit@5,mrr,gndcg@5
+final_no_rerank,20,0.95,1.0,0.1,0.975,0.7694
+graph_final,20,1.0,1.0,0.0,1.0,0.8973
+hyper_base,20,1.0,1.0,0.15,1.0,0.7746
+hyper_final,20,1.0,1.0,0.1,1.0,0.7031
+naive_chunks,20,1.0,1.0,1.0,1.0,0.8685

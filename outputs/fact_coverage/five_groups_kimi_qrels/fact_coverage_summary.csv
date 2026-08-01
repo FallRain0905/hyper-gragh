@@ -1,0 +1,21 @@
+group,k,facts,Strict Coverage@k,Soft Support@k,Condition Integrity@k,SUPPORTED,PARTIALLY_SUPPORTED,UNSUPPORTED
+text_segments,1,180,0.0778,0.3667,0.6412,14,104,62
+text_segments,3,180,0.1,0.4222,0.6768,18,116,46
+text_segments,5,180,0.1167,0.4472,0.689,21,119,40
+text_segments,10,180,0.1167,0.45,0.6915,21,120,39
+original_hypergraph,1,180,0.0056,0.0306,0.4706,1,9,170
+original_hypergraph,3,180,0.0056,0.0361,0.5331,1,11,168
+original_hypergraph,5,180,0.0056,0.0361,0.5517,1,11,168
+original_hypergraph,10,180,0.0056,0.0361,0.5686,1,11,168
+chem_prompt_graph,1,180,0.0,0.0,0.375,0,0,180
+chem_prompt_graph,3,180,0.0,0.0056,0.4033,0,2,178
+chem_prompt_graph,5,180,0.0,0.0056,0.4125,0,2,178
+chem_prompt_graph,10,180,0.0,0.0056,0.4344,0,2,178
+chem_prompt_hypergraph,1,180,0.0,0.0194,0.473,0,7,173
+chem_prompt_hypergraph,3,180,0.0,0.0278,0.5205,0,10,170
+chem_prompt_hypergraph,5,180,0.0,0.0278,0.5324,0,10,170
+chem_prompt_hypergraph,10,180,0.0,0.0278,0.5685,0,10,170
+chem_norm_hypergraph,1,180,0.0167,0.0722,0.5111,3,20,157
+chem_norm_hypergraph,3,180,0.0222,0.1056,0.5897,4,30,146
+chem_norm_hypergraph,5,180,0.0222,0.1139,0.6147,4,33,143
+chem_norm_hypergraph,10,180,0.0222,0.1222,0.6333,4,36,140

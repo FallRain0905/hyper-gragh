@@ -1,0 +1,4 @@
+mode,k,strict_fact_coverage@k,soft_support_score@k,condition_integrity@k,evidence_token_budget@k,evidence_density@k,supported_count,partial_count,unsupported_count
+hyper_final,1,0.0,0.2209,0.0525,90.04,0.2209,0,23,157
+final_no_rerank,1,0.0,0.2389,0.0682,91.1,0.2389,0,24,156
+graph_final,1,0.0,0.1305,0.0181,44.81,0.1305,0,10,170

@@ -1,0 +1,1410 @@
+{
+  "doc_id": "DOC06",
+  "doc_title": "Bismuth Ion as an Electrolyte Additive for Suppressing Hydrogen Evolution and Enhancing Chromium Redox Kinetics in Iron-Chromium Redox Flow Batteries",
+  "domain": "iron-chromium redox flow battery, bismuth additive, hydrogen evolution suppression, chromium redox kinetics",
+  "version": "1.0",
+  "generated_date": "2025-01-15",
+  "entities": {
+    "systems": [
+      {
+        "canonical_id": "system:icrfb",
+        "names": [
+          "ICRFB",
+          "iron-chromium redox flow battery",
+          "iron-chromium RFB",
+          "Fe-Cr RFB"
+        ]
+      },
+      {
+        "canonical_id": "system:vrfb",
+        "names": [
+          "VRFB",
+          "all-vanadium redox flow battery",
+          "vanadium redox flow battery"
+        ]
+      }
+    ],
+    "electrodes": [
+      {
+        "canonical_id": "electrode:graphite_felt",
+        "names": [
+          "graphite felt",
+          "graphite felt electrode",
+          "untreated graphite felt"
+        ]
+      },
+      {
+        "canonical_id": "electrode:activated_carbon_felt",
+        "names": [
+          "activated carbon felt",
+          "ACF"
+        ]
+      }
+    ],
+    "additives": [
+      {
+        "canonical_id": "additive:bi3plus_0_5_ppm",
+        "names": [
+          "0.5 ppm Bi3+",
+          "0.5 ppm bismuth ion",
+          "0.5 ppm BiCl3"
+        ]
+      },
+      {
+        "canonical_id": "additive:bi3plus_1_0_ppm",
+        "names": [
+          "1.0 ppm Bi3+",
+          "1.0 ppm bismuth ion",
+          "1.0 ppm BiCl3"
+        ]
+      },
+      {
+        "canonical_id": "additive:bi3plus_1_5_ppm",
+        "names": [
+          "1.5 ppm Bi3+",
+          "1.5 ppm bismuth ion",
+          "1.5 ppm BiCl3"
+        ]
+      },
+      {
+        "canonical_id": "additive:bi3plus_2_0_ppm",
+        "names": [
+          "2.0 ppm Bi3+",
+          "2.0 ppm bismuth ion",
+          "2.0 ppm BiCl3",
+          "optimal Bi3+ concentration"
+        ]
+      },
+      {
+        "canonical_id": "additive:bi3plus_3_0_ppm",
+        "names": [
+          "3.0 ppm Bi3+",
+          "3.0 ppm bismuth ion",
+          "3.0 ppm BiCl3"
+        ]
+      },
+      {
+        "canonical_id": "additive:pb2plus_5_0_ppm",
+        "names": [
+          "Pb2+",
+          "lead ion",
+          "5.0 ppm Pb2+"
+        ]
+      },
+      {
+        "canonical_id": "additive:au_np",
+        "names": [
+          "Au NP",
+          "gold nanoparticle",
+          "gold nanoparticle modified graphite felt"
+        ]
+      }
+    ],
+    "conditions": [
+      {
+        "canonical_id": "condition:current_density_40_ma_cm2",
+        "names": [
+          "40 mA/cm2",
+          "40 mA/cm²"
+        ]
+      },
+      {
+        "canonical_id": "condition:current_density_80_ma_cm2",
+        "names": [
+          "80 mA/cm2",
+          "80 mA/cm²"
+        ]
+      },
+      {
+        "canonical_id": "condition:current_density_120_ma_cm2",
+        "names": [
+          "120 mA/cm2",
+          "120 mA/cm²"
+        ]
+      },
+      {
+        "canonical_id": "condition:current_density_160_ma_cm2",
+        "names": [
+          "160 mA/cm2",
+          "160 mA/cm²"
+        ]
+      },
+      {
+        "canonical_id": "condition:temperature_25_c",
+        "names": [
+          "25 °C",
+          "ambient temperature",
+          "room temperature"
+        ]
+      },
+      {
+        "canonical_id": "condition:flow_rate_100_ml_min",
+        "names": [
+          "100 mL/min",
+          "100 mL/min flow rate"
+        ]
+      }
+    ],
+    "measurements": [
+      {
+        "canonical_id": "measurement:ce_87_percent",
+        "names": [
+          "87% CE",
+          "87% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ce_90_percent",
+        "names": [
+          "90% CE",
+          "90% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ce_92_percent",
+        "names": [
+          "92% CE",
+          "92% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ce_94_percent",
+        "names": [
+          "94% CE",
+          "94% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ce_96_percent",
+        "names": [
+          "96% CE",
+          "96% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ce_72_percent",
+        "names": [
+          "72% CE",
+          "72% coulombic efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_72_percent",
+        "names": [
+          "72% EE",
+          "72% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_87_percent",
+        "names": [
+          "87% EE",
+          "87% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_90_percent",
+        "names": [
+          "90% EE",
+          "90% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_80_percent",
+        "names": [
+          "80% EE",
+          "80% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_81_percent",
+        "names": [
+          "81% EE",
+          "81% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_85_percent",
+        "names": [
+          "85% EE",
+          "85% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_62_percent",
+        "names": [
+          "62% EE",
+          "62% energy efficiency"
+        ]
+      },
+      {
+        "canonical_id": "measurement:ee_51_percent",
+        "names": [
+          "51% EE",
+          "51% energy efficiency"
+        ]
+      }
+    ],
+    "metrics_mechanisms": [
+      {
+        "canonical_id": "degradation:her",
+        "names": [
+          "HER",
+          "hydrogen evolution reaction",
+          "parasitic HER"
+        ]
+      },
+      {
+        "canonical_id": "metric:her_overpotential",
+        "names": [
+          "HER overpotential",
+          "hydrogen evolution overpotential"
+        ]
+      },
+      {
+        "canonical_id": "degradation:hydrogen_evolution",
+        "names": [
+          "hydrogen evolution",
+          "H2 evolution",
+          "parasitic hydrogen evolution"
+        ]
+      },
+      {
+        "canonical_id": "metric:cr_reaction_rate_constant",
+        "names": [
+          "Cr(III)/Cr(II) rate constant",
+          "k0",
+          "standard heterogeneous electron transfer rate constant"
+        ]
+      },
+      {
+        "canonical_id": "metric:h2_evolution_rate",
+        "names": [
+          "H2 evolution rate",
+          "hydrogen evolution rate"
+        ]
+      },
+      {
+        "canonical_id": "metric:capacity_fade_rate",
+        "names": [
+          "capacity fade rate",
+          "fade rate"
+        ]
+      },
+      {
+        "canonical_id": "metric:voltage_efficiency",
+        "names": [
+          "voltage efficiency",
+          "VE"
+        ]
+      }
+    ]
+  },
+  "efus": [
+    {
+      "efu_id": "EFU-DOC06-001",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ce_87_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_coulombic_efficiency",
+      "object": "87%",
+      "context": "baseline cell without Bi3+ additive at 80 mA/cm2",
+      "evidence_text": "The baseline cell without Bi3+ additive achieves a CE of 87% and an EE of 72% at 80 mA/cm2.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 87,
+      "unit": "%",
+      "note": "Baseline CE at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-002",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ee_72_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_energy_efficiency",
+      "object": "72%",
+      "context": "baseline cell without Bi3+ additive at 80 mA/cm2",
+      "evidence_text": "The baseline cell without Bi3+ additive achieves a CE of 87% and an EE of 72% at 80 mA/cm2.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 72,
+      "unit": "%",
+      "note": "Baseline EE at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-003",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ce_94_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_coulombic_efficiency",
+      "object": "94%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 80 mA/cm2",
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 94,
+      "unit": "%",
+      "note": "Optimal CE with 2.0 ppm Bi3+ at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-004",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ee_87_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_energy_efficiency",
+      "object": "87%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 80 mA/cm2",
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 87,
+      "unit": "%",
+      "note": "Optimal EE with 2.0 ppm Bi3+ at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-005",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ce_92_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_coulombic_efficiency",
+      "object": "92%",
+      "context": "baseline cell at 40 mA/cm2 without Bi3+ additive",
+      "evidence_text": "At 40 mA/cm2, the baseline cell achieves a CE of 92% and an EE of 80%",
+      "condition": "condition:current_density_40_ma_cm2",
+      "numerical_value": 92,
+      "unit": "%",
+      "note": "Baseline CE at 40 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-006",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ce_72_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_coulombic_efficiency",
+      "object": "72%",
+      "context": "baseline cell at 160 mA/cm2 without Bi3+ additive",
+      "evidence_text": "At the highest current density of 160 mA/cm2, the baseline cell exhibits only 72% CE and 51% EE",
+      "condition": "condition:current_density_160_ma_cm2",
+      "numerical_value": 72,
+      "unit": "%",
+      "note": "Baseline CE at 160 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-007",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ce_96_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_coulombic_efficiency",
+      "object": "96%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 40 mA/cm2",
+      "evidence_text": "At 40 mA/cm2, the baseline cell achieves a CE of 92% and an EE of 80%, while the Bi3+-containing cell delivers a CE of 96% and an EE of 90%.",
+      "condition": "condition:current_density_40_ma_cm2",
+      "numerical_value": 96,
+      "unit": "%",
+      "note": "CE with 2.0 ppm Bi3+ at 40 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-008",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ee_90_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_energy_efficiency",
+      "object": "90%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 40 mA/cm2",
+      "evidence_text": "At 40 mA/cm2, the baseline cell achieves a CE of 92% and an EE of 80%, while the Bi3+-containing cell delivers a CE of 96% and an EE of 90%.",
+      "condition": "condition:current_density_40_ma_cm2",
+      "numerical_value": 90,
+      "unit": "%",
+      "note": "EE with 2.0 ppm Bi3+ at 40 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-009",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ee_80_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_energy_efficiency",
+      "object": "80%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 120 mA/cm2",
+      "evidence_text": "As the current density is increased to 120 mA/cm2, the baseline cell performance degrades to 80% CE and 62% EE, whereas the Bi3+-containing cell maintains 91% CE and 80% EE.",
+      "condition": "condition:current_density_120_ma_cm2",
+      "numerical_value": 80,
+      "unit": "%",
+      "note": "EE with 2.0 ppm Bi3+ at 120 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-010",
+      "type": "OPERATION_PERFORMANCE",
+      "canonical_id": "measurement:ee_72_percent",
+      "subject": "system:icrfb",
+      "predicate": "has_energy_efficiency",
+      "object": "72%",
+      "context": "cell with 2.0 ppm Bi3+ additive at 160 mA/cm2",
+      "evidence_text": "At the highest current density of 160 mA/cm2, the baseline cell exhibits only 72% CE and 51% EE, while the Bi3+-enhanced cell achieves 87% CE and 72% EE.",
+      "condition": "condition:current_density_160_ma_cm2",
+      "numerical_value": 72,
+      "unit": "%",
+      "note": "EE with 2.0 ppm Bi3+ at 160 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-011",
+      "type": "COMPOSITION",
+      "canonical_id": "additive:bi3plus_2_0_ppm",
+      "subject": "system:icrfb",
+      "predicate": "contains_electrolyte_additive",
+      "object": "2.0 ppm Bi3+",
+      "context": "optimal additive concentration in negative electrolyte",
+      "evidence_text": "The optimal Bi3+ concentration of 2.0 ppm identified in this work represents a compromise between maximizing surface coverage of catalytically active bismuth species and avoiding excessive site blocking at higher concentrations.",
+      "condition": null,
+      "numerical_value": 2.0,
+      "unit": "ppm",
+      "note": "Optimal Bi3+ concentration"
+    },
+    {
+      "efu_id": "EFU-DOC06-012",
+      "type": "COMPOSITION",
+      "canonical_id": "metric:cr_reaction_rate_constant",
+      "subject": "system:icrfb",
+      "predicate": "has_electron_transfer_rate_constant",
+      "object": "2.1 × 10^-3 cm/s",
+      "context": "pristine electrolyte without Bi3+ additive for Cr(III)/Cr(II) couple",
+      "evidence_text": "The pristine electrolyte exhibits a k0 value of 2.1 × 10^-3 cm/s, which is consistent with literature values for the Cr(III)/Cr(II) couple in hydrochloric acid supporting electrolyte.",
+      "condition": "condition:temperature_25_c",
+      "numerical_value": 0.0021,
+      "unit": "cm/s",
+      "note": "Baseline Cr(III)/Cr(II) rate constant"
+    },
+    {
+      "efu_id": "EFU-DOC06-013",
+      "type": "COMPOSITION",
+      "canonical_id": "metric:cr_reaction_rate_constant",
+      "subject": "system:icrfb",
+      "predicate": "has_electron_transfer_rate_constant",
+      "object": "4.8 × 10^-3 cm/s",
+      "context": "with 2.0 ppm Bi3+ additive for Cr(III)/Cr(II) couple",
+      "evidence_text": "The maximum rate constant of 4.8 × 10^-3 cm/s is obtained at 2.0 ppm Bi3+, representing a 2.3-fold acceleration of the electron transfer reaction relative to the baseline.",
+      "condition": "condition:temperature_25_c",
+      "numerical_value": 0.0048,
+      "unit": "cm/s",
+      "note": "Cr(III)/Cr(II) rate constant with 2.0 ppm Bi3+"
+    },
+    {
+      "efu_id": "EFU-DOC06-014",
+      "type": "COMPARISON",
+      "canonical_id": "measurement:ce_94_percent",
+      "subject": "system:icrfb",
+      "predicate": "compared_to",
+      "object": "87% CE (baseline)",
+      "context": "7 percentage point improvement with 2.0 ppm Bi3+ at 80 mA/cm2",
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%, representing improvements of 7 percentage points in CE and 15 percentage points in EE relative to the baseline.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 7,
+      "unit": "percentage points",
+      "note": "CE improvement with Bi3+ additive"
+    },
+    {
+      "efu_id": "EFU-DOC06-015",
+      "type": "COMPARISON",
+      "canonical_id": "measurement:ee_87_percent",
+      "subject": "system:icrfb",
+      "predicate": "compared_to",
+      "object": "72% EE (baseline)",
+      "context": "15 percentage point improvement with 2.0 ppm Bi3+ at 80 mA/cm2",
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%, representing improvements of 7 percentage points in CE and 15 percentage points in EE relative to the baseline.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 15,
+      "unit": "percentage points",
+      "note": "EE improvement with Bi3+ additive"
+    },
+    {
+      "efu_id": "EFU-DOC06-016",
+      "type": "COMPARISON",
+      "canonical_id": "system:icrfb",
+      "subject": "system:icrfb",
+      "predicate": "compared_to",
+      "object": "system:vrfb",
+      "context": "Bi3+-enhanced ICRFB approaches VRFB efficiency; ICRFB has lower electrolyte cost",
+      "evidence_text": "At 80 mA/cm2, the Bi3+-enhanced ICRFB achieves a CE of 94% and an EE of 87%, which approach the typical performance of VRFB systems operated under comparable conditions. Given the substantially lower electrolyte cost of the ICRFB chemistry, these efficiency levels suggest that the cost-performance gap between ICRFBs and VRFBs can be significantly narrowed through effective additive strategies.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": null,
+      "unit": null,
+      "note": "ICRFB vs VRFB comparison"
+    },
+    {
+      "efu_id": "EFU-DOC06-017",
+      "type": "COMPARISON",
+      "canonical_id": "metric:capacity_fade_rate",
+      "subject": "system:icrfb",
+      "predicate": "compared_to",
+      "object": "0.12% per cycle (baseline)",
+      "context": "0.03% per cycle with 2.0 ppm Bi3+; fourfold improvement",
+      "evidence_text": "Long-term cycling over 200 cycles at 80 mA/cm2 reveals a capacity fade rate of only 0.03% per cycle with Bi3+ additive, versus 0.12% per cycle for the baseline, corresponding to a fourfold improvement in cycling stability.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 0.75,
+      "unit": "ratio",
+      "note": "Capacity fade comparison: 0.03 vs 0.12 per cycle"
+    },
+    {
+      "efu_id": "EFU-DOC06-018",
+      "type": "DEGRADATION_CHAIN",
+      "canonical_id": "degradation:her",
+      "subject": "system:icrfb",
+      "predicate": "causes",
+      "object": "electrolyte_imbalance",
+      "context": "HER leads to H2 accumulation, proton consumption, pH increase, and Cr(III) depletion",
+      "evidence_text": "In the baseline cell, the negative electrolyte shows a significant decrease in Cr(III) concentration from the initial 1.0 M to 0.82 M after 200 cycles, accompanied by a pH increase from 0.3 to 0.6 due to proton consumption in the HER. Gas chromatographic analysis confirms cumulative hydrogen evolution of 18.6 mmol over 200 cycles. This hydrogen accumulation leads to progressive state-of-charge imbalance between the positive and negative half-cells, which is the primary driver of capacity fade in the baseline ICRFB.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": null,
+      "unit": null,
+      "note": "HER degradation chain in baseline ICRFB"
+    },
+    {
+      "efu_id": "EFU-DOC06-019",
+      "type": "DEGRADATION_CHAIN",
+      "canonical_id": "degradation:hydrogen_evolution",
+      "subject": "system:icrfb",
+      "predicate": "reduced_by",
+      "object": "Bi3+ additive",
+      "context": "77% reduction in cumulative hydrogen with 2.0 ppm Bi3+ over 200 cycles",
+      "evidence_text": "For the Bi3+-enhanced cell, the cumulative hydrogen evolution is reduced to 4.2 mmol, representing a 77% reduction in total parasitic hydrogen generation compared to the baseline.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 77,
+      "unit": "% reduction",
+      "note": "H2 evolution reduction with Bi3+"
+    },
+    {
+      "efu_id": "EFU-DOC06-020",
+      "type": "DEGRADATION_CHAIN",
+      "canonical_id": "metric:her_overpotential",
+      "subject": "system:icrfb",
+      "predicate": "increased_by",
+      "object": "85 mV",
+      "context": "HER overpotential increase with 2.0 ppm Bi3+ at 80 mA/cm2",
+      "evidence_text": "the overpotential required to achieve 10 mA/cm2 increases to -0.30 V, representing an 85 mV increase in HER overpotential compared to the baseline system. At 80 mA/cm2, the HER overpotential in the Bi3+-containing electrolyte is 142 mV more negative than in the pristine electrolyte.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 85,
+      "unit": "mV",
+      "note": "HER overpotential increase at 10 mA/cm2 with Bi3+"
+    },
+    {
+      "efu_id": "EFU-DOC06-021",
+      "type": "DEGRADATION_CHAIN",
+      "canonical_id": "metric:h2_evolution_rate",
+      "subject": "system:icrfb",
+      "predicate": "has_parasitic_current_loss",
+      "object": "13%",
+      "context": "baseline cell at 80 mA/cm2; 13% of current diverted to HER",
+      "evidence_text": "In the absence of Bi3+, the H2 evolution rate at 80 mA/cm2 corresponds to a current efficiency loss of approximately 13% to parasitic hydrogen evolution",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 13,
+      "unit": "%",
+      "note": "Baseline parasitic HER loss at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-022",
+      "type": "DEGRADATION_CHAIN",
+      "canonical_id": "metric:h2_evolution_rate",
+      "subject": "system:icrfb",
+      "predicate": "has_parasitic_current_loss",
+      "object": "3.5%",
+      "context": "cell with 2.0 ppm Bi3+ at 80 mA/cm2; 73% reduction in H2 evolution",
+      "evidence_text": "Upon addition of 2.0 ppm Bi3+, the H2 evolution rate at 80 mA/cm2 decreases dramatically, reducing the parasitic current loss to 3.5%. This represents a 73% reduction in hydrogen evolution compared to the baseline system.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 3.5,
+      "unit": "%",
+      "note": "Parasitic HER loss with 2.0 ppm Bi3+ at 80 mA/cm2"
+    },
+    {
+      "efu_id": "EFU-DOC06-023",
+      "type": "MECHANISM_EVIDENCE",
+      "canonical_id": "additive:bi3plus_2_0_ppm",
+      "subject": "electrode:graphite_felt",
+      "predicate": "forms_underpotential_deposition_layer",
+      "object": "metallic bismuth adlayer (Bi 4f7/2 at 157.0 eV)",
+      "context": "Bi3+ reduced to Bi(0) on electrode surface; 35-45% surface coverage",
+      "evidence_text": "X-ray photoelectron spectroscopy (XPS) measurements further confirm the presence of metallic bismuth (Bi 4f7/2 binding energy of 157.0 eV) on the electrode surface, indicating that Bi3+ is reduced to Bi(0) during the underpotential deposition process. SEM images reveal sub-micron bismuth crystallites distributed across the carbon fiber surfaces with an estimated surface coverage of 35-45%.",
+      "condition": "condition:temperature_25_c",
+      "numerical_value": 35,
+      "unit": "% surface coverage",
+      "note": "Bi UPD mechanism evidence"
+    },
+    {
+      "efu_id": "EFU-DOC06-024",
+      "type": "MECHANISM_EVIDENCE",
+      "canonical_id": "metric:cr_reaction_rate_constant",
+      "subject": "system:icrfb",
+      "predicate": "has_catalytic_enhancement_mechanism",
+      "object": "Cr(III)-Bi3+ surface complexes or adsorbed bismuth adatoms",
+      "context": "alternative inner-sphere electron transfer pathway with lower activation energy",
+      "evidence_text": "The origin of the catalytic enhancement can be attributed to the formation of Cr(III)-Bi3+ surface complexes or adsorbed bismuth adatoms that facilitate the inner-sphere electron transfer pathway. Bismuth species adsorbed on the electrode surface may act as redox mediators, providing an alternative reaction pathway with lower activation energy compared to the direct electron transfer between Cr(III) and the carbon electrode.",
+      "condition": "condition:temperature_25_c",
+      "numerical_value": null,
+      "unit": null,
+      "note": "Cr kinetics enhancement mechanism"
+    },
+    {
+      "efu_id": "EFU-DOC06-025",
+      "type": "DESIGN_SUMMARY",
+      "canonical_id": "system:icrfb",
+      "subject": "system:icrfb",
+      "predicate": "has_optimal_additive_design",
+      "object": "2.0 ppm Bi3+ in negative electrolyte",
+      "context": "dual-action: HER suppression + Cr kinetics enhancement; balances coverage vs site blocking",
+      "evidence_text": "This study has established Bi3+ as a highly effective electrolyte additive for iron-chromium redox flow batteries, achieving simultaneous suppression of hydrogen evolution and acceleration of Cr(III)/Cr(II) redox kinetics through an underpotential deposition mechanism on the graphite felt electrode surface.",
+      "condition": null,
+      "numerical_value": 2.0,
+      "unit": "ppm",
+      "note": "Optimal Bi3+ additive design"
+    },
+    {
+      "efu_id": "EFU-DOC06-026",
+      "type": "DESIGN_SUMMARY",
+      "canonical_id": "system:icrfb",
+      "subject": "system:icrfb",
+      "predicate": "has_capacity_fade_rate",
+      "object": "0.03% per cycle",
+      "context": "with 2.0 ppm Bi3+ over 200 cycles at 80 mA/cm2",
+      "evidence_text": "Long-term cycling over 200 cycles at 80 mA/cm2 reveals a capacity fade rate of only 0.03% per cycle with Bi3+ additive, versus 0.12% per cycle for the baseline",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 0.03,
+      "unit": "% per cycle",
+      "note": "Capacity fade rate with Bi3+ additive"
+    },
+    {
+      "efu_id": "EFU-DOC06-027",
+      "type": "DESIGN_SUMMARY",
+      "canonical_id": "system:icrfb",
+      "subject": "system:icrfb",
+      "predicate": "has_consumption_rate",
+      "object": "0.002 ppm per cycle",
+      "context": "Bi3+ depletion from 2.0 ppm to 1.6 ppm over 200 cycles",
+      "evidence_text": "The initial Bi3+ concentration of 2.0 ppm gradually decreases to 1.6 ppm after 200 cycles, corresponding to an average consumption rate of 0.002 ppm per cycle.",
+      "condition": "condition:current_density_80_ma_cm2",
+      "numerical_value": 0.002,
+      "unit": "ppm per cycle",
+      "note": "Bi3+ consumption rate during cycling"
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "FACT-DOC06-001",
+      "efu_ids": [
+        "EFU-DOC06-001",
+        "EFU-DOC06-002"
+      ],
+      "statement": "The baseline ICRFB cell (without Bi3+ additive) achieves a coulombic efficiency of 87% and an energy efficiency of 72% at 80 mA/cm2 and 25°C.",
+      "category": "performance_baseline",
+      "difficulty": "L1",
+      "evidence_text": "The baseline cell without Bi3+ additive achieves a CE of 87% and an EE of 72% at 80 mA/cm2."
+    },
+    {
+      "fact_id": "FACT-DOC06-002",
+      "efu_ids": [
+        "EFU-DOC06-003",
+        "EFU-DOC06-004"
+      ],
+      "statement": "With the optimal Bi3+ concentration of 2.0 ppm, the ICRFB cell achieves a coulombic efficiency of 94% and an energy efficiency of 87% at 80 mA/cm2.",
+      "category": "performance_optimal",
+      "difficulty": "L1",
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%"
+    },
+    {
+      "fact_id": "FACT-DOC06-003",
+      "efu_ids": [
+        "EFU-DOC06-014",
+        "EFU-DOC06-015"
+      ],
+      "statement": "The Bi3+ additive at 2.0 ppm improves the CE by 7 percentage points (from 87% to 94%) and the EE by 15 percentage points (from 72% to 87%) at 80 mA/cm2, relative to the baseline cell.",
+      "category": "performance_comparison",
+      "difficulty": "L2",
+      "evidence_text": "representing improvements of 7 percentage points in CE and 15 percentage points in EE relative to the baseline."
+    },
+    {
+      "fact_id": "FACT-DOC06-004",
+      "efu_ids": [
+        "EFU-DOC06-012"
+      ],
+      "statement": "The standard heterogeneous electron transfer rate constant (k0) for the Cr(III)/Cr(II) couple in the pristine electrolyte at 25°C is 2.1 × 10^-3 cm/s.",
+      "category": "kinetics_baseline",
+      "difficulty": "L2",
+      "evidence_text": "The pristine electrolyte exhibits a k0 value of 2.1 × 10^-3 cm/s"
+    },
+    {
+      "fact_id": "FACT-DOC06-005",
+      "efu_ids": [
+        "EFU-DOC06-013"
+      ],
+      "statement": "With 2.0 ppm Bi3+ additive, the Cr(III)/Cr(II) electron transfer rate constant increases to 4.8 × 10^-3 cm/s, representing a 2.3-fold acceleration.",
+      "category": "kinetics_enhanced",
+      "difficulty": "L2",
+      "evidence_text": "The maximum rate constant of 4.8 × 10^-3 cm/s is obtained at 2.0 ppm Bi3+, representing a 2.3-fold acceleration of the electron transfer reaction relative to the baseline."
+    },
+    {
+      "fact_id": "FACT-DOC06-006",
+      "efu_ids": [
+        "EFU-DOC06-020"
+      ],
+      "statement": "The addition of 2.0 ppm Bi3+ increases the HER overpotential by 85 mV at 10 mA/cm2 compared to the baseline electrolyte.",
+      "category": "her_suppression",
+      "difficulty": "L2",
+      "evidence_text": "representing an 85 mV increase in HER overpotential compared to the baseline system."
+    },
+    {
+      "fact_id": "FACT-DOC06-007",
+      "efu_ids": [
+        "EFU-DOC06-021",
+        "EFU-DOC06-022"
+      ],
+      "statement": "At 80 mA/cm2, the parasitic current loss to HER decreases from 13% in the baseline cell to 3.5% with 2.0 ppm Bi3+, representing a 73% reduction in hydrogen evolution.",
+      "category": "her_quantification",
+      "difficulty": "L3",
+      "evidence_text": "Upon addition of 2.0 ppm Bi3+, the H2 evolution rate at 80 mA/cm2 decreases dramatically, reducing the parasitic current loss to 3.5%. This represents a 73% reduction in hydrogen evolution compared to the baseline system."
+    },
+    {
+      "fact_id": "FACT-DOC06-008",
+      "efu_ids": [
+        "EFU-DOC06-018"
+      ],
+      "statement": "In the baseline ICRFB, HER causes proton consumption, pH increase from 0.3 to 0.6, Cr(III) concentration decrease from 1.0 M to 0.82 M, and progressive state-of-charge imbalance, which is the primary driver of capacity fade.",
+      "category": "degradation_mechanism",
+      "difficulty": "L3",
+      "evidence_text": "In the baseline cell, the negative electrolyte shows a significant decrease in Cr(III) concentration from the initial 1.0 M to 0.82 M after 200 cycles, accompanied by a pH increase from 0.3 to 0.6 due to proton consumption in the HER... This hydrogen accumulation leads to progressive state-of-charge imbalance between the positive and negative half-cells, which is the primary driver of capacity fade in the baseline ICRFB."
+    },
+    {
+      "fact_id": "FACT-DOC06-009",
+      "efu_ids": [
+        "EFU-DOC06-019"
+      ],
+      "statement": "With 2.0 ppm Bi3+ additive, the cumulative hydrogen evolution over 200 cycles at 80 mA/cm2 is reduced to 4.2 mmol, representing a 77% reduction compared to the baseline cell's 18.6 mmol.",
+      "category": "degradation_mitigation",
+      "difficulty": "L3",
+      "evidence_text": "For the Bi3+-enhanced cell, the cumulative hydrogen evolution is reduced to 4.2 mmol, representing a 77% reduction in total parasitic hydrogen generation compared to the baseline."
+    },
+    {
+      "fact_id": "FACT-DOC06-010",
+      "efu_ids": [
+        "EFU-DOC06-026",
+        "EFU-DOC06-017"
+      ],
+      "statement": "The capacity fade rate of the Bi3+-enhanced ICRFB is 0.03% per cycle over 200 cycles at 80 mA/cm2, compared to 0.12% per cycle for the baseline cell, representing a fourfold improvement in cycling stability.",
+      "category": "cycling_stability",
+      "difficulty": "L2",
+      "evidence_text": "Long-term cycling over 200 cycles at 80 mA/cm2 reveals a capacity fade rate of only 0.03% per cycle with Bi3+ additive, versus 0.12% per cycle for the baseline, corresponding to a fourfold improvement in cycling stability."
+    },
+    {
+      "fact_id": "FACT-DOC06-011",
+      "efu_ids": [
+        "EFU-DOC06-023"
+      ],
+      "statement": "XPS and SEM analysis confirm that Bi3+ undergoes underpotential deposition on the graphite felt electrode, forming metallic bismuth (Bi 4f7/2 at 157.0 eV) with 35-45% surface coverage.",
+      "category": "mechanism_surface",
+      "difficulty": "L3",
+      "evidence_text": "X-ray photoelectron spectroscopy (XPS) measurements further confirm the presence of metallic bismuth (Bi 4f7/2 binding energy of 157.0 eV) on the electrode surface... SEM images reveal sub-micron bismuth crystallites distributed across the carbon fiber surfaces with an estimated surface coverage of 35-45%."
+    },
+    {
+      "fact_id": "FACT-DOC06-012",
+      "efu_ids": [
+        "EFU-DOC06-024"
+      ],
+      "statement": "The catalytic enhancement of Cr(III)/Cr(II) kinetics by Bi3+ is attributed to the formation of surface complexes or adsorbed bismuth adatoms that facilitate inner-sphere electron transfer via an alternative pathway with lower activation energy.",
+      "category": "mechanism_kinetics",
+      "difficulty": "L4",
+      "evidence_text": "The origin of the catalytic enhancement can be attributed to the formation of Cr(III)-Bi3+ surface complexes or adsorbed bismuth adatoms that facilitate the inner-sphere electron transfer pathway."
+    },
+    {
+      "fact_id": "FACT-DOC06-013",
+      "efu_ids": [
+        "EFU-DOC06-027"
+      ],
+      "statement": "The Bi3+ consumption rate during long-term cycling is 0.002 ppm per cycle, with the concentration decreasing from 2.0 ppm to 1.6 ppm over 200 cycles.",
+      "category": "additive_consumption",
+      "difficulty": "L2",
+      "evidence_text": "The initial Bi3+ concentration of 2.0 ppm gradually decreases to 1.6 ppm after 200 cycles, corresponding to an average consumption rate of 0.002 ppm per cycle."
+    },
+    {
+      "fact_id": "FACT-DOC06-014",
+      "efu_ids": [
+        "EFU-DOC06-016"
+      ],
+      "statement": "The Bi3+-enhanced ICRFB achieves performance metrics (94% CE, 87% EE at 80 mA/cm2) that approach those of VRFB systems, while offering substantially lower electrolyte cost.",
+      "category": "system_comparison",
+      "difficulty": "L3",
+      "evidence_text": "At 80 mA/cm2, the Bi3+-enhanced ICRFB achieves a CE of 94% and an EE of 87%, which approach the typical performance of VRFB systems operated under comparable conditions. Given the substantially lower electrolyte cost of the ICRFB chemistry"
+    },
+    {
+      "fact_id": "FACT-DOC06-015",
+      "efu_ids": [
+        "EFU-DOC06-007",
+        "EFU-DOC06-008"
+      ],
+      "statement": "At 40 mA/cm2 with 2.0 ppm Bi3+, the ICRFB achieves a CE of 96% and an EE of 90%, which are the highest efficiency values reported in this study.",
+      "category": "performance_best",
+      "difficulty": "L2",
+      "evidence_text": "At 40 mA/cm2, the baseline cell achieves a CE of 92% and an EE of 80%, while the Bi3+-containing cell delivers a CE of 96% and an EE of 90%."
+    },
+    {
+      "fact_id": "FACT-DOC06-016",
+      "efu_ids": [
+        "EFU-DOC06-010"
+      ],
+      "statement": "At 160 mA/cm2, the Bi3+-enhanced ICRFB maintains an EE of 72%, which is equivalent to the baseline cell's EE at only 80 mA/cm2, effectively doubling the accessible power density range.",
+      "category": "performance_power_density",
+      "difficulty": "L4",
+      "evidence_text": "The ability to maintain an EE of 72% at 160 mA/cm2 in the Bi3+-containing cell, equivalent to the baseline EE at only 80 mA/cm2, indicates that the additive effectively doubles the accessible power density range for comparable energy efficiency."
+    },
+    {
+      "fact_id": "FACT-DOC06-017",
+      "efu_ids": [
+        "EFU-DOC06-005"
+      ],
+      "statement": "The Cr(III)/Cr(II) reduction peak shifts from -0.58 V to -0.44 V vs. Ag/AgCl with 2.0 ppm Bi3+, and the peak current density increases by 59% from 3.2 to 5.1 mA/cm2.",
+      "category": "cv_characterization",
+      "difficulty": "L3",
+      "evidence_text": "In the absence of Bi3+, the Cr(III) reduction peak appears at -0.58 V vs. Ag/AgCl with a peak current density of 3.2 mA/cm2... The most pronounced catalytic effect is observed at 2.0 ppm Bi3+, where the reduction peak potential shifts to -0.44 V vs. Ag/AgCl and the peak current density reaches 5.1 mA/cm2, representing a 59% increase in peak current relative to the pristine electrolyte."
+    },
+    {
+      "fact_id": "FACT-DOC06-018",
+      "efu_ids": [
+        "EFU-DOC06-011"
+      ],
+      "statement": "The optimal Bi3+ concentration of 2.0 ppm balances maximum catalytic bismuth surface coverage against excessive site blocking that occurs at higher concentrations.",
+      "category": "design_optimization",
+      "difficulty": "L4",
+      "evidence_text": "The optimal Bi3+ concentration of 2.0 ppm identified in this work represents a compromise between maximizing surface coverage of catalytically active bismuth species and avoiding excessive site blocking at higher concentrations."
+    },
+    {
+      "fact_id": "FACT-DOC06-019",
+      "efu_ids": [
+        "EFU-DOC06-003",
+        "EFU-DOC06-004"
+      ],
+      "statement": "The voltage efficiency at 80 mA/cm2 increases from 83% (baseline) to 93% (with 2.0 ppm Bi3+), accounting for the majority of the EE improvement beyond the CE gain.",
+      "category": "voltage_efficiency",
+      "difficulty": "L3",
+      "evidence_text": "The voltage efficiency at 80 mA/cm2 increases from 83% for the baseline cell to 93% for the cell with 2.0 ppm Bi3+, accounting for the majority of the EE improvement beyond the CE gain."
+    },
+    {
+      "fact_id": "FACT-DOC06-020",
+      "efu_ids": [
+        "EFU-DOC06-025"
+      ],
+      "statement": "The Bi3+ additive functions as a dual-action modifier: (1) it forms a dynamic bismuth adlayer that suppresses HER by increasing the overpotential by 85 mV, and (2) it catalytically accelerates the Cr(III)/Cr(II) redox kinetics by a factor of 2.3 through an alternative electron transfer pathway.",
+      "category": "dual_action_mechanism",
+      "difficulty": "L5",
+      "evidence_text": "This study has established Bi3+ as a highly effective electrolyte additive for iron-chromium redox flow batteries, achieving simultaneous suppression of hydrogen evolution and acceleration of Cr(III)/Cr(II) redox kinetics through an underpotential deposition mechanism on the graphite felt electrode surface."
+    },
+    {
+      "fact_id": "FACT-DOC06-021",
+      "efu_ids": [
+        "EFU-DOC06-006"
+      ],
+      "statement": "At 160 mA/cm2, the baseline cell's coulombic efficiency drops to 72% with an EE of only 51%, demonstrating severe performance degradation at high current densities without additive.",
+      "category": "performance_high_current_baseline",
+      "difficulty": "L2",
+      "evidence_text": "At the highest current density of 160 mA/cm2, the baseline cell exhibits only 72% CE and 51% EE"
+    },
+    {
+      "fact_id": "FACT-DOC06-022",
+      "efu_ids": [
+        "EFU-DOC06-009"
+      ],
+      "statement": "At 120 mA/cm2, the Bi3+-enhanced ICRFB maintains 91% CE and 80% EE, compared to only 80% CE and 62% EE for the baseline cell at the same current density.",
+      "category": "performance_120_ma",
+      "difficulty": "L2",
+      "evidence_text": "As the current density is increased to 120 mA/cm2, the baseline cell performance degrades to 80% CE and 62% EE, whereas the Bi3+-containing cell maintains 91% CE and 80% EE."
+    },
+    {
+      "fact_id": "FACT-DOC06-023",
+      "efu_ids": [
+        "EFU-DOC06-026"
+      ],
+      "statement": "The residual capacity fade of 0.03% per cycle in the Bi3+-containing cell is attributed to minor membrane crossover and slow graphite felt electrode oxidation, rather than HER-driven electrolyte imbalance.",
+      "category": "residual_degradation",
+      "difficulty": "L4",
+      "evidence_text": "The residual capacity fade of 0.03% per cycle in the Bi3+-containing cell is attributed to a combination of minor membrane crossover of iron and chromium species and slow oxidative degradation of the graphite felt electrode, rather than HER-driven electrolyte imbalance."
+    },
+    {
+      "fact_id": "FACT-DOC06-024",
+      "efu_ids": [
+        "EFU-DOC06-013"
+      ],
+      "statement": "The Cr(III)/Cr(II) electron transfer rate constant shows a concentration-dependent trend with Bi3+: 2.7×10^-3 cm/s at 0.5 ppm, 3.4×10^-3 at 1.0 ppm, 4.2×10^-3 at 1.5 ppm, 4.8×10^-3 at 2.0 ppm, and 4.6×10^-3 at 3.0 ppm.",
+      "category": "kinetics_concentration_dependence",
+      "difficulty": "L3",
+      "evidence_text": "With the addition of 0.5 ppm Bi3+, k0 increases to 2.7 × 10^-3 cm/s... At 1.0 ppm Bi3+, the rate constant reaches 3.4 × 10^-3 cm/s, and at 1.5 ppm it further increases to 4.2 × 10^-3 cm/s. The maximum rate constant of 4.8 × 10^-3 cm/s is obtained at 2.0 ppm Bi3+... At 3.0 ppm Bi3+, the rate constant decreases slightly to 4.6 × 10^-3 cm/s"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "qa_id": "QA-DOC06-001",
+      "question": "What is the coulombic efficiency of the baseline ICRFB cell at 80 mA/cm2?",
+      "answer": "87%",
+      "difficulty": "L1",
+      "fact_ids": [
+        "FACT-DOC06-001"
+      ],
+      "evidence_text": "The baseline cell without Bi3+ additive achieves a CE of 87% and an EE of 72% at 80 mA/cm2."
+    },
+    {
+      "qa_id": "QA-DOC06-002",
+      "question": "What is the energy efficiency of the ICRFB cell with 2.0 ppm Bi3+ at 80 mA/cm2?",
+      "answer": "87%",
+      "difficulty": "L1",
+      "fact_ids": [
+        "FACT-DOC06-002"
+      ],
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+, where the cell delivers a CE of 94% and an EE of 87%"
+    },
+    {
+      "qa_id": "QA-DOC06-003",
+      "question": "What is the standard electron transfer rate constant for the Cr(III)/Cr(II) couple in the pristine electrolyte?",
+      "answer": "2.1 × 10^-3 cm/s",
+      "difficulty": "L1",
+      "fact_ids": [
+        "FACT-DOC06-004"
+      ],
+      "evidence_text": "The pristine electrolyte exhibits a k0 value of 2.1 × 10^-3 cm/s"
+    },
+    {
+      "qa_id": "QA-DOC06-004",
+      "question": "What is the optimal Bi3+ concentration for the ICRFB electrolyte?",
+      "answer": "2.0 ppm",
+      "difficulty": "L1",
+      "fact_ids": [
+        "FACT-DOC06-002"
+      ],
+      "evidence_text": "The optimal performance is achieved at 2.0 ppm Bi3+"
+    },
+    {
+      "qa_id": "QA-DOC06-005",
+      "question": "What is the capacity fade rate of the Bi3+-enhanced ICRFB over 200 cycles at 80 mA/cm2?",
+      "answer": "0.03% per cycle",
+      "difficulty": "L1",
+      "fact_ids": [
+        "FACT-DOC06-010"
+      ],
+      "evidence_text": "Long-term cycling over 200 cycles at 80 mA/cm2 reveals a capacity fade rate of only 0.03% per cycle with Bi3+ additive"
+    },
+    {
+      "qa_id": "QA-DOC06-006",
+      "question": "By how many percentage points does the energy efficiency improve when adding 2.0 ppm Bi3+ to the ICRFB at 80 mA/cm2?",
+      "answer": "15 percentage points (from 72% to 87%)",
+      "difficulty": "L2",
+      "fact_ids": [
+        "FACT-DOC06-003"
+      ],
+      "evidence_text": "representing improvements of 7 percentage points in CE and 15 percentage points in EE relative to the baseline."
+    },
+    {
+      "qa_id": "QA-DOC06-007",
+      "question": "What is the fold-increase in the Cr(III)/Cr(II) electron transfer rate constant with 2.0 ppm Bi3+ compared to the pristine electrolyte?",
+      "answer": "2.3-fold (from 2.1 × 10^-3 cm/s to 4.8 × 10^-3 cm/s)",
+      "difficulty": "L2",
+      "fact_ids": [
+        "FACT-DOC06-005"
+      ],
+      "evidence_text": "representing a 2.3-fold acceleration of the electron transfer reaction relative to the baseline."
+    },
+    {
+      "qa_id": "QA-DOC06-008",
+      "question": "How much does the HER overpotential increase with the addition of 2.0 ppm Bi3+ at 10 mA/cm2?",
+      "answer": "85 mV",
+      "difficulty": "L2",
+      "fact_ids": [
+        "FACT-DOC06-006"
+      ],
+      "evidence_text": "representing an 85 mV increase in HER overpotential compared to the baseline system."
+    },
+    {
+      "qa_id": "QA-DOC06-009",
+      "question": "What is the Bi3+ consumption rate during long-term cycling, and what does this imply about operational maintenance?",
+      "answer": "0.002 ppm per cycle; periodic replenishment at intervals of several hundred cycles would be sufficient",
+      "difficulty": "L2",
+      "fact_ids": [
+        "FACT-DOC06-013"
+      ],
+      "evidence_text": "The initial Bi3+ concentration of 2.0 ppm gradually decreases to 1.6 ppm after 200 cycles, corresponding to an average consumption rate of 0.002 ppm per cycle."
+    },
+    {
+      "qa_id": "QA-DOC06-010",
+      "question": "What is the percentage reduction in parasitic hydrogen evolution achieved with 2.0 ppm Bi3+ at 80 mA/cm2, and how does this translate to coulombic efficiency improvement?",
+      "answer": "73% reduction in hydrogen evolution, corresponding to an improvement in parasitic current loss from 13% to 3.5%, which contributes to the CE improvement from 87% to 94%.",
+      "difficulty": "L3",
+      "fact_ids": [
+        "FACT-DOC06-007",
+        "FACT-DOC06-003"
+      ],
+      "evidence_text": "Upon addition of 2.0 ppm Bi3+, the H2 evolution rate at 80 mA/cm2 decreases dramatically, reducing the parasitic current loss to 3.5%. This represents a 73% reduction in hydrogen evolution compared to the baseline system."
+    },
+    {
+      "qa_id": "QA-DOC06-011",
+      "question": "Describe the degradation chain in the baseline ICRFB and how Bi3+ additive interrupts this chain.",
+      "answer": "In the baseline ICRFB, HER consumes protons (pH increases from 0.3 to 0.6), depletes Cr(III) (1.0 M to 0.82 M), produces 18.6 mmol H2 over 200 cycles, and causes SOC imbalance leading to 0.12%/cycle fade. Bi3+ interrupts this by forming a bismuth adlayer that suppresses HER (77% reduction to 4.2 mmol H2), stabilizes pH and Cr(III) concentration, and reduces fade to 0.03%/cycle.",
+      "difficulty": "L3",
+      "fact_ids": [
+        "FACT-DOC06-008",
+        "FACT-DOC06-009",
+        "FACT-DOC06-010"
+      ],
+      "evidence_text": "This hydrogen accumulation leads to progressive state-of-charge imbalance between the positive and negative half-cells, which is the primary driver of capacity fade in the baseline ICRFB."
+    },
+    {
+      "qa_id": "QA-DOC06-012",
+      "question": "How does the Bi3+-enhanced ICRFB compare to the all-vanadium RFB in terms of efficiency and cost?",
+      "answer": "At 80 mA/cm2, the Bi3+-enhanced ICRFB achieves 94% CE and 87% EE, which approach typical VRFB performance levels. However, the ICRFB offers substantially lower electrolyte cost due to the abundance of iron and chromium compared to vanadium.",
+      "difficulty": "L3",
+      "fact_ids": [
+        "FACT-DOC06-014"
+      ],
+      "evidence_text": "At 80 mA/cm2, the Bi3+-enhanced ICRFB achieves a CE of 94% and an EE of 87%, which approach the typical performance of VRFB systems operated under comparable conditions. Given the substantially lower electrolyte cost of the ICRFB chemistry"
+    },
+    {
+      "qa_id": "QA-DOC06-013",
+      "question": "What evidence from surface analysis confirms the mechanism of Bi3+ action on the graphite felt electrode?",
+      "answer": "SEM reveals sub-micron bismuth crystallites with 35-45% surface coverage. XPS confirms metallic bismuth (Bi 4f7/2 binding energy of 157.0 eV), indicating Bi3+ is reduced to Bi(0) via underpotential deposition.",
+      "difficulty": "L3",
+      "fact_ids": [
+        "FACT-DOC06-011"
+      ],
+      "evidence_text": "X-ray photoelectron spectroscopy (XPS) measurements further confirm the presence of metallic bismuth (Bi 4f7/2 binding energy of 157.0 eV) on the electrode surface, indicating that Bi3+ is reduced to Bi(0) during the underpotential deposition process."
+    },
+    {
+      "qa_id": "QA-DOC06-014",
+      "question": "What is the voltage efficiency at 80 mA/cm2 for the baseline and Bi3+-enhanced cells, and how does it contribute to the overall EE improvement?",
+      "answer": "The voltage efficiency increases from 83% (baseline) to 93% (with 2.0 ppm Bi3+). This 10 percentage point VE improvement accounts for the majority of the 15 percentage point EE improvement beyond the 7 percentage point gain from CE.",
+      "difficulty": "L3",
+      "fact_ids": [
+        "FACT-DOC06-019",
+        "FACT-DOC06-003"
+      ],
+      "evidence_text": "The voltage efficiency at 80 mA/cm2 increases from 83% for the baseline cell to 93% for the cell with 2.0 ppm Bi3+, accounting for the majority of the EE improvement beyond the CE gain."
+    },
+    {
+      "qa_id": "QA-DOC06-015",
+      "question": "Why does the Bi3+ additive show slightly diminished performance at 3.0 ppm compared to 2.0 ppm, and what does this imply about the mechanism?",
+      "answer": "At 3.0 ppm, excess bismuth species partially occlude the carbon surface, reducing the electrochemically active surface area for Cr(III)/Cr(II) reaction. This is evidenced by: (1) the CV peak current decreasing from 5.1 to 4.9 mA/cm2, (2) the rate constant decreasing from 4.8 to 4.6 × 10^-3 cm/s, (3) the HER overpotential increase dropping from 85 to 82 mV, and (4) CE and EE marginally declining. This implies there is an optimal surface coverage and excess Bi blocks active sites.",
+      "difficulty": "L4",
+      "fact_ids": [
+        "FACT-DOC06-018",
+        "FACT-DOC06-024"
+      ],
+      "evidence_text": "The observation of slightly diminished performance at 3.0 ppm suggests that an excess of bismuth species may partially occlude the carbon surface, reducing the effective electrochemically active surface area available for the Cr(III)/Cr(II) reaction."
+    },
+    {
+      "qa_id": "QA-DOC06-016",
+      "question": "How does the Bi3+ additive strategy compare to Au NP and Pb2+ alternatives, and why might it be preferred for large-scale deployment?",
+      "answer": "At 80 mA/cm2, Au NP achieves 93% CE/85% EE, Pb2+ achieves 91% CE/82% EE, while Bi3+ (2.0 ppm) achieves 94% CE/87% EE. Bi3+ is preferred because: (1) it outperforms both alternatives, (2) requires lower concentration (2.0 ppm vs 5.0 ppm Pb2+), (3) avoids precious metals (Au), making it more cost-effective for large-scale ICRFB deployment.",
+      "difficulty": "L4",
+      "fact_ids": [
+        "FACT-DOC06-002"
+      ],
+      "evidence_text": "The Au NP-modified electrode achieved a CE of 93% and an EE of 85% at 80 mA/cm2... The Pb2+ additive system achieved 91% CE and 82% EE at the same current density... the Bi3+ strategy as a more cost-effective approach for large-scale deployment."
+    },
+    {
+      "qa_id": "QA-DOC06-017",
+      "question": "Explain how the Bi3+ additive effectively doubles the accessible power density range of the ICRFB.",
+      "answer": "The Bi3+-enhanced cell achieves 72% EE at 160 mA/cm2, which equals the baseline cell's EE at only 80 mA/cm2. This means the same energy efficiency can be obtained at twice the current density, halving the required electrode area for a given power rating and thus reducing stack cost. The enabling factors are: (1) HER suppression maintaining high CE (87% vs 72%) even at high current density, and (2) accelerated Cr kinetics reducing activation overpotential, which improves voltage efficiency.",
+      "difficulty": "L4",
+      "fact_ids": [
+        "FACT-DOC06-016"
+      ],
+      "evidence_text": "The ability to maintain an EE of 72% at 160 mA/cm2 in the Bi3+-containing cell, equivalent to the baseline EE at only 80 mA/cm2, indicates that the additive effectively doubles the accessible power density range for comparable energy efficiency."
+    },
+    {
+      "qa_id": "QA-DOC06-018",
+      "question": "What are the two distinct mechanisms by which Bi3+ improves ICRFB performance, and how do they complement each other?",
+      "answer": "(1) HER suppression: Bi3+ undergoes underpotential deposition to form a metallic bismuth adlayer with high hydrogen overpotential (+85 mV), which kinetically inhibits proton reduction, reducing parasitic losses from 13% to 3.5% and improving CE. (2) Cr kinetics enhancement: Adsorbed bismuth species facilitate inner-sphere electron transfer via an alternative pathway with lower activation energy, increasing k0 by 2.3× and reducing activation overpotential, which improves voltage efficiency from 83% to 93%. Together, they increase EE by 15 percentage points (72% to 87%).",
+      "difficulty": "L4",
+      "fact_ids": [
+        "FACT-DOC06-020"
+      ],
+      "evidence_text": "This study has established Bi3+ as a highly effective electrolyte additive for iron-chromium redox flow batteries, achieving simultaneous suppression of hydrogen evolution and acceleration of Cr(III)/Cr(II) redox kinetics through an underpotential deposition mechanism on the graphite felt electrode surface."
+    },
+    {
+      "qa_id": "QA-DOC06-019",
+      "question": "Why is the HER suppression mechanism of Bi3+ fundamentally different from and potentially superior to pH modification or organic complexing agent approaches?",
+      "answer": "Bi3+ operates through a purely kinetic mechanism (underpotential deposition forming high-overpotential bismuth adlayer) that selectively inhibits HER without affecting the Cr(III)/Cr(II) redox potential. In contrast: (1) pH modification inherently limits the thermodynamic driving force for chromium reduction since lower proton concentration shifts the HER equilibrium, reducing the available cell voltage; (2) organic complexing agents may alter the speciation and transport properties of multiple species non-selectively. Additionally, the Bi3+ adlayer is dynamically replenished from the electrolyte bulk, providing self-healing durability superior to static electrode coatings that may delaminate.",
+      "difficulty": "L5",
+      "fact_ids": [
+        "FACT-DOC06-012",
+        "FACT-DOC06-020"
+      ],
+      "evidence_text": "The HER suppression mechanism identified in this work differs fundamentally from approaches based on electrolyte pH modification or the use of organic complexing agents. Unlike pH adjustment, which inherently limits the thermodynamic driving force for chromium reduction, the Bi3+ additive operates through a purely kinetic mechanism that selectively inhibits HER without compromising the Cr(III)/Cr(II) redox potential."
+    },
+    {
+      "qa_id": "QA-DOC06-020",
+      "question": "How does the dynamic adsorption-desorption equilibrium of Bi3+ provide advantages over pre-deposited bismuth electrode coatings, and what are the implications for long-term operation?",
+      "answer": "The homogeneous Bi3+ additive provides three key advantages: (1) simplified cell assembly without additional fabrication steps; (2) uniform distribution throughout the porous electrode structure, ensuring complete coverage unlike surface-limited coatings; (3) self-healing capability through continuous replenishment of the bismuth adlayer during cycling. For long-term operation, the 0.002 ppm/cycle consumption rate implies that replenishment intervals of several hundred cycles would maintain near-optimal performance, adding minimal cost. The slow depletion is attributed to bismuth incorporation into the electrode and minor membrane crossover, both of which are gradual processes.",
+      "difficulty": "L5",
+      "fact_ids": [
+        "FACT-DOC06-013",
+        "FACT-DOC06-020"
+      ],
+      "evidence_text": "In contrast to solid-phase bismuth modification, the present work explores the direct addition of Bi3+ ions to the electrolyte as a homogeneous additive that can continuously replenish the bismuth adlayer on the electrode surface through dynamic adsorption-desorption equilibrium."
+    },
+    {
+      "qa_id": "QA-DOC06-021",
+      "question": "Despite the significant improvements demonstrated with Bi3+ additive, what fundamental limitations of the ICRFB chemistry remain unaddressed, and how do these compare to the VRFB benchmark?",
+      "answer": "Three key limitations remain: (1) Long-term cycling stability: the Bi3+-enhanced ICRFB achieves 200-cycle stability (0.03%/cycle fade) but still falls short of commercial VRFB systems that demonstrate multi-thousand-cycle stability. The residual fade is attributed to membrane crossover of iron/chromium species and graphite felt oxidative degradation. (2) Multi-thousand-cycle durability of the Bi adlayer under real-world variable load conditions is unproven. (3) The cell still requires periodic Bi3+ replenishment (0.002 ppm/cycle consumption), adding operational complexity absent in VRFB systems. While the cost-performance gap narrows significantly (94% CE, 87% EE approaching VRFB levels), the remaining durability gap and the need for active electrolyte management represent barriers to full commercial competitiveness with VRFB technology.",
+      "difficulty": "L6",
+      "fact_ids": [
+        "FACT-DOC06-010",
+        "FACT-DOC06-014",
+        "FACT-DOC06-023"
+      ],
+      "evidence_text": "However, it should be noted that the long-term cycling stability of the Bi3+-enhanced ICRFB, while substantially improved over the baseline, still falls short of the multi-thousand-cycle stability demonstrated by commercial VRFB systems, and further research is needed to address remaining degradation mechanisms including membrane crossover and electrode oxidation."
+    },
+    {
+      "qa_id": "QA-DOC06-022",
+      "question": "Considering the concentration-dependent performance trend showing an optimum at 2.0 ppm and slight decline at 3.0 ppm, how should the Bi3+ concentration be managed in a practical ICRFB system to maintain optimal performance over extended operation?",
+      "answer": "The management strategy should account for: (1) the optimal window (1.5-2.0 ppm) where performance peaks; (2) the gradual consumption rate of 0.002 ppm/cycle; (3) the asymmetric penalty of under-dosing vs over-dosing. Given that the decline from 2.0 to 3.0 ppm is modest (CE drops 0.2%, EE drops 0.8%), while performance at 1.5 ppm is still very good (93.5% CE, 85% EE), a practical approach would be to start at ~2.0 ppm and replenish when the concentration falls below ~1.5 ppm. For a 200-cycle interval between maintenance, the concentration would drop from 2.0 to 1.6 ppm, remaining within the high-performance window. The replenishment cost is minimal given the low concentration requirement and the abundance of bismuth. Periodic ICP-OES monitoring would enable predictive maintenance scheduling.",
+      "difficulty": "L6",
+      "fact_ids": [
+        "FACT-DOC06-013",
+        "FACT-DOC06-018",
+        "FACT-DOC06-024"
+      ],
+      "evidence_text": "The concentration dependence strongly suggests that the HER suppression and the chromium redox catalysis share a common mechanistic origin in the surface-adsorbed bismuth species."
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "sp_id": "SP-DOC06-001",
+      "type": "terminology_variation",
+      "category": "Bi3+ vs Bi additive",
+      "description": "Bi3+ (bismuth ion) should be distinguished from Bi (metallic bismuth) or generic 'bismuth additive'. The document specifies Bi3+ as the electrolyte additive that undergoes underpotential deposition to form metallic Bi(0) on the electrode.",
+      "variations": [
+        {
+          "text": "Bi3+",
+          "meaning": "bismuth(III) ion in electrolyte",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        },
+        {
+          "text": "bismuth ion",
+          "meaning": "Bi3+ in solution",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        },
+        {
+          "text": "metallic bismuth",
+          "meaning": "Bi(0) on electrode surface after UPD",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        },
+        {
+          "text": "bismuth adlayer",
+          "meaning": "deposited Bi(0) film on graphite felt",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        },
+        {
+          "text": "bismuth species",
+          "meaning": "generic, could be Bi3+ or Bi(0)",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        }
+      ],
+      "resolution_rule": "Bi3+ refers to the electrolyte additive; metallic bismuth/Bi(0) refers to the electrodeposited surface species; 'bismuth additive' is ambiguous and requires context"
+    },
+    {
+      "sp_id": "SP-DOC06-002",
+      "type": "terminology_variation",
+      "category": "Cr(III)/Cr(II) vs generic chromium ions",
+      "description": "The document discusses specific redox couples Cr(III)/Cr(II) on the negative electrode, distinct from generic 'chromium ions'. The kinetics and HER competition specifically involve the Cr(III)/Cr(II) couple.",
+      "variations": [
+        {
+          "text": "Cr(III)/Cr(II)",
+          "meaning": "the redox couple on negative electrode",
+          "canonical_id": "metric:cr_reaction_rate_constant"
+        },
+        {
+          "text": "Cr(III)/Cr(II) redox couple",
+          "meaning": "same as above",
+          "canonical_id": "metric:cr_reaction_rate_constant"
+        },
+        {
+          "text": "chromium redox kinetics",
+          "meaning": "refers to Cr(III)/Cr(II)",
+          "canonical_id": "metric:cr_reaction_rate_constant"
+        },
+        {
+          "text": "chromium reduction",
+          "meaning": "Cr(III) to Cr(II)",
+          "canonical_id": "metric:cr_reaction_rate_constant"
+        },
+        {
+          "text": "Cr(III) concentration",
+          "meaning": "concentration of Cr3+ species in negative electrolyte",
+          "canonical_id": "metric:cr_reaction_rate_constant"
+        }
+      ],
+      "resolution_rule": "Cr(III)/Cr(II) always refers to the negative electrode redox couple; chromium concentration changes refer specifically to Cr(III) species"
+    },
+    {
+      "sp_id": "SP-DOC06-003",
+      "type": "terminology_variation",
+      "category": "HER vs hydrogen evolution",
+      "description": "HER (hydrogen evolution reaction) and 'hydrogen evolution' or 'H2 evolution' are related but used in slightly different contexts. HER refers to the electrochemical reaction itself, while hydrogen evolution refers to the observable gas production.",
+      "variations": [
+        {
+          "text": "HER",
+          "meaning": "hydrogen evolution reaction (electrochemical process)",
+          "canonical_id": "degradation:her"
+        },
+        {
+          "text": "hydrogen evolution reaction",
+          "meaning": "same as HER",
+          "canonical_id": "degradation:her"
+        },
+        {
+          "text": "hydrogen evolution",
+          "meaning": "process of H2 generation, may include cumulative amount",
+          "canonical_id": "degradation:hydrogen_evolution"
+        },
+        {
+          "text": "H2 evolution",
+          "meaning": "same as hydrogen evolution",
+          "canonical_id": "degradation:hydrogen_evolution"
+        },
+        {
+          "text": "parasitic hydrogen evolution",
+          "meaning": "undesired HER competing with Cr reduction",
+          "canonical_id": "degradation:hydrogen_evolution"
+        }
+      ],
+      "resolution_rule": "HER refers to the electrochemical reaction mechanism; hydrogen evolution/H2 evolution refers to the overall process and measurable gas output; 'parasitic' emphasizes the unwanted competitive nature"
+    },
+    {
+      "sp_id": "SP-DOC06-004",
+      "type": "comparison_context",
+      "category": "ICRFB vs VRFB comparison",
+      "description": "The document compares Bi3+-enhanced ICRFB with all-vanadium RFB. The comparison focuses on efficiency metrics and cost, but the systems use different chemistries and electrode configurations.",
+      "variations": [
+        {
+          "text": "ICRFB",
+          "meaning": "iron-chromium redox flow battery",
+          "canonical_id": "system:icrfb"
+        },
+        {
+          "text": "VRFB",
+          "meaning": "all-vanadium redox flow battery",
+          "canonical_id": "system:vrfb"
+        },
+        {
+          "text": "vanadium redox flow battery",
+          "meaning": "same as VRFB",
+          "canonical_id": "system:vrfb"
+        }
+      ],
+      "resolution_rule": "When comparing ICRFB vs VRFB, note that both are RFBs but with different active species (Fe/Cr vs V). The comparison is valid for efficiency metrics but chemistry-specific parameters differ."
+    },
+    {
+      "sp_id": "SP-DOC06-005",
+      "type": "metric_binding",
+      "category": "CE vs EE in ICRFB context",
+      "description": "Coulombic efficiency (CE) and energy efficiency (EE) are distinct metrics that must be distinguished. CE reflects charge recovery (affected by HER parasitic losses), while EE reflects both CE and voltage efficiency (affected by both HER and kinetic overpotential).",
+      "variations": [
+        {
+          "text": "CE",
+          "meaning": "coulombic efficiency - ratio of discharge to charge capacity",
+          "canonical_id": "measurement:ce_94_percent"
+        },
+        {
+          "text": "coulombic efficiency",
+          "meaning": "same as CE",
+          "canonical_id": "measurement:ce_94_percent"
+        },
+        {
+          "text": "EE",
+          "meaning": "energy efficiency - ratio of discharge to charge energy",
+          "canonical_id": "measurement:ee_87_percent"
+        },
+        {
+          "text": "energy efficiency",
+          "meaning": "same as EE",
+          "canonical_id": "measurement:ee_87_percent"
+        },
+        {
+          "text": "voltage efficiency",
+          "meaning": "VE - ratio of discharge to charge voltage, component of EE",
+          "canonical_id": "metric:voltage_efficiency"
+        }
+      ],
+      "resolution_rule": "CE is primarily affected by HER (side reactions), EE = CE × VE and is affected by both HER and kinetic overpotential. When citing efficiency values, always bind to the specific condition (current density, Bi3+ concentration)."
+    },
+    {
+      "sp_id": "SP-DOC06-006",
+      "type": "numerical_binding",
+      "category": "current density binding",
+      "description": "All performance metrics must be bound to the specific current density at which they were measured. Values at different current densities are not interchangeable.",
+      "variations": [
+        {
+          "text": "40 mA/cm2",
+          "meaning": "low current density condition",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "text": "80 mA/cm2",
+          "meaning": "reference/mid current density condition",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "text": "120 mA/cm2",
+          "meaning": "high current density condition",
+          "canonical_id": "condition:current_density_120_ma_cm2"
+        },
+        {
+          "text": "160 mA/cm2",
+          "meaning": "maximum tested current density",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "resolution_rule": "CE and EE values are strongly current-density dependent. Always verify the condition before comparing values. Higher current densities generally decrease both CE and EE due to increased HER and overpotential."
+    },
+    {
+      "sp_id": "SP-DOC06-007",
+      "type": "terminology_variation",
+      "category": "Bi3+ concentration specification",
+      "description": "Bi3+ concentrations tested range from 0.5 to 3.0 ppm. The optimal is 2.0 ppm, but intermediate values show graded improvements.",
+      "variations": [
+        {
+          "text": "0.5 ppm Bi3+",
+          "canonical_id": "additive:bi3plus_0_5_ppm"
+        },
+        {
+          "text": "1.0 ppm Bi3+",
+          "canonical_id": "additive:bi3plus_1_0_ppm"
+        },
+        {
+          "text": "1.5 ppm Bi3+",
+          "canonical_id": "additive:bi3plus_1_5_ppm"
+        },
+        {
+          "text": "2.0 ppm Bi3+",
+          "canonical_id": "additive:bi3plus_2_0_ppm"
+        },
+        {
+          "text": "3.0 ppm Bi3+",
+          "canonical_id": "additive:bi3plus_3_0_ppm"
+        }
+      ],
+      "resolution_rule": "The optimal concentration is 2.0 ppm. Performance improves monotonically up to 2.0 ppm then slightly declines at 3.0 ppm. When referencing performance, always bind to the specific Bi3+ concentration."
+    },
+    {
+      "sp_id": "SP-DOC06-008",
+      "type": "mechanistic_distinguishing",
+      "category": "Underpotential deposition vs bulk deposition",
+      "description": "The mechanism involves underpotential deposition (UPD) of Bi3+ on graphite felt, which occurs at potentials more positive than bulk Bi deposition. This is distinct from bulk electrodeposition.",
+      "variations": [
+        {
+          "text": "underpotential deposition",
+          "meaning": "UPD of Bi3+ at potentials positive to Nernst potential for Bi/Bi3+"
+        },
+        {
+          "text": "UPD",
+          "meaning": "same as underpotential deposition"
+        },
+        {
+          "text": "bismuth adlayer",
+          "meaning": "sub-monolayer to few-monolayer Bi(0) on carbon surface"
+        },
+        {
+          "text": "dynamic adsorption-desorption equilibrium",
+          "meaning": "continuous exchange between dissolved Bi3+ and surface Bi(0)"
+        }
+      ],
+      "resolution_rule": "Underpotential deposition specifically refers to the formation of a metallic adlayer at potentials more positive than the bulk deposition potential, enabled by strong substrate-adsorbate interactions. This distinguishes the Bi3+ additive mechanism from bulk electroplating approaches."
+    }
+  ]
+}

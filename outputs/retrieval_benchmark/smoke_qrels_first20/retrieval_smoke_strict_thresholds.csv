@@ -1,0 +1,11 @@
+system,relevance_threshold,queries,precision@1,hit@5,mrr,gndcg@5
+final_no_rerank,grade>=2,20,0.35,0.65,0.4676,0.3948
+graph_final,grade>=2,20,0.15,0.25,0.189,0.1939
+hyper_base,grade>=2,20,0.35,0.75,0.51,0.4416
+hyper_final,grade>=2,20,0.15,0.45,0.262,0.2185
+naive_chunks,grade>=2,20,0.9,1.0,0.95,0.8447
+final_no_rerank,grade>=3,20,0.1,0.1,0.1,0.1
+graph_final,grade>=3,20,0.0,0.0,0.0,0.0
+hyper_base,grade>=3,20,0.15,0.15,0.15,0.146
+hyper_final,grade>=3,20,0.0,0.1,0.0292,0.0465
+naive_chunks,grade>=3,20,0.7,1.0,0.8417,0.7834

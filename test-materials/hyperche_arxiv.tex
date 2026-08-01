@@ -1,0 +1,648 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{url}
+\usepackage{xcolor}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usepackage[numbers,sort&compress]{natbib}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    urlcolor=magenta,
+}
+
+\title{Hypergraph Knowledge Modeling and Enhanced Retrieval for Higher-Order Relational Expression in Chemical Engineering Knowledge}
+\author{
+  Qiuyu Zhang,
+  Chunming Xu,
+  Tianhang Zhou$^*$
+  \\
+  \textit{College of Future Energy, China University of Petroleum--Beijing, Beijing 102249, China}
+  \\
+  $^*$Corresponding author: \texttt{zhouth@cup.edu.cn}
+}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+The pace of scholarly publication in chemical engineering continues to accelerate, with subfields such as redox flow batteries and PFAS degradation each accumulating substantial experimental data and process know-how. Yet knowledge barriers between different reaction systems, material platforms, and operating regimes remain significant. Transforming distributed, unstructured experimental findings from the literature into computable, retrievable structured knowledge has become a foundational challenge for chemical engineering knowledge engineering. The resulting experimental conclusions are not determined by any single entity or condition in isolation; rather, they emerge from the joint constraints of material structure, transport processes, reaction pathways, operating parameters, and evaluation metrics. Such knowledge is intrinsically closer to ``multi-variable co-asserted experimental fact units'' than to a collection of arbitrarily decomposable binary relations. Hypergraph theory offers a natural formal framework for transcending these limitations. Unlike ordinary graphs, which can encode only pairwise relationships, hypergraphs allow hyperedges to connect any number of vertices, thereby directly representing beyond-pairwise association patterns. This paper presents Hyper-ChE, a domain-adapted hypergraph-enhanced retrieval framework for chemical engineering literature that replaces traditional dyadic graph structures with hypergraphs for knowledge storage and retrieval. Two case studies---redox flow batteries and PFAS degradation---demonstrate the advantage of hypergraph modeling in preserving condition-combination integrity. The results show that the proportion of higher-order relations in both chemically distinct subdomains is approximately 21\%, confirming that multi-variable coupling is a universal structural feature of chemical engineering knowledge.
+\end{abstract}
+
+\section{Introduction}
+\label{sec:introduction}
+
+The volume of scholarly literature in chemical engineering has grown at an unprecedented rate. Subfields ranging from redox flow batteries and PFAS degradation to electrocatalysis and reaction engineering have each amassed large corpora of experimental data, process parameters, and materials know-how. Despite this abundance, significant knowledge barriers persist between different reaction systems, material platforms, and operating regimes. Researchers working on specific problems often struggle to efficiently leverage cross-domain findings that could inform their own experimental designs or accelerate materials discovery.
+
+The root of the difficulty lies in the structure of the knowledge itself. Experimental conclusions in chemical engineering are not determined by any single entity or operating condition in isolation. Rather, they are products of the joint constraints among material structure, transport phenomena, reaction pathways, operating parameters, and performance metrics. Knowledge in this domain is therefore better understood as a ``multi-variable co-asserted experimental fact unit'' than as an arbitrary collection of binary relations. In redox flow batteries, for example, the synergistic optimization of electrolyte composition and electrode material is essential for achieving high energy efficiency; in PFAS degradation, the structural matching of catalyst morphology with reaction conditions governs defluorination performance. Both scenarios exemplify a relational structure that transcends pairwise decomposition.
+
+Conventional information retrieval methods---whether keyword matching or dense vector similarity search---can locate semantically similar text fragments, but they offer no guarantee that the complete set of variables involved in a single experimental fact will be recalled together. When a query requires preserving the intrinsic consistency of a condition combination, traditional retrieval returns fragmented snippets that fail to reconstruct the full experimental context. The retrieval result may contain individual facts (a material name, a temperature value, an efficiency number) without the relational fabric that binds them into a coherent experimental observation.
+
+Hypergraph theory provides a natural formal framework for overcoming these limitations. In an ordinary graph, edges connect exactly two vertices, restricting the representation to pairwise relationships. In a hypergraph $\mathcal{H}=(\mathcal{V},\mathcal{E})$, a hyperedge $e \in \mathcal{E}$ can connect any number of vertices, enabling direct representation of higher-order (beyond-pairwise) relational patterns~[11]. In chemical engineering, a complete reaction process typically involves the simultaneous interplay of multiple reactants, catalysts, and process conditions; such many-body associations lose their intrinsic semantics when forcibly decomposed into binary edges.
+
+The structural advantage of hypergraphs is most evident when the knowledge to be encoded involves joint constraints among three or more variables. Because a single hyperedge can connect an arbitrary number of vertices, it provides a native mathematical expression for higher-order relations. Feng et al.~[11] proposed the Hyper-RAG framework, which replaces dyadic graphs with hypergraphs for knowledge modeling and retrieval, demonstrating substantial potential for handling complex relational structures. Building on this foundation, subsequent work has generalized the approach to broader knowledge-intensive domains~[13,15].
+
+In this paper, we develop Hyper-ChE, a domain-adapted extension of the hypergraph retrieval paradigm specifically tailored to chemical engineering literature. Hyper-ChE is validated through two independent case studies---redox flow batteries and PFAS degradation---that together demonstrate the effectiveness of hypergraph modeling for expressing and retrieving chemical engineering knowledge.
+
+This work makes three principal contributions. \textbf{First}, we identify the intrinsically multi-variable coupled structure of chemical engineering experimental knowledge and argue that this structure is naturally amenable to hypergraph representation. \textbf{Second}, we construct Hyper-ChE, a domain-adapted hypergraph-enhanced retrieval framework that captures the multi-variable co-constraint patterns characteristic of chemical engineering literature. \textbf{Third}, through validation across two chemically distinct subdomains, we demonstrate that higher-order relational structures are a universal feature of chemical engineering knowledge rather than an artifact of any particular domain.
+
+The remainder of this paper is organized as follows. Section~\ref{sec:background} reviews the multi-scale coupling characteristics of chemical engineering knowledge, the expressive power of hypergraphs, and the retrieval challenges that motivate this work. Section~\ref{sec:framework} presents the Hyper-ChE framework, including its ontology design, extraction pipeline, hypergraph construction, and dual-path retrieval mechanism. Section~\ref{sec:case1} reports the first case study on redox flow batteries, and Section~\ref{sec:case2} reports the second case study on PFAS removal and degradation. Section~\ref{sec:discussion} discusses the advantages, limitations, and applicability boundaries of the proposed approach. Section~\ref{sec:conclusion} concludes the paper and outlines directions for future work.
+
+
+\section{Background and Motivation}
+\label{sec:background}
+
+\subsection{Multi-Scale Coupling and Higher-Order Relations in Chemical Engineering Knowledge}
+\label{subsec:multiscale}
+
+Experimental knowledge in chemical engineering exhibits a characteristic multi-level structure. At the molecular and materials scale, intrinsic attributes such as composition, crystal structure, functional groups, defect states, active sites, and electronic structure determine the fundamental behavior of a material. At the transport-and-reaction scale, momentum transfer, heat transfer, mass transfer, and chemical reaction processes are tightly coupled. At the operating-condition scale, external constraints such as temperature, pressure, pH, concentration, flow rate, current density, and residence time collectively define the boundary conditions of an experiment. These variables do not exist in isolation: the performance of a catalytic material under specific reaction conditions depends simultaneously on the local structure of its active sites, the rate at which reactants reach those sites, and the system temperature and pressure, among other factors. The resulting experimental conclusions carry an intrinsic higher-order relational signature. They are not simple binary causations of the form ``material A produces result B,'' but rather multi-variable joint assertions of the form ``in system S, material M under condition C produces performance P through mechanism R,'' involving five or more mutually constraining elements.
+
+This structural observation has important implications for knowledge representation. If an experimental fact involves, say, a catalyst material, a target reactant, three operating parameters, two performance metrics, and a mechanistic pathway, then the total number of variables exceeds seven. Representing this fact faithfully requires a data structure that can associate all seven variables within a single relational unit. Ordinary graphs, which decompose every relation into binary edges, scatter the components of this fact across multiple disconnected edges and lose the ``joint assertion'' semantics that bind them together.
+
+\subsection{Hypergraphs and Their Expressive Power for Higher-Order Relations}
+\label{subsec:hypergraph}
+
+A hypergraph is a generalization of an ordinary graph. Formally, a hypergraph is denoted $\mathcal{H} = (\mathcal{V}, \mathcal{E})$, where $\mathcal{V}$ is the set of vertices and $\mathcal{E}$ is the set of hyperedges; each hyperedge $e \in \mathcal{E}$ is a non-empty subset of $\mathcal{V}$. When $|e| = 2$, the hyperedge reduces to an ordinary graph edge; when $|e| \geq 3$, the hyperedge expresses a higher-order relation. This simple generalization dramatically expands the range of representable relational structures.
+
+Consider an experimental fact: active species A on electrode B under condition C achieves efficiency D. If modeled with an ordinary graph, this four-way information must be decomposed into binary fragments such as A--B, B--C, and C--D. The holistic semantics that ``A, B, C, and D belong to the same experiment'' are lost in the process. A hypergraph, by contrast, captures this fact with a single 4th-order hyperedge containing all four vertices, preserving the complete experimental context without decomposition. Recent advances in hypergraph neural networks have further demonstrated the computational benefits of this representation for learning tasks on higher-order relational data~[17].
+
+The distinction between binary and higher-order representations is not merely formal---it has direct consequences for retrieval quality. When a query asks for the joint effect of multiple conditions on a performance metric, a binary graph can only retrieve fragments of the answer, leaving the reconstruction problem to the downstream language model. A hypergraph, by storing the complete variable bundle as a single hyperedge, retrieves all relevant variables in one operation. This structural completeness is the foundation of the retrieval advantages demonstrated in our case studies.
+
+\subsection{Retrieval Challenges in Chemical Engineering Literature}
+\label{subsec:challenges}
+
+Retrieval-augmented generation (RAG) systems augment large language models with external knowledge retrieved from a structured or unstructured corpus~[6,7]. In the context of chemical engineering, the knowledge base can be represented as a hypergraph in which vertices correspond to entities (materials, conditions, metrics) and hyperedges correspond to experimental fact units. During retrieval, the query propagates not only along ordinary edges but also along hyperedges: matching any entity within a hyperedge triggers the retrieval of all entities contained in that hyperedge. This one-hop diffusion mechanism recovers the complete experimental context rather than fragmented binary fact snippets.
+
+The following five retrieval challenges motivate the adoption of hypergraph representations for chemical engineering literature:
+
+\begin{enumerate}
+\item \textbf{Multi-condition combination queries.} Queries that require simultaneous matching of multiple experimental conditions (e.g., ``which membrane--electrode combinations achieve $>$80\% energy efficiency at current densities $\geq$100~mA/cm$^2$'') cannot be answered reliably from binary edge fragments because the joint constraint is destroyed by pairwise decomposition.
+\item \textbf{Cross-material comparison.} Queries that demand lateral comparison across different material systems (e.g., ``compare Nafion, PBI, and SPEEK membranes in terms of conductivity and crossover rate'') require the retrieval system to simultaneously access multiple disjoint relation clusters; hyperedges provide semantic bridges between these clusters.
+\item \textbf{Mechanistic evidence chains.} Queries that ask for mechanistic explanations (e.g., ``what evidence supports the direct electron transfer pathway in piezoelectric PFAS degradation?'') require multiple heterogeneous evidence types (EPR spectra, quenching experiments, DFT calculations, LC-MS intermediates) to be jointly evaluated; higher-order hyperedges naturally encode the epistemic structure of ``multiple evidences converging on a single conclusion.''
+\item \textbf{Strategy recommendation.} Queries that request recommendations for experimental design or technology selection require cross-system inductive reasoning over multiple technical pathways; hyperedges preserve the ``objective--constraint--solution--expectation'' semantic chain.
+\item \textbf{Context completeness.} Perhaps most fundamentally, any query that depends on the premise that ``multiple conditions jointly determine an experimental outcome'' requires the retrieval system to preserve the multi-variable co-occurrence structure; this is precisely what hyperedges provide and what binary graphs destroy.
+\end{enumerate}
+
+These challenges are compounded by well-known limitations of large language models, including hallucination of technical facts and inability to maintain consistency across long context windows~[9,10]. Structured knowledge representations---and hypergraphs in particular---offer a principled mechanism for grounding language model outputs in experimentally verified, relationally complete evidence.
+
+
+% Section 3: The Hyper-ChE Framework
+% arXiv preprint - Methods section
+
+\section{The Hyper-ChE Framework}
+\label{sec:framework}
+
+\subsection{Framework Overview}
+\label{subsec:overview}
+
+Hyper-ChE adapts the general Hyper-RAG architecture [11] to the specific requirements of chemical engineering literature. The base framework [11] demonstrated that hypergraph structures yield significant retrieval quality improvements over conventional dyadic graphs by preserving higher-order relational context during knowledge retrieval. Hyper-ChE extends this capability through a domain-adaptive ontology that captures the multi-variable co-constraint structure characteristic of experimental facts in chemical engineering literature. The resulting pipeline comprises four stages: (1) document parsing and text chunking; (2) structured information extraction via large language models; (3) hypergraph construction and multi-modal indexing; and (4) dual-path retrieval and answer generation. Figure~\ref{fig:framework} provides an end-to-end schematic of the pipeline.
+
+\subsection{Experimental Fact Unit (EFU) Modeling}
+\label{subsec:efu}
+
+The fundamental organizational primitive in chemical engineering knowledge is not an isolated entity or a binary relation, but rather the \textbf{Experimental Fact Unit (EFU)}: a co-occurrence bundle of variables that jointly constitute a single experimental observation. Formally, an EFU is represented as a hyperedge $e = \{v_1, v_2, \ldots, v_n\}$ where each $v_i \in \mathcal{V}$ is a typed entity vertex participating in the same experimental context. The constituent variables of an EFU typically span four categories: system or material, operating condition, performance metric, and mechanistic evidence.
+
+The semantic core of the EFU abstraction is the preservation of \emph{co-occurrence integrity}: the guarantee that all enclosed variables are mutually contextualized within a single experimental setting. For instance, an operation hyperedge may simultaneously connect a battery system, a membrane material, an electrode, a current density value, and an efficiency metric, thereby expressing the composite fact ``system--material--condition--metric'' as an indivisible unit rather than fragmented fragments.
+
+Modeling such an EFU with an ordinary graph requires decomposing the hyperedge into multiple binary edges (e.g., system--membrane, membrane--electrode, electrode--current density, current density--efficiency). This decomposition induces three interconnected problems. First, information pertaining to the same experiment is scattered across disconnected locations in the graph. Second, the semantics of ``multiple conditions jointly producing a result'' are lost when the hyperedge is split into independent dyadic relations. Third, retrieval systems may recall only a subset of the binary edges, making it impossible to reconstruct the complete experimental context at answer-generation time. Hypergraph EFU modeling circumvents all three deficiencies: a single hyperedge preserves the full experimental fact, and one-hop diffusion along that hyperedge retrieves all associated variables simultaneously. This completeness ensures that the language model receives the full material--condition--metric--mechanism context in a single context window, grounding its reasoning in experimentally coherent evidence.
+
+\subsection{Domain-Adaptive Ontology Design}
+\label{subsec:ontology}
+
+Structured extraction in Hyper-ChE is governed by a domain-adaptive ontology that defines permissible entity types and relation/hyperedge types for each chemical engineering subdomain. The ontology is modular: only the type taxonomy changes when the framework is applied to a new subdomain, while the underlying extraction and retrieval machinery remains unchanged.
+
+For flow battery literature, we employ seven entity types: \textbf{SYSTEM} (system architecture), \textbf{ACTIVE\_SPECIES} (redox-active electrolyte species), \textbf{ELECTRODE} (electrode substrate and modification), \textbf{MEMBRANE} (ion-exchange or porous separator), \textbf{CONDITION} (operating parameters), \textbf{METRIC} (quantitative performance indicators), and \textbf{DEGRADATION} (degradation mechanism type). For PFAS degradation literature, the ontology expands to ten entity types that additionally include \textbf{PFAS\_TARGET}, \textbf{CATALYST\_MATERIAL}, \textbf{MATERIAL\_FEATURE}, \textbf{MECHANISM\_EVIDENCE}, \textbf{PROCESS\_STRATEGY}, \textbf{PIEZO\_PROPERTY}, and \textbf{WATER\_MATRIX}. Table~\ref{tab:entity-types} lists the common entity types shared across chemical engineering subdomains.
+
+\begin{table}[htbp]
+\centering
+\caption{Common entity types in the Hyper-ChE domain ontology for chemical engineering literature.}
+\label{tab:entity-types}
+\begin{tabular}{@{}p{2.8cm}p{2.2cm}p{7.8cm}@{}}
+\toprule
+\textbf{Entity Type} & \textbf{Category} & \textbf{Description} \\
+\midrule
+ACTIVE\_SPECIES & Active material & Redox-active species in the electrolyte, e.g., the V$^{2+}$/V$^{3+}$ redox couple in all-vanadium flow batteries \\
+METRIC & Performance indicator & Quantitative evaluation metrics such as energy efficiency, voltage efficiency, capacity fade rate, and cycle life \\
+CONDITION & Operating parameter & Experimental operating parameters including temperature, current density, flow rate, and charge/discharge protocol \\
+SYSTEM & System architecture & Flow battery system configuration, e.g., all-vanadium flow battery, zinc--bromine flow battery \\
+ELECTRODE & Electrode material & Electrode substrate and surface modification, e.g., graphite felt, carbon felt, nitrogen-doped carbon \\
+DEGRADATION & Degradation mechanism & Performance degradation mechanism types such as active species crossover and electrode oxidative degradation \\
+MEMBRANE & Membrane material & Ion-exchange membranes and porous separators, e.g., Nafion, porous ion-conductive membranes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Relation and hyperedge types are likewise defined in a subdomain-specific manner. For flow battery literature, we define four core relation/hyperedge types. The \textbf{OPERATION} type captures experimental operational relationships among battery systems, active species, operating conditions, and performance metrics. The \textbf{COMPOSITION} type represents material and component composition structures. These relation types can instantiate as either binary edges (when exactly two entities participate) or higher-order hyperedges (when three or more entities co-occur in the same experimental fact), depending on the number of entities involved in the particular observation.
+
+\subsection{Structured Extraction Pipeline}
+\label{subsec:extraction}
+
+The structured extraction stage transforms natural language text from chemical engineering literature into typed entity nodes and relation/hyperedge structures through a two-pass large language model invocation strategy. Each text chunk undergoes sequential processing: the first pass extracts all entities and assigns them to predefined types from the domain ontology; the second pass receives both the original text and the extracted entity list as input, and produces relation and hyperedge predictions conditioned on the available entities.
+
+Both passes generate output in a constrained JSON schema. The entity pass emits a list of objects, each containing an entity identifier, type label, canonical name, and optional attribute dictionary. The relation pass emits a list of relation/hyperedge objects, each specifying a relation type and an ordered list of entity identifiers that participate in the relationship. The schema enforces strict type checking: any entity or relation that cannot be confidently classified is assigned the \texttt{UNKNOWN} type rather than guessed. The \textbf{UNKNOWN rate}---the fraction of extracted items marked as unknown---serves as an internal quality indicator for the extraction pass.
+
+The two-pass design is deliberate. Separating entity detection from relation construction prevents the model from hallucinating entities solely to fabricate relations, and allows the second pass to perform cross-entity reasoning using the explicitly enumerated entity inventory. For chemical engineering text, where technical terms are polysemous and domain boundaries are sharp, this separation improves type accuracy and reduces false-positive relation predictions.
+
+\subsection{Hypergraph Construction and Indexing}
+\label{subsec:construction}
+
+Extracted entities populate the vertex set $\mathcal{V}$ of the hypergraph $\mathcal{H} = (\mathcal{V}, \mathcal{E})$, while extracted relations and hyperedges populate the hyperedge set $\mathcal{E}$. Binary relations (arity two) and higher-order hyperedges (arity $\geq$ 3) are stored uniformly in $\mathcal{E}$, distinguished only by the cardinality of their vertex set. This unified representation simplifies query processing and eliminates the need for separate data structures handling edges and hyperedges differently.
+
+Alongside the structural hypergraph, Hyper-ChE constructs three vector indexes. (1) An \textbf{entity index} stores dense vector representations of all vertices, enabling semantic similarity search over entity concepts. (2) A \textbf{hyperedge index} stores vector representations of hyperedge descriptions, supporting direct retrieval of experimental facts by semantic content. (3) A \textbf{text-chunk index} preserves the original document chunks as retrivable units, providing fallback context when the hypergraph coverage is incomplete. All three indexes are co-located in the same vector database, allowing hybrid queries that combine structural traversal with semantic similarity in a single retrieval operation.
+
+\subsection{Dual-Path Retrieval Mechanism}
+\label{subsec:retrieval}
+
+At retrieval time, Hyper-ChE processes a user query through a domain-templated prompt that extracts domain-specific keywords. These keywords then drive two parallel retrieval paths, as illustrated in Figure~\ref{fig:retrieval}.
+
+\textbf{Entity path.} The system performs semantic keyword matching against the entity index to recall relevant vertices. Each retrieved vertex seeds a one-hop diffusion process along its incident hyperedges, collecting all neighboring vertices that participate in the same experimental facts. This diffusion effectively reconstructs the complete EFU context surrounding the matched entity, ensuring that co-occurring materials, conditions, and metrics are included in the retrieved context.
+
+\textbf{Relation path.} The keywords are matched directly against the hyperedge index to retrieve relevant EFUs. Each retrieved hyperedge is then unfolded to expose all constituent entity vertices. This path is particularly effective for queries that specify multiple conditions or cross-material comparisons, because it retrieves the hyperedge as a pre-assembled bundle rather than relying on the retrieval system to discover the connection among its members.
+
+Results from both paths are deduplicated, scored by a combination of semantic relevance and structural centrality, and fused into a unified context window. The fused context is concatenated with the original query and fed to a language model for answer generation. The dual-path design guarantees that retrieval can recover complete experimental contexts from either the entity side (via one-hop diffusion) or the relation side (via hyperedge retrieval), maintaining high recall completeness under complex multi-condition and cross-material queries.
+
+\subsection{Comparison with Baseline Methods}
+\label{subsec:comparison}
+
+Hyper-ChE differs from existing retrieval-augmented generation systems along three dimensions. First, traditional RAG systems retrieve text chunks exclusively by embedding similarity. This approach loses the structured associations among entities and often yields incomplete context for complex experimental facts that span multiple variables. Second, Graph-RAG systems represent knowledge as binary graphs. While this introduces structure, it fragments higher-order relations into independent dyadic edges, making it impossible to preserve the integrity of multi-variable co-constraint experimental facts. Hyper-ChE addresses both limitations through EFU hyperedges that maintain experimental context as indivisible units and a dual-path retrieval mechanism that recovers this context from either entities or relations. Third, the modular ontology design enables rapid deployment across chemical engineering subdomains: only the type taxonomy requires replacement, while the extraction pipeline, hypergraph engine, and retrieval logic remain unchanged.
+
+
+\section{Case Study I: Redox Flow Battery}
+\label{sec:case1}
+
+This section presents the first domain instantiation of the Hyper-ChE framework introduced in Section~\ref{sec:framework}. We select redox flow batteries (RFBs) as the target domain because RFB research exhibits pronounced \emph{multi-variable combination-driven} characteristics: battery performance metrics (coulombic efficiency, voltage efficiency, energy efficiency) depend on the synergistic interplay of electrolyte composition, electrode material, membrane material, current density, and temperature. No single parameter carries meaningful interpretive value outside its specific system--condition context, making this domain an ideal testbed for evaluating whether hypergraph structures can preserve condition--result integrity more effectively than pairwise decomposition.
+
+\subsection{Domain Setup and Knowledge Base Statistics}
+\label{subsec:flow_battery_setup}
+
+The experimental corpus comprises 50 academic papers covering six mainstream RFB technology routes: all-vanadium redox flow batteries (VRFB), iron--chromium redox flow batteries (ICRFB), zinc-based flow batteries, soluble lead--acid flow batteries, organic flow batteries, and polysulfide--bromine flow batteries. Following text parsing and chunking preprocessing, 664 text chunks were extracted as basic units for knowledge extraction. Table~\ref{tab:flow_battery_kb} summarizes the knowledge base construction statistics.
+
+\begin{table}[htbp]
+\centering
+\caption{Knowledge base construction statistics for the redox flow battery domain.}
+\label{tab:flow_battery_kb}
+\begin{tabular}{@{}llp{6.5cm}@{}}
+\toprule
+\textbf{Item} & \textbf{Count} & \textbf{Description} \\
+\midrule
+Documents & 50 & Redox flow battery domain literature \\
+Text chunks & 664 & Basic extraction units after parsing and segmentation \\
+Entity nodes & 9,970 & Active species, performance metrics, conditions, systems, electrodes, membranes, etc. \\
+Total relations/hyperedges & 12,987 & Including low-order relations, high-order hyperedges, and a small number of single-node/self-relations \\
+Low-order relations & 10,262 & Binary relations with cardinality $=2$ \\
+High-order relations/hyperedges & 2,715 & Ternary and higher-order relations with cardinality $\geq 3$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The knowledge organization in RFB literature centers not on abstract ``material'' concepts but on \emph{experimental fact units} spanning system--active species/electrolyte--membrane/electrode--operating conditions--performance metrics--degradation mechanisms. This organizational pattern creates extensive higher-order relational structure: the 2,715 high-order hyperedges (20.9\% of all relations) connect up to 20 entities within a single experimental fact, encoding multi-variable contexts that resist faithful representation through pairwise edges alone.
+
+Both retrieval systems share the identical entity node set, yet differ fundamentally in relational representation. Hyper-ChE retains the capability of a single hyperedge to associate multiple entities simultaneously, whereas Graph-RAG projects all higher-order relations onto sets of binary edges. This structural divergence is the sole experimental variable separating the two systems and will drive the retrieval quality differentiation documented below.
+
+It should be noted that this case study relies exclusively on the 50 documents with completed embeddings. Consequently, the evaluation results reported herein constitute a \emph{subset validation} of how relational structure affects retrieval augmentation, rather than a comprehensive review of the RFB domain.
+
+\subsection{Problem Design and Difficulty Stratification}
+\label{subsec:flow_battery_problems}
+
+To enable systematic assessment across progressively complex retrieval demands, we designed 12 representative questions (Q1--Q12) spanning six cognitive difficulty levels. The questions were formulated in natural language without explicit mention of ``hypergraph'' to ensure unbiased retrieval conditions for both systems. Table~\ref{tab:difficulty_levels} presents the stratification framework.
+
+\begin{table}[htbp]
+\centering
+\caption{Problem difficulty stratification for the redox flow battery case study.}
+\label{tab:difficulty_levels}
+\begin{tabular}{@{}clclp{4.5cm}@{}}
+\toprule
+\textbf{Level} & \textbf{Problem Type} & \textbf{Questions} & \textbf{Core Cognitive Demand} \\
+\midrule
+Level 1 & Corpus coverage overview & Q1 & Single-dimension enumeration \\
+Level 2 & Local relation retrieval & Q2, Q3 & Binary relation identification \\
+Level 3 & Higher-order condition combination & Q4, Q5, Q6 & Multi-variable $\times$ performance matching \\
+Level 4 & Multi-material cross comparison & Q7, Q8 & Multi-entity $\times$ multi-metric matrix comparison \\
+Level 5 & Mechanistic explanation chain & Q9, Q10 & Causal chain propagation and attribution \\
+Level 6 & Strategy recommendation & Q11, Q12 & Cross-system induction and knowledge transfer \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The stratification logic reflects a progression from fact retrieval to conditional reasoning and cross-domain synthesis. Level~1--2 problems depend primarily on single-point or binary information, which binary graphs can still partially accommodate. Level~3--6 problems, however, inherently demand that the retrieval system recall multiple \emph{co-constrained variables as an integrated unit}---a requirement that maps directly to the hypergraph's structural advantage in multi-ary co-occurrence preservation.
+
+\subsection{Quantitative Retrieval Comparison}
+\label{subsec:flow_battery_quantitative}
+
+Table~\ref{tab:retrieval_comparison} reports the retrieval counts for all 12 questions across both systems.
+
+\begin{table}[htbp]
+\centering
+\caption{Retrieval count comparison between Hyper-ChE and Graph-RAG across 12 questions in the redox flow battery case study.}
+\label{tab:retrieval_comparison}
+\begin{tabular}{@{}llcccp{4.8cm}@{}}
+\toprule
+\textbf{Q} & \textbf{Topic} & \textbf{Hyper-ChE} & \textbf{Graph-RAG} & \textbf{Key Difference} \\
+ & & (hyperedges/entities) & (edges/entities) & \\
+\midrule
+Q1 & Corpus overview & $\geq$99 / 62 & 50 / 1 & Hyper-ChE covers more complete system--material--condition combinations \\
+Q2 & Electrode modification & 100 / 60 & 41 / --- & Hyper-ChE better organizes modification methods with performance metrics \\
+Q3 & Electrolyte role & 92 / 61 & 43 / 1 & Hyper-ChE better distinguishes active species, supporting electrolytes, and additives \\
+Q4 & High current density & 88 / 61 & 48 / 1 & Hyper-ChE preserves system--material--current density--efficiency combinations \\
+Q5 & VRFB variable effects & 99 / 66 & 48 / 7 & Hyper-ChE better connects concentration, temperature, current density with performance \\
+Q6 & ICRFB additive mechanism & 99 / 62 & 50 / 4 & Hyper-ChE better organizes additives, active species, HER, and Cr kinetics \\
+Q7 & Membrane comparison & 114 / 62 & 51 / 2 & Hyper-ChE better preserves crossover--conductivity--efficiency tradeoffs \\
+Q8 & Carbon electrode comparison & 101 / 63 & 47 / 5 & Hyper-ChE better links electrode structure, wettability, and rate capability \\
+Q9 & Zinc dendrite mechanism & $\geq$99 / 66 & 39 / --- & Hyper-ChE provides more complete coverage of dendrites, morphology, additives, cycling stability \\
+Q10 & Soluble lead degradation & 105 / 63 & 47 / 1 & Hyper-ChE better organizes PbO$_2$ passivation, side reactions, and lifetime metrics \\
+Q11 & High EE strategies & 124 / 65 & 41 / 6 & Hyper-ChE better supports cross-system induction of membrane, electrode, electrolyte, and operating strategies \\
+Q12 & Experimental directions & 115 / 61 & 53 / --- & Hyper-ChE recommendations contain more complete variable combinations and control experiments \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On average, Hyper-ChE recalled approximately 103 hyperedges and 63 entities per query, whereas Graph-RAG recalled only about 46 edges. More critically, Graph-RAG returned merely 1 entity for 4 questions (Q1, Q3, Q4, Q10) and showed no entities at all for 3 questions (Q2, Q9, Q12). In 6 out of 12 questions, the Graph-RAG entity count did not exceed 2, revealing extreme sparsity in entity coverage.
+
+This sparsity has a structural explanation rooted in Graph-RAG's retrieval mechanism. In the baseline implementation, the system retrieves binary edges primarily through relation vector search and then back-traces from edges to entities. When the knowledge most relevant to a query is stored in higher-order hyperedges, these hyperedges are filtered out during the binary-edge projection phase. Consequently, the entities that would have been reachable only through higher-order connections become inaccessible, producing the observed retrieval collapse where dozens of edges yield only a single entity or none at all. The quantitative gap in edge counts (103 vs.~46) thus understates the true structural deficit: the retrieved binary edges are \emph{fragments} of decomposed experimental facts, lacking the joint constraint that originally defined the experimental conclusion.
+
+\subsection{Qualitative Analysis of Representative Questions}
+\label{subsec:flow_battery_qualitative}
+
+We now examine three representative questions in depth to elucidate \emph{why} Hyper-ChE produces substantively richer responses and \emph{why} Graph-RAG fails at specific cognitive levels.
+
+\subsubsection{Q4: High Current Density Conditions (Level~3)}
+
+Q4 asks for complete experimental configurations that simultaneously achieve high coulombic efficiency, voltage efficiency, and energy efficiency at current densities $\geq 100$~mA/cm$^2$. This query spans four variable dimensions---system type, membrane material, current density tier, and efficiency values---and requires precise matching of the ``high current density $\times$ high efficiency'' condition combination.
+
+Hyper-ChE responds with quadruples of the form (system--membrane--current density--efficiency): in the VRFB system, SPI at 100~mA/cm$^2$ (CE 96.83\%, EE 79.47\%), SNPBI-1.42 at 100~mA/cm$^2$, SPEEK/APK at 100~mA/cm$^2$ (EE 81.3\%), S/MWCNT-NH$_2$-2 at 100~mA/cm$^2$ (EE 82.04\%), and SPTPC-2.59 at 280~mA/cm$^2$ (EE 80\%). These combinations are preserved because OPERATION hyperedges in Hyper-ChE embed all four variables within a single relational structure; retrieval of one variable automatically brings the co-constrained others into context.
+
+Graph-RAG, despite recalling 48 binary edges, reaches only 1 entity node. The response confirms only two specific combinations (SPTPC at 280~mA/cm$^2$ and SPI at 100~mA/cm$^2$) and provides vague generalizations for the remainder. The reason is structurally transparent: when the OPERATION hyperedges encoding system--membrane--current density--efficiency combinations are decomposed into pairwise fragments, the joint constraint dissipates across independent A--B, B--C, and C--D edges. The retrieval system can no longer reconstruct which membrane belonged with which current density and which efficiency value, because these co-constraints were never stored as unified relational units.
+
+\subsubsection{Q6: ICRFB Additive Mechanisms (Level~3)}
+
+Q6 represents a higher-order condition combination problem involving five variable dimensions: additive morphology, electrode substrate, electrolyte environment, catalytic effect, and efficiency performance. The query additionally requires distinguishing the functional differences among different Bi morphologies.
+
+Hyper-ChE's response demonstrates fine-grained organizational capability over complex knowledge structures. It systematically classifies five distinct bismuth morphologies and their corresponding electrode--electrolyte configurations, providing specific efficiency values as evidentiary support for each category. This structured output is possible because COMPOSITION and OPERATION hyperedges in Hyper-ChE retain the full n-ary context of additive--electrode--electrolyte--performance associations; the retrieval process recovers complete experimental fact units rather than disconnected entity pairs.
+
+Graph-RAG's response, by contrast, is structurally limited. The system reports ``insufficient data to generate a detailed answer.'' This failure stems directly from the binary projection bottleneck: the five-variable experimental facts that would answer this query are stored as higher-order hyperedges in the original knowledge base. When projected to binary edges, the additive--electrode--electrolyte--performance associations fragment into pairwise stubs that no longer carry sufficient joint context to support a coherent multi-dimensional answer.
+
+\subsubsection{Q11: Comprehensive Strategies for High EE at High Current Density (Level~6)}
+
+Q11 is the most cognitively demanding query in the case study, requiring cross-system synthesis of multiple technical pathways across VRFB, ICRFB, and zinc-based systems. The question asks not merely for factual recall but for \emph{evaluative induction}: which strategies are supported by the strongest evidence in the current corpus, and how do they compare in terms of experimental viability?
+
+Hyper-ChE's response exhibits genuine cross-system knowledge synthesis. It organizes strategies along three dimensions---membrane optimization (Nafion alternatives, PBI series, SPNBI and other novel membranes), electrode modification (C-C/MC-C/BMC-C gradient optimization, nitrogen doping, carbon nanotube composites), and electrolyte optimization (acid/salt system selection, additive tuning)---with each dimension supported by specific material--condition--efficiency evidence chains. Crucially, the response can also \emph{compare evidence density} across strategy classes: membrane optimization and electrode modification are most strongly supported by experimental data in the corpus, while electrolyte optimization evidence is more dispersed but still actionable. This meta-evaluative capability arises because COMPARISON hyperedges in Hyper-ChE preserve the full (strategy--condition--performance) context of cross-material evaluations, enabling the system to aggregate and rank strategic options based on the richness of their supporting evidence.
+
+Graph-RAG's response operates at a markedly lower cognitive tier. It mentions a single membrane material and a general trend of efficiency decline at high current density, offering neither cross-system comparison nor evidence-supported recommendations. The binary graph simply lacks the relational infrastructure to sustain the multi-entity, multi-metric, cross-system reasoning that Level~6 questions demand.
+
+\subsection{Key Findings from the Flow Battery Case}
+\label{subsec:flow_battery_findings}
+
+The quantitative and qualitative evidence from this case study supports three principal conclusions regarding the value of hypergraph knowledge representation for scientific literature retrieval.
+
+\textbf{Condition integrity.} In Level~3 and above questions, answer quality critically depends on whether multiple experimental condition parameters are recalled \emph{as an integrated unit}. Hyper-ChE's OPERATION and COMPOSITION hyperedges preserve system type, material name, current density, and efficiency value within a single relational structure, thereby maintaining the coherence of condition combinations that binary decomposition would fragment.
+
+\textbf{Contextual explainability.} Hyper-ChE retrieves not only factual data but also mechanistic context organized through DEGRADATION and COMPARISON hyperedges. The retrieved context thus carries a dual-layer structure of ``data + mechanism'' that supports more interpretable and scientifically grounded responses.
+
+\textbf{Cross-system association.} At Level~6, Hyper-ChE's higher-order hyperedges serve as \emph{semantic bridges} across different RFB systems, enabling the cross-system inductive reasoning that pairwise graphs cannot sustain. This capability is essential for strategy recommendation and knowledge transfer tasks where insights must be aggregated across disparate experimental contexts.
+
+
+\section{Case Study II: PFAS Removal and Degradation}
+\label{sec:case2}
+
+The second case study examines per- and polyfluoroalkyl substances (PFAS) removal and degradation, a subfield of environmental chemical engineering concerned with pollutant destruction rather than electrochemical performance optimization. This domain was deliberately selected to test whether the high-order relational structures observed in the flow battery case (Section~\ref{sec:case1}) generalize to chemically distinct problem classes. The results demonstrate that multivariable coupling is a universal structural feature of chemical engineering knowledge, not an artifact of any single domain.
+
+\subsection{Domain Setup and Knowledge Base Statistics}
+
+The knowledge base for PFAS removal and degradation was constructed from 50 domain-specific literature sources, parsed into 624 text chunks, yielding 7,476 entity nodes and 10,812 relations or hyperedges. Higher-order hyperedges (cardinality $\geq 3$) accounted for 2,298 entries, representing 21.98\% of all relational structures. Table~\ref{tab:pfas_kb_stats} summarizes the construction statistics. This proportion closely matches the 20.9\% higher-order ratio observed in the flow battery case, suggesting that multivariable coupling is a pervasive organizational principle across chemically distinct subfields.
+
+\begin{table}[htbp]
+\centering
+\caption{Knowledge base construction statistics for the PFAS removal and degradation domain.}
+\label{tab:pfas_kb_stats}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Item} & \textbf{Quantity} & \textbf{Description} \\
+\midrule
+Documents & 50 & PFAS removal and degradation literature \\
+Text chunks & 624 & Parsed and chunked extraction units \\
+Entity nodes & 7,476 & All entity nodes in the hypergraph database \\
+Total relations/hyperedges & 10,812 & Binary relations and higher-order hyperedges \\
+Lower-order relations & 8,514 & Binary relations (cardinality $= 2$) \\
+Higher-order hyperedges & 2,298 & Relations with cardinality $\geq 3$ (21.98\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The entity type distribution exhibited a long-tail characteristic, as shown in Table~\ref{tab:pfas_entity_types}. Performance metrics (METRIC) constituted the largest category with 1,397 entities, followed by reaction conditions (CONDITION, 1,181), catalytic materials (CATALYST\_MATERIAL, 1,181), and material features (MATERIAL\_FEATURE, 1,048). Domain-specific types including PFAS targets (PFAS\_TARGET, 323), active species (ACTIVE\_SPECIES, 312), piezoelectric properties (PIEZO\_PROPERTY, 249), and water matrices (WATER\_MATRIX, 203) were introduced to capture the distinct conceptual vocabulary of pollutant degradation chemistry.
+
+\begin{table}[htbp]
+\centering
+\caption{Entity type distribution for the PFAS removal and degradation case.}
+\label{tab:pfas_entity_types}
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Entity Type} & \textbf{Count} \\
+\midrule
+METRIC (Performance Metric) & 1,397 \\
+CONDITION (Reaction Condition) & 1,181 \\
+CATALYST\_MATERIAL (Catalytic Material) & 1,181 \\
+MATERIAL\_FEATURE (Material Feature) & 1,048 \\
+MECHANISM\_EVIDENCE (Mechanism Evidence) & 856 \\
+PROCESS\_STRATEGY (Process Strategy) & 503 \\
+PFAS\_TARGET (Target PFAS) & 323 \\
+ACTIVE\_SPECIES (Active Species) & 312 \\
+PIEZO\_PROPERTY (Piezoelectric Property) & 249 \\
+WATER\_MATRIX (Water Matrix) & 203 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:pfas_relation_types} presents the relation and hyperedge type distribution. OPERATION\_PERFORMANCE relations (3,147) dominated, representing condition-performance associations. MECHANISM\_PATHWAY (2,511) captured degradation mechanisms, while MATERIAL\_DESIGN (2,303) encoded material-composition relationships. Domain-specific types such as CHARGE\_TRANSFER (220) and ADSORPTION\_ORIENTATION (189) were introduced to model electron transfer and adsorption configurations unique to PFAS degradation.
+
+\begin{table}[htbp]
+\centering
+\caption{Relation and hyperedge type distribution for the PFAS removal and degradation case.}
+\label{tab:pfas_relation_types}
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Relation/Hyperedge Type} & \textbf{Count} \\
+\midrule
+OPERATION\_PERFORMANCE (Operation-Performance) & 3,147 \\
+MECHANISM\_PATHWAY (Mechanism Pathway) & 2,511 \\
+MATERIAL\_DESIGN (Material Design) & 2,303 \\
+COMPARISON (Comparison) & 943 \\
+MATRIX\_APPLICATION (Matrix Application) & 563 \\
+COUPLING\_STRATEGY (Coupling Strategy) & 337 \\
+CHARGE\_TRANSFER (Charge Transfer) & 220 \\
+ADSORPTION\_ORIENTATION (Adsorption Orientation) & 189 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cross-Domain Adaptation of the Framework}
+
+The framework described in Section~\ref{sec:framework} was adapted to the PFAS domain without structural modification. The modular type system enabled domain-specific entity and relation definitions while preserving the core hypergraph architecture. Entity types were replaced as follows: SYSTEM was decomposed into PFAS\_TARGET and PROCESS\_STRATEGY; DEGRADATION was refined into MECHANISM\_EVIDENCE and ADSORPTION\_ORIENTATION; and domain-specific types including WATER\_MATRIX and PIEZO\_PROPERTY were added.
+
+Relation types were correspondingly adjusted: OPERATION\_PERFORMANCE superseded OPERATION to encode condition-performance relationships; MECHANISM\_PATHWAY replaced DEGRADATION to represent mechanistic pathways; and CHARGE\_TRANSFER and ADSORPTION\_ORIENTATION were introduced to model electron transfer and adsorption orientation, respectively. This substitution pattern demonstrates the framework's cross-domain transferability---the core architecture remains invariant while only type definitions require updating to reflect the target domain's conceptual structure.
+
+\subsection{Problem Design and Quantitative Comparison}
+
+To systematically evaluate hypergraph-based retrieval in the PFAS domain, twelve representative questions (Q1--Q12) were designed across six difficulty levels. All questions were formulated without explicit mention of ``hypergraphs'' to ensure fair comparison between Hyper-ChE and Graph-RAG under identical natural language query conditions. Table~\ref{tab:pfas_question_levels} presents the difficulty stratification.
+
+\begin{table}[htbp]
+\centering
+\caption{Question difficulty stratification for the PFAS removal and degradation case.}
+\label{tab:pfas_question_levels}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Level} & \textbf{Question Type} & \textbf{Questions} & \textbf{Cognitive Demand} \\
+\midrule
+Level 1 & Corpus overview & Q1--Q2 & Macro-induction of pollutants, strategies, materials, metrics \\
+Level 2 & Local relation retrieval & Q3--Q4 & Local association of target PFAS, materials, conditions \\
+Level 3 & Condition combination & Q5--Q6 & Multi-condition constrained performance association \\
+Level 4 & Comparative analysis & Q7--Q8 & Cross-strategy, cross-pollutant comparison \\
+Level 5 & Mechanistic evidence chain & Q9--Q10 & Active species, electron transfer, evidence chaining \\
+Level 6 & Strategy recommendation & Q11--Q12 & Design principle induction and experimental planning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Level 1 questions (Q1--Q2) require macro-level synthesis of pollutant types, treatment strategies, material systems, and performance indicators. Level 2 questions (Q3--Q4) target local associations for specific materials or pollutants. Level 3 questions (Q5--Q6) involve synergistic effects of multiple operating conditions on performance metrics. Level 4 questions (Q7--Q8) demand cross-strategy or cross-pollutant comparisons. Level 5 questions (Q9--Q10) require chaining multiple characterization evidences to support mechanistic conclusions. Level 6 questions (Q11--Q12) ask for design principle induction and experimental direction recommendations.
+
+Table~\ref{tab:pfas_retrieval_comparison} summarizes the retrieval results for both systems. Hyper-ChE achieved an average recall of 81.5 higher-order relations/hyperedges (approximately 61 entities), while Graph-RAG averaged 37.9 binary edges (with only 1--9 entities for most questions). The relational recall ratio is approximately 2.15$\times$ in favor of Hyper-ChE.
+
+\begin{table*}[htbp]
+\centering
+\caption{Retrieval comparison between Graph-RAG and Hyper-ChE for the PFAS removal and degradation case.}
+\label{tab:pfas_retrieval_comparison}
+\begin{tabular}{@{}cllll@{}}
+\toprule
+\textbf{Question} & \textbf{Type} & \textbf{Hyper-ChE} & \textbf{Graph-RAG} & \textbf{Key Difference} \\
+\midrule
+Q1 & Corpus overview & 90 hyp./60 ent. & 45 edges & Hyper-ChE covers strategies and materials more completely \\
+Q2 & Metric interpretation & 85 hyp./62 ent. & 43 edges/9 ent. & Both answerable; Hyper-ChE provides richer context \\
+Q3 & PFOA/PFOS comparison & 80 hyp./61 ent. & 36 edges/5 ent. & Hyper-ChE better preserves material-condition-metric combinations \\
+Q4 & Material role distinction & 95 hyp./60 ent. & 40 edges/2 ent. & Hyper-ChE role classification more complete \\
+Q5 & Multi-condition combination & 58 hyp./61 ent. & 36 edges/4 ent. & Largest difference; Graph-RAG shows insufficient evidence \\
+Q6 & Material property association & 88 hyp./61 ent. & 39 edges/8 ent. & Hyper-ChE constructs indirect mechanism chains \\
+Q7 & Cross-strategy comparison & 83 hyp./62 ent. & 38 edges/6 ent. & Hyper-ChE better covers coupling strategies \\
+Q8 & Short/long-chain comparison & 66 hyp./66 ent. & 32 edges/4 ent. & Hyper-ChE discusses short-chain PFAS more completely \\
+Q9 & Active species pathway & 81 hyp./61 ent. & 38 edges & Hyper-ChE mechanism chains more complete \\
+Q10 & Direct electron transfer & 88 hyp./60 ent. & 39 edges/1 ent. & Hyper-ChE evidence chain more complete \\
+Q11 & Design principles & 82 hyp./61 ent. & 29 edges/4 ent. & Hyper-ChE induction more comprehensive \\
+Q12 & Experimental recommendation & 82 hyp./61 ent. & 40 edges/6 ent. & Hyper-ChE proposal structure more complete \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The quantitative advantage of Hyper-ChE extends beyond retrieval counts to the structural preservation of multivariable associations. Hyper-ChE-recalled higher-order hyperedges typically simultaneously contain materials, target PFAS, reaction conditions, performance metrics, and mechanistic evidence---preserving the complete variable set from individual experiments. In contrast, Graph-RAG responses tend toward discrete fact enumeration that fragments multivariable combinations. This difference is most pronounced at Level 3 (condition combination) and Level 5 (mechanistic evidence chain), where Graph-RAG's binary-edge decomposition severs condition combinations and evidence chains. At Level 4 (comparative analysis), Hyper-ChE integrates multidimensional features of different strategies within a unified comparison framework, whereas Graph-RAG relies on manual stitching of multiple binary edges. At Level 6 (strategy recommendation), Hyper-ChE provides richer contextual support with more complete evidentiary foundations for proposed experimental directions.
+
+\subsection{Qualitative Analysis of Representative Questions}
+
+Five questions exhibiting the most salient differences between Graph-RAG and Hyper-ChE were selected for qualitative analysis, spanning condition combination, cross-strategy comparison, pollutant-type contrast, mechanistic evidence chaining, and experimental recommendation.
+
+\textbf{Q5: Reaction condition combination (Level 3).} Q5 asks for an integrated description of how ultrasonic frequency, power density, reaction time, pH, catalyst dosage, and initial PFAS concentration jointly influence degradation efficiency and defluorination rate. This is a prototypical multivariable constraint problem. Graph-RAG returns isolated material-metric or condition-metric relations---for example, BaTiO$_3$+PFOS at 90.5\% degradation rate under sonication, or MoSe$_2$/TiO$_2$ at 93.6\% PFOA removal---discrete examples that fail to reconstruct complete multivariable combinations from individual experiments. Binary edges connect only two entities; when the query requires simultaneous invocation of multiple reaction conditions and performance metrics, Graph-RAG cannot recover the full variable set from a single experiment.
+
+In contrast, Hyper-ChE organizes information around specific material systems (PTFE, Cu-N/C@PVDF, Fe@PTFE), incorporating target PFAS, ultrasonic frequency (40--68~kHz), power density (0.3--2.34~W/cm$^2$), pH, reaction time (1--5~h), and defluorination rates into cohesive ``material--pollutant--condition--metric'' combinations. For instance, Hyper-ChE simultaneously preserves the complete parameter set ``40~kHz, 0.3~W/cm$^2$, 250~mg/L PTFE, 120~min, 10~mg/L PFOA'' and its associated defluorination range. This demonstrates that higher-order relations more naturally preserve the full semantic integrity of experimental facts under multivariable constraints.
+
+\textbf{Q7: Cross-strategy comparison (Level 4).} Q7 compares piezocatalytic, piezo-photocatalytic, piezo-Fenton, and electrochemical oxidation strategies for PFAS degradation. Graph-RAG's reliance on explicit binary relations leads to conservative coverage of coupling strategies. While abundant binary relations exist for piezocatalysis and electrochemical oxidation, the explicit binary edges for piezo-photocatalysis and piezo-Fenton are insufficient in number, causing Graph-RAG to judge these strategies as ``no data'' or ``limited evidence'' and exclude them from effective comparison.
+
+Hyper-ChE connects strategy-related hyperedges to process types, catalytic materials, target pollutants, active species, and performance metrics, enabling more comprehensive lateral comparison. For example, Hyper-ChE associates Fe@PTFE with piezo-Fenton reactions and Pt/BTO/BO composites with piezo-photocatalysis, then organizes these strategies with their respective target pollutants, active species ($\cdot$O$_2^-$, $\cdot$OH, h$^+$), and defluorination capabilities into unified comparison tables. This capability is essential for evaluating the applicability of different energy input modes and reaction pathways in PFAS degradation, and demonstrates that comparative analysis requires simultaneous invocation of multiple relation clusters rather than isolated binary edges.
+
+\textbf{Q8: Short-chain versus long-chain PFAS (Level 4).} Q8 examines degradation strategy differences between long-chain PFAS (PFOA/PFOS) and short-chain PFAS (PFBA/PFBS/GenX). Graph-RAG captures basic trends---PFOS removal (67\%) exceeds PFBA (16.6\%), and long-chain PFAS degradation (86\%) exceeds short-chain (31\%)---but provides limited discussion of adsorption affinity differences for short-chain PFAS, the special behavior of GenX as a replacement pollutant, or chain-length-independent mechanisms (only 4 entities recalled).
+
+Hyper-ChE covers adsorption affinity, chain-length effects, short-chain PFAS recalcitrance, and GenX-specific behavior, simultaneously organizing PFAS chain length, functional groups, material surface interactions, and performance metrics. Hyper-ChE not only notes that long-chain PFAS adsorb more readily due to higher log~$K_a$ values, but also explains that the key bottleneck for short-chain PFAS degradation is not C--F bond activation energy differences but rather lower surface affinity and higher aqueous solubility. Furthermore, Hyper-ChE identifies that defluorination mechanisms for PFCAs (C$_2$--C$_{10}$) exhibit chain-length independence: overall defluorination is adsorption-limited, but C--F bond cleavage efficiency is independent of chain length. This illustrates that target pollutants function not merely as retrieval keywords but as core variables influencing adsorption, activation, and defluorination pathways.
+
+\textbf{Q10: Direct electron transfer mechanism (Level 5).} Q10 requires integrating EPR spectroscopy, quenching experiments, DFT calculations, LC-MS intermediates, fluoride ion release, and control experiments to evaluate the feasibility of direct electron transfer in piezoelectric PFAS degradation. Graph-RAG retrieves some mechanism-related binary relations but recalls only 1 entity, yielding a narrow evidential basis that enumerates individual evidence points without organizing multiple characterization methods into a coherent chain supporting or refuting a mechanistic conclusion.
+
+Hyper-ChE retrieves not only active species and degradation pathways but also integrates EPR spectral detection (DMPO-$\cdot$OH, DMPO-$\cdot$H, DMPO-$\cdot$O$_2^-$ adducts), quenching experiments (IPA for $\cdot$OH, BQ/TEMPOL for $\cdot$O$_2^-$, TEMPO for electrons, TEOA for h$^+$), DFT calculations (reaction barriers and thermodynamic feasibility), LC-MS intermediates (short-chain PFCAs, H/F exchange products), and fluoride release plus control experiments into a multi-method mutually reinforcing evidential structure. This demonstrates that mechanistic conclusions require convergent support from multiple evidence classes, and higher-order hyperedges naturally express the epistemic structure of ``multiple evidences jointly supporting a single conclusion.''
+
+\textbf{Q12: Experimental direction recommendation (Level 6).} Q12 asks for five promising experimental directions for PFAS degradation research based on existing literature. Graph-RAG can generate recommendations, but some lack coherent variable combinations, and the internal consistency of variable associations within individual directions is insufficient---some recommendations omit corresponding condition constraints or control experimental designs.
+
+Hyper-ChE's advantage lies in the structural completeness of candidate proposals. Each recommendation typically simultaneously includes target PFAS, candidate materials or strategies, key variable combinations, expected performance improvements, potential risks, and necessary control experiments. For example, recommendations address not only material selection but also ultrasonic parameters, dosage ranges, expected defluorination targets, and corresponding control experiment suggestions. Such results should be understood as ``candidate directions'' or ``experimentally verifiable combinations'' rather than literature-proven optimal solutions. This demonstrates that higher-order knowledge organization can support not only factual retrieval but also experimental planning with richer contextual constraints.
+
+\subsection{Cross-Case Synthesis}
+
+The flow battery (Section~\ref{sec:case1}) and PFAS degradation cases represent fundamentally different chemical engineering subfields: one concerns electrochemical performance optimization, the other pollutant removal mechanisms. Yet both exhibit remarkably consistent higher-order relational proportions ($\sim$21\%), with flow batteries at 20.9\% and PFAS degradation at 21.98\%. This convergence strongly suggests that multivariable coupling is an inherent structural feature of chemical engineering knowledge, not a domain-specific artifact. The framework's modular type system enabled seamless cross-domain adaptation without architectural modification, requiring only replacement of entity and relation type definitions to reflect each domain's conceptual vocabulary. These findings support the proposition that hypergraph modeling provides a general representation formalism for experimental chemical engineering across diverse problem classes.
+
+
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Advantages and Applicability Boundaries of Hypergraph Modeling}
+
+The experimental results from the flow battery case reveal that hypergraph modeling delivers the most pronounced gains on three categories of high-complexity queries: multi-constraint problems~(Level~3), cross-material comparative questions~(Level~4), and strategy recommendation tasks~(Level~6). For multi-constraint problems, higher-order hyperedges preserve operational conditions and performance indicators within a single relational structure, mitigating the fragmentation inherent in pairwise graphs where condition--indicator pairs are scattered across separate edges. For cross-material comparisons, hypergraphs connect relation clusters belonging to different material systems through shared entities, reducing the reliance on manual alignment for lateral comparison. For recommendation tasks, higher-order relations sustain the semantic integrity of the ``objective--constraint--solution--expectation'' chain, yielding more coherent variable combinations in the generated recommendations.
+
+These advantages are, however, bounded. When a query merely asks for the definition of a single concept, a simple factual lookup, or an enumerative overview of the corpus, vector retrieval or pairwise graph retrieval already achieves satisfactory accuracy. In such scenarios, the marginal gain from hypergraph modeling is marginal at best. The decisive factor is whether the query requires a judgment about ``whether multiple conditions belong to the same experimental fact''---only then does the structural information encoded in higher-order hyperedges become indispensable.
+
+The comparison between the two cases reinforces this pattern. In the flow battery domain, higher-order relations primarily encode experimental-operation combinations linking ``system--active species--membrane/electrode--operating conditions--performance metrics.'' In the PFAS degradation domain, the corresponding pattern is ``target pollutant--catalytic material--reaction conditions--performance metrics--mechanism evidence.'' Notably, in PFAS Level~1 overview questions~(e.g., Q1 and Q2), the quality gap between the two systems is small because such questions depend mainly on enumerative knowledge with limited demands for condition completeness. By contrast, in Level~3 condition-combination questions~(Q5) and Level~5 mechanism-evidence-chain questions~(Q10), Hyper-ChE shows the largest advantage, precisely because these queries require assessing whether multiple variables co-occur within the same experimental fact or whether heterogeneous evidence jointly supports a single mechanistic claim. This cross-case consistency clarifies the applicability boundary: hypergraph modeling excels when multi-variable co-occurrence within a unified relational structure is essential to the query.
+
+\subsection{Necessity of Domain Adaptation}
+
+Generic LLMs face three distinct challenges when extracting entities from chemical-engineering literature. First, professional terminology and synonymy: the same material or concept may appear under multiple formulations~(e.g., ``Nafion membrane'' vs.~``perfluorosulfonic acid membrane,'' ``PFOA'' vs.~``C8''). Without domain constraints, an LLM may split synonymous references into distinct nodes. Second, non-standardized numerical conditions: temperature, concentration, and current density are reported in varying units or ranges, requiring structured parsing for normalization. Third, ionic variants: V(II)/V(III)/V(IV)/V(V) represent chemically distinct oxidation states in flow batteries, while PFAS species exhibit chain-length and functional-group variations that generic models struggle to classify correctly.
+
+We address these challenges through two complementary measures. The first layer constrains the extraction space by pre-defining entity types and hyperedge schemas, guiding the LLM toward structured outputs over a limited type space and thereby reducing terminological ambiguity. The second layer enforces a JSON-structured output format with explicit field names and hierarchical relations, mitigating format drift.
+
+It is worth emphasizing that no fine-tuning of the LLM is performed; all domain adaptation is achieved through prompt engineering. This design choice preserves cross-domain transferability: switching from flow batteries to PFAS degradation requires only replacing the entity-type and relation-type definitions, while the underlying extraction and retrieval pipeline remains unchanged. Based on the current corpus, this lightweight adaptation strategy has demonstrated basic viability across both chemical-engineering sub-domains.
+
+\subsection{Limitations and Future Work}
+
+The framework has two principal limitations that should be acknowledged frankly.
+
+First, entity-name normalization remains incomplete. Different papers may refer to the same material with alternative formulations~(e.g., ``Nafion'' vs.~``perfluorosulfonic acid resin,'' ``PFOA'' vs.~``C8,'' ``PFOS'' vs.~``C8S''). The current framework does not integrate an external ontology for semantic normalization; handling such variants relies primarily on the LLM's in-context understanding. Although the type annotations in the pre-defined schema provide partial guidance, fully eliminating terminological ambiguity will require the introduction of domain-specific ontologies.
+
+Second, the quality of higher-order hyperedge extraction exhibits stability issues. The structural correctness of a hyperedge depends on the LLM's comprehension of complex semantic relationships. When literature descriptions involve cross-sentence dependencies, implicit conditions, or intricate logical relations, the extracted hyperedges may suffer from entity omission or relation-type misclassification. In the flow battery case, the UNKNOWN rate stands at approximately 10--15\%, indicating that a non-negligible fraction of terms or relations fall outside the coverage of the pre-defined schema. Future work could improve stability through fine-tuning strategies or multi-round consistency verification---for instance, employing a verifier LLM to check the structural plausibility of extracted hyperedges.
+
+Three directions merit further investigation: (i)~expanding corpus coverage to validate scalability; (ii)~developing hyperedge weight-learning mechanisms to optimize retrieval ranking; and (iii)~extending the method to additional chemical-engineering sub-fields such as electrocatalysis, battery materials, and reaction engineering to test cross-domain generality.
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+Analysis of literature across two representative chemical-engineering domains---flow batteries and PFAS degradation---reveals that the ``system--material--condition--metric--mechanism'' structure of experimental chemical knowledge is intrinsically multi-variate and coupled, making it naturally amenable to hypergraph modeling. To test this proposition, we developed Hyper-ChE, a domain-adapted hypergraph-enhanced RAG framework that replaces traditional pairwise graph structures with hypergraphs for knowledge storage and retrieval. Comparative experiments against Graph-RAG confirm that hypergraph modeling preserves condition-combination integrity more effectively than pairwise representations.
+
+In the flow battery domain, a knowledge base constructed from 50 papers comprises 9,970 entities and 12,987 hyperedges, of which 20.9\% are higher-order. Hyper-ChE retrieves an average of 103 higher-order hyperedges and 63 entities per query, compared to 46 pairwise edges for Graph-RAG. In the PFAS domain, the corresponding knowledge base contains 7,476 entities and 10,812 relations/hyperedges with 21.98\% higher-order hyperedges. Across 12 test questions spanning overview, condition combination, cross-strategy comparison, long- and short-chain contrast, mechanism evidence chain, and experimental-scheme recommendation, Hyper-ChE averages 81.5 higher-order hyperedges against Graph-RAG's 37.9 pairwise edges. Qualitative analysis shows that Hyper-ChE performs particularly well on multi-condition preservation, cross-strategy lateral comparison, target-pollutant differentiation, multi-evidence mechanism chaining, and structured experimental recommendations.
+
+Taken together, the cross-case validation yields three concrete contributions. \emph{Condition completeness}: higher-order hyperedges retain the association among multiple conditions within a single experiment, reducing information loss caused by pairwise relation decomposition. \emph{Contextual interpretability}: structured organization of mechanism pathways and comparative relations furnishes retrieval results with both factual data and mechanistic explanation. \emph{Cross-domain associability}: a unified knowledge-modeling framework supports knowledge transfer across distinct chemical-engineering sub-fields. The domain differences between the two cases---electrochemical performance optimization in flow batteries versus pollutant-removal mechanisms in PFAS degradation---demonstrate that the method is not confined to a specific chemical-engineering direction and can extend to other multi-variate experimental sciences.
+
+We acknowledge that each domain-specific hypergraph database currently embeds only 50 papers; while the results on this subset already indicate the advantages of hypergraph modeling for multi-variable combination queries, more comprehensive conclusions await validation on larger corpora. Future work will focus on scaling corpus coverage, learning hyperedge weights for retrieval ranking, and extending the framework to additional sub-domains.
+
+\section*{Code Availability}
+\label{sec:code}
+
+The source code, pre-defined schemas, and constructed knowledge-base snapshots for both case studies are available at \url{https://github.com/[anonymized/Hyper-ChE]}.
+
+\bibliographystyle{unsrtnat}
+\begin{thebibliography}{99}
+
+\bibitem[1]{chen2025flowbattery}
+陈海生, 蒋凯, et al.
+液流电池关键材料发展研究.
+{\em 中国工程科学}, 2025, 27(10): 1--12.
+
+\bibitem[2]{ding2023membrane}
+Ding C S, Zhang H N, et al.
+Sulfonated polybenzimidazole zwitterionic exchange membrane for vanadium flow batteries.
+{\em J. Membr. Sci.}, 2023, 669: 121--135.
+
+\bibitem[3]{chen2024bismuth}
+Chen Y K, et al.
+High-activity and high-stability bismuth single-atom electrocatalyst for vanadium redox flow batteries.
+{\em Adv. Mater.}, 2024, 36: 2308124.
+
+\bibitem[5]{ye2024mkg}
+Ye Y P, et al.
+Construction and application of materials knowledge graph via LLM.
+arXiv:2404.03080, 2024.
+
+\bibitem[6]{lewis2020rag}
+Lewis P, et al.
+RAG for knowledge-intensive NLP tasks.
+{\em NeurIPS}, 2020, 33: 9459--9474.
+
+\bibitem[7]{gao2024ragsurvey}
+Gao Y L, et al.
+RAG for large language models: A survey.
+arXiv:2312.10997, 2024.
+
+\bibitem[9]{mallen2023trust}
+Mallen A, et al.
+When not to trust language models.
+{\em ACL}, 2023: 9802--9822.
+
+\bibitem[10]{pan2024llmkg}
+Pan S R, et al.
+Unifying LLMs and knowledge graphs: A roadmap.
+{\em IEEE TKDE}, 2024, 36(7): 3580--3599.
+
+\bibitem[11]{feng2025hyperrag}
+Feng Y, Hu H, Hou X, et al.
+Hyper-RAG: Combating LLM hallucinations using hypergraph-driven RAG.
+arXiv:2504.08758, 2025.
+
+\bibitem[13]{luo2025hypergraphrag}
+Luo H R, et al.
+HyperGraphRAG: RAG via hypergraph-structured knowledge.
+arXiv:2503.21322, 2025.
+
+\bibitem[15]{guo2024lightrag}
+Guo Z, et al.
+LightRAG: Simple and fast RAG.
+arXiv:2410.05779, 2024.
+
+\bibitem[17]{gao2023hgnn}
+Gao Y, et al.
+HGNN+: General hypergraph neural networks.
+{\em IEEE TNNLS}, 2023, 35(5): 1--15.
+
+\end{thebibliography}
+
+% =============================================================================
+% TODO CHECKLIST FOR FINAL REVISION
+% =============================================================================
+%
+% [REFERENCES]
+% - TODO: Add missing references [4], [8], [12], [14], [16] if cited in text
+% - TODO: Verify all arXiv preprint IDs are up to date
+% - TODO: Add DOI numbers for journal articles where available
+% - TODO: Verify author name spellings and ordering for all citations
+% - TODO: Consider adding more domain-specific references (flow battery, PFAS)
+%
+% [FIGURES]
+% - TODO: Insert Figure~\ref{fig:framework}: End-to-end Hyper-ChE pipeline diagram
+% - TODO: Insert Figure~\ref{fig:retrieval}: Dual-path retrieval mechanism diagram
+% - TODO: Ensure figure numbering is globally consistent (Fig 1, Fig 2, ...)
+% - TODO: Verify all figure captions are descriptive and self-contained
+% - TODO: Check figure resolution (minimum 300 DPI for print quality)
+%
+% [TABLES]
+% - TODO: Verify Table~\ref{tab:entity-types} data accuracy
+% - TODO: Verify Table~\ref{tab:flow_battery_kb} statistics match actual KB
+% - TODO: Verify Table~\ref{tab:retrieval_comparison} retrieval counts
+% - TODO: Verify Table~\ref{tab:pfas_kb_stats} statistics match actual KB
+% - TODO: Check table formatting consistency across all tables
+%
+% [DATA VERIFICATION]
+% - TODO: Confirm 20.9\% higher-order ratio for flow battery domain
+% - TODO: Confirm 21.98\% higher-order ratio for PFAS domain
+% - TODO: Verify entity and hyperedge counts in both knowledge bases
+% - TODO: Validate retrieval count numbers in quantitative comparisons
+% - TODO: Check numerical values reported for specific experiments (Q4, Q6, etc.)
+%
+% [CROSS-REFERENCES]
+% - TODO: Verify all \ref commands resolve correctly (sec:introduction, sec:background, etc.)
+% - TODO: Check Section~\ref{sec:case1} and Section~\ref{sec:case2} cross-references
+% - TODO: Verify all table \label{-}\ref pairs are consistent
+% - TODO: Ensure no broken figure references (fig:framework, fig:retrieval)
+% - TODO: Run LaTeX compilation twice to resolve all forward references
+%
+% [CONTENT]
+% - TODO: Expand Introduction if needed to reach target word count
+% - TODO: Review Abstract for completeness and accuracy
+% - TODO: Check that all three contributions are clearly stated
+% - TODO: Verify paper organization paragraph matches actual section structure
+% - TODO: Ensure no orphaned section headings at page boundaries
+%
+% [FORMATTING]
+% - TODO: Compile with pdflatex to verify no errors
+% - TODO: Check for overfull/underfull hbox warnings
+% - TODO: Verify margin consistency throughout document
+% - TODO: Check bibliography formatting consistency
+% - TODO: Ensure all math environments compile correctly
+% - TODO: Verify special characters in Chinese references display properly
+%
+% [SUPPLEMENTARY]
+% - TODO: Prepare supplementary materials if required
+% - TODO: Generate high-quality PDF for arXiv submission
+% - TODO: Check arXiv submission requirements (title length, abstract length)
+% - TODO: Prepare source file archive (.tar.gz) for arXiv upload
+% =============================================================================
+
+\end{document}

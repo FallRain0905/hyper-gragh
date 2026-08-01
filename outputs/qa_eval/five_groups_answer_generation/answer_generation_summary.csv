@@ -1,0 +1,6 @@
+group,questions,answerable,unanswerable,Good Rate,Satisfactory-or-Better Rate,Key-Point Coverage,Hallucination Rate,Abstention Accuracy,Unanswerable Abstention Accuracy
+text_segments,40,35,5,0.075,0.175,0.1569,0.125,0.875,0.0
+original_hypergraph,40,35,5,0.225,0.375,0.4059,0.125,0.875,0.0
+chem_prompt_graph,40,35,5,0.125,0.25,0.2951,0.125,0.875,0.0
+chem_prompt_hypergraph,40,35,5,0.325,0.55,0.5687,0.125,0.875,0.0
+chem_norm_hypergraph,40,35,5,0.175,0.275,0.3158,0.125,0.875,0.0

@@ -1,0 +1,2101 @@
+{
+  "efus": [
+    {
+      "gold_id": "DOC09-EFU-001",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "TEMPO in acetonitrile at 100 mA/cm2 with Nafion 117 achieved CE of 98.2% and EE of 84.3%",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "organic redox flow battery",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "concentration",
+          "value": 0.1,
+          "unit": "mol/L",
+          "canonical_id": "condition:concentration_0_1_mol_l"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_2_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 84.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_3_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "In a nonaqueous TEMPO-based flow battery employing 0.1 M TEMPO in acetonitrile with tetraethylammonium tetrafluoroborate supporting electrolyte, operation at a current density of 100 mA/cm2 yielded a coulombic efficiency (CE) of 98.2% and an energy efficiency (EE) of 84.3% when paired with a viologen-based anolyte."
+    },
+    {
+      "gold_id": "DOC09-EFU-002",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "TEMPO at 60 mA/cm2 achieved CE of 98.5% and EE of 87.1%",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "organic redox flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 87.1,
+          "unit": "%",
+          "canonical_id": "measurement:ee_87_1_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "When the current density was reduced to 60 mA/cm2, the energy efficiency increased to 87.1% while maintaining a CE of 98.5%, reflecting the reduced overpotential losses at lower current densities."
+    },
+    {
+      "gold_id": "DOC09-EFU-003",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "TEMPO at 40 mA/cm2 achieved EE of 88.0% with CE of 98.8%",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_8_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 88.0,
+          "unit": "%",
+          "canonical_id": "measurement:ee_88_0_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Further reduction to 40 mA/cm2 yielded an EE of 88.0% with CE of 98.8%."
+    },
+    {
+      "gold_id": "DOC09-EFU-004",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "TEMPO at 20 mA/cm2 achieved EE of 88.5% with CE approaching 99.0%",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 99.0,
+          "unit": "%",
+          "canonical_id": "measurement:ce_99_0_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 88.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_88_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 20 mA/cm2, the system demonstrated an EE of 88.5% with CE approaching 99.0%."
+    },
+    {
+      "gold_id": "DOC09-EFU-005",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "TEMPO-PEG at 100 mA/cm2 achieved CE of 98.9% and EE of 83.7% with capacity fade rate of 0.015%/cycle",
+      "entities": [
+        {
+          "canonical_id": "material:tempo_peg",
+          "name": "TEMPO-PEG",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.9,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_9_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 83.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_7_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.015,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_015_pct_cycle"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "When tested at 100 mA/cm2, the TEMPO-PEG system achieved a CE of 98.9% and EE of 83.7%, with a capacity fade rate of 0.015%/cycle over 300 cycles."
+    },
+    {
+      "gold_id": "DOC09-EFU-006",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.1: Viologen Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "MV in aqueous electrolyte at pH 7 and 100 mA/cm2 achieved CE of 96.8% and EE of 80.2%",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "organic redox flow battery",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 7,
+          "unit": "",
+          "canonical_id": "condition:ph_7"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_8_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.2,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_2_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "A benchmark study of methyl viologen (MV, 1,1'-dimethyl-4,4'-bipyridinium dichloride) in aqueous electrolyte at pH 7 demonstrated excellent performance when paired with a TEMPO catholyte. At a current density of 100 mA/cm2, the cell achieved a CE of 96.8% and an EE of 80.2%."
+    },
+    {
+      "gold_id": "DOC09-EFU-007",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.1: Viologen Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "PSV at 100 mA/cm2 achieved CE of 98.5% and EE of 82.1% with capacity fade rate of 0.018%/cycle",
+      "entities": [
+        {
+          "canonical_id": "material:propylsulfonate_viologen",
+          "name": "propylsulfonate-functionalized viologen",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ee_82_1_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_018_pct_cycle"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "The PSV system at 100 mA/cm2 achieved a CE of 98.5% and EE of 82.1%, with the capacity fade rate reduced to 0.018%/cycle."
+    },
+    {
+      "gold_id": "DOC09-EFU-008",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.1: Quinone Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "AQDS at pH 12 and 100 mA/cm2 with ferrocyanide catholyte achieved CE of 95.5% and EE of 78.5%",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:aqueous_orfb",
+          "name": "aqueous organic redox flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 95.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "In alkaline electrolyte at pH 12, AQDS undergoes reversible two-electron reduction at a potential of -0.45 V versus Ag/AgCl. When paired with a ferrocyanide catholyte in an all-aqueous configuration, the cell voltage is approximately 0.8 V. At a current density of 100 mA/cm2, this system achieved a CE of 95.5% and an EE of 78.5%."
+    },
+    {
+      "gold_id": "DOC09-EFU-009",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.1: Quinone Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "AQDS at pH 12 and 60 mA/cm2 achieved CE of 96.5% and EE of 82.1% with capacity fade rate of 0.01%/cycle",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ee_82_1_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.01,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_01_pct_cycle"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 60 mA/cm2, the EE improved to 82.1% with CE of 96.5%. The crossover rate of AQDS through Nafion 117 was measured at 0.2 x 10^-6 cm2/s, substantially lower than that of TEMPO or MV. This low crossover rate contributed to excellent capacity retention, with fade rates as low as 0.01%/cycle observed over 1000 cycles at 60 mA/cm2 with an appropriate membrane."
+    },
+    {
+      "gold_id": "DOC09-EFU-010",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.1: Quinone Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "p-benzoquinone in nonaqueous electrolyte at 60 mA/cm2 achieved CE of 97.2% and EE of 83.5%",
+      "entities": [
+        {
+          "canonical_id": "material:p_benzoquinone",
+          "name": "p-benzoquinone",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:nonaqueous_orfb",
+          "name": "nonaqueous organic redox flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_2_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 83.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "In nonaqueous electrolyte (acetonitrile with tetrabutylammonium hexafluorophosphate), p-benzoquinone demonstrated a CE of 97.2% and EE of 83.5% at 60 mA/cm2 when paired with an AQDS anolyte."
+    },
+    {
+      "gold_id": "DOC09-EFU-011",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.1: Viologen Electrochemical Characteristics",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "MV at pH 9 and 100 mA/cm2 achieved CE of 97.5% compared to 96.8% at pH 7",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 9,
+          "unit": "",
+          "canonical_id": "condition:ph_9"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At pH 9, the CE of a MV/TEMPO cell increased to 97.5% compared to 96.8% at pH 7, attributed to suppression of proton crossover effects."
+    },
+    {
+      "gold_id": "DOC09-EFU-012",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 5.1: Degradation Rate Comparison",
+      "relation_type": "COMPARISON",
+      "claim": "Under standardized conditions, capacity fade rates were AQDS 0.025%/cycle < TEMPO 0.02%/cycle < PSV 0.018%/cycle < MV 0.055%/cycle < unfunctionalized TEMPO with water 0.045%/cycle",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:propylsulfonate_viologen",
+          "name": "PSV",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "MV",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.025,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_0_025"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:tempo_fade_0_02"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:psv_fade_0_018"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.055,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_fade_0_055"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover",
+        "degradation:chemical_instability"
+      ],
+      "evidence_text": "Under standardized conditions (100 mA/cm2, Nafion 117 membrane, room temperature, 500 cycle duration), the capacity fade rates were: AQDS at pH 12 showed 0.025%/cycle, TEMPO in nonaqueous electrolyte showed 0.02%/cycle, PSV (functionalized viologen) showed 0.018%/cycle, MV at pH 7 showed 0.055%/cycle, and unfunctionalized TEMPO in the presence of 50 ppm water showed 0.045%/cycle."
+    },
+    {
+      "gold_id": "DOC09-EFU-013",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 5.2: Mechanism Cross-Comparison",
+      "relation_type": "COMPARISON",
+      "claim": "Crossover rates through Nafion 117 follow MV 2.1 > TEMPO 0.8 > AQDS 0.2 x 10^-6 cm2/s",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "MV",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "crossover_rate",
+          "value": 2.1,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:mv_crossover_2_1"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.8,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:tempo_crossover_0_8"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.2,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:aqds_crossover_0_2"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover"
+      ],
+      "evidence_text": "The crossover rates through Nafion 117 follow the order: MV (2.1 x 10^-6 cm2/s) > TEMPO (0.8 x 10^-6 cm2/s) > AQDS (0.2 x 10^-6 cm2/s)."
+    },
+    {
+      "gold_id": "DOC09-EFU-014",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 5.3: Dimerization and Coupling Pathways",
+      "relation_type": "COMPARISON",
+      "claim": "Dimerization extent after 200 cycles: viologen 8% > TEMPO 5% at standard conditions, with rate constants viologen 2.5 > TEMPO 0.5 M^-1 s^-1",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "cycle_number",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:200_cycles"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 8,
+          "unit": "%",
+          "canonical_id": "measurement:mv_dimerization_8"
+        },
+        {
+          "metric_type": "dimerization_extent",
+          "value": 5,
+          "unit": "%",
+          "canonical_id": "measurement:tempo_dimerization_5"
+        }
+      ],
+      "mechanisms": [
+        "degradation:dimerization"
+      ],
+      "evidence_text": "Viologen radical cation dimerization is more rapid, with an estimated rate constant of 2.5 M^-1 s^-1, producing 8% dimerization under equivalent conditions. TEMPO radical dimerization proceeds with an estimated rate constant of approximately 0.5 M^-1 s^-1 in acetonitrile, producing a dimerization extent of 5% after 200 cycles at standard concentration."
+    },
+    {
+      "gold_id": "DOC09-EFU-015",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 6: SOC Imbalance Management",
+      "relation_type": "COMPARISON",
+      "claim": "MV/TEMPO cell showed SOC imbalance of 15% after 300 cycles versus AQDS/TEMPO with only 7% SOC imbalance",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "MV",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "cycle_number",
+          "value": 300,
+          "unit": "cycles",
+          "canonical_id": "condition:300_cycles"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 15,
+          "unit": "%",
+          "canonical_id": "measurement:mv_tempo_soc_imbalance_15"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 7,
+          "unit": "%",
+          "canonical_id": "measurement:aqds_tempo_soc_imbalance_7"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover"
+      ],
+      "evidence_text": "In a MV/TEMPO cell, the higher MV crossover rate led to an SOC imbalance of 15% after 300 cycles. In contrast, an AQDS/TEMPO cell with better matched crossover rates showed only 7% SOC imbalance over the same duration."
+    },
+    {
+      "gold_id": "DOC09-EFU-016",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.1: TEMPO Electrochemical Characteristics",
+      "relation_type": "COMPOSITION",
+      "claim": "TEMPO-based nonaqueous electrolyte composition includes 0.1 M TEMPO in acetonitrile with tetraethylammonium tetrafluoroborate supporting electrolyte",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "solvent:acetonitrile",
+          "name": "acetonitrile",
+          "type": "SOLVENT"
+        },
+        {
+          "canonical_id": "salt:teabf4",
+          "name": "tetraethylammonium tetrafluoroborate",
+          "type": "SALT"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "concentration",
+          "value": 0.1,
+          "unit": "mol/L",
+          "canonical_id": "condition:tempo_conc_0_1_m"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "In a nonaqueous TEMPO-based flow battery employing 0.1 M TEMPO in acetonitrile with tetraethylammonium tetrafluoroborate supporting electrolyte, operation at a current density of 100 mA/cm2 yielded a coulombic efficiency (CE) of 98.2% and an energy efficiency (EE) of 84.3% when paired with a viologen-based anolyte."
+    },
+    {
+      "gold_id": "DOC09-EFU-017",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.1: Viologen Electrochemical Characteristics",
+      "relation_type": "COMPOSITION",
+      "claim": "MV electrolyte is 1,1'-dimethyl-4,4'-bipyridinium dichloride in aqueous electrolyte at pH 7",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "solvent:water",
+          "name": "water",
+          "type": "SOLVENT"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 7,
+          "unit": "",
+          "canonical_id": "condition:ph_7"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "A benchmark study of methyl viologen (MV, 1,1'-dimethyl-4,4'-bipyridinium dichloride) in aqueous electrolyte at pH 7 demonstrated excellent performance when paired with a TEMPO catholyte."
+    },
+    {
+      "gold_id": "DOC09-EFU-018",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.1: Quinone Electrochemical Characteristics",
+      "relation_type": "COMPOSITION",
+      "claim": "AQDS is 9,10-anthraquinone-2,7-disulfonic acid operating in alkaline electrolyte at pH 12",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "solvent:water",
+          "name": "water",
+          "type": "SOLVENT"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "9,10-anthraquinone-2,7-disulfonic acid (AQDS) has emerged as a leading quinone anolyte material. In alkaline electrolyte at pH 12, AQDS undergoes reversible two-electron reduction at a potential of -0.45 V versus Ag/AgCl."
+    },
+    {
+      "gold_id": "DOC09-EFU-019",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.2: TEMPO Degradation Mechanisms",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "TEMPO degradation chain: oxoammonium cation disproportionation with water produces hydroxylamine and oxygen byproducts, accelerated by acid and temperature",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:tempo_oxoammonium",
+          "name": "TEMPO+ oxoammonium cation",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "water_content",
+          "value": 50,
+          "unit": "ppm",
+          "canonical_id": "condition:water_50_ppm"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:disproportionation",
+        "degradation:hydrolysis"
+      ],
+      "evidence_text": "The primary degradation pathway for TEMPO involves the disproportionation of the oxoammonium cation (TEMPO+) in the presence of water or nucleophilic species. The oxoammonium form is thermodynamically susceptible to reaction with water molecules, producing the hydroxylamine derivative and oxygen-containing byproducts."
+    },
+    {
+      "gold_id": "DOC09-EFU-020",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.2: TEMPO Degradation Mechanisms",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "TEMPO dimerization extent increased from 5% at room temperature to 12% at 45 C after 200 cycles",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 45,
+          "unit": "C",
+          "canonical_id": "condition:temperature_45_c"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:200_cycles"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 12,
+          "unit": "%",
+          "canonical_id": "measurement:tempo_dimerization_12pct_45c"
+        }
+      ],
+      "mechanisms": [
+        "degradation:dimerization"
+      ],
+      "evidence_text": "This dimerization extent increased to 12% when the electrolyte was cycled at elevated temperature (45 C), indicating the thermal sensitivity of the radical stability."
+    },
+    {
+      "gold_id": "DOC09-EFU-021",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.2: Viologen Degradation Mechanisms",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Viologen degradation chain: V+ radical cation dimerizes to electrochemically inactive dimer, extent 8% at 0.1 M increasing to 14% at 0.2 M",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "concentration",
+          "value": 0.1,
+          "unit": "mol/L",
+          "canonical_id": "condition:mv_conc_0_1_m"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 7,
+          "unit": "",
+          "canonical_id": "condition:ph_7"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 8,
+          "unit": "%",
+          "canonical_id": "measurement:mv_dimerization_8pct"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.055,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_fade_0_055"
+        }
+      ],
+      "mechanisms": [
+        "degradation:dimerization"
+      ],
+      "evidence_text": "The dimerization extent was measured at approximately 8% after 200 cycles in a standard aqueous MV electrolyte at pH 7 and current density of 100 mA/cm2. This dimerization extent increased to 14% at higher viologen concentrations (0.2 M), reflecting the second-order dependence of the dimerization kinetics on radical cation concentration."
+    },
+    {
+      "gold_id": "DOC09-EFU-022",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.2: Quinone Degradation Mechanisms",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "AQDS degradation chain: nucleophilic addition of hydroxide to oxidized quinone forms non-redox-active hydroxylated products, rate 0.068%/cycle at pH 14 vs 0.012%/cycle at pH 12",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 14,
+          "unit": "",
+          "canonical_id": "condition:ph_14"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.068,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_ph14_0_068"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.012,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_ph12_0_012"
+        }
+      ],
+      "mechanisms": [
+        "degradation:nucleophilic_addition"
+      ],
+      "evidence_text": "At pH 14, the degradation rate was sufficiently rapid to produce a capacity fade rate of 0.068%/cycle, compared to 0.012%/cycle at pH 12 and 0.028%/cycle at pH 9."
+    },
+    {
+      "gold_id": "DOC09-EFU-023",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 4.2: Quinone Degradation Mechanisms",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "AQDS autoxidation by dissolved oxygen reduces CE from 95.5% to 90.2% at 100 mA/cm2 when electrolyte is oxygen-saturated",
+      "entities": [
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "species:oxygen",
+          "name": "dissolved oxygen",
+          "type": "SPECIES"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 90.2,
+          "unit": "%",
+          "canonical_id": "measurement:aqds_ce_oxygen_90_2"
+        },
+        {
+          "metric_type": "CE",
+          "value": 95.5,
+          "unit": "%",
+          "canonical_id": "measurement:aqds_ce_deoxygenated_95_5"
+        }
+      ],
+      "mechanisms": [
+        "degradation:autoxidation"
+      ],
+      "evidence_text": "In a cell operated with oxygen-saturated electrolyte, the CE dropped to 90.2% at 100 mA/cm2, compared to 95.5% under oxygen-free conditions."
+    },
+    {
+      "gold_id": "DOC09-EFU-024",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 3.2: Viologen Degradation Mechanisms",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Viologen nucleophilic attack by hydroxide at pH 14 results in capacity fade rate of 0.072%/cycle via dihydropyridine adduct formation",
+      "entities": [
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "species:hydroxide",
+          "name": "hydroxide ion",
+          "type": "SPECIES"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 14,
+          "unit": "",
+          "canonical_id": "condition:ph_14"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.072,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_fade_ph14_0_072"
+        }
+      ],
+      "mechanisms": [
+        "degradation:nucleophilic_attack"
+      ],
+      "evidence_text": "A second degradation pathway involves nucleophilic attack on the viologen dication by hydroxide ions or other nucleophiles present in the electrolyte. At pH 14, this degradation pathway resulted in a capacity fade rate of 0.072%/cycle, substantially higher than the 0.035%/cycle observed at pH 7."
+    },
+    {
+      "gold_id": "DOC09-EFU-025",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 2.2: TEMPO Degradation Mechanisms",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "TEMPO capacity fade rate increased from 0.02%/cycle at 10 ppm water to 0.08%/cycle at 500 ppm water",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "species:water",
+          "name": "water",
+          "type": "SPECIES"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "water_content",
+          "value": 500,
+          "unit": "ppm",
+          "canonical_id": "condition:water_500_ppm"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.08,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:tempo_fade_500ppm_0_08"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:tempo_fade_10ppm_0_02"
+        }
+      ],
+      "mechanisms": [
+        "degradation:disproportionation",
+        "degradation:hydrolysis"
+      ],
+      "evidence_text": "The capacity fade rate increased from 0.02%/cycle at 10 ppm water content to 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm, and 0.08%/cycle at 500 ppm."
+    },
+    {
+      "gold_id": "DOC09-EFU-026",
+      "source_doc_id": "DOC09",
+      "source_section": "Section 7: Mitigation Strategies",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Key design principles for ORFB stability: membrane selectivity above 95%, SOC window 10-85% for TEMPO, steric protection of radicals, water below 100 ppm for TEMPO, oxygen below 0.1 ppm for quinones",
+      "entities": [
+        {
+          "canonical_id": "material:tempo",
+          "name": "TEMPO",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:aqds",
+          "name": "AQDS",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:methyl_viologen",
+          "name": "methyl viologen",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:membrane_selectivity_95"
+        },
+        {
+          "metric_type": "water_content",
+          "value": 100,
+          "unit": "ppm",
+          "canonical_id": "measurement:water_threshold_100_ppm"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover",
+        "degradation:dimerization",
+        "degradation:disproportionation",
+        "degradation:autoxidation"
+      ],
+      "evidence_text": "The comparison across chemistries reveals several universal design principles. Membrane selectivity above 95% is essential for minimizing crossover-induced fade, regardless of the active species employed. SOC imbalance management through matched crossover pairs or periodic remixing is necessary for long-term capacity retention. Steric protection of radical intermediates through bulky substituents is broadly applicable across nitroxyl, viologen, and semiquinone platforms. Electrolyte purity, particularly water and oxygen exclusion, is a cross-cutting requirement."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC09-FACT-001",
+      "source_doc_id": "DOC09",
+      "claim": "TEMPO in acetonitrile at 100 mA/cm2 achieves CE of 98.2% and EE of 84.3% when paired with viologen anolyte and Nafion 117 membrane",
+      "required_entities": [
+        "material:tempo",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "concentration",
+          "value": 0.1,
+          "unit": "mol/L",
+          "canonical_id": "condition:concentration_0_1_mol_l"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 98.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_2_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 84.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_3_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC09-EFU-001"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-002",
+      "source_doc_id": "DOC09",
+      "claim": "TEMPO EE increases from 84.3% to 88.5% as current density decreases from 100 mA/cm2 to 20 mA/cm2",
+      "required_entities": [
+        "material:tempo"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 84.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 88.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_88_5_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC09-EFU-001",
+        "DOC09-EFU-004"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-003",
+      "source_doc_id": "DOC09",
+      "claim": "TEMPO-PEG functionalization reduces crossover rate from 0.8 x 10^-6 cm2/s to 0.3 x 10^-6 cm2/s and capacity fade from 0.02%/cycle to 0.015%/cycle compared to unmodified TEMPO",
+      "required_entities": [
+        "material:tempo",
+        "material:tempo_peg",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.3,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:tempo_peg_crossover_0_3"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.8,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:tempo_crossover_0_8"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.015,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_015_pct_cycle"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-005"
+      ],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC09-FACT-004",
+      "source_doc_id": "DOC09",
+      "claim": "TEMPO degradation proceeds via oxoammonium disproportionation, radical dimerization (5% at RT, 12% at 45 C), and high-SOC side reactions",
+      "required_entities": [
+        "material:tempo",
+        "material:tempo_oxoammonium"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 45,
+          "unit": "C",
+          "canonical_id": "condition:temperature_45_c"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:200_cycles"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 5,
+          "unit": "%",
+          "canonical_id": "measurement:tempo_dimerization_5"
+        },
+        {
+          "metric_type": "dimerization_extent",
+          "value": 12,
+          "unit": "%",
+          "canonical_id": "measurement:tempo_dimerization_12pct_45c"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:disproportionation",
+        "degradation:dimerization"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-019",
+        "DOC09-EFU-020"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC09-FACT-005",
+      "source_doc_id": "DOC09",
+      "claim": "Methyl viologen at pH 7 and 100 mA/cm2 achieves CE of 96.8% and EE of 80.2% with Nafion 117, but shows high crossover rate of 2.1 x 10^-6 cm2/s",
+      "required_entities": [
+        "material:methyl_viologen",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 7,
+          "unit": "",
+          "canonical_id": "condition:ph_7"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_8_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.2,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_2_percent"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 2.1,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:mv_crossover_2_1"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-006"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-006",
+      "source_doc_id": "DOC09",
+      "claim": "PSV functionalization reduces viologen crossover from 2.1 x 10^-6 cm2/s to 0.4 x 10^-6 cm2/s and capacity fade from 0.055%/cycle to 0.018%/cycle",
+      "required_entities": [
+        "material:methyl_viologen",
+        "material:propylsulfonate_viologen",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.4,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:psv_crossover_0_4"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_018_pct_cycle"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-007"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC09-FACT-007",
+      "source_doc_id": "DOC09",
+      "claim": "Viologen degradation proceeds via radical cation dimerization (8% at 0.1 M, 14% at 0.2 M), nucleophilic attack at pH>12, and over-reduction to V0",
+      "required_entities": [
+        "material:methyl_viologen"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "concentration",
+          "value": 0.1,
+          "unit": "mol/L",
+          "canonical_id": "condition:mv_conc_0_1_m"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 14,
+          "unit": "",
+          "canonical_id": "condition:ph_14"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 8,
+          "unit": "%",
+          "canonical_id": "measurement:mv_dimerization_8pct"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:dimerization",
+        "degradation:nucleophilic_attack"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-021",
+        "DOC09-EFU-024"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC09-FACT-008",
+      "source_doc_id": "DOC09",
+      "claim": "AQDS at pH 12 achieves CE of 95.5% and EE of 78.5% at 100 mA/cm2 with capacity fade rate as low as 0.01%/cycle at 60 mA/cm2",
+      "required_entities": [
+        "material:aqds"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 95.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_5_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.01,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:capacity_fade_0_01_pct_cycle"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC09-EFU-008",
+        "DOC09-EFU-009"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-009",
+      "source_doc_id": "DOC09",
+      "claim": "AQDS degradation involves nucleophilic addition (0.068%/cycle at pH 14 vs 0.012%/cycle at pH 12) and autoxidation (CE drops from 95.5% to 90.2% with oxygen)",
+      "required_entities": [
+        "material:aqds",
+        "species:oxygen"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 14,
+          "unit": "",
+          "canonical_id": "condition:ph_14"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 12,
+          "unit": "",
+          "canonical_id": "condition:ph_12"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.068,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_ph14_0_068"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.012,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_ph12_0_012"
+        },
+        {
+          "metric_type": "CE",
+          "value": 90.2,
+          "unit": "%",
+          "canonical_id": "measurement:aqds_ce_oxygen_90_2"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:nucleophilic_addition",
+        "degradation:autoxidation"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-022",
+        "DOC09-EFU-023"
+      ],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-010",
+      "source_doc_id": "DOC09",
+      "claim": "Crossover rates through Nafion 117 order: MV 2.1 > TEMPO 0.8 > AQDS 0.2 x 10^-6 cm2/s, reflecting molecular size, charge, and hydrophobicity effects",
+      "required_entities": [
+        "material:methyl_viologen",
+        "material:tempo",
+        "material:aqds",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "crossover_rate",
+          "value": 2.1,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:mv_crossover_2_1"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.8,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:tempo_crossover_0_8"
+        },
+        {
+          "metric_type": "crossover_rate",
+          "value": 0.2,
+          "unit": "x 10^-6 cm2/s",
+          "canonical_id": "measurement:aqds_crossover_0_2"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-013"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC09-FACT-011",
+      "source_doc_id": "DOC09",
+      "claim": "MV/TEMPO cell shows 15% SOC imbalance after 300 cycles versus 7% for AQDS/TEMPO due to matched crossover rates",
+      "required_entities": [
+        "material:methyl_viologen",
+        "material:tempo",
+        "material:aqds"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "cycle_number",
+          "value": 300,
+          "unit": "cycles",
+          "canonical_id": "condition:300_cycles"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 15,
+          "unit": "%",
+          "canonical_id": "measurement:mv_tempo_soc_imbalance_15"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 7,
+          "unit": "%",
+          "canonical_id": "measurement:aqds_tempo_soc_imbalance_7"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-015"
+      ],
+      "difficulty": "L4",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC09-FACT-012",
+      "source_doc_id": "DOC09",
+      "claim": "TEMPO water sensitivity: capacity fade increases from 0.02%/cycle at 10 ppm to 0.08%/cycle at 500 ppm water with critical threshold at 100 ppm",
+      "required_entities": [
+        "material:tempo",
+        "species:water"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "water_content",
+          "value": 10,
+          "unit": "ppm",
+          "canonical_id": "condition:water_10_ppm"
+        },
+        {
+          "quantity_type": "water_content",
+          "value": 500,
+          "unit": "ppm",
+          "canonical_id": "condition:water_500_ppm"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:tempo_fade_10ppm_0_02"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.08,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:tempo_fade_500ppm_0_08"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:disproportionation"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-025"
+      ],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-013",
+      "source_doc_id": "DOC09",
+      "claim": "Steric protection reduces dimerization across all platforms: tert-butyl TEMPO 5%->2%, benzyl viologen 8%->4%, reflecting general molecular design principle",
+      "required_entities": [
+        "material:tempo",
+        "material:methyl_viologen"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "dimerization_extent",
+          "value": 2,
+          "unit": "%",
+          "canonical_id": "measurement:tempo_tb_dimerization_2"
+        },
+        {
+          "metric_type": "dimerization_extent",
+          "value": 4,
+          "unit": "%",
+          "canonical_id": "measurement:mv_benzyl_dimerization_4"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:dimerization"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-014"
+      ],
+      "difficulty": "L4",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC09-FACT-014",
+      "source_doc_id": "DOC09",
+      "claim": "pH 9 provides best viologen CE of 97.5% at 100 mA/cm2, while pH 14 causes accelerated degradation at 0.072%/cycle due to nucleophilic attack",
+      "required_entities": [
+        "material:methyl_viologen"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "pH",
+          "value": 9,
+          "unit": "",
+          "canonical_id": "condition:ph_9"
+        },
+        {
+          "quantity_type": "pH",
+          "value": 14,
+          "unit": "",
+          "canonical_id": "condition:ph_14"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 97.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_5_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.072,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_fade_ph14_0_072"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:nucleophilic_attack"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-011",
+        "DOC09-EFU-024"
+      ],
+      "difficulty": "L3",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC09-FACT-015",
+      "source_doc_id": "DOC09",
+      "claim": "Nanoporous size-exclusion membrane with 97% selectivity reduces MV capacity fade by 4.6x versus Nafion 117 but decreases EE from 80.2% to 78.5% at 100 mA/cm2",
+      "required_entities": [
+        "material:methyl_viologen",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 97,
+          "unit": "%",
+          "canonical_id": "measurement:size_exclusion_selectivity_97"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_size_exclusion_78_5"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.012,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_size_exclusion_0_012"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC09-EFU-012"
+      ],
+      "difficulty": "L4",
+      "fact_type": "COMPARISON"
+    }
+  ],
+  "qas": [
+    {
+      "question_id": "DOC09-QA-001",
+      "source_doc_id": "DOC09",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What CE and EE does TEMPO in acetonitrile achieve at 100 mA/cm2 when paired with a viologen anolyte?",
+      "reference_answer": "TEMPO in acetonitrile at 100 mA/cm2 achieves a CE of 98.2% and an EE of 84.3% when paired with a viologen-based anolyte using Nafion 117 membrane.",
+      "reference_answer_points": [
+        "CE of 98.2%",
+        "EE of 84.3%",
+        "100 mA/cm2 current density"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-002",
+      "source_doc_id": "DOC09",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the CE and EE of methyl viologen in aqueous electrolyte at pH 7 and 100 mA/cm2?",
+      "reference_answer": "Methyl viologen in aqueous electrolyte at pH 7 and 100 mA/cm2 achieves a CE of 96.8% and an EE of 80.2% when paired with a TEMPO catholyte.",
+      "reference_answer_points": [
+        "CE of 96.8%",
+        "EE of 80.2%",
+        "pH 7",
+        "100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-003",
+      "source_doc_id": "DOC09",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What CE and EE does AQDS achieve at pH 12 and 100 mA/cm2 when paired with ferrocyanide catholyte?",
+      "reference_answer": "AQDS at pH 12 and 100 mA/cm2 paired with ferrocyanide catholyte achieves a CE of 95.5% and an EE of 78.5% with a cell voltage of approximately 0.8 V.",
+      "reference_answer_points": [
+        "CE of 95.5%",
+        "EE of 78.5%",
+        "pH 12",
+        "Cell voltage ~0.8 V"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-004",
+      "source_doc_id": "DOC09",
+      "level": "L2",
+      "question_type": "trend analysis",
+      "question": "How does TEMPO energy efficiency change as current density decreases from 100 mA/cm2 to 20 mA/cm2?",
+      "reference_answer": "TEMPO energy efficiency increases from 84.3% at 100 mA/cm2 to 87.1% at 60 mA/cm2, 88.0% at 40 mA/cm2, and 88.5% at 20 mA/cm2. This trend reflects reduced overpotential losses at lower current densities.",
+      "reference_answer_points": [
+        "84.3% at 100 mA/cm2",
+        "87.1% at 60 mA/cm2",
+        "88.0% at 40 mA/cm2",
+        "88.5% at 20 mA/cm2",
+        "Reduced overpotential at lower current density"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001",
+        "DOC09-EFU-002",
+        "DOC09-EFU-003",
+        "DOC09-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-005",
+      "source_doc_id": "DOC09",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does TEMPO-PEG functionalization affect crossover rate and capacity fade compared to unmodified TEMPO?",
+      "reference_answer": "TEMPO-PEG reduces the crossover rate through Nafion 117 from 0.8 x 10^-6 cm2/s to 0.3 x 10^-6 cm2/s due to increased molecular size and hydrophilic PEG tail. The capacity fade rate decreases from 0.02%/cycle to 0.015%/cycle. At 100 mA/cm2, TEMPO-PEG achieves CE of 98.9% and EE of 83.7%.",
+      "reference_answer_points": [
+        "Crossover rate reduced from 0.8 to 0.3 x 10^-6 cm2/s",
+        "Capacity fade reduced from 0.02 to 0.015%/cycle",
+        "CE 98.9% and EE 83.7% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-006",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What are the three main TEMPO degradation mechanisms and how does temperature affect dimerization?",
+      "reference_answer": "The three main TEMPO degradation mechanisms are: (1) oxoammonium cation disproportionation in presence of water or nucleophiles, producing hydroxylamine derivatives; (2) radical-radical dimerization forming electrochemically inactive adducts; and (3) high-SOC side reactions between TEMPO+ and solvent or supporting electrolyte. Temperature significantly affects dimerization: the extent increases from 5% at room temperature to 12% at 45 C after 200 cycles, indicating thermal sensitivity of radical stability.",
+      "reference_answer_points": [
+        "Oxoammonium disproportionation with water/nucleophiles",
+        "Radical dimerization to inactive adducts",
+        "High-SOC side reactions with solvent/electrolyte",
+        "Dimerization 5% at RT to 12% at 45 C"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-019",
+        "DOC09-EFU-020"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-007",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What are the primary viologen degradation mechanisms and how does concentration affect dimerization?",
+      "reference_answer": "The primary viologen degradation mechanisms are: (1) radical cation dimerization of V+ to form electrochemically inactive dimers, with extent of 8% at 0.1 M increasing to 14% at 0.2 M due to second-order kinetics; (2) nucleophilic attack by hydroxide at pH > 12, causing capacity fade of 0.072%/cycle at pH 14; and (3) over-reduction to neutral V0 form, which is highly reactive and poorly soluble. Steric protection with bulky substituents reduces dimerization: benzyl viologen shows only 4% dimerization versus 8% for MV.",
+      "reference_answer_points": [
+        "Radical cation dimerization: 8% at 0.1 M, 14% at 0.2 M",
+        "Nucleophilic attack at high pH: 0.072%/cycle at pH 14",
+        "Over-reduction to reactive V0 form",
+        "Benzyl substituents reduce dimerization to 4%"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-021",
+        "DOC09-EFU-024"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-008",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "comparison",
+      "question": "Compare the crossover rates of MV, TEMPO, and AQDS through Nafion 117 and explain the molecular factors governing these rates.",
+      "reference_answer": "Crossover rates through Nafion 117 follow the order: MV (2.1 x 10^-6 cm2/s) > TEMPO (0.8 x 10^-6 cm2/s) > AQDS (0.2 x 10^-6 cm2/s). This ordering reflects combined effects of molecular size, charge, and hydrophobicity. MV has the highest crossover due to its small dicationic structure. TEMPO has moderate crossover as a neutral radical. AQDS has the lowest crossover because sulfonate groups provide electrostatic repulsion from the cation exchange membrane. MV membrane selectivity is 88% versus 94% for AQDS with Nafion 117.",
+      "reference_answer_points": [
+        "MV: 2.1 x 10^-6 cm2/s",
+        "TEMPO: 0.8 x 10^-6 cm2/s",
+        "AQDS: 0.2 x 10^-6 cm2/s",
+        "Molecular size, charge, hydrophobicity govern rates",
+        "AQDS sulfonates provide electrostatic exclusion"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-010"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-013"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-009",
+      "source_doc_id": "DOC09",
+      "level": "L4",
+      "question_type": "multi-hop reasoning",
+      "question": "How does differential crossover between catholyte and anolyte species lead to SOC imbalance, and how do different active species pairings compare?",
+      "reference_answer": "Differential crossover occurs when one active species crosses through the membrane faster than its counterpart, depleting that side more rapidly and creating asymmetric capacity utilization. In MV/TEMPO cells, MV crossover (2.1 x 10^-6 cm2/s) exceeds TEMPO crossover (0.8 x 10^-6 cm2/s), leading to 15% SOC imbalance after 300 cycles. In AQDS/TEMPO cells, the crossover rates are better matched (AQDS 0.2, TEMPO 0.8 x 10^-6 cm2/s), resulting in only 7% SOC imbalance. Mitigation strategies include matched crossover pairs, periodic electrolyte remixing, and symmetry-breaking additives.",
+      "reference_answer_points": [
+        "Differential crossover depletes one side faster",
+        "MV/TEMPO: 15% SOC imbalance after 300 cycles",
+        "AQDS/TEMPO: 7% SOC imbalance (matched rates)",
+        "Mitigation: matched pairs, remixing, additives"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-010",
+      "source_doc_id": "DOC09",
+      "level": "L4",
+      "question_type": "multi-hop reasoning",
+      "question": "What is the relationship between water content and TEMPO capacity fade, and what is the critical threshold for acceptable stability?",
+      "reference_answer": "TEMPO capacity fade increases dramatically with water content: 0.02%/cycle at 10 ppm, 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm, and 0.08%/cycle at 500 ppm. The critical threshold is approximately 100 ppm water content for maintaining acceptable stability. This sensitivity arises because water promotes oxoammonium disproportionation, the primary degradation pathway where TEMPO+ reacts with water to produce hydroxylamine derivatives and oxygen byproducts.",
+      "reference_answer_points": [
+        "0.02%/cycle at 10 ppm water",
+        "0.035%/cycle at 50 ppm",
+        "0.055%/cycle at 200 ppm",
+        "0.08%/cycle at 500 ppm",
+        "Critical threshold: ~100 ppm",
+        "Mechanism: oxoammonium disproportionation with water"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-025"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-011",
+      "source_doc_id": "DOC09",
+      "level": "L5",
+      "question_type": "synthesis",
+      "question": "Synthesize the key molecular design principles for stabilizing organic active species in redox flow batteries across TEMPO, viologen, and quinone platforms.",
+      "reference_answer": "Key molecular design principles across all three platforms include: (1) Steric protection with bulky substituents to prevent radical dimerization - tert-butyl TEMPO reduces dimerization from 5% to 2%, benzyl viologen from 8% to 4%; (2) Functionalization to reduce crossover - TEMPO-PEG reduces crossover from 0.8 to 0.3 x 10^-6 cm2/s, PSV from 2.1 to 0.4 x 10^-6 cm2/s; (3) Electron-donating/withdrawing groups to stabilize redox forms - acetamido TEMPO stabilizes oxoammonium, tetrafluoro anthraquinone reduces nucleophilic attack; (4) Charged groups for electrostatic membrane exclusion - sulfonated viologens and AQDS show inherently low crossover; (5) Electrolyte purity control - water below 100 ppm for TEMPO, oxygen below 0.1 ppm for quinones, pH 8-9 for viologens.",
+      "reference_answer_points": [
+        "Steric protection reduces dimerization across all platforms",
+        "Functionalization reduces crossover",
+        "Electronic tuning stabilizes redox forms",
+        "Charged groups enable electrostatic exclusion",
+        "Electrolyte purity is cross-cutting requirement"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-003",
+        "DOC09-FACT-006",
+        "DOC09-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-026"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-012",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does AQDS performance vary across pH values from 9 to 14 at 100 mA/cm2, and what is the optimal pH?",
+      "reference_answer": "AQDS performance at 100 mA/cm2 varies significantly with pH: at pH 9, CE is 94.2% and EE is 76.5%; at pH 11, CE is 95.8% and EE is 79.2%; at pH 12, CE is 95.5% and EE is 78.5%; at pH 14, CE drops to 93.8% and EE to 76.2%. The optimal pH is 12, representing a compromise between favorable redox kinetics (improving at higher pH) and suppression of nucleophilic degradation (accelerating at pH > 12). At pH 14, capacity fade rate increases to 0.068%/cycle versus 0.012%/cycle at pH 12.",
+      "reference_answer_points": [
+        "pH 9: CE 94.2%, EE 76.5%",
+        "pH 11: CE 95.8%, EE 79.2%",
+        "pH 12: CE 95.5%, EE 78.5% (optimal)",
+        "pH 14: CE 93.8%, EE 76.2%",
+        "Optimal pH 12 balances kinetics and stability"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-009",
+        "DOC09-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-008"
+      ]
+    }
+  ]
+}

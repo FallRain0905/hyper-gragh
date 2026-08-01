@@ -1,0 +1,815 @@
+{
+  "doc_id": "DOC03",
+  "doc_title": "Surface-Modified Carbon Felt Electrodes with Tunable Wettability for Enhanced Vanadium Redox Flow Battery Performance",
+  "annotations": {
+    "efus": [
+      {
+        "canonical_id": "DOC03_EFU_001",
+        "type": "COMPOSITION",
+        "text": "The C-C electrode is a pristine carbon-carbon composite used as-received without further modification, following ultrasonic cleaning in deionized water and ethanol.",
+        "evidence_text": "The starting material for all electrode variants was commercial soft carbon felt... The pristine material (C-C) was used as-received without further modification, following ultrasonic cleaning in deionized water and ethanol to remove surface contaminants.",
+        "subject": "C-C electrode",
+        "properties": [
+          "pristine carbon-carbon composite",
+          "as-received",
+          "ultrasonic cleaned"
+        ]
+      },
+      {
+        "canonical_id": "DOC03_EFU_002",
+        "type": "COMPOSITION",
+        "text": "The MC-C electrode was prepared through a two-step activation procedure involving 6.0 M HNO₃ reflux at 80°C for 12 hours followed by thermal activation at 450°C in flowing air for 3 hours.",
+        "evidence_text": "The MC-C electrode was prepared through a two-step activation procedure. First, rectangular specimens were immersed in a 6.0 M HNO₃ solution and refluxed at 80°C for 12 hours... then thermally activated at 450°C in a flowing air atmosphere for 3 hours",
+        "subject": "MC-C electrode",
+        "properties": [
+          "acid oxidation in 6.0 M HNO₃",
+          "80°C reflux for 12 hours",
+          "thermal activation at 450°C in air for 3 hours"
+        ]
+      },
+      {
+        "canonical_id": "DOC03_EFU_003",
+        "type": "COMPOSITION",
+        "text": "The BMC-C electrode was fabricated by subjecting MC-C substrates to boronation at 850°C under argon flow using boric acid (H₃BO₃) vapor for 2 hours, creating covalent B-C bonds.",
+        "evidence_text": "The BMC-C electrode was fabricated by subjecting MC-C substrates to an additional boronation step. The pre-activated samples were placed in a tubular furnace and heated to 850°C under an argon flow of 200 mL min⁻¹. A boron source consisting of boric acid (H₃BO₃) vapor... was carried by the argon stream and allowed to react with the activated carbon surface for 2 hours.",
+        "subject": "BMC-C electrode",
+        "properties": [
+          "boronation of MC-C substrate",
+          "850°C under argon",
+          "boric acid vapor source",
+          "2 hours reaction time",
+          "covalent B-C bonds"
+        ]
+      },
+      {
+        "canonical_id": "DOC03_EFU_004",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The BMC-C electrode achieved a contact angle of 92.8°, compared to 130.4° for C-C and 102° for MC-C, reflecting transition from hydrophobic to near-hydrophilic behavior.",
+        "evidence_text": "The pristine C-C electrode exhibited a water contact angle of 130.4°... the MC-C electrode displayed a substantially reduced contact angle of 102°... the BMC-C electrode achieved a contact angle of 92.8°",
+        "subject": "water contact angle",
+        "values": {
+          "C-C": "130.4°",
+          "MC-C": "102°",
+          "BMC-C": "92.8°"
+        },
+        "test_conditions": "water contact angle goniometry at ambient temperature"
+      },
+      {
+        "canonical_id": "DOC03_EFU_005",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The charge-transfer resistance for the V(IV)/V(V) couple in 2.0 M VOSO₄ + 3.0 M H₂SO₄ electrolyte decreased from 3.82 Ω cm² (C-C) to 2.17 Ω cm² (MC-C) to 1.34 Ω cm² (BMC-C).",
+        "evidence_text": "The C-C electrode exhibited the highest Rct of 3.82 Ω cm²... The MC-C electrode achieved a substantially lower Rct of 2.17 Ω cm²... The BMC-C electrode recorded the lowest Rct of 1.34 Ω cm²",
+        "subject": "charge-transfer resistance (Rct)",
+        "values": {
+          "C-C": "3.82 Ω cm²",
+          "MC-C": "2.17 Ω cm²",
+          "BMC-C": "1.34 Ω cm²"
+        },
+        "test_conditions": "EIS at formal potential of V(IV)/V(V) couple in 2.0 M VOSO₄ + 3.0 M H₂SO₄, Randles-type equivalent circuit fitting"
+      },
+      {
+        "canonical_id": "DOC03_EFU_006",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The BMC-C electrode delivered an energy efficiency of 82.4% at 100 mA cm⁻², surpassing 74.1% for MC-C and 66.3% for C-C, while maintaining Coulombic efficiency above 96% across all tested current densities.",
+        "evidence_text": "At 100 mA cm⁻², the C-C electrode delivered an EE of 66.3%, the MC-C electrode achieved 74.1%, and the BMC-C electrode reached 82.4%... maintaining a Coulombic efficiency (CE) above 96% across all tested current densities",
+        "subject": "energy efficiency (EE)",
+        "values": {
+          "C-C at 100 mA/cm²": "66.3%",
+          "MC-C at 100 mA/cm²": "74.1%",
+          "BMC-C at 100 mA/cm²": "82.4%"
+        },
+        "test_conditions": "single-cell VRFB, 1.6 M VOSO₄ positive electrolyte, Nafion 117 membrane, 20-80% SOC window, ambient temperature"
+      },
+      {
+        "canonical_id": "DOC03_EFU_007",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The voltage efficiency of BMC-C declined from 89.2% at 50 mA cm⁻² to 84.5% at 100 mA cm⁻² and 71.5% at 200 mA cm⁻², while C-C achieved only 77.5% at 50 mA cm⁻² and 54.8% at 200 mA cm⁻².",
+        "evidence_text": "For the C-C electrode, VE declined from 77.5% at 50 mA cm⁻²... 54.8% at 200 mA cm⁻². The BMC-C electrode achieved... VE = 89.2% at 50 mA cm⁻², 84.5% at 100 mA cm⁻², 71.5% at 200 mA cm⁻²",
+        "subject": "voltage efficiency (VE)",
+        "values": {
+          "C-C at 50 mA/cm²": "77.5%",
+          "C-C at 200 mA/cm²": "54.8%",
+          "BMC-C at 50 mA/cm²": "89.2%",
+          "BMC-C at 100 mA/cm²": "84.5%",
+          "BMC-C at 200 mA/cm²": "71.5%"
+        },
+        "test_conditions": "single-cell VRFB at specified current densities"
+      },
+      {
+        "canonical_id": "DOC03_EFU_008",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The polarization voltage delta (ΔVpol) for BMC-C was 0.11 V at 50 mA cm⁻², 0.22 V at 100 mA cm⁻², 0.33 V at 200 mA cm⁻², and 0.58 V at 500 mA cm⁻², compared to C-C values of 0.18 V, 0.35 V, 0.52 V, and 0.91 V respectively.",
+        "evidence_text": "For the C-C electrode, ΔVpol increased steeply from 0.18 V at 50 mA cm⁻² to 0.52 V at 200 mA cm⁻² and reached 0.91 V at 500 mA cm⁻². The MC-C electrode demonstrated... 0.14 V, 0.28 V, 0.41 V, and 0.72 V at 50, 100, 200, and 500 mA cm⁻². The BMC-C electrode exhibited... 0.11 V at 50 mA cm⁻², 0.22 V at 100 mA cm⁻², 0.33 V at 200 mA cm⁻², and 0.58 V at 500 mA cm⁻²",
+        "subject": "polarization voltage delta (ΔVpol)",
+        "values": {
+          "C-C at 50/100/200/500 mA/cm²": "0.18/0.35/0.52/0.91 V",
+          "MC-C at 50/100/200/500 mA/cm²": "0.14/0.28/0.41/0.72 V",
+          "BMC-C at 50/100/200/500 mA/cm²": "0.11/0.22/0.33/0.58 V"
+        },
+        "test_conditions": "single-cell charge-discharge cycling, 20-80% SOC window"
+      },
+      {
+        "canonical_id": "DOC03_EFU_009",
+        "type": "COMPARISON",
+        "text": "The BMC-C electrode showed a 64.9% reduction in charge-transfer resistance relative to C-C (from 3.82 to 1.34 Ω cm²) and a 38.2% improvement over MC-C (from 2.17 to 1.34 Ω cm²).",
+        "evidence_text": "The BMC-C electrode recorded the lowest Rct of 1.34 Ω cm², representing a 64.9% reduction relative to C-C and a 38.2% improvement over MC-C",
+        "baseline": "C-C Rct = 3.82 Ω cm²",
+        "comparison": "BMC-C reduces Rct by 64.9% vs C-C and 38.2% vs MC-C"
+      },
+      {
+        "canonical_id": "DOC03_EFU_010",
+        "type": "COMPARISON",
+        "text": "The 18.3 percentage-point difference in voltage efficiency between BMC-C and C-C at 200 mA cm⁻² (71.5% vs 54.8%) demonstrates substantial extension of the practical operating window to higher power densities.",
+        "evidence_text": "The 18.3 percentage-point difference in VE between BMC-C and C-C at 200 mA cm⁻² is particularly significant, as it demonstrates that surface engineering can substantially extend the practical operating window of VRFB systems to higher power densities.",
+        "baseline": "C-C VE = 54.8% at 200 mA/cm²",
+        "comparison": "BMC-C VE = 71.5% at 200 mA/cm², 18.3 percentage points higher"
+      },
+      {
+        "canonical_id": "DOC03_EFU_011",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "Cyclic voltammetry for the V(IV)/V(V) couple showed peak separation (ΔEp) decreasing from 268 mV (C-C) to 204 mV (MC-C) to 158 mV (BMC-C) at 50 mV s⁻¹, with BMC-C achieving jpa = 31.8 mA cm⁻² and jpc = 26.5 mA cm⁻².",
+        "evidence_text": "For the C-C electrode... ΔEp of 268 mV. The MC-C electrode exhibited... reduced ΔEp of 204 mV. The BMC-C electrode demonstrated... a ΔEp of 158 mV... jpa = 31.8 mA cm⁻² and jpc = 26.5 mA cm⁻²",
+        "subject": "CV peak separation and peak currents",
+        "values": {
+          "C-C ΔEp": "268 mV",
+          "MC-C ΔEp": "204 mV",
+          "BMC-C ΔEp": "158 mV",
+          "BMC-C jpa": "31.8 mA cm⁻²",
+          "BMC-C jpc": "26.5 mA cm⁻²"
+        },
+        "test_conditions": "CV at 50 mV s⁻¹ in 2.0 M VOSO₄ + 3.0 M H₂SO₄, 0.0 to +1.2 V vs Ag/AgCl"
+      },
+      {
+        "canonical_id": "DOC03_EFU_012",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The electrochemically active surface area (ECSA) estimated from Randles-Sevcik analysis increased from 4.6 cm² (C-C) to 8.9 cm² (MC-C) to 12.9 cm² (BMC-C), a 2.80-fold enhancement.",
+        "evidence_text": "The slopes of these linear fits were used to estimate the effective electrochemical surface area (ECSA), which increased from 4.6 cm² for C-C to 8.9 cm² for MC-C and further to 12.9 cm² for BMC-C, representing a 2.80-fold enhancement.",
+        "subject": "electrochemically active surface area (ECSA)",
+        "values": {
+          "C-C": "4.6 cm²",
+          "MC-C": "8.9 cm²",
+          "BMC-C": "12.9 cm²"
+        },
+        "test_conditions": "Randles-Sevcik analysis from CV at sweep rates 5-100 mV s⁻¹, R² > 0.995"
+      },
+      {
+        "canonical_id": "DOC03_EFU_013",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "Surface roughness (arithmetic mean roughness Ra) increased from 8.4 μm (C-C) to 11.2 μm (MC-C) to 14.7 μm (BMC-C), a 75% enhancement from C-C to BMC-C.",
+        "evidence_text": "The pristine C-C fibers presented... Ra of 8.4 μm... the MC-C fibers showed... Ra increasing to 11.2 μm... The BMC-C fibers displayed... Ra reaching 14.7 μm",
+        "subject": "surface roughness (Ra)",
+        "values": {
+          "C-C": "8.4 μm",
+          "MC-C": "11.2 μm",
+          "BMC-C": "14.7 μm"
+        },
+        "test_conditions": "SEM image analysis, arithmetic mean roughness"
+      },
+      {
+        "canonical_id": "DOC03_EFU_014",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "BET specific surface area values were 1.42 m² g⁻¹ for C-C, 3.15 m² g⁻¹ for MC-C, and 4.08 m² g⁻¹ for BMC-C, a 2.87-fold increase from C-C to BMC-C.",
+        "evidence_text": "BET nitrogen adsorption-desorption measurements yielded specific surface area values of 1.42 m² g⁻¹ for C-C, 3.15 m² g⁻¹ for MC-C, and 4.08 m² g⁻¹ for BMC-C. While these absolute values are modest... the BET surface area increases by 2.87-fold from C-C to BMC-C",
+        "subject": "BET specific surface area",
+        "values": {
+          "C-C": "1.42 m² g⁻¹",
+          "MC-C": "3.15 m² g⁻¹",
+          "BMC-C": "4.08 m² g⁻¹"
+        },
+        "test_conditions": "N₂ adsorption-desorption at 77 K"
+      },
+      {
+        "canonical_id": "DOC03_EFU_015",
+        "type": "MECHANISM_EVIDENCE",
+        "text": "Boron atoms incorporated into the carbon lattice create localized electron-deficient sites that polarize the surrounding carbon framework, increasing the density of states at the Fermi level and modifying the adsorption energy of vanadium intermediates for the V(IV)/V(V) inner-sphere electron transfer mechanism.",
+        "evidence_text": "Boron atoms incorporated into the carbon lattice create localized electron-deficient sites due to boron's three valence electrons versus carbon's four. These sites polarize the surrounding carbon framework, increasing the density of states at the Fermi level and modifying the adsorption energy of vanadium intermediates. For the V(IV)/V(V) reaction, which proceeds through an inner-sphere electron transfer mechanism involving adsorbed VO₂⁺ and VO₂⁺ species, optimal binding energy at the electrode surface is critical.",
+        "mechanism": "boron doping enhances V(IV)/V(V) kinetics via electron-deficient sites that polarize carbon framework and optimize vanadium intermediate adsorption energy",
+        "supporting_evidence": "Rct reduction from 3.82 to 1.34 Ω cm², ΔEp decrease from 268 to 158 mV"
+      },
+      {
+        "canonical_id": "DOC03_EFU_016",
+        "type": "MECHANISM_EVIDENCE",
+        "text": "The progressive decrease in contact angle from 130.4° (C-C) to 102° (MC-C) to 92.8° (BMC-C) indicates successful introduction of oxygen-containing functional groups followed by additional polar character from boron incorporation through Lewis acid-base interactions with water molecules.",
+        "evidence_text": "The reduction from 130.4° to 102° upon acid/thermal treatment (C-C to MC-C) is consistent with the introduction of oxygen-containing functional groups... The further reduction to 92.8° for BMC-C indicates that boron incorporation contributes additional polar character to the surface... where the electron-deficient boron atoms interact with water molecules through Lewis acid-base interactions",
+        "mechanism": "wettability improvement from oxygen functional groups (MC-C) and boron Lewis acid-base interactions (BMC-C)",
+        "supporting_evidence": "contact angle progression 130.4° → 102° → 92.8°"
+      },
+      {
+        "canonical_id": "DOC03_EFU_017",
+        "type": "DEGRADATION_CHAIN",
+        "text": "The BMC-C electrode demonstrated capacity retention with a fade rate of 0.03% per cycle over 200 cycles, compared to 0.05% per cycle for MC-C and 0.08% per cycle for C-C, attributed to stable B-C bonds resistant to electrochemical degradation.",
+        "evidence_text": "The BMC-C electrode demonstrated excellent capacity retention with a fade rate of 0.03% per cycle, compared to 0.05% per cycle for MC-C and 0.08% per cycle for C-C. The enhanced durability of the BMC-C electrode is attributed to the high-temperature boronation process that creates stable B-C bonds resistant to electrochemical degradation... in contrast to the oxygen functional groups on MC-C which are more susceptible to reduction or dissolution during prolonged cycling.",
+        "fade_rates": {
+          "C-C": "0.08% per cycle",
+          "MC-C": "0.05% per cycle",
+          "BMC-C": "0.03% per cycle"
+        },
+        "stability": "200 cycles at 100 mA cm⁻²",
+        "degradation_mechanism": "oxygen functional groups on MC-C susceptible to reduction/dissolution; B-C bonds on BMC-C are electrochemically stable"
+      },
+      {
+        "canonical_id": "DOC03_EFU_018",
+        "type": "DESIGN_SUMMARY",
+        "text": "The dual-functionalization strategy for BMC-C combines acid oxidation/thermal activation (oxygen functional groups for wettability) with high-temperature boronation (B-C bonds for catalytic activity), producing synergistic effects exceeding single-modification approaches.",
+        "evidence_text": "combined treatment strategies that first introduce oxygen-containing functional groups to increase wettability and subsequently incorporate heteroatoms to enhance intrinsic electrocatalytic activity have demonstrated synergistic effects that exceed the performance gains achievable by either modification alone",
+        "design_rationale": "sequential wettability enhancement + catalytic site creation",
+        "performance_validation": "BMC-C EE 82.4% vs MC-C 74.1% and C-C 66.3% at 100 mA/cm²"
+      },
+      {
+        "canonical_id": "DOC03_EFU_019",
+        "type": "COMPARISON",
+        "text": "The activated carbon felt reference prepared by CO₂ activation at 700°C had higher BET surface area (6.42 m² g⁻¹) than BMC-C (4.08 m² g⁻¹) but higher Rct (2.68 vs 1.34 Ω cm²) and lower EE (78.6% vs 82.4%), showing that maximizing surface area without catalytic functional groups is insufficient.",
+        "evidence_text": "The activated carbon felt reference... exhibited a contact angle of 98.5°, a BET surface area of 6.42 m² g⁻¹, and Rct of 2.68 Ω cm²... its energy efficiency at 100 mA cm⁻² was only 78.6%. This finding highlights... maximizing surface area through aggressive activation does not necessarily translate to optimal electrochemical performance if the surface lacks catalytically active functional groups.",
+        "baseline": "activated carbon felt (CO₂ activation at 700°C)",
+        "comparison": "BMC-C has lower surface area (4.08 vs 6.42 m²/g) but superior Rct (1.34 vs 2.68 Ω cm²) and EE (82.4% vs 78.6%)"
+      },
+      {
+        "canonical_id": "DOC03_EFU_020",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The Coulombic efficiency at 100 mA cm⁻² was 96.8% for C-C, 97.2% for MC-C, and 97.5% for BMC-C, with all variants exceeding 96% CE across 50-500 mA cm⁻² current density range.",
+        "evidence_text": "at 100 mA cm⁻², the CE values were 96.8% for C-C, 97.2% for MC-C, and 97.5% for BMC-C. The slight increases in CE with surface modification are attributed to enhanced electrolyte wetting and reduced parasitic side reactions",
+        "subject": "Coulombic efficiency (CE)",
+        "values": {
+          "C-C at 100 mA/cm²": "96.8%",
+          "MC-C at 100 mA/cm²": "97.2%",
+          "BMC-C at 100 mA/cm²": "97.5%"
+        },
+        "test_conditions": "single-cell VRFB across 50-500 mA cm⁻²"
+      },
+      {
+        "canonical_id": "DOC03_EFU_021",
+        "type": "OPERATION_PERFORMANCE",
+        "text": "The energy efficiency of BMC-C at 200 mA cm⁻² was 69.7%, compared to 64.8% for MC-C and 53.1% for C-C, demonstrating maintained performance advantage at elevated current density.",
+        "evidence_text": "At 200 mA cm⁻², these values decreased to 53.1% for C-C, 64.8% for MC-C, and 69.7% for BMC-C",
+        "subject": "energy efficiency at 200 mA/cm²",
+        "values": {
+          "C-C": "53.1%",
+          "MC-C": "64.8%",
+          "BMC-C": "69.7%"
+        },
+        "test_conditions": "single-cell VRFB at 200 mA cm⁻²"
+      },
+      {
+        "canonical_id": "DOC03_EFU_022",
+        "type": "MECHANISM_EVIDENCE",
+        "text": "The peak current ratio (jpa/jpc) approached unity from 1.43 (C-C) to 1.20 (BMC-C), indicating improved electrochemical reversibility with surface functionalization.",
+        "evidence_text": "a peak current ratio (jpa/jpc) of 1.43... an improved peak current ratio of 1.32... jpa/jpc = 1.20... the approach of the peak current ratio toward unity suggests improved electrochemical reversibility",
+        "mechanism": "surface functionalization improves electrochemical reversibility of V(IV)/V(V) couple",
+        "supporting_evidence": "jpa/jpc improves from 1.43 to 1.32 to 1.20"
+      },
+      {
+        "canonical_id": "DOC03_EFU_023",
+        "type": "COMPARISON",
+        "text": "The difference in polarization voltage delta between BMC-C and C-C increased from 0.07 V at 50 mA cm⁻² to 0.33 V at 500 mA cm⁻², showing that surface functionalization benefits become increasingly pronounced at higher current densities.",
+        "evidence_text": "the difference in ΔVpol between BMC-C and C-C increases from 0.07 V at 50 mA cm⁻² to 0.33 V at 500 mA cm⁻², demonstrating that the benefits of surface functionalization become increasingly pronounced as current density rises",
+        "baseline": "C-C ΔVpol",
+        "comparison": "BMC-C-C-C ΔVpol gap widens from 0.07 V to 0.33 V as current density increases from 50 to 500 mA/cm²"
+      }
+    ],
+    "facts": [
+      {
+        "fact_id": "DOC03_FACT_001",
+        "canonical_id": "DOC03_EFU_001",
+        "text": "The C-C electrode is a pristine carbon-carbon composite carbon felt used as-received after ultrasonic cleaning."
+      },
+      {
+        "fact_id": "DOC03_FACT_002",
+        "canonical_id": "DOC03_EFU_002",
+        "text": "The MC-C electrode was prepared by acid oxidation in 6.0 M HNO₃ at 80°C for 12 hours followed by thermal activation at 450°C in air for 3 hours."
+      },
+      {
+        "fact_id": "DOC03_FACT_003",
+        "canonical_id": "DOC03_EFU_003",
+        "text": "The BMC-C electrode was made by boronating MC-C at 850°C under argon using boric acid vapor for 2 hours."
+      },
+      {
+        "fact_id": "DOC03_FACT_004",
+        "canonical_id": "DOC03_EFU_004",
+        "text": "BMC-C has a contact angle of 92.8°, MC-C has 102°, and C-C has 130.4°."
+      },
+      {
+        "fact_id": "DOC03_FACT_005",
+        "canonical_id": "DOC03_EFU_004",
+        "text": "BMC-C is near-hydrophilic while C-C is hydrophobic."
+      },
+      {
+        "fact_id": "DOC03_FACT_006",
+        "canonical_id": "DOC03_EFU_005",
+        "text": "Charge-transfer resistance for V(IV)/V(V) is 3.82 Ω cm² for C-C, 2.17 Ω cm² for MC-C, and 1.34 Ω cm² for BMC-C."
+      },
+      {
+        "fact_id": "DOC03_FACT_007",
+        "canonical_id": "DOC03_EFU_005",
+        "text": "BMC-C has the lowest charge-transfer resistance among the three electrodes."
+      },
+      {
+        "fact_id": "DOC03_FACT_008",
+        "canonical_id": "DOC03_EFU_006",
+        "text": "At 100 mA/cm², energy efficiency is 82.4% for BMC-C, 74.1% for MC-C, and 66.3% for C-C."
+      },
+      {
+        "fact_id": "DOC03_FACT_009",
+        "canonical_id": "DOC03_EFU_006",
+        "text": "All three electrodes maintain Coulombic efficiency above 96% across all tested current densities."
+      },
+      {
+        "fact_id": "DOC03_FACT_010",
+        "canonical_id": "DOC03_EFU_007",
+        "text": "BMC-C voltage efficiency declines from 89.2% at 50 mA/cm² to 71.5% at 200 mA/cm²."
+      },
+      {
+        "fact_id": "DOC03_FACT_011",
+        "canonical_id": "DOC03_EFU_009",
+        "text": "BMC-C reduces charge-transfer resistance by 64.9% compared to C-C."
+      },
+      {
+        "fact_id": "DOC03_FACT_012",
+        "canonical_id": "DOC03_EFU_010",
+        "text": "The voltage efficiency gap between BMC-C and C-C is 18.3 percentage points at 200 mA/cm²."
+      },
+      {
+        "fact_id": "DOC03_FACT_013",
+        "canonical_id": "DOC03_EFU_011",
+        "text": "CV peak separation for V(IV)/V(V) decreases from 268 mV (C-C) to 158 mV (BMC-C) at 50 mV/s."
+      },
+      {
+        "fact_id": "DOC03_FACT_014",
+        "canonical_id": "DOC03_EFU_012",
+        "text": "ECSA increases 2.80-fold from C-C (4.6 cm²) to BMC-C (12.9 cm²)."
+      },
+      {
+        "fact_id": "DOC03_FACT_015",
+        "canonical_id": "DOC03_EFU_013",
+        "text": "Surface roughness Ra increases from 8.4 μm (C-C) to 14.7 μm (BMC-C)."
+      },
+      {
+        "fact_id": "DOC03_FACT_016",
+        "canonical_id": "DOC03_EFU_014",
+        "text": "BET surface area increases 2.87-fold from C-C (1.42 m²/g) to BMC-C (4.08 m²/g)."
+      },
+      {
+        "fact_id": "DOC03_FACT_017",
+        "canonical_id": "DOC03_EFU_015",
+        "text": "Boron doping creates electron-deficient sites that enhance V(IV)/V(V) kinetics by optimizing adsorption energy."
+      },
+      {
+        "fact_id": "DOC03_FACT_018",
+        "canonical_id": "DOC03_EFU_017",
+        "text": "BMC-C has the lowest capacity fade rate at 0.03% per cycle over 200 cycles."
+      },
+      {
+        "fact_id": "DOC03_FACT_019",
+        "canonical_id": "DOC03_EFU_017",
+        "text": "B-C bonds are more electrochemically stable than oxygen functional groups during prolonged cycling."
+      },
+      {
+        "fact_id": "DOC03_FACT_020",
+        "canonical_id": "DOC03_EFU_019",
+        "text": "Activated carbon felt with higher surface area (6.42 m²/g) but no boron doping has lower EE (78.6%) than BMC-C (82.4%)."
+      },
+      {
+        "fact_id": "DOC03_FACT_021",
+        "canonical_id": "DOC03_EFU_021",
+        "text": "BMC-C maintains EE above 69% at 200 mA/cm² while C-C drops to 53.1%."
+      },
+      {
+        "fact_id": "DOC03_FACT_022",
+        "canonical_id": "DOC03_EFU_023",
+        "text": "The performance advantage of BMC-C over C-C increases at higher current densities."
+      },
+      {
+        "fact_id": "DOC03_FACT_023",
+        "canonical_id": "DOC03_EFU_020",
+        "text": "Coulombic efficiency at 100 mA/cm² is 97.5% for BMC-C, 97.2% for MC-C, and 96.8% for C-C."
+      },
+      {
+        "fact_id": "DOC03_FACT_024",
+        "canonical_id": "DOC03_EFU_022",
+        "text": "Peak current ratio jpa/jpc approaches unity from 1.43 to 1.20, indicating improved reversibility."
+      },
+      {
+        "fact_id": "DOC03_FACT_025",
+        "canonical_id": "DOC03_EFU_008",
+        "text": "Polarization voltage delta for BMC-C at 500 mA/cm² is 0.58 V versus 0.91 V for C-C."
+      },
+      {
+        "fact_id": "DOC03_FACT_026",
+        "canonical_id": "DOC03_EFU_008",
+        "text": "Polarization voltage delta for MC-C at 200 mA/cm² is 0.41 V."
+      }
+    ],
+    "qa_questions": [
+      {
+        "question_id": "DOC03_QA_001",
+        "level": "L1",
+        "question": "What is the contact angle of the BMC-C electrode?",
+        "answer": "92.8°",
+        "supporting_facts": [
+          "DOC03_FACT_004"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_002",
+        "level": "L1",
+        "question": "What is the charge-transfer resistance of the C-C electrode for the V(IV)/V(V) couple?",
+        "answer": "3.82 Ω cm²",
+        "supporting_facts": [
+          "DOC03_FACT_006"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_003",
+        "level": "L1",
+        "question": "What is the energy efficiency of BMC-C at 100 mA/cm²?",
+        "answer": "82.4%",
+        "supporting_facts": [
+          "DOC03_FACT_008"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_004",
+        "level": "L1",
+        "question": "What is the surface roughness (Ra) of the BMC-C electrode?",
+        "answer": "14.7 μm",
+        "supporting_facts": [
+          "DOC03_FACT_015"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_005",
+        "level": "L2",
+        "question": "Which electrode has the lowest charge-transfer resistance, and what is its value?",
+        "answer": "The BMC-C electrode has the lowest charge-transfer resistance at 1.34 Ω cm².",
+        "supporting_facts": [
+          "DOC03_FACT_007"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_006",
+        "level": "L2",
+        "question": "By what percentage does BMC-C reduce the charge-transfer resistance compared to C-C?",
+        "answer": "64.9%",
+        "supporting_facts": [
+          "DOC03_FACT_011"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_007",
+        "level": "L2",
+        "question": "What is the ECSA of the MC-C electrode?",
+        "answer": "8.9 cm²",
+        "supporting_facts": [
+          "DOC03_FACT_014"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_008",
+        "level": "L3",
+        "question": "How does the Coulombic efficiency of BMC-C compare to C-C at 100 mA/cm², and what explains the difference?",
+        "answer": "BMC-C has a Coulombic efficiency of 97.5% compared to 96.8% for C-C at 100 mA/cm². The slight increase is attributed to enhanced electrolyte wetting and reduced parasitic side reactions at the boron-modified surface, which minimize self-discharge and vanadium ion crossover.",
+        "supporting_facts": [
+          "DOC03_FACT_023",
+          "DOC03_FACT_005"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_009",
+        "level": "L3",
+        "question": "What is the polarization voltage delta for MC-C at 200 mA/cm²?",
+        "answer": "0.41 V",
+        "supporting_facts": [
+          "DOC03_FACT_026"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_010",
+        "level": "L3",
+        "question": "What is the relationship between surface roughness and ECSA across the three electrode variants?",
+        "answer": "Both surface roughness and ECSA show the same progressive increase from C-C to BMC-C. Surface roughness Ra increases from 8.4 μm to 14.7 μm (75% increase), while ECSA increases from 4.6 cm² to 12.9 cm² (2.80-fold increase), demonstrating a direct correlation between surface roughness and electrochemically active surface area.",
+        "supporting_facts": [
+          "DOC03_FACT_014",
+          "DOC03_FACT_015"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_011",
+        "level": "L4",
+        "question": "Why does the activated carbon felt with higher BET surface area (6.42 m²/g) have lower energy efficiency than BMC-C (4.08 m²/g)?",
+        "answer": "Maximizing surface area through aggressive CO₂ activation does not necessarily translate to optimal electrochemical performance if the surface lacks catalytically active functional groups. BMC-C achieves superior performance because boronation creates specific active sites tailored for the V(IV)/V(V) reaction, with lower Rct (1.34 vs 2.68 Ω cm²) and higher EE (82.4% vs 78.6%), demonstrating that intrinsic catalytic activity matters more than physical surface area alone.",
+        "supporting_facts": [
+          "DOC03_FACT_020",
+          "DOC03_FACT_017"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_012",
+        "level": "L4",
+        "question": "What is the capacity fade rate of BMC-C over 200 cycles, and why is it more durable than MC-C?",
+        "answer": "BMC-C has a fade rate of 0.03% per cycle over 200 cycles, compared to 0.05% per cycle for MC-C. The enhanced durability is attributed to stable B-C bonds formed at 850°C that are resistant to electrochemical degradation in acidic VRFB electrolyte, whereas the oxygen functional groups on MC-C are more susceptible to reduction or dissolution during prolonged cycling.",
+        "supporting_facts": [
+          "DOC03_FACT_018",
+          "DOC03_FACT_019"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_013",
+        "level": "L4",
+        "question": "How does the performance gap between BMC-C and C-C change with increasing current density?",
+        "answer": "The performance advantage of BMC-C over C-C becomes increasingly pronounced at higher current densities. The difference in polarization voltage delta increases from 0.07 V at 50 mA/cm² to 0.33 V at 500 mA/cm². Similarly, the VE gap at 200 mA/cm² is 18.3 percentage points (71.5% vs 54.8%), demonstrating that surface functionalization is especially beneficial for high-power operation.",
+        "supporting_facts": [
+          "DOC03_FACT_022",
+          "DOC03_FACT_012"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_014",
+        "level": "L4",
+        "question": "What evidence from CV indicates that BMC-C has the best electrochemical reversibility for the V(IV)/V(V) couple?",
+        "answer": "Three CV metrics support this: (1) peak separation ΔEp decreases from 268 mV (C-C) to 158 mV (BMC-C), indicating faster charge-transfer kinetics; (2) the peak current ratio jpa/jpc approaches unity from 1.43 to 1.20, indicating improved reversibility; and (3) absolute peak current densities are highest for BMC-C (jpa = 31.8 mA/cm², jpc = 26.5 mA/cm²).",
+        "supporting_facts": [
+          "DOC03_FACT_013",
+          "DOC03_FACT_024"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_015",
+        "level": "L5",
+        "question": "Explain the mechanistic basis for the superior V(IV)/V(V) kinetics on BMC-C compared to both C-C and MC-C.",
+        "answer": "The V(IV)/V(V) reaction proceeds through an inner-sphere electron transfer mechanism involving adsorbed vanadium species. Boron atoms in BMC-C create electron-deficient sites due to boron's three valence electrons versus carbon's four. These sites: (1) polarize the surrounding carbon framework, (2) increase the density of states at the Fermi level, and (3) modify the adsorption energy of vanadium intermediates to stabilize the transition state without overly strong binding. This is evidenced by Rct decreasing from 3.82 Ω cm² (C-C) to 1.34 Ω cm² (BMC-C) and ΔEp decreasing from 268 mV to 158 mV. MC-C provides only oxygen-mediated redox mediation (Rct = 2.17 Ω cm²), while BMC-C combines both oxygen functional groups and boron catalytic sites synergistically.",
+        "supporting_facts": [
+          "DOC03_FACT_017",
+          "DOC03_FACT_006",
+          "DOC03_FACT_013"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_016",
+        "level": "L5",
+        "question": "How do the sequential modifications in the BMC-C preparation protocol contribute synergistically to its overall VRFB performance?",
+        "answer": "The BMC-C preparation involves a three-step sequential functionalization: (1) acid oxidation introduces oxygen-containing functional groups (carboxyl, hydroxyl, carbonyl), improving wettability from 130.4° to 102° contact angle; (2) thermal activation at 450°C increases surface porosity and roughness (Ra from 8.4 to 11.2 μm); and (3) boronation at 850°C creates covalent B-C bonds that provide intrinsic catalytic activity for V(IV)/V(V), further reduce contact angle to 92.8°, and increase roughness to 14.7 μm. The synergy arises because oxygen groups improve wetting and electrolyte access, while boron sites catalyze the electron transfer—neither alone achieves the combined effect, as shown by activated carbon felt with higher surface area but no boron having lower EE (78.6%) than BMC-C (82.4%).",
+        "supporting_facts": [
+          "DOC03_FACT_004",
+          "DOC03_FACT_015",
+          "DOC03_FACT_017",
+          "DOC03_FACT_020"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_017",
+        "level": "L5",
+        "question": "What is the significance of the polarization voltage delta data in understanding the practical operating window of VRFB electrodes?",
+        "answer": "The polarization voltage delta represents the sum of activation, ohmic, and concentration overpotentials during charge-discharge cycling. The increasing gap between BMC-C and C-C at higher current densities (ΔVpol difference of 0.07 V at 50 mA/cm² vs 0.33 V at 500 mA/cm²) demonstrates that surface functionalization primarily reduces activation overpotential at the positive electrode. This is critical because VRFB capital costs are dominated by the stack, and operating at higher current densities reduces the required electrode area. BMC-C's ability to maintain ΔVpol of only 0.58 V at 500 mA/cm² (vs 0.91 V for C-C) enables practical high-power operation that would be uneconomical with pristine carbon felt. The fact that VE differences dominate EE differences (rather than CE) confirms that electrode modifications address kinetic limitations rather than crossover issues.",
+        "supporting_facts": [
+          "DOC03_FACT_022",
+          "DOC03_FACT_008",
+          "DOC03_FACT_009"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_018",
+        "level": "L6",
+        "question": "Synthesize the quantitative relationships between contact angle, surface roughness, ECSA, charge-transfer resistance, and energy efficiency across the three electrode variants to develop a design rationale for high-performance VRFB electrodes.",
+        "answer": "The data reveal a hierarchical relationship: (1) Contact angle reduction (130.4° → 102° → 92.8°) enables better electrolyte wetting, ensuring ion accessibility to internal pore surfaces; (2) This drives surface roughness increase (8.4 → 11.2 → 14.7 μm Ra) through chemical etching and boronation, creating additional topographical features; (3) Roughness translates to higher ECSA (4.6 → 8.9 → 12.9 cm², 2.80× increase), providing more active sites for the V(IV)/V(V) reaction; (4) However, ECSA alone does not determine kinetics—boron doping creates electron-deficient catalytic sites that reduce Rct from 3.82 to 1.34 Ω cm² (64.9% reduction), a gain that exceeds what surface area alone could provide (activated carbon felt has higher surface area, 6.42 m²/g, but higher Rct, 2.68 Ω cm²); (5) The combined wetting + catalysis effect manifests in EE: 66.3% → 74.1% → 82.4% at 100 mA/cm². The design rationale is therefore: first ensure wettability (contact angle < 100°), then maximize catalytic surface area through heteroatom doping rather than mere physical activation, targeting both reduced Rct and sufficient ECSA. The BMC-C approach exemplifies this by achieving the optimal balance: lower Rct than activated carbon felt despite lower BET area, due to catalytic B-C sites.",
+        "supporting_facts": [
+          "DOC03_FACT_004",
+          "DOC03_FACT_015",
+          "DOC03_FACT_014",
+          "DOC03_FACT_006",
+          "DOC03_FACT_008",
+          "DOC03_FACT_020"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_019",
+        "level": "L6",
+        "question": "Critically evaluate why the BMC-C electrode maintains both superior initial performance and long-term stability compared to MC-C, and what this implies for the selection of surface functionalization chemistry in commercial VRFB systems.",
+        "answer": "The BMC-C electrode outperforms MC-C in both initial performance and durability due to fundamental differences in the stability of the introduced surface chemistries. MC-C relies on oxygen functional groups (carboxyl, hydroxyl, carbonyl) introduced by acid oxidation and thermal activation at 450°C. While these groups improve wettability and provide some redox mediation, they are electrochemically labile in the strongly acidic VRFB electrolyte (1.6 M vanadium in 4.5 M sulfate at pH < 1) and can undergo reduction, dissolution, or decarboxylation during prolonged cycling, leading to a fade rate of 0.05% per cycle. In contrast, BMC-C incorporates boron through covalent B-C bonds formed at 850°C under inert atmosphere. These bonds are thermodynamically and electrochemically stable in acidic media, resulting in a lower fade rate of 0.03% per cycle over 200 cycles. The implication for commercial VRFB systems is that functionalization strategies should prioritize thermally incorporated heteroatoms (B, N, S) over surface-bound oxygen groups for long-term durability. The higher processing temperature (850°C vs 450°C) increases manufacturing cost but is justified by the extended operational lifetime. A hybrid approach—using mild oxygen activation for initial wettability followed by high-temperature heteroatom incorporation for stable catalysis—represents the optimal balance, as demonstrated by the MC-C → BMC-C sequential protocol.",
+        "supporting_facts": [
+          "DOC03_FACT_018",
+          "DOC03_FACT_019",
+          "DOC03_FACT_008"
+        ]
+      },
+      {
+        "question_id": "DOC03_QA_020",
+        "level": "L6",
+        "question": "Compare and contrast the roles of physical surface area enhancement versus chemical functionalization in determining VRFB electrode performance, using the activated carbon felt and BMC-C electrodes as case studies.",
+        "answer": "The activated carbon felt (CO₂ activation at 700°C, 4 hours) and BMC-C (4.08 m²/g) comparison reveals that physical surface area and chemical functionalization play distinct and non-substitutable roles. The activated carbon felt achieves the highest BET surface area (6.42 m²/g, 57% higher than BMC-C) through aggressive thermal activation that creates extensive microporosity. However, it only achieves Rct of 2.68 Ω cm² (100% higher than BMC-C's 1.34 Ω cm²) and EE of 78.6% (3.8 percentage points lower than BMC-C's 82.4%). This demonstrates that: (1) Physical surface area provides more sites for adsorption but does not intrinsically catalyze the electron transfer step; (2) Chemical functionalization (boron doping) creates specific electronic structures that lower the activation energy of the V(IV)/V(V) reaction, as evidenced by the lower Rct despite lower surface area; (3) The activated carbon felt's contact angle (98.5°) is intermediate between MC-C and BMC-C, showing reasonable wettability but lacking the Lewis acid-base interactions from boron; (4) For the inner-sphere V(IV)/V(V) mechanism, the adsorption energy of intermediates on catalytically tuned sites (B-C) is more important than the total number of non-catalytic adsorption sites. The design implication is that beyond a threshold surface area (~4 m²/g), chemical functionalization provides greater marginal returns than further physical activation. BMC-C's approach of moderate surface area increase coupled with targeted boronation is therefore more effective than maximum surface area activation alone.",
+        "supporting_facts": [
+          "DOC03_FACT_020",
+          "DOC03_FACT_017",
+          "DOC03_FACT_004"
+        ]
+      }
+    ],
+    "normalization_stress_points": [
+      {
+        "stress_point_id": "DOC03_NSP_001",
+        "type": "ENTITY_NORMALIZATION",
+        "trigger_phrases": [
+          "C-C",
+          "MC-C",
+          "BMC-C",
+          "carbon-carbon composite",
+          "modified carbon-carbon composite",
+          "boron-doped modified carbon-carbon composite"
+        ],
+        "description": "The three electrode variants have distinct but similar names that must be correctly resolved. C-C is the pristine baseline, MC-C is acid-oxidized and thermally activated, and BMC-C includes an additional boronation step. Confusing MC-C with BMC-C or C-C would lead to incorrect performance comparisons.",
+        "normalization_target": "electrode_variant",
+        "canonical_values": [
+          "C-C",
+          "MC-C",
+          "BMC-C"
+        ]
+      },
+      {
+        "stress_point_id": "DOC03_NSP_002",
+        "type": "PROPERTY_BINDING",
+        "trigger_phrases": [
+          "contact angle",
+          "wettability",
+          "hydrophilic",
+          "hydrophobic"
+        ],
+        "description": "Contact angle values (130.4°, 102°, 92.8°) are properties of specific electrode variants and must not be attributed to the wrong electrode. Additionally, 'wettability' is the generic property while 'contact angle' is the specific measurement—a system must understand that lower contact angle means higher wettability.",
+        "normalization_target": "property-value-electrode binding",
+        "canonical_bindings": {
+          "C-C": {
+            "contact_angle": "130.4°",
+            "wettability": "hydrophobic"
+          },
+          "MC-C": {
+            "contact_angle": "102°",
+            "wettability": "moderately hydrophilic"
+          },
+          "BMC-C": {
+            "contact_angle": "92.8°",
+            "wettability": "near-hydrophilic"
+          }
+        }
+      },
+      {
+        "stress_point_id": "DOC03_NSP_003",
+        "type": "PROPERTY_BINDING",
+        "trigger_phrases": [
+          "surface roughness",
+          "Ra",
+          "arithmetic mean roughness",
+          "ECSA",
+          "electrochemically active surface area"
+        ],
+        "description": "Surface roughness (Ra) and ECSA are related but distinct properties. Roughness is a morphological parameter measured in μm, while ECSA is an electrochemical parameter measured in cm². Both increase from C-C to BMC-C but with different fold-changes (75% for Ra, 2.80× for ECSA). A system must not confuse these metrics or their units.",
+        "normalization_target": "property-type-and-unit distinction",
+        "canonical_bindings": {
+          "C-C": {
+            "Ra": "8.4 μm",
+            "ECSA": "4.6 cm²"
+          },
+          "MC-C": {
+            "Ra": "11.2 μm",
+            "ECSA": "8.9 cm²"
+          },
+          "BMC-C": {
+            "Ra": "14.7 μm",
+            "ECSA": "12.9 cm²"
+          }
+        }
+      },
+      {
+        "stress_point_id": "DOC03_NSP_004",
+        "type": "ENTITY_NORMALIZATION",
+        "trigger_phrases": [
+          "electrode",
+          "carbon felt",
+          "activated carbon felt",
+          "carbon-carbon composite"
+        ],
+        "description": "The document discusses multiple related but distinct carbon-based materials. 'Carbon felt' is the general material class; 'activated carbon felt' refers specifically to the CO₂-activated reference sample; and C-C/MC-C/BMC-C are specific composite variants. Generic references to 'carbon felt' or 'electrode' must be resolved to the correct specific variant based on context.",
+        "normalization_target": "material_type",
+        "canonical_values": [
+          "carbon felt (general)",
+          "activated carbon felt (reference)",
+          "C-C",
+          "MC-C",
+          "BMC-C"
+        ]
+      },
+      {
+        "stress_point_id": "DOC03_NSP_005",
+        "type": "CONDITION_BINDING",
+        "trigger_phrases": [
+          "current density",
+          "mA cm⁻²",
+          "50 mA",
+          "100 mA",
+          "200 mA",
+          "500 mA"
+        ],
+        "description": "All performance metrics (CE, VE, EE, ΔVpol) are current-density-dependent and must be bound to their test conditions. A statement like 'BMC-C has 82.4% efficiency' is incomplete without specifying 100 mA/cm². Similarly, comparing VE at different current densities would be invalid.",
+        "normalization_target": "metric-condition binding",
+        "canonical_bindings": {
+          "EE_BMC-C_50_mA/cm²": "not explicitly stated but calculable from CE×VE (97.5%×89.2% ≈ 87.0%)",
+          "EE_BMC-C_100_mA/cm²": "82.4%",
+          "EE_BMC-C_200_mA/cm²": "69.7%",
+          "VE_BMC-C_50_mA/cm²": "89.2%",
+          "VE_BMC-C_100_mA/cm²": "84.5%",
+          "VE_BMC-C_200_mA/cm²": "71.5%"
+        }
+      },
+      {
+        "stress_point_id": "DOC03_NSP_006",
+        "type": "ENTITY_NORMALIZATION",
+        "trigger_phrases": [
+          "V(IV)/V(V)",
+          "vanadium",
+          "VO²⁺",
+          "VO₂⁺",
+          "V(IV)",
+          "V(V)"
+        ],
+        "description": "The V(IV)/V(V) couple (VO²⁺/VO₂⁺) is the specific positive half-cell reaction being studied. Generic references to 'vanadium ions' or 'vanadium redox couple' must be resolved to this specific oxidation state pair. The document does not discuss V(II)/V(III) kinetics, so generic 'vanadium' references should not be conflated with the negative half-cell chemistry.",
+        "normalization_target": "redox_couple_species",
+        "canonical_values": [
+          "V(IV)/V(V)",
+          "VO²⁺/VO₂⁺"
+        ]
+      },
+      {
+        "stress_point_id": "DOC03_NSP_007",
+        "type": "METRIC_DISTINCTION",
+        "trigger_phrases": [
+          "CE",
+          "VE",
+          "EE",
+          "Coulombic efficiency",
+          "voltage efficiency",
+          "energy efficiency"
+        ],
+        "description": "Three efficiency metrics are used: Coulombic efficiency (CE, >96% for all), voltage efficiency (VE, varies widely with current density and electrode type), and energy efficiency (EE = CE × VE, the overall performance metric). A system must distinguish these and understand that EE differences are driven primarily by VE differences in this study.",
+        "normalization_target": "efficiency_metric_type",
+        "canonical_values": [
+          "CE (charge recovery)",
+          "VE (voltage performance)",
+          "EE (overall energy = CE × VE)"
+        ]
+      },
+      {
+        "stress_point_id": "DOC03_NSP_008",
+        "type": "CAUSAL_BINDING",
+        "trigger_phrases": [
+          "B-C bonds",
+          "oxygen functional groups",
+          "boron doping",
+          "acid oxidation"
+        ],
+        "description": "Different functional groups have distinct causal roles. Oxygen functional groups (MC-C) primarily improve wettability and provide redox mediation but are electrochemically labile. B-C bonds (BMC-C) provide stable catalytic sites for V(IV)/V(V) electron transfer and additional wettability via Lewis acid-base interactions. Attributing boron's catalytic effect to oxygen groups or vice versa would be incorrect.",
+        "normalization_target": "functionalization_chemistry_outcome",
+        "canonical_bindings": {
+          "oxygen functional groups": [
+            "wettability improvement",
+            "redox mediation",
+            "electrochemically labile"
+          ],
+          "B-C bonds": [
+            "catalytic active sites",
+            "enhanced wettability via Lewis interactions",
+            "electrochemical stability"
+          ]
+        }
+      },
+      {
+        "stress_point_id": "DOC03_NSP_009",
+        "type": "CONDITION_BINDING",
+        "trigger_phrases": [
+          "EIS",
+          "CV",
+          "charge-discharge",
+          "cycling"
+        ],
+        "description": "Different characterization techniques yield different metrics under different conditions. EIS gives Rct at the formal potential; CV gives peak separation and peak currents at various sweep rates; charge-discharge gives CE/VE/EE at various current densities. These must not be conflated—for example, the 50 mV/s sweep rate in CV is not equivalent to 50 mA/cm² in cell testing.",
+        "normalization_target": "test_method_metric binding",
+        "canonical_bindings": {
+          "EIS": "Rct (Ω cm²) at formal potential",
+          "CV": "ΔEp (mV), jpa/jpc (mA/cm²) at specified sweep rate",
+          "charge-discharge": "CE/VE/EE (%) and ΔVpol (V) at specified current density"
+        }
+      },
+      {
+        "stress_point_id": "DOC03_NSP_010",
+        "type": "ENTITY_RESOLUTION",
+        "trigger_phrases": [
+          "Rct",
+          "charge-transfer resistance",
+          "peak separation",
+          "ΔEp"
+        ],
+        "description": "The document reports both Rct (from EIS) and ΔEp (from CV) as kinetic metrics. While both indicate faster kinetics for BMC-C, they are different physical quantities with different units (Ω cm² vs mV). A system must not conflate them and must report the correct value with the correct metric name.",
+        "normalization_target": "kinetic_metric_resolution",
+        "canonical_values": {
+          "Rct": "charge-transfer resistance in Ω cm² (EIS)",
+          "ΔEp": "peak separation in mV (CV)"
+        }
+      }
+    ]
+  }
+}

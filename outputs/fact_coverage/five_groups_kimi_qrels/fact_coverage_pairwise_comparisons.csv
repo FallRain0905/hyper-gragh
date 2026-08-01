@@ -1,0 +1,17 @@
+comparison,k,Strict Coverage delta,Soft Support delta,Condition Integrity delta,left_Strict Coverage@k,right_Strict Coverage@k,left_Soft Support@k,right_Soft Support@k,left_Condition Integrity@k,right_Condition Integrity@k
+chem_norm_hypergraph vs original_hypergraph,1,0.0111,0.0416,0.0405,0.0167,0.0056,0.0722,0.0306,0.5111,0.4706
+chem_norm_hypergraph vs original_hypergraph,3,0.0166,0.0695,0.0566,0.0222,0.0056,0.1056,0.0361,0.5897,0.5331
+chem_norm_hypergraph vs original_hypergraph,5,0.0166,0.0778,0.063,0.0222,0.0056,0.1139,0.0361,0.6147,0.5517
+chem_norm_hypergraph vs original_hypergraph,10,0.0166,0.0861,0.0647,0.0222,0.0056,0.1222,0.0361,0.6333,0.5686
+chem_norm_hypergraph vs chem_prompt_hypergraph,1,0.0167,0.0528,0.0381,0.0167,0.0,0.0722,0.0194,0.5111,0.473
+chem_norm_hypergraph vs chem_prompt_hypergraph,3,0.0222,0.0778,0.0692,0.0222,0.0,0.1056,0.0278,0.5897,0.5205
+chem_norm_hypergraph vs chem_prompt_hypergraph,5,0.0222,0.0861,0.0823,0.0222,0.0,0.1139,0.0278,0.6147,0.5324
+chem_norm_hypergraph vs chem_prompt_hypergraph,10,0.0222,0.0944,0.0648,0.0222,0.0,0.1222,0.0278,0.6333,0.5685
+chem_prompt_hypergraph vs chem_prompt_graph,1,0.0,0.0194,0.098,0.0,0.0,0.0194,0.0,0.473,0.375
+chem_prompt_hypergraph vs chem_prompt_graph,3,0.0,0.0222,0.1172,0.0,0.0,0.0278,0.0056,0.5205,0.4033
+chem_prompt_hypergraph vs chem_prompt_graph,5,0.0,0.0222,0.1199,0.0,0.0,0.0278,0.0056,0.5324,0.4125
+chem_prompt_hypergraph vs chem_prompt_graph,10,0.0,0.0222,0.1341,0.0,0.0,0.0278,0.0056,0.5685,0.4344
+chem_norm_hypergraph vs text_segments,1,-0.0611,-0.2945,-0.1301,0.0167,0.0778,0.0722,0.3667,0.5111,0.6412
+chem_norm_hypergraph vs text_segments,3,-0.0778,-0.3166,-0.0871,0.0222,0.1,0.1056,0.4222,0.5897,0.6768
+chem_norm_hypergraph vs text_segments,5,-0.0945,-0.3333,-0.0743,0.0222,0.1167,0.1139,0.4472,0.6147,0.689
+chem_norm_hypergraph vs text_segments,10,-0.0945,-0.3278,-0.0582,0.0222,0.1167,0.1222,0.45,0.6333,0.6915

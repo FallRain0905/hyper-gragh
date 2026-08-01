@@ -1,0 +1,6 @@
+group,relevance_threshold,queries,P@1,Hit@5,MRR,gNDCG@5
+chem_norm_hypergraph,grade>=2,180,0.1278,0.2056,0.1625,0.147
+chem_prompt_graph,grade>=2,180,0.0,0.0111,0.0056,0.007
+chem_prompt_hypergraph,grade>=2,180,0.0389,0.0556,0.0472,0.0494
+original_hypergraph,grade>=2,180,0.0556,0.0667,0.0602,0.0608
+text_segments,grade>=2,180,0.6556,0.7778,0.704,0.685

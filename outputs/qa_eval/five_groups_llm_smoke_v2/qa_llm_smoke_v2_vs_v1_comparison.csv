@@ -1,0 +1,6 @@
+group,v1 Good Rate,v2 Good Rate,delta Good Rate,v1 Satisfactory+,v2 Satisfactory+,delta Satisfactory+,v1 KPC,v2 KPC,delta KPC,v1 Hallucination,v2 Hallucination,delta Hallucination,v1 Abstention Accuracy,v2 Abstention Accuracy,delta Abstention Accuracy
+text_segments,0.1,0.5,0.4,0.1,0.8,0.7,0.1,0.6666,0.5666,0.1,0.0,-0.1,0.1,0.9,0.8
+original_hypergraph,0.4,0.2,-0.2,0.4,0.5,0.1,0.4,0.35,-0.05,0.0,0.1,0.1,0.2,0.7,0.5
+chem_prompt_graph,0.3,0.3,0.0,0.3,0.3,0.0,0.3,0.3,0.0,0.1,0.3,0.2,0.2,0.6,0.4
+chem_prompt_hypergraph,0.3,0.4,0.1,0.4,0.4,0.0,0.38,0.4333,0.0533,0.4,0.3,-0.1,0.4,0.7,0.3
+chem_norm_hypergraph,0.1,0.1,0.0,0.3,0.3,0.0,0.2167,0.2497,0.033,0.0,0.3,0.3,0.3,0.6,0.3

@@ -47,12 +47,12 @@ async def openai_complete_if_cache(
     timeout: float = 600.0,  # 增加到600秒（10分钟）
     **kwargs,
 ) -> str:
+    client_kwargs = {"timeout": timeout}
+    if base_url is not None:
+        client_kwargs["base_url"] = base_url
     if api_key:
-        os.environ["OPENAI_API_KEY"] = api_key
-
-    openai_async_client = (
-        AsyncOpenAI(timeout=timeout) if base_url is None else AsyncOpenAI(base_url=base_url, timeout=timeout)
-    )
+        client_kwargs["api_key"] = api_key
+    openai_async_client = AsyncOpenAI(**client_kwargs)
     hashing_kv: BaseKVStorage = kwargs.pop("hashing_kv", None)
     skip_cache = kwargs.pop("skip_cache", False)
     messages = []
@@ -97,12 +97,12 @@ async def openai_complete_stream_if_cache(
     - 命中缓存：按 chunk_size 分块 yield
     - 不命中：stream=True 逐 token yield，并在结束后写缓存
     """
+    client_kwargs = {"timeout": timeout}
+    if base_url is not None:
+        client_kwargs["base_url"] = base_url
     if api_key:
-        os.environ["OPENAI_API_KEY"] = api_key
-
-    openai_async_client = (
-        AsyncOpenAI(timeout=timeout) if base_url is None else AsyncOpenAI(base_url=base_url, timeout=timeout)
-    )
+        client_kwargs["api_key"] = api_key
+    openai_async_client = AsyncOpenAI(**client_kwargs)
 
     hashing_kv: BaseKVStorage = kwargs.pop("hashing_kv", None)
 
@@ -348,12 +348,12 @@ async def openai_embedding(
     api_key: str = None,
     timeout: float = 60.0,
 ) -> np.ndarray:
+    client_kwargs = {"timeout": timeout}
+    if base_url is not None:
+        client_kwargs["base_url"] = base_url
     if api_key:
-        os.environ["OPENAI_API_KEY"] = api_key
-
-    openai_async_client = (
-        AsyncOpenAI(timeout=timeout) if base_url is None else AsyncOpenAI(base_url=base_url, timeout=timeout)
-    )
+        client_kwargs["api_key"] = api_key
+    openai_async_client = AsyncOpenAI(**client_kwargs)
     response = await openai_async_client.embeddings.create(
         model=model, input=texts, encoding_format="float"
     )

@@ -1,0 +1,79 @@
+% Section 3: The Hyper-ChE Framework
+% arXiv preprint - Methods section
+
+\section{The Hyper-ChE Framework}
+\label{sec:framework}
+
+\subsection{Framework Overview}
+\label{subsec:overview}
+
+Hyper-ChE adapts the general Hyper-RAG architecture [11] to the specific requirements of chemical engineering literature. The base framework [11] demonstrated that hypergraph structures yield significant retrieval quality improvements over conventional dyadic graphs by preserving higher-order relational context during knowledge retrieval. Hyper-ChE extends this capability through a domain-adaptive ontology that captures the multi-variable co-constraint structure characteristic of experimental facts in chemical engineering literature. The resulting pipeline comprises four stages: (1) document parsing and text chunking; (2) structured information extraction via large language models; (3) hypergraph construction and multi-modal indexing; and (4) dual-path retrieval and answer generation. Figure~\ref{fig:framework} provides an end-to-end schematic of the pipeline.
+
+\subsection{Experimental Fact Unit (EFU) Modeling}
+\label{subsec:efu}
+
+The fundamental organizational primitive in chemical engineering knowledge is not an isolated entity or a binary relation, but rather the \textbf{Experimental Fact Unit (EFU)}: a co-occurrence bundle of variables that jointly constitute a single experimental observation. Formally, an EFU is represented as a hyperedge $e = \{v_1, v_2, \ldots, v_n\}$ where each $v_i \in \mathcal{V}$ is a typed entity vertex participating in the same experimental context. The constituent variables of an EFU typically span four categories: system or material, operating condition, performance metric, and mechanistic evidence.
+
+The semantic core of the EFU abstraction is the preservation of \emph{co-occurrence integrity}: the guarantee that all enclosed variables are mutually contextualized within a single experimental setting. For instance, an operation hyperedge may simultaneously connect a battery system, a membrane material, an electrode, a current density value, and an efficiency metric, thereby expressing the composite fact ``system--material--condition--metric'' as an indivisible unit rather than fragmented fragments.
+
+Modeling such an EFU with an ordinary graph requires decomposing the hyperedge into multiple binary edges (e.g., system--membrane, membrane--electrode, electrode--current density, current density--efficiency). This decomposition induces three interconnected problems. First, information pertaining to the same experiment is scattered across disconnected locations in the graph. Second, the semantics of ``multiple conditions jointly producing a result'' are lost when the hyperedge is split into independent dyadic relations. Third, retrieval systems may recall only a subset of the binary edges, making it impossible to reconstruct the complete experimental context at answer-generation time. Hypergraph EFU modeling circumvents all three deficiencies: a single hyperedge preserves the full experimental fact, and one-hop diffusion along that hyperedge retrieves all associated variables simultaneously. This completeness ensures that the language model receives the full material--condition--metric--mechanism context in a single context window, grounding its reasoning in experimentally coherent evidence.
+
+\subsection{Domain-Adaptive Ontology Design}
+\label{subsec:ontology}
+
+Structured extraction in Hyper-ChE is governed by a domain-adaptive ontology that defines permissible entity types and relation/hyperedge types for each chemical engineering subdomain. The ontology is modular: only the type taxonomy changes when the framework is applied to a new subdomain, while the underlying extraction and retrieval machinery remains unchanged.
+
+For flow battery literature, we employ seven entity types: \textbf{SYSTEM} (system architecture), \textbf{ACTIVE\_SPECIES} (redox-active electrolyte species), \textbf{ELECTRODE} (electrode substrate and modification), \textbf{MEMBRANE} (ion-exchange or porous separator), \textbf{CONDITION} (operating parameters), \textbf{METRIC} (quantitative performance indicators), and \textbf{DEGRADATION} (degradation mechanism type). For PFAS degradation literature, the ontology expands to ten entity types that additionally include \textbf{PFAS\_TARGET}, \textbf{CATALYST\_MATERIAL}, \textbf{MATERIAL\_FEATURE}, \textbf{MECHANISM\_EVIDENCE}, \textbf{PROCESS\_STRATEGY}, \textbf{PIEZO\_PROPERTY}, and \textbf{WATER\_MATRIX}. Table~\ref{tab:entity-types} lists the common entity types shared across chemical engineering subdomains.
+
+\begin{table}[htbp]
+\centering
+\caption{Common entity types in the Hyper-ChE domain ontology for chemical engineering literature.}
+\label{tab:entity-types}
+\begin{tabular}{@{}p{2.8cm}p{2.2cm}p{7.8cm}@{}}
+\toprule
+\textbf{Entity Type} & \textbf{Category} & \textbf{Description} \\
+\midrule
+ACTIVE\_SPECIES & Active material & Redox-active species in the electrolyte, e.g., the V$^{2+}$/V$^{3+}$ redox couple in all-vanadium flow batteries \\
+METRIC & Performance indicator & Quantitative evaluation metrics such as energy efficiency, voltage efficiency, capacity fade rate, and cycle life \\
+CONDITION & Operating parameter & Experimental operating parameters including temperature, current density, flow rate, and charge/discharge protocol \\
+SYSTEM & System architecture & Flow battery system configuration, e.g., all-vanadium flow battery, zinc--bromine flow battery \\
+ELECTRODE & Electrode material & Electrode substrate and surface modification, e.g., graphite felt, carbon felt, nitrogen-doped carbon \\
+DEGRADATION & Degradation mechanism & Performance degradation mechanism types such as active species crossover and electrode oxidative degradation \\
+MEMBRANE & Membrane material & Ion-exchange membranes and porous separators, e.g., Nafion, porous ion-conductive membranes \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Relation and hyperedge types are likewise defined in a subdomain-specific manner. For flow battery literature, we define four core relation/hyperedge types. The \textbf{OPERATION} type captures experimental operational relationships among battery systems, active species, operating conditions, and performance metrics. The \textbf{COMPOSITION} type represents material and component composition structures. These relation types can instantiate as either binary edges (when exactly two entities participate) or higher-order hyperedges (when three or more entities co-occur in the same experimental fact), depending on the number of entities involved in the particular observation.
+
+\subsection{Structured Extraction Pipeline}
+\label{subsec:extraction}
+
+The structured extraction stage transforms natural language text from chemical engineering literature into typed entity nodes and relation/hyperedge structures through a two-pass large language model invocation strategy. Each text chunk undergoes sequential processing: the first pass extracts all entities and assigns them to predefined types from the domain ontology; the second pass receives both the original text and the extracted entity list as input, and produces relation and hyperedge predictions conditioned on the available entities.
+
+Both passes generate output in a constrained JSON schema. The entity pass emits a list of objects, each containing an entity identifier, type label, canonical name, and optional attribute dictionary. The relation pass emits a list of relation/hyperedge objects, each specifying a relation type and an ordered list of entity identifiers that participate in the relationship. The schema enforces strict type checking: any entity or relation that cannot be confidently classified is assigned the \texttt{UNKNOWN} type rather than guessed. The \textbf{UNKNOWN rate}---the fraction of extracted items marked as unknown---serves as an internal quality indicator for the extraction pass.
+
+The two-pass design is deliberate. Separating entity detection from relation construction prevents the model from hallucinating entities solely to fabricate relations, and allows the second pass to perform cross-entity reasoning using the explicitly enumerated entity inventory. For chemical engineering text, where technical terms are polysemous and domain boundaries are sharp, this separation improves type accuracy and reduces false-positive relation predictions.
+
+\subsection{Hypergraph Construction and Indexing}
+\label{subsec:construction}
+
+Extracted entities populate the vertex set $\mathcal{V}$ of the hypergraph $\mathcal{H} = (\mathcal{V}, \mathcal{E})$, while extracted relations and hyperedges populate the hyperedge set $\mathcal{E}$. Binary relations (arity two) and higher-order hyperedges (arity $\geq$ 3) are stored uniformly in $\mathcal{E}$, distinguished only by the cardinality of their vertex set. This unified representation simplifies query processing and eliminates the need for separate data structures handling edges and hyperedges differently.
+
+Alongside the structural hypergraph, Hyper-ChE constructs three vector indexes. (1) An \textbf{entity index} stores dense vector representations of all vertices, enabling semantic similarity search over entity concepts. (2) A \textbf{hyperedge index} stores vector representations of hyperedge descriptions, supporting direct retrieval of experimental facts by semantic content. (3) A \textbf{text-chunk index} preserves the original document chunks as retrivable units, providing fallback context when the hypergraph coverage is incomplete. All three indexes are co-located in the same vector database, allowing hybrid queries that combine structural traversal with semantic similarity in a single retrieval operation.
+
+\subsection{Dual-Path Retrieval Mechanism}
+\label{subsec:retrieval}
+
+At retrieval time, Hyper-ChE processes a user query through a domain-templated prompt that extracts domain-specific keywords. These keywords then drive two parallel retrieval paths, as illustrated in Figure~\ref{fig:retrieval}.
+
+\textbf{Entity path.} The system performs semantic keyword matching against the entity index to recall relevant vertices. Each retrieved vertex seeds a one-hop diffusion process along its incident hyperedges, collecting all neighboring vertices that participate in the same experimental facts. This diffusion effectively reconstructs the complete EFU context surrounding the matched entity, ensuring that co-occurring materials, conditions, and metrics are included in the retrieved context.
+
+\textbf{Relation path.} The keywords are matched directly against the hyperedge index to retrieve relevant EFUs. Each retrieved hyperedge is then unfolded to expose all constituent entity vertices. This path is particularly effective for queries that specify multiple conditions or cross-material comparisons, because it retrieves the hyperedge as a pre-assembled bundle rather than relying on the retrieval system to discover the connection among its members.
+
+Results from both paths are deduplicated, scored by a combination of semantic relevance and structural centrality, and fused into a unified context window. The fused context is concatenated with the original query and fed to a language model for answer generation. The dual-path design guarantees that retrieval can recover complete experimental contexts from either the entity side (via one-hop diffusion) or the relation side (via hyperedge retrieval), maintaining high recall completeness under complex multi-condition and cross-material queries.
+
+\subsection{Comparison with Baseline Methods}
+\label{subsec:comparison}
+
+Hyper-ChE differs from existing retrieval-augmented generation systems along three dimensions. First, traditional RAG systems retrieve text chunks exclusively by embedding similarity. This approach loses the structured associations among entities and often yields incomplete context for complex experimental facts that span multiple variables. Second, Graph-RAG systems represent knowledge as binary graphs. While this introduces structure, it fragments higher-order relations into independent dyadic edges, making it impossible to preserve the integrity of multi-variable co-constraint experimental facts. Hyper-ChE addresses both limitations through EFU hyperedges that maintain experimental context as indivisible units and a dual-path retrieval mechanism that recovers this context from either entities or relations. Third, the modular ontology design enables rapid deployment across chemical engineering subdomains: only the type taxonomy requires replacement, while the extraction pipeline, hypergraph engine, and retrieval logic remain unchanged.

@@ -1,0 +1,6 @@
+﻿group,questions,strict_hallucination_rate,major_hallucination_rate,minor_hallucination_rate,avg_evidence_groundedness,empty_or_abstention_rate,old_hallucination_rate
+chem_norm_hypergraph,40,0.0,0.0,0.0,0.325,0.75,0.0
+chem_prompt_graph,40,0.025,0.025,0.0,0.2875,0.8,0.0
+chem_prompt_hypergraph,40,0.075,0.075,0.0,0.3325,0.675,0.025
+original_hypergraph,40,0.0,0.0,0.0,0.15,0.875,0.0
+text_segments,40,0.0,0.0,0.0,0.3475,0.7,0.0

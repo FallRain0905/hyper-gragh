@@ -1,0 +1,16 @@
+group,relevance_threshold,queries,P@1,Hit@5,MRR,gNDCG@5
+chem_norm_hypergraph,grade>=1,180,0.7333,0.8556,0.7878,0.6343
+chem_prompt_graph,grade>=1,180,0.3667,0.5389,0.4402,0.3863
+chem_prompt_hypergraph,grade>=1,180,0.6889,0.8889,0.7775,0.6216
+original_hypergraph,grade>=1,180,0.6722,0.8833,0.7592,0.669
+text_segments,grade>=1,180,0.9944,1.0,0.9972,0.9167
+chem_norm_hypergraph,grade>=2,180,0.1278,0.2056,0.1625,0.147
+chem_prompt_graph,grade>=2,180,0.0,0.0111,0.0056,0.007
+chem_prompt_hypergraph,grade>=2,180,0.0389,0.0556,0.0472,0.0494
+original_hypergraph,grade>=2,180,0.0556,0.0667,0.0602,0.0608
+text_segments,grade>=2,180,0.6556,0.7778,0.704,0.685
+chem_norm_hypergraph,grade>=3,180,0.0167,0.0222,0.0194,0.0202
+chem_prompt_graph,grade>=3,180,0.0,0.0,0.0,0.0
+chem_prompt_hypergraph,grade>=3,180,0.0,0.0,0.0,0.0
+original_hypergraph,grade>=3,180,0.0056,0.0056,0.0056,0.0056
+text_segments,grade>=3,180,0.0778,0.1167,0.0906,0.0966

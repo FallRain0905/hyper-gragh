@@ -1,0 +1,36 @@
+﻿group,question_type,questions,Good Rate,Satisfactory-or-Better Rate,Key-Point Coverage,Hallucination Rate,Abstention Accuracy,Citation Stability Experimental
+text_segments,comparison,6,0.0,0.1667,0.1944,0.3333,0.5,0.1667
+text_segments,condition-constrained retrieval,6,0.1667,0.1667,0.2083,0.0,0.3333,0.1667
+text_segments,degradation analysis,5,0.0,0.2,0.2191,0.0,0.6,0.2
+text_segments,direct retrieval,7,0.7143,0.7143,0.7143,0.0,0.7143,0.7143
+text_segments,mechanism explanation,5,0.0,0.4,0.2088,0.0,0.6,0.2
+text_segments,multi-condition synthesis,6,0.0,0.3333,0.1453,0.5,1.0,0.2
+text_segments,unanswerable,5,0.6,0.8,0.6,0.0,1.0,0.0
+original_hypergraph,comparison,6,0.0,0.1667,0.1111,0.5,0.3333,0.1667
+original_hypergraph,condition-constrained retrieval,6,0.1667,0.1667,0.1667,0.1667,0.3333,0.1667
+original_hypergraph,degradation analysis,5,0.0,0.0,0.066,0.0,0.2,0.0
+original_hypergraph,direct retrieval,7,0.2857,0.4286,0.3571,0.0,0.4286,0.4286
+original_hypergraph,mechanism explanation,5,0.0,0.2,0.1186,0.2,0.6,0.0
+original_hypergraph,multi-condition synthesis,6,0.0,0.0,0.0833,0.3333,0.3333,0.0
+original_hypergraph,unanswerable,5,0.6,0.6,0.6,0.0,1.0,0.0
+chem_prompt_graph,comparison,6,0.0,0.0,0.0,0.0,0.1667,0.0
+chem_prompt_graph,condition-constrained retrieval,6,0.0,0.1667,0.0278,0.0,0.3333,0.1667
+chem_prompt_graph,degradation analysis,5,0.0,0.2,0.1197,0.2,0.8,0.0
+chem_prompt_graph,direct retrieval,7,0.4286,0.4286,0.4286,0.0,0.4286,0.2857
+chem_prompt_graph,mechanism explanation,5,0.0,0.2,0.158,0.4,0.8,0.0
+chem_prompt_graph,multi-condition synthesis,6,0.0,0.0,0.0,0.1667,0.3333,0.0
+chem_prompt_graph,unanswerable,5,0.2,0.6,0.2,0.0,1.0,0.0
+chem_prompt_hypergraph,comparison,6,0.1667,0.3333,0.405,0.3333,0.8333,0.1667
+chem_prompt_hypergraph,condition-constrained retrieval,6,0.0,0.1667,0.0611,0.0,0.5,0.1667
+chem_prompt_hypergraph,degradation analysis,5,0.0,0.2,0.1913,0.2,0.6,0.0
+chem_prompt_hypergraph,direct retrieval,7,0.8571,0.8571,0.8571,0.0,0.8571,0.7143
+chem_prompt_hypergraph,mechanism explanation,5,0.0,0.0,0.05,0.4,0.8,0.2
+chem_prompt_hypergraph,multi-condition synthesis,6,0.0,0.0,0.0,0.5,0.5,0.0
+chem_prompt_hypergraph,unanswerable,5,0.2,0.6,0.2,0.0,1.0,0.0
+chem_norm_hypergraph,comparison,6,0.1667,0.3333,0.2778,0.0,0.3333,0.3333
+chem_norm_hypergraph,condition-constrained retrieval,6,0.0,0.0,0.0,0.1667,0.1667,0.0
+chem_norm_hypergraph,degradation analysis,5,0.0,0.2,0.0667,0.0,0.2,0.2
+chem_norm_hypergraph,direct retrieval,7,0.4286,0.4286,0.4286,0.0,0.4286,0.4286
+chem_norm_hypergraph,mechanism explanation,5,0.0,0.0,0.0,0.0,0.2,0.0
+chem_norm_hypergraph,multi-condition synthesis,6,0.1667,0.1667,0.1667,0.0,0.3333,0.1667
+chem_norm_hypergraph,unanswerable,5,0.6,0.8,0.6,0.0,1.0,0.0

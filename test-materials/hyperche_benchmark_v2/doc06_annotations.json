@@ -1,0 +1,1664 @@
+{
+  "efus": [
+    {
+      "gold_id": "DOC06-EFU-001",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Without Bi3+ additive, the ICRFB at 80 mA/cm2 exhibited a Coulombic efficiency of 72%, voltage efficiency of 71%, and energy efficiency of 51%.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "electrode:graphite_felt",
+          "name": "graphite felt",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 72,
+          "unit": "%",
+          "canonical_id": "measurement:ce_72_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 51,
+          "unit": "%",
+          "canonical_id": "measurement:ee_51_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "At 80 mA/cm2, the baseline cell performance declined significantly, with Coulombic efficiency dropping to 72% and energy efficiency to 51%."
+    },
+    {
+      "gold_id": "DOC06-EFU-002",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "With 1.5 mmol/L Bi3+ additive, the ICRFB at 80 mA/cm2 achieved a Coulombic efficiency of 93% and energy efficiency of 76%.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 93,
+          "unit": "%",
+          "canonical_id": "measurement:ce_93_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "At 80 mA/cm2, the energy efficiency improved from a baseline of 51% to 76% at 1.5 mmol/L Bi3+, with Coulombic efficiency reaching 93%."
+    },
+    {
+      "gold_id": "DOC06-EFU-003",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "With 5.0 mmol/L Bi3+ additive, the ICRFB at 80 mA/cm2 achieved a Coulombic efficiency of 96% and energy efficiency of 85%.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ee_85_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "With Bi3+ addition, Coulombic efficiency improved to the range of 87-96% and energy efficiency reached 62-85% depending on the specific concentration and current density."
+    },
+    {
+      "gold_id": "DOC06-EFU-004",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 with 1.5 mmol/L Bi3+, ICRFB achieved 96% CE and 78% EE; at 120 mA/cm2 with 1.5 mmol/L Bi3+, CE was 87% and EE was 68%.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 120,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_120_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent_40ma"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 87,
+          "unit": "%",
+          "canonical_id": "measurement:ce_87_percent_120ma"
+        },
+        {
+          "metric_type": "EE",
+          "value": 68,
+          "unit": "%",
+          "canonical_id": "measurement:ee_68_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "At 40 mA/cm2, the baseline CE of 85% increased to 96% with 1.5 mmol/L Bi3+ and reached 98% at 5.0 mmol/L. At 120 mA/cm2, the baseline CE of 63% increased to 87% with 1.5 mmol/L Bi3+ and reached 92% at 5.0 mmol/L."
+    },
+    {
+      "gold_id": "DOC06-EFU-005",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Without Bi3+ additive, the ICRFB at 40 mA/cm2 achieved 85% CE and 58% EE; at 120 mA/cm2, CE dropped to 63% and EE to 43%; at 160 mA/cm2, CE fell below 55% and EE to ~35%.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 120,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_120_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ce_85_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 58,
+          "unit": "%",
+          "canonical_id": "measurement:ee_58_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 63,
+          "unit": "%",
+          "canonical_id": "measurement:ce_63_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 43,
+          "unit": "%",
+          "canonical_id": "measurement:ee_43_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "At a current density of 40 mA/cm2, the cell achieved a Coulombic efficiency of 85% and energy efficiency of 58%. At 120 mA/cm2, the Coulombic efficiency further decreased to 63% and the energy efficiency to 43%, while at 160 mA/cm2 the cell became difficult to operate in a stable manner with Coulombic efficiency below 55% and energy efficiency around 35%."
+    },
+    {
+      "gold_id": "DOC06-EFU-006",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.4",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The Cr(III)/Cr(II) apparent reaction rate constant increased from 2.1 x 10^-3 cm/s without Bi3+ to 4.8 x 10^-3 cm/s with 1.5 mmol/L Bi3+.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        },
+        {
+          "canonical_id": "redox_couple:cr3+/cr2+",
+          "name": "Cr(III)/Cr(II)",
+          "type": "REACTION"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "rate_constant",
+          "value": 2.1,
+          "unit": "x 10^-3 cm/s",
+          "canonical_id": "measurement:k_2_1e-3_cm_s"
+        },
+        {
+          "metric_type": "rate_constant",
+          "value": 4.8,
+          "unit": "x 10^-3 cm/s",
+          "canonical_id": "measurement:k_4_8e-3_cm_s"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "In the absence of Bi3+, the rate constant was determined to be 2.1 x 10^-3 cm/s. With 1.5 mmol/L Bi3+, the rate constant increased to 4.8 x 10^-3 cm/s, representing a 2.3-fold enhancement."
+    },
+    {
+      "gold_id": "DOC06-EFU-007",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.5",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "With 1.5 mmol/L Bi3+, the parasitic hydrogen evolution loss decreased from 13% to 3.5% of total charge passed at 80 mA/cm2, corresponding to an HER overpotential shift of +85 mV.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "parasitic_loss",
+          "value": 13,
+          "unit": "%",
+          "canonical_id": "measurement:h2_loss_13_percent"
+        },
+        {
+          "metric_type": "parasitic_loss",
+          "value": 3.5,
+          "unit": "%",
+          "canonical_id": "measurement:h2_loss_3_5_percent"
+        },
+        {
+          "metric_type": "overpotential_shift",
+          "value": 85,
+          "unit": "mV",
+          "canonical_id": "measurement:her_shift_85_mv"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "With 1.5 mmol/L Bi3+ in the electrolyte, the HER onset potential shifted to approximately -0.72 V versus Ag/AgCl, corresponding to an overpotential shift of +85 mV. The parasitic hydrogen evolution loss decreased from 13% to 3.5% of the total charge passed."
+    },
+    {
+      "gold_id": "DOC06-EFU-008",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The Coulombic efficiency with Bi3+ addition ranged from 87% to 96% across all tested concentrations and current densities, compared to 72% without Bi3+ at 80 mA/cm2.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 87,
+          "unit": "%",
+          "canonical_id": "measurement:ce_87_percent_min"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent_max"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "Without Bi3+, the baseline cell exhibited a Coulombic efficiency of 72%. With Bi3+ addition, Coulombic efficiency improved to the range of 87-96%."
+    },
+    {
+      "gold_id": "DOC06-EFU-009",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPARISON",
+      "claim": "Bi3+ addition improved ICRFB energy efficiency from 51% (baseline) to 76% (1.5 mmol/L Bi3+) and 85% (5.0 mmol/L Bi3+) at 80 mA/cm2, with the improvement comprising +24 percentage points from CE and +10 percentage points from VE.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 51,
+          "unit": "%",
+          "canonical_id": "measurement:ee_51_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ee_85_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "The energy efficiency improvement of 34 percentage points between baseline and 5.0 mmol/L Bi3+ at 80 mA/cm2 comprises contributions from both enhanced Coulombic efficiency (+24 percentage points) and enhanced voltage efficiency (+10 percentage points)."
+    },
+    {
+      "gold_id": "DOC06-EFU-010",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.8",
+      "relation_type": "COMPARISON",
+      "claim": "Bi3+ additive achieves 25-34 percentage point EE improvement, comparable or superior to Pd nanoparticle modification (15-20 pp) and significantly exceeding thermal activation (5-8 pp), while using inexpensive and abundant bismuth rather than noble metals.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        },
+        {
+          "canonical_id": "catalyst:palladium",
+          "name": "Pd nanoparticles",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "EE_improvement",
+          "value": 25,
+          "unit": "percentage points",
+          "canonical_id": "measurement:ee_improve_25_pp"
+        },
+        {
+          "metric_type": "EE_improvement",
+          "value": 34,
+          "unit": "percentage points",
+          "canonical_id": "measurement:ee_improve_34_pp"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "Thermal activation typically improves energy efficiency by 5-8 percentage points. Catalytic modification using palladium nanoparticles has achieved energy efficiency improvements of 15-20 percentage points. The Bi3+ additive approach achieves comparable or superior efficiency improvements (25-34 percentage points) while utilizing an inexpensive and abundant additive."
+    },
+    {
+      "gold_id": "DOC06-EFU-011",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPARISON",
+      "claim": "The Bi3+ concentration effect on CE follows a diminishing returns pattern: the largest improvement (+15 pp) occurs between 0 and 0.5 mmol/L, with only 1-2 pp improvement per step above 2.0 mmol/L.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 87,
+          "unit": "%",
+          "canonical_id": "measurement:ce_87_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 91,
+          "unit": "%",
+          "canonical_id": "measurement:ce_91_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 93,
+          "unit": "%",
+          "canonical_id": "measurement:ce_93_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 94,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "The largest single increment occurred between the baseline (0 mmol/L) and 0.5 mmol/L Bi3+, where the CE increased by 15 percentage points. Between 0.5 and 1.0 mmol/L, the improvement was 4 percentage points, and between 1.0 and 1.5 mmol/L, the improvement was 2 percentage points. At concentrations above 2.0 mmol/L, the incremental CE gains were modest."
+    },
+    {
+      "gold_id": "DOC06-EFU-012",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPARISON",
+      "claim": "At 160 mA/cm2, Bi3+ addition improves ICRFB CE from below 55% (baseline) to 80% (1.5 mmol/L) and 87% (5.0 mmol/L), demonstrating particularly significant relative improvements at high current densities.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 55,
+          "unit": "%",
+          "canonical_id": "measurement:ce_below_55_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 80,
+          "unit": "%",
+          "canonical_id": "measurement:ce_80_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 87,
+          "unit": "%",
+          "canonical_id": "measurement:ce_87_percent_160ma"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "At 160 mA/cm2, the baseline CE below 55% increased to 80% with 1.5 mmol/L Bi3+ and reached 87% at 5.0 mmol/L."
+    },
+    {
+      "gold_id": "DOC06-EFU-013",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 2.1",
+      "relation_type": "COMPOSITION",
+      "claim": "The ICRFB negative electrolyte contained 1.0 M CrCl3 and 0.1 M CrCl2 in 1.0 M HCl aqueous solution, with Bi3+ added as BiCl3 at concentrations from 0.5 to 5.0 mmol/L.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:chromium_chloride",
+          "name": "CrCl3",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "concentration",
+          "value": 1.0,
+          "unit": "M",
+          "canonical_id": "measurement:crcl3_1_0_m"
+        },
+        {
+          "metric_type": "concentration",
+          "value": 0.1,
+          "unit": "M",
+          "canonical_id": "measurement:crcl2_0_1_m"
+        },
+        {
+          "metric_type": "concentration",
+          "value": 1.0,
+          "unit": "M",
+          "canonical_id": "measurement:hcl_1_0_m"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "The negative electrolyte contained 1.0 M CrCl3 and 0.1 M CrCl2 (pre-reduced electrochemically in a conditioning cell). Bi3+ additive was introduced into the negative electrolyte as BiCl3 at concentrations of 0.5, 1.0, 1.5, 2.0, 3.0, and 5.0 mmol/L."
+    },
+    {
+      "gold_id": "DOC06-EFU-014",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 2.1",
+      "relation_type": "COMPOSITION",
+      "claim": "The ICRFB positive electrolyte contained 1.0 M FeCl3 and 0.5 M FeCl2 in 1.0 M HCl aqueous solution.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:iron_chloride",
+          "name": "FeCl3",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:ferrous_chloride",
+          "name": "FeCl2",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "concentration",
+          "value": 1.0,
+          "unit": "M",
+          "canonical_id": "measurement:fecl3_1_0_m"
+        },
+        {
+          "metric_type": "concentration",
+          "value": 0.5,
+          "unit": "M",
+          "canonical_id": "measurement:fecl2_0_5_m"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "The positive electrolyte contained 1.0 M FeCl3 and 0.5 M FeCl2 (pre-reduced by reaction with metallic iron powder)."
+    },
+    {
+      "gold_id": "DOC06-EFU-015",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 1",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "In ICRFB, the sluggish Cr(III)/Cr(II) kinetics require more negative electrode potentials, which simultaneously accelerates the competing HER, reducing CE and creating pH gradients that destabilize chromium species.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "redox_couple:cr3+/cr2+",
+          "name": "Cr(III)/Cr(II)",
+          "type": "REACTION"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:sluggish_cr_kinetics",
+        "degradation:hydrogen_evolution",
+        "degradation:ph_gradient"
+      ],
+      "evidence_text": "The intrinsically sluggish electron transfer kinetics of the Cr(III)/Cr(II) couple manifests as high activation overpotential at practical current densities. As the current density increases, the electrode potential shifts to more negative values to drive the chromium reduction, but this more negative potential simultaneously accelerates the HER."
+    },
+    {
+      "gold_id": "DOC06-EFU-016",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.9",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Bi3+ is reduced to metallic bismuth on the electrode surface via underpotential deposition, forming a catalytic layer that simultaneously enhances Cr(III)/Cr(II) kinetics and suppresses HER, breaking the degradation chain that limits ICRFB performance.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "mechanism:bi_underpotential_deposition",
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "The mechanism of bismuth deposition is attributed to underpotential deposition (UPD) followed by possible bulk deposition at more negative potentials encountered during cell operation. The bismuth surface presents different adsorption energetics for the reactants involved in both the desired chromium redox reaction and the parasitic hydrogen evolution reaction."
+    },
+    {
+      "gold_id": "DOC06-EFU-017",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.4",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Cyclic voltammetry showed Bi3+ addition reduced Cr(III)/Cr(II) peak separation from 380 mV to 220 mV at 10 mV/s, with peak current increasing by 35%, indicating enhanced electron transfer kinetics.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        },
+        {
+          "canonical_id": "redox_couple:cr3+/cr2+",
+          "name": "Cr(III)/Cr(II)",
+          "type": "REACTION"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "peak_separation",
+          "value": 380,
+          "unit": "mV",
+          "canonical_id": "measurement:peak_sep_380_mv"
+        },
+        {
+          "metric_type": "peak_separation",
+          "value": 220,
+          "unit": "mV",
+          "canonical_id": "measurement:peak_sep_220_mv"
+        },
+        {
+          "metric_type": "peak_current_increase",
+          "value": 35,
+          "unit": "%",
+          "canonical_id": "measurement:peak_current_35_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "evidence_text": "In the absence of Bi3+, the cyclic voltammogram exhibited a peak separation of 380 mV at a scan rate of 10 mV/s. Upon addition of 1.5 mmol/L Bi3+, the peak separation decreased to 220 mV. The peak current density also increased by approximately 35%."
+    },
+    {
+      "gold_id": "DOC06-EFU-018",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.5",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Tafel analysis showed Bi3+ addition increased HER Tafel slope from 118 to 142 mV/decade and decreased exchange current density from 2.8 x 10^-6 to 1.1 x 10^-6 A/cm2, confirming reduced intrinsic HER activity on bismuth-modified surface.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "tafel_slope",
+          "value": 118,
+          "unit": "mV/decade",
+          "canonical_id": "measurement:tafel_118_mv_dec"
+        },
+        {
+          "metric_type": "tafel_slope",
+          "value": 142,
+          "unit": "mV/decade",
+          "canonical_id": "measurement:tafel_142_mv_dec"
+        },
+        {
+          "metric_type": "exchange_current_density",
+          "value": 2.8,
+          "unit": "x 10^-6 A/cm2",
+          "canonical_id": "measurement:j0_2_8e-6"
+        },
+        {
+          "metric_type": "exchange_current_density",
+          "value": 1.1,
+          "unit": "x 10^-6 A/cm2",
+          "canonical_id": "measurement:j0_1_1e-6"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "The Tafel analysis of the HER data yielded Tafel slopes of 118 mV/decade in the absence of Bi3+ and 142 mV/decade with 1.5 mmol/L Bi3+. The exchange current density for hydrogen evolution decreased from 2.8 x 10^-6 A/cm2 on bare graphite to 1.1 x 10^-6 A/cm2 on the bismuth-modified surface."
+    },
+    {
+      "gold_id": "DOC06-EFU-019",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.6",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "XPS confirmed deposited bismuth is in metallic state (Bi 4f7/2 at 157.2 eV) rather than oxide, and SEM showed bimodal particle size distribution with 20-50 nm fine particles and 100-300 nm aggregates uniformly distributed on carbon fibers.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        },
+        {
+          "canonical_id": "electrode:graphite_felt",
+          "name": "graphite felt",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "binding_energy",
+          "value": 157.2,
+          "unit": "eV",
+          "canonical_id": "measurement:bi_4f7_2_157_2_ev"
+        },
+        {
+          "metric_type": "particle_size",
+          "value": 35,
+          "unit": "nm",
+          "canonical_id": "measurement:particle_35_nm"
+        },
+        {
+          "metric_type": "particle_size",
+          "value": 200,
+          "unit": "nm",
+          "canonical_id": "measurement:particle_200_nm"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_underpotential_deposition"
+      ],
+      "evidence_text": "The Bi 4f spectrum exhibited a doublet with the Bi 4f7/2 component at 157.2 eV, characteristic of metallic bismuth (Bi 0). SEM revealed the presence of small metallic particles dispersed across the carbon fiber surfaces with a bimodal particle size distribution."
+    },
+    {
+      "gold_id": "DOC06-EFU-020",
+      "source_doc_id": "DOC06",
+      "source_section": "Section 3.8",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Bi3+ additive at 1.5-2.0 mmol/L provides optimal balance for ICRFB, achieving 76-80% EE at 80 mA/cm2 with additive cost less than 0.1% of total system cost and highly favorable return on investment through increased energy throughput.",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 2.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_2_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_percent"
+        }
+      ],
+      "mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "evidence_text": "At current densities up to 80 mA/cm2, 1.5-2.0 mmol/L Bi3+ provides a favorable balance, achieving 76-80% energy efficiency with a modest additive concentration. The performance improvement of 25 percentage points in energy efficiency translates to substantially increased energy throughput over the system lifetime."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC06-FACT-001",
+      "source_doc_id": "DOC06",
+      "claim": "Without Bi3+ additive, the ICRFB at 80 mA/cm2 exhibits a Coulombic efficiency of 72% and energy efficiency of 51%, limited by parasitic hydrogen evolution.",
+      "required_entities": [
+        "system:icrfb",
+        "electrode:graphite_felt"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 72,
+          "unit": "%",
+          "canonical_id": "measurement:ce_72_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 51,
+          "unit": "%",
+          "canonical_id": "measurement:ee_51_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:hydrogen_evolution",
+        "degradation:sluggish_cr_kinetics"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-001"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-002",
+      "source_doc_id": "DOC06",
+      "claim": "With 1.5 mmol/L Bi3+ additive, ICRFB achieves 93% CE and 76% EE at 80 mA/cm2, while with 5.0 mmol/L Bi3+ it reaches 96% CE and 85% EE.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 93,
+          "unit": "%",
+          "canonical_id": "measurement:ce_93_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ee_85_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-002",
+        "DOC06-EFU-003"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-003",
+      "source_doc_id": "DOC06",
+      "claim": "Bi3+ addition improves ICRFB Coulombic efficiency from 72% (baseline) to a range of 87-96% across all tested concentrations (0.5-5.0 mmol/L) and current densities (40-160 mA/cm2).",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 5.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_5_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 72,
+          "unit": "%",
+          "canonical_id": "measurement:ce_72_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 87,
+          "unit": "%",
+          "canonical_id": "measurement:ce_87_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-008"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-004",
+      "source_doc_id": "DOC06",
+      "claim": "The Cr(III)/Cr(II) apparent reaction rate constant increases from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s with 1.5 mmol/L Bi3+, a 2.3-fold enhancement attributed to catalytic surface modification.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+",
+        "redox_couple:cr3+/cr2+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "rate_constant",
+          "value": 2.1,
+          "unit": "x 10^-3 cm/s",
+          "canonical_id": "measurement:k_2_1e-3_cm_s"
+        },
+        {
+          "metric_type": "rate_constant",
+          "value": 4.8,
+          "unit": "x 10^-3 cm/s",
+          "canonical_id": "measurement:k_4_8e-3_cm_s"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-006"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-005",
+      "source_doc_id": "DOC06",
+      "claim": "Bi3+ suppresses parasitic hydrogen evolution from 13% to 3.5% of total charge passed at 80 mA/cm2, with an HER overpotential shift of +85 mV due to metallic bismuth's intrinsically low HER catalytic activity.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_0_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "parasitic_loss",
+          "value": 13,
+          "unit": "%",
+          "canonical_id": "measurement:h2_loss_13_percent"
+        },
+        {
+          "metric_type": "parasitic_loss",
+          "value": 3.5,
+          "unit": "%",
+          "canonical_id": "measurement:h2_loss_3_5_percent"
+        },
+        {
+          "metric_type": "overpotential_shift",
+          "value": 85,
+          "unit": "mV",
+          "canonical_id": "measurement:her_shift_85_mv"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_her_suppression"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-007"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-006",
+      "source_doc_id": "DOC06",
+      "claim": "The Bi3+ additive mechanism involves underpotential deposition of metallic bismuth on graphite felt, confirmed by XPS (Bi 4f7/2 at 157.2 eV for Bi0) and SEM (bimodal particle distribution of 20-50 nm and 100-300 nm), creating a catalytic layer with unique dual functionality.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+",
+        "electrode:graphite_felt"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "binding_energy",
+          "value": 157.2,
+          "unit": "eV",
+          "canonical_id": "measurement:bi_4f7_2_157_2_ev"
+        },
+        {
+          "metric_type": "particle_size",
+          "value": 35,
+          "unit": "nm",
+          "canonical_id": "measurement:particle_35_nm"
+        },
+        {
+          "metric_type": "particle_size",
+          "value": 200,
+          "unit": "nm",
+          "canonical_id": "measurement:particle_200_nm"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_underpotential_deposition",
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-019",
+        "DOC06-EFU-016"
+      ],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC06-FACT-007",
+      "source_doc_id": "DOC06",
+      "claim": "Bi3+ additive achieves comparable or superior performance improvements versus noble metal catalysts (25-34 pp EE improvement vs 15-20 pp for Pd) at less than 0.1% of system cost, with bismuth being abundant and low-toxicity.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+",
+        "catalyst:palladium"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "EE_improvement",
+          "value": 25,
+          "unit": "percentage points",
+          "canonical_id": "measurement:ee_improve_25_pp"
+        },
+        {
+          "metric_type": "EE_improvement",
+          "value": 34,
+          "unit": "percentage points",
+          "canonical_id": "measurement:ee_improve_34_pp"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_catalysis"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-010"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC06-FACT-008",
+      "source_doc_id": "DOC06",
+      "claim": "The optimal Bi3+ concentration for ICRFB is 1.5-2.0 mmol/L, achieving 76-80% EE at 80 mA/cm2 with favorable cost-benefit, while concentrations above 2.0 mmol/L show diminishing returns.",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 1.5,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_1_5_mmol_l"
+        },
+        {
+          "quantity_type": "bi3+_concentration",
+          "value": 2.0,
+          "unit": "mmol/L",
+          "canonical_id": "condition:bi3+_2_0_mmol_l"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "mechanism:bi_catalysis",
+        "mechanism:bi_her_suppression"
+      ],
+      "supporting_efus": [
+        "DOC06-EFU-020",
+        "DOC06-EFU-011"
+      ],
+      "difficulty": "L2",
+      "fact_type": "DESIGN_SUMMARY"
+    }
+  ],
+  "qas": [
+    {
+      "question_id": "DOC06-QA-001",
+      "source_doc_id": "DOC06",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the Coulombic efficiency and energy efficiency of ICRFB without Bi3+ additive at 80 mA/cm2?",
+      "reference_answer": "Without Bi3+ additive at 80 mA/cm2, the ICRFB exhibits a Coulombic efficiency of 72% and an energy efficiency of 51%.",
+      "reference_answer_points": [
+        "Coulombic efficiency: 72%",
+        "Energy efficiency: 51%",
+        "Limited by parasitic hydrogen evolution"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-002",
+      "source_doc_id": "DOC06",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the Cr(III)/Cr(II) reaction rate constant without Bi3+ and with 1.5 mmol/L Bi3+?",
+      "reference_answer": "The Cr(III)/Cr(II) reaction rate constant is 2.1 x 10^-3 cm/s without Bi3+ and increases to 4.8 x 10^-3 cm/s with 1.5 mmol/L Bi3+, a 2.3-fold enhancement.",
+      "reference_answer_points": [
+        "Without Bi3+: 2.1 x 10^-3 cm/s",
+        "With 1.5 mmol/L Bi3+: 4.8 x 10^-3 cm/s",
+        "2.3-fold enhancement"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-003",
+      "source_doc_id": "DOC06",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "How much does Bi3+ suppress hydrogen evolution and what is the HER overpotential shift at 80 mA/cm2 with 1.5 mmol/L Bi3+?",
+      "reference_answer": "With 1.5 mmol/L Bi3+ at 80 mA/cm2, parasitic hydrogen evolution loss decreases from 13% to 3.5% of total charge passed (a 73% relative reduction), and the HER overpotential shifts by +85 mV.",
+      "reference_answer_points": [
+        "H2 evolution loss reduced from 13% to 3.5%",
+        "73% relative reduction in parasitic loss",
+        "HER overpotential shift: +85 mV"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-004",
+      "source_doc_id": "DOC06",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the range of Coulombic and energy efficiency improvements achieved with Bi3+ addition across all tested concentrations and current densities?",
+      "reference_answer": "Bi3+ addition improves Coulombic efficiency from a baseline of 72% (at 80 mA/cm2) to a range of 87-96% across all concentrations (0.5-5.0 mmol/L) and current densities (40-160 mA/cm2). Energy efficiency improves from 51% to 62-85% at 80 mA/cm2. At 40 mA/cm2, EE reaches 78-82% with Bi3+. At 120 mA/cm2, EE reaches 68-75% with Bi3+. At 160 mA/cm2, EE improves from below 35% to 58-68% with Bi3+.",
+      "reference_answer_points": [
+        "CE range with Bi3+: 87-96% across all conditions",
+        "EE at 80 mA/cm2 with Bi3+: 62-85%",
+        "Particularly significant relative improvements at higher current densities",
+        "At 160 mA/cm2, CE improves from below 55% to 80-87%"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-008",
+        "DOC06-EFU-004",
+        "DOC06-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-005",
+      "source_doc_id": "DOC06",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the optimal Bi3+ concentration for ICRFB and what energy efficiency does it achieve at 80 mA/cm2?",
+      "reference_answer": "The optimal Bi3+ concentration is 1.5-2.0 mmol/L, achieving 76-80% energy efficiency at 80 mA/cm2. This represents a favorable balance between performance improvement and additive cost. Concentrations above 2.0 mmol/L show diminishing incremental returns.",
+      "reference_answer_points": [
+        "Optimal concentration: 1.5-2.0 mmol/L",
+        "EE at 80 mA/cm2: 76-80%",
+        "Above 2.0 mmol/L shows diminishing returns",
+        "Cost of BiCl3 less than 0.1% of total system cost"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-020",
+        "DOC06-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-006",
+      "source_doc_id": "DOC06",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Explain the dual catalytic mechanism by which Bi3+ additive simultaneously enhances Cr(III)/Cr(II) kinetics and suppresses HER in ICRFB, including the deposition mechanism and surface characterization evidence.",
+      "reference_answer": "Bi3+ is reduced to metallic bismuth on the graphite felt electrode via underpotential deposition during charge cycles. The deposited bismuth forms a catalytic layer with bimodal particle distribution (20-50 nm fine particles and 100-300 nm aggregates), confirmed by SEM and XPS (Bi 4f7/2 at 157.2 eV for metallic Bi0). For Cr(III)/Cr(II), the bismuth surface facilitates electron transfer through inner-sphere adsorption pathways, increasing the rate constant from 2.1 x 10^-3 to 4.8 x 10^-3 cm/s and reducing CV peak separation from 380 to 220 mV. For HER, the bismuth surface has weak Bi-H binding that impedes the Volmer step, shifting the HER onset by +85 mV and decreasing the exchange current density from 2.8 x 10^-6 to 1.1 x 10^-6 A/cm2. This unique dual functionality-namely catalyzing the desired reaction while suppressing the parasitic competitor-distinguishes bismuth from noble metals that typically accelerate both reactions.",
+      "reference_answer_points": [
+        "Bi3+ reduced via underpotential deposition to metallic Bi0",
+        "SEM: bimodal particle distribution on carbon fibers",
+        "XPS: Bi 4f7/2 at 157.2 eV confirms metallic state",
+        "Cr(III)/Cr(II) rate constant: 2.1 -> 4.8 x 10^-3 cm/s",
+        "CV peak separation reduced from 380 to 220 mV",
+        "HER overpotential shift: +85 mV",
+        "Exchange current density reduced: 2.8 -> 1.1 x 10^-6 A/cm2",
+        "Dual functionality distinguishes Bi from noble metals"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-006",
+        "DOC06-FACT-004",
+        "DOC06-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-019",
+        "DOC06-EFU-017",
+        "DOC06-EFU-018",
+        "DOC06-EFU-016"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-007",
+      "source_doc_id": "DOC06",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "How does Bi3+ additive compare to alternative electrode modification strategies (thermal activation, Pd nanoparticles) in terms of EE improvement, cost, and practical applicability for ICRFB?",
+      "reference_answer": "Bi3+ additive achieves 25-34 percentage point EE improvement, which is comparable or superior to Pd nanoparticles (15-20 pp) and significantly exceeds thermal activation (5-8 pp). The Bi3+ approach uses inexpensive, abundant bismuth (BiCl3 cost less than 0.1% of system cost) versus expensive noble metals for Pd modification. Bi3+ is introduced through simple electrolyte formulation without complex electrode processing steps. Thermal activation improves wettability and surface area but does not address the fundamental kinetic limitation or HER competition. Pd catalyzes both chromium reduction and HER, providing limited CE improvement. Bismuth's unique position provides kinetic selectivity that simultaneously enhances the target reaction and suppresses the parasitic competitor, with stable performance over 200 cycles and less than 2 pp EE variation.",
+      "reference_answer_points": [
+        "Bi3+ EE improvement: 25-34 pp",
+        "Pd EE improvement: 15-20 pp",
+        "Thermal activation: 5-8 pp",
+        "Bi3+ cost: less than 0.1% of system cost",
+        "Simple electrolyte formulation vs complex processing",
+        "Bismuth provides unique kinetic selectivity"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-007",
+        "DOC06-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-010",
+        "DOC06-EFU-020"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-008",
+      "source_doc_id": "DOC06",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "What is the diminishing returns pattern of Bi3+ concentration on CE at 80 mA/cm2, and what surface coverage model explains this behavior?",
+      "reference_answer": "The CE improvement follows a diminishing returns pattern: +15 pp from 0 to 0.5 mmol/L (72% to 87%), +4 pp from 0.5 to 1.0 mmol/L (87% to 91%), +2 pp from 1.0 to 1.5 mmol/L (91% to 93%), +1 pp from 1.5 to 2.0 mmol/L (93% to 94%), +1 pp from 2.0 to 3.0 mmol/L (94% to 95%), and +1 pp from 3.0 to 5.0 mmol/L (95% to 96%). This pattern is consistent with a surface coverage model where Bi3+ deposits on graphite felt to form a catalytic layer that approaches saturation. At low concentrations, deposition is incomplete and increasing concentration substantially increases surface coverage. At higher concentrations, the surface becomes nearly saturated and further concentration increases produce only marginal gains.",
+      "reference_answer_points": [
+        "0 to 0.5 mmol/L: +15 pp (72% -> 87%)",
+        "0.5 to 1.0 mmol/L: +4 pp (87% -> 91%)",
+        "1.0 to 1.5 mmol/L: +2 pp (91% -> 93%)",
+        "Above 2.0 mmol/L: only 1-2 pp per step",
+        "Explained by surface coverage saturation model"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-011"
+      ]
+    }
+  ]
+}

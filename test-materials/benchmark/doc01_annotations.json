@@ -1,0 +1,2362 @@
+{
+  "doc_info": {
+    "doc_id": "DOC01",
+    "title": "Baseline Performance Mapping of Vanadium Redox Flow Cells Assembled with Commercial Nafion Membranes: From Nafion 117 to Nafion 212",
+    "theme": "VRFB baseline and Nafion membrane grades",
+    "word_count": 3150,
+    "normalization_stress_points": [
+      "Nafion family vs Nafion 117 vs Nafion 212: generic 'Nafion' refers to the perfluorinated sulfonic acid membrane family, while Nafion 117 and Nafion 212 are specific product grades with different thicknesses (183 um vs 50.8 um)",
+      "Membrane vs Nafion: not all membranes are Nafion; alternative membranes include SPEEK, PBI, and composite membranes",
+      "CE/VE/EE vs area resistance: high CE correlates with low vanadium crossover (thick membrane), while high VE correlates with low area resistance (thin membrane); EE represents the product",
+      "Current density vs efficiency: CE increases with current density due to reduced crossover time, while VE decreases with current density due to ohmic losses; EE peaks at intermediate current density",
+      "Temperature effect asymmetry: higher temperature improves VE (enhanced conductivity) but degrades CE (faster crossover); thinner membranes suffer disproportionate CE losses at elevated temperature",
+      "Short-term efficiency vs long-term capacity retention: Nafion 212 matches Nafion 117 in EE at 100 mA/cm2 but shows 8.4 percentage points lower capacity retention after 200 cycles",
+      "Area resistance vs thickness: both Nafion 117 and Nafion 212 share equivalent weight (1100 g/mol) but differ 3.6x in thickness, yielding a 3.1x difference in area resistance"
+    ]
+  },
+  "gold_efu": [
+    {
+      "gold_id": "DOC01-EFU-001",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At a current density of 100 mA/cm2 and 25 C, the Nafion 117 cell delivered a CE of 96.2%, a VE of 84.1%, and an EE of 80.9%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 84.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_1_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_9_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At the standard reporting current density of 100 mA/cm2, the CE rose further to 96.2%, while VE declined to 84.1%. The resulting EE of 80.9% aligns with values commonly cited in the VRFB literature for Nafion 117 under comparable conditions."
+    },
+    {
+      "gold_id": "DOC01-EFU-002",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 and 25 C, the Nafion 117 cell delivered a CE of 91.4%, a VE of 89.6%, and an EE of 81.9%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 91.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_91_4_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 89.6,
+          "unit": "%",
+          "canonical_id": "measurement:ve_89_6_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_9_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At a current density of 40 mA/cm2, the Nafion 117 cell delivered a CE of 91.4%, a VE of 89.6%, and an EE of 81.9%."
+    },
+    {
+      "gold_id": "DOC01-EFU-003",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 80 mA/cm2 and 25 C, the Nafion 117 cell produced a CE of 94.7% and a VE of 88.3%, yielding an EE of 83.6%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 94.7,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_7_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 83.6,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_6_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Increasing current density to 80 mA/cm2 produced a CE of 94.7% and a VE of 88.3%, yielding an EE of 83.6%."
+    },
+    {
+      "gold_id": "DOC01-EFU-004",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 160 mA/cm2 and 25 C, the Nafion 117 cell achieved a CE of 97.3% and a VE of 79.4%, giving an EE of 77.3%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_3_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 79.4,
+          "unit": "%",
+          "canonical_id": "measurement:ve_79_4_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 77.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_77_3_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 160 mA/cm2, the cell achieved a CE of 97.3% and a VE of 79.4%, giving an EE of 77.3%."
+    },
+    {
+      "gold_id": "DOC01-EFU-005",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 200 mA/cm2 and 25 C, the Nafion 117 cell achieved a CE of 97.8% but a VE of 76.2%, with EE falling to 74.5%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_8_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 76.2,
+          "unit": "%",
+          "canonical_id": "measurement:ve_76_2_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 74.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_74_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Pushing to 200 mA/cm2 further elevated CE to 97.8% but depressed VE to 76.2%, with EE falling to 74.5%."
+    },
+    {
+      "gold_id": "DOC01-EFU-006",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 100 mA/cm2 and 25 C, the Nafion 212 cell exhibited a CE of 92.5%, a VE of 88.3%, and an EE of 81.7%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 92.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_5_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_7_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2 and 25 C, the Nafion 212 cell exhibited a CE of 92.5%, a VE of 88.3%, and an EE of 81.7%."
+    },
+    {
+      "gold_id": "DOC01-EFU-007",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 and 25 C, the Nafion 212 cell delivered a CE of 85.3%, a VE of 91.7%, and an EE of 78.2%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 85.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_85_3_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 91.7,
+          "unit": "%",
+          "canonical_id": "measurement:ve_91_7_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.2,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_2_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 40 mA/cm2, the Nafion 212 cell delivered a CE of only 85.3% compared to 91.4% for Nafion 117, a 6.1 percentage point deficit. Combined with a modest VE advantage of 2.1 percentage points (91.7% versus 89.6%), the Nafion 212 EE of 78.2% actually fell below the Nafion 117 value of 81.9%."
+    },
+    {
+      "gold_id": "DOC01-EFU-008",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 160 mA/cm2 and 25 C, the Nafion 212 cell achieved a VE of 84.6% and a CE of 94.1%, yielding an EE of 79.5%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 94.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_1_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 84.6,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_6_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 79.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_79_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 160 mA/cm2, the Nafion 212 cell achieved a VE of 84.6% compared to 79.4% for Nafion 117, a 5.2 percentage point differential. However, the CE penalty also widened: Nafion 212 recorded 94.1% versus 97.3% for Nafion 117. The resulting EE values were 79.5% and 77.3% respectively."
+    },
+    {
+      "gold_id": "DOC01-EFU-009",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 200 mA/cm2 and 25 C, the Nafion 212 cell maintained a VE of 82.1%, a CE of 95.3%, and an EE of 78.3%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 95.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_3_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_82_1_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_3_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 200 mA/cm2, the Nafion 212 cell still maintained a VE of 82.1% while its CE declined to 95.3%, producing an EE of 78.3% that exceeded the Nafion 117 value of 74.5% by 3.8 percentage points."
+    },
+    {
+      "gold_id": "DOC01-EFU-010",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 3: Temperature Dependence of Efficiency and Crossover",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "For the Nafion 117 cell at 100 mA/cm2 and 40 C, VE was 86.5%, CE was 94.4%, and EE was 81.7%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 94.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_4_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 86.5,
+          "unit": "%",
+          "canonical_id": "measurement:ve_86_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_7_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "For the Nafion 117 cell operated at 100 mA/cm2, raising the temperature from 25 C to 40 C improved VE from 84.1% to 86.5% while reducing CE from 96.2% to 94.4%."
+    },
+    {
+      "gold_id": "DOC01-EFU-011",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 3: Temperature Dependence of Efficiency and Crossover",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "For the Nafion 212 cell at 100 mA/cm2 and 40 C, VE was 90.4%, CE was 90.1%, and EE was 81.5%.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 90.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_90_1_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 90.4,
+          "unit": "%",
+          "canonical_id": "measurement:ve_90_4_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "For the Nafion 212 cell at 100 mA/cm2, increasing temperature to 40 C raised VE from 88.3% to 90.4% but depressed CE from 92.5% to 90.1%."
+    },
+    {
+      "gold_id": "DOC01-EFU-012",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "COMPOSITION",
+      "claim": "The area resistance of Nafion 212 was 0.45 ohm cm2 at 25 C, a 75.7% reduction relative to Nafion 117 at 1.85 ohm cm2.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 0.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_45_ohm_cm2"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 1.85,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_85_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "The area resistance of Nafion 212 measured under the same hydration and electrolyte conditions was 0.45 ohm cm2, representing a 75.7% reduction relative to Nafion 117."
+    },
+    {
+      "gold_id": "DOC01-EFU-013",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 3: Temperature Dependence of Efficiency and Crossover",
+      "relation_type": "COMPOSITION",
+      "claim": "Nafion 117 exhibited an area resistance of 1.52 ohm cm2 at 40 C, and Nafion 212 exhibited 0.38 ohm cm2 at 40 C.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.52,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_52_ohm_cm2"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 0.38,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_38_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Nafion 117 exhibited an area resistance of 1.52 ohm cm2 at 40 C compared to 1.85 ohm cm2 at 25 C, while Nafion 212 decreased from 0.45 ohm cm2 to 0.38 ohm cm2 over the same range."
+    },
+    {
+      "gold_id": "DOC01-EFU-014",
+      "source_doc_id": "DOC01",
+      "source_section": "Abstract",
+      "relation_type": "COMPARISON",
+      "claim": "Switching from Nafion 117 to Nafion 212 raised VE from 84.1% to 88.3% but dropped CE from 96.2% to 92.5%, with EE remaining nearly unchanged at 80.9% versus 81.7%.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 84.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_1_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_9_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_5_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_7_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Reducing membrane thickness by switching to Nafion 212 raised VE to 88.3% because of lower area resistance (0.45 ohm cm2 versus 1.85 ohm cm2 for Nafion 117), but CE dropped to 92.5% owing to increased vanadium crossover."
+    },
+    {
+      "gold_id": "DOC01-EFU-015",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "COMPARISON",
+      "claim": "At 40 mA/cm2, Nafion 212 (EE 78.2%) underperformed Nafion 117 (EE 81.9%), reversing the ranking seen at higher current densities.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 78.2,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_2_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_9_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Combined with a modest VE advantage of 2.1 percentage points (91.7% versus 89.6%), the Nafion 212 EE of 78.2% actually fell below the Nafion 117 value of 81.9%. This inversion demonstrates that the relative performance ranking between membrane grades depends on the operating current density."
+    },
+    {
+      "gold_id": "DOC01-EFU-016",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "COMPARISON",
+      "claim": "The vanadium permeability of Nafion 212 (1.72 x 10^-6 cm2/s) was 2.92 times higher than that of Nafion 117 (0.59 x 10^-6 cm2/s) at 25 C.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "After 24 hours at 25 C, the V(IV) concentration in the receiving compartment reached 2.84 mM for Nafion 212 versus 0.97 mM for Nafion 117, corresponding to permeability coefficients of 1.72 x 10^-6 cm2/s and 0.59 x 10^-6 cm2/s respectively."
+    },
+    {
+      "gold_id": "DOC01-EFU-017",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 4: Long-Term Cycling Stability and Capacity Retention",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "The Nafion 212 cell showed faster capacity fading over 200 cycles, with capacity retention of 78.3% compared to 86.7% for Nafion 117, driven by higher cumulative vanadium crossover.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_200"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 78.3,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_78_3_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 86.7,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_86_7_percent"
+        }
+      ],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        },
+        {
+          "canonical_id": "degradation:electrolyte_imbalance",
+          "name": "electrolyte imbalance"
+        },
+        {
+          "canonical_id": "degradation:capacity_fading",
+          "name": "capacity fading"
+        }
+      ],
+      "evidence_text": "200 consecutive charge-discharge cycles were performed at 100 mA/cm2. The capacity retention at cycle 200 relative to cycle 10 was 86.7% for Nafion 117 and 78.3% for Nafion 212. The faster capacity fade for Nafion 212 is directly attributable to the higher net vanadium transport during each cycle."
+    },
+    {
+      "gold_id": "DOC01-EFU-018",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 4: Long-Term Cycling Stability and Capacity Retention",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "After 200 cycles, the positive electrolyte vanadium concentration decreased by 14.2% for Nafion 212 versus 8.4% for Nafion 117, confirming the electrolyte imbalance mechanism.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_200"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        },
+        {
+          "canonical_id": "degradation:electrolyte_imbalance",
+          "name": "electrolyte imbalance"
+        }
+      ],
+      "evidence_text": "After 200 cycles, the positive electrolyte vanadium concentration had decreased by 8.4% for Nafion 117 and 14.2% for Nafion 212 relative to their initial values, while the negative electrolyte showed corresponding increases of 6.1% and 11.8%."
+    },
+    {
+      "gold_id": "DOC01-EFU-019",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "CE increases with current density because shorter cycle duration reduces the time available for diffusive vanadium crossover.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "The CE increase arises because the duration of each charge-discharge cycle shortens as current density rises, thereby reducing the time available for diffusive vanadium crossover."
+    },
+    {
+      "gold_id": "DOC01-EFU-020",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 1: Baseline Cell Performance with Nafion 117 at 25 C",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "VE decreases with increasing current density because ohmic losses scale linearly with current density according to eta_ohmic = i * R_area.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "The modest decrease in VE from 89.6% to 88.3% reflects growing ohmic losses that scale linearly with current density according to the relation eta_ohmic = i * R_area."
+    },
+    {
+      "gold_id": "DOC01-EFU-021",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 3: Temperature Dependence of Efficiency and Crossover",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "The activation energy for vanadium diffusion (22 kJ/mol) exceeds that for proton conduction (8.5 kJ/mol), implying that crossover intensifies more rapidly than ohmic losses as temperature increases.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion",
+          "name": "Nafion",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "The apparent activation energy for proton conduction extracted from these two points is approximately 8.5 kJ/mol. In contrast, the vanadium diffusion coefficients show a stronger temperature dependence corresponding to an activation energy near 22 kJ/mol, indicating that the crossover penalty will increasingly dominate at elevated temperatures."
+    },
+    {
+      "gold_id": "DOC01-EFU-022",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 4: Long-Term Cycling Stability and Capacity Retention",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "The faster capacity fade for Nafion 212 is attributable to higher net vanadium transport, which drives differential state-of-charge evolution between half-cells.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        },
+        {
+          "canonical_id": "degradation:electrolyte_imbalance",
+          "name": "electrolyte imbalance"
+        },
+        {
+          "canonical_id": "degradation:capacity_fading",
+          "name": "capacity fading"
+        }
+      ],
+      "evidence_text": "The faster capacity fade for Nafion 212 is directly attributable to the higher net vanadium transport during each cycle. Over 200 cycles at 100 mA/cm2, the cumulative vanadium crossover drives differential state-of-charge evolution in the positive and negative half-cells."
+    },
+    {
+      "gold_id": "DOC01-EFU-023",
+      "source_doc_id": "DOC01",
+      "source_section": "Discussion",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "At low current densities (below 60 mA/cm2), Nafion 117 is superior because crossover dominates over ohmic losses.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "At low current densities (below 60 mA/cm2), the dominant loss mechanism is vanadium crossover rather than ohmic polarization. In this regime, the thicker Nafion 117 membrane is unequivocally superior, delivering higher CE and EE."
+    },
+    {
+      "gold_id": "DOC01-EFU-024",
+      "source_doc_id": "DOC01",
+      "source_section": "Discussion",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "At high current densities (above 160 mA/cm2), Nafion 212 is preferred because ohmic losses dominate the efficiency penalty.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "At high current densities (above 160 mA/cm2), the ohmic penalty of Nafion 117 becomes the dominant loss mechanism, and Nafion 212 emerges as the preferred option despite its inferior CE."
+    },
+    {
+      "gold_id": "DOC01-EFU-025",
+      "source_doc_id": "DOC01",
+      "source_section": "Discussion",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "In the intermediate 80-120 mA/cm2 range, EE values of Nafion 117 and Nafion 212 converge and secondary considerations should guide membrane selection.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "At moderate current densities (80-120 mA/cm2), the two membranes yield comparable EE values because the ohmic advantage of Nafion 212 is nearly offset by its crossover disadvantage. The near-identical EE values at 100 mA/cm2 (80.9% versus 81.7%) suggest that other factors should guide the selection in this intermediate regime."
+    },
+    {
+      "gold_id": "DOC01-EFU-026",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 2: Performance Comparison Between Nafion 117 and Nafion 212",
+      "relation_type": "COMPARISON",
+      "claim": "At 200 mA/cm2, the Nafion 212 cell achieved an EE of 78.3%, which exceeded the Nafion 117 value of 74.5% by 3.8 percentage points.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 78.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 74.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_74_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 200 mA/cm2, the Nafion 212 cell still maintained a VE of 82.1% while its CE declined to 95.3%, producing an EE of 78.3% that exceeded the Nafion 117 value of 74.5% by 3.8 percentage points."
+    },
+    {
+      "gold_id": "DOC01-EFU-027",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 3: Temperature Dependence of Efficiency and Crossover",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "At 40 C, vanadium crossover increased by 51.8% for Nafion 212 and 60.8% for Nafion 117 relative to 25 C values.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "The crossover rate measured in the ex-situ diffusion cell at 40 C increased to 4.31 mM after 24 hours for Nafion 212 and 1.56 mM for Nafion 117, corresponding to increases of 51.8% and 60.8% respectively relative to the 25 C values."
+    },
+    {
+      "gold_id": "DOC01-EFU-028",
+      "source_doc_id": "DOC01",
+      "source_section": "Section 4: Long-Term Cycling Stability and Capacity Retention",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "The capacity fade rate for Nafion 212 was approximately 0.11% per cycle, compared to 0.07% per cycle for Nafion 117 after the first 50 cycles.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_212",
+          "name": "Nafion 212",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        {
+          "canonical_id": "degradation:capacity_fading",
+          "name": "capacity fading"
+        },
+        {
+          "canonical_id": "degradation:vanadium_crossover",
+          "name": "vanadium crossover"
+        }
+      ],
+      "evidence_text": "The capacity fade rate for Nafion 212, calculated as the linear regression slope of discharge capacity versus cycle number after the first 50 cycles, was approximately 0.11% per cycle compared to 0.07% per cycle for Nafion 117."
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "DOC01-FACT-001",
+      "source_doc_id": "DOC01",
+      "claim": "At 100 mA/cm2 and 25 C, Nafion 117 in a VRFB cell delivers CE of 96.2%, VE of 84.1%, and EE of 80.9%.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 84.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_1_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_9_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-002",
+      "source_doc_id": "DOC01",
+      "claim": "At 100 mA/cm2 and 25 C, Nafion 212 in a VRFB cell delivers CE of 92.5%, VE of 88.3%, and EE of 81.7%.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 92.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_5_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_7_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-003",
+      "source_doc_id": "DOC01",
+      "claim": "The area resistance of Nafion 117 at 25 C is 1.85 ohm cm2, while that of Nafion 212 is 0.45 ohm cm2.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.85,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_85_ohm_cm2"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 0.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_45_ohm_cm2"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-004",
+      "source_doc_id": "DOC01",
+      "claim": "Switching from Nafion 117 to Nafion 212 increases VE but decreases CE at 100 mA/cm2 and 25 C, with EE remaining nearly unchanged.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 84.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_1_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 80.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_9_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_5_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.7,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_7_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "condition_integrity"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-005",
+      "source_doc_id": "DOC01",
+      "claim": "At 40 mA/cm2 and 25 C, Nafion 117 (EE 81.9%) outperforms Nafion 212 (EE 78.2%), reversing the performance ranking observed at higher current densities.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "EE",
+          "value": 81.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_9_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78.2,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_2_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "condition_integrity"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-006",
+      "source_doc_id": "DOC01",
+      "claim": "At 200 mA/cm2 and 25 C, Nafion 212 achieves EE of 78.3%, exceeding Nafion 117's 74.5% by 3.8 percentage points.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "EE",
+          "value": 78.3,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_3_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 74.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_74_5_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-007",
+      "source_doc_id": "DOC01",
+      "claim": "The vanadium permeability of Nafion 212 (1.72 x 10^-6 cm2/s) is 2.92 times higher than Nafion 117 (0.59 x 10^-6 cm2/s) at 25 C.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-008",
+      "source_doc_id": "DOC01",
+      "claim": "For Nafion 117 at 100 mA/cm2, raising temperature from 25 C to 40 C increases VE from 84.1% to 86.5% but decreases CE from 96.2% to 94.4%.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "VE",
+          "value": 84.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_1_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 86.5,
+          "unit": "%",
+          "canonical_id": "measurement:ve_86_5_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_2_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 94.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_4_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-009",
+      "source_doc_id": "DOC01",
+      "claim": "For Nafion 212 at 100 mA/cm2, raising temperature from 25 C to 40 C increases VE from 88.3% to 90.4% but decreases CE from 92.5% to 90.1%.",
+      "required_entities": [
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "VE",
+          "value": 88.3,
+          "unit": "%",
+          "canonical_id": "measurement:ve_88_3_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 90.4,
+          "unit": "%",
+          "canonical_id": "measurement:ve_90_4_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_5_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 90.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_90_1_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-010",
+      "source_doc_id": "DOC01",
+      "claim": "After 200 cycles at 100 mA/cm2, Nafion 117 retained 86.7% capacity while Nafion 212 retained 78.3%.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_200"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 86.7,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_86_7_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 78.3,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_78_3_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:capacity_fading"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-011",
+      "source_doc_id": "DOC01",
+      "claim": "CE increases monotonically with current density for Nafion 117, from 91.4% at 40 mA/cm2 to 97.8% at 200 mA/cm2 at 25 C.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 91.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_91_4_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 97.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_8_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-012",
+      "source_doc_id": "DOC01",
+      "claim": "VE decreases monotonically with current density for Nafion 117, from 89.6% at 40 mA/cm2 to 76.2% at 200 mA/cm2 at 25 C.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "VE",
+          "value": 89.6,
+          "unit": "%",
+          "canonical_id": "measurement:ve_89_6_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 76.2,
+          "unit": "%",
+          "canonical_id": "measurement:ve_76_2_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-013",
+      "source_doc_id": "DOC01",
+      "claim": "Nafion 117 has a dry thickness of 183 um, while Nafion 212 has a dry thickness of 50.8 um, giving a thickness ratio of approximately 3.6.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [],
+      "required_measurements": [],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-014",
+      "source_doc_id": "DOC01",
+      "claim": "The area resistance of Nafion 117 decreases from 1.85 ohm cm2 at 25 C to 1.52 ohm cm2 at 40 C.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.85,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_85_ohm_cm2"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 1.52,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_52_ohm_cm2"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-015",
+      "source_doc_id": "DOC01",
+      "claim": "The area resistance of Nafion 212 decreases from 0.45 ohm cm2 at 25 C to 0.38 ohm cm2 at 40 C.",
+      "required_entities": [
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 0.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_45_ohm_cm2"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 0.38,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_38_ohm_cm2"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-016",
+      "source_doc_id": "DOC01",
+      "claim": "The activation energy for proton conduction in Nafion is approximately 8.5 kJ/mol, while the activation energy for vanadium diffusion is approximately 22 kJ/mol.",
+      "required_entities": [
+        "membrane:nafion"
+      ],
+      "required_conditions": [],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-017",
+      "source_doc_id": "DOC01",
+      "claim": "Nafion 212 shows a disproportionately larger CE reduction (2.4 percentage points) than Nafion 117 (1.8 percentage points) when temperature is raised from 25 C to 40 C at 100 mA/cm2.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        }
+      ],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-018",
+      "source_doc_id": "DOC01",
+      "claim": "The capacity fade rate for Nafion 212 is approximately 0.11% per cycle, compared to 0.07% per cycle for Nafion 117.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:capacity_fading",
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-019",
+      "source_doc_id": "DOC01",
+      "claim": "The average CE over 200 cycles was 95.8% for Nafion 117 and 91.6% for Nafion 212.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle",
+          "value": 200,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_200"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 95.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_8_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 91.6,
+          "unit": "%",
+          "canonical_id": "measurement:ce_91_6_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-020",
+      "source_doc_id": "DOC01",
+      "claim": "Nafion 117 is preferable for VRFB operation below 60 mA/cm2 where vanadium crossover dominates, while Nafion 212 becomes advantageous above 160 mA/cm2 where ohmic losses govern.",
+      "required_entities": [
+        "membrane:nafion_117",
+        "membrane:nafion_212"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-021",
+      "source_doc_id": "DOC01",
+      "claim": "The V(IV) concentration in the receiving compartment after 24 hours at 25 C was 2.84 mM for Nafion 212 versus 0.97 mM for Nafion 117 in the ex-situ diffusion cell.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "mechanism_support"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-022",
+      "source_doc_id": "DOC01",
+      "claim": "The ohmic overpotential across Nafion 117 alone reaches approximately 370 mV at 200 mA/cm2.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "required_measurements": [],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-023",
+      "source_doc_id": "DOC01",
+      "claim": "The Nafion 117 cell exhibited an EE peak of 83.6% at 80 mA/cm2 at 25 C before declining at higher current densities.",
+      "required_entities": [
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "EE",
+          "value": 83.6,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_6_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match"
+      ]
+    },
+    {
+      "fact_id": "DOC01-FACT-024",
+      "source_doc_id": "DOC01",
+      "claim": "At 40 mA/cm2 and 25 C, the Nafion 212 CE of 85.3% represents a 6.1 percentage point deficit compared to Nafion 117's 91.4%.",
+      "required_entities": [
+        "membrane:nafion_212",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        }
+      ],
+      "required_measurements": [
+        {
+          "metric_type": "CE",
+          "value": 85.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_85_3_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 91.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_91_4_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evaluation_focus": [
+        "entity_match",
+        "condition_match",
+        "measurement_match",
+        "mechanism_support"
+      ]
+    }
+  ],
+  "qa_questions": [
+    {
+      "qid": "DOC01-QA-001",
+      "source_doc_id": "DOC01",
+      "level": "L1",
+      "question_type": "direct fact retrieval",
+      "question": "What is the energy efficiency (EE) of a VRFB cell with Nafion 117 membrane at 100 mA/cm2 and 25 C?",
+      "reference_answer_points": [
+        "The EE is 80.9%",
+        "This is derived from CE of 96.2% and VE of 84.1%"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-001"
+      ]
+    },
+    {
+      "qid": "DOC01-QA-002",
+      "source_doc_id": "DOC01",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does the area resistance of Nafion 212 compare to Nafion 117 at 25 C?",
+      "reference_answer_points": [
+        "Nafion 212 has an area resistance of 0.45 ohm cm2",
+        "Nafion 117 has an area resistance of 1.85 ohm cm2",
+        "Nafion 212 shows a 75.7% reduction compared to Nafion 117"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-003"
+      ]
+    },
+    {
+      "qid": "DOC01-QA-003",
+      "source_doc_id": "DOC01",
+      "level": "L3",
+      "question_type": "condition-constrained comparison",
+      "question": "At 100 mA/cm2 and 25 C, which membrane delivers higher coulombic efficiency: Nafion 117 or Nafion 212? What is the mechanism behind this difference?",
+      "reference_answer_points": [
+        "Nafion 117 delivers higher CE (96.2% vs 92.5%)",
+        "The difference is 3.7 percentage points",
+        "Nafion 117's thicker profile (183 um vs 50.8 um) provides a greater barrier to vanadium ion transport",
+        "The reduced vanadium crossover in thicker membranes leads to higher coulombic efficiency"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-001",
+        "DOC01-FACT-002",
+        "DOC01-FACT-007"
+      ]
+    },
+    {
+      "qid": "DOC01-QA-004",
+      "source_doc_id": "DOC01",
+      "level": "L4",
+      "question_type": "trend analysis",
+      "question": "How does increasing the current density from 40 to 200 mA/cm2 affect the CE, VE, and EE of a Nafion 117-based VRFB cell at 25 C? Explain the underlying mechanisms.",
+      "reference_answer_points": [
+        "CE increases monotonically from 91.4% at 40 mA/cm2 to 97.8% at 200 mA/cm2",
+        "VE decreases from 89.6% at 40 mA/cm2 to 76.2% at 200 mA/cm2",
+        "EE peaks at 83.6% near 80 mA/cm2 before declining to 74.5% at 200 mA/cm2",
+        "CE increases because shorter cycle duration reduces time for diffusive vanadium crossover",
+        "VE decreases because ohmic losses scale linearly with current density (eta_ohmic = i * R_area)",
+        "The competing trends cause EE to maximize at an intermediate current density"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-011",
+        "DOC01-FACT-012",
+        "DOC01-FACT-023"
+      ]
+    },
+    {
+      "qid": "DOC01-QA-005",
+      "source_doc_id": "DOC01",
+      "level": "L5",
+      "question_type": "multi-factor analysis",
+      "question": "When temperature increases from 25 C to 40 C for both Nafion 117 and Nafion 212 at 100 mA/cm2, how do CE and VE respond, and why does Nafion 212 show greater CE sensitivity? What does this imply for high-temperature VRFB operation?",
+      "reference_answer_points": [
+        "For Nafion 117: VE increases from 84.1% to 86.5%, CE decreases from 96.2% to 94.4%",
+        "For Nafion 212: VE increases from 88.3% to 90.4%, CE decreases from 92.5% to 90.1%",
+        "Nafion 212 shows a larger CE reduction (2.4 points) than Nafion 117 (1.8 points)",
+        "Higher temperature enhances proton conductivity (lower activation energy, ~8.5 kJ/mol) improving VE",
+        "Higher temperature also accelerates vanadium diffusion (higher activation energy, ~22 kJ/mol) degrading CE",
+        "Nafion 212's thinner barrier offers less resistance to thermally activated diffusion",
+        "The activation energy asymmetry means crossover intensifies more rapidly than ohmic losses at high temperature",
+        "Thicker membranes or additional selective barriers are preferred for high-temperature operation"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-008",
+        "DOC01-FACT-009",
+        "DOC01-FACT-016",
+        "DOC01-FACT-017"
+      ]
+    },
+    {
+      "qid": "DOC01-QA-006",
+      "source_doc_id": "DOC01",
+      "level": "L6",
+      "question_type": "system design synthesis",
+      "question": "Based on the current density-dependent performance data, temperature sensitivity, and long-term cycling results for Nafion 117 and Nafion 212, how should a VRFB system designer select between these two membranes for (a) a 6-8 hour solar time-shifting application operating at low current density, (b) a grid frequency regulation application requiring high power density, and (c) a warm-climate stationary storage system at 40 C? Justify your recommendations with specific data from the document.",
+      "reference_answer_points": [
+        "For solar time-shifting (low current density, below 60 mA/cm2): Nafion 117 is preferred",
+        "At 40 mA/cm2, Nafion 117 delivers EE of 81.9% vs 78.2% for Nafion 212",
+        "At low current density, vanadium crossover dominates and Nafion 117's thicker barrier provides better CE",
+        "For frequency regulation (high current density, above 160 mA/cm2): Nafion 212 is preferred",
+        "At 200 mA/cm2, Nafion 212 achieves EE of 78.3% vs 74.5% for Nafion 117",
+        "At high current density, ohmic losses dominate and Nafion 212's lower area resistance (0.45 vs 1.85 ohm cm2) provides better VE",
+        "For warm-climate operation at 40 C: Nafion 117 is preferred due to thermal robustness",
+        "Nafion 212 suffers disproportionate CE loss at 40 C (2.4 points vs 1.8 points for Nafion 117)",
+        "The activation energy for vanadium diffusion (22 kJ/mol) exceeds that for proton conduction (8.5 kJ/mol)",
+        "Long-term cycling: Nafion 117 retains 86.7% capacity vs 78.3% for Nafion 212 after 200 cycles",
+        "The 8.4 percentage point capacity retention gap confirms that short-term EE parity does not imply equal durability"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-005",
+        "DOC01-FACT-006",
+        "DOC01-FACT-010",
+        "DOC01-FACT-017",
+        "DOC01-FACT-020"
+      ]
+    }
+  ]
+}

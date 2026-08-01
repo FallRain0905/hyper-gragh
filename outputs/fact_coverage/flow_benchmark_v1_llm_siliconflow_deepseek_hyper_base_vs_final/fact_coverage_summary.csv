@@ -1,0 +1,9 @@
+mode,k,strict_fact_coverage@k,soft_support_score@k,condition_integrity@k,evidence_token_budget@k,evidence_density@k,supported_count,partial_count,unsupported_count
+hyper_base,1,0.0833,0.2506,0.2948,116.06,0.2506,15,68,97
+hyper_base,3,0.1056,0.3301,0.3561,343.57,0.3301,19,80,81
+hyper_base,5,0.0889,0.3721,0.4063,563.35,0.3721,16,93,71
+hyper_base,10,0.1556,0.4277,0.455,1052.27,0.4064,28,90,62
+hyper_final,1,0.0611,0.2149,0.2691,90.04,0.2149,11,62,107
+hyper_final,3,0.0722,0.3327,0.3516,263.39,0.3327,13,89,78
+hyper_final,5,0.0833,0.3613,0.3811,426.04,0.3613,15,95,70
+hyper_final,10,0.1167,0.4173,0.4503,859.37,0.4173,21,92,67

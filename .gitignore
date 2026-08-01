@@ -185,14 +185,10 @@ web-ui/backend/settings.json
 web-ui/backend/uploads/
 web-ui/backend/files.db
 web-ui/backend/*.db
+web-ui/backend/*.db-journal
 web-ui/backend/knowledge_bases/
 
-# Keep only the two curated case databases for the formal repository.
-web-ui/backend/hyperrag_cache/*
-!web-ui/backend/hyperrag_cache/case1/
-!web-ui/backend/hyperrag_cache/case1/**
-!web-ui/backend/hyperrag_cache/case2/
-!web-ui/backend/hyperrag_cache/case2/**
+# HyperRAG cache databases are intentionally versioned for workstation transfer.
 web-ui/backend/hyperrag_cache/**/*.log
 web-ui/backend/hyperrag_cache/**/*.bak
 web-ui/backend/hyperrag_cache/**/*.tmp
@@ -202,7 +198,6 @@ web-ui/backend/hyperrag_cache/**/*.tmp
 /external/
 /kb/
 /original/
-/scripts/
 /thesis-materials/
 /hyperrag_cache/
 /cograg_cache/
@@ -211,3 +206,8 @@ web-ui/backend/hyperrag_cache/**/*.tmp
 /knowledge_bases/
 
 .claude/
+.push-tmp-hyperche/
+tmp_*
+*_write_test.txt
+hyperche_sqlite_test.db
+*.db-journal

@@ -1,0 +1,756 @@
+{
+  "document_id": "DOC07",
+  "title": "Degradation Mechanisms in Zinc-Bromine Flow Batteries: Crossover, Complexation, and Dendrite Formation",
+  "efus": [
+    {
+      "gold_id": "DOC07-EFU-001",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 20 mA/cm2 with 0.3 M MEP, ZBFB achieves CE of 85.3%, VE of 75.2%, and EE of 64.1%",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 85.3, "unit": "%", "canonical_id": "measurement:ce_85_3_percent"},
+        {"metric_type": "VE", "value": 75.2, "unit": "%", "canonical_id": "measurement:ve_75_2_percent"},
+        {"metric_type": "EE", "value": 64.1, "unit": "%", "canonical_id": "measurement:ee_64_1_percent"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "At a current density of 20 mA/cm2, the system achieved a coulombic efficiency of 85.3%, a voltage efficiency of 75.2%, and an energy efficiency of 64.1%."
+    },
+    {
+      "gold_id": "DOC07-EFU-002",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 80 mA/cm2 with 0.3 M MEP, ZBFB achieves CE of 92.1%, VE of 65.8%, and EE of 60.6%",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 92.1, "unit": "%", "canonical_id": "measurement:ce_92_1_percent"},
+        {"metric_type": "VE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ve_65_8_percent"},
+        {"metric_type": "EE", "value": 60.6, "unit": "%", "canonical_id": "measurement:ee_60_6_percent"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "The highest current density of 80 mA/cm2 produced the maximum CE of 92.1% but the lowest VE of 65.8%, resulting in an EE of 60.6%."
+    },
+    {
+      "gold_id": "DOC07-EFU-003",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Without MEP at 40 mA/cm2, ZBFB shows CE of 82.4%, VE of 76.8%, EE of 63.3%, and bromine crossover rate of 0.14 mL/h",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0, "unit": "M", "canonical_id": "condition:mep_concentration_0_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 82.4, "unit": "%", "canonical_id": "measurement:ce_82_4_percent"},
+        {"metric_type": "VE", "value": 76.8, "unit": "%", "canonical_id": "measurement:ve_76_8_percent"},
+        {"metric_type": "EE", "value": 63.3, "unit": "%", "canonical_id": "measurement:ee_63_3_percent"},
+        {"metric_type": "crossover_rate", "value": 0.14, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_14_ml_h"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "In the absence of MEP (0 M), the cell exhibited a CE of only 82.4%, a VE of 76.8%, and an EE of 63.3%."
+    },
+    {
+      "gold_id": "DOC07-EFU-004",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 0.5 M MEP and 40 mA/cm2, ZBFB achieves CE of 89.4%, VE of 69.2%, EE of 61.9%, and bromine crossover rate of 0.05 mL/h",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "M", "canonical_id": "condition:mep_concentration_0_5_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 89.4, "unit": "%", "canonical_id": "measurement:ce_89_4_percent"},
+        {"metric_type": "VE", "value": 69.2, "unit": "%", "canonical_id": "measurement:ve_69_2_percent"},
+        {"metric_type": "EE", "value": 61.9, "unit": "%", "canonical_id": "measurement:ee_61_9_percent"},
+        {"metric_type": "crossover_rate", "value": 0.05, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_05_ml_h"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "Further increasing MEP to 0.5 M produced marginal CE gains to 89.4% but caused a more pronounced VE reduction to 69.2%, with EE declining to 61.9%."
+    },
+    {
+      "gold_id": "DOC07-EFU-005",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.3",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 with 0.3 M MEP, zinc utilization degrades from 72.1% at 10 cycles to 58.2% at 200 cycles",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "measurements": [
+        {"metric_type": "utilization", "value": 58.2, "unit": "%", "canonical_id": "measurement:zinc_utilization_58_2_percent"}
+      ],
+      "mechanisms": ["degradation:dendrite_growth", "degradation:dead_zinc"],
+      "evidence_text": "At 40 mA/cm2 with 0.3 M MEP, the initial zinc utilization after 10 cycles was 72.1%, indicating relatively efficient zinc deposition and dissolution morphology. However, extended cycling revealed progressive degradation of zinc utilization, which declined to 68.4% at 50 cycles, 63.7% at 100 cycles, and 58.2% at 200 cycles."
+    },
+    {
+      "gold_id": "DOC07-EFU-006",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.4",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 20 mA/cm2 with 0.3 M MEP, bromine crossover rate is 0.12 mL/h after 50 cycles",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "cycle_number", "value": 50, "unit": "cycles", "canonical_id": "condition:cycle_50"}
+      ],
+      "measurements": [
+        {"metric_type": "crossover_rate", "value": 0.12, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_12_ml_h"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "At 0.3 M MEP and after 50 cycles, the bromine crossover rate increased systematically with decreasing current density: 0.03 mL/h at 80 mA/cm2, 0.05 mL/h at 60 mA/cm2, 0.07 mL/h at 40 mA/cm2, and 0.12 mL/h at 20 mA/cm2."
+    },
+    {
+      "gold_id": "DOC07-EFU-007",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.5",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 0.3 M MEP, zinc dendrite growth rate increases from 0.6 um/cycle at 20 mA/cm2 to 3.2 um/cycle at 80 mA/cm2",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "dendrite_growth_rate", "value": 3.2, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_3_2_um_cycle"}
+      ],
+      "mechanisms": ["degradation:dendrite_growth"],
+      "evidence_text": "At 0.3 M MEP, the dendrite growth rate increased substantially with current density: 0.6 um/cycle at 20 mA/cm2, 1.2 um/cycle at 40 mA/cm2, 1.9 um/cycle at 60 mA/cm2, and 3.2 um/cycle at 80 mA/cm2."
+    },
+    {
+      "gold_id": "DOC07-EFU-008",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.7",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Ohmic resistance increases from 0.78 ohm cm2 to 1.28 ohm cm2 over 200 cycles at 40 mA/cm2 with 0.3 M MEP",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "measurements": [
+        {"metric_type": "ohmic_resistance", "value": 1.28, "unit": "ohm cm2", "canonical_id": "measurement:resistance_1_28_ohm_cm2"}
+      ],
+      "mechanisms": ["degradation:separator_fouling"],
+      "evidence_text": "At 40 mA/cm2 with 0.3 M MEP, the initial ohmic resistance of 0.78 ohm cm2 increased to 0.89 ohm cm2 at 50 cycles, 1.05 ohm cm2 at 100 cycles, and 1.28 ohm cm2 at 200 cycles."
+    },
+    {
+      "gold_id": "DOC07-EFU-009",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.1",
+      "relation_type": "COMPARISON",
+      "claim": "CE increases while VE decreases as current density increases from 20 to 80 mA/cm2, with EE remaining in the 60-64% range",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 85.3, "unit": "%", "canonical_id": "measurement:ce_85_3_percent"},
+        {"metric_type": "CE", "value": 92.1, "unit": "%", "canonical_id": "measurement:ce_92_1_percent"},
+        {"metric_type": "VE", "value": 75.2, "unit": "%", "canonical_id": "measurement:ve_75_2_percent"},
+        {"metric_type": "VE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ve_65_8_percent"},
+        {"metric_type": "EE", "value": 64.1, "unit": "%", "canonical_id": "measurement:ee_64_1_percent"},
+        {"metric_type": "EE", "value": 60.6, "unit": "%", "canonical_id": "measurement:ee_60_6_percent"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "These results demonstrate the fundamental CE-VE tradeoff in ZBFB operation, where higher current densities suppress crossover-mediated self-discharge but incur greater ohmic and activation overpotentials."
+    },
+    {
+      "gold_id": "DOC07-EFU-010",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.8",
+      "relation_type": "COMPARISON",
+      "claim": "0.3 M MEP provides the best balance between CE, crossover rate, and EE compared to 0, 0.1, and 0.5 M formulations at 40 mA/cm2 and 100 cycles",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "cycle_number", "value": 100, "unit": "cycles", "canonical_id": "condition:cycle_100"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 88.7, "unit": "%", "canonical_id": "measurement:ce_88_7_percent"},
+        {"metric_type": "crossover_rate", "value": 0.07, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_07_ml_h"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "The 0.3 M MEP formulation provided the best balance with a CE of 88.7% and the lowest crossover rate of 0.07 mL/h among the tested concentrations."
+    },
+    {
+      "gold_id": "DOC07-EFU-011",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.5",
+      "relation_type": "COMPARISON",
+      "claim": "Zinc dendrite growth rate at 80 mA/cm2 is more than 5x higher than at 20 mA/cm2, showing approximately quadratic dependence on current density",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "dendrite_growth_rate", "value": 0.6, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_0_6_um_cycle"},
+        {"metric_type": "dendrite_growth_rate", "value": 3.2, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_3_2_um_cycle"}
+      ],
+      "mechanisms": ["degradation:dendrite_growth"],
+      "evidence_text": "The approximately quadratic dependence of growth rate on current density is consistent with the Sand time theory for dendrite initiation, which predicts that the induction time for dendrite formation scales inversely with the square of applied current density."
+    },
+    {
+      "gold_id": "DOC07-EFU-012",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Bromine crossover and zinc dendrite growth form a positive feedback loop where crossover roughens the zinc surface promoting dendrites, and dendrites disrupt separator integrity increasing crossover",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "crossover_rate", "value": 0.11, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_11_ml_h"},
+        {"metric_type": "dendrite_growth_rate", "value": 1.7, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_1_7_um_cycle"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "evidence_text": "Bromine that crosses to the negative side reacts with freshly deposited zinc according to Zn + Br2 -> ZnBr2, consuming active zinc and roughening the electrode surface. This chemically induced surface roughness creates preferential nucleation sites for subsequent zinc deposition, promoting non-uniform current distribution and enhanced dendrite growth."
+    },
+    {
+      "gold_id": "DOC07-EFU-013",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Capacity fade rate accelerates from 0.08% per cycle in early cycling to 0.18% per cycle after 100 cycles due to the coupled degradation chain",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "capacity_fade_rate", "value": 0.18, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_18_percent_cycle"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "evidence_text": "The capacity fade rate showed a corresponding acceleration, with average fade rates of 0.08% per cycle during cycles 1-50, 0.12% per cycle during cycles 51-100, and 0.18% per cycle during cycles 101-200."
+    },
+    {
+      "gold_id": "DOC07-EFU-014",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPOSITION",
+      "claim": "Electrolyte composition of 2.0 M ZnBr2 with MEP complexing agent at 0.3 M provides optimal balance between bromine sequestration and ionic conductivity",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"},
+        {"canonical_id": "electrolyte:zinc_bromide", "name": "ZnBr2", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "concentration", "value": 2.0, "unit": "M", "canonical_id": "condition:znbr2_2_0_m"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 88.7, "unit": "%", "canonical_id": "measurement:ce_88_7_percent"},
+        {"metric_type": "EE", "value": 63.3, "unit": "%", "canonical_id": "measurement:ee_63_3_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The baseline electrolyte consisted of 2.0 M ZnBr2 dissolved in deionized water with varying concentrations of MEP complexing agent. Four electrolyte formulations were prepared with MEP concentrations of 0 M, 0.1 M, 0.3 M, and 0.5 M."
+    },
+    {
+      "gold_id": "DOC07-EFU-015",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.10",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "EIS shows charge transfer resistance at zinc electrode increases from 0.42 ohm cm2 to 1.25 ohm cm2 over 200 cycles, correlating with surface roughening and dead zinc accumulation",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "charge_transfer_resistance", "value": 1.25, "unit": "ohm cm2", "canonical_id": "measurement:ct_resistance_1_25_ohm_cm2"}
+      ],
+      "mechanisms": ["degradation:dendrite_growth", "degradation:dead_zinc"],
+      "evidence_text": "Electrochemical impedance spectroscopy revealed a systematic increase in charge transfer resistance at the zinc electrode during extended cycling, rising from 0.42 ohm cm2 at 10 cycles to 1.25 ohm cm2 at 200 cycles at 40 mA/cm2 with 0.3 M MEP."
+    },
+    {
+      "gold_id": "DOC07-EFU-016",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.10",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "XRD analysis reveals formation of ZnO and Zn(OH)2 phases on cycled zinc electrodes, indicating chemical attack by crossed-over bromine and localized pH excursions",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:zinc", "name": "zinc", "type": "ANODE"}
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": ["degradation:bromine_crossover"],
+      "evidence_text": "X-ray diffraction analysis of cycled zinc electrodes showed progressive broadening of the Zn(002) reflection and the emergence of ZnO and Zn(OH)2 phases, particularly in cells with high bromine crossover rates."
+    },
+    {
+      "gold_id": "DOC07-EFU-017",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.10",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "MEP concentration decreases from 0.3 M to approximately 0.22 M after 200 cycles due to Hofmann elimination and thermal decomposition",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "measurements": [],
+      "mechanisms": ["degradation:complexing_agent_degradation"],
+      "evidence_text": "Analysis of the electrolyte composition after 200 cycles showed a gradual decrease in MEP concentration from 0.3 M to approximately 0.22 M, indicating slow chemical degradation of the complexing agent through Hofmann elimination and other thermal decomposition pathways."
+    },
+    {
+      "gold_id": "DOC07-EFU-018",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.11",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Optimal ZBFB design uses 0.3 M MEP and operates at 40-60 mA/cm2 to balance CE, cycle life, and EE while avoiding the coupled degradation acceleration",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "material:mep", "name": "MEP", "type": "MATERIAL"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "current_density", "value": 60, "unit": "mA/cm2", "canonical_id": "condition:current_density_60_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 90.5, "unit": "%", "canonical_id": "measurement:ce_90_5_percent"},
+        {"metric_type": "EE", "value": 62.4, "unit": "%", "canonical_id": "measurement:ee_62_4_percent"}
+      ],
+      "mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "evidence_text": "The optimal MEP concentration of 0.3 M represents a compromise between bromine sequestration efficiency and viscosity constraints. Operation at moderate current densities of 40-60 mA/cm2 provides the best balance between CE and cycle life, while current densities above 80 mA/cm2 should be avoided unless dendrite suppression additives or modified separators are employed."
+    },
+    {
+      "gold_id": "DOC07-EFU-019",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.9",
+      "relation_type": "COMPARISON",
+      "claim": "Cycle life decreases from ~150 cycles at 40 mA/cm2 to ~80-100 cycles at 80 mA/cm2 due to accelerated dendrite penetration of the separator",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"}
+      ],
+      "measurements": [],
+      "mechanisms": ["degradation:dendrite_growth"],
+      "evidence_text": "At 40 mA/cm2 with 0.3 M MEP, the cell maintained stable operation for approximately 150 cycles before exhibiting accelerated capacity fade. At 80 mA/cm2, cells frequently experienced catastrophic short-circuit failure within 80-100 cycles as dendrites penetrated the 200 um separator."
+    },
+    {
+      "gold_id": "DOC07-EFU-020",
+      "source_doc_id": "DOC07",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPOSITION",
+      "claim": "Electrolyte pH of 2.0 adjusted with HBr minimizes zinc hydroxide precipitation and hydrogen evolution side reactions",
+      "entities": [
+        {"canonical_id": "system:zbfb", "name": "ZBFB", "type": "SYSTEM"},
+        {"canonical_id": "electrolyte:zinc_bromide", "name": "ZnBr2", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "pH", "value": 2.0, "unit": "pH", "canonical_id": "condition:ph_2_0"}
+      ],
+      "measurements": [],
+      "mechanisms": ["side_reaction:hydrogen_evolution"],
+      "evidence_text": "The electrolyte pH was adjusted to 2.0 using HBr to minimize zinc hydroxide precipitation and hydrogen evolution side reactions."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC07-FACT-001",
+      "source_doc_id": "DOC07",
+      "claim": "At 20 mA/cm2 with 0.3 M MEP, ZBFB achieves CE of 85.3%, VE of 75.2%, and EE of 64.1%, with relatively low CE due to bromine crossover dominating at low current density",
+      "required_entities": ["system:zbfb", "material:mep"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 85.3, "unit": "%", "canonical_id": "measurement:ce_85_3_percent"},
+        {"metric_type": "VE", "value": 75.2, "unit": "%", "canonical_id": "measurement:ve_75_2_percent"},
+        {"metric_type": "EE", "value": 64.1, "unit": "%", "canonical_id": "measurement:ee_64_1_percent"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover"],
+      "supporting_efus": ["DOC07-EFU-001"],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-002",
+      "source_doc_id": "DOC07",
+      "claim": "At 80 mA/cm2 with 0.3 M MEP, ZBFB achieves the highest CE of 92.1% but lowest VE of 65.8% due to ohmic and activation overpotentials, resulting in EE of 60.6%",
+      "required_entities": ["system:zbfb", "material:mep"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 92.1, "unit": "%", "canonical_id": "measurement:ce_92_1_percent"},
+        {"metric_type": "VE", "value": 65.8, "unit": "%", "canonical_id": "measurement:ve_65_8_percent"},
+        {"metric_type": "EE", "value": 60.6, "unit": "%", "canonical_id": "measurement:ee_60_6_percent"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover"],
+      "supporting_efus": ["DOC07-EFU-002"],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-003",
+      "source_doc_id": "DOC07",
+      "claim": "Without MEP at 40 mA/cm2, ZBFB shows CE of 82.4% and bromine crossover rate of 0.14 mL/h due to high mobility of free bromine",
+      "required_entities": ["system:zbfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0, "unit": "M", "canonical_id": "condition:mep_concentration_0_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 82.4, "unit": "%", "canonical_id": "measurement:ce_82_4_percent"},
+        {"metric_type": "crossover_rate", "value": 0.14, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_14_ml_h"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover"],
+      "supporting_efus": ["DOC07-EFU-003"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-004",
+      "source_doc_id": "DOC07",
+      "claim": "0.5 M MEP at 40 mA/cm2 reduces bromine crossover to 0.05 mL/h but increases ohmic resistance to 1.15 ohm cm2, causing VE to drop to 69.2% and EE to 61.9%",
+      "required_entities": ["system:zbfb", "material:mep"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "M", "canonical_id": "condition:mep_concentration_0_5_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 89.4, "unit": "%", "canonical_id": "measurement:ce_89_4_percent"},
+        {"metric_type": "VE", "value": 69.2, "unit": "%", "canonical_id": "measurement:ve_69_2_percent"},
+        {"metric_type": "EE", "value": 61.9, "unit": "%", "canonical_id": "measurement:ee_61_9_percent"},
+        {"metric_type": "crossover_rate", "value": 0.05, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_05_ml_h"},
+        {"metric_type": "ohmic_resistance", "value": 1.15, "unit": "ohm cm2", "canonical_id": "measurement:resistance_1_15_ohm_cm2"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover"],
+      "supporting_efus": ["DOC07-EFU-004"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-005",
+      "source_doc_id": "DOC07",
+      "claim": "At 40 mA/cm2 with 0.3 M MEP, zinc utilization degrades from 72.1% at 10 cycles to 58.2% at 200 cycles due to dead zinc accumulation",
+      "required_entities": ["system:zbfb", "anode:zinc"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "required_metrics": [
+        {"metric_type": "utilization", "value": 58.2, "unit": "%", "canonical_id": "measurement:zinc_utilization_58_2_percent"}
+      ],
+      "required_mechanisms": ["degradation:dendrite_growth", "degradation:dead_zinc"],
+      "supporting_efus": ["DOC07-EFU-005"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-006",
+      "source_doc_id": "DOC07",
+      "claim": "Zinc dendrite growth rate scales approximately quadratically with current density, increasing from 0.6 um/cycle at 20 mA/cm2 to 3.2 um/cycle at 80 mA/cm2",
+      "required_entities": ["system:zbfb", "anode:zinc"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "current_density", "value": 80, "unit": "mA/cm2", "canonical_id": "condition:current_density_80_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "dendrite_growth_rate", "value": 0.6, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_0_6_um_cycle"},
+        {"metric_type": "dendrite_growth_rate", "value": 3.2, "unit": "um/cycle", "canonical_id": "measurement:dendrite_growth_3_2_um_cycle"}
+      ],
+      "required_mechanisms": ["degradation:dendrite_growth"],
+      "supporting_efus": ["DOC07-EFU-007"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-007",
+      "source_doc_id": "DOC07",
+      "claim": "Bromine crossover and zinc dendrite growth form a coupled degradation chain with positive feedback, causing capacity fade rate to accelerate from 0.08% to 0.18% per cycle over 200 cycles",
+      "required_entities": ["system:zbfb", "anode:zinc"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "capacity_fade_rate", "value": 0.08, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_08_percent_cycle"},
+        {"metric_type": "capacity_fade_rate", "value": 0.18, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_18_percent_cycle"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "supporting_efus": ["DOC07-EFU-012", "DOC07-EFU-013"],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC07-FACT-008",
+      "source_doc_id": "DOC07",
+      "claim": "0.3 M MEP provides the optimal balance between CE of 88.7%, crossover rate of 0.07 mL/h, and EE compared to other MEP concentrations at 40 mA/cm2",
+      "required_entities": ["system:zbfb", "material:mep"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 88.7, "unit": "%", "canonical_id": "measurement:ce_88_7_percent"},
+        {"metric_type": "crossover_rate", "value": 0.07, "unit": "mL/h", "canonical_id": "measurement:crossover_rate_0_07_ml_h"}
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": ["DOC07-EFU-010"],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC07-FACT-009",
+      "source_doc_id": "DOC07",
+      "claim": "EIS and XRD provide mechanistic evidence that charge transfer resistance increases from 0.42 to 1.25 ohm cm2 and ZnO/Zn(OH)2 phases form due to bromine crossover attack on zinc electrode",
+      "required_entities": ["system:zbfb", "anode:zinc"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "charge_transfer_resistance", "value": 1.25, "unit": "ohm cm2", "canonical_id": "measurement:ct_resistance_1_25_ohm_cm2"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "supporting_efus": ["DOC07-EFU-015", "DOC07-EFU-016"],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-010",
+      "source_doc_id": "DOC07",
+      "claim": "The optimal ZBFB design uses 2.0 M ZnBr2 electrolyte with 0.3 M MEP at pH 2.0, operating at 40-60 mA/cm2 to achieve best balance between CE, cycle life, and EE",
+      "required_entities": ["system:zbfb", "material:mep", "electrolyte:zinc_bromide"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "current_density", "value": 60, "unit": "mA/cm2", "canonical_id": "condition:current_density_60_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.3, "unit": "M", "canonical_id": "condition:mep_concentration_0_3_m"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "M", "canonical_id": "condition:znbr2_2_0_m"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 90.5, "unit": "%", "canonical_id": "measurement:ce_90_5_percent"}
+      ],
+      "required_mechanisms": ["degradation:bromine_crossover", "degradation:dendrite_growth"],
+      "supporting_efus": ["DOC07-EFU-018"],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC07-FACT-011",
+      "source_doc_id": "DOC07",
+      "claim": "MEP degrades from 0.3 M to 0.22 M over 200 cycles through Hofmann elimination, contributing to accelerated bromine crossover in later cycling stages",
+      "required_entities": ["system:zbfb", "material:mep"],
+      "required_conditions": [
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "required_metrics": [],
+      "required_mechanisms": ["degradation:complexing_agent_degradation"],
+      "supporting_efus": ["DOC07-EFU-017"],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC07-FACT-012",
+      "source_doc_id": "DOC07",
+      "claim": "Zinc utilization at 20 mA/cm2 degrades from 70.5% to 55.1% over 200 cycles, showing faster relative degradation than at higher current densities due to compact crystallite detachment",
+      "required_entities": ["system:zbfb", "anode:zinc"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "required_metrics": [
+        {"metric_type": "utilization", "value": 55.1, "unit": "%", "canonical_id": "measurement:zinc_utilization_55_1_percent"}
+      ],
+      "required_mechanisms": ["degradation:dendrite_growth", "degradation:dead_zinc"],
+      "supporting_efus": ["DOC07-EFU-005"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "question_id": "DOC07-QA-001",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the CE, VE, and EE of a ZBFB operated at 20 mA/cm2 with 0.3 M MEP?",
+      "reference_answer": "At 20 mA/cm2 with 0.3 M MEP, the ZBFB achieves a coulombic efficiency of 85.3%, a voltage efficiency of 75.2%, and an energy efficiency of 64.1%.",
+      "reference_answer_points": ["CE: 85.3%", "VE: 75.2%", "EE: 64.1%"],
+      "expected_facts": ["DOC07-FACT-001"],
+      "expected_efus": ["DOC07-EFU-001"]
+    },
+    {
+      "question_id": "DOC07-QA-002",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the zinc dendrite growth rate at 80 mA/cm2 with 0.3 M MEP?",
+      "reference_answer": "At 0.3 M MEP and 80 mA/cm2, the zinc dendrite growth rate is 3.2 um/cycle.",
+      "reference_answer_points": ["Dendrite growth rate: 3.2 um/cycle at 80 mA/cm2"],
+      "expected_facts": ["DOC07-FACT-006"],
+      "expected_efus": ["DOC07-EFU-007"]
+    },
+    {
+      "question_id": "DOC07-QA-003",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What bromine crossover rate is observed without MEP at 40 mA/cm2?",
+      "reference_answer": "Without MEP (0 M) at 40 mA/cm2, the bromine crossover rate is 0.14 mL/h, which is the highest among tested MEP concentrations at this current density.",
+      "reference_answer_points": ["Crossover rate: 0.14 mL/h", "Condition: 0 M MEP, 40 mA/cm2"],
+      "expected_facts": ["DOC07-FACT-003"],
+      "expected_efus": ["DOC07-EFU-003"]
+    },
+    {
+      "question_id": "DOC07-QA-004",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does zinc utilization change over 200 cycles at 40 mA/cm2 with 0.3 M MEP, and what mechanism causes this degradation?",
+      "reference_answer": "At 40 mA/cm2 with 0.3 M MEP, zinc utilization degrades from an initial 72.1% at 10 cycles to 68.4% at 50 cycles, 63.7% at 100 cycles, and 58.2% at 200 cycles. This degradation is caused by accumulation of electrically isolated zinc deposits (dead zinc) that become mechanically detached from the conductive substrate and are no longer accessible for oxidation during discharge.",
+      "reference_answer_points": ["Initial utilization: 72.1% at 10 cycles", "Final utilization: 58.2% at 200 cycles", "Mechanism: accumulation of dead zinc", "Dead zinc forms from mechanically detached deposits"],
+      "expected_facts": ["DOC07-FACT-005"],
+      "expected_efus": ["DOC07-EFU-005"]
+    },
+    {
+      "question_id": "DOC07-QA-005",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the CE-VE tradeoff in ZBFB when current density increases from 20 to 80 mA/cm2 at 0.3 M MEP. Which efficiency metric improves and which degrades?",
+      "reference_answer": "When current density increases from 20 to 80 mA/cm2 at 0.3 M MEP, CE improves from 85.3% to 92.1% because higher electrochemical reaction rates suppress bromine crossover-mediated self-discharge. However, VE degrades from 75.2% to 65.8% due to greater ohmic and activation overpotentials at higher current. EE remains relatively stable in the 60-64% range, changing from 64.1% to 60.6%.",
+      "reference_answer_points": ["CE improves from 85.3% to 92.1%", "VE degrades from 75.2% to 65.8%", "EE changes from 64.1% to 60.6%", "Higher current suppresses crossover but increases overpotentials"],
+      "expected_facts": ["DOC07-FACT-001", "DOC07-FACT-002"],
+      "expected_efus": ["DOC07-EFU-001", "DOC07-EFU-002", "DOC07-EFU-009"]
+    },
+    {
+      "question_id": "DOC07-QA-006",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "What is the optimal MEP concentration for ZBFB operation at 40 mA/cm2, and how does it compare to 0 M and 0.5 M formulations in terms of CE and crossover rate?",
+      "reference_answer": "The optimal MEP concentration is 0.3 M, providing the best balance between CE (88.7%) and crossover rate (0.07 mL/h). Without MEP, CE is lower at 82.4% and crossover is much higher at 0.14 mL/h. At 0.5 M MEP, CE is marginally higher at 89.4% and crossover is lower at 0.05 mL/h, but the high viscosity increases ohmic resistance to 1.15 ohm cm2 and reduces VE to 69.2%, giving lower EE of 61.9%.",
+      "reference_answer_points": ["Optimal MEP: 0.3 M", "CE at 0.3 M: 88.7%", "Crossover at 0.3 M: 0.07 mL/h", "0 M: CE 82.4%, crossover 0.14 mL/h", "0.5 M: CE 89.4% but resistance 1.15 ohm cm2, EE 61.9%"],
+      "expected_facts": ["DOC07-FACT-003", "DOC07-FACT-004", "DOC07-FACT-008"],
+      "expected_efus": ["DOC07-EFU-003", "DOC07-EFU-004", "DOC07-EFU-010"]
+    },
+    {
+      "question_id": "DOC07-QA-007",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "Explain the coupled degradation chain between bromine crossover and zinc dendrite growth in ZBFBs, including how the two mechanisms form a positive feedback loop and how this affects capacity fade over 200 cycles.",
+      "reference_answer": "Bromine crossover and zinc dendrite growth form a coupled degradation chain with positive feedback. Bromine crossing to the negative side reacts with deposited zinc (Zn + Br2 -> ZnBr2), consuming active material and roughening the electrode surface. This chemically induced roughness creates preferential nucleation sites that promote non-uniform current distribution and enhanced dendrite growth. Conversely, dendrites increase effective surface area and disrupt separator integrity, providing additional pathways for bromine crossover. This feedback loop causes capacity fade to accelerate over time: from 0.08% per cycle during cycles 1-50, to 0.12% per cycle during cycles 51-100, and 0.18% per cycle during cycles 101-200. Both the crossover rate and dendrite growth rate show corresponding acceleration during later cycling stages.",
+      "reference_answer_points": ["Bromine crossover roughens zinc surface", "Rough surface promotes dendrite nucleation", "Dendrites disrupt separator increasing crossover", "Positive feedback loop between the two mechanisms", "Capacity fade accelerates: 0.08% -> 0.12% -> 0.18% per cycle", "Crossover rate increases from 0.07 to 0.11 mL/h over 200 cycles", "Dendrite growth rate increases from 1.2 to 1.7 um/cycle over 200 cycles"],
+      "expected_facts": ["DOC07-FACT-007"],
+      "expected_efus": ["DOC07-EFU-012", "DOC07-EFU-013"]
+    },
+    {
+      "question_id": "DOC07-QA-008",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Based on the dendrite growth rates, ohmic resistance evolution, and cycle life data, what is the recommended operating current density range for a ZBFB with 0.3 M MEP, and why should 80 mA/cm2 be avoided?",
+      "reference_answer": "The recommended operating current density range is 40-60 mA/cm2. At 40 mA/cm2, the cell achieves stable operation for approximately 150 cycles with dendrite growth rate of 1.2 um/cycle and reasonable CE of 88.7%. At 60 mA/cm2, CE improves to 90.5% and cycle life is about 120 cycles with dendrite growth of 1.9 um/cycle. However, 80 mA/cm2 should be avoided because the dendrite growth rate reaches 3.2 um/cycle, which causes catastrophic short-circuit failure within 80-100 cycles as dendrites penetrate the 200 um separator. Additionally, at 80 mA/cm2 the ohmic resistance grows rapidly to 1.58 ohm cm2 over 200 cycles, and the high current promotes highly porous zinc deposits with poor adhesion.",
+      "reference_answer_points": ["Recommended range: 40-60 mA/cm2", "40 mA/cm2: ~150 cycle life, 1.2 um/cycle dendrite growth", "60 mA/cm2: ~120 cycles, 1.9 um/cycle, CE 90.5%", "80 mA/cm2: 80-100 cycle life, 3.2 um/cycle dendrite growth", "At 80 mA/cm2 dendrites penetrate 200 um separator", "Ohmic resistance at 80 mA/cm2 reaches 1.58 ohm cm2"],
+      "expected_facts": ["DOC07-FACT-006", "DOC07-FACT-007"],
+      "expected_efus": ["DOC07-EFU-007", "DOC07-EFU-008", "DOC07-EFU-019"]
+    },
+    {
+      "question_id": "DOC07-QA-009",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "What experimental evidence supports the claim that bromine crossover causes chemical degradation of the zinc electrode, and how does this evidence connect to the observed increase in charge transfer resistance?",
+      "reference_answer": "Three lines of experimental evidence support this claim. First, EIS measurements show charge transfer resistance at the zinc electrode increases systematically from 0.42 ohm cm2 at 10 cycles to 1.25 ohm cm2 at 200 cycles, correlating with surface roughening and dead zinc accumulation that reduces the electrochemically active surface area. Second, XRD analysis of cycled zinc electrodes reveals the emergence of ZnO and Zn(OH)2 phases, which form from the reaction of crossed-over bromine with zinc in the presence of trace water hydrolysis, and from localized pH excursions during deposition and stripping. Third, SEM post-mortem analysis consistently shows bromine staining of the negative electrode surface. These observations collectively explain why higher bromine crossover rates lead to faster capacity degradation and increased electrode polarization.",
+      "reference_answer_points": ["EIS: charge transfer resistance increases from 0.42 to 1.25 ohm cm2", "XRD: ZnO and Zn(OH)2 phases form on cycled electrodes", "ZnO forms from bromine attack on zinc", "Zn(OH)2 forms from localized pH excursions", "SEM shows bromine staining on negative electrode", "Higher crossover correlates with faster degradation"],
+      "expected_facts": ["DOC07-FACT-009"],
+      "expected_efus": ["DOC07-EFU-015", "DOC07-EFU-016"]
+    },
+    {
+      "question_id": "DOC07-QA-010",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the relationship between MEP concentration and ohmic resistance at 40 mA/cm2 and 50 cycles, and what causes this relationship?",
+      "reference_answer": "At 40 mA/cm2 and 50 cycles, ohmic resistance increases with MEP concentration: 0.75 ohm cm2 at 0 M, 0.82 ohm cm2 at 0.1 M, 0.89 ohm cm2 at 0.3 M, and 1.15 ohm cm2 at 0.5 M. This relationship is caused by the increased viscosity of concentrated MEP solutions, which reduces ionic mobility and increases the diffusive boundary layer thickness at electrode surfaces. The substantial resistance increase at 0.5 M MEP (1.15 ohm cm2) reflects the viscosity penalty that outweighs the marginal benefit in CE improvement.",
+      "reference_answer_points": ["0 M: 0.75 ohm cm2", "0.1 M: 0.82 ohm cm2", "0.3 M: 0.89 ohm cm2", "0.5 M: 1.15 ohm cm2", "Cause: increased electrolyte viscosity", "High viscosity reduces ionic mobility"],
+      "expected_facts": ["DOC07-FACT-004"],
+      "expected_efus": ["DOC07-EFU-008"]
+    },
+    {
+      "question_id": "DOC07-QA-011",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Considering the coupled degradation mechanisms, the MEP degradation rate, and the CE-VE tradeoff, what comprehensive operating strategy would maximize the 200-cycle energy throughput of a ZBFB?",
+      "reference_answer": "To maximize 200-cycle energy throughput, a comprehensive strategy should incorporate four elements. First, operate at 40-60 mA/cm2 to balance CE (88-90%) against dendrite growth rate (1.2-1.9 um/cycle), avoiding both the high crossover at 20 mA/cm2 and the rapid dendrite failure at 80 mA/cm2. Second, use 0.3 M MEP as the optimal concentration that suppresses crossover to 0.07 mL/h without the excessive viscosity penalty of 0.5 M. Third, implement periodic electrolyte refreshment to compensate for MEP degradation from 0.3 M to 0.22 M over 200 cycles, which would prevent the accelerated crossover observed in later cycling stages. Fourth, employ separator materials resistant to bromine chemical attack and dendrite penetration to mitigate the positive feedback loop between crossover and dendrite growth. This combined approach targets all three degradation mechanisms simultaneously rather than addressing them in isolation.",
+      "reference_answer_points": ["Operate at 40-60 mA/cm2 for CE-dendrite balance", "Use 0.3 M MEP for optimal crossover-viscosity tradeoff", "Periodically refresh electrolyte to compensate for MEP degradation", "Use bromine-resistant separator materials", "Address all three mechanisms: crossover, dendrites, MEP degradation"],
+      "expected_facts": ["DOC07-FACT-007", "DOC07-FACT-008", "DOC07-FACT-010", "DOC07-FACT-011"],
+      "expected_efus": ["DOC07-EFU-010", "DOC07-EFU-013", "DOC07-EFU-017", "DOC07-EFU-018"]
+    }
+  ]
+}

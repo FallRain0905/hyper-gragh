@@ -1,0 +1,2070 @@
+{
+  "gold_efu": [
+    {
+      "gold_id": "DOC02-EFU-001",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.1 Ion Exchange Capacity and Water Uptake",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 membrane has ion exchange capacity of 1.42 mmol/g and water uptake of 18%",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "IEC",
+          "value": 1.42,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_1_42_mmol_g"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 18,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_18_pct"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 exhibited the target IEC of 1.42 mmol/g, achieved through controlled post-sulfonation of the parent PBI. The sulfonation process also increased water uptake to 18%, compared to 12% for the acid-doped PBI baseline."
+    },
+    {
+      "gold_id": "DOC02-EFU-002",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.1 Ion Exchange Capacity and Water Uptake",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPTPC-2.59 membrane has ion exchange capacity of 2.59 mmol/g and water uptake of 28%",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "IEC",
+          "value": 2.59,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_2_59_mmol_g"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 28,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_28_pct"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SPTPC-2.59 exhibited the highest IEC of 2.59 mmol/g among all tested membranes. The water uptake of 28% was correspondingly the highest among the four systems."
+    },
+    {
+      "gold_id": "DOC02-EFU-003",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.2 Area-Specific Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 has area-specific resistance of 1.15 ohm cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.15,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_15_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 showed a substantially reduced resistance of 1.15 ohm cm2, demonstrating the effectiveness of covalently bound sulfonic acid groups in providing continuous proton conduction pathways."
+    },
+    {
+      "gold_id": "DOC02-EFU-004",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.2 Area-Specific Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPTPC-2.59 has area-specific resistance of 0.82 ohm cm2, the lowest among all tested non-fluorinated membranes",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 0.82,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_82_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SPTPC-2.59 achieved the lowest resistance of 0.82 ohm cm2, benefiting from its high IEC and the additional proton conduction contribution from the piperidinium groups."
+    },
+    {
+      "gold_id": "DOC02-EFU-005",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.3 Vanadium Permeability",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 has vanadium permeability of 0.95 x 10^-7 cm2/s",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.95,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_95e-7"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "SNPBI-1.42 showed a slightly elevated permeability of 0.95 x 10^-7 cm2/s, still substantially lower than commercial Nafion membranes."
+    },
+    {
+      "gold_id": "DOC02-EFU-006",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.1 Coulombic Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 achieves coulombic efficiency of 98.1% at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_1_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the CE was 98.1%, which is competitive with Nafion 117 and superior to Nafion 212."
+    },
+    {
+      "gold_id": "DOC02-EFU-007",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.2 Voltage Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 achieves voltage efficiency of 82.1% at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "VE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_82_1_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the VE was 82.1%."
+    },
+    {
+      "gold_id": "DOC02-EFU-008",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.3 Energy Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SNPBI-1.42 achieves energy efficiency of 80.5% at 100 mA/cm2, the highest among all tested non-fluorinated membranes",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 80.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_5_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 demonstrated the highest EE among all tested non-fluorinated membranes. At 100 mA/cm2, the EE was 80.5%, which exceeds the performance of both Nafion 117 and Nafion 212 under comparable conditions."
+    },
+    {
+      "gold_id": "DOC02-EFU-009",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.3 Energy Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPTPC-2.59 achieves energy efficiency of 81.4% at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 81.4,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_4_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the EE was 81.4%."
+    },
+    {
+      "gold_id": "DOC02-EFU-010",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.1 Coulombic Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "PBI achieves coulombic efficiency of 98.2% at 40 mA/cm2, the highest among all tested membranes",
+      "entities": [
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 98.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_2_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "PBI achieved the highest CE values among all tested membranes, ranging from 98.2% at 40 mA/cm2 to 98.5% at 200 mA/cm2."
+    },
+    {
+      "gold_id": "DOC02-EFU-011",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.4 Performance Comparison at 100 mA/cm2",
+      "relation_type": "COMPARISON",
+      "claim": "At 100 mA/cm2, SNPBI-1.42 EE (80.5%) exceeds SPEEK/APK EE (77.9%) by 2.6 percentage points",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 80.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 77.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_77_9_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 achieved the highest EE at 80.5% (CE 98.1%, VE 82.1%), followed by SPTPC-2.59 at 81.4% (CE 96.3%, VE 83.8%), then SPEEK/APK at 77.9% (CE 96.8%, VE 80.4%)."
+    },
+    {
+      "gold_id": "DOC02-EFU-012",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.4 Performance Comparison at 100 mA/cm2",
+      "relation_type": "COMPARISON",
+      "claim": "SPTPC-2.59 VE (83.8%) exceeds SNPBI-1.42 VE (82.1%) at 100 mA/cm2 due to lower area resistance (0.82 vs 1.15 ohm cm2)",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "VE",
+          "value": 83.8,
+          "unit": "%",
+          "canonical_id": "measurement:ve_83_8_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_82_1_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SPTPC-2.59 at 81.4% (CE 96.3%, VE 83.8%), SNPBI-1.42 at 80.5% (CE 98.1%, VE 82.1%)."
+    },
+    {
+      "gold_id": "DOC02-EFU-013",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.4 Structure-Transport Correlations",
+      "relation_type": "COMPARISON",
+      "claim": "SNPBI-1.42 exhibits the highest selectivity among tested non-fluorinated membranes, combining moderate proton conductivity with low vanadium permeability",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 exhibited the highest selectivity among the tested non-fluorinated membranes, combining moderate proton conductivity (low resistance of 1.15 ohm cm2) with low vanadium permeability (0.95 x 10^-7 cm2/s)."
+    },
+    {
+      "gold_id": "DOC02-EFU-014",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.3 Vanadium Permeability",
+      "relation_type": "COMPARISON",
+      "claim": "Vanadium permeability increases from PBI (0.5 x 10^-7 cm2/s) to SNPBI-1.42 (0.95) to SPEEK/APK (2.1) to SPTPC-2.59 (3.2), showing positive correlation with IEC",
+      "entities": [
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_5e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.95,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_95e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_2_1e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 3.2,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_3_2e-7"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "PBI exhibited the lowest permeability at 0.5 x 10^-7 cm2/s. SNPBI-1.42 showed 0.95 x 10^-7 cm2/s. SPEEK/APK exhibited 2.1 x 10^-7 cm2/s. SPTPC-2.59 showed 3.2 x 10^-7 cm2/s."
+    },
+    {
+      "gold_id": "DOC02-EFU-015",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 2.1 Membrane Preparation",
+      "relation_type": "COMPOSITION",
+      "claim": "PBI membranes are prepared from polybenzimidazole with inherent viscosity of 0.8-0.9 dL/g and doped with 85% phosphoric acid to achieve 5-6 mole H3PO4 per repeat unit",
+      "entities": [
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "PBI membranes were prepared by solution casting from 3% PBI (IV = 0.8-0.9 dL/g) in dimethylacetamide. The resulting membranes were doped in 85% phosphoric acid at room temperature for 7 days to achieve acid doping levels of approximately 5-6 mole H3PO4 per PBI repeat unit."
+    },
+    {
+      "gold_id": "DOC02-EFU-016",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 2.1 Membrane Preparation",
+      "relation_type": "COMPOSITION",
+      "claim": "SPEEK/APK blend membranes are prepared at 7:3 weight ratio of SPEEK (IEC 1.8 mmol/g) and APK, yielding effective IEC of 1.26 mmol/g",
+      "entities": [
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "IEC",
+          "value": 1.26,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_1_26_mmol_g"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SPEEK/APK blend membranes were prepared by co-dissolving SPEEK (IEC = 1.8 mmol/g) and APK in N-methyl-2-pyrrolidone (NMP) at a weight ratio of 7:3. The blend membrane achieved an effective IEC of approximately 1.26 mmol/g."
+    },
+    {
+      "gold_id": "DOC02-EFU-017",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 1 Introduction",
+      "relation_type": "COMPOSITION",
+      "claim": "SPTPC-2.59 is based on a rigid terphenylene backbone with piperidinium functional groups designed for high conductivity and dimensional stability",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "SPTPC-2.59 represents a high-IEC system based on a rigid terphenylene backbone with piperidinium functional groups, designed to achieve high conductivity while maintaining good dimensional stability."
+    },
+    {
+      "gold_id": "DOC02-EFU-018",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 2.1 Membrane Preparation",
+      "relation_type": "COMPOSITION",
+      "claim": "SNPBI-1.42 is prepared by post-sulfonation of PBI using fuming sulfuric acid with controlled temperature and reaction time",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "SNPBI-1.42 membranes were prepared by post-sulfonation of PBI using a mixture of fuming sulfuric acid (30% SO3) and concentrated sulfuric acid at controlled temperature and reaction time."
+    },
+    {
+      "gold_id": "DOC02-EFU-019",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 6.1 Chemical Degradation Pathways",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "V(V) species attack electron-rich positions on aromatic polymer backbone causing chain scission and loss of mechanical integrity",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:chemical_attack",
+        "degradation:chain_scission"
+      ],
+      "evidence_text": "The primary degradation mechanism involves attack by the strongly oxidizing V(V) species (VO2+) on the aromatic polymer backbone, particularly at electron-rich positions."
+    },
+    {
+      "gold_id": "DOC02-EFU-020",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 6.1 Chemical Degradation Pathways",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Sulfonated polymers undergo desulfonation under strongly acidic and oxidative conditions, progressively reducing IEC and proton conductivity",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:desulfonation",
+        "degradation:iec_loss"
+      ],
+      "evidence_text": "Sulfonated polymers are additionally susceptible to desulfonation under strongly acidic and oxidative conditions, which progressively reduces IEC and consequently degrades proton conductivity."
+    },
+    {
+      "gold_id": "DOC02-EFU-021",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 6.3 Degradation Chain Analysis",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "SNPBI-1.42 degradation primarily involves gradual desulfonation increasing resistance and reducing VE, while SPTPC-2.59 backbone degradation increases vanadium permeability reducing CE",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:desulfonation",
+        "degradation:backbone_degradation",
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "For SNPBI-1.42, the primary degradation pathway involves gradual desulfonation, which increases resistance and reduces VE over extended cycling. For SPTPC-2.59, backbone degradation may create additional free volume that increases vanadium permeability, leading to declining CE."
+    },
+    {
+      "gold_id": "DOC02-EFU-022",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 5.1 IEC-Resistance Relationship",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Resistance decreases approximately as IEC^-1.8 above the percolation threshold of ~1.0 mmol/g due to formation of interconnected proton transport channels",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "transport:proton_conduction",
+        "morphology:percolation"
+      ],
+      "evidence_text": "The resistance decreases approximately as IEC^-1.8 for IEC values above the percolation threshold of approximately 1.0 mmol/g. The transition from isolated hydrophilic clusters to interconnected proton transport channels typically occurs at a critical IEC threshold."
+    },
+    {
+      "gold_id": "DOC02-EFU-023",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 5.3 Resistance-EE and Permeability-EE Correlations",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "A 0.1 ohm cm2 increase in area resistance decreases EE by 0.4-0.5 percentage points, while a 1.0 x 10^-7 cm2/s increase in vanadium permeability decreases EE by 0.8-1.0 percentage points",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "polarization:ohmic",
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "The regression coefficients indicate that a 0.1 ohm cm2 increase in area resistance decreases EE by approximately 0.4-0.5 percentage points, while a 1.0 x 10^-7 cm2/s increase in vanadium permeability decreases EE by approximately 0.8-1.0 percentage points."
+    },
+    {
+      "gold_id": "DOC02-EFU-024",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 5.2 IEC-Permeability Relationship",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Vanadium permeability increases by approximately 1.0-1.3 x 10^-7 cm2/s per mmol/g of IEC, as each additional sulfonic acid group proportionally increases hydrophilic domain connectivity",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "transport:diffusion",
+        "morphology:hydrophilic_domains"
+      ],
+      "evidence_text": "The permeability coefficient increases by approximately 1.0-1.3 x 10^-7 cm2/s per mmol/g of IEC above the baseline set by the non-sulfonated polymer matrix. This linear relationship suggests that each additional sulfonic acid group contributes proportionally to the size and connectivity of hydrophilic domains."
+    },
+    {
+      "gold_id": "DOC02-EFU-025",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 6.1 Chemical Degradation Pathways",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "PBI exhibits excellent chemical stability due to electron-deficient benzimidazole ring being less susceptible to electrophilic attack by V(V) species",
+      "entities": [
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:chemical_attack",
+        "stability:oxidative"
+      ],
+      "evidence_text": "The PBI backbone exhibits excellent chemical stability due to the electron-deficient nature of the benzimidazole ring, which is less susceptible to electrophilic attack by V(V) species."
+    },
+    {
+      "gold_id": "DOC02-EFU-026",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 5.4 Membrane Selection Guidelines",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "SNPBI-1.42 is optimal for maximum energy efficiency applications (EE 80.5% at 100 mA/cm2), SPTPC-2.59 for maximum voltage efficiency, while PBI is limited to low current density due to high resistance",
+      "entities": [
+        {
+          "canonical_id": "membrane:snpbi_1.42",
+          "name": "SNPBI-1.42",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "For applications requiring maximum energy efficiency across a range of current densities, SNPBI-1.42 represents the optimal choice among the tested membranes. For applications prioritizing maximum voltage efficiency and power density, SPTPC-2.59 offers advantages. PBI is not recommended for practical VRFB operation at current densities above 60 mA/cm2."
+    },
+    {
+      "gold_id": "DOC02-EFU-027",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.2 Area-Specific Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPEEK/APK has area-specific resistance of 1.38 ohm cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.38,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_38_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "SPEEK/APK exhibited an intermediate resistance of 1.38 ohm cm2."
+    },
+    {
+      "gold_id": "DOC02-EFU-028",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 3.2 Area-Specific Resistance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "PBI has area-specific resistance of 2.45 ohm cm2, the highest among all tested membranes",
+      "entities": [
+        {
+          "canonical_id": "membrane:pbi",
+          "name": "PBI",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "area_resistance",
+          "value": 2.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_2_45_ohm_cm2"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "PBI exhibited the highest resistance at 2.45 ohm cm2, reflecting the relatively low proton mobility in the acid-doped system at room temperature."
+    },
+    {
+      "gold_id": "DOC02-EFU-029",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.2 Voltage Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPTPC-2.59 achieves voltage efficiency of 83.8% at 100 mA/cm2, competitive with Nafion 212",
+      "entities": [
+        {
+          "canonical_id": "membrane:sptpc_2.59",
+          "name": "SPTPC-2.59",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "VE",
+          "value": 83.8,
+          "unit": "%",
+          "canonical_id": "measurement:ve_83_8_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the VE was 83.8%, which is competitive with Nafion 212 and superior to Nafion 117."
+    },
+    {
+      "gold_id": "DOC02-EFU-030",
+      "source_doc_id": "DOC02",
+      "source_section": "Section 4.1 Coulombic Efficiency",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SPEEK/APK achieves coulombic efficiency of 96.8% at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "membrane:speek_apk",
+          "name": "SPEEK/APK",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_8_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2, the CE was 96.8%."
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "DOC02-FACT-001",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 has IEC of 1.42 mmol/g, water uptake of 18%, area resistance of 1.15 ohm cm2, and vanadium permeability of 0.95 x 10^-7 cm2/s",
+      "required_entities": [
+        "membrane:snpbi_1.42"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "IEC",
+          "value": 1.42,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_1_42_mmol_g"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 18,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_18_pct"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 1.15,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_15_ohm_cm2"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.95,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_95e-7"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-001",
+        "DOC02-EFU-003",
+        "DOC02-EFU-005"
+      ],
+      "difficulty": "L1",
+      "fact_type": "COMPOSITION"
+    },
+    {
+      "fact_id": "DOC02-FACT-002",
+      "source_doc_id": "DOC02",
+      "claim": "SPTPC-2.59 has IEC of 2.59 mmol/g, water uptake of 28%, area resistance of 0.82 ohm cm2, and vanadium permeability of 3.2 x 10^-7 cm2/s",
+      "required_entities": [
+        "membrane:sptpc_2.59"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "IEC",
+          "value": 2.59,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_2_59_mmol_g"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 28,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_28_pct"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 0.82,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_0_82_ohm_cm2"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 3.2,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_3_2e-7"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-002",
+        "DOC02-EFU-004"
+      ],
+      "difficulty": "L1",
+      "fact_type": "COMPOSITION"
+    },
+    {
+      "fact_id": "DOC02-FACT-003",
+      "source_doc_id": "DOC02",
+      "claim": "PBI has IEC of 0.0 mmol/g (acid-doped, not sulfonated), water uptake of 12%, area resistance of 2.45 ohm cm2, and vanadium permeability of 0.5 x 10^-7 cm2/s",
+      "required_entities": [
+        "membrane:pbi"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "water_uptake",
+          "value": 12,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_12_pct"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 2.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_2_45_ohm_cm2"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_5e-7"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-028"
+      ],
+      "difficulty": "L1",
+      "fact_type": "COMPOSITION"
+    },
+    {
+      "fact_id": "DOC02-FACT-004",
+      "source_doc_id": "DOC02",
+      "claim": "SPEEK/APK has effective IEC of 1.26 mmol/g, water uptake of 21%, area resistance of 1.38 ohm cm2, and vanadium permeability of 2.1 x 10^-7 cm2/s",
+      "required_entities": [
+        "membrane:speek_apk"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "IEC",
+          "value": 1.26,
+          "unit": "mmol/g",
+          "canonical_id": "measurement:iec_1_26_mmol_g"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 21,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_21_pct"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 1.38,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_38_ohm_cm2"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_2_1e-7"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-016",
+        "DOC02-EFU-027"
+      ],
+      "difficulty": "L1",
+      "fact_type": "COMPOSITION"
+    },
+    {
+      "fact_id": "DOC02-FACT-005",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 achieves CE of 97.5% at 40 mA/cm2, increasing to 98.4% at 200 mA/cm2, with 98.1% at 100 mA/cm2",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 97.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_5_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 98.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_1_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 98.4,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_4_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-006"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-006",
+      "source_doc_id": "DOC02",
+      "claim": "SPTPC-2.59 achieves CE of 95.0% at 40 mA/cm2, increasing to 97.2% at 200 mA/cm2, with 96.3% at 100 mA/cm2, the lowest among non-fluorinated membranes",
+      "required_entities": [
+        "membrane:sptpc_2.59",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 95.0,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_0_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_3_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-009"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-007",
+      "source_doc_id": "DOC02",
+      "claim": "At 100 mA/cm2, SNPBI-1.42 achieves EE of 80.5% (CE 98.1%, VE 82.1%), the highest among all tested non-fluorinated membranes",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 80.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_5_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 98.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_1_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 82.1,
+          "unit": "%",
+          "canonical_id": "measurement:ve_82_1_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-008"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-008",
+      "source_doc_id": "DOC02",
+      "claim": "At 100 mA/cm2, SPTPC-2.59 achieves EE of 81.4% (CE 96.3%, VE 83.8%), with higher VE but lower CE than SNPBI-1.42",
+      "required_entities": [
+        "membrane:sptpc_2.59",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 81.4,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_4_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96.3,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_3_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 83.8,
+          "unit": "%",
+          "canonical_id": "measurement:ve_83_8_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-009",
+        "DOC02-EFU-029"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-009",
+      "source_doc_id": "DOC02",
+      "claim": "Area resistance decreases approximately as IEC^-1.8 above the percolation threshold of ~1.0 mmol/g",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59",
+        "membrane:speek_apk"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "transport:proton_conduction",
+        "morphology:percolation"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-022"
+      ],
+      "difficulty": "L4",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-010",
+      "source_doc_id": "DOC02",
+      "claim": "A 0.1 ohm cm2 resistance increase decreases EE by 0.4-0.5 percentage points, while a 1.0 x 10^-7 cm2/s permeability increase decreases EE by 0.8-1.0 percentage points",
+      "required_entities": [
+        "system:vrfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "polarization:ohmic",
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-023"
+      ],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-011",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 exhibits the highest selectivity among tested non-fluorinated membranes due to optimal balance of moderate resistance (1.15 ohm cm2) and low permeability (0.95 x 10^-7 cm2/s)",
+      "required_entities": [
+        "membrane:snpbi_1.42"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "area_resistance",
+          "value": 1.15,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_1_15_ohm_cm2"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.95,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_95e-7"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-013"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC02-FACT-012",
+      "source_doc_id": "DOC02",
+      "claim": "Vanadium permeability increases linearly with IEC by approximately 1.0-1.3 x 10^-7 cm2/s per mmol/g",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59",
+        "membrane:speek_apk"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "transport:diffusion",
+        "morphology:hydrophilic_domains"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-024"
+      ],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-013",
+      "source_doc_id": "DOC02",
+      "claim": "PBI achieves the highest CE (98.2-98.5%) but lowest VE (68.2-78.4%) due to highest resistance (2.45 ohm cm2), making it unsuitable for operation above 60 mA/cm2",
+      "required_entities": [
+        "membrane:pbi",
+        "system:vrfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 98.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_98_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 78.4,
+          "unit": "%",
+          "canonical_id": "measurement:ve_78_4_percent"
+        },
+        {
+          "metric_type": "area_resistance",
+          "value": 2.45,
+          "unit": "ohm cm2",
+          "canonical_id": "measurement:area_resistance_2_45_ohm_cm2"
+        }
+      ],
+      "required_mechanisms": [
+        "polarization:ohmic"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-010"
+      ],
+      "difficulty": "L3",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-014",
+      "source_doc_id": "DOC02",
+      "claim": "V(V) species attack electron-rich positions on aromatic polymer backbones, causing chain scission and loss of mechanical integrity",
+      "required_entities": [
+        "system:vrfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:chemical_attack",
+        "degradation:chain_scission"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-019"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC02-FACT-015",
+      "source_doc_id": "DOC02",
+      "claim": "Sulfonated polymers (SNPBI-1.42, SPTPC-2.59, SPEEK/APK) undergo desulfonation under acidic oxidative conditions, progressively reducing IEC and proton conductivity",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59",
+        "membrane:speek_apk"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:desulfonation",
+        "degradation:iec_loss"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-020"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC02-FACT-016",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 degradation involves gradual desulfonation increasing resistance and reducing VE, while SPTPC-2.59 backbone degradation creates free volume increasing permeability and reducing CE",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:desulfonation",
+        "degradation:backbone_degradation",
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-021"
+      ],
+      "difficulty": "L4",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC02-FACT-017",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 is optimal for maximum EE applications, SPTPC-2.59 for maximum VE/power density, and PBI is limited to low current density operation",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59",
+        "membrane:pbi",
+        "system:vrfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-026"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC02-FACT-018",
+      "source_doc_id": "DOC02",
+      "claim": "PBI benzimidazole ring provides excellent chemical stability due to electron-deficient nature resisting electrophilic attack by V(V)",
+      "required_entities": [
+        "membrane:pbi"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "stability:oxidative"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-025"
+      ],
+      "difficulty": "L4",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-019",
+      "source_doc_id": "DOC02",
+      "claim": "At 100 mA/cm2, performance hierarchy is SNPBI-1.42 (EE 80.5%) > SPTPC-2.59 (EE 81.4%) > SPEEK/APK (EE 77.9%) > PBI (EE 71.8%)",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:sptpc_2.59",
+        "membrane:speek_apk",
+        "membrane:pbi",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 80.5,
+          "unit": "%",
+          "canonical_id": "measurement:ee_80_5_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 81.4,
+          "unit": "%",
+          "canonical_id": "measurement:ee_81_4_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 77.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_77_9_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 71.8,
+          "unit": "%",
+          "canonical_id": "measurement:ee_71_8_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-011",
+        "DOC02-EFU-012"
+      ],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC02-FACT-020",
+      "source_doc_id": "DOC02",
+      "claim": "SNPBI-1.42 achieves VE of 84.2% at 40 mA/cm2 declining to 78.5% at 200 mA/cm2",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "VE",
+          "value": 84.2,
+          "unit": "%",
+          "canonical_id": "measurement:ve_84_2_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 78.5,
+          "unit": "%",
+          "canonical_id": "measurement:ve_78_5_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "polarization:ohmic"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-007"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-021",
+      "source_doc_id": "DOC02",
+      "claim": "SPTPC-2.59 achieves the highest VE among non-fluorinated membranes (85.6% at 40 mA/cm2, 83.8% at 100 mA/cm2, 80.2% at 200 mA/cm2) due to lowest resistance (0.82 ohm cm2)",
+      "required_entities": [
+        "membrane:sptpc_2.59",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "VE",
+          "value": 85.6,
+          "unit": "%",
+          "canonical_id": "measurement:ve_85_6_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 83.8,
+          "unit": "%",
+          "canonical_id": "measurement:ve_83_8_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 80.2,
+          "unit": "%",
+          "canonical_id": "measurement:ve_80_2_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-029"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-022",
+      "source_doc_id": "DOC02",
+      "claim": "Membrane selectivity (proton conductivity to vanadium permeability ratio) reaches maximum in IEC range of 1.2-1.5 mmol/g",
+      "required_entities": [
+        "membrane:snpbi_1.42",
+        "membrane:speek_apk"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "transport:proton_conduction",
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-013"
+      ],
+      "difficulty": "L4",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-023",
+      "source_doc_id": "DOC02",
+      "claim": "SPEEK/APK at 100 mA/cm2 achieves CE of 96.8%, VE of 80.4%, and EE of 77.9%",
+      "required_entities": [
+        "membrane:speek_apk",
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_8_percent"
+        },
+        {
+          "metric_type": "VE",
+          "value": 80.4,
+          "unit": "%",
+          "canonical_id": "measurement:ve_80_4_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 77.9,
+          "unit": "%",
+          "canonical_id": "measurement:ee_77_9_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC02-EFU-030"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC02-FACT-024",
+      "source_doc_id": "DOC02",
+      "claim": "Vanadium permeability of all four membranes shows positive correlation with IEC: PBI (0.5) < SNPBI-1.42 (0.95) < SPEEK/APK (2.1) < SPTPC-2.59 (3.2), all in units of x 10^-7 cm2/s",
+      "required_entities": [
+        "membrane:pbi",
+        "membrane:snpbi_1.42",
+        "membrane:speek_apk",
+        "membrane:sptpc_2.59"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_5e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 0.95,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_0_95e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_2_1e-7"
+        },
+        {
+          "metric_type": "vanadium_permeability",
+          "value": 3.2,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:vanadium_perm_3_2e-7"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC02-EFU-014"
+      ],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC02-FACT-025",
+      "source_doc_id": "DOC02",
+      "claim": "SPTPC-2.59 showed highest water uptake (28%) and may require careful compression control due to swelling, while PBI has lowest uptake (12%) and best dimensional stability",
+      "required_entities": [
+        "membrane:sptpc_2.59",
+        "membrane:pbi"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "water_uptake",
+          "value": 28,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_28_pct"
+        },
+        {
+          "metric_type": "water_uptake",
+          "value": 12,
+          "unit": "%",
+          "canonical_id": "measurement:water_uptake_12_pct"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:mechanical"
+      ],
+      "supporting_efus": [],
+      "difficulty": "L3",
+      "fact_type": "OPERATION_PERFORMANCE"
+    }
+  ],
+  "qa_questions": [
+    {
+      "question_id": "DOC02-QA-001",
+      "source_doc_id": "DOC02",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the ion exchange capacity of SNPBI-1.42 membrane?",
+      "reference_answer": "1.42 mmol/g",
+      "reference_answer_points": [
+        "SNPBI-1.42 IEC is 1.42 mmol/g"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-002",
+      "source_doc_id": "DOC02",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the area-specific resistance of SPTPC-2.59?",
+      "reference_answer": "0.82 ohm cm2",
+      "reference_answer_points": [
+        "SPTPC-2.59 area-specific resistance is 0.82 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-003",
+      "source_doc_id": "DOC02",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the vanadium permeability of all four non-fluorinated membranes tested in this study.",
+      "reference_answer": "PBI has the lowest vanadium permeability at 0.5 x 10^-7 cm2/s, followed by SNPBI-1.42 at 0.95 x 10^-7 cm2/s, then SPEEK/APK at 2.1 x 10^-7 cm2/s, and SPTPC-2.59 has the highest at 3.2 x 10^-7 cm2/s. The permeability increases with IEC, following a roughly linear relationship.",
+      "reference_answer_points": [
+        "PBI: 0.5 x 10^-7 cm2/s",
+        "SNPBI-1.42: 0.95 x 10^-7 cm2/s",
+        "SPEEK/APK: 2.1 x 10^-7 cm2/s",
+        "SPTPC-2.59: 3.2 x 10^-7 cm2/s",
+        "Permeability increases with IEC"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-024"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-014"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-004",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the energy efficiency of SNPBI-1.42 at 100 mA/cm2, and how does it compare to SPTPC-2.59 at the same current density?",
+      "reference_answer": "SNPBI-1.42 achieves EE of 80.5% at 100 mA/cm2 (CE 98.1%, VE 82.1%), while SPTPC-2.59 achieves EE of 81.4% at 100 mA/cm2 (CE 96.3%, VE 83.8%). Although SPTPC-2.59 has a slightly higher EE, SNPBI-1.42 achieves its EE through higher CE and lower vanadium permeability, suggesting better long-term cycling stability.",
+      "reference_answer_points": [
+        "SNPBI-1.42 EE: 80.5% (CE 98.1%, VE 82.1%)",
+        "SPTPC-2.59 EE: 81.4% (CE 96.3%, VE 83.8%)",
+        "SPTPC-2.59 has slightly higher EE",
+        "SNPBI-1.42 has higher CE suggesting better cycle stability"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-007",
+        "DOC02-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-008",
+        "DOC02-EFU-009",
+        "DOC02-EFU-011",
+        "DOC02-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-005",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "How does ion exchange capacity (IEC) affect the area-specific resistance of non-fluorinated VRFB membranes, and what is the approximate percolation threshold?",
+      "reference_answer": "Area resistance decreases approximately as IEC^-1.8 for IEC values above the percolation threshold of approximately 1.0 mmol/g. Below this threshold, resistance increases sharply as hydrophilic domains become disconnected. Above the threshold, increasing IEC creates interconnected proton transport channels that facilitate proton conduction. The SNPBI-1.42 (IEC 1.42 mmol/g, resistance 1.15 ohm cm2) sits near the center of the optimal range, while SPTPC-2.59 (IEC 2.59 mmol/g, resistance 0.82 ohm cm2) achieves lower resistance at the cost of higher vanadium permeability.",
+      "reference_answer_points": [
+        "Resistance decreases as IEC^-1.8 above percolation threshold",
+        "Percolation threshold: ~1.0 mmol/g",
+        "Below threshold: disconnected hydrophilic domains, high resistance",
+        "Above threshold: interconnected proton channels",
+        "SNPBI-1.42 at 1.42 mmol/g is in optimal range"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-022"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-006",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "multi-condition synthesis",
+      "question": "A VRFB system designer needs to select a non-fluorinated membrane for an application requiring maximum energy efficiency at 100 mA/cm2 with minimal capacity fade over long-term cycling. Which membrane should be selected and what is the rationale?",
+      "reference_answer": "SNPBI-1.42 should be selected. At 100 mA/cm2, SNPBI-1.42 achieves the highest EE among tested non-fluorinated membranes at 80.5% (CE 98.1%, VE 82.1%). Its optimal balance of moderate resistance (1.15 ohm cm2) and low vanadium permeability (0.95 x 10^-7 cm2/s) yields the highest selectivity. The high CE of 98.1% indicates minimal vanadium crossover, which should translate to slower capacity fade compared to SPTPC-2.59 (CE 96.3%, permeability 3.2 x 10^-7 cm2/s). Additionally, SNPBI-1.42 benefits from the chemically stable PBI backbone with controlled sulfonation, showing less than 5% IEC loss after 500 hours in accelerated degradation testing.",
+      "reference_answer_points": [
+        "Select SNPBI-1.42",
+        "EE: 80.5% at 100 mA/cm2 (highest among non-fluorinated)",
+        "CE: 98.1% (minimal crossover)",
+        "VE: 82.1%",
+        "Resistance: 1.15 ohm cm2, Permeability: 0.95 x 10^-7 cm2/s",
+        "Highest selectivity among tested membranes",
+        "Stable PBI backbone with <5% IEC loss in accelerated testing"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-007",
+        "DOC02-FACT-011",
+        "DOC02-FACT-017"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-008",
+        "DOC02-EFU-013",
+        "DOC02-EFU-026"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-007",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "degradation analysis",
+      "question": "Explain the different degradation pathways for SNPBI-1.42 and SPTPC-2.59 in VRFB operation and their respective impacts on performance metrics.",
+      "reference_answer": "SNPBI-1.42 primarily degrades through gradual desulfonation under acidic oxidative conditions, which progressively reduces its IEC. This IEC loss directly increases area resistance and reduces voltage efficiency over extended cycling. The PBI backbone itself remains stable due to the electron-deficient benzimidazole ring. In contrast, SPTPC-2.59 suffers from backbone degradation where V(V) species attack the electron-rich terphenylene rings, causing chain scission. This creates additional free volume in the polymer matrix, which increases vanadium permeability and consequently reduces coulombic efficiency over time. The distinct degradation mechanisms mean that SNPBI-1.42 shows declining VE while SPTPC-2.59 shows declining CE during long-term operation.",
+      "reference_answer_points": [
+        "SNPBI-1.42: desulfonation reduces IEC",
+        "SNPBI-1.42: increased resistance, declining VE",
+        "PBI backbone stable against V(V) attack",
+        "SPTPC-2.59: backbone degradation, chain scission",
+        "SPTPC-2.59: increased free volume, higher permeability",
+        "SPTPC-2.59: declining CE over time"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-014",
+        "DOC02-FACT-015",
+        "DOC02-FACT-016",
+        "DOC02-FACT-018"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-019",
+        "DOC02-EFU-020",
+        "DOC02-EFU-021",
+        "DOC02-EFU-025"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-008",
+      "source_doc_id": "DOC02",
+      "level": "L5",
+      "question_type": "system design",
+      "question": "Based on the quantitative structure-property-performance relationships established in this study, what is the optimal IEC range for non-fluorinated VRFB membranes, and how do resistance and permeability quantitatively contribute to energy efficiency loss?",
+      "reference_answer": "The optimal IEC range for non-fluorinated VRFB membranes is 1.2-1.5 mmol/g, where membrane selectivity (proton conductivity to vanadium permeability ratio) reaches its maximum. SNPBI-1.42 with IEC of 1.42 mmol/g sits at the center of this range and achieves the highest EE (80.5% at 100 mA/cm2). Regression analysis shows that a 0.1 ohm cm2 increase in area resistance decreases EE by 0.4-0.5 percentage points (primarily through VE reduction), while a 1.0 x 10^-7 cm2/s increase in vanadium permeability decreases EE by 0.8-1.0 percentage points (primarily through CE reduction). The permeability contribution to EE loss is approximately twice as large as the resistance contribution per unit change, indicating that vanadium crossover has a more severe impact on overall performance than ohmic losses in the membrane systems studied.",
+      "reference_answer_points": [
+        "Optimal IEC range: 1.2-1.5 mmol/g",
+        "Maximum selectivity in this range",
+        "SNPBI-1.42 at 1.42 mmol/g is optimal",
+        "0.1 ohm cm2 resistance increase -> 0.4-0.5% EE loss",
+        "1.0 x 10^-7 cm2/s permeability increase -> 0.8-1.0% EE loss",
+        "Permeability impact is ~2x resistance impact per unit change"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-010",
+        "DOC02-FACT-022"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-023",
+        "DOC02-EFU-024"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-009",
+      "source_doc_id": "DOC02",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does the performance of SPTPC-2.59 at 100 mA/cm2 compare to Nafion benchmark membranes in terms of voltage efficiency?",
+      "reference_answer": "SPTPC-2.59 achieves a VE of 83.8% at 100 mA/cm2, which is competitive with Nafion 212 and superior to Nafion 117. This is enabled by its very low area resistance of 0.82 ohm cm2, the lowest among all tested non-fluorinated membranes.",
+      "reference_answer_points": [
+        "SPTPC-2.59 VE at 100 mA/cm2: 83.8%",
+        "Competitive with Nafion 212",
+        "Superior to Nafion 117",
+        "Enabled by low resistance of 0.82 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-021"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-029"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-010",
+      "source_doc_id": "DOC02",
+      "level": "L6",
+      "question_type": "cross-domain reasoning",
+      "question": "Analyze why PBI, despite having the highest coulombic efficiency and lowest vanadium permeability, is not recommended for VRFB operation above 60 mA/cm2. Then, explain how SNPBI-1.42 overcomes this limitation while maintaining favorable barrier properties.",
+      "reference_answer": "PBI has the highest CE (98.2-98.5%) and lowest vanadium permeability (0.5 x 10^-7 cm2/s) due to its dense aromatic polymer matrix that provides an effective barrier to vanadium ions. However, it also has the highest area resistance (2.45 ohm cm2) among all tested membranes because it relies on phosphoric acid doping rather than covalently bound sulfonic acid groups for proton conduction. This high resistance causes severe ohmic polarization losses: VE drops from 78.4% at 40 mA/cm2 to 68.2% at 200 mA/cm2, and EE falls from 76.8% to 66.9%. At 100 mA/cm2, the EE is only 71.8%, making PBI uncompetitive for practical operation. SNPBI-1.42 overcomes this by controlled post-sulfonation of the PBI backbone, introducing covalently bound sulfonic acid groups (IEC 1.42 mmol/g) that create continuous proton transport channels. This reduces resistance to 1.15 ohm cm2 (47% of PBI) while only modestly increasing permeability to 0.95 x 10^-7 cm2/s (1.9x PBI). The result is a dramatically improved VE (82.1% at 100 mA/cm2 vs 73.0% for PBI) with only a small CE reduction (98.1% vs 98.4%), yielding EE of 80.5% that exceeds Nafion benchmarks.",
+      "reference_answer_points": [
+        "PBI: highest CE 98.2-98.5%, lowest permeability 0.5e-7",
+        "PBI: highest resistance 2.45 ohm cm2",
+        "PBI VE drops to 68.2% at 200 mA/cm2, EE to 66.9%",
+        "PBI EE at 100 mA/cm2: only 71.8%",
+        "SNPBI-1.42 adds sulfonic acid groups via post-sulfonation",
+        "SNPBI-1.42 resistance: 1.15 ohm cm2 (53% reduction)",
+        "SNPBI-1.42 permeability: 0.95e-7 (still low)",
+        "SNPBI-1.42 VE: 82.1%, CE: 98.1%, EE: 80.5% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-003",
+        "DOC02-FACT-007",
+        "DOC02-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-028",
+        "DOC02-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-011",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "property retrieval",
+      "question": "What are the composition and preparation method of SPEEK/APK blend membranes?",
+      "reference_answer": "SPEEK/APK blend membranes are prepared by co-dissolving SPEEK (IEC = 1.8 mmol/g) and APK in N-methyl-2-pyrrolidone (NMP) at a 7:3 weight ratio, followed by solution casting and drying at 60 C under vacuum. The blend achieves an effective IEC of approximately 1.26 mmol/g.",
+      "reference_answer_points": [
+        "SPEEK:IEC 1.8 mmol/g",
+        "Weight ratio SPEEK:APK = 7:3",
+        "Solvent: NMP",
+        "Drying: 60 C under vacuum",
+        "Effective IEC: 1.26 mmol/g"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-016"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-012",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "trend analysis",
+      "question": "How does the water uptake of the four membranes correlate with their IEC values, and what are the implications for mechanical stability?",
+      "reference_answer": "Water uptake increases with IEC: PBI (0.0 mmol/g IEC, 12% uptake) < SNPBI-1.42 (1.42 mmol/g, 18%) < SPEEK/APK (1.26 mmol/g effective, 21%) < SPTPC-2.59 (2.59 mmol/g, 28%). The higher water uptake of SPTPC-2.59 creates significant swelling that may require careful control of compression forces during cell assembly to prevent excessive deformation. PBI, with its lowest water uptake (12%), exhibits the best dimensional stability. SNPBI-1.42 maintains moderate swelling (18%) that is compatible with stable long-term operation. Excessive swelling in high-IEC membranes can lead to dimensional instability, loss of electrode contact, and eventual mechanical failure.",
+      "reference_answer_points": [
+        "Water uptake increases with IEC",
+        "PBI: 12% (lowest, best dimensional stability)",
+        "SNPBI-1.42: 18% (moderate, compatible with stable operation)",
+        "SPEEK/APK: 21%",
+        "SPTPC-2.59: 28% (highest swelling)",
+        "High swelling risks dimensional instability and mechanical failure"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-001",
+        "DOC02-FACT-002",
+        "DOC02-FACT-003",
+        "DOC02-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-001",
+        "DOC02-EFU-002"
+      ]
+    }
+  ]
+}

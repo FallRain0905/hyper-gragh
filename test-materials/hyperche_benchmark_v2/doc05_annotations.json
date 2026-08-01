@@ -1,0 +1,1654 @@
+{
+  "efus": [
+    {
+      "gold_id": "DOC05-EFU-001",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 25 C and 80 mA/cm2, the VRFB cell retained 85% of initial discharge capacity after 500 charge-discharge cycles.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_85_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 25 C, the cell demonstrated stable cycling with gradual capacity decline, retaining 85% of the initial discharge capacity after 500 cycles."
+    },
+    {
+      "gold_id": "DOC05-EFU-002",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 C and 80 mA/cm2, the VRFB cell achieved 74% capacity retention after 500 cycles.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 74,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_74_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 40 C, the capacity retention curve exhibited a more pronounced negative slope, with the cell achieving only 74% capacity retention at cycle 500."
+    },
+    {
+      "gold_id": "DOC05-EFU-003",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 60 C and 80 mA/cm2, the VRFB cell reached only 60% capacity retention after 500 cycles.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 60,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_60_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:v2o5_precipitation"
+      ],
+      "evidence_text": "The most severe capacity degradation occurred at 60 C, where capacity retention reached merely 60% after 500 cycles."
+    },
+    {
+      "gold_id": "DOC05-EFU-004",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 25 C, VRFB Coulombic efficiency degraded from 97.2% to 94.8% over 500 cycles at 80 mA/cm2.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_initial_97_2_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 94.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_final_94_8_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 25 C, the initial CE of 97.2% gradually declined to 94.8% by cycle 500, corresponding to an average loss rate of approximately 0.0048% per cycle."
+    },
+    {
+      "gold_id": "DOC05-EFU-005",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 C, VRFB Coulombic efficiency degraded from 97.0% to 92.1% over 500 cycles at 80 mA/cm2.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.0,
+          "unit": "%",
+          "canonical_id": "measurement:ce_initial_97_0_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_final_92_1_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "At 40 C, the CE degradation was substantially more pronounced, decreasing from an initial value of 97.0% to 92.1% at cycle 500."
+    },
+    {
+      "gold_id": "DOC05-EFU-006",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 60 C, VRFB Coulombic efficiency degraded from 96.8% to 88.5% over 500 cycles at 80 mA/cm2.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_initial_96_8_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 88.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_final_88_5_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution",
+        "degradation:v2o5_precipitation"
+      ],
+      "evidence_text": "The 60 C condition produced the most severe CE degradation, with values falling from 96.8% to 88.5% over 500 cycles."
+    },
+    {
+      "gold_id": "DOC05-EFU-007",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.3",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "The vanadium crossover coefficient in VRFB with Nafion 117 was 2.1 x 10^-7 cm2/s at 25 C, 3.8 x 10^-7 cm2/s at 40 C, and 6.5 x 10^-7 cm2/s at 60 C.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_2_1e-7_cm2_s"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 25 C, the measured crossover coefficient was 2.1 x 10^-7 cm2/s, which is in good agreement with literature values for Nafion 117 in contact with vanadium electrolyte solutions."
+    },
+    {
+      "gold_id": "DOC05-EFU-008",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.4",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SOC imbalance after 500 cycles was 8% at 25 C, 15% at 40 C, and 24% at 60 C in VRFB operated at 80 mA/cm2.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 8,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_8_percent"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 15,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_15_percent"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 24,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_24_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance"
+      ],
+      "evidence_text": "At 25 C, the SOC imbalance reached 8% after 500 cycles. At 40 C, the SOC imbalance increased to 15%. The most severe SOC imbalance developed at 60 C, reaching 24% after 500 cycles."
+    },
+    {
+      "gold_id": "DOC05-EFU-009",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.1",
+      "relation_type": "COMPARISON",
+      "claim": "Capacity retention after 500 cycles decreased from 85% at 25 C to 74% at 40 C and 60% at 60 C, showing strong temperature dependence.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_85_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 74,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_74_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 60,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_60_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 25 C, the cell retained 85% of its initial discharge capacity after 500 cycles, whereas capacity retention declined to 74% at 40 C and further to 60% at 60 C."
+    },
+    {
+      "gold_id": "DOC05-EFU-010",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.2",
+      "relation_type": "COMPARISON",
+      "claim": "CE degradation rate over 500 cycles was approximately 0.0048%/cycle at 25 C, 0.0098%/cycle at 40 C, and 0.0166%/cycle at 60 C, demonstrating more than 3x acceleration between 25 C and 60 C.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 97.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_2_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 94.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_8_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_1_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 88.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_88_5_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "The average degradation rate of 0.0098% per cycle at 40 C represents more than a doubling compared to the 25 C condition. The average degradation rate of 0.0166% per cycle at 60 C is more than three times that observed at 25 C."
+    },
+    {
+      "gold_id": "DOC05-EFU-011",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.3",
+      "relation_type": "COMPARISON",
+      "claim": "Vanadium crossover coefficient increased by 81% from 25 C to 40 C and by 210% from 25 C to 60 C, showing Arrhenius-type activated diffusion behavior.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_2_1e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 3.8,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_3_8e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 6.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_6_5e-7"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 40 C, the crossover coefficient increased to 3.8 x 10^-7 cm2/s, representing an 81% increase relative to the 25 C value. At 60 C, the crossover coefficient reached 6.5 x 10^-7 cm2/s, representing a 210% increase relative to the 25 C baseline."
+    },
+    {
+      "gold_id": "DOC05-EFU-012",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.7",
+      "relation_type": "COMPARISON",
+      "claim": "At 60 C, the capacity fading rate accelerated from 0.06%/cycle (cycles 20-100) to 0.15%/cycle (cycles 300-500), compared to stable 0.03%/cycle linear fading at 25 C throughout cycles 20-400.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.03,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_rate_0_03"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.06,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_rate_0_06"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.15,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_rate_0_15"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance"
+      ],
+      "evidence_text": "At 25 C, the fading rate was approximately 0.03% per cycle during cycles 20-400. At 60 C, the capacity fading rate increased from 0.06% per cycle during cycles 20-100 to 0.10% per cycle during cycles 100-300 and reaching 0.15% per cycle during the final 200 cycles."
+    },
+    {
+      "gold_id": "DOC05-EFU-013",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 2.1",
+      "relation_type": "COMPOSITION",
+      "claim": "The VRFB electrolyte was composed of 1.5 M VOSO4 dissolved in 3.0 M H2SO4 aqueous solution.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:vanadium_oxide_sulfate",
+          "name": "VOSO4",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:sulfuric_acid",
+          "name": "H2SO4",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "concentration",
+          "value": 1.5,
+          "unit": "M",
+          "canonical_id": "measurement:voso4_1_5_m"
+        },
+        {
+          "metric_type": "concentration",
+          "value": 3.0,
+          "unit": "M",
+          "canonical_id": "measurement:h2so4_3_0_m"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "The positive and negative electrolytes were prepared by dissolving VOSO4·xH2O in deionized water and adding concentrated sulfuric acid to achieve a final composition of 1.5 M vanadium species and 3.0 M total sulfate."
+    },
+    {
+      "gold_id": "DOC05-EFU-014",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 2.1",
+      "relation_type": "COMPOSITION",
+      "claim": "Nafion 117 membranes were pretreated with sequential immersion in 3% H2O2, deionized water, 0.5 M H2SO4, and deionized water, achieving a final thickness of 183 um.",
+      "entities": [
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "thickness",
+          "value": 183,
+          "unit": "um",
+          "canonical_id": "measurement:nafion_thickness_183_um"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "Nafion 117 membranes were pretreated according to a standard protocol involving sequential immersion in 3% hydrogen peroxide at 80 C for 1 hour, deionized water at 80 C for 1 hour, 0.5 M sulfuric acid at 80 C for 1 hour, and finally deionized water at 80 C for 1 hour. The membrane thickness after pretreatment was measured at 183 um."
+    },
+    {
+      "gold_id": "DOC05-EFU-015",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Elevated temperature increases vanadium crossover coefficient, which leads to differential vanadium species transport, causing progressive SOC imbalance, which in turn constrains accessible capacity window and accelerates capacity fading through nonlinear feedback mechanisms.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance",
+        "degradation:capacity_fade"
+      ],
+      "evidence_text": "As SOC imbalance develops, the limiting half-cell determines the practical capacity of the system. When the imbalance reaches 24%, as observed at 60 C, the theoretical maximum capacity utilization is reduced by approximately 24%."
+    },
+    {
+      "gold_id": "DOC05-EFU-016",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Vanadium crossover leads to V(V) reduction at the negative electrode and V(II) oxidation at the positive electrode, constituting an internal self-discharge that reduces CE, while SOC imbalance drives extreme potentials promoting HER and V2O5 precipitation.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:self_discharge",
+        "degradation:hydrogen_evolution",
+        "degradation:v2o5_precipitation"
+      ],
+      "evidence_text": "V(V) species crossing to the negative half-cell leads to chemical reduction at the negative electrode, effectively constituting an internal short-circuit. The SOC imbalance creates situations where one half-cell is driven to extreme SOC values, producing local vanadium concentrations that may exceed solubility limits."
+    },
+    {
+      "gold_id": "DOC05-EFU-017",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.3",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "The temperature dependence of vanadium crossover coefficient follows activated diffusion behavior consistent with Arrhenius kinetics, suggesting diffusion-controlled transport as the dominant crossover mechanism.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_2_1e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 3.8,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_3_8e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 6.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_6_5e-7"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "This enhancement factor is consistent with the expected temperature dependence of diffusion coefficients in hydrated polymer membranes, which typically increase by a factor of 1.6-2.0 for a 15 C temperature increase."
+    },
+    {
+      "gold_id": "DOC05-EFU-018",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.6",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "The estimated activation energy of 35-45 kJ/mol for capacity fading is consistent with diffusion-controlled vanadium crossover and lower than typical activation energies for electrochemical side reactions such as HER.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "activation_energy",
+          "value": 35,
+          "unit": "kJ/mol",
+          "canonical_id": "measurement:ea_35_kj_mol"
+        },
+        {
+          "metric_type": "activation_energy",
+          "value": 45,
+          "unit": "kJ/mol",
+          "canonical_id": "measurement:ea_45_kj_mol"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "The data suggest an activation energy in the range of 35-45 kJ/mol, which is consistent with diffusion-controlled vanadium crossover through hydrated ion-exchange membranes and is lower than typical activation energies for electrochemical side reactions such as hydrogen evolution."
+    },
+    {
+      "gold_id": "DOC05-EFU-019",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.6",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Coupling between vanadium crossover and hydrogen evolution creates a complex temperature-dependent balance: V(V) reduction at the negative electrode consumes protons and increases local pH, shifting HER to more negative potentials, but higher temperature simultaneously reduces HER activation overpotential.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution"
+      ],
+      "evidence_text": "As V(V) species cross to the negative half-cell, they are reduced to V(IV) and subsequently to lower oxidation states, consuming protons in the process. The resulting local pH increase at the negative electrode shifts the equilibrium potential for hydrogen evolution to more negative values."
+    },
+    {
+      "gold_id": "DOC05-EFU-020",
+      "source_doc_id": "DOC05",
+      "source_section": "Section 3.8",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Active thermal management maintaining electrolyte at or below 25 C is economically justified for daily cycling VRFB applications, while operation at 60 C without cooling seriously compromises economic viability due to accelerated degradation.",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_85_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 60,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_60_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance"
+      ],
+      "evidence_text": "For indoor installations with controlled ambient temperatures, the data suggest that maintaining the electrolyte temperature at or below 25 C can achieve capacity retention of 85% over 500 cycles. Operation at 60 C produces degradation rates that seriously compromise the economic viability of the VRFB installation."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC05-FACT-001",
+      "source_doc_id": "DOC05",
+      "claim": "At 25 C and 80 mA/cm2, a VRFB with Nafion 117 membrane achieves 85% capacity retention after 500 cycles.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_85_percent"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC05-EFU-001",
+        "DOC05-EFU-009"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-002",
+      "source_doc_id": "DOC05",
+      "claim": "At 40 C and 80 mA/cm2, a VRFB with Nafion 117 membrane achieves only 74% capacity retention after 500 cycles due to accelerated vanadium crossover.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 74,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_74_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-002",
+        "DOC05-EFU-009"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-003",
+      "source_doc_id": "DOC05",
+      "claim": "At 60 C and 80 mA/cm2, a VRFB with Nafion 117 membrane reaches only 60% capacity retention after 500 cycles, with nonlinear acceleration of fading rate.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 60,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_60_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:v2o5_precipitation"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-003",
+        "DOC05-EFU-009",
+        "DOC05-EFU-012"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-004",
+      "source_doc_id": "DOC05",
+      "claim": "VRFB Coulombic efficiency degrades from 97.2% to 94.8% at 25 C, from 97.0% to 92.1% at 40 C, and from 96.8% to 88.5% at 60 C over 500 cycles at 80 mA/cm2.",
+      "required_entities": [
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "CE",
+          "value": 97.2,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_2_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 94.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_94_8_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 97.0,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_0_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 92.1,
+          "unit": "%",
+          "canonical_id": "measurement:ce_92_1_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96.8,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_8_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 88.5,
+          "unit": "%",
+          "canonical_id": "measurement:ce_88_5_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:hydrogen_evolution"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-004",
+        "DOC05-EFU-005",
+        "DOC05-EFU-006",
+        "DOC05-EFU-010"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-005",
+      "source_doc_id": "DOC05",
+      "claim": "The vanadium crossover coefficient in VRFB with Nafion 117 increases from 2.1 x 10^-7 cm2/s at 25 C to 3.8 x 10^-7 cm2/s at 40 C and 6.5 x 10^-7 cm2/s at 60 C, following Arrhenius-type activated diffusion behavior.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 2.1,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_2_1e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 3.8,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_3_8e-7"
+        },
+        {
+          "metric_type": "crossover_coefficient",
+          "value": 6.5,
+          "unit": "x 10^-7 cm2/s",
+          "canonical_id": "measurement:crossover_6_5e-7"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-007",
+        "DOC05-EFU-011",
+        "DOC05-EFU-017"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-006",
+      "source_doc_id": "DOC05",
+      "claim": "SOC imbalance after 500 cycles at 80 mA/cm2 increases from 8% at 25 C to 15% at 40 C and 24% at 60 C, serving as a primary driver of capacity loss.",
+      "required_entities": [
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 40,
+          "unit": "C",
+          "canonical_id": "condition:temperature_40_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 8,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_8_percent"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 15,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_15_percent"
+        },
+        {
+          "metric_type": "SOC_imbalance",
+          "value": 24,
+          "unit": "%",
+          "canonical_id": "measurement:soc_imbalance_24_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:soc_imbalance",
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-008",
+        "DOC05-EFU-015"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC05-FACT-007",
+      "source_doc_id": "DOC05",
+      "claim": "The degradation chain in VRFB at elevated temperatures involves vanadium crossover leading to SOC imbalance, which constrains accessible capacity and creates synergistic effects with HER and V2O5 precipitation.",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance",
+        "degradation:hydrogen_evolution",
+        "degradation:v2o5_precipitation",
+        "degradation:capacity_fade"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-015",
+        "DOC05-EFU-016",
+        "DOC05-EFU-019"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC05-FACT-008",
+      "source_doc_id": "DOC05",
+      "claim": "Active thermal management to maintain electrolyte temperature at or below 25 C is essential for VRFB economic viability, as operation at 60 C reduces capacity retention to 60% after 500 cycles and CE below 90%.",
+      "required_entities": [
+        "system:vrfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 25,
+          "unit": "C",
+          "canonical_id": "condition:temperature_25_c"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 60,
+          "unit": "C",
+          "canonical_id": "condition:temperature_60_c"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:cycle_500"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_retention",
+          "value": 60,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_60_percent"
+        },
+        {
+          "metric_type": "capacity_retention",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:capacity_retention_85_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover",
+        "degradation:soc_imbalance"
+      ],
+      "supporting_efus": [
+        "DOC05-EFU-020",
+        "DOC05-EFU-009"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    }
+  ],
+  "qas": [
+    {
+      "question_id": "DOC05-QA-001",
+      "source_doc_id": "DOC05",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the capacity retention of a VRFB with Nafion 117 after 500 cycles at 25 C and 80 mA/cm2?",
+      "reference_answer": "85%",
+      "reference_answer_points": [
+        "85% capacity retention after 500 cycles at 25 C and 80 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-002",
+      "source_doc_id": "DOC05",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the vanadium crossover coefficients at 25 C, 40 C, and 60 C in a VRFB with Nafion 117?",
+      "reference_answer": "2.1 x 10^-7 cm2/s at 25 C, 3.8 x 10^-7 cm2/s at 40 C, and 6.5 x 10^-7 cm2/s at 60 C.",
+      "reference_answer_points": [
+        "2.1 x 10^-7 cm2/s at 25 C",
+        "3.8 x 10^-7 cm2/s at 40 C",
+        "6.5 x 10^-7 cm2/s at 60 C"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-003",
+      "source_doc_id": "DOC05",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does VRFB Coulombic efficiency degrade over 500 cycles at different temperatures when operated at 80 mA/cm2?",
+      "reference_answer": "At 25 C, CE degrades from 97.2% to 94.8%. At 40 C, CE degrades from 97.0% to 92.1%. At 60 C, CE degrades from 96.8% to 88.5%. The degradation rate more than triples from 25 C to 60 C.",
+      "reference_answer_points": [
+        "25 C: 97.2% -> 94.8%",
+        "40 C: 97.0% -> 92.1%",
+        "60 C: 96.8% -> 88.5%",
+        "Degradation rate at 60 C is more than 3x that at 25 C"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-004",
+        "DOC05-EFU-005",
+        "DOC05-EFU-006",
+        "DOC05-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-004",
+      "source_doc_id": "DOC05",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the SOC imbalance after 500 cycles at 25 C, 40 C, and 60 C in a VRFB operated at 80 mA/cm2?",
+      "reference_answer": "SOC imbalance after 500 cycles is 8% at 25 C, 15% at 40 C, and 24% at 60 C. The imbalance at 60 C represents nearly one-quarter of the full SOC range and is a primary driver of the 40% capacity loss observed at that temperature.",
+      "reference_answer_points": [
+        "8% SOC imbalance at 25 C after 500 cycles",
+        "15% SOC imbalance at 40 C after 500 cycles",
+        "24% SOC imbalance at 60 C after 500 cycles",
+        "SOC imbalance is a primary driver of capacity loss at elevated temperatures"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-008",
+        "DOC05-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-005",
+      "source_doc_id": "DOC05",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Explain the degradation chain that causes accelerated capacity fading in VRFB at elevated temperatures (60 C), including the role of vanadium crossover, SOC imbalance, and their synergistic effects with side reactions.",
+      "reference_answer": "At 60 C, the vanadium crossover coefficient increases to 6.5 x 10^-7 cm2/s (210% increase vs 25 C). Differential crossover of V(V) species creates progressive SOC imbalance reaching 24% after 500 cycles. This imbalance constrains the accessible capacity window by causing one half-cell to reach its limit before the other. Additionally, V(V) crossing to the negative electrode is reduced, consuming protons and raising local pH, while the elevated temperature reduces HER activation overpotential. The nonlinear feedback between increasing crossover and growing imbalance accelerates fading from 0.06%/cycle (cycles 20-100) to 0.15%/cycle (cycles 300-500). V(V) precipitation as V2O5 at high SOC further removes active material and blocks electrode pores.",
+      "reference_answer_points": [
+        "Crossover coefficient increases to 6.5 x 10^-7 cm2/s at 60 C",
+        "Differential crossover of V(V) causes SOC imbalance reaching 24%",
+        "SOC imbalance constrains accessible capacity window",
+        "V(V) reduction at negative electrode affects local pH and HER",
+        "Nonlinear feedback accelerates fading rate from 0.06% to 0.15%/cycle",
+        "V2O5 precipitation removes active material and blocks pores"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-007",
+        "DOC05-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-015",
+        "DOC05-EFU-016",
+        "DOC05-EFU-019",
+        "DOC05-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-006",
+      "source_doc_id": "DOC05",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Why is active thermal management essential for VRFB economic viability, and what quantitative performance differences justify the energy cost of cooling from 40 C or 60 C down to 25 C?",
+      "reference_answer": "Active thermal management is essential because elevated temperatures dramatically accelerate degradation through Arrhenius-type behavior. At 25 C, capacity retention is 85% after 500 cycles with CE remaining at 94.8%. At 40 C, capacity retention drops to 74% with CE at 92.1%. At 60 C, only 60% capacity retention is achieved with CE falling to 88.5%. The crossover coefficient triples from 25 C to 60 C. SOC imbalance grows from 8% to 24%. The energy penalty of cooling is justified for daily cycling applications because the 25 percentage point improvement in capacity retention and 6 percentage point improvement in CE translate to substantially higher energy throughput over the system lifetime. Without cooling, operation at 60 C results in CE below 90% and requires frequent maintenance, compromising economic competitiveness.",
+      "reference_answer_points": [
+        "85% capacity retention at 25 C vs 60% at 60 C after 500 cycles",
+        "CE of 94.8% at 25 C vs 88.5% at 60 C",
+        "Crossover coefficient triples from 25 C to 60 C",
+        "SOC imbalance grows from 8% to 24%",
+        "Cooling energy penalty justified for daily cycling",
+        "60 C operation requires frequent maintenance and compromises economics"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-008",
+        "DOC05-FACT-004",
+        "DOC05-FACT-005",
+        "DOC05-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-020",
+        "DOC05-EFU-009",
+        "DOC05-EFU-010",
+        "DOC05-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-007",
+      "source_doc_id": "DOC05",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the capacity fading behavior at 25 C and 60 C in terms of fading rate patterns and acceleration over the 500-cycle protocol.",
+      "reference_answer": "At 25 C, fading follows a linear pattern at approximately 0.03%/cycle during cycles 20-400 with only modest acceleration to 0.05%/cycle in the final 100 cycles. At 60 C, the fading is distinctly nonlinear: starting at 0.06%/cycle (cycles 20-100), accelerating to 0.10%/cycle (cycles 100-300), and reaching 0.15%/cycle (cycles 300-500). The 60 C fading rate in the final phase is 5x the 25 C linear rate, indicating autocatalytic degradation processes or accumulation of degradation products that increasingly interfere with electrochemical reactions.",
+      "reference_answer_points": [
+        "25 C: linear fading at ~0.03%/cycle (cycles 20-400)",
+        "25 C: slight acceleration to 0.05%/cycle (cycles 400-500)",
+        "60 C: nonlinear acceleration from 0.06% to 0.15%/cycle",
+        "60 C final fading rate is 5x the 25 C rate",
+        "Nonlinearity suggests autocatalytic or feedback mechanisms"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-012",
+        "DOC05-EFU-003"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-008",
+      "source_doc_id": "DOC05",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the estimated activation energy for the dominant degradation process in the VRFB temperature study?",
+      "reference_answer": "35-45 kJ/mol, consistent with diffusion-controlled vanadium crossover through hydrated ion-exchange membranes.",
+      "reference_answer_points": [
+        "Activation energy: 35-45 kJ/mol",
+        "Consistent with diffusion-controlled vanadium crossover",
+        "Lower than typical activation energies for electrochemical side reactions like HER"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-018"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+﻿group,answerable,questions,Good Rate,Satisfactory-or-Better Rate,Key-Point Coverage,Hallucination Rate,Abstention Accuracy,Citation Stability Experimental
+text_segments,False,5,0.6,0.8,0.6,0.0,1.0,0.0
+text_segments,True,35,0.1714,0.3429,0.2979,0.1429,0.6286,0.2914
+original_hypergraph,False,5,0.6,0.6,0.6,0.0,1.0,0.0
+original_hypergraph,True,35,0.0857,0.1714,0.1597,0.2,0.3714,0.1429
+chem_prompt_graph,False,5,0.2,0.6,0.2,0.0,1.0,0.0
+chem_prompt_graph,True,35,0.0857,0.1714,0.1302,0.1143,0.4571,0.0857
+chem_prompt_hypergraph,False,5,0.2,0.6,0.2,0.0,1.0,0.0
+chem_prompt_hypergraph,True,35,0.2,0.2857,0.2858,0.2286,0.6857,0.2286
+chem_norm_hypergraph,False,5,0.6,0.8,0.6,0.0,1.0,0.0
+chem_norm_hypergraph,True,35,0.1429,0.2,0.1714,0.0286,0.2857,0.2

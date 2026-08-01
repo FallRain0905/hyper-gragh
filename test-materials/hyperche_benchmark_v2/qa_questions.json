@@ -1,0 +1,2482 @@
+{
+  "metadata": {
+    "dataset_name": "Hyper-ChE Flow Battery Benchmark - QA Questions",
+    "version": "v1.1",
+    "total_questions": 104,
+    "level_distribution": {
+      "L1": 22,
+      "L2": 24,
+      "L3": 26,
+      "L4": 12,
+      "L5": 10,
+      "L6": 10
+    }
+  },
+  "qa_questions": [
+    {
+      "question_id": "DOC01-QA-001",
+      "source_doc_id": "DOC01",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the area-specific resistance of Nafion 117 at 25 C->",
+      "reference_answer": "1.65 ohm cm2",
+      "reference_answer_points": [
+        "Nafion 117 area-specific resistance at 25 C is 1.65 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-009"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-002",
+      "source_doc_id": "DOC01",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the vanadium permeability of Nafion 212->",
+      "reference_answer": "3.9 x 10^-7 cm2/s",
+      "reference_answer_points": [
+        "Nafion 212 vanadium permeability is 3.9 x 10^-7 cm2/s"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-014"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-003",
+      "source_doc_id": "DOC01",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does the coulombic efficiency of Nafion 117 compare to Nafion 212 at 100 mA/cm2 and 25 C->",
+      "reference_answer": "Nafion 117 CE (97.1%) is 3.3 percentage points higher than Nafion 212 CE (93.8%) at 100 mA/cm2 and 25 C",
+      "reference_answer_points": [
+        "Nafion 117 CE: 97.1%",
+        "Nafion 212 CE: 93.8%",
+        "Difference: 3.3 percentage points"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-004",
+      "source_doc_id": "DOC01",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "Why does coulombic efficiency increase with increasing current density in VRFBs with Nafion membranes->",
+      "reference_answer": "CE increases with current density because the Faradaic current associated with desired vanadium redox reactions increases proportionally with current density, while the parasitic crossover flux driven primarily by concentration gradients remains relatively constant. This improves the ratio of useful charge transfer to parasitic loss.",
+      "reference_answer_points": [
+        "Faradaic current increases proportionally with current density",
+        "Crossover flux driven by concentration gradients remains relatively constant",
+        "Ratio of useful to parasitic charge transfer improves"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-022"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-005",
+      "source_doc_id": "DOC01",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the energy efficiency of Nafion 212 at 80 mA/cm2 and 40 C->",
+      "reference_answer": "83.8%",
+      "reference_answer_points": [
+        "Nafion 212 EE at 80 mA/cm2 and 40 C is 83.8%"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-022"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-006",
+      "source_doc_id": "DOC01",
+      "level": "L4",
+      "question_type": "multi-condition synthesis",
+      "question": "At 100 mA/cm2 and 25 C, both membranes achieve similar EE despite different CE/VE compositions. Explain the performance trade-off and recommend which membrane to use for long-cycle-life stationary storage.",
+      "reference_answer": "At 100 mA/cm2 and 25 C, Nafion 117 achieves EE of 80.2% (CE 97.1%, VE 82.6%) while Nafion 212 achieves EE of 80.9% (CE 93.8%, VE 86.2%). The similar EE masks a fundamental trade-off: Nafion 117 prioritizes CE via lower vanadium crossover (1.8 x 10^-7 cm2/s) at the cost of higher resistance (1.65 ohm cm2), while Nafion 212 achieves lower resistance (0.85 ohm cm2) but higher crossover (3.9 x 10^-7 cm2/s). For long-cycle-life stationary storage, Nafion 117 is recommended because its lower crossover yields an estimated capacity fade rate of 0.08% per cycle versus 0.18% per cycle for Nafion 212.",
+      "reference_answer_points": [
+        "Similar EE: 80.2% vs 80.9%",
+        "Nafion 117: CE 97.1%, VE 82.6%",
+        "Nafion 212: CE 93.8%, VE 86.2%",
+        "Nafion 117 crossover: 1.8 x 10^-7 cm2/s, resistance: 1.65 ohm cm2",
+        "Nafion 212 crossover: 3.9 x 10^-7 cm2/s, resistance: 0.85 ohm cm2",
+        "Recommendation: Nafion 117 for long cycle life (0.08% vs 0.18% fade rate)"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-007",
+        "DOC01-FACT-014",
+        "DOC01-FACT-017"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-011",
+        "DOC01-EFU-012",
+        "DOC01-EFU-013",
+        "DOC01-EFU-021",
+        "DOC01-EFU-026"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-007",
+      "source_doc_id": "DOC01",
+      "level": "L3",
+      "question_type": "trend analysis",
+      "question": "How does temperature affect the voltage efficiency and coulombic efficiency of Nafion 117 in VRFB, and what is the net effect on energy efficiency->",
+      "reference_answer": "For Nafion 117, increasing temperature from 25 C to 40 C improves VE by 2-3 percentage points due to reduced area resistance (1.65 to 1.32 ohm cm2) and enhanced electrochemical kinetics. However, CE decreases by 0.3-0.5 percentage points due to increased vanadium crossover from higher ion diffusivity. The net effect on EE is slightly positive at low current densities but diminishes at higher current densities, reflecting the competing influences of resistance reduction and crossover acceleration.",
+      "reference_answer_points": [
+        "VE improves by 2-3 percentage points at 40 C",
+        "CE decreases by 0.3-0.5 percentage points at 40 C",
+        "Resistance drops from 1.65 to 1.32 ohm cm2",
+        "Net EE effect: slightly positive at low current density, diminishing at high current density"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-010",
+        "DOC01-FACT-011",
+        "DOC01-FACT-021",
+        "DOC01-FACT-024"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-010",
+        "DOC01-EFU-029"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-008",
+      "source_doc_id": "DOC01",
+      "level": "L4",
+      "question_type": "degradation analysis",
+      "question": "Explain the degradation chain initiated by vanadium crossover in a VRFB and compare the estimated capacity fade rates for Nafion 117 and Nafion 212.",
+      "reference_answer": "Vanadium crossover initiates a degradation cascade: (1) vanadium ions permeate through the membrane creating state-of-charge imbalance between half-cells, (2) this manifests as progressive reduction in accessible discharge capacity, (3) self-discharge reactions between permeated vanadium ions and counter-ions at opposing electrodes create exothermic hotspots, and (4) these hotspots accelerate further membrane and electrode degradation. The estimated capacity fade rates from crossover alone at 100 mA/cm2 and 25 C are 0.08% per cycle for Nafion 117 and 0.18% per cycle for Nafion 212, reflecting the approximately 2.2x higher vanadium permeability of the thinner membrane.",
+      "reference_answer_points": [
+        "Crossover creates SOC imbalance",
+        "Progressive capacity reduction",
+        "Self-discharge generates local hotspots",
+        "Hotspots accelerate further degradation",
+        "Nafion 117 fade rate: 0.08% per cycle",
+        "Nafion 212 fade rate: 0.18% per cycle"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-012",
+        "DOC01-FACT-013",
+        "DOC01-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-019",
+        "DOC01-EFU-020",
+        "DOC01-EFU-021"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-009",
+      "source_doc_id": "DOC01",
+      "level": "L5",
+      "question_type": "system design",
+      "question": "A VRFB system designer must select between Nafion 117 and Nafion 212 for a high-temperature (40 C) application targeting maximum energy efficiency at 80-120 mA/cm2. Which membrane should be selected and why->",
+      "reference_answer": "Nafion 212 should be selected for this application. At 40 C, Nafion 212 EE exceeds its 25 C EE across all current densities (peaking at 83.8% at 80 mA/cm2), unlike Nafion 117 where the temperature benefit diminishes at higher current densities. Nafion 212's thinner profile (50.8 um vs 183 um) provides lower resistance (0.68 ohm cm2 at 40 C vs 0.85 at 25 C) that benefits more from temperature-induced resistance reduction. The shorter diffusion pathway also moderates the fractional increase in crossover at elevated temperature. At 100 mA/cm2 and 40 C, Nafion 212 achieves EE of 83.2% compared to approximately 81.4% for Nafion 117.",
+      "reference_answer_points": [
+        "Select Nafion 212",
+        "Nafion 212 40 C EE exceeds 25 C across all current densities",
+        "EE peaks at 83.8% at 80 mA/cm2 and 40 C",
+        "Lower resistance benefits more from temperature increase",
+        "Shorter diffusion pathway moderates crossover increase",
+        "At 100 mA/cm2 40 C: Nafion 212 EE 83.2% vs Nafion 117 EE ~81.4%"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-015",
+        "DOC01-FACT-022"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-008",
+        "DOC01-EFU-028"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-010",
+      "source_doc_id": "DOC01",
+      "level": "L2",
+      "question_type": "property retrieval",
+      "question": "What are the thickness and equivalent weight of Nafion 117 and Nafion 212->",
+      "reference_answer": "Nafion 117: thickness 183 um, equivalent weight 1100 g/equiv. Nafion 212: thickness 50.8 um, equivalent weight 1100 g/equiv.",
+      "reference_answer_points": [
+        "Nafion 117 thickness: 183 um",
+        "Nafion 117 equivalent weight: 1100 g/equiv",
+        "Nafion 212 thickness: 50.8 um",
+        "Nafion 212 equivalent weight: 1100 g/equiv"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-019",
+        "DOC01-FACT-020"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-016",
+        "DOC01-EFU-017"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-011",
+      "source_doc_id": "DOC01",
+      "level": "L6",
+      "question_type": "cross-domain reasoning",
+      "question": "Explain how the opposing dependencies of CE and VE on current density create different optimization landscapes for Nafion 117 and Nafion 212, and how temperature modulates these landscapes.",
+      "reference_answer": "For Nafion 117, CE increases with current density (96.0% to 98.2%) while VE decreases (85.8% to 80.2%), causing EE to decrease monotonically from 82.4% at 40 mA/cm2 to 78.7% at 200 mA/cm2 at 25 C. The EE maximum is at the lowest practical current density. For Nafion 212, the same opposing trends exist but the EE profile is flatter with a shallow maximum at intermediate current densities (82.5% at 80 mA/cm2 at 25 C, 83.8% at 80 mA/cm2 at 40 C), because the more rapidly increasing CE (92.1% to 95.3%, 3.2 pp range) partially compensates for VE decline. Temperature modulates these landscapes by reducing resistance (improving VE) while increasing crossover (reducing CE). For Nafion 117, the net temperature effect on EE is slightly positive at low current density but diminishes at high current density. For Nafion 212, the net effect is positive across all current densities because its thinner profile yields a more significant absolute resistance reduction and a proportionally smaller crossover penalty.",
+      "reference_answer_points": [
+        "Nafion 117: EE decreases monotonically with current density",
+        "Nafion 212: EE has shallow maximum at intermediate current density",
+        "Nafion 117 CE range: 2.2 pp; Nafion 212 CE range: 3.2 pp",
+        "Temperature reduces resistance and increases crossover",
+        "Nafion 117: temp benefit diminishes at high current density",
+        "Nafion 212: temp benefit positive across all current densities"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-003",
+        "DOC01-FACT-004",
+        "DOC01-FACT-005",
+        "DOC01-FACT-006",
+        "DOC01-FACT-015",
+        "DOC01-FACT-018",
+        "DOC01-FACT-022"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-001",
+        "DOC01-EFU-003",
+        "DOC01-EFU-006",
+        "DOC01-EFU-008",
+        "DOC01-EFU-027",
+        "DOC01-EFU-028"
+      ]
+    },
+    {
+      "question_id": "DOC01-QA-012",
+      "source_doc_id": "DOC01",
+      "level": "L4",
+      "question_type": "mechanism explanation",
+      "question": "What is the activation energy for proton conduction in Nafion membranes, and what transport mechanism does this value indicate->",
+      "reference_answer": "The activation energy for proton conduction in Nafion is approximately 11.5 kJ/mol for both Nafion 117 and Nafion 212. This value is consistent with a vehicular proton transport mechanism, where protons migrate as hydronium ions through the hydrated hydrophilic clusters of the Nafion microstructure, rather than a Grotthuss hopping mechanism which would exhibit lower activation energy.",
+      "reference_answer_points": [
+        "Activation energy: 11.5 kJ/mol",
+        "Same for both Nafion 117 and Nafion 212",
+        "Consistent with vehicular proton transport mechanism",
+        "Protons migrate as hydronium ions through hydrated clusters"
+      ],
+      "expected_facts": [
+        "DOC01-FACT-016"
+      ],
+      "expected_efus": [
+        "DOC01-EFU-024"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-001",
+      "source_doc_id": "DOC02",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the ion exchange capacity of SNPBI-1.42 membrane->",
+      "reference_answer": "1.42 mmol/g",
+      "reference_answer_points": [
+        "SNPBI-1.42 IEC is 1.42 mmol/g"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-002",
+      "source_doc_id": "DOC02",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the area-specific resistance of SPTPC-2.59->",
+      "reference_answer": "0.82 ohm cm2",
+      "reference_answer_points": [
+        "SPTPC-2.59 area-specific resistance is 0.82 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-003",
+      "source_doc_id": "DOC02",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the vanadium permeability of all four non-fluorinated membranes tested in this study.",
+      "reference_answer": "PBI has the lowest vanadium permeability at 0.5 x 10^-7 cm2/s, followed by SNPBI-1.42 at 0.95 x 10^-7 cm2/s, then SPEEK/APK at 2.1 x 10^-7 cm2/s, and SPTPC-2.59 has the highest at 3.2 x 10^-7 cm2/s. The permeability increases with IEC, following a roughly linear relationship.",
+      "reference_answer_points": [
+        "PBI: 0.5 x 10^-7 cm2/s",
+        "SNPBI-1.42: 0.95 x 10^-7 cm2/s",
+        "SPEEK/APK: 2.1 x 10^-7 cm2/s",
+        "SPTPC-2.59: 3.2 x 10^-7 cm2/s",
+        "Permeability increases with IEC"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-024"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-014"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-004",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the energy efficiency of SNPBI-1.42 at 100 mA/cm2, and how does it compare to SPTPC-2.59 at the same current density->",
+      "reference_answer": "SNPBI-1.42 achieves EE of 80.5% at 100 mA/cm2 (CE 98.1%, VE 82.1%), while SPTPC-2.59 achieves EE of 81.4% at 100 mA/cm2 (CE 96.3%, VE 83.8%). Although SPTPC-2.59 has a slightly higher EE, SNPBI-1.42 achieves its EE through higher CE and lower vanadium permeability, suggesting better long-term cycling stability.",
+      "reference_answer_points": [
+        "SNPBI-1.42 EE: 80.5% (CE 98.1%, VE 82.1%)",
+        "SPTPC-2.59 EE: 81.4% (CE 96.3%, VE 83.8%)",
+        "SPTPC-2.59 has slightly higher EE",
+        "SNPBI-1.42 has higher CE suggesting better cycle stability"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-007",
+        "DOC02-FACT-008",
+        "DOC02-FACT-006",
+        "DOC02-FACT-019"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-008",
+        "DOC02-EFU-009",
+        "DOC02-EFU-011",
+        "DOC02-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-005",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "How does ion exchange capacity (IEC) affect the area-specific resistance of non-fluorinated VRFB membranes, and what is the approximate percolation threshold->",
+      "reference_answer": "Area resistance decreases approximately as IEC^-1.8 for IEC values above the percolation threshold of approximately 1.0 mmol/g. Below this threshold, resistance increases sharply as hydrophilic domains become disconnected. Above the threshold, increasing IEC creates interconnected proton transport channels that facilitate proton conduction. The SNPBI-1.42 (IEC 1.42 mmol/g, resistance 1.15 ohm cm2) sits near the center of the optimal range, while SPTPC-2.59 (IEC 2.59 mmol/g, resistance 0.82 ohm cm2) achieves lower resistance at the cost of higher vanadium permeability.",
+      "reference_answer_points": [
+        "Resistance decreases as IEC^-1.8 above percolation threshold",
+        "Percolation threshold: ~1.0 mmol/g",
+        "Below threshold: disconnected hydrophilic domains, high resistance",
+        "Above threshold: interconnected proton channels",
+        "SNPBI-1.42 at 1.42 mmol/g is in optimal range"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-022"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-006",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "multi-condition synthesis",
+      "question": "A VRFB system designer needs to select a non-fluorinated membrane for an application requiring maximum energy efficiency at 100 mA/cm2 with minimal capacity fade over long-term cycling. Which membrane should be selected and what is the rationale->",
+      "reference_answer": "SNPBI-1.42 should be selected. At 100 mA/cm2, SNPBI-1.42 achieves the highest EE among tested non-fluorinated membranes at 80.5% (CE 98.1%, VE 82.1%). Its optimal balance of moderate resistance (1.15 ohm cm2) and low vanadium permeability (0.95 x 10^-7 cm2/s) yields the highest selectivity. The high CE of 98.1% indicates minimal vanadium crossover, which should translate to slower capacity fade compared to SPTPC-2.59 (CE 96.3%, permeability 3.2 x 10^-7 cm2/s). Additionally, SNPBI-1.42 benefits from the chemically stable PBI backbone with controlled sulfonation, showing less than 5% IEC loss after 500 hours in accelerated degradation testing.",
+      "reference_answer_points": [
+        "Select SNPBI-1.42",
+        "EE: 80.5% at 100 mA/cm2 (highest among non-fluorinated)",
+        "CE: 98.1% (minimal crossover)",
+        "VE: 82.1%",
+        "Resistance: 1.15 ohm cm2, Permeability: 0.95 x 10^-7 cm2/s",
+        "Highest selectivity among tested membranes",
+        "Stable PBI backbone with <5% IEC loss in accelerated testing"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-007",
+        "DOC02-FACT-011",
+        "DOC02-FACT-017",
+        "DOC02-FACT-022"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-008",
+        "DOC02-EFU-013",
+        "DOC02-EFU-026"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-007",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "degradation analysis",
+      "question": "Explain the different degradation pathways for SNPBI-1.42 and SPTPC-2.59 in VRFB operation and their respective impacts on performance metrics.",
+      "reference_answer": "SNPBI-1.42 primarily degrades through gradual desulfonation under acidic oxidative conditions, which progressively reduces its IEC. This IEC loss directly increases area resistance and reduces voltage efficiency over extended cycling. The PBI backbone itself remains stable due to the electron-deficient benzimidazole ring. In contrast, SPTPC-2.59 suffers from backbone degradation where V(V) species attack the electron-rich terphenylene rings, causing chain scission. This creates additional free volume in the polymer matrix, which increases vanadium permeability and consequently reduces coulombic efficiency over time. The distinct degradation mechanisms mean that SNPBI-1.42 shows declining VE while SPTPC-2.59 shows declining CE during long-term operation.",
+      "reference_answer_points": [
+        "SNPBI-1.42: desulfonation reduces IEC",
+        "SNPBI-1.42: increased resistance, declining VE",
+        "PBI backbone stable against V(V) attack",
+        "SPTPC-2.59: backbone degradation, chain scission",
+        "SPTPC-2.59: increased free volume, higher permeability",
+        "SPTPC-2.59: declining CE over time"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-014",
+        "DOC02-FACT-015",
+        "DOC02-FACT-016",
+        "DOC02-FACT-018"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-019",
+        "DOC02-EFU-020",
+        "DOC02-EFU-021",
+        "DOC02-EFU-025"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-008",
+      "source_doc_id": "DOC02",
+      "level": "L5",
+      "question_type": "system design",
+      "question": "Based on the quantitative structure-property-performance relationships established in this study, what is the optimal IEC range for non-fluorinated VRFB membranes, and how do resistance and permeability quantitatively contribute to energy efficiency loss->",
+      "reference_answer": "The optimal IEC range for non-fluorinated VRFB membranes is 1.2-1.5 mmol/g, where membrane selectivity (proton conductivity to vanadium permeability ratio) reaches its maximum. SNPBI-1.42 with IEC of 1.42 mmol/g sits at the center of this range and achieves the highest EE (80.5% at 100 mA/cm2). Regression analysis shows that a 0.1 ohm cm2 increase in area resistance decreases EE by 0.4-0.5 percentage points (primarily through VE reduction), while a 1.0 x 10^-7 cm2/s increase in vanadium permeability decreases EE by 0.8-1.0 percentage points (primarily through CE reduction). The permeability contribution to EE loss is approximately twice as large as the resistance contribution per unit change, indicating that vanadium crossover has a more severe impact on overall performance than ohmic losses in the membrane systems studied.",
+      "reference_answer_points": [
+        "Optimal IEC range: 1.2-1.5 mmol/g",
+        "Maximum selectivity in this range",
+        "SNPBI-1.42 at 1.42 mmol/g is optimal",
+        "0.1 ohm cm2 resistance increase -> 0.4-0.5% EE loss",
+        "1.0 x 10^-7 cm2/s permeability increase -> 0.8-1.0% EE loss",
+        "Permeability impact is ~2x resistance impact per unit change"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-010",
+        "DOC02-FACT-022",
+        "DOC02-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-023",
+        "DOC02-EFU-024"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-009",
+      "source_doc_id": "DOC02",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does the performance of SPTPC-2.59 at 100 mA/cm2 compare to Nafion benchmark membranes in terms of voltage efficiency->",
+      "reference_answer": "SPTPC-2.59 achieves a VE of 83.8% at 100 mA/cm2, which is competitive with Nafion 212 and superior to Nafion 117. This is enabled by its very low area resistance of 0.82 ohm cm2, the lowest among all tested non-fluorinated membranes.",
+      "reference_answer_points": [
+        "SPTPC-2.59 VE at 100 mA/cm2: 83.8%",
+        "Competitive with Nafion 212",
+        "Superior to Nafion 117",
+        "Enabled by low resistance of 0.82 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-021",
+        "DOC02-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-029"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-010",
+      "source_doc_id": "DOC02",
+      "level": "L6",
+      "question_type": "cross-domain reasoning",
+      "question": "Analyze why PBI, despite having the highest coulombic efficiency and lowest vanadium permeability, is not recommended for VRFB operation above 60 mA/cm2. Then, explain how SNPBI-1.42 overcomes this limitation while maintaining favorable barrier properties.",
+      "reference_answer": "PBI has the highest CE (98.2-98.5%) and lowest vanadium permeability (0.5 x 10^-7 cm2/s) due to its dense aromatic polymer matrix that provides an effective barrier to vanadium ions. However, it also has the highest area resistance (2.45 ohm cm2) among all tested membranes because it relies on phosphoric acid doping rather than covalently bound sulfonic acid groups for proton conduction. This high resistance causes severe ohmic polarization losses: VE drops from 78.4% at 40 mA/cm2 to 68.2% at 200 mA/cm2, and EE falls from 76.8% to 66.9%. At 100 mA/cm2, the EE is only 71.8%, making PBI uncompetitive for practical operation. SNPBI-1.42 overcomes this by controlled post-sulfonation of the PBI backbone, introducing covalently bound sulfonic acid groups (IEC 1.42 mmol/g) that create continuous proton transport channels. This reduces resistance to 1.15 ohm cm2 (47% of PBI) while only modestly increasing permeability to 0.95 x 10^-7 cm2/s (1.9x PBI). The result is a dramatically improved VE (82.1% at 100 mA/cm2 vs 73.0% for PBI) with only a small CE reduction (98.1% vs 98.4%), yielding EE of 80.5% that exceeds Nafion benchmarks.",
+      "reference_answer_points": [
+        "PBI: highest CE 98.2-98.5%, lowest permeability 0.5e-7",
+        "PBI: highest resistance 2.45 ohm cm2",
+        "PBI VE drops to 68.2% at 200 mA/cm2, EE to 66.9%",
+        "PBI EE at 100 mA/cm2: only 71.8%",
+        "SNPBI-1.42 adds sulfonic acid groups via post-sulfonation",
+        "SNPBI-1.42 resistance: 1.15 ohm cm2 (53% reduction)",
+        "SNPBI-1.42 permeability: 0.95e-7 (still low)",
+        "SNPBI-1.42 VE: 82.1%, CE: 98.1%, EE: 80.5% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-003",
+        "DOC02-FACT-007",
+        "DOC02-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-028",
+        "DOC02-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-011",
+      "source_doc_id": "DOC02",
+      "level": "L3",
+      "question_type": "property retrieval",
+      "question": "What are the composition and preparation method of SPEEK/APK blend membranes->",
+      "reference_answer": "SPEEK/APK blend membranes are prepared by co-dissolving SPEEK (IEC = 1.8 mmol/g) and APK in N-methyl-2-pyrrolidone (NMP) at a 7:3 weight ratio, followed by solution casting and drying at 60 C under vacuum. The blend achieves an effective IEC of approximately 1.26 mmol/g.",
+      "reference_answer_points": [
+        "SPEEK:IEC 1.8 mmol/g",
+        "Weight ratio SPEEK:APK = 7:3",
+        "Solvent: NMP",
+        "Drying: 60 C under vacuum",
+        "Effective IEC: 1.26 mmol/g"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-016"
+      ]
+    },
+    {
+      "question_id": "DOC02-QA-012",
+      "source_doc_id": "DOC02",
+      "level": "L4",
+      "question_type": "trend analysis",
+      "question": "How does the water uptake of the four membranes correlate with their IEC values, and what are the implications for mechanical stability->",
+      "reference_answer": "Water uptake increases with IEC: PBI (0.0 mmol/g IEC, 12% uptake) < SNPBI-1.42 (1.42 mmol/g, 18%) < SPEEK/APK (1.26 mmol/g effective, 21%) < SPTPC-2.59 (2.59 mmol/g, 28%). The higher water uptake of SPTPC-2.59 creates significant swelling that may require careful control of compression forces during cell assembly to prevent excessive deformation. PBI, with its lowest water uptake (12%), exhibits the best dimensional stability. SNPBI-1.42 maintains moderate swelling (18%) that is compatible with stable long-term operation. Excessive swelling in high-IEC membranes can lead to dimensional instability, loss of electrode contact, and eventual mechanical failure.",
+      "reference_answer_points": [
+        "Water uptake increases with IEC",
+        "PBI: 12% (lowest, best dimensional stability)",
+        "SNPBI-1.42: 18% (moderate, compatible with stable operation)",
+        "SPEEK/APK: 21%",
+        "SPTPC-2.59: 28% (highest swelling)",
+        "High swelling risks dimensional instability and mechanical failure"
+      ],
+      "expected_facts": [
+        "DOC02-FACT-001",
+        "DOC02-FACT-002",
+        "DOC02-FACT-003",
+        "DOC02-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC02-EFU-001",
+        "DOC02-EFU-002"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-001",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the CE, VE, and EE of a ZBFB operated at 20 mA/cm2 with 0.3 M MEP->",
+      "reference_answer": "At 20 mA/cm2 with 0.3 M MEP, the ZBFB achieves a coulombic efficiency of 85.3%, a voltage efficiency of 75.2%, and an energy efficiency of 64.1%.",
+      "reference_answer_points": [
+        "CE: 85.3%",
+        "VE: 75.2%",
+        "EE: 64.1%"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-002",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the zinc dendrite growth rate at 80 mA/cm2 with 0.3 M MEP->",
+      "reference_answer": "At 0.3 M MEP and 80 mA/cm2, the zinc dendrite growth rate is 3.2 um/cycle.",
+      "reference_answer_points": [
+        "Dendrite growth rate: 3.2 um/cycle at 80 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-003",
+      "source_doc_id": "DOC07",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What bromine crossover rate is observed without MEP at 40 mA/cm2->",
+      "reference_answer": "Without MEP (0 M) at 40 mA/cm2, the bromine crossover rate is 0.14 mL/h, which is the highest among tested MEP concentrations at this current density.",
+      "reference_answer_points": [
+        "Crossover rate: 0.14 mL/h",
+        "Condition: 0 M MEP, 40 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-003"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-004",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does zinc utilization change over 200 cycles at 40 mA/cm2 with 0.3 M MEP, and what mechanism causes this degradation->",
+      "reference_answer": "At 40 mA/cm2 with 0.3 M MEP, zinc utilization degrades from an initial 72.1% at 10 cycles to 68.4% at 50 cycles, 63.7% at 100 cycles, and 58.2% at 200 cycles. This degradation is caused by accumulation of electrically isolated zinc deposits (dead zinc) that become mechanically detached from the conductive substrate and are no longer accessible for oxidation during discharge.",
+      "reference_answer_points": [
+        "Initial utilization: 72.1% at 10 cycles",
+        "Final utilization: 58.2% at 200 cycles",
+        "Mechanism: accumulation of dead zinc",
+        "Dead zinc forms from mechanically detached deposits"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-005",
+        "DOC07-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-005",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the CE-VE tradeoff in ZBFB when current density increases from 20 to 80 mA/cm2 at 0.3 M MEP. Which efficiency metric improves and which degrades->",
+      "reference_answer": "When current density increases from 20 to 80 mA/cm2 at 0.3 M MEP, CE improves from 85.3% to 92.1% because higher electrochemical reaction rates suppress bromine crossover-mediated self-discharge. However, VE degrades from 75.2% to 65.8% due to greater ohmic and activation overpotentials at higher current. EE remains relatively stable in the 60-64% range, changing from 64.1% to 60.6%.",
+      "reference_answer_points": [
+        "CE improves from 85.3% to 92.1%",
+        "VE degrades from 75.2% to 65.8%",
+        "EE changes from 64.1% to 60.6%",
+        "Higher current suppresses crossover but increases overpotentials"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-001",
+        "DOC07-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-001",
+        "DOC07-EFU-002",
+        "DOC07-EFU-009"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-006",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "What is the optimal MEP concentration for ZBFB operation at 40 mA/cm2, and how does it compare to 0 M and 0.5 M formulations in terms of CE and crossover rate->",
+      "reference_answer": "The optimal MEP concentration is 0.3 M, providing the best balance between CE (88.7%) and crossover rate (0.07 mL/h). Without MEP, CE is lower at 82.4% and crossover is much higher at 0.14 mL/h. At 0.5 M MEP, CE is marginally higher at 89.4% and crossover is lower at 0.05 mL/h, but the high viscosity increases ohmic resistance to 1.15 ohm cm2 and reduces VE to 69.2%, giving lower EE of 61.9%.",
+      "reference_answer_points": [
+        "Optimal MEP: 0.3 M",
+        "CE at 0.3 M: 88.7%",
+        "Crossover at 0.3 M: 0.07 mL/h",
+        "0 M: CE 82.4%, crossover 0.14 mL/h",
+        "0.5 M: CE 89.4% but resistance 1.15 ohm cm2, EE 61.9%"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-003",
+        "DOC07-FACT-004",
+        "DOC07-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-003",
+        "DOC07-EFU-004",
+        "DOC07-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-007",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "Explain the coupled degradation chain between bromine crossover and zinc dendrite growth in ZBFBs, including how the two mechanisms form a positive feedback loop and how this affects capacity fade over 200 cycles.",
+      "reference_answer": "Bromine crossover and zinc dendrite growth form a coupled degradation chain with positive feedback. Bromine crossing to the negative side reacts with deposited zinc (Zn + Br2 -> ZnBr2), consuming active material and roughening the electrode surface. This chemically induced roughness creates preferential nucleation sites that promote non-uniform current distribution and enhanced dendrite growth. Conversely, dendrites increase effective surface area and disrupt separator integrity, providing additional pathways for bromine crossover. This feedback loop causes capacity fade to accelerate over time: from 0.08% per cycle during cycles 1-50, to 0.12% per cycle during cycles 51-100, and 0.18% per cycle during cycles 101-200. Both the crossover rate and dendrite growth rate show corresponding acceleration during later cycling stages.",
+      "reference_answer_points": [
+        "Bromine crossover roughens zinc surface",
+        "Rough surface promotes dendrite nucleation",
+        "Dendrites disrupt separator increasing crossover",
+        "Positive feedback loop between the two mechanisms",
+        "Capacity fade accelerates: 0.08% -> 0.12% -> 0.18% per cycle",
+        "Crossover rate increases from 0.07 to 0.11 mL/h over 200 cycles",
+        "Dendrite growth rate increases from 1.2 to 1.7 um/cycle over 200 cycles"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-012",
+        "DOC07-EFU-013"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-008",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Based on the dendrite growth rates, ohmic resistance evolution, and cycle life data, what is the recommended operating current density range for a ZBFB with 0.3 M MEP, and why should 80 mA/cm2 be avoided->",
+      "reference_answer": "The recommended operating current density range is 40-60 mA/cm2. At 40 mA/cm2, the cell achieves stable operation for approximately 150 cycles with dendrite growth rate of 1.2 um/cycle and reasonable CE of 88.7%. At 60 mA/cm2, CE improves to 90.5% and cycle life is about 120 cycles with dendrite growth of 1.9 um/cycle. However, 80 mA/cm2 should be avoided because the dendrite growth rate reaches 3.2 um/cycle, which causes catastrophic short-circuit failure within 80-100 cycles as dendrites penetrate the 200 um separator. Additionally, at 80 mA/cm2 the ohmic resistance grows rapidly to 1.58 ohm cm2 over 200 cycles, and the high current promotes highly porous zinc deposits with poor adhesion.",
+      "reference_answer_points": [
+        "Recommended range: 40-60 mA/cm2",
+        "40 mA/cm2: ~150 cycle life, 1.2 um/cycle dendrite growth",
+        "60 mA/cm2: ~120 cycles, 1.9 um/cycle, CE 90.5%",
+        "80 mA/cm2: 80-100 cycle life, 3.2 um/cycle dendrite growth",
+        "At 80 mA/cm2 dendrites penetrate 200 um separator",
+        "Ohmic resistance at 80 mA/cm2 reaches 1.58 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-006",
+        "DOC07-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-007",
+        "DOC07-EFU-008",
+        "DOC07-EFU-019"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-009",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "What experimental evidence supports the claim that bromine crossover causes chemical degradation of the zinc electrode, and how does this evidence connect to the observed increase in charge transfer resistance->",
+      "reference_answer": "Three lines of experimental evidence support this claim. First, EIS measurements show charge transfer resistance at the zinc electrode increases systematically from 0.42 ohm cm2 at 10 cycles to 1.25 ohm cm2 at 200 cycles, correlating with surface roughening and dead zinc accumulation that reduces the electrochemically active surface area. Second, XRD analysis of cycled zinc electrodes reveals the emergence of ZnO and Zn(OH)2 phases, which form from the reaction of crossed-over bromine with zinc in the presence of trace water hydrolysis, and from localized pH excursions during deposition and stripping. Third, SEM post-mortem analysis consistently shows bromine staining of the negative electrode surface. These observations collectively explain why higher bromine crossover rates lead to faster capacity degradation and increased electrode polarization.",
+      "reference_answer_points": [
+        "EIS: charge transfer resistance increases from 0.42 to 1.25 ohm cm2",
+        "XRD: ZnO and Zn(OH)2 phases form on cycled electrodes",
+        "ZnO forms from bromine attack on zinc",
+        "Zn(OH)2 forms from localized pH excursions",
+        "SEM shows bromine staining on negative electrode",
+        "Higher crossover correlates with faster degradation"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-010",
+      "source_doc_id": "DOC07",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the relationship between MEP concentration and ohmic resistance at 40 mA/cm2 and 50 cycles, and what causes this relationship->",
+      "reference_answer": "At 40 mA/cm2 and 50 cycles, ohmic resistance increases with MEP concentration: 0.75 ohm cm2 at 0 M, 0.82 ohm cm2 at 0.1 M, 0.89 ohm cm2 at 0.3 M, and 1.15 ohm cm2 at 0.5 M. This relationship is caused by the increased viscosity of concentrated MEP solutions, which reduces ionic mobility and increases the diffusive boundary layer thickness at electrode surfaces. The substantial resistance increase at 0.5 M MEP (1.15 ohm cm2) reflects the viscosity penalty that outweighs the marginal benefit in CE improvement.",
+      "reference_answer_points": [
+        "0 M: 0.75 ohm cm2",
+        "0.1 M: 0.82 ohm cm2",
+        "0.3 M: 0.89 ohm cm2",
+        "0.5 M: 1.15 ohm cm2",
+        "Cause: increased electrolyte viscosity",
+        "High viscosity reduces ionic mobility"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-011",
+      "source_doc_id": "DOC07",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Considering the coupled degradation mechanisms, the MEP degradation rate, and the CE-VE tradeoff, what comprehensive operating strategy would maximize the 200-cycle energy throughput of a ZBFB->",
+      "reference_answer": "To maximize 200-cycle energy throughput, a comprehensive strategy should incorporate four elements. First, operate at 40-60 mA/cm2 to balance CE (88-90%) against dendrite growth rate (1.2-1.9 um/cycle), avoiding both the high crossover at 20 mA/cm2 and the rapid dendrite failure at 80 mA/cm2. Second, use 0.3 M MEP as the optimal concentration that suppresses crossover to 0.07 mL/h without the excessive viscosity penalty of 0.5 M. Third, implement periodic electrolyte refreshment to compensate for MEP degradation from 0.3 M to 0.22 M over 200 cycles, which would prevent the accelerated crossover observed in later cycling stages. Fourth, employ separator materials resistant to bromine chemical attack and dendrite penetration to mitigate the positive feedback loop between crossover and dendrite growth. This combined approach targets all three degradation mechanisms simultaneously rather than addressing them in isolation.",
+      "reference_answer_points": [
+        "Operate at 40-60 mA/cm2 for CE-dendrite balance",
+        "Use 0.3 M MEP for optimal crossover-viscosity tradeoff",
+        "Periodically refresh electrolyte to compensate for MEP degradation",
+        "Use bromine-resistant separator materials",
+        "Address all three mechanisms: crossover, dendrites, MEP degradation"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-007",
+        "DOC07-FACT-008",
+        "DOC07-FACT-010",
+        "DOC07-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-010",
+        "DOC07-EFU-013",
+        "DOC07-EFU-017",
+        "DOC07-EFU-018"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-001",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the CE, VE, and EE of an SLFB operated at 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4->",
+      "reference_answer": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the SLFB achieves a coulombic efficiency of 85.2%, a voltage efficiency of 82.4%, and an energy efficiency of 70.2%.",
+      "reference_answer_points": [
+        "CE: 85.2%",
+        "VE: 82.4%",
+        "EE: 70.2%"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-002",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the PbO2 passivation layer thickness at 200 cycles for the baseline condition of 20 mA/cm2, 1.0 mol/L Pb2+, and 1.5 mol/L H2SO4->",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the PbO2 passivation layer thickness reaches 5.8 um at 200 cycles, increasing from 2.5 um at 50 cycles and 4.1 um at 100 cycles.",
+      "reference_answer_points": [
+        "Passivation thickness at 200 cycles: 5.8 um",
+        "At 50 cycles: 2.5 um",
+        "At 100 cycles: 4.1 um"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-003",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the oxygen evolution rate at 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4 during early cycling->",
+      "reference_answer": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the oxygen evolution rate reaches 4.2 mL/h during early cycling, which is the highest rate observed among the tested conditions.",
+      "reference_answer_points": [
+        "Oxygen evolution rate: 4.2 mL/h",
+        "Condition: 40 mA/cm2, 1.0 mol/L Pb2+, 1.5 mol/L H2SO4"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-004",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does increasing Pb2+ concentration from 0.5 to 1.5 mol/L affect CE, capacity retention, passivation thickness, and oxygen evolution rate at 20 mA/cm2 and 1.5 mol/L H2SO4->",
+      "reference_answer": "At 20 mA/cm2 and 1.5 mol/L H2SO4, increasing Pb2+ from 0.5 to 1.5 mol/L improves CE from 80.1% to 86.5%, increases capacity retention at 200 cycles from 68.4% to 82.1%, decreases passivation layer thickness from 7.2 um to 4.9 um, and reduces oxygen evolution rate from 3.4 mL/h to 2.2 mL/h. These improvements are attributed to enhanced mass transport, higher exchange current density, and more favorable PbO2 dissolution thermodynamics at higher Pb2+ concentrations.",
+      "reference_answer_points": [
+        "CE improves from 80.1% to 86.5%",
+        "Capacity retention improves from 68.4% to 82.1%",
+        "Passivation decreases from 7.2 um to 4.9 um",
+        "O2 evolution decreases from 3.4 to 2.2 mL/h",
+        "Higher Pb2+ enhances mass transport and dissolution kinetics"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-003",
+        "DOC08-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-003",
+        "DOC08-EFU-004",
+        "DOC08-EFU-020"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-005",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does H2SO4 concentration affect capacity retention and passivation layer thickness at 20 mA/cm2 with 1.0 mol/L Pb2+->",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+, increasing H2SO4 concentration from 1.0 to 2.0 mol/L improves capacity retention at 200 cycles from 65.7% to 79.3%, decreases passivation layer thickness from 7.8 um to 5.2 um, and reduces oxygen evolution rate from 3.5 mL/h to 2.4 mL/h. The 1.5 mol/L H2SO4 condition shows intermediate values: 76.8% capacity retention, 5.8 um passivation, and 2.7 mL/h oxygen evolution. These trends confirm the beneficial effect of higher acid concentration on both conductivity and PbO2 dissolution.",
+      "reference_answer_points": [
+        "1.0 mol/L H2SO4: 65.7% retention, 7.8 um passivation, 3.5 mL/h O2",
+        "1.5 mol/L H2SO4: 76.8% retention, 5.8 um passivation, 2.7 mL/h O2",
+        "2.0 mol/L H2SO4: 79.3% retention, 5.2 um passivation, 2.4 mL/h O2",
+        "Higher acid improves conductivity and PbO2 dissolution"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-010"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-006",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the CE, EE, and capacity retention between the best and worst electrolyte formulations at 20 mA/cm2 and 200 cycles.",
+      "reference_answer": "The best formulation (1.5 mol/L Pb2+, 2.0 mol/L H2SO4) achieves CE of 86.2%, EE of 70.8%, and capacity retention of 85.3% at 200 cycles with a passivation layer of 4.7 um and oxygen evolution rate of 2.0 mL/h. The worst formulation (0.5 mol/L Pb2+, 1.0 mol/L H2SO4) shows CE of 76.8%, EE of 58.2%, and capacity retention of 63.4% with a passivation layer of 8.1 um and oxygen evolution rate of 3.6 mL/h. The difference of 21.9 percentage points in capacity retention highlights the critical importance of electrolyte composition optimization.",
+      "reference_answer_points": [
+        "Best: 1.5 mol/L Pb2+, 2.0 mol/L H2SO4",
+        "Best metrics: CE 86.2%, EE 70.8%, retention 85.3%",
+        "Worst: 0.5 mol/L Pb2+, 1.0 mol/L H2SO4",
+        "Worst metrics: CE 76.8%, EE 58.2%, retention 63.4%",
+        "Difference in retention: 21.9 percentage points"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-003",
+        "DOC08-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-007",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "Explain the coupled degradation chain between PbO2 passivation and oxygen evolution in SLFBs, including how it causes accelerating capacity fade.",
+      "reference_answer": "PbO2 passivation and oxygen evolution form a self-reinforcing degradation chain. As passivation develops during cycling, the effective surface area for Pb2+ oxidation decreases, forcing the electrode potential to more positive values to maintain the applied current. These elevated potentials accelerate oxygen evolution, which generates local acidity that alters PbO2 dissolution kinetics and promotes the formation of more stable, less soluble PbO2 polymorphs (particularly beta-PbO2) that resist subsequent dissolution. This mutual reinforcement causes capacity fade to accelerate over time: from 0.10% per cycle during cycles 1-50, to 0.14% per cycle during cycles 51-100, and 0.20% per cycle during cycles 101-200. The progressively increasing fraction of charge current consumed by oxygen evolution rather than productive PbO2 formation directly reduces coulombic efficiency and available discharge capacity.",
+      "reference_answer_points": [
+        "Passivation decreases active surface area",
+        "Higher overpotential needed to maintain current",
+        "Elevated potentials accelerate O2 evolution",
+        "O2 evolution generates local acidity",
+        "Acidity promotes less soluble PbO2 polymorphs",
+        "Beta-PbO2 increases from 45% to 78%",
+        "Fade accelerates: 0.10% -> 0.14% -> 0.20% per cycle"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-014",
+        "DOC08-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-008",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "What is the recommended operating strategy for maximizing SLFB cycle life, considering the coupled degradation mechanisms, the effect of electrolyte composition, and the current density dependence of all degradation metrics->",
+      "reference_answer": "To maximize SLFB cycle life, a comprehensive strategy should incorporate three elements. First, use the optimal electrolyte composition of 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4, which achieves the best balance between CE (86.2%), VE (82.1%), EE (70.8%), and capacity retention (85.3% at 200 cycles). This formulation minimizes both passivation growth (4.7 um) and oxygen evolution (2.0 mL/h). Second, operate at 10-20 mA/cm2 to avoid the severe degradation at higher current densities: at 40 mA/cm2, passivation reaches 8.3 um and CE drops to 78.3%. Third, implement mitigation strategies that address both coupled mechanisms simultaneously, such as pulse charging to periodically dissolve passivation layers and additives that stabilize alpha-PbO2 relative to the less soluble beta-phase. The coupled nature of the degradation means that addressing only one mechanism (e.g., only suppressing oxygen evolution) will be insufficient, as the remaining passivation growth will still drive overpotential increase and eventual oxygen evolution acceleration.",
+      "reference_answer_points": [
+        "Use 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 electrolyte",
+        "Operate at 10-20 mA/cm2",
+        "At 20 mA/cm2: CE 86.2%, EE 70.8%, retention 85.3%",
+        "Implement pulse charging to dissolve passivation",
+        "Use additives stabilizing alpha-PbO2",
+        "Address both mechanisms simultaneously due to coupling"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-007",
+        "DOC08-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-009",
+        "DOC08-EFU-011",
+        "DOC08-EFU-014",
+        "DOC08-EFU-019"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-009",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "What experimental evidence from XRD, XPS, and CV supports the passivation mechanism, and how does this evidence explain the progressive difficulty in dissolving the PbO2 layer->",
+      "reference_answer": "Three analytical techniques provide complementary evidence. XRD analysis shows beta-PbO2 (tetragonal) content increases from 45% in fresh deposits to 78% after 200 cycles, while alpha-PbO2 (orthorhombic) decreases correspondingly. Since beta-PbO2 is more electrochemically stable and less soluble than alpha-PbO2, this phase transformation directly explains the progressive dissolution difficulty. XPS reveals PbSO4 formation within the passivation layer, indicating sulfate incorporation that adds electrochemical inactivity; the PbSO4 fraction increases at lower H2SO4 concentrations where pH excursions are more severe. CV analysis shows a 45% reduction in Pb2+/PbO2 redox peak current after 200 cycles and an increase in peak potential separation from 85 mV to 152 mV, confirming both the loss of active surface area and the slower electrode kinetics due to the resistive passivation layer. Together, these data establish that passivation involves not simple PbO2 accumulation but rather a complex transformation to more stable, less active phases.",
+      "reference_answer_points": [
+        "XRD: beta-PbO2 increases from 45% to 78%",
+        "Beta-PbO2 is less soluble than alpha-PbO2",
+        "XPS: PbSO4 forms in passivation layer",
+        "CV: 45% reduction in redox peak current",
+        "CV: peak separation increases from 85 to 152 mV",
+        "Passivation involves phase transformation, not just accumulation"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-016",
+        "DOC08-EFU-017"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-010",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does the oxygen evolution rate change over 200 cycles at the baseline condition, and what causes this trend->",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the oxygen evolution rate increases progressively with cycling: 2.1 mL/h during cycles 1-10, 2.3 mL/h during cycles 41-50, 2.7 mL/h during cycles 91-100, and 3.0 mL/h during cycles 191-200. This progressive increase is attributed to the growth of the PbO2 passivation layer, which alters the effective catalytic surface for water oxidation. The PbO2 surface that develops during cycling exhibits higher catalytic activity for oxygen evolution compared to the fresh carbon substrate, analogous to dimensionally stable anodes in chlor-alkali electrolysis. The passivation layer also forces higher electrode potentials, which further accelerate the oxygen evolution reaction.",
+      "reference_answer_points": [
+        "Cycles 1-10: 2.1 mL/h",
+        "Cycles 41-50: 2.3 mL/h",
+        "Cycles 91-100: 2.7 mL/h",
+        "Cycles 191-200: 3.0 mL/h",
+        "Cause: PbO2 passivation layer growth",
+        "Passivated PbO2 has higher O2 evolution catalytic activity",
+        "Higher overpotentials also accelerate O2 evolution"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC08-QA-011",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Considering the current density effect on all degradation metrics (CE, VE, EE, passivation thickness, oxygen evolution rate, and capacity retention), what current density would you recommend for an SLFB requiring 200-cycle life, and what tradeoffs would this choice involve->",
+      "reference_answer": "For a 200-cycle life requirement, I recommend 20 mA/cm2 as the maximum acceptable current density. At this current density with optimal electrolyte (1.5 mol/L Pb2+, 2.0 mol/L H2SO4), the system achieves CE of 86.2%, EE of 70.3%, and capacity retention of 82.1%. The passivation layer reaches 4.9 um and oxygen evolution is 2.2 mL/h, both manageable levels. At 10 mA/cm2, even better performance is achieved (CE 87.4%, EE 72.1%, retention 87.4%) but at lower power density. The critical tradeoff is between power density and longevity: at 30 mA/cm2, capacity retention drops to 68.5% at 200 cycles with 7.1 um passivation, and at 40 mA/cm2 it falls to 62.8% with 8.3 um passivation. The 20 mA/cm2 choice represents the best compromise, delivering acceptable power density while maintaining capacity retention above 80% with the optimal electrolyte. If higher power density is essential, operating at 30 mA/cm2 with 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 may be acceptable though retention drops below 70%.",
+      "reference_answer_points": [
+        "Recommended: 20 mA/cm2 for 200-cycle life",
+        "At 20 mA/cm2: CE 86.2%, EE 70.3%, retention 82.1%",
+        "At 10 mA/cm2: better metrics but lower power",
+        "At 30 mA/cm2: retention drops to 68.5%",
+        "At 40 mA/cm2: retention drops to 62.8%",
+        "Tradeoff: power density vs longevity"
+      ],
+      "expected_facts": [
+        "DOC08-FACT-003",
+        "DOC08-FACT-009",
+        "DOC08-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC08-EFU-003",
+        "DOC08-EFU-006",
+        "DOC08-EFU-019"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-011",
+      "source_doc_id": "DOC03",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the voltage efficiency of the C-C electrode at 100 mA/cm2->",
+      "reference_answer": "The C-C electrode exhibits a voltage efficiency of 70% at 100 mA/cm2, which is the lowest among the three tested electrodes due to its high charge-transfer resistance of 3.82 ohm cm2.",
+      "reference_answer_points": [
+        "VE is 70%",
+        "Condition: 100 mA/cm2",
+        "Lowest among three electrodes",
+        "Attributed to high Rct of 3.82 ohm cm2"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-002",
+        "DOC03-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-012",
+      "source_doc_id": "DOC03",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the surface roughness (Ra) of the MC-C electrode->",
+      "reference_answer": "The MC-C electrode has a surface roughness Ra of 11.2 um, which represents an increase from 8.4 um for the untreated C-C electrode due to mild acid etching that introduces surface defects and microporosity.",
+      "reference_answer_points": [
+        "MC-C Ra: 11.2 um",
+        "C-C Ra: 8.4 um (baseline)",
+        "Increase due to acid etching",
+        "Surface defects and microporosity introduced"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-013",
+      "source_doc_id": "DOC03",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "At 100 mA/cm2, how does the coulombic efficiency of the BMC-C electrode compare to that of the C-C electrode, and what accounts for this difference->",
+      "reference_answer": "At 100 mA/cm2, the BMC-C electrode achieves a coulombic efficiency of 97%, which is 3 percentage points higher than the C-C electrode's 94%. The improved CE in BMC-C is attributed to its lower charge-transfer resistance (1.34 vs 3.82 ohm cm2) and enhanced surface hydrophilicity (contact angle 92.8 vs 130.4 deg), which together reduce concentration polarization and minimize vanadium crossover through more efficient electrochemical reactions at the electrode surface.",
+      "reference_answer_points": [
+        "BMC-C CE: 97%, C-C CE: 94%",
+        "Difference: 3 percentage points",
+        "BMC-C Rct: 1.34 ohm cm2 vs C-C: 3.82 ohm cm2",
+        "BMC-C contact angle: 92.8 deg vs C-C: 130.4 deg",
+        "Lower polarization and reduced crossover"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-009",
+        "DOC03-FACT-001",
+        "DOC03-FACT-014",
+        "DOC03-FACT-006",
+        "DOC03-FACT-013",
+        "DOC03-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-007",
+        "DOC03-EFU-006",
+        "DOC03-EFU-003",
+        "DOC03-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-014",
+      "source_doc_id": "DOC03",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the percentage reduction in charge-transfer resistance when comparing MC-C to C-C, and what modification process enables this reduction->",
+      "reference_answer": "The MC-C electrode achieves a 43.2% reduction in charge-transfer resistance compared to C-C, decreasing from 3.82 ohm cm2 to 2.17 ohm cm2. This reduction is enabled by mild acid etching with HNO3 at 80 C, which introduces oxygen-containing functional groups and increases surface polarity, thereby improving wettability and creating additional active sites for vanadium redox reactions.",
+      "reference_answer_points": [
+        "43.2% reduction from C-C to MC-C",
+        "Rct decreases from 3.82 to 2.17 ohm cm2",
+        "Mild acid etching with HNO3 at 80 C",
+        "Oxygen-containing functional groups introduced",
+        "Improved wettability and additional active sites"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-001",
+        "DOC03-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-005",
+        "DOC03-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-015",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "At 100 mA/cm2, which electrode simultaneously achieves the lowest contact angle, lowest charge-transfer resistance, and highest energy efficiency, and what are the specific values for each metric->",
+      "reference_answer": "The BMC-C electrode simultaneously achieves the best performance across all three metrics at 100 mA/cm2: the lowest contact angle of 92.8 deg (vs 102 deg for MC-C and 130.4 deg for C-C), the lowest charge-transfer resistance of 1.34 ohm cm2 (vs 2.17 ohm cm2 for MC-C and 3.82 ohm cm2 for C-C), and the highest energy efficiency of 82.5% (vs 73.9% for MC-C and 65.8% for C-C). These combined improvements result from the synergistic effects of boron doping and thermal treatment at 750 C, which enhance both surface hydrophilicity and electronic structure for catalytic activity.",
+      "reference_answer_points": [
+        "BMC-C is the best electrode across all three metrics",
+        "Contact angle: 92.8 deg (lowest)",
+        "Rct: 1.34 ohm cm2 (lowest)",
+        "EE: 82.5% at 100 mA/cm2 (highest)",
+        "Synergistic boron doping + thermal treatment at 750 C"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-002",
+        "DOC03-FACT-003",
+        "DOC03-FACT-001",
+        "DOC03-FACT-014",
+        "DOC03-FACT-006",
+        "DOC03-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-003",
+        "DOC03-EFU-006",
+        "DOC03-EFU-009"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-016",
+      "source_doc_id": "DOC03",
+      "level": "L3",
+      "question_type": "multi-parameter analysis",
+      "question": "How do the combined modifications of acid etching and boron doping sequentially influence surface wettability, charge-transfer kinetics, and ultimately energy efficiency in the progression from C-C to MC-C to BMC-C->",
+      "reference_answer": "The progression from C-C to MC-C to BMC-C demonstrates a systematic improvement chain: (1) Acid etching in MC-C reduces contact angle from 130.4 deg to 102 deg by introducing oxygen functional groups, while BMC-C further reduces it to 92.8 deg through boron incorporation that adds polar sites and modifies electronic structure. (2) For charge-transfer resistance, MC-C achieves 43.2% reduction (3.82 to 2.17 ohm cm2) through surface roughening and oxygen groups, while BMC-C achieves 64.9% reduction (3.82 to 1.34 ohm cm2) via boron's ability to lower activation energy and create favorable adsorption sites. (3) These combined effects translate to EE improvement from 65.8% (C-C) to 73.9% (MC-C) to 82.5% (BMC-C) at 100 mA/cm2, with CE increasing from 94% to 96% to 97% and VE from 70% to 77% to 85%.",
+      "reference_answer_points": [
+        "Contact angle: 130.4 -> 102 -> 92.8 deg",
+        "Rct: 3.82 -> 2.17 -> 1.34 ohm cm2",
+        "EE: 65.8% -> 73.9% -> 82.5% at 100 mA/cm2",
+        "Acid etching introduces oxygen groups (MC-C)",
+        "Boron doping adds polar sites + modifies electronic structure (BMC-C)",
+        "CE and VE both improve progressively"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-002",
+        "DOC03-FACT-003",
+        "DOC03-FACT-001",
+        "DOC03-FACT-009",
+        "DOC03-FACT-014",
+        "DOC03-FACT-006",
+        "DOC03-FACT-013",
+        "DOC03-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-009",
+        "DOC03-EFU-003",
+        "DOC03-EFU-006",
+        "DOC03-EFU-007",
+        "DOC03-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-017",
+      "source_doc_id": "DOC03",
+      "level": "L4",
+      "question_type": "comparison",
+      "question": "Perform a comprehensive five-dimensional comparison of C-C, MC-C, and BMC-C electrodes across contact angle, charge-transfer resistance, coulombic efficiency, voltage efficiency, and energy efficiency at 100 mA/cm2. Which electrode is optimal for each dimension and what is the overall performance ranking->",
+      "reference_answer": "The comprehensive five-dimensional comparison at 100 mA/cm2 shows BMC-C is optimal in all dimensions: (1) Contact angle: C-C 130.4 deg > MC-C 102 deg > BMC-C 92.8 deg, with BMC-C being most hydrophilic; (2) Charge-transfer resistance: C-C 3.82 > MC-C 2.17 > BMC-C 1.34 ohm cm2, with BMC-C having fastest kinetics; (3) Coulombic efficiency: C-C 94% < MC-C 96% < BMC-C 97%; (4) Voltage efficiency: C-C 70% < MC-C 77% < BMC-C 85%; (5) Energy efficiency: C-C 65.8% < MC-C 73.9% < BMC-C 82.5%. BMC-C achieves the highest EE with a 16.7 percentage point advantage over C-C. The overall ranking is BMC-C > MC-C > C-C, with each modification step (acid etching then boron doping) providing monotonic improvement across all metrics.",
+      "reference_answer_points": [
+        "Contact angle ranking: C-C (130.4) > MC-C (102) > BMC-C (92.8) deg",
+        "Rct ranking: C-C (3.82) > MC-C (2.17) > BMC-C (1.34) ohm cm2",
+        "CE ranking: C-C (94%) < MC-C (96%) < BMC-C (97%)",
+        "VE ranking: C-C (70%) < MC-C (77%) < BMC-C (85%)",
+        "EE ranking: C-C (65.8%) < MC-C (73.9%) < BMC-C (82.5%)",
+        "BMC-C optimal in all five dimensions",
+        "Overall: BMC-C > MC-C > C-C"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-002",
+        "DOC03-FACT-003",
+        "DOC03-FACT-001",
+        "DOC03-FACT-009",
+        "DOC03-FACT-011",
+        "DOC03-FACT-014",
+        "DOC03-FACT-006",
+        "DOC03-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-009",
+        "DOC03-EFU-008",
+        "DOC03-EFU-007",
+        "DOC03-EFU-006",
+        "DOC03-EFU-003",
+        "DOC03-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC03-QA-018",
+      "source_doc_id": "DOC03",
+      "level": "L5",
+      "question_type": "mechanism explanation",
+      "question": "Trace the complete causal mechanism chain from surface modification (acid etching and boron doping) through physical property changes to electrochemical performance improvements and ultimately to energy efficiency gains in the BMC-C electrode relative to C-C.",
+      "reference_answer": "The complete causal chain is: (1) Mild acid etching introduces oxygen-containing functional groups and creates surface defects, increasing roughness from Ra 8.4 um to 11.2 um and reducing contact angle from 130.4 deg to 102 deg. (2) Boron doping at 750 C further incorporates boron heteroatoms into the carbon lattice, increasing roughness to Ra 14.7 um and reducing contact angle to 92.8 deg. (3) The increased roughness creates additional triple-phase boundaries that enhance geometric current density capability. (4) Boron doping modifies electronic structure, lowering activation energy for electron transfer and creating favorable active sites for vanadium ion adsorption. (5) These combined effects reduce Rct from 3.82 ohm cm2 (C-C) to 2.17 ohm cm2 (MC-C) to 1.34 ohm cm2 (BMC-C). (6) Lower Rct reduces overpotential, increasing VE from 70% (C-C) to 77% (MC-C) to 85% (BMC-C). (7) Improved surface hydrophilicity enhances electrolyte access, increasing CE from 94% to 96% to 97%. (8) The combined CE and VE improvements yield EE gains from 65.8% (C-C) to 73.9% (MC-C) to 82.5% (BMC-C) at 100 mA/cm2.",
+      "reference_answer_points": [
+        "Acid etching: oxygen groups + surface defects, Ra 8.4 -> 11.2 um",
+        "Boron doping: B heteroatoms in carbon lattice, Ra -> 14.7 um",
+        "Contact angle: 130.4 -> 102 -> 92.8 deg",
+        "Triple-phase boundaries increase geometric current density",
+        "Electronic structure modification lowers activation energy",
+        "Rct: 3.82 -> 2.17 -> 1.34 ohm cm2",
+        "VE: 70% -> 77% -> 85%",
+        "CE: 94% -> 96% -> 97%",
+        "EE: 65.8% -> 73.9% -> 82.5% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC03-FACT-006",
+        "DOC03-FACT-010",
+        "DOC03-FACT-004",
+        "DOC03-FACT-002",
+        "DOC03-FACT-003",
+        "DOC03-FACT-001",
+        "DOC03-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC03-EFU-006",
+        "DOC03-EFU-020",
+        "DOC03-EFU-019",
+        "DOC03-EFU-010",
+        "DOC03-EFU-009",
+        "DOC03-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-011",
+      "source_doc_id": "DOC04",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the range of net energy efficiency achieved at 200 mA/cm2 with 1.6 mol/L vanadium concentration and flow rates of 60-100 mL/min->",
+      "reference_answer": "At 200 mA/cm2 with 1.6 mol/L vanadium concentration and flow rates of 60-100 mL/min, the net energy efficiency ranges from 74% to 78%. This represents a moderate efficiency reduction compared to the 80% net EE achieved at 100 mA/cm2, reflecting the increased overpotential and kinetic limitations at higher current density.",
+      "reference_answer_points": [
+        "Net EE range: 74-78%",
+        "Condition: 200 mA/cm2",
+        "Vanadium concentration: 1.6 mol/L",
+        "Flow rate: 60-100 mL/min",
+        "Lower than ~80% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-009"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-012",
+      "source_doc_id": "DOC04",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "Why is H2SO4 concentration of 3.0 mol/L considered optimal for VRFB electrolyte performance->",
+      "reference_answer": "H2SO4 concentration of 3.0 mol/L is considered optimal because it provides the best balance between proton conductivity and viscosity. At this concentration, proton conductivity is substantially improved, enabling faster reaction kinetics and lower charge-transfer overpotential. Additionally, 3.0 mol/L H2SO4 provides adequate buffering capacity to maintain vanadium ion solubility across the full state-of-charge range, preventing precipitation issues that occur at lower acid concentrations.",
+      "reference_answer_points": [
+        "Optimal balance between proton conductivity and viscosity",
+        "Faster reaction kinetics",
+        "Lower charge-transfer overpotential",
+        "Adequate buffering capacity",
+        "Maintains vanadium ion solubility across full SOC"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-004",
+        "DOC04-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-013",
+      "source_doc_id": "DOC04",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does increasing the flow rate from 10 mL/min to 100 mL/min affect pumping power, mass transfer limitations, and the trade-off between electrochemical performance and parasitic losses->",
+      "reference_answer": "Increasing flow rate from 10 mL/min to 100 mL/min has the following effects: (1) Pumping power increases nonlinearly from approximately 5 mW to 50 mW, representing a 10-fold increase. (2) At 10 mL/min, significant mass transfer limitations occur, particularly at higher current densities, where vanadium species depletion at the electrode surface causes elevated concentration overpotential. At 100 mL/min, mass transfer is substantially improved, minimizing concentration polarization. (3) However, the trade-off is that while gross EE increases with flow rate due to better mass transfer, net EE peaks at intermediate flow rates (40-60 mL/min) because the additional pumping energy at 100 mL/min partially offsets the electrochemical gains, creating an optimal operating window that balances performance with parasitic losses.",
+      "reference_answer_points": [
+        "Pumping power: 5 mW at 10 mL/min to 50 mW at 100 mL/min",
+        "10-fold increase in pumping power",
+        "10 mL/min: mass transfer limitations at high current density",
+        "100 mL/min: minimized concentration polarization",
+        "Net EE peaks at intermediate flow rates (40-60 mL/min)",
+        "Diminishing returns beyond optimal flow rate"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-001",
+        "DOC04-FACT-002",
+        "DOC04-FACT-005",
+        "DOC04-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-001",
+        "DOC04-EFU-006",
+        "DOC04-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-014",
+      "source_doc_id": "DOC04",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "What is the difference between gross EE and net EE in this study, and why does net EE always fall below gross EE across all tested conditions->",
+      "reference_answer": "Gross EE ranges from 78% to 87% while net EE ranges from 72% to 83% across all tested conditions. Net EE always falls below gross EE because net EE accounts for pumping energy consumption as a parasitic loss. The difference between gross and net EE represents the energy consumed by the peristaltic pump to circulate electrolyte, which ranges from approximately 5 mW at 10 mL/min to 50 mW at 100 mL/min. The pumping penalty is most significant at high flow rates where improved mass transfer (which increases gross EE) is partially or fully offset by increased pumping power, explaining why the gap between gross and net EE widens at elevated flow rates.",
+      "reference_answer_points": [
+        "Gross EE range: 78-87%",
+        "Net EE range: 72-83%",
+        "Net EE < Gross EE due to pumping losses",
+        "Pumping power: 5-50 mW depending on flow rate",
+        "Gap widens at high flow rates",
+        "Pumping loss is parasitic energy consumption"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-002",
+        "DOC04-FACT-001",
+        "DOC04-FACT-005",
+        "DOC04-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-002",
+        "DOC04-EFU-003",
+        "DOC04-EFU-010"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-015",
+      "source_doc_id": "DOC04",
+      "level": "L3",
+      "question_type": "degradation analysis",
+      "question": "At the condition of 3.0 mol/L vanadium with 2.0 mol/L H2SO4, what specific degradation mechanism occurs during prolonged charge cycles at high state of charge, and how does it affect system performance->",
+      "reference_answer": "At 3.0 mol/L vanadium with 2.0 mol/L H2SO4, vanadium precipitation occurs during prolonged charge cycles approaching upper state-of-charge limits. The degradation mechanism proceeds as follows: (1) The low H2SO4 concentration (2.0 mol/L) provides insufficient proton concentration and buffering capacity to maintain vanadium ion solubility at high SOC. (2) As charging progresses, V(V) species concentration increases and the electrolyte pH shifts, reducing solubility. (3) Vanadium pentoxide (V2O5) or other insoluble vanadium compounds precipitate from solution, reducing the amount of active material available for electrochemical reactions. (4) The precipitates can block flow channels, increase pressure drop, and cause non-uniform electrolyte distribution, leading to capacity fade and reduced cycle life.",
+      "reference_answer_points": [
+        "Vanadium precipitation occurs at high SOC",
+        "Condition: 3.0 mol/L V + 2.0 mol/L H2SO4",
+        "Low H2SO4 gives insufficient proton concentration and buffering",
+        "V(V) concentration increases during charging",
+        "V2O5 or insoluble vanadium compounds precipitate",
+        "Precipitates block flow channels",
+        "Causes capacity fade and reduced cycle life"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-007",
+        "DOC04-FACT-015",
+        "DOC04-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-015",
+        "DOC04-EFU-019"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-016",
+      "source_doc_id": "DOC04",
+      "level": "L3",
+      "question_type": "degradation analysis",
+      "question": "At 5.0 mol/L H2SO4 concentration, what degradation mechanism affects the membrane and what are the resulting consequences for VRFB performance->",
+      "reference_answer": "At 5.0 mol/L H2SO4, accelerated membrane chemical attack occurs through the following mechanism: (1) The highly acidic environment causes degradation of the Nafion membrane polymer backbone through chemical attack on the sulfonate groups and perfluorinated backbone. (2) This degradation creates larger pores and defects in the membrane structure, reducing its selectivity. (3) The compromised membrane allows increased vanadium crossover between the positive and negative half-cells. (4) Increased crossover leads to capacity fade due to self-discharge reactions between V(II) and V(V) species that cross the membrane. (5) The system also experiences increased self-discharge rates and reduced coulombic efficiency, ultimately decreasing the overall energy efficiency and cycle stability of the VRFB.",
+      "reference_answer_points": [
+        "Accelerated membrane chemical attack at 5.0 mol/L H2SO4",
+        "Degradation of Nafion polymer backbone",
+        "Creates larger pores and defects in membrane",
+        "Increased vanadium crossover",
+        "Capacity fade from self-discharge",
+        "Reduced coulombic efficiency",
+        "Decreased cycle stability"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-008",
+        "DOC04-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-016"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-017",
+      "source_doc_id": "DOC04",
+      "level": "L4",
+      "question_type": "multi-parameter analysis",
+      "question": "Across all tested vanadium concentrations (1.2-3.0 mol/L), H2SO4 concentrations (2.0-5.0 mol/L), and flow rates (10-100 mL/min), perform a横向比较 of net EE outcomes and identify the optimal operating window for stationary energy storage applications.",
+      "reference_answer": "The横向比较 across all tested conditions reveals the following patterns: (1) Vanadium concentration effect: 1.2-1.5 mol/L yields moderate net EE (75-79%) due to low viscosity but higher relative pumping penalty; 1.6 mol/L achieves the highest net EE (~80-83%) as the optimal balance of conductivity and viscosity; 2.0-3.0 mol/L shows reduced net EE (72-76%) due to high viscosity requiring elevated flow rates and pumping costs. (2) H2SO4 concentration effect: 2.0 mol/L gives lower net EE due to proton insufficiency and precipitation risk; 3.0 mol/L provides optimal net EE through best conductivity-viscosity balance; 4.0-5.0 mol/L causes net EE decline due to membrane attack and excessive viscosity. (3) Flow rate effect: 10 mL/min limits net EE through mass transfer limitations; 40-60 mL/min achieves peak net EE by balancing mass transfer and pumping; 100 mL/min reduces net EE due to high pumping losses. The optimal operating window for stationary energy storage is: vanadium 1.5-1.8 mol/L (preferably 1.6), H2SO4 3.0 mol/L, flow rate 40-60 mL/min, and current density 50-100 mA/cm2, yielding net EE above 80%.",
+      "reference_answer_points": [
+        "Vanadium: 1.6 mol/L optimal (~80-83% net EE)",
+        "H2SO4: 3.0 mol/L optimal",
+        "Flow rate: 40-60 mL/min optimal",
+        "Low V (1.2-1.5): moderate EE, high relative pumping penalty",
+        "High V (2.0-3.0): high viscosity, needs high flow rate",
+        "Low H2SO4 (2.0): proton insufficiency, precipitation",
+        "High H2SO4 (5.0): membrane chemical attack",
+        "Low flow (10): mass transfer limitations",
+        "High flow (100): excessive pumping losses",
+        "Optimal window: 1.5-1.8 mol/L V, 3.0 mol/L H2SO4, 40-60 mL/min, 50-100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-003",
+        "DOC04-FACT-004",
+        "DOC04-FACT-009",
+        "DOC04-FACT-012",
+        "DOC04-FACT-013"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-005",
+        "DOC04-EFU-007",
+        "DOC04-EFU-008",
+        "DOC04-EFU-011",
+        "DOC04-EFU-020"
+      ]
+    },
+    {
+      "question_id": "DOC04-QA-018",
+      "source_doc_id": "DOC04",
+      "level": "L5",
+      "question_type": "mechanism explanation",
+      "question": "Trace the complete causal degradation chain starting from low flow rate (10 mL/min) operation through intermediate physical and electrochemical processes to eventual capacity loss, and explain how this informs flow rate selection for long-term VRFB operation.",
+      "reference_answer": "The complete causal degradation chain from low flow rate operation is: (1) At 10 mL/min, electrolyte velocity is insufficient to maintain uniform reactant distribution across the electrode surface. (2) This causes non-uniform current distribution, with regions near the flow inlet experiencing higher current density and regions near the outlet suffering from vanadium species depletion. (3) The localized high current density areas accelerate electrode degradation through enhanced electrochemical oxidation and structural damage to the carbon felt. (4) The depletion regions develop elevated concentration overpotential, forcing the cell to operate at higher voltages that increase side reactions and reduce efficiency. (5) Over extended cycling, the combination of localized electrode degradation and increased overpotential leads to progressive capacity loss and reduced cycle life. (6) Additionally, the mass transfer coefficient scales with the square root of flow velocity in the laminar regime, so reducing flow rate disproportionately impairs mass transfer. This mechanism chain informs flow rate selection by demonstrating that while low flow rates minimize pumping losses, they must be balanced against the risk of non-uniform current distribution and accelerated degradation. The recommended minimum flow rate is 40 mL/min for stable long-term operation, which provides sufficient mass transfer while keeping pumping power at manageable levels (approximately 15-20 mW).",
+      "reference_answer_points": [
+        "10 mL/min: insufficient electrolyte velocity",
+        "Non-uniform current distribution develops",
+        "Inlet: high current density; outlet: species depletion",
+        "Localized electrode degradation from oxidation",
+        "Depletion regions: elevated overpotential",
+        "Progressive capacity loss over extended cycling",
+        "Mass transfer coefficient proportional to sqrt(flow velocity)",
+        "Recommended minimum: 40 mL/min",
+        "Pumping power at 40 mL/min: ~15-20 mW",
+        "Balances mass transfer with manageable pumping losses"
+      ],
+      "expected_facts": [
+        "DOC04-FACT-010",
+        "DOC04-FACT-006",
+        "DOC04-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC04-EFU-017",
+        "DOC04-EFU-012",
+        "DOC04-EFU-018",
+        "DOC04-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-001",
+      "source_doc_id": "DOC05",
+      "level": "L1",
+      "question_type": "direct fact retrieval",
+      "question": "What is the capacity retention of the VRFB after 500 cycles at 60 C->",
+      "reference_answer": "The VRFB achieves a capacity retention of 60% after 500 cycles at 60 C, which is the lowest among the three tested temperatures (25 C, 40 C, and 60 C).",
+      "reference_answer_points": [
+        "Capacity retention is 60%",
+        "Operating temperature is 60 C",
+        "Cycle number is 500 cycles"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-001",
+        "DOC05-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-002",
+      "source_doc_id": "DOC05",
+      "level": "L1",
+      "question_type": "direct fact retrieval",
+      "question": "What is the vanadium crossover rate measured at 40 C->",
+      "reference_answer": "The vanadium crossover rate at 40 C is 3.8 x 10^-7 cm2/s, which represents an intermediate value between the crossover rates at 25 C and 60 C.",
+      "reference_answer_points": [
+        "Crossover rate is 3.8 x 10^-7 cm2/s",
+        "Temperature is 40 C",
+        "The value is higher than 25 C (2.1 x 10^-7) but lower than 60 C (6.5 x 10^-7)"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-002",
+        "DOC05-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-002"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-003",
+      "source_doc_id": "DOC05",
+      "level": "L2",
+      "question_type": "comparative retrieval",
+      "question": "How does the SOC imbalance compare between 25 C and 60 C operation after 500 cycles->",
+      "reference_answer": "After 500 cycles, the SOC imbalance increases from 8% at 25 C to 24% at 60 C, representing a threefold increase. This larger SOC imbalance at 60 C is attributed to the accelerated vanadium crossover and side reactions at elevated temperature.",
+      "reference_answer_points": [
+        "SOC imbalance at 25 C is 8%",
+        "SOC imbalance at 60 C is 24%",
+        "The increase factor is 3x (from 8% to 24%)",
+        "Cause is accelerated crossover and side reactions at high temperature"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-003",
+        "DOC05-FACT-004",
+        "DOC05-FACT-009",
+        "DOC05-FACT-010"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-003"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-004",
+      "source_doc_id": "DOC05",
+      "level": "L2",
+      "question_type": "comparative retrieval",
+      "question": "Compare the vanadium crossover coefficients at 25 C and 60 C and explain the trend.",
+      "reference_answer": "The vanadium crossover coefficient increases from 2.1 x 10^-7 cm2/s at 25 C to 6.5 x 10^-7 cm2/s at 60 C, corresponding to approximately a 3.1-fold increase. This trend indicates that elevated temperature significantly enhances vanadium ion transport across the membrane due to increased ion mobility and decreased electrolyte viscosity.",
+      "reference_answer_points": [
+        "Crossover at 25 C is 2.1 x 10^-7 cm2/s",
+        "Crossover at 60 C is 6.5 x 10^-7 cm2/s",
+        "Increase factor is approximately 3.1x",
+        "Mechanism: increased ion mobility and decreased viscosity at higher temperature"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-005",
+        "DOC05-FACT-006",
+        "DOC05-FACT-004",
+        "DOC05-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-005",
+      "source_doc_id": "DOC05",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "At 40 C and after 500 cycles, what are the capacity retention and SOC imbalance of the VRFB, and how does the crossover rate relate to these performance metrics->",
+      "reference_answer": "At 40 C after 500 cycles, the VRFB exhibits a capacity retention of 74% and an SOC imbalance of 15%. The corresponding crossover rate is 3.8 x 10^-7 cm2/s. These intermediate values (between 25 C and 60 C) demonstrate that the 40 C condition represents a moderate degradation scenario where the vanadium crossover contributes to capacity fade through asymmetric active material loss and uneven SOC distribution across the positive and negative half-cells.",
+      "reference_answer_points": [
+        "Capacity retention at 40 C is 74%",
+        "SOC imbalance at 40 C is 15%",
+        "Crossover rate at 40 C is 3.8 x 10^-7 cm2/s",
+        "40 C represents an intermediate degradation case between 25 C and 60 C",
+        "Crossover drives capacity fade via active material loss and uneven SOC distribution"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-007",
+        "DOC05-FACT-008",
+        "DOC05-FACT-009",
+        "DOC05-FACT-004",
+        "DOC05-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-006",
+      "source_doc_id": "DOC05",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "For VRFB operation at 60 C over 500 cycles, what is the relationship among capacity retention, vanadium crossover, and SOC imbalance, and why does this temperature lead to the worst performance->",
+      "reference_answer": "At 60 C over 500 cycles, the VRFB shows the worst performance with capacity retention of 60%, the highest vanadium crossover of 6.5 x 10^-7 cm2/s, and the largest SOC imbalance of 24%. This temperature leads to the worst performance because the elevated temperature exponentially increases vanadium ion permeation through the membrane (highest crossover), which causes asymmetric depletion of active species on both sides and results in severe SOC imbalance, ultimately accelerating capacity degradation.",
+      "reference_answer_points": [
+        "Capacity retention at 60 C is 60% (lowest)",
+        "Crossover at 60 C is 6.5 x 10^-7 cm2/s (highest)",
+        "SOC imbalance at 60 C is 24% (largest)",
+        "Highest crossover causes asymmetric active species depletion",
+        "Severe SOC imbalance accelerates capacity fade"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-010",
+        "DOC05-FACT-011",
+        "DOC05-FACT-012",
+        "DOC05-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-007",
+      "source_doc_id": "DOC05",
+      "level": "L4",
+      "question_type": "multi-condition comparison",
+      "question": "Compare the capacity retention, vanadium crossover coefficient, and SOC imbalance across all three temperatures (25 C, 40 C, and 60 C) after 500 cycles, and summarize the temperature dependence trend for each metric.",
+      "reference_answer": "After 500 cycles, all three performance metrics degrade monotonically with increasing temperature: (1) Capacity retention decreases from 85% at 25 C to 74% at 40 C and further to 60% at 60 C; (2) Vanadium crossover increases from 2.1 x 10^-7 cm2/s at 25 C to 3.8 x 10^-7 cm2/s at 40 C and to 6.5 x 10^-7 cm2/s at 60 C; (3) SOC imbalance increases from 8% at 25 C to 15% at 40 C and to 24% at 60 C. The consistent trend across all metrics confirms that elevated temperature accelerates capacity degradation primarily by enhancing vanadium crossover, which in turn exacerbates SOC imbalance.",
+      "reference_answer_points": [
+        "Capacity retention: 85% (25 C) > 74% (40 C) > 60% (60 C)",
+        "Crossover: 2.1 (25 C) < 3.8 (40 C) < 6.5 x 10^-7 cm2/s (60 C)",
+        "SOC imbalance: 8% (25 C) < 15% (40 C) < 24% (60 C)",
+        "All metrics show monotonic degradation with temperature increase",
+        "Crossover enhancement is the primary driver of capacity fade and SOC imbalance"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-013",
+        "DOC05-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-008",
+      "source_doc_id": "DOC05",
+      "level": "L5",
+      "question_type": "mechanistic chain analysis",
+      "question": "Explain the complete degradation chain in a VRFB operating at elevated temperature (60 C): starting from the root cause, trace how temperature affects vanadium crossover, how crossover leads to SOC imbalance, and how SOC imbalance ultimately drives capacity retention down to 60% after 500 cycles.",
+      "reference_answer": "The degradation chain at 60 C follows a causal sequence: (1) Root cause: Elevated temperature (60 C) increases vanadium ion mobility and decreases electrolyte viscosity; (2) Crossover enhancement: These effects raise the vanadium crossover coefficient to 6.5 x 10^-7 cm2/s, the highest among all tested conditions; (3) SOC imbalance development: Asymmetric crossover of different vanadium species (V2+, V3+, VO2+, VO2+) between half-cells leads to unequal state-of-charge distribution, resulting in 24% SOC imbalance; (4) Capacity fade: The severe SOC imbalance limits the usable capacity of both half-cells and promotes side reactions, ultimately reducing capacity retention to 60% after 500 cycles. This chain demonstrates that temperature -> crossover -> SOC imbalance -> capacity fade is the dominant degradation pathway at elevated temperature.",
+      "reference_answer_points": [
+        "Step 1: 60 C increases ion mobility and decreases viscosity",
+        "Step 2: Crossover coefficient reaches 6.5 x 10^-7 cm2/s (highest)",
+        "Step 3: Asymmetric crossover causes 24% SOC imbalance (largest)",
+        "Step 4: SOC imbalance limits usable capacity and promotes side reactions",
+        "Final outcome: Capacity retention drops to 60% after 500 cycles",
+        "Complete chain: Temperature ↑ -> Crossover ↑ -> SOC Imbalance ↑ -> Capacity ↓"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-001",
+      "source_doc_id": "DOC06",
+      "level": "L1",
+      "question_type": "direct fact retrieval",
+      "question": "What is the coulombic efficiency (CE) of the ICRFB with 5.0 mmol/L Bi3+ additive compared to the baseline without Bi3+->",
+      "reference_answer": "With 5.0 mmol/L Bi3+ additive, the ICRFB achieves a coulombic efficiency (CE) of 96%, which is a significant improvement from the baseline CE of 72% without Bi3+. This represents an absolute improvement of 24 percentage points.",
+      "reference_answer_points": [
+        "CE with Bi3+ (5.0 mmol/L) is 96%",
+        "Baseline CE without Bi3+ is 72%",
+        "Absolute improvement is 24 percentage points"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-002",
+      "source_doc_id": "DOC06",
+      "level": "L1",
+      "question_type": "direct fact retrieval",
+      "question": "What is the HER overpotential shift caused by Bi3+ addition in the ICRFB->",
+      "reference_answer": "The addition of Bi3+ shifts the hydrogen evolution reaction (HER) overpotential by +85 mV. This positive shift indicates that Bi3+ effectively suppresses the HER side reaction on the negative electrode, thereby improving the coulombic efficiency of the ICRFB system.",
+      "reference_answer_points": [
+        "HER overpotential shift is +85 mV",
+        "Bi3+ suppresses HER side reaction",
+        "The overpotential shift is measured on the negative electrode"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-002"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-003",
+      "source_doc_id": "DOC06",
+      "level": "L2",
+      "question_type": "comparative retrieval",
+      "question": "Compare the energy efficiency (EE) and Cr reaction rate constant of the ICRFB with and without Bi3+ additive.",
+      "reference_answer": "With Bi3+ addition, the ICRFB shows an energy efficiency (EE) improvement from 51% to 85% (a 34 percentage point increase), and the Cr reaction rate constant increases from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s (approximately 2.3-fold enhancement). Both improvements indicate that Bi3+ not only suppresses HER but also promotes the desired chromium redox kinetics, contributing to the overall performance enhancement.",
+      "reference_answer_points": [
+        "EE improves from 51% (baseline) to 85% (with Bi3+)",
+        "Cr rate constant increases from 2.1 to 4.8 x 10^-3 cm/s",
+        "Improvement factor for EE is 34 percentage points",
+        "Improvement factor for Cr rate constant is ~2.3x",
+        "Bi3+ simultaneously suppresses HER and enhances Cr redox kinetics"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-003",
+        "DOC06-FACT-004",
+        "DOC06-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-003"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-004",
+      "source_doc_id": "DOC06",
+      "level": "L2",
+      "question_type": "comparative retrieval",
+      "question": "How do the CE and HER overpotential change when Bi3+ concentration increases from 0.5 mmol/L to 5.0 mmol/L->",
+      "reference_answer": "As the Bi3+ concentration increases from 0.5 mmol/L to 5.0 mmol/L, the coulombic efficiency (CE) improves substantially from approximately 72% to 96%, while the HER overpotential shifts positively by +85 mV. The Bi3+ additive progressively suppresses the hydrogen evolution side reaction as its concentration increases, resulting in higher CE and reduced parasitic hydrogen evolution. The optimal concentration is 5.0 mmol/L, achieving the best CE of 96% and the most positive HER overpotential shift.",
+      "reference_answer_points": [
+        "CE increases from ~72% to 96% as Bi3+ increases to 5.0 mmol/L",
+        "HER overpotential shifts by +85 mV with Bi3+ addition",
+        "Higher Bi3+ concentration provides stronger HER suppression",
+        "Optimal Bi3+ concentration is 5.0 mmol/L for best CE"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-005",
+        "DOC06-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-005",
+      "source_doc_id": "DOC06",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "With 5.0 mmol/L Bi3+ additive, what are the CE, EE, and Cr reaction rate constant of the ICRFB, and how does the HER overpotential shift contribute to these improvements->",
+      "reference_answer": "With 5.0 mmol/L Bi3+ additive, the ICRFB achieves a coulombic efficiency (CE) of 96%, an energy efficiency (EE) of 85%, and a Cr reaction rate constant of 4.8 x 10^-3 cm/s. The HER overpotential shifts positively by +85 mV, which indicates that Bi3+ deposits on the electrode surface and blocks active sites for hydrogen evolution. This HER suppression reduces parasitic side reactions, thereby increasing CE from 72% to 96%. The improved Cr redox kinetics (rate constant from 2.1 to 4.8 x 10^-3 cm/s) further enhances both charge transfer efficiency and overall energy efficiency.",
+      "reference_answer_points": [
+        "CE is 96% with 5.0 mmol/L Bi3+",
+        "EE is 85% with 5.0 mmol/L Bi3+",
+        "Cr rate constant is 4.8 x 10^-3 cm/s with Bi3+",
+        "HER overpotential shifts +85 mV due to Bi3+ deposition",
+        "HER suppression reduces parasitic reactions, increasing CE",
+        "Enhanced Cr kinetics improves charge transfer and EE"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-007",
+        "DOC06-FACT-008",
+        "DOC06-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-006",
+      "source_doc_id": "DOC06",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "For the ICRFB with Bi3+ additive in the optimal concentration range (0.5-5.0 mmol/L), what is the relationship among Bi3+ concentration, HER suppression, and CE improvement->",
+      "reference_answer": "In the Bi3+ concentration range of 0.5-5.0 mmol/L, there is a positive correlation between Bi3+ concentration and both HER suppression and CE improvement. As Bi3+ concentration increases within this range: (1) the HER overpotential shifts increasingly positive (up to +85 mV at 5.0 mmol/L), indicating stronger suppression of parasitic hydrogen evolution; (2) the CE monotonically improves from approximately 72% (baseline) to 96% (at 5.0 mmol/L). The Bi3+ ions deposit on the negative electrode surface, physically blocking active sites that would otherwise catalyze HER, which is the primary mechanism for the CE improvement in this concentration range.",
+      "reference_answer_points": [
+        "Bi3+ range is 0.5-5.0 mmol/L",
+        "HER overpotential shifts up to +85 mV at 5.0 mmol/L",
+        "CE improves from ~72% to 96% across the range",
+        "Positive correlation: higher Bi3+ -> stronger HER suppression -> higher CE",
+        "Mechanism: Bi3+ deposits on electrode surface blocking HER active sites"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-010",
+        "DOC06-FACT-011",
+        "DOC06-FACT-012",
+        "DOC06-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-007",
+      "source_doc_id": "DOC06",
+      "level": "L4",
+      "question_type": "multi-parameter comparison",
+      "question": "Compare all key performance metrics of the ICRFB before and after adding Bi3+ additive (5.0 mmol/L): CE, EE, HER overpotential shift, and Cr reaction rate constant. Explain how these metrics collectively demonstrate the effectiveness of Bi3+ addition.",
+      "reference_answer": "The addition of 5.0 mmol/L Bi3+ improves all key performance metrics of the ICRFB: (1) Coulombic efficiency (CE) increases from 72% to 96% (+24 percentage points), indicating significantly reduced parasitic reactions; (2) Energy efficiency (EE) rises from 51% to 85% (+34 percentage points), showing overall system efficiency enhancement; (3) HER overpotential shifts positively by +85 mV, demonstrating effective suppression of hydrogen evolution side reactions; (4) Cr reaction rate constant increases from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s (~2.3x enhancement), indicating improved chromium redox kinetics. Collectively, these metrics demonstrate that Bi3+ acts through a dual mechanism: suppressing HER (improving CE) and catalyzing Cr redox reactions (improving rate constant), which together produce the substantial EE improvement.",
+      "reference_answer_points": [
+        "CE: 72% -> 96% (+24 percentage points)",
+        "EE: 51% -> 85% (+34 percentage points)",
+        "HER overpotential: +85 mV positive shift",
+        "Cr rate constant: 2.1 -> 4.8 x 10^-3 cm/s (~2.3x)",
+        "Dual mechanism: HER suppression + Cr kinetics enhancement",
+        "All metrics show monotonic improvement with Bi3+ addition"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-013",
+        "DOC06-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC06-QA-008",
+      "source_doc_id": "DOC06",
+      "level": "L5",
+      "question_type": "mechanistic chain analysis",
+      "question": "Trace the complete mechanistic chain in the ICRFB with Bi3+ additive: starting from Bi3+ deposition on the electrode, explain how it suppresses HER (manifested as +85 mV overpotential shift), how this leads to CE improvement from 72% to 96%, and how the combined effect with enhanced Cr kinetics (rate constant 2.1 to 4.8 x 10^-3 cm/s) results in EE rising from 51% to 85%.",
+      "reference_answer": "The mechanistic chain in Bi3+-modified ICRFB operates as follows: (1) Bi3+ deposition: Bi3+ ions from the electrolyte deposit onto the negative electrode surface, partially covering the electrode active sites; (2) HER suppression: The deposited Bi3+ blocks catalytic sites for hydrogen evolution, increasing the activation overpotential for HER by +85 mV. This makes HER thermodynamically and kinetically less favorable; (3) CE improvement: With HER suppressed, fewer electrons are wasted on parasitic hydrogen evolution, so the charge transfer efficiency improves, raising CE from 72% to 96%; (4) Cr kinetics enhancement: Simultaneously, Bi3+ modifies the electrode surface to facilitate chromium redox reactions, increasing the Cr reaction rate constant from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s; (5) EE improvement: The combined effects of higher CE (less parasitic loss) and faster Cr kinetics (lower polarization) reduce both chemical and voltage losses during charge/discharge, resulting in EE improvement from 51% to 85%. This chain demonstrates that Bi3+ acts through both catalytic (Cr kinetics) and protective (HER suppression) mechanisms.",
+      "reference_answer_points": [
+        "Step 1: Bi3+ deposits on the negative electrode surface",
+        "Step 2: Bi3+ blocks HER active sites, shifting overpotential by +85 mV",
+        "Step 3: HER suppression reduces parasitic electron loss, CE increases 72% -> 96%",
+        "Step 4: Bi3+ enhances Cr redox kinetics, rate constant 2.1 -> 4.8 x 10^-3 cm/s",
+        "Step 5: Combined effect reduces chemical and voltage losses",
+        "Final outcome: EE improves from 51% to 85%",
+        "Dual mechanism: catalytic (Cr kinetics) + protective (HER suppression)"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-008"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-001",
+      "source_doc_id": "DOC09",
+      "level": "L1",
+      "question_type": "direct-fact retrieval",
+      "question": "What is the coulombic efficiency (CE) and energy efficiency (EE) of TEMPO in acetonitrile at 100 mA/cm2 when paired with a viologen anolyte and Nafion 117 membrane->",
+      "reference_answer": "TEMPO in acetonitrile at 100 mA/cm2 with Nafion 117 membrane achieves a CE of 98.2% and an EE of 84.3% when paired with a viologen-based anolyte. The electrolyte concentration is 0.1 M TEMPO with tetraethylammonium tetrafluoroborate supporting electrolyte.",
+      "reference_answer_points": [
+        "CE is 98.2%",
+        "EE is 84.3%",
+        "Current density is 100 mA/cm2",
+        "Membrane is Nafion 117",
+        "Solvent is acetonitrile with 0.1 M TEMPO"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-001",
+        "DOC09-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-002",
+      "source_doc_id": "DOC09",
+      "level": "L1",
+      "question_type": "direct-fact retrieval",
+      "question": "What are the CE and EE of AQDS at pH 12 and 60 mA/cm2, and what is its capacity fade rate->",
+      "reference_answer": "AQDS at pH 12 and 60 mA/cm2 achieves a CE of 96.5%, an EE of 82.1%, and a capacity fade rate of 0.01%/cycle over 1000 cycles. The low fade rate is attributed to its low crossover rate through Nafion 117 at 0.2 x 10^-6 cm2/s.",
+      "reference_answer_points": [
+        "CE is 96.5%",
+        "EE is 82.1%",
+        "Capacity fade rate is 0.01%/cycle",
+        "pH is 12",
+        "Current density is 60 mA/cm2",
+        "Crossover rate is 0.2 x 10^-6 cm2/s"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-005",
+        "DOC09-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-009"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-003",
+      "source_doc_id": "DOC09",
+      "level": "L2",
+      "question_type": "local-relation retrieval",
+      "question": "How does the capacity fade rate of TEMPO compare to PSV (propylsulfonate-functionalized viologen) at 100 mA/cm2 with Nafion 117 membrane->",
+      "reference_answer": "At 100 mA/cm2 with Nafion 117, TEMPO in nonaqueous electrolyte shows a capacity fade rate of 0.02%/cycle, while PSV shows a fade rate of 0.018%/cycle. TEMPO achieves CE of 98.2% and EE of 84.3%, whereas PSV achieves CE of 98.5% and EE of 82.1%. PSV's lower fade rate is attributed to sulfonate functionalization reducing crossover.",
+      "reference_answer_points": [
+        "TEMPO fade rate is 0.02%/cycle",
+        "PSV fade rate is 0.018%/cycle",
+        "TEMPO EE is 84.3% vs PSV EE is 82.1%",
+        "TEMPO CE is 98.2% vs PSV CE is 98.5%",
+        "Both operate at 100 mA/cm2 with Nafion 117"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-001",
+        "DOC09-FACT-006",
+        "DOC09-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001",
+        "DOC09-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-004",
+      "source_doc_id": "DOC09",
+      "level": "L2",
+      "question_type": "condition-dependent retrieval",
+      "question": "How does TEMPO's energy efficiency change when the current density is reduced from 100 mA/cm2 to 20 mA/cm2, and what explains this trend->",
+      "reference_answer": "TEMPO's EE increases from 84.3% at 100 mA/cm2 to 88.5% at 20 mA/cm2, while CE improves from 98.2% to approximately 99.0%. This trend reflects reduced overpotential losses at lower current densities. The intermediate values are EE 87.1% at 60 mA/cm2 and EE 88.0% at 40 mA/cm2.",
+      "reference_answer_points": [
+        "EE increases from 84.3% to 88.5%",
+        "CE improves from 98.2% to ~99.0%",
+        "Current density reduction from 100 to 20 mA/cm2",
+        "Trend is explained by reduced overpotential losses at lower current densities",
+        "Intermediate values: 87.1% at 60 mA/cm2, 88.0% at 40 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-002",
+        "DOC09-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001",
+        "DOC09-EFU-002",
+        "DOC09-EFU-003",
+        "DOC09-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-005",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the dimerization extent of viologen radical cation at 0.1 M concentration and pH 7 after 200 cycles at 100 mA/cm2, and how does it compare to TEMPO under equivalent conditions->",
+      "reference_answer": "At 0.1 M concentration, pH 7, and 100 mA/cm2 after 200 cycles, methyl viologen shows a dimerization extent of approximately 8%, with a dimerization rate constant of 2.5 M^-1 s^-1. Under equivalent conditions, TEMPO shows a dimerization extent of 5% with a rate constant of approximately 0.5 M^-1 s^-1 in acetonitrile. At higher viologen concentration (0.2 M), the dimerization extent increases to 14%, reflecting second-order kinetics dependence.",
+      "reference_answer_points": [
+        "MV dimerization extent is 8% at 0.1 M",
+        "MV dimerization rate constant is 2.5 M^-1 s^-1",
+        "TEMPO dimerization extent is 5% under equivalent conditions",
+        "TEMPO dimerization rate constant is 0.5 M^-1 s^-1",
+        "MV dimerization increases to 14% at 0.2 M (second-order kinetics)",
+        "Conditions: pH 7, 100 mA/cm2, 200 cycles"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-009",
+        "DOC09-FACT-010",
+        "DOC09-FACT-013",
+        "DOC09-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-014",
+        "DOC09-EFU-021"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-006",
+      "source_doc_id": "DOC09",
+      "level": "L3",
+      "question_type": "mechanism-condition retrieval",
+      "question": "How does water content in nonaqueous TEMPO electrolyte affect its capacity fade rate, and what is the underlying degradation mechanism->",
+      "reference_answer": "TEMPO capacity fade rate increases dramatically with water content: from 0.02%/cycle at 10 ppm water, to 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm, and 0.08%/cycle at 500 ppm. The degradation mechanism involves disproportionation of the oxoammonium cation (TEMPO+) in the presence of water, producing hydroxylamine derivatives and oxygen-containing byproducts. For stable operation, water content should be maintained below 100 ppm.",
+      "reference_answer_points": [
+        "Fade rate is 0.02%/cycle at 10 ppm water",
+        "Fade rate increases to 0.08%/cycle at 500 ppm water",
+        "Intermediate points: 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm",
+        "Mechanism: oxoammonium cation disproportionation with water",
+        "Products: hydroxylamine derivatives and oxygen byproducts",
+        "Design threshold: water below 100 ppm for stable operation"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-013",
+        "DOC09-FACT-004",
+        "DOC09-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-019",
+        "DOC09-EFU-025"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-007",
+      "source_doc_id": "DOC09",
+      "level": "L4",
+      "question_type": "cross-material comparison",
+      "question": "Compare the crossover rates, dimerization extents, and capacity fade rates of MV, TEMPO, and AQDS in ORFB systems under standardized conditions (100 mA/cm2, Nafion 117, room temperature).",
+      "reference_answer": "Under standardized conditions (100 mA/cm2, Nafion 117, 25 C, 500 cycles): Crossover rates follow MV (2.1 x 10^-6 cm2/s) > TEMPO (0.8 x 10^-6 cm2/s) > AQDS (0.2 x 10^-6 cm2/s). Dimerization extents after 200 cycles: viologen 8% > TEMPO 5%. Capacity fade rates: AQDS 0.025%/cycle > TEMPO 0.02%/cycle > PSV 0.018%/cycle > MV 0.055%/cycle. AQDS has the lowest crossover due to sulfonate groups, while MV has the highest due to its smaller molecular size. SOC imbalance after 300 cycles: MV/TEMPO cell 15% vs AQDS/TEMPO cell 7%.",
+      "reference_answer_points": [
+        "Crossover: MV 2.1 > TEMPO 0.8 > AQDS 0.2 x 10^-6 cm2/s",
+        "Dimerization: viologen 8% > TEMPO 5% after 200 cycles",
+        "Fade rates: AQDS 0.025% > TEMPO 0.02% > PSV 0.018% > MV 0.055%/cycle",
+        "AQDS lowest crossover due to sulfonate functional groups",
+        "MV highest crossover due to smaller molecular size",
+        "SOC imbalance: MV/TEMPO 15% vs AQDS/TEMPO 7% after 300 cycles"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-008",
+        "DOC09-FACT-009",
+        "DOC09-FACT-010",
+        "DOC09-FACT-015",
+        "DOC09-FACT-013",
+        "DOC09-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-012",
+        "DOC09-EFU-013",
+        "DOC09-EFU-014",
+        "DOC09-EFU-015"
+      ]
+    },
+    {
+      "question_id": "DOC09-QA-008",
+      "source_doc_id": "DOC09",
+      "level": "L5",
+      "question_type": "mechanism-chain retrieval",
+      "question": "Explain the complete degradation chain for AQDS from elevated pH conditions to capacity fade, including how pH 14 operation compares to pH 12 in terms of performance metrics.",
+      "reference_answer": "The AQDS degradation chain involves: (1) At elevated pH, nucleophilic addition of hydroxide to oxidized quinone forms non-redox-active hydroxylated products; (2) At pH 14, this produces a capacity fade rate of 0.068%/cycle, compared to 0.012%/cycle at pH 12 and 0.028%/cycle at pH 9; (3) Additionally, dissolved oxygen causes autoxidation, reducing CE from 95.5% to 90.2% at 100 mA/cm2 in oxygen-saturated electrolyte; (4) The optimal operating window is pH 12, balancing solubility and stability. Viologen at pH 14 shows similar nucleophilic attack with fade rate 0.072%/cycle via dihydropyridine adduct formation.",
+      "reference_answer_points": [
+        "Mechanism: nucleophilic addition of hydroxide to oxidized quinone",
+        "Products: non-redox-active hydroxylated products",
+        "Fade rate at pH 14: 0.068%/cycle vs 0.012%/cycle at pH 12",
+        "Secondary mechanism: autoxidation by dissolved oxygen",
+        "CE drops from 95.5% to 90.2% with oxygen saturation",
+        "Optimal pH is 12 for balancing solubility and stability"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-011",
+        "DOC09-FACT-012",
+        "DOC09-FACT-009",
+        "DOC09-FACT-007",
+        "DOC09-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-022",
+        "DOC09-EFU-023",
+        "DOC09-EFU-024"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-001",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct-fact retrieval",
+      "question": "What is the EE and CE of VRFB with Nafion 117 at 100 mA/cm2 and 200 mA/cm2->",
+      "reference_answer": "VRFB with Nafion 117 achieves EE of 84% and CE of 96% at 100 mA/cm2. At 150 mA/cm2, the EE decreases to 81% with CE of 95%. At 200 mA/cm2, the EE further decreases to 78% with CE of 94%. The primary degradation mechanism is vanadium crossover through the membrane.",
+      "reference_answer_points": [
+        "EE is 84% at 100 mA/cm2",
+        "CE is 96% at 100 mA/cm2",
+        "EE decreases to 78% at 200 mA/cm2",
+        "CE decreases to 94% at 200 mA/cm2",
+        "Primary degradation: vanadium crossover"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-002",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct-fact retrieval",
+      "question": "What are the EE and CE of the Zn-Br system at 40 mA/cm2 and 80 mA/cm2, and what are its primary degradation mechanisms->",
+      "reference_answer": "The Zn-Br system achieves EE of 78% with CE of 93% at 40 mA/cm2. At 60 mA/cm2, the EE is 71% with CE of 90%. At 80 mA/cm2, the EE decreases to 64% with CE of 87%. The primary degradation mechanisms include zinc dendrite formation during plating, bromine crossover through the microporous separator, and self-discharge through bromine diffusion.",
+      "reference_answer_points": [
+        "EE is 78% at 40 mA/cm2 with CE 93%",
+        "EE is 64% at 80 mA/cm2 with CE 87%",
+        "Intermediate: EE 71% at 60 mA/cm2",
+        "Degradation 1: zinc dendrite formation",
+        "Degradation 2: bromine crossover through separator",
+        "Degradation 3: self-discharge through bromine diffusion"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-003",
+        "DOC10-EFU-018"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-003",
+      "source_doc_id": "DOC10",
+      "level": "L2",
+      "question_type": "system-component comparison",
+      "question": "How does SPEEK membrane (42% sulfonation) compare to Nafion 117 in VRFB performance at 100 mA/cm2 in terms of EE and capacity fade rate->",
+      "reference_answer": "At 100 mA/cm2, VRFB with SPEEK (42% sulfonation) achieves EE of 83% compared to 84% for Nafion 117. However, SPEEK reduces the capacity fade rate from 0.035%/cycle (Nafion 117) to 0.018%/cycle. This trade-off shows that while SPEEK sacrifices 1 percentage point in EE, it nearly halves the capacity fade rate by improving membrane selectivity and reducing vanadium crossover.",
+      "reference_answer_points": [
+        "SPEEK EE is 83% vs Nafion 117 EE is 84%",
+        "SPEEK fade rate is 0.018%/cycle vs Nafion 0.035%/cycle",
+        "1 percentage point sacrifice in EE for SPEEK",
+        "Fade rate reduced by nearly 50% with SPEEK",
+        "Improvement mechanism: better membrane selectivity reducing vanadium crossover"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-004",
+      "source_doc_id": "DOC10",
+      "level": "L2",
+      "question_type": "cross-system comparison",
+      "question": "How does thermal treatment of carbon felt at 400-500 C affect the EE of ICRFB and VRFB at 100 mA/cm2, and what explains the difference in improvement magnitude->",
+      "reference_answer": "Thermal treatment of carbon felt at 400-500 C improves ICRFB EE by 5-7 percentage points at 100 mA/cm2, while VRFB EE improves by only 2-3 percentage points. For ICRFB, thermal treatment reduces the chromium reaction resistance by 40-50%. For VRFB, thermal treatment reduces the charge transfer resistance by 20-30% for vanadium reactions. The larger improvement for ICRFB reflects the more severe kinetic limitations of the Cr3+/Cr2+ reaction compared to vanadium redox reactions.",
+      "reference_answer_points": [
+        "ICRFB EE improvement: 5-7 percentage points",
+        "VRFB EE improvement: 2-3 percentage points",
+        "ICRFB: chromium reaction resistance reduced by 40-50%",
+        "VRFB: charge transfer resistance reduced by 20-30%",
+        "Larger ICRFB improvement due to more severe Cr3+/Cr2+ kinetic limitations"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-010",
+        "DOC10-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-007"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-005",
+      "source_doc_id": "DOC10",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "At 100 mA/cm2, compare the EE, system cost, and capacity fade rate of VRFB, ICRFB with Bi3+, and ORFB systems. Which system offers the best balance of efficiency, cost, and cycle life->",
+      "reference_answer": "At 100 mA/cm2: VRFB achieves EE of 81-84% with system cost 350-500 $/kWh and fade rate 0.018-0.035%/cycle. ICRFB with Bi3+ achieves EE of 75-82% with system cost 200-350 $/kWh and fade rate 0.025%/cycle (with AEM). ORFB achieves EE of 80-83% with system cost 400-800 $/kWh and fade rates ranging from 0.01%/cycle (AQDS) to 0.055%/cycle (MV). ICRFB offers the lowest cost but moderate efficiency; VRFB provides balanced performance at moderate cost; ORFB offers the highest efficiency potential but at the highest cost and with chemistry-dependent fade rates.",
+      "reference_answer_points": [
+        "VRFB: EE 81-84%, cost 350-500 $/kWh, fade 0.018-0.035%/cycle",
+        "ICRFB: EE 75-82%, cost 200-350 $/kWh, fade ~0.025%/cycle",
+        "ORFB: EE 80-83%, cost 400-800 $/kWh, fade 0.01-0.055%/cycle",
+        "ICRFB has lowest system cost",
+        "VRFB offers most balanced cost-performance",
+        "ORFB has highest cost but best potential cycle life with AQDS"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001",
+        "DOC10-FACT-002",
+        "DOC10-FACT-009",
+        "DOC10-FACT-015",
+        "DOC10-FACT-010",
+        "DOC10-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001",
+        "DOC10-EFU-002",
+        "DOC10-EFU-010",
+        "DOC10-EFU-011",
+        "DOC10-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-006",
+      "source_doc_id": "DOC10",
+      "level": "L3",
+      "question_type": "mechanism-system matching",
+      "question": "Which RFB system has the highest charge transfer resistance, what is its value, and how does this translate to its EE at typical operating current densities compared to other systems->",
+      "reference_answer": "ICRFB has the highest charge transfer resistance at 3-5 ohm cm2 for the Cr3+/Cr2+ reaction (without additive). This high resistance translates to EE of 62-85% at 80-160 mA/cm2, with the lowest value (62%) at 160 mA/cm2. In comparison: SLA PbO2 has 2-4 ohm cm2 (EE 58-78% at 20-40 mA/cm2), TEMPO has 0.6-1.0 ohm cm2 (EE 80-83% at 100 mA/cm2), VRFB has 0.8-1.2 ohm cm2 (EE 78-84% at 100-200 mA/cm2), and Zn-Br bromine reaction has 0.2-0.4 ohm cm2 (EE 64-78% at 40-80 mA/cm2). The Bi3+ additive reduces ICRFB overpotential by 200-300 mV, transforming EE from ~55% to ~85% at 80 mA/cm2.",
+      "reference_answer_points": [
+        "ICRFB has highest charge transfer resistance: 3-5 ohm cm2 for Cr3+/Cr2+",
+        "ICRFB EE: 62-85% at 80-160 mA/cm2",
+        "SLA PbO2: 2-4 ohm cm2, EE 58-78%",
+        "TEMPO: 0.6-1.0 ohm cm2, EE 80-83%",
+        "VRFB: 0.8-1.2 ohm cm2, EE 78-84%",
+        "Zn-Br: 0.2-0.4 ohm cm2, EE 64-78%",
+        "Bi3+ additive reduces ICRFB overpotential by 200-300 mV"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-002",
+        "DOC10-FACT-006",
+        "DOC10-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-021",
+        "DOC10-EFU-023"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-007",
+      "source_doc_id": "DOC10",
+      "level": "L4",
+      "question_type": "multi-system multi-metric comparison",
+      "question": "Compare the EE ranges, optimal current density ranges, system costs, and primary degradation mechanisms across all five RFB systems (VRFB, ICRFB, Zn-Br, SLA, ORFB). Identify which systems are most suitable for high-power vs long-duration energy storage applications.",
+      "reference_answer": "Five-system comparison: (1) VRFB: EE 78-84% at 100-200 mA/cm2, cost 350-500 $/kWh, degradation via vanadium crossover; (2) ICRFB: EE 62-85% at 80-160 mA/cm2, cost 200-350 $/kWh, degradation via slow chromium kinetics and hydrogen evolution; (3) Zn-Br: EE 64-78% at 40-80 mA/cm2, cost 150-300 $/kWh, degradation via zinc dendrites and bromine crossover; (4) SLA: EE 58-78% at 20-40 mA/cm2, cost 100-250 $/kWh, degradation via PbO2 morphology and lead dendrites; (5) ORFB: EE 76-88% at 20-100 mA/cm2, cost 400-800 $/kWh, degradation via organic crossover and radical dimerization. For high-power applications: VRFB (highest current density capability) and ICRFB (with Bi3+) are most suitable. For long-duration storage: SLA and Zn-Br offer lowest costs but limited cycle life; ORFB with AQDS offers best cycle life (0.01%/cycle fade) but at highest cost.",
+      "reference_answer_points": [
+        "VRFB: EE 78-84%, 100-200 mA/cm2, $350-500/kWh, vanadium crossover",
+        "ICRFB: EE 62-85%, 80-160 mA/cm2, $200-350/kWh, Cr kinetics + H2 evolution",
+        "Zn-Br: EE 64-78%, 40-80 mA/cm2, $150-300/kWh, Zn dendrite + Br2 crossover",
+        "SLA: EE 58-78%, 20-40 mA/cm2, $100-250/kWh, PbO2 morphology + Pb dendrite",
+        "ORFB: EE 76-88%, 20-100 mA/cm2, $400-800/kWh, organic crossover + dimerization",
+        "High-power: VRFB and ICRFB (higher current density ranges)",
+        "Long-duration: SLA/Zn-Br lowest cost; ORFB-AQDS best cycle life"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001",
+        "DOC10-FACT-002",
+        "DOC10-FACT-003",
+        "DOC10-FACT-004",
+        "DOC10-FACT-005",
+        "DOC10-FACT-011"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001",
+        "DOC10-EFU-002",
+        "DOC10-EFU-003",
+        "DOC10-EFU-004",
+        "DOC10-EFU-005",
+        "DOC10-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-008",
+      "source_doc_id": "DOC10",
+      "level": "L5",
+      "question_type": "cross-system mechanism-chain retrieval",
+      "question": "Explain how the universal membrane selectivity threshold of >95% connects to capacity fade rates across all five RFB systems, and describe the system-specific degradation pathways that dominate when this threshold is not met.",
+      "reference_answer": "The universal membrane selectivity threshold of >95% is required for capacity fade rates below 0.02%/cycle across all five RFB systems. When violated: (1) VRFB: vanadium ion crossover causes redox species mixing and irreversible capacity loss (fade 0.035%/cycle with Nafion 117 at 94-96% selectivity); (2) ICRFB: Fe/Cr crossover combined with hydrogen evolution parasitic reaction reduces CE to 92% at 160 mA/cm2; (3) Zn-Br: bromine crossover through microporous separator causes self-discharge and zinc dendrite formation (fade 0.04-0.06%/cycle); (4) SLA: not primarily crossover-limited but PbO2 morphology and lead dendrite cause fade 0.04-0.08%/cycle; (5) ORFB: organic species crossover leads to SOC imbalance (MV/TEMPO 15% after 300 cycles) and chemical degradation, with fade rates 0.01-0.055%/cycle depending on chemistry. The relationship emerges because even modest crossover of electroactive species leads to irreversible capacity loss through chemical reaction with opposing electrolyte.",
+      "reference_answer_points": [
+        "Universal threshold: membrane selectivity >95% for fade <0.02%/cycle",
+        "VRFB: vanadium crossover -> fade 0.035%/cycle",
+        "ICRFB: Fe/Cr crossover + H2 evolution -> CE 92% at 160 mA/cm2",
+        "Zn-Br: bromine crossover + Zn dendrite -> fade 0.04-0.06%/cycle",
+        "SLA: PbO2 morphology + lead dendrite -> fade 0.04-0.08%/cycle",
+        "ORFB: organic crossover + SOC imbalance -> fade 0.01-0.055%/cycle",
+        "Root cause: crossover leads to irreversible capacity loss via chemical reaction"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-008",
+        "DOC10-FACT-011",
+        "DOC10-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-017",
+        "DOC10-EFU-018",
+        "DOC10-EFU-019",
+        "DOC10-EFU-020",
+        "DOC10-EFU-022"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-009",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy recommendation",
+      "question": "A research team is developing a new aqueous Mn-based redox flow battery. Based on the cross-system design rules from the five benchmark RFB systems, which design strategies should they adopt from VRFB and what adaptations are needed, considering the three tiers of design rule transferability->",
+      "reference_answer": "For a new aqueous Mn-based RFB, the team should adopt a tiered strategy: (1) Tier 1 (Universal Rules): Membrane selectivity >95% for fade <0.02%/cycle; thermal treatment of carbon felt at 400-500 C (expected 2-3 pp EE improvement for aqueous inorganic); flow field optimization via Damkohler/Peclet analysis; SOC window management. (2) Tier 2 (Partially Transferable): Membrane transport mechanism must match Mn electrolyte chemistry - if acidic, Nafion-type cation exchange; if neutral/alkaline, anion exchange may be preferred. Catalytic electrode modifications should target the specific rate-limiting Mn redox reaction (Mn2+/Mn3+ or MnO2 deposition). (3) Tier 3 (Chemistry-Specific): Mn-based systems may face unique challenges similar to Zn-Br (deposit morphology if MnO2 forms) or VRFB (multiple oxidation states). If MnO2 deposition occurs, adapt Zn-Br dendrite management strategies; if soluble Mn2+/Mn3+ only, follow VRFB membrane/electrode strategies directly. Key adaptation: Mn2+/Mn3+ redox kinetics differ from vanadium, so the specific catalytic coating from VRFB may need modification.",
+      "reference_answer_points": [
+        "Tier 1 universal: membrane selectivity >95%, thermal treatment 400-500 C, flow field via Damkohler/Peclet, SOC management",
+        "Tier 2 partially transferable: membrane transport mechanism matched to Mn electrolyte pH",
+        "Tier 2: catalytic coatings target Mn-specific rate-limiting reactions",
+        "Tier 3 chemistry-specific: address MnO2 deposition if present (adapt from Zn-Br)",
+        "Key adaptation: Mn redox kinetics differ from vanadium - modify catalyst",
+        "If soluble-only Mn system: follow VRFB strategies directly"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-014",
+        "DOC10-FACT-012"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-024",
+        "DOC10-EFU-025",
+        "DOC10-EFU-026",
+        "DOC10-EFU-027"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-010",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "hybrid-system design recommendation",
+      "question": "A company wants to develop a hybrid RFB combining an inorganic catholyte (Fe2+/Fe3+ in HCl) with an organic anolyte (AQDS). Based on the cross-system design framework, what combined strategies from VRFB and ORFB should they apply, and what are the critical compatibility considerations->",
+      "reference_answer": "For this hybrid inorganic-organic RFB (Fe/HCl catholyte + AQDS anolyte): (1) From VRFB: adopt membrane selection strategy (Nafion 117 or SPEEK proven for aqueous inorganic systems), electrode thermal treatment at 400-500 C (2-3 pp improvement expected), and flow field design via Damkohler/Peclet analysis. (2) From ORFB: adopt AQDS-specific stability management (pH 12 optimal, avoid pH 14 due to 0.068%/cycle fade), oxygen exclusion below 0.1 ppm (prevents CE drop from 95.5% to 90.2%), and SOC imbalance monitoring (AQDS/TEMPO showed 7% imbalance vs 15% for MV/TEMPO). (3) Critical compatibility considerations: membrane must be compatible with both Fe/HCl and AQDS at pH 12 - Nafion is stable in both but ion transport mechanism must handle both Fe species and AQDS sulfonates; membrane selectivity must exceed 95% to prevent fade above 0.02%/cycle; the different pH requirements of Fe/HCl (acidic) and AQDS (alkaline) must be reconciled - either operate at intermediate pH with performance trade-offs or use a bipolar membrane; charge transfer resistance at both electrodes must be minimized - Fe3+/Fe2+ is facile (0.3-0.5 ohm cm2) while AQDS is moderate, so electrode catalysis should focus on the AQDS side.",
+      "reference_answer_points": [
+        "From VRFB: membrane selection (Nafion/SPEEK), thermal treatment 400-500 C, flow field optimization",
+        "From ORFB: AQDS pH 12 optimal, oxygen exclusion <0.1 ppm, SOC imbalance monitoring",
+        "Compatibility: membrane must handle both Fe/HCl and AQDS at target pH",
+        "Critical: reconcile pH - Fe/HCl acidic vs AQDS alkaline - use bipolar membrane or compromise pH",
+        "Membrane selectivity >95% required for fade <0.02%/cycle",
+        "Fe3+/Fe2+ kinetics facile (0.3-0.5 ohm cm2), focus catalysis on AQDS side",
+        "Expected performance: EE 78-82% at 60-100 mA/cm2 with careful design"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-007",
+        "DOC10-FACT-011",
+        "DOC10-FACT-014",
+        "DOC10-FACT-006"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-006",
+        "DOC10-EFU-022",
+        "DOC10-EFU-023",
+        "DOC10-EFU-026",
+        "DOC10-EFU-027"
+      ]
+    },
+    {
+      "question_id": "DOC05-QA-009",
+      "source_doc_id": "DOC05",
+      "level": "L5",
+      "question_type": "mechanism chain",
+      "question": "Explain the full causal chain from elevated temperature to accelerated capacity fading in VRFB, including crossover, electrolyte imbalance, and HER.",
+      "reference_answer": "At 60 C, the vanadium crossover coefficient increases to 6.5 x 10^-7 cm2/s (vs 2.1 x 10^-7 cm2/s at 25 C), leading to SOC imbalance of 24% (vs 8% at 25 C). The electrolyte imbalance promotes side reactions including HER, further reducing CE from 96.8% to 88.5% over 500 cycles. Combined, these effects reduce capacity retention from 85% at 25 C to 60% at 60 C.",
+      "reference_answer_points": [
+        "Crossover coefficient increases from 2.1 to 6.5 x 10^-7 cm2/s as temperature rises from 25 C to 60 C",
+        "SOC imbalance worsens from 8% to 24% at 500 cycles",
+        "CE degrades from 96.8% to 88.5% over 500 cycles at 60 C",
+        "Capacity retention drops from 85% (25 C) to 60% (60 C)"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-001",
+        "DOC05-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC07-QA-009",
+      "source_doc_id": "DOC07",
+      "level": "L5",
+      "question_type": "mechanism chain",
+      "question": "Describe the positive feedback loop between bromine crossover and zinc dendrite growth in zinc-bromine flow batteries.",
+      "reference_answer": "Bromine crossover at 0.16 mL/h (without MEP) corrodes the zinc deposit surface, creating nucleation sites for dendrite growth. Dendrites at 3.2 um/cycle further pierce the separator, increasing bromine crossover. This positive feedback accelerates capacity fade from 0.05%/cycle to 0.12%/cycle. Adding 0.5 M MEP reduces bromine crossover to 0.03 mL/h and dendrite growth to 0.6 um/cycle, breaking the feedback loop.",
+      "reference_answer_points": [
+        "Bromine crossover at 0.16 mL/h corrodes zinc surface creating dendrite nucleation sites",
+        "Dendrite growth at 3.2 um/cycle pierces separator increasing crossover",
+        "Positive feedback accelerates capacity fade from 0.05% to 0.12%/cycle",
+        "0.5 M MEP reduces crossover to 0.03 mL/h and dendrites to 0.6 um/cycle"
+      ],
+      "expected_facts": [
+        "DOC07-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC07-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-011",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "Based on the five RFB systems compared, propose a membrane selection strategy for a new Mn-based aqueous RFB operating at 70 mA/cm2.",
+      "reference_answer": "For a Mn-based aqueous RFB at 70 mA/cm2, the optimal membrane strategy combines lessons from VRFB and organic RFB: (1) Select a membrane with IEC 1.4-1.8 mmol/g and area resistance below 1.5 ohm cm2, following the SNPBI-1.42 success in VRFB (EE 80.9% at 100 mA/cm2). (2) Ensure membrane selectivity above 95% to prevent Mn crossover, as organic RFB data shows selectivity below 90% leads to rapid capacity fade. (3) Avoid Nafion 212 due to high crossover; prefer non-fluorinated hydrocarbon membranes for cost reduction.",
+      "reference_answer_points": [
+        "Select membrane with IEC 1.4-1.8 mmol/g and area resistance < 1.5 ohm cm2",
+        "Ensure membrane selectivity > 95% to prevent Mn crossover",
+        "Avoid thin membranes (Nafion 212) due to high crossover risk",
+        "Prefer non-fluorinated hydrocarbon membranes for cost"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-012",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "Which electrode modification strategy from the VRFB domain shows the highest transferable potential to ICRFB, zinc-bromine, and soluble lead-acid systems->",
+      "reference_answer": "Boron-doped carbon electrode modification (BMC-C) from VRFB shows the highest transferable potential: (1) In VRFB, BMC-C achieves EE 82.5% at 100 mA/cm2 vs 65.8% for untreated C-C. (2) For ICRFB, surface functionalization can similarly enhance Cr(III)/Cr(II) kinetics, analogous to how Bi3+ additive improves reaction rates from 2.1 to 4.8 x 10^-3 cm/s. (3) For zinc-bromine, boron doping could improve zinc plating uniformity, reducing dendrite growth from 3.2 to below 1.0 um/cycle. (4) For soluble lead-acid, surface roughening (Ra 14.7 um as in BMC-C) would improve Pb deposition uniformity, reducing passivation.",
+      "reference_answer_points": [
+        "BMC-C in VRFB: EE 82.5% vs 65.8% for C-C at 100 mA/cm2",
+        "Surface functionalization for ICRFB: analogous to Bi3+ rate constant improvement",
+        "For Zn-Br: boron doping could reduce dendrite growth below 1.0 um/cycle",
+        "For SLA: surface roughening Ra 14.7 um improves Pb deposition uniformity"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001",
+        "DOC03-FACT-001",
+        "DOC03-FACT-003",
+        "DOC03-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001",
+        "DOC03-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-013",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "Compare the additive strategies used in ICRFB (Bi3+) and VRFB (none standard), and propose generalizable design principles for RFB additives.",
+      "reference_answer": "Five generalizable additive design principles emerge: (1) Target the rate-limiting half-reaction - Bi3+ targets Cr(III)/Cr(II) (rate constant 2.1->4.8 x 10^-3 cm/s). (2) Suppress parasitic reactions - Bi3+ reduces HER overpotential by +85 mV, cutting H2 evolution from 13% to 3.5%. (3) Optimal concentration exists - Bi3+ at 1.5 mmol/L gives EE 82%, but 5.0 mmol/L only reaches 85% with diminishing returns. (4) Underpotential deposition mechanism provides self-limiting coverage. (5) Cost-benefit threshold: additive cost must be below 5% of total system cost.",
+      "reference_answer_points": [
+        "Target rate-limiting half-reaction (Cr kinetics in ICRFB)",
+        "Suppress parasitic reactions (HER reduction +85 mV)",
+        "Optimal concentration with diminishing returns (1.5 vs 5.0 mmol/L)",
+        "Underpotential deposition provides self-limiting coverage",
+        "Cost-benefit threshold: < 5% of system cost"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-001",
+        "DOC10-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-001",
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-014",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "Can the Bi3+ additive strategy from ICRFB be transferred to VRFB, zinc-bromine, or organic RFB systems-> Evaluate for each.",
+      "reference_answer": "Bi3+ transferability assessment: (1) VRFB: LOW transferability - V(IV)/V(V) kinetics are already fast (Rct 1.34 ohm cm2 with BMC-C), and Bi3+ does not address vanadium crossover. (2) Zinc-bromine: MODERATE - Bi3+ could potentially suppress HER on zinc electrode (similar mechanism), but bromine complexing agents (MEP) are more critical. (3) Organic RFB: LOW - organic active species degradation is dominated by chemical instability (dimerization, nucleophilic attack), not electrochemical kinetics. Bi3+ would not address TEMPO disproportionation or AQDS hydrolysis.",
+      "reference_answer_points": [
+        "VRFB: LOW - V kinetics already fast, Bi3+ doesn't address crossover",
+        "Zn-Br: MODERATE - could suppress HER but MEP is more critical",
+        "Organic RFB: LOW - degradation is chemical not kinetic",
+        "Transfer requires matching additive mechanism to degradation mode"
+      ],
+      "expected_facts": [
+        "DOC06-FACT-001",
+        "DOC10-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC06-EFU-001",
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-015",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "How should membrane selection strategies from organic RFB (pH 7-14) inform membrane design for aqueous VRFB and ICRFB->",
+      "reference_answer": "Three transferable principles: (1) High pH tolerance - organic RFB AEMs operate at pH 14 with selectivity 85-98%, suggesting fluorinated membranes in VRFB/ICRFB could be replaced with cheaper hydrocarbon alternatives if pH management allows. (2) Thickness-EE tradeoff - organic RFB data shows 50 um AEM achieves EE 88% (vs 84% for 180 um Nafion 117), confirming thinner membranes improve VE. (3) Chemical stability priority - organic RFB at pH 12 shows membrane degradation from quinone nucleophilic attack, suggesting VRFB membranes should prioritize chemical stability over pure proton conductivity when operating above 40 C.",
+      "reference_answer_points": [
+        "High pH tolerance of AEMs suggests hydrocarbon alternatives for VRFB/ICRFB",
+        "50 um AEM achieves EE 88% vs 84% for 180 um Nafion 117",
+        "Chemical stability > proton conductivity at elevated temperatures",
+        "Organic RFB membrane degradation informs VRFB high-temp operation"
+      ],
+      "expected_facts": [
+        "DOC09-FACT-001",
+        "DOC10-FACT-001",
+        "DOC09-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC09-EFU-001",
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-016",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy",
+      "question": "Evaluate the applicability of thermal management strategies from VRFB (DOC05) across ICRFB, zinc-bromine, and organic RFB systems.",
+      "reference_answer": "VRFB thermal management (25 C optimal, 60 C causes 25% capacity loss over 500 cycles) transfers differently: (1) ICRFB: HIGH relevance - Cr kinetics are temperature-sensitive; operating at 40 C instead of 25 C could reduce Bi3+ requirement but increases HER risk. (2) Zinc-bromine: HIGH relevance - bromine volatility increases dramatically above 35 C, making temperature control even more critical than in VRFB. (3) Organic RFB: MODERATE relevance - TEMPO and viologen show acceptable fade rates (0.02-0.05%/cycle) at 40 C, but AQDS hydrolysis accelerates above 35 C. For all systems, active thermal management below 40 C is recommended.",
+      "reference_answer_points": [
+        "VRFB: 25 C optimal, 60 C causes 25% capacity loss over 500 cycles",
+        "ICRFB: HIGH relevance - temperature affects Cr kinetics and HER",
+        "Zn-Br: HIGH relevance - bromine volatility above 35 C",
+        "Organic RFB: MODERATE - AQDS hydrolysis accelerates above 35 C",
+        "Recommendation: active thermal management below 40 C for all systems"
+      ],
+      "expected_facts": [
+        "DOC05-FACT-001",
+        "DOC10-FACT-001",
+        "DOC05-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC05-EFU-001",
+        "DOC10-EFU-001"
+      ]
+    }
+  ]
+}

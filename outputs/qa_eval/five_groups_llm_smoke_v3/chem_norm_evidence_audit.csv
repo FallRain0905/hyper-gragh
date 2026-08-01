@@ -1,0 +1,211 @@
+﻿question_id,expected_key_point,old_top5_contains_key_point,new_top5_contains_key_point,old_short_claim,new_short_claim,missing_metric_before,missing_metric_after
+DOC01-QA-001,Nafion 117 area-specific resistance at 25 C is 1.65 ohm cm2,True,True,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212; equivalent weight = 1100 g/equiv; ion exchange capacity = 0.91 mmol/g; thickness of Nafion 117 = 183 um; thickness of Nafion 212 = 50.8 um; vanadium perm",Nafion 117 has area resistance of 1.65 ohm cm2 under 25 C. | Nafion 212 has area resistance of 0.85 ohm cm2 under 25 C.,no,no
+DOC01-QA-002,Nafion 212 vanadium permeability is 3.9 x 10^-7 cm2/s,True,True,"Relation type: COMPOSITION
+Readable labels: Nafion 212; vanadium permeability of Nafion 212 = 3.9e-07 cm²/s
+Description: Nafion 212 has a measured vanadium permeability of 3.9e-07 cm2/s.
+Source evidence: Nafion 212 has a | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ","Relation type: COMPOSITION
+Readable labels: Nafion 212; vanadium permeability of Nafion 212 = 3.9e-07 cm²/s
+Description: Nafion 212 has a measured vanadium permeability of 3.9e-07 cm2/s.
+Source evidence: Nafion 212 has a | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ",no,no
+DOC01-QA-003,Nafion 117 CE: 97.1%,True,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ",Nafion 117 has coulombic efficiency of 97.1 % under 100 mA/cm2 and 25 C. | Nafion 212 has coulombic efficiency of 93.8 % under 100 mA/cm2 and 25 C.,no,no
+DOC01-QA-003,Nafion 212 CE: 93.8%,True,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ",Nafion 117 has coulombic efficiency of 97.1 % under 100 mA/cm2 and 25 C. | Nafion 212 has coulombic efficiency of 93.8 % under 100 mA/cm2 and 25 C.,no,no
+DOC01-QA-003,Difference: 3.3 percentage points,False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ",Nafion 117 has coulombic efficiency of 97.1 % under 100 mA/cm2 and 25 C. | Nafion 212 has coulombic efficiency of 93.8 % under 100 mA/cm2 and 25 C.,,
+DOC01-QA-004,Faradaic current increases proportionally with current density,True,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m","Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m",,
+DOC01-QA-004,Crossover flux driven by concentration gradients remains relatively constant,True,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m","Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m",,
+DOC01-QA-004,Ratio of useful to parasitic charge transfer improves,False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m","Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: OPERATION
+Readable labels: current density; coulombic efficiency = 93 %
+Description: Coulombic efficiency measured at various current densities from 40 to 160 mA/cm2
+Source evidence: Coulombic efficiency m",,
+DOC01-QA-006,Similar EE: 80.2% vs 80.9%,False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-006,"Nafion 117: CE 97.1%, VE 82.6%",True,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-006,"Nafion 212: CE 93.8%, VE 86.2%",True,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-006,"Nafion 117 crossover: 1.8 x 10^-7 cm2/s, resistance: 1.65 ohm cm2",False,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-006,"Nafion 212 crossover: 3.9 x 10^-7 cm2/s, resistance: 0.85 ohm cm2",False,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-006,Recommendation: Nafion 117 for long cycle life (0.08% vs 0.18% fade rate),False,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na | performance trade-off and long-cycle-life stationary storage recommendation: Nafion 117 CE at 100 mA/cm2 and 25 C = 97.1 %; Nafion 117 VE at 100 mA/cm2 and 25 C = 82.6 %; Nafion 117 EE at 100 mA/cm2 and 25 C = 80.2 %; Na,no,no
+DOC01-QA-008,Crossover creates SOC imbalance,True,False,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",,
+DOC01-QA-008,Progressive capacity reduction,False,False,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",,
+DOC01-QA-008,Self-discharge generates local hotspots,False,False,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",,
+DOC01-QA-008,Hotspots accelerate further degradation,False,False,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",,
+DOC01-QA-008,Nafion 117 fade rate: 0.08% per cycle,False,True,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",no,no
+DOC01-QA-008,Nafion 212 fade rate: 0.18% per cycle,False,True,"Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Relation type: COMPOSITION
+Readable labels: V(II)/V(III); capacity fading; vanadium crossover; carbon felt; Nafion 117; H2SO4; VO2+/VO2+
+Description: All-vanadium RFB system with sulfuric acid electrolyte, Nafion membran","Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE,  | Nafion 117 has capacity fade rate of 0.08 % per cycle under extended cycling.",no,no
+DOC02-QA-003,PBI: 0.5 x 10^-7 cm2/s,False,True,"Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat | Relation type: OPERATION
+Readable labels: charge cutoff voltage; current density; discharge cutoff voltage; flow rate; PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; single-cell VRFB
+Description: All four non-fluorinated membra","vanadium permeability of all four non-fluorinated membranes tested in this study: PBI = 0.5 x10^-7 cm2/s; SNPBI-1.42 = 0.95 x10^-7 cm2/s; SPEEK/APK = 2.1 x10^-7 cm2/s; SPTPC-2.59 = 3.2 x10^-7 cm2/s. | Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat",no,no
+DOC02-QA-003,SNPBI-1.42: 0.95 x 10^-7 cm2/s,False,True,"Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat | Relation type: OPERATION
+Readable labels: charge cutoff voltage; current density; discharge cutoff voltage; flow rate; PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; single-cell VRFB
+Description: All four non-fluorinated membra","vanadium permeability of all four non-fluorinated membranes tested in this study: PBI = 0.5 x10^-7 cm2/s; SNPBI-1.42 = 0.95 x10^-7 cm2/s; SPEEK/APK = 2.1 x10^-7 cm2/s; SPTPC-2.59 = 3.2 x10^-7 cm2/s. | Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat",no,no
+DOC02-QA-003,SPEEK/APK: 2.1 x 10^-7 cm2/s,False,True,"Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat | Relation type: OPERATION
+Readable labels: charge cutoff voltage; current density; discharge cutoff voltage; flow rate; PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; single-cell VRFB
+Description: All four non-fluorinated membra","vanadium permeability of all four non-fluorinated membranes tested in this study: PBI = 0.5 x10^-7 cm2/s; SNPBI-1.42 = 0.95 x10^-7 cm2/s; SPEEK/APK = 2.1 x10^-7 cm2/s; SPTPC-2.59 = 3.2 x10^-7 cm2/s. | Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat",no,no
+DOC02-QA-003,SPTPC-2.59: 3.2 x 10^-7 cm2/s,False,True,"Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat | Relation type: OPERATION
+Readable labels: charge cutoff voltage; current density; discharge cutoff voltage; flow rate; PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; single-cell VRFB
+Description: All four non-fluorinated membra","vanadium permeability of all four non-fluorinated membranes tested in this study: PBI = 0.5 x10^-7 cm2/s; SNPBI-1.42 = 0.95 x10^-7 cm2/s; SPEEK/APK = 2.1 x10^-7 cm2/s; SPTPC-2.59 = 3.2 x10^-7 cm2/s. | Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat",no,no
+DOC02-QA-003,Permeability increases with IEC,True,True,"Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat | Relation type: OPERATION
+Readable labels: charge cutoff voltage; current density; discharge cutoff voltage; flow rate; PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; single-cell VRFB
+Description: All four non-fluorinated membra","vanadium permeability of all four non-fluorinated membranes tested in this study: PBI = 0.5 x10^-7 cm2/s; SNPBI-1.42 = 0.95 x10^-7 cm2/s; SPEEK/APK = 2.1 x10^-7 cm2/s; SPTPC-2.59 = 3.2 x10^-7 cm2/s. | Relation type: COMPARISON
+Readable labels: PBI; SNPBI-1.42; SPEEK/APK; SPTPC-2.59; membrane selectivity
+Description: Comparison of membrane selectivity (proton conductivity/vanadium permeability) among four non-fluorinat",no,no
+DOC01-QA-005,Nafion 212 EE at 80 mA/cm2 and 40 C is 83.8%,False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Nafion 117; Nafion 212
+Description: Compared in terms of thickness, area resistance, vanadium permeability, water uptake, ion exchange capacity, and efficiency metrics (CE, VE, ","Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Nafion 212 has energy efficiency of 80.9 % under 100 mA/cm2 and 25 C.",no,no
+DOC02-QA-004,"SNPBI-1.42 EE: 80.5% (CE 98.1%, VE 82.1%)",False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",Nafion 117 has energy efficiency of 80.2 % under 100 mA/cm2 and 25 C. | Nafion 212 has energy efficiency of 80.9 % under 100 mA/cm2 and 25 C.,no,no
+DOC02-QA-004,"SPTPC-2.59 EE: 81.4% (CE 96.3%, VE 83.8%)",False,False,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",Nafion 117 has energy efficiency of 80.2 % under 100 mA/cm2 and 25 C. | Nafion 212 has energy efficiency of 80.9 % under 100 mA/cm2 and 25 C.,no,no
+DOC02-QA-004,SPTPC-2.59 has slightly higher EE,False,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",Nafion 117 has energy efficiency of 80.2 % under 100 mA/cm2 and 25 C. | Nafion 212 has energy efficiency of 80.9 % under 100 mA/cm2 and 25 C.,no,no
+DOC02-QA-004,SNPBI-1.42 has higher CE suggesting better cycle stability,False,True,"Relation type: COMPARISON
+Readable labels: current density; temperature; Nafion 117; Nafion 212
+Description: Comprehensive comparison of Nafion 117 and Nafion 212 membranes across current densities (40-200 mA/cm2) and te | Relation type: COMPARISON
+Readable labels: Bi3+ concentration; current density; coulombic efficiency = 93 %; voltage efficiency
+Description: Comparison of efficiencies at different Bi3+ concentrations (0.5-5.0 mmol/L) an",Nafion 117 has energy efficiency of 80.2 % under 100 mA/cm2 and 25 C. | Nafion 212 has energy efficiency of 80.9 % under 100 mA/cm2 and 25 C.,no,no
+UNANS-QA-SMOKE-001,state that BaTiO3 d33 piezoelectric coefficient is not provided for VRFB operation,False,False,"Relation type: OPERATION
+Readable labels: flow rate; single-cell VRFB
+Description: Electrolyte flow rate was maintained at 40 mL/min during tests
+Source evidence: Electrolyte flow rate was maintained at 40 mL/min during  | Relation type: OPERATION
+Readable labels: C-C; contact angle = 4.0 deg
+Description: contact angle measured for C-C
+Source evidence: contact angle measured for C-C","Relation type: OPERATION
+Readable labels: flow rate; single-cell VRFB
+Description: Electrolyte flow rate was maintained at 40 mL/min during tests
+Source evidence: Electrolyte flow rate was maintained at 40 mL/min during  | Relation type: OPERATION
+Readable labels: C-C; contact angle = 4.0 deg
+Description: contact angle measured for C-C
+Source evidence: contact angle measured for C-C",,

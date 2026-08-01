@@ -1,0 +1,158 @@
+\section{Case Study II: PFAS Removal and Degradation}
+\label{sec:case2}
+
+The second case study examines per- and polyfluoroalkyl substances (PFAS) removal and degradation, a subfield of environmental chemical engineering concerned with pollutant destruction rather than electrochemical performance optimization. This domain was deliberately selected to test whether the high-order relational structures observed in the flow battery case (Section~\ref{sec:case1}) generalize to chemically distinct problem classes. The results demonstrate that multivariable coupling is a universal structural feature of chemical engineering knowledge, not an artifact of any single domain.
+
+\subsection{Domain Setup and Knowledge Base Statistics}
+
+The knowledge base for PFAS removal and degradation was constructed from 50 domain-specific literature sources, parsed into 624 text chunks, yielding 7,476 entity nodes and 10,812 relations or hyperedges. Higher-order hyperedges (cardinality $\geq 3$) accounted for 2,298 entries, representing 21.98\% of all relational structures. Table~\ref{tab:pfas_kb_stats} summarizes the construction statistics. This proportion closely matches the 20.9\% higher-order ratio observed in the flow battery case, suggesting that multivariable coupling is a pervasive organizational principle across chemically distinct subfields.
+
+\begin{table}[htbp]
+\centering
+\caption{Knowledge base construction statistics for the PFAS removal and degradation domain.}
+\label{tab:pfas_kb_stats}
+\begin{tabular}{@{}lll@{}}
+\toprule
+\textbf{Item} & \textbf{Quantity} & \textbf{Description} \\
+\midrule
+Documents & 50 & PFAS removal and degradation literature \\
+Text chunks & 624 & Parsed and chunked extraction units \\
+Entity nodes & 7,476 & All entity nodes in the hypergraph database \\
+Total relations/hyperedges & 10,812 & Binary relations and higher-order hyperedges \\
+Lower-order relations & 8,514 & Binary relations (cardinality $= 2$) \\
+Higher-order hyperedges & 2,298 & Relations with cardinality $\geq 3$ (21.98\%) \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The entity type distribution exhibited a long-tail characteristic, as shown in Table~\ref{tab:pfas_entity_types}. Performance metrics (METRIC) constituted the largest category with 1,397 entities, followed by reaction conditions (CONDITION, 1,181), catalytic materials (CATALYST\_MATERIAL, 1,181), and material features (MATERIAL\_FEATURE, 1,048). Domain-specific types including PFAS targets (PFAS\_TARGET, 323), active species (ACTIVE\_SPECIES, 312), piezoelectric properties (PIEZO\_PROPERTY, 249), and water matrices (WATER\_MATRIX, 203) were introduced to capture the distinct conceptual vocabulary of pollutant degradation chemistry.
+
+\begin{table}[htbp]
+\centering
+\caption{Entity type distribution for the PFAS removal and degradation case.}
+\label{tab:pfas_entity_types}
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Entity Type} & \textbf{Count} \\
+\midrule
+METRIC (Performance Metric) & 1,397 \\
+CONDITION (Reaction Condition) & 1,181 \\
+CATALYST\_MATERIAL (Catalytic Material) & 1,181 \\
+MATERIAL\_FEATURE (Material Feature) & 1,048 \\
+MECHANISM\_EVIDENCE (Mechanism Evidence) & 856 \\
+PROCESS\_STRATEGY (Process Strategy) & 503 \\
+PFAS\_TARGET (Target PFAS) & 323 \\
+ACTIVE\_SPECIES (Active Species) & 312 \\
+PIEZO\_PROPERTY (Piezoelectric Property) & 249 \\
+WATER\_MATRIX (Water Matrix) & 203 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Table~\ref{tab:pfas_relation_types} presents the relation and hyperedge type distribution. OPERATION\_PERFORMANCE relations (3,147) dominated, representing condition-performance associations. MECHANISM\_PATHWAY (2,511) captured degradation mechanisms, while MATERIAL\_DESIGN (2,303) encoded material-composition relationships. Domain-specific types such as CHARGE\_TRANSFER (220) and ADSORPTION\_ORIENTATION (189) were introduced to model electron transfer and adsorption configurations unique to PFAS degradation.
+
+\begin{table}[htbp]
+\centering
+\caption{Relation and hyperedge type distribution for the PFAS removal and degradation case.}
+\label{tab:pfas_relation_types}
+\begin{tabular}{@{}lc@{}}
+\toprule
+\textbf{Relation/Hyperedge Type} & \textbf{Count} \\
+\midrule
+OPERATION\_PERFORMANCE (Operation-Performance) & 3,147 \\
+MECHANISM\_PATHWAY (Mechanism Pathway) & 2,511 \\
+MATERIAL\_DESIGN (Material Design) & 2,303 \\
+COMPARISON (Comparison) & 943 \\
+MATRIX\_APPLICATION (Matrix Application) & 563 \\
+COUPLING\_STRATEGY (Coupling Strategy) & 337 \\
+CHARGE\_TRANSFER (Charge Transfer) & 220 \\
+ADSORPTION\_ORIENTATION (Adsorption Orientation) & 189 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Cross-Domain Adaptation of the Framework}
+
+The framework described in Section~\ref{sec:framework} was adapted to the PFAS domain without structural modification. The modular type system enabled domain-specific entity and relation definitions while preserving the core hypergraph architecture. Entity types were replaced as follows: SYSTEM was decomposed into PFAS\_TARGET and PROCESS\_STRATEGY; DEGRADATION was refined into MECHANISM\_EVIDENCE and ADSORPTION\_ORIENTATION; and domain-specific types including WATER\_MATRIX and PIEZO\_PROPERTY were added.
+
+Relation types were correspondingly adjusted: OPERATION\_PERFORMANCE superseded OPERATION to encode condition-performance relationships; MECHANISM\_PATHWAY replaced DEGRADATION to represent mechanistic pathways; and CHARGE\_TRANSFER and ADSORPTION\_ORIENTATION were introduced to model electron transfer and adsorption orientation, respectively. This substitution pattern demonstrates the framework's cross-domain transferability---the core architecture remains invariant while only type definitions require updating to reflect the target domain's conceptual structure.
+
+\subsection{Problem Design and Quantitative Comparison}
+
+To systematically evaluate hypergraph-based retrieval in the PFAS domain, twelve representative questions (Q1--Q12) were designed across six difficulty levels. All questions were formulated without explicit mention of ``hypergraphs'' to ensure fair comparison between Hyper-ChE and Graph-RAG under identical natural language query conditions. Table~\ref{tab:pfas_question_levels} presents the difficulty stratification.
+
+\begin{table}[htbp]
+\centering
+\caption{Question difficulty stratification for the PFAS removal and degradation case.}
+\label{tab:pfas_question_levels}
+\begin{tabular}{@{}clll@{}}
+\toprule
+\textbf{Level} & \textbf{Question Type} & \textbf{Questions} & \textbf{Cognitive Demand} \\
+\midrule
+Level 1 & Corpus overview & Q1--Q2 & Macro-induction of pollutants, strategies, materials, metrics \\
+Level 2 & Local relation retrieval & Q3--Q4 & Local association of target PFAS, materials, conditions \\
+Level 3 & Condition combination & Q5--Q6 & Multi-condition constrained performance association \\
+Level 4 & Comparative analysis & Q7--Q8 & Cross-strategy, cross-pollutant comparison \\
+Level 5 & Mechanistic evidence chain & Q9--Q10 & Active species, electron transfer, evidence chaining \\
+Level 6 & Strategy recommendation & Q11--Q12 & Design principle induction and experimental planning \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Level 1 questions (Q1--Q2) require macro-level synthesis of pollutant types, treatment strategies, material systems, and performance indicators. Level 2 questions (Q3--Q4) target local associations for specific materials or pollutants. Level 3 questions (Q5--Q6) involve synergistic effects of multiple operating conditions on performance metrics. Level 4 questions (Q7--Q8) demand cross-strategy or cross-pollutant comparisons. Level 5 questions (Q9--Q10) require chaining multiple characterization evidences to support mechanistic conclusions. Level 6 questions (Q11--Q12) ask for design principle induction and experimental direction recommendations.
+
+Table~\ref{tab:pfas_retrieval_comparison} summarizes the retrieval results for both systems. Hyper-ChE achieved an average recall of 81.5 higher-order relations/hyperedges (approximately 61 entities), while Graph-RAG averaged 37.9 binary edges (with only 1--9 entities for most questions). The relational recall ratio is approximately 2.15$\times$ in favor of Hyper-ChE.
+
+\begin{table*}[htbp]
+\centering
+\caption{Retrieval comparison between Graph-RAG and Hyper-ChE for the PFAS removal and degradation case.}
+\label{tab:pfas_retrieval_comparison}
+\begin{tabular}{@{}cllll@{}}
+\toprule
+\textbf{Question} & \textbf{Type} & \textbf{Hyper-ChE} & \textbf{Graph-RAG} & \textbf{Key Difference} \\
+\midrule
+Q1 & Corpus overview & 90 hyp./60 ent. & 45 edges & Hyper-ChE covers strategies and materials more completely \\
+Q2 & Metric interpretation & 85 hyp./62 ent. & 43 edges/9 ent. & Both answerable; Hyper-ChE provides richer context \\
+Q3 & PFOA/PFOS comparison & 80 hyp./61 ent. & 36 edges/5 ent. & Hyper-ChE better preserves material-condition-metric combinations \\
+Q4 & Material role distinction & 95 hyp./60 ent. & 40 edges/2 ent. & Hyper-ChE role classification more complete \\
+Q5 & Multi-condition combination & 58 hyp./61 ent. & 36 edges/4 ent. & Largest difference; Graph-RAG shows insufficient evidence \\
+Q6 & Material property association & 88 hyp./61 ent. & 39 edges/8 ent. & Hyper-ChE constructs indirect mechanism chains \\
+Q7 & Cross-strategy comparison & 83 hyp./62 ent. & 38 edges/6 ent. & Hyper-ChE better covers coupling strategies \\
+Q8 & Short/long-chain comparison & 66 hyp./66 ent. & 32 edges/4 ent. & Hyper-ChE discusses short-chain PFAS more completely \\
+Q9 & Active species pathway & 81 hyp./61 ent. & 38 edges & Hyper-ChE mechanism chains more complete \\
+Q10 & Direct electron transfer & 88 hyp./60 ent. & 39 edges/1 ent. & Hyper-ChE evidence chain more complete \\
+Q11 & Design principles & 82 hyp./61 ent. & 29 edges/4 ent. & Hyper-ChE induction more comprehensive \\
+Q12 & Experimental recommendation & 82 hyp./61 ent. & 40 edges/6 ent. & Hyper-ChE proposal structure more complete \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+The quantitative advantage of Hyper-ChE extends beyond retrieval counts to the structural preservation of multivariable associations. Hyper-ChE-recalled higher-order hyperedges typically simultaneously contain materials, target PFAS, reaction conditions, performance metrics, and mechanistic evidence---preserving the complete variable set from individual experiments. In contrast, Graph-RAG responses tend toward discrete fact enumeration that fragments multivariable combinations. This difference is most pronounced at Level 3 (condition combination) and Level 5 (mechanistic evidence chain), where Graph-RAG's binary-edge decomposition severs condition combinations and evidence chains. At Level 4 (comparative analysis), Hyper-ChE integrates multidimensional features of different strategies within a unified comparison framework, whereas Graph-RAG relies on manual stitching of multiple binary edges. At Level 6 (strategy recommendation), Hyper-ChE provides richer contextual support with more complete evidentiary foundations for proposed experimental directions.
+
+\subsection{Qualitative Analysis of Representative Questions}
+
+Five questions exhibiting the most salient differences between Graph-RAG and Hyper-ChE were selected for qualitative analysis, spanning condition combination, cross-strategy comparison, pollutant-type contrast, mechanistic evidence chaining, and experimental recommendation.
+
+\textbf{Q5: Reaction condition combination (Level 3).} Q5 asks for an integrated description of how ultrasonic frequency, power density, reaction time, pH, catalyst dosage, and initial PFAS concentration jointly influence degradation efficiency and defluorination rate. This is a prototypical multivariable constraint problem. Graph-RAG returns isolated material-metric or condition-metric relations---for example, BaTiO$_{3}$+PFOS at 90.5\% degradation rate under sonication, or MoSe$_{2}$/TiO$_{2}$ at 93.6\% PFOA removal---discrete examples that fail to reconstruct complete multivariable combinations from individual experiments. Binary edges connect only two entities; when the query requires simultaneous invocation of multiple reaction conditions and performance metrics, Graph-RAG cannot recover the full variable set from a single experiment.
+
+In contrast, Hyper-ChE organizes information around specific material systems (PTFE, Cu-N/C@PVDF, Fe@PTFE), incorporating target PFAS, ultrasonic frequency (40--68~kHz), power density (0.3--2.34~W/cm$^{2}$), pH, reaction time (1--5~h), and defluorination rates into cohesive ``material--pollutant--condition--metric'' combinations. For instance, Hyper-ChE simultaneously preserves the complete parameter set ``40~kHz, 0.3~W/cm$^{2}$, 250~mg/L PTFE, 120~min, 10~mg/L PFOA'' and its associated defluorination range. This demonstrates that higher-order relations more naturally preserve the full semantic integrity of experimental facts under multivariable constraints.
+
+\textbf{Q7: Cross-strategy comparison (Level 4).} Q7 compares piezocatalytic, piezo-photocatalytic, piezo-Fenton, and electrochemical oxidation strategies for PFAS degradation. Graph-RAG's reliance on explicit binary relations leads to conservative coverage of coupling strategies. While abundant binary relations exist for piezocatalysis and electrochemical oxidation, the explicit binary edges for piezo-photocatalysis and piezo-Fenton are insufficient in number, causing Graph-RAG to judge these strategies as ``no data'' or ``limited evidence'' and exclude them from effective comparison.
+
+Hyper-ChE connects strategy-related hyperedges to process types, catalytic materials, target pollutants, active species, and performance metrics, enabling more comprehensive lateral comparison. For example, Hyper-ChE associates Fe@PTFE with piezo-Fenton reactions and Pt/BTO/BO composites with piezo-photocatalysis, then organizes these strategies with their respective target pollutants, active species ($\cdot$O$_{2}^{-}$, $\cdot$OH, h$^{+}$), and defluorination capabilities into unified comparison tables. This capability is essential for evaluating the applicability of different energy input modes and reaction pathways in PFAS degradation, and demonstrates that comparative analysis requires simultaneous invocation of multiple relation clusters rather than isolated binary edges.
+
+\textbf{Q8: Short-chain versus long-chain PFAS (Level 4).} Q8 examines degradation strategy differences between long-chain PFAS (PFOA/PFOS) and short-chain PFAS (PFBA/PFBS/GenX). Graph-RAG captures basic trends---PFOS removal (67\%) exceeds PFBA (16.6\%), and long-chain PFAS degradation (86\%) exceeds short-chain (31\%)---but provides limited discussion of adsorption affinity differences for short-chain PFAS, the special behavior of GenX as a replacement pollutant, or chain-length-independent mechanisms (only 4 entities recalled).
+
+Hyper-ChE covers adsorption affinity, chain-length effects, short-chain PFAS recalcitrance, and GenX-specific behavior, simultaneously organizing PFAS chain length, functional groups, material surface interactions, and performance metrics. Hyper-ChE not only notes that long-chain PFAS adsorb more readily due to higher log~$K_{a}$ values, but also explains that the key bottleneck for short-chain PFAS degradation is not C--F bond activation energy differences but rather lower surface affinity and higher aqueous solubility. Furthermore, Hyper-ChE identifies that defluorination mechanisms for PFCAs (C$_{2}$--C$_{10}$) exhibit chain-length independence: overall defluorination is adsorption-limited, but C--F bond cleavage efficiency is independent of chain length. This illustrates that target pollutants function not merely as retrieval keywords but as core variables influencing adsorption, activation, and defluorination pathways.
+
+\textbf{Q10: Direct electron transfer mechanism (Level 5).} Q10 requires integrating EPR spectroscopy, quenching experiments, DFT calculations, LC-MS intermediates, fluoride ion release, and control experiments to evaluate the feasibility of direct electron transfer in piezoelectric PFAS degradation. Graph-RAG retrieves some mechanism-related binary relations but recalls only 1 entity, yielding a narrow evidential basis that enumerates individual evidence points without organizing multiple characterization methods into a coherent chain supporting or refuting a mechanistic conclusion.
+
+Hyper-ChE retrieves not only active species and degradation pathways but also integrates EPR spectral detection (DMPO-$\cdot$OH, DMPO-$\cdot$H, DMPO-$\cdot$O$_{2}^{-}$ adducts), quenching experiments (IPA for $\cdot$OH, BQ/TEMPOL for $\cdot$O$_{2}^{-}$, TEMPO for electrons, TEOA for h$^{+}$), DFT calculations (reaction barriers and thermodynamic feasibility), LC-MS intermediates (short-chain PFCAs, H/F exchange products), and fluoride release plus control experiments into a multi-method mutually reinforcing evidential structure. This demonstrates that mechanistic conclusions require convergent support from multiple evidence classes, and higher-order hyperedges naturally express the epistemic structure of ``multiple evidences jointly supporting a single conclusion.''
+
+\textbf{Q12: Experimental direction recommendation (Level 6).} Q12 asks for five promising experimental directions for PFAS degradation research based on existing literature. Graph-RAG can generate recommendations, but some lack coherent variable combinations, and the internal consistency of variable associations within individual directions is insufficient---some recommendations omit corresponding condition constraints or control experimental designs.
+
+Hyper-ChE's advantage lies in the structural completeness of candidate proposals. Each recommendation typically simultaneously includes target PFAS, candidate materials or strategies, key variable combinations, expected performance improvements, potential risks, and necessary control experiments. For example, recommendations address not only material selection but also ultrasonic parameters, dosage ranges, expected defluorination targets, and corresponding control experiment suggestions. Such results should be understood as ``candidate directions'' or ``experimentally verifiable combinations'' rather than literature-proven optimal solutions. This demonstrates that higher-order knowledge organization can support not only factual retrieval but also experimental planning with richer contextual constraints.
+
+\subsection{Cross-Case Synthesis}
+
+The flow battery (Section~\ref{sec:case1}) and PFAS degradation cases represent fundamentally different chemical engineering subfields: one concerns electrochemical performance optimization, the other pollutant removal mechanisms. Yet both exhibit remarkably consistent higher-order relational proportions ($\sim$21\%), with flow batteries at 20.9\% and PFAS degradation at 21.98\%. This convergence strongly suggests that multivariable coupling is an inherent structural feature of chemical engineering knowledge, not a domain-specific artifact. The framework's modular type system enabled seamless cross-domain adaptation without architectural modification, requiring only replacement of entity and relation type definitions to reflect each domain's conceptual vocabulary. These findings support the proposition that hypergraph modeling provides a general representation formalism for experimental chemical engineering across diverse problem classes.

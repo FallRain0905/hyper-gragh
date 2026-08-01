@@ -1,0 +1,787 @@
+{
+  "document_id": "DOC08",
+  "title": "Degradation Phenomena in Soluble Lead-Acid Flow Batteries: PbO2 Passivation, Oxygen Evolution, and Cycle Life Limitations",
+  "efus": [
+    {
+      "gold_id": "DOC08-EFU-001",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB achieves CE of 85.2%, VE of 82.4%, and EE of 70.2%",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "electrolyte:lead_methanesulfonate", "name": "Pb2+", "type": "ELECTROLYTE"},
+        {"canonical_id": "electrolyte:sulfuric_acid", "name": "H2SO4", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 85.2, "unit": "%", "canonical_id": "measurement:ce_85_2_percent"},
+        {"metric_type": "VE", "value": 82.4, "unit": "%", "canonical_id": "measurement:ve_82_4_percent"},
+        {"metric_type": "EE", "value": 70.2, "unit": "%", "canonical_id": "measurement:ee_70_2_percent"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution"],
+      "evidence_text": "At a current density of 10 mA/cm2, the system achieved a coulombic efficiency of 85.2%, a voltage efficiency of 82.4%, and an energy efficiency of 70.2%."
+    },
+    {
+      "gold_id": "DOC08-EFU-002",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.1",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB achieves CE of 78.3%, VE of 72.5%, and EE stabilizing near 58%",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 78.3, "unit": "%", "canonical_id": "measurement:ce_78_3_percent"},
+        {"metric_type": "VE", "value": 72.5, "unit": "%", "canonical_id": "measurement:ve_72_5_percent"},
+        {"metric_type": "EE", "value": 58.0, "unit": "%", "canonical_id": "measurement:ee_58_0_percent"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution", "degradation:pbo2_passivation"],
+      "evidence_text": "The highest current density of 40 mA/cm2 produced the lowest CE of 78.3% and the lowest VE of 72.5%, resulting in an EE of 56.8%. However, it should be noted that the operational EE in the 40 mA/cm2 condition stabilized near 58% after the initial cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-003",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 20 mA/cm2 with 1.5 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB achieves CE of 86.5%, VE of 81.3%, EE of 70.3%, capacity retention of 82.1% at 200 cycles, and passivation layer of 4.9 um",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "anode:lead", "name": "lead", "type": "ANODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 86.5, "unit": "%", "canonical_id": "measurement:ce_86_5_percent"},
+        {"metric_type": "VE", "value": 81.3, "unit": "%", "canonical_id": "measurement:ve_81_3_percent"},
+        {"metric_type": "EE", "value": 70.3, "unit": "%", "canonical_id": "measurement:ee_70_3_percent"},
+        {"metric_type": "capacity_retention", "value": 82.1, "unit": "%", "canonical_id": "measurement:capacity_retention_82_1_percent"},
+        {"metric_type": "passivation_thickness", "value": 4.9, "unit": "um", "canonical_id": "measurement:passivation_4_9_um"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "At 1.5 mol/L Pb2+, initial CE reached 86.5%, VE was 81.3%, and EE was 70.3%. This formulation achieved the highest capacity retention of 82.1% after 200 cycles and the thinnest passivation layer of 4.9 um."
+    },
+    {
+      "gold_id": "DOC08-EFU-004",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.2",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 20 mA/cm2 with 0.5 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB shows CE of 80.1%, capacity retention of 68.4% at 200 cycles, passivation layer of 7.2 um, and oxygen evolution rate of 3.4 mL/h at 100 cycles",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "mol/L", "canonical_id": "condition:pb2_0_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 80.1, "unit": "%", "canonical_id": "measurement:ce_80_1_percent"},
+        {"metric_type": "capacity_retention", "value": 68.4, "unit": "%", "canonical_id": "measurement:capacity_retention_68_4_percent"},
+        {"metric_type": "passivation_thickness", "value": 7.2, "unit": "um", "canonical_id": "measurement:passivation_7_2_um"},
+        {"metric_type": "oxygen_evolution_rate", "value": 3.4, "unit": "mL/h", "canonical_id": "measurement:o2_rate_3_4_ml_h"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "At 0.5 mol/L Pb2+, the initial CE was 80.1%, VE was 78.5%, and EE was 62.9%. Over 200 cycles, capacity retention was 68.4%, indicating significant cumulative degradation. The PbO2 passivation layer reached a thickness of 7.2 um after 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-005",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.4",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, PbO2 passivation layer thickness increases from 2.5 um at 50 cycles to 5.8 um at 200 cycles with decelerating growth rate",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "cathode:pbo2", "name": "PbO2", "type": "CATHODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "passivation_thickness", "value": 2.5, "unit": "um", "canonical_id": "measurement:passivation_2_5_um"},
+        {"metric_type": "passivation_thickness", "value": 5.8, "unit": "um", "canonical_id": "measurement:passivation_5_8_um"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "At the baseline condition of 20 mA/cm2, 1.0 mol/L Pb2+, and 1.5 mol/L H2SO4, the passivation layer thickness increased progressively with cycle number: 2.5 um at 50 cycles, 4.1 um at 100 cycles, and 5.8 um at 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-006",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.4",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, PbO2 passivation layer reaches 8.3 um at 200 cycles with highly porous dendritic morphology",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "cathode:pbo2", "name": "PbO2", "type": "CATHODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "passivation_thickness", "value": 8.3, "unit": "um", "canonical_id": "measurement:passivation_8_3_um"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "At 40 mA/cm2, the layer reached 6.3 um at 100 cycles and 8.3 um at 200 cycles. The accelerated passivation at high current density reflects the higher rate of PbO2 deposition during charging."
+    },
+    {
+      "gold_id": "DOC08-EFU-007",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.5",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, oxygen evolution rate is 0.8 mL/h initially and 1.4 mL/h after 200 cycles",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "oxygen_evolution_rate", "value": 0.8, "unit": "mL/h", "canonical_id": "measurement:o2_rate_0_8_ml_h"},
+        {"metric_type": "oxygen_evolution_rate", "value": 1.4, "unit": "mL/h", "canonical_id": "measurement:o2_rate_1_4_ml_h"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution"],
+      "evidence_text": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the rate was 0.8 mL/h during early cycling and 1.4 mL/h after 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-008",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.5",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, oxygen evolution rate reaches 4.2 mL/h during early cycling",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "oxygen_evolution_rate", "value": 4.2, "unit": "mL/h", "canonical_id": "measurement:o2_rate_4_2_ml_h"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution"],
+      "evidence_text": "At 40 mA/cm2, the highest rates were observed: 4.2 mL/h during early cycling and 4.2 mL/h after 200 cycles, though the rate stabilized as the thick passivation layer increased the ohmic drop."
+    },
+    {
+      "gold_id": "DOC08-EFU-009",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.1",
+      "relation_type": "COMPARISON",
+      "claim": "As current density increases from 10 to 40 mA/cm2, CE decreases from 85.2% to 78.3% and VE decreases from 82.4% to 72.5%, with EE dropping from 70.2% to near 58%",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 85.2, "unit": "%", "canonical_id": "measurement:ce_85_2_percent"},
+        {"metric_type": "CE", "value": 78.3, "unit": "%", "canonical_id": "measurement:ce_78_3_percent"},
+        {"metric_type": "VE", "value": 82.4, "unit": "%", "canonical_id": "measurement:ve_82_4_percent"},
+        {"metric_type": "VE", "value": 72.5, "unit": "%", "canonical_id": "measurement:ve_72_5_percent"},
+        {"metric_type": "EE", "value": 70.2, "unit": "%", "canonical_id": "measurement:ee_70_2_percent"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution"],
+      "evidence_text": "These results demonstrate that both CE and VE degrade with increasing current density due to enhanced oxygen evolution and higher overpotentials, respectively."
+    },
+    {
+      "gold_id": "DOC08-EFU-010",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.7",
+      "relation_type": "COMPARISON",
+      "claim": "Capacity retention at 200 cycles improves from 65.7% with 1.0 mol/L H2SO4 to 79.3% with 2.0 mol/L H2SO4 at 20 mA/cm2 and 1.0 mol/L Pb2+",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:h2so4_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "capacity_retention", "value": 65.7, "unit": "%", "canonical_id": "measurement:capacity_retention_65_7_percent"},
+        {"metric_type": "capacity_retention", "value": 79.3, "unit": "%", "canonical_id": "measurement:capacity_retention_79_3_percent"},
+        {"metric_type": "passivation_thickness", "value": 7.8, "unit": "um", "canonical_id": "measurement:passivation_7_8_um"},
+        {"metric_type": "passivation_thickness", "value": 5.2, "unit": "um", "canonical_id": "measurement:passivation_5_2_um"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "Comparing across H2SO4 concentrations at fixed 1.0 mol/L Pb2+, the capacity retention at 200 cycles improved from 65.7% at 1.0 mol/L H2SO4 to 76.8% at 1.5 mol/L H2SO4 and 79.3% at 2.0 mol/L H2SO4."
+    },
+    {
+      "gold_id": "DOC08-EFU-011",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.7",
+      "relation_type": "COMPARISON",
+      "claim": "The lowest degradation occurs with 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 (CE 86.2%, retention 85.3%), while the highest degradation occurs with 0.5 mol/L Pb2+ and 1.0 mol/L H2SO4 (CE 76.8%, retention 63.4%)",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "mol/L", "canonical_id": "condition:pb2_0_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:h2so4_1_0_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 86.2, "unit": "%", "canonical_id": "measurement:ce_86_2_percent"},
+        {"metric_type": "capacity_retention", "value": 85.3, "unit": "%", "canonical_id": "measurement:capacity_retention_85_3_percent"},
+        {"metric_type": "CE", "value": 76.8, "unit": "%", "canonical_id": "measurement:ce_76_8_percent"},
+        {"metric_type": "capacity_retention", "value": 63.4, "unit": "%", "canonical_id": "measurement:capacity_retention_63_4_percent"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "The lowest degradation rates were observed with 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4, which achieved CE of 86.2%, EE of 70.8%, capacity retention of 85.3% at 200 cycles. The highest degradation rates occurred with 0.5 mol/L Pb2+ and 1.0 mol/L H2SO4, which showed CE of 76.8%, EE of 58.2%, capacity retention of 63.4% at 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-012",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.3",
+      "relation_type": "COMPOSITION",
+      "claim": "Electrolyte composition of 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 provides the best balance between CE, VE, EE, and cycle life",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "electrolyte:lead_methanesulfonate", "name": "Pb2+", "type": "ELECTROLYTE"},
+        {"canonical_id": "electrolyte:sulfuric_acid", "name": "H2SO4", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "CE", "value": 86.2, "unit": "%", "canonical_id": "measurement:ce_86_2_percent"},
+        {"metric_type": "VE", "value": 82.1, "unit": "%", "canonical_id": "measurement:ve_82_1_percent"},
+        {"metric_type": "EE", "value": 70.8, "unit": "%", "canonical_id": "measurement:ee_70_8_percent"}
+      ],
+      "mechanisms": [],
+      "evidence_text": "The optimal electrolyte composition of 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 provides the best balance between initial efficiency and cycle life, achieving CE of 86.2%, VE of 82.1%, EE of 70.8%."
+    },
+    {
+      "gold_id": "DOC08-EFU-013",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.3",
+      "relation_type": "COMPOSITION",
+      "claim": "Electrolyte solutions combine lead(II) methanesulfonate with sulfuric acid at 25 C with degassing and filtration for cell assembly",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "electrolyte:lead_methanesulfonate", "name": "Pb2+", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "temperature", "value": 25, "unit": "C", "canonical_id": "condition:temperature_25_c"}
+      ],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "Electrolyte solutions were prepared by dissolving lead(II) methanesulfonate in aqueous sulfuric acid. All electrolyte solutions were filtered through 0.45 um membrane filters to remove particulate matter and degassed with argon for 20 minutes prior to cell assembly. The electrolyte temperature was maintained at 25 C using a circulating water bath."
+    },
+    {
+      "gold_id": "DOC08-EFU-014",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "PbO2 passivation and oxygen evolution form a self-reinforcing cycle where passivation increases overpotential which accelerates oxygen evolution, which generates acidity that promotes less soluble PbO2 polymorphs",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "cathode:pbo2", "name": "PbO2", "type": "CATHODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "passivation_thickness", "value": 5.8, "unit": "um", "canonical_id": "measurement:passivation_5_8_um"},
+        {"metric_type": "oxygen_evolution_rate", "value": 3.0, "unit": "mL/h", "canonical_id": "measurement:o2_rate_3_0_ml_h"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "As passivation develops, the effective surface area for this reaction decreases, forcing the electrode potential to more positive values to maintain the applied current. These elevated potentials simultaneously accelerate oxygen evolution, which generates local acidity that alters PbO2 dissolution kinetics and promotes the formation of more stable, less soluble PbO2 polymorphs that resist subsequent dissolution."
+    },
+    {
+      "gold_id": "DOC08-EFU-015",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.6",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Capacity fade rate accelerates from 0.10% per cycle in early cycling to 0.20% per cycle after 100 cycles due to the coupled passivation-oxygen evolution degradation chain",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "capacity_fade_rate", "value": 0.10, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_10_percent_cycle"},
+        {"metric_type": "capacity_fade_rate", "value": 0.20, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_20_percent_cycle"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "The capacity fade rate showed a corresponding pattern, with average fade rates of 0.10% per cycle during cycles 1-50, 0.14% per cycle during cycles 51-100, and 0.20% per cycle during cycles 101-200."
+    },
+    {
+      "gold_id": "DOC08-EFU-016",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.9",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "XRD confirms beta-PbO2 content increases from 45% to 78% after 200 cycles, explaining progressive dissolution difficulty",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "cathode:pbo2", "name": "PbO2", "type": "CATHODE"}
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "X-ray diffraction analysis of cycled positive electrodes confirmed the presence of both alpha-PbO2 (orthorhombic) and beta-PbO2 (tetragonal) phases, with the beta-phase content increasing from 45% in fresh deposits to 78% after 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-017",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.9",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "XPS reveals PbSO4 in passivation layer and CV shows 45% reduction in redox peak current after 200 cycles, confirming loss of electrochemically active surface area",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "cathode:pbo2", "name": "PbO2", "type": "CATHODE"}
+      ],
+      "conditions": [
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "measurements": [],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "X-ray photoelectron spectroscopy (XPS) analysis of the passivation layer surface after 200 cycles revealed the presence of PbSO4 in addition to PbO2. Cyclic voltammetry of aged positive electrodes in fresh electrolyte showed a 45% reduction in the Pb2+/PbO2 redox peak current after 200 cycles compared to fresh electrodes."
+    },
+    {
+      "gold_id": "DOC08-EFU-018",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.6",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "EIS shows charge transfer resistance increases from 0.35 ohm cm2 to 1.28 ohm cm2 over 200 cycles with ohmic resistance increasing from 0.45 to 0.68 ohm cm2",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"}
+      ],
+      "measurements": [
+        {"metric_type": "charge_transfer_resistance", "value": 1.28, "unit": "ohm cm2", "canonical_id": "measurement:ct_resistance_1_28_ohm_cm2"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation"],
+      "evidence_text": "The charge transfer resistance at the positive electrode increased from 0.35 ohm cm2 at 10 cycles to 0.82 ohm cm2 at 100 cycles and 1.28 ohm cm2 at 200 cycles. The ohmic resistance component also increased from 0.45 ohm cm2 to 0.68 ohm cm2 over 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-019",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.10",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Optimal SLFB design uses 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 operated at 10-20 mA/cm2, achieving EE of 70% and capacity retention above 75% over 200 cycles",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"},
+        {"canonical_id": "electrolyte:lead_methanesulfonate", "name": "Pb2+", "type": "ELECTROLYTE"},
+        {"canonical_id": "electrolyte:sulfuric_acid", "name": "H2SO4", "type": "ELECTROLYTE"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "EE", "value": 70.8, "unit": "%", "canonical_id": "measurement:ee_70_8_percent"},
+        {"metric_type": "capacity_retention", "value": 85.3, "unit": "%", "canonical_id": "measurement:capacity_retention_85_3_percent"}
+      ],
+      "mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "evidence_text": "The optimal SLFB design identified in this work employs 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 electrolyte operated at 10-20 mA/cm2, achieving energy efficiency of 70% and capacity retention above 75% over 200 cycles."
+    },
+    {
+      "gold_id": "DOC08-EFU-020",
+      "source_doc_id": "DOC08",
+      "source_section": "Section 3.5",
+      "relation_type": "COMPARISON",
+      "claim": "Oxygen evolution rate decreases with increasing Pb2+ concentration from 3.4 mL/h at 0.5 mol/L to 2.2 mL/h at 1.5 mol/L at 20 mA/cm2 and 1.5 mol/L H2SO4 after 100 cycles",
+      "entities": [
+        {"canonical_id": "system:slfb", "name": "SLFB", "type": "SYSTEM"}
+      ],
+      "conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "mol/L", "canonical_id": "condition:pb2_0_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "measurements": [
+        {"metric_type": "oxygen_evolution_rate", "value": 3.4, "unit": "mL/h", "canonical_id": "measurement:o2_rate_3_4_ml_h"},
+        {"metric_type": "oxygen_evolution_rate", "value": 2.2, "unit": "mL/h", "canonical_id": "measurement:o2_rate_2_2_ml_h"}
+      ],
+      "mechanisms": ["side_reaction:oxygen_evolution"],
+      "evidence_text": "At 20 mA/cm2 and 1.5 mol/L H2SO4, the oxygen evolution rate after 100 cycles was 3.4 mL/h with 0.5 mol/L Pb2+, 2.7 mL/h with 1.0 mol/L Pb2+, and 2.2 mL/h with 1.5 mol/L Pb2+."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC08-FACT-001",
+      "source_doc_id": "DOC08",
+      "claim": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB achieves CE of 85.2%, VE of 82.4%, and EE of 70.2% with moderate parasitic oxygen evolution",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 85.2, "unit": "%", "canonical_id": "measurement:ce_85_2_percent"},
+        {"metric_type": "VE", "value": 82.4, "unit": "%", "canonical_id": "measurement:ve_82_4_percent"},
+        {"metric_type": "EE", "value": 70.2, "unit": "%", "canonical_id": "measurement:ee_70_2_percent"}
+      ],
+      "required_mechanisms": ["side_reaction:oxygen_evolution"],
+      "supporting_efus": ["DOC08-EFU-001"],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-002",
+      "source_doc_id": "DOC08",
+      "claim": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB shows CE of 78.3%, VE of 72.5%, and EE stabilizing near 58% due to severe oxygen evolution and passivation",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 78.3, "unit": "%", "canonical_id": "measurement:ce_78_3_percent"},
+        {"metric_type": "VE", "value": 72.5, "unit": "%", "canonical_id": "measurement:ve_72_5_percent"},
+        {"metric_type": "EE", "value": 58.0, "unit": "%", "canonical_id": "measurement:ee_58_0_percent"}
+      ],
+      "required_mechanisms": ["side_reaction:oxygen_evolution", "degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-002"],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-003",
+      "source_doc_id": "DOC08",
+      "claim": "At 20 mA/cm2 with 1.5 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB achieves the best performance among tested conditions with CE 86.5%, EE 70.3%, capacity retention 82.1%, and thinnest passivation layer of 4.9 um",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 86.5, "unit": "%", "canonical_id": "measurement:ce_86_5_percent"},
+        {"metric_type": "EE", "value": 70.3, "unit": "%", "canonical_id": "measurement:ee_70_3_percent"},
+        {"metric_type": "capacity_retention", "value": 82.1, "unit": "%", "canonical_id": "measurement:capacity_retention_82_1_percent"},
+        {"metric_type": "passivation_thickness", "value": 4.9, "unit": "um", "canonical_id": "measurement:passivation_4_9_um"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "supporting_efus": ["DOC08-EFU-003"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-004",
+      "source_doc_id": "DOC08",
+      "claim": "At 20 mA/cm2 with 0.5 mol/L Pb2+ and 1.5 mol/L H2SO4, SLFB shows the worst performance with CE 80.1%, capacity retention 68.4%, thick passivation layer of 7.2 um, and high oxygen evolution rate of 3.4 mL/h",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 0.5, "unit": "mol/L", "canonical_id": "condition:pb2_0_5_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 80.1, "unit": "%", "canonical_id": "measurement:ce_80_1_percent"},
+        {"metric_type": "capacity_retention", "value": 68.4, "unit": "%", "canonical_id": "measurement:capacity_retention_68_4_percent"},
+        {"metric_type": "passivation_thickness", "value": 7.2, "unit": "um", "canonical_id": "measurement:passivation_7_2_um"},
+        {"metric_type": "oxygen_evolution_rate", "value": 3.4, "unit": "mL/h", "canonical_id": "measurement:o2_rate_3_4_ml_h"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "supporting_efus": ["DOC08-EFU-004"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-005",
+      "source_doc_id": "DOC08",
+      "claim": "PbO2 passivation layer thickness at 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4 increases from 2.5 um at 50 cycles to 5.8 um at 200 cycles with decelerating growth",
+      "required_entities": ["system:slfb", "cathode:pbo2"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "passivation_thickness", "value": 2.5, "unit": "um", "canonical_id": "measurement:passivation_2_5_um"},
+        {"metric_type": "passivation_thickness", "value": 5.8, "unit": "um", "canonical_id": "measurement:passivation_5_8_um"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-005"],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-006",
+      "source_doc_id": "DOC08",
+      "claim": "Oxygen evolution rate at 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4 increases from 2.1 mL/h initially to 3.0 mL/h after 200 cycles as the passivation layer develops enhanced catalytic activity",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "oxygen_evolution_rate", "value": 2.1, "unit": "mL/h", "canonical_id": "measurement:o2_rate_2_1_ml_h"},
+        {"metric_type": "oxygen_evolution_rate", "value": 3.0, "unit": "mL/h", "canonical_id": "measurement:o2_rate_3_0_ml_h"}
+      ],
+      "required_mechanisms": ["side_reaction:oxygen_evolution", "degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-007"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-007",
+      "source_doc_id": "DOC08",
+      "claim": "PbO2 passivation and oxygen evolution form a coupled degradation chain where passivation increases overpotential, accelerating oxygen evolution, which generates acidity that promotes less soluble PbO2 polymorphs, causing capacity fade to accelerate from 0.10% to 0.20% per cycle",
+      "required_entities": ["system:slfb", "cathode:pbo2"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "capacity_fade_rate", "value": 0.10, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_10_percent_cycle"},
+        {"metric_type": "capacity_fade_rate", "value": 0.20, "unit": "%/cycle", "canonical_id": "measurement:fade_rate_0_20_percent_cycle"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "supporting_efus": ["DOC08-EFU-014", "DOC08-EFU-015"],
+      "difficulty": "L3",
+      "fact_type": "DEGRADATION_CHAIN"
+    },
+    {
+      "fact_id": "DOC08-FACT-008",
+      "source_doc_id": "DOC08",
+      "claim": "XRD, XPS, and CV provide mechanistic evidence that beta-PbO2 content increases from 45% to 78%, PbSO4 forms in passivation layers, and redox peak current decreases 45% after 200 cycles",
+      "required_entities": ["system:slfb", "cathode:pbo2"],
+      "required_conditions": [
+        {"quantity_type": "cycle_number", "value": 200, "unit": "cycles", "canonical_id": "condition:cycle_200"}
+      ],
+      "required_metrics": [],
+      "required_mechanisms": ["degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-016", "DOC08-EFU-017"],
+      "difficulty": "L3",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-009",
+      "source_doc_id": "DOC08",
+      "claim": "The optimal SLFB design uses 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 at 10-20 mA/cm2, achieving CE 86.2%, EE 70.8%, and capacity retention 85.3% at 200 cycles",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 10, "unit": "mA/cm2", "canonical_id": "condition:current_density_10_ma_cm2"},
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:pb2_1_5_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "CE", "value": 86.2, "unit": "%", "canonical_id": "measurement:ce_86_2_percent"},
+        {"metric_type": "EE", "value": 70.8, "unit": "%", "canonical_id": "measurement:ee_70_8_percent"},
+        {"metric_type": "capacity_retention", "value": 85.3, "unit": "%", "canonical_id": "measurement:capacity_retention_85_3_percent"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation", "side_reaction:oxygen_evolution"],
+      "supporting_efus": ["DOC08-EFU-019"],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC08-FACT-010",
+      "source_doc_id": "DOC08",
+      "claim": "Higher H2SO4 concentration improves capacity retention from 65.7% at 1.0 mol/L to 79.3% at 2.0 mol/L and reduces passivation thickness from 7.8 um to 5.2 um at 20 mA/cm2 with 1.0 mol/L Pb2+",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:h2so4_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 2.0, "unit": "mol/L", "canonical_id": "condition:h2so4_2_0_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "capacity_retention", "value": 65.7, "unit": "%", "canonical_id": "measurement:capacity_retention_65_7_percent"},
+        {"metric_type": "capacity_retention", "value": 79.3, "unit": "%", "canonical_id": "measurement:capacity_retention_79_3_percent"},
+        {"metric_type": "passivation_thickness", "value": 7.8, "unit": "um", "canonical_id": "measurement:passivation_7_8_um"},
+        {"metric_type": "passivation_thickness", "value": 5.2, "unit": "um", "canonical_id": "measurement:passivation_5_2_um"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-010"],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC08-FACT-011",
+      "source_doc_id": "DOC08",
+      "claim": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the PbO2 passivation layer reaches 8.3 um at 200 cycles with highly porous dendritic morphology, causing catastrophic capacity degradation",
+      "required_entities": ["system:slfb", "cathode:pbo2"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 40, "unit": "mA/cm2", "canonical_id": "condition:current_density_40_ma_cm2"},
+        {"quantity_type": "concentration", "value": 1.0, "unit": "mol/L", "canonical_id": "condition:pb2_1_0_mol_l"},
+        {"quantity_type": "concentration", "value": 1.5, "unit": "mol/L", "canonical_id": "condition:h2so4_1_5_mol_l"}
+      ],
+      "required_metrics": [
+        {"metric_type": "passivation_thickness", "value": 8.3, "unit": "um", "canonical_id": "measurement:passivation_8_3_um"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-006"],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC08-FACT-012",
+      "source_doc_id": "DOC08",
+      "claim": "EIS analysis confirms charge transfer resistance increases from 0.35 to 1.28 ohm cm2 and ohmic resistance increases from 0.45 to 0.68 ohm cm2 over 200 cycles due to passivation layer growth",
+      "required_entities": ["system:slfb"],
+      "required_conditions": [
+        {"quantity_type": "current_density", "value": 20, "unit": "mA/cm2", "canonical_id": "condition:current_density_20_ma_cm2"}
+      ],
+      "required_metrics": [
+        {"metric_type": "charge_transfer_resistance", "value": 1.28, "unit": "ohm cm2", "canonical_id": "measurement:ct_resistance_1_28_ohm_cm2"}
+      ],
+      "required_mechanisms": ["degradation:pbo2_passivation"],
+      "supporting_efus": ["DOC08-EFU-018"],
+      "difficulty": "L2",
+      "fact_type": "MECHANISM_EVIDENCE"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "question_id": "DOC08-QA-001",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the CE, VE, and EE of an SLFB operated at 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4?",
+      "reference_answer": "At 10 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the SLFB achieves a coulombic efficiency of 85.2%, a voltage efficiency of 82.4%, and an energy efficiency of 70.2%.",
+      "reference_answer_points": ["CE: 85.2%", "VE: 82.4%", "EE: 70.2%"],
+      "expected_facts": ["DOC08-FACT-001"],
+      "expected_efus": ["DOC08-EFU-001"]
+    },
+    {
+      "question_id": "DOC08-QA-002",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the PbO2 passivation layer thickness at 200 cycles for the baseline condition of 20 mA/cm2, 1.0 mol/L Pb2+, and 1.5 mol/L H2SO4?",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the PbO2 passivation layer thickness reaches 5.8 um at 200 cycles, increasing from 2.5 um at 50 cycles and 4.1 um at 100 cycles.",
+      "reference_answer_points": ["Passivation thickness at 200 cycles: 5.8 um", "At 50 cycles: 2.5 um", "At 100 cycles: 4.1 um"],
+      "expected_facts": ["DOC08-FACT-005"],
+      "expected_efus": ["DOC08-EFU-005"]
+    },
+    {
+      "question_id": "DOC08-QA-003",
+      "source_doc_id": "DOC08",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the oxygen evolution rate at 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4 during early cycling?",
+      "reference_answer": "At 40 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the oxygen evolution rate reaches 4.2 mL/h during early cycling, which is the highest rate observed among the tested conditions.",
+      "reference_answer_points": ["Oxygen evolution rate: 4.2 mL/h", "Condition: 40 mA/cm2, 1.0 mol/L Pb2+, 1.5 mol/L H2SO4"],
+      "expected_facts": ["DOC08-FACT-002"],
+      "expected_efus": ["DOC08-EFU-008"]
+    },
+    {
+      "question_id": "DOC08-QA-004",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does increasing Pb2+ concentration from 0.5 to 1.5 mol/L affect CE, capacity retention, passivation thickness, and oxygen evolution rate at 20 mA/cm2 and 1.5 mol/L H2SO4?",
+      "reference_answer": "At 20 mA/cm2 and 1.5 mol/L H2SO4, increasing Pb2+ from 0.5 to 1.5 mol/L improves CE from 80.1% to 86.5%, increases capacity retention at 200 cycles from 68.4% to 82.1%, decreases passivation layer thickness from 7.2 um to 4.9 um, and reduces oxygen evolution rate from 3.4 mL/h to 2.2 mL/h. These improvements are attributed to enhanced mass transport, higher exchange current density, and more favorable PbO2 dissolution thermodynamics at higher Pb2+ concentrations.",
+      "reference_answer_points": ["CE improves from 80.1% to 86.5%", "Capacity retention improves from 68.4% to 82.1%", "Passivation decreases from 7.2 um to 4.9 um", "O2 evolution decreases from 3.4 to 2.2 mL/h", "Higher Pb2+ enhances mass transport and dissolution kinetics"],
+      "expected_facts": ["DOC08-FACT-003", "DOC08-FACT-004"],
+      "expected_efus": ["DOC08-EFU-003", "DOC08-EFU-004", "DOC08-EFU-020"]
+    },
+    {
+      "question_id": "DOC08-QA-005",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does H2SO4 concentration affect capacity retention and passivation layer thickness at 20 mA/cm2 with 1.0 mol/L Pb2+?",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+, increasing H2SO4 concentration from 1.0 to 2.0 mol/L improves capacity retention at 200 cycles from 65.7% to 79.3%, decreases passivation layer thickness from 7.8 um to 5.2 um, and reduces oxygen evolution rate from 3.5 mL/h to 2.4 mL/h. The 1.5 mol/L H2SO4 condition shows intermediate values: 76.8% capacity retention, 5.8 um passivation, and 2.7 mL/h oxygen evolution. These trends confirm the beneficial effect of higher acid concentration on both conductivity and PbO2 dissolution.",
+      "reference_answer_points": ["1.0 mol/L H2SO4: 65.7% retention, 7.8 um passivation, 3.5 mL/h O2", "1.5 mol/L H2SO4: 76.8% retention, 5.8 um passivation, 2.7 mL/h O2", "2.0 mol/L H2SO4: 79.3% retention, 5.2 um passivation, 2.4 mL/h O2", "Higher acid improves conductivity and PbO2 dissolution"],
+      "expected_facts": ["DOC08-FACT-010"],
+      "expected_efus": ["DOC08-EFU-010"]
+    },
+    {
+      "question_id": "DOC08-QA-006",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "Compare the CE, EE, and capacity retention between the best and worst electrolyte formulations at 20 mA/cm2 and 200 cycles.",
+      "reference_answer": "The best formulation (1.5 mol/L Pb2+, 2.0 mol/L H2SO4) achieves CE of 86.2%, EE of 70.8%, and capacity retention of 85.3% at 200 cycles with a passivation layer of 4.7 um and oxygen evolution rate of 2.0 mL/h. The worst formulation (0.5 mol/L Pb2+, 1.0 mol/L H2SO4) shows CE of 76.8%, EE of 58.2%, and capacity retention of 63.4% with a passivation layer of 8.1 um and oxygen evolution rate of 3.6 mL/h. The difference of 21.9 percentage points in capacity retention highlights the critical importance of electrolyte composition optimization.",
+      "reference_answer_points": ["Best: 1.5 mol/L Pb2+, 2.0 mol/L H2SO4", "Best metrics: CE 86.2%, EE 70.8%, retention 85.3%", "Worst: 0.5 mol/L Pb2+, 1.0 mol/L H2SO4", "Worst metrics: CE 76.8%, EE 58.2%, retention 63.4%", "Difference in retention: 21.9 percentage points"],
+      "expected_facts": ["DOC08-FACT-003", "DOC08-FACT-004"],
+      "expected_efus": ["DOC08-EFU-011"]
+    },
+    {
+      "question_id": "DOC08-QA-007",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "Explain the coupled degradation chain between PbO2 passivation and oxygen evolution in SLFBs, including how it causes accelerating capacity fade.",
+      "reference_answer": "PbO2 passivation and oxygen evolution form a self-reinforcing degradation chain. As passivation develops during cycling, the effective surface area for Pb2+ oxidation decreases, forcing the electrode potential to more positive values to maintain the applied current. These elevated potentials accelerate oxygen evolution, which generates local acidity that alters PbO2 dissolution kinetics and promotes the formation of more stable, less soluble PbO2 polymorphs (particularly beta-PbO2) that resist subsequent dissolution. This mutual reinforcement causes capacity fade to accelerate over time: from 0.10% per cycle during cycles 1-50, to 0.14% per cycle during cycles 51-100, and 0.20% per cycle during cycles 101-200. The progressively increasing fraction of charge current consumed by oxygen evolution rather than productive PbO2 formation directly reduces coulombic efficiency and available discharge capacity.",
+      "reference_answer_points": ["Passivation decreases active surface area", "Higher overpotential needed to maintain current", "Elevated potentials accelerate O2 evolution", "O2 evolution generates local acidity", "Acidity promotes less soluble PbO2 polymorphs", "Beta-PbO2 increases from 45% to 78%", "Fade accelerates: 0.10% -> 0.14% -> 0.20% per cycle"],
+      "expected_facts": ["DOC08-FACT-007"],
+      "expected_efus": ["DOC08-EFU-014", "DOC08-EFU-015"]
+    },
+    {
+      "question_id": "DOC08-QA-008",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "What is the recommended operating strategy for maximizing SLFB cycle life, considering the coupled degradation mechanisms, the effect of electrolyte composition, and the current density dependence of all degradation metrics?",
+      "reference_answer": "To maximize SLFB cycle life, a comprehensive strategy should incorporate three elements. First, use the optimal electrolyte composition of 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4, which achieves the best balance between CE (86.2%), VE (82.1%), EE (70.8%), and capacity retention (85.3% at 200 cycles). This formulation minimizes both passivation growth (4.7 um) and oxygen evolution (2.0 mL/h). Second, operate at 10-20 mA/cm2 to avoid the severe degradation at higher current densities: at 40 mA/cm2, passivation reaches 8.3 um and CE drops to 78.3%. Third, implement mitigation strategies that address both coupled mechanisms simultaneously, such as pulse charging to periodically dissolve passivation layers and additives that stabilize alpha-PbO2 relative to the less soluble beta-phase. The coupled nature of the degradation means that addressing only one mechanism (e.g., only suppressing oxygen evolution) will be insufficient, as the remaining passivation growth will still drive overpotential increase and eventual oxygen evolution acceleration.",
+      "reference_answer_points": ["Use 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 electrolyte", "Operate at 10-20 mA/cm2", "At 20 mA/cm2: CE 86.2%, EE 70.8%, retention 85.3%", "Implement pulse charging to dissolve passivation", "Use additives stabilizing alpha-PbO2", "Address both mechanisms simultaneously due to coupling"],
+      "expected_facts": ["DOC08-FACT-007", "DOC08-FACT-009"],
+      "expected_efus": ["DOC08-EFU-009", "DOC08-EFU-011", "DOC08-EFU-014", "DOC08-EFU-019"]
+    },
+    {
+      "question_id": "DOC08-QA-009",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "mechanism reasoning",
+      "question": "What experimental evidence from XRD, XPS, and CV supports the passivation mechanism, and how does this evidence explain the progressive difficulty in dissolving the PbO2 layer?",
+      "reference_answer": "Three analytical techniques provide complementary evidence. XRD analysis shows beta-PbO2 (tetragonal) content increases from 45% in fresh deposits to 78% after 200 cycles, while alpha-PbO2 (orthorhombic) decreases correspondingly. Since beta-PbO2 is more electrochemically stable and less soluble than alpha-PbO2, this phase transformation directly explains the progressive dissolution difficulty. XPS reveals PbSO4 formation within the passivation layer, indicating sulfate incorporation that adds electrochemical inactivity; the PbSO4 fraction increases at lower H2SO4 concentrations where pH excursions are more severe. CV analysis shows a 45% reduction in Pb2+/PbO2 redox peak current after 200 cycles and an increase in peak potential separation from 85 mV to 152 mV, confirming both the loss of active surface area and the slower electrode kinetics due to the resistive passivation layer. Together, these data establish that passivation involves not simple PbO2 accumulation but rather a complex transformation to more stable, less active phases.",
+      "reference_answer_points": ["XRD: beta-PbO2 increases from 45% to 78%", "Beta-PbO2 is less soluble than alpha-PbO2", "XPS: PbSO4 forms in passivation layer", "CV: 45% reduction in redox peak current", "CV: peak separation increases from 85 to 152 mV", "Passivation involves phase transformation, not just accumulation"],
+      "expected_facts": ["DOC08-FACT-008"],
+      "expected_efus": ["DOC08-EFU-016", "DOC08-EFU-017"]
+    },
+    {
+      "question_id": "DOC08-QA-010",
+      "source_doc_id": "DOC08",
+      "level": "L2",
+      "question_type": "condition-constrained retrieval",
+      "question": "How does the oxygen evolution rate change over 200 cycles at the baseline condition, and what causes this trend?",
+      "reference_answer": "At 20 mA/cm2 with 1.0 mol/L Pb2+ and 1.5 mol/L H2SO4, the oxygen evolution rate increases progressively with cycling: 2.1 mL/h during cycles 1-10, 2.3 mL/h during cycles 41-50, 2.7 mL/h during cycles 91-100, and 3.0 mL/h during cycles 191-200. This progressive increase is attributed to the growth of the PbO2 passivation layer, which alters the effective catalytic surface for water oxidation. The PbO2 surface that develops during cycling exhibits higher catalytic activity for oxygen evolution compared to the fresh carbon substrate, analogous to dimensionally stable anodes in chlor-alkali electrolysis. The passivation layer also forces higher electrode potentials, which further accelerate the oxygen evolution reaction.",
+      "reference_answer_points": ["Cycles 1-10: 2.1 mL/h", "Cycles 41-50: 2.3 mL/h", "Cycles 91-100: 2.7 mL/h", "Cycles 191-200: 3.0 mL/h", "Cause: PbO2 passivation layer growth", "Passivated PbO2 has higher O2 evolution catalytic activity", "Higher overpotentials also accelerate O2 evolution"],
+      "expected_facts": ["DOC08-FACT-006"],
+      "expected_efus": ["DOC08-EFU-007"]
+    },
+    {
+      "question_id": "DOC08-QA-011",
+      "source_doc_id": "DOC08",
+      "level": "L3",
+      "question_type": "multi-hop reasoning",
+      "question": "Considering the current density effect on all degradation metrics (CE, VE, EE, passivation thickness, oxygen evolution rate, and capacity retention), what current density would you recommend for an SLFB requiring 200-cycle life, and what tradeoffs would this choice involve?",
+      "reference_answer": "For a 200-cycle life requirement, I recommend 20 mA/cm2 as the maximum acceptable current density. At this current density with optimal electrolyte (1.5 mol/L Pb2+, 2.0 mol/L H2SO4), the system achieves CE of 86.2%, EE of 70.3%, and capacity retention of 82.1%. The passivation layer reaches 4.9 um and oxygen evolution is 2.2 mL/h, both manageable levels. At 10 mA/cm2, even better performance is achieved (CE 87.4%, EE 72.1%, retention 87.4%) but at lower power density. The critical tradeoff is between power density and longevity: at 30 mA/cm2, capacity retention drops to 68.5% at 200 cycles with 7.1 um passivation, and at 40 mA/cm2 it falls to 62.8% with 8.3 um passivation. The 20 mA/cm2 choice represents the best compromise, delivering acceptable power density while maintaining capacity retention above 80% with the optimal electrolyte. If higher power density is essential, operating at 30 mA/cm2 with 1.5 mol/L Pb2+ and 2.0 mol/L H2SO4 may be acceptable though retention drops below 70%.",
+      "reference_answer_points": ["Recommended: 20 mA/cm2 for 200-cycle life", "At 20 mA/cm2: CE 86.2%, EE 70.3%, retention 82.1%", "At 10 mA/cm2: better metrics but lower power", "At 30 mA/cm2: retention drops to 68.5%", "At 40 mA/cm2: retention drops to 62.8%", "Tradeoff: power density vs longevity"],
+      "expected_facts": ["DOC08-FACT-003", "DOC08-FACT-009", "DOC08-FACT-011"],
+      "expected_efus": ["DOC08-EFU-003", "DOC08-EFU-006", "DOC08-EFU-019"]
+    }
+  ]
+}

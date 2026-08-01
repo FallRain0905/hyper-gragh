@@ -1,0 +1,6 @@
+group,questions,Good Rate,Satisfactory-or-Better Rate,Key-Point Coverage,Hallucination Rate,Abstention Accuracy,Citation Stability
+text_segments,10,0.1,0.1,0.1,0.1,0.1,0.0
+original_hypergraph,10,0.4,0.4,0.4,0.0,0.2,0.3
+chem_prompt_graph,10,0.3,0.3,0.3,0.1,0.2,0.2
+chem_prompt_hypergraph,10,0.3,0.4,0.38,0.4,0.4,0.3
+chem_norm_hypergraph,10,0.1,0.3,0.2167,0.0,0.3,0.2

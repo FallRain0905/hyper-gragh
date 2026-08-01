@@ -1,0 +1,6 @@
+group,label,cache,view,evidence_count,queries,P@1,Hit@5,MRR,gNDCG@5
+original_hypergraph,Original Hyper-RAG hypergraph,hyper_base,hyper,304,180,0.2833,0.4111,0.3386,0.299
+chem_prompt_graph,Chemistry prompt graph projection,hyper_chem_prompt,graph,238,180,0.0889,0.1667,0.1274,0.1167
+chem_prompt_hypergraph,Chemistry prompt hypergraph,hyper_chem_prompt,hyper,295,180,0.3278,0.4778,0.3938,0.3747
+chem_norm_hypergraph,Chemistry prompt + normalization hypergraph,hyper_norm,hyper,218,180,0.1333,0.2389,0.1718,0.1676
+text_segments,Original text segments,hyper_chem_prompt,text,10,180,0.9444,0.9944,0.9664,0.8817

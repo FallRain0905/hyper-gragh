@@ -1,0 +1,2121 @@
+{
+  "efus": [
+    {
+      "gold_id": "DOC10-EFU-001",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.1: VRFB Baseline Performance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "VRFB with Nafion 117 achieves EE of 84% at 100 mA/cm2 and CE of 96%, with EE decreasing to 78% at 200 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "With Nafion 117 membrane, VRFBs achieve energy efficiency of 78-84% at current densities of 100-200 mA/cm2. At 100 mA/cm2, a typical system achieves EE of 84% and CE of 96%. At 150 mA/cm2, the EE decreases to 81% with CE of 95%. At 200 mA/cm2, the EE further decreases to 78% with CE of 94%."
+    },
+    {
+      "gold_id": "DOC10-EFU-002",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.2: ICRFB Baseline Performance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "ICRFB with Bi3+ additive achieves EE of 85% at 80 mA/cm2 and CE of 97%, decreasing to EE of 62% at 160 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ee_85_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 97,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 62,
+          "unit": "%",
+          "canonical_id": "measurement:ee_62_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:hydrogen_evolution",
+        "degradation:chromium_kinetics"
+      ],
+      "evidence_text": "With Bi3+ additive (typically 0.01-0.05 M), ICRFBs achieve energy efficiency of 62-85% at current densities of 80-160 mA/cm2. At 80 mA/cm2, the EE reaches 85% with CE of 97%. At 120 mA/cm2, the EE is 75% with CE of 95%. At 160 mA/cm2, the EE decreases to 62% with CE of 92%."
+    },
+    {
+      "gold_id": "DOC10-EFU-003",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.3: Zn-Br Baseline Performance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Zn-Br system achieves EE of 78% at 40 mA/cm2 with CE of 93%, decreasing to EE of 64% at 80 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 93,
+          "unit": "%",
+          "canonical_id": "measurement:ce_93_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 64,
+          "unit": "%",
+          "canonical_id": "measurement:ee_64_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:zinc_dendrite",
+        "degradation:bromine_crossover"
+      ],
+      "evidence_text": "Zinc-bromine systems achieve energy efficiency of 64-78% at current densities of 40-80 mA/cm2. At 40 mA/cm2, the EE reaches 78% with CE of 93%. At 60 mA/cm2, the EE is 71% with CE of 90%. At 80 mA/cm2, the EE decreases to 64% with CE of 87%."
+    },
+    {
+      "gold_id": "DOC10-EFU-004",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.4: SLA Baseline Performance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "SLA system achieves EE of 78% at 20 mA/cm2 with CE of 89%, decreasing to EE of 58% at 40 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:sla",
+          "name": "soluble lead-acid flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 89,
+          "unit": "%",
+          "canonical_id": "measurement:ce_89_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 58,
+          "unit": "%",
+          "canonical_id": "measurement:ee_58_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:pbo2_morphology",
+        "degradation:lead_dendrite"
+      ],
+      "evidence_text": "SLA systems achieve energy efficiency of 58-78% at current densities of 20-40 mA/cm2. At 20 mA/cm2, the EE reaches 78% with CE of 89%. At 30 mA/cm2, the EE is 68% with CE of 85%. At 40 mA/cm2, the EE decreases to 58% with CE of 82%."
+    },
+    {
+      "gold_id": "DOC10-EFU-005",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.5: ORFB Baseline Performance",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "ORFB achieves EE of 88% at 20 mA/cm2 with CE of 99%, decreasing to EE of 76% at 100 mA/cm2 with CE of 95%",
+      "entities": [
+        {
+          "canonical_id": "system:orfb",
+          "name": "organic redox flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 88,
+          "unit": "%",
+          "canonical_id": "measurement:ee_88_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 99,
+          "unit": "%",
+          "canonical_id": "measurement:ce_99_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:ce_95_percent"
+        }
+      ],
+      "mechanisms": [
+        "degradation:organic_crossover",
+        "degradation:radical_dimerization"
+      ],
+      "evidence_text": "Representative systems achieve energy efficiency of 76-88% at current densities of 20-100 mA/cm2. At 20 mA/cm2, the EE reaches 88% with CE of 99%. At 60 mA/cm2, the EE is 83% with CE of 97%. At 100 mA/cm2, the EE decreases to 76% with CE of 95%."
+    },
+    {
+      "gold_id": "DOC10-EFU-006",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 3.2: VRFB Membrane Selection",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "VRFB with SPEEK (42% sulfonation) at 100 mA/cm2 achieves EE of 83% versus 84% for Nafion 117, but reduces capacity fade from 0.035%/cycle to 0.018%/cycle",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:speek",
+          "name": "SPEEK membrane",
+          "type": "MEMBRANE"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 83,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_speek_0_018"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.035,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_nafion_0_035"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "At 100 mA/cm2, a SPEEK membrane with 42% sulfonation degree achieved an EE of 83% compared to 84% for Nafion 117, but reduced the capacity fade rate from 0.035%/cycle to 0.018%/cycle."
+    },
+    {
+      "gold_id": "DOC10-EFU-007",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 4.2: Thermal Treatment",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Thermal treatment of carbon felt at 400-500 C improves ICRFB EE by 5-7 percentage points at 100 mA/cm2 and VRFB EE by 2-3 percentage points",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:carbon_felt",
+          "name": "carbon felt",
+          "type": "MATERIAL"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "temperature",
+          "value": 400,
+          "unit": "C",
+          "canonical_id": "condition:treatment_400_c"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 5,
+          "unit": "percentage_points",
+          "canonical_id": "measurement:icrfb_ee_improvement_5_7"
+        },
+        {
+          "metric_type": "EE",
+          "value": 2,
+          "unit": "percentage_points",
+          "canonical_id": "measurement:vrfb_ee_improvement_2_3"
+        }
+      ],
+      "mechanisms": [
+        "degradation:chromium_kinetics"
+      ],
+      "evidence_text": "For ICRFB, thermal treatment reduces the chromium reaction resistance by 40-50%, improving EE by 5-7 percentage points at 100 mA/cm2. For VRFB, thermal treatment reduces the charge transfer resistance by 20-30% for the vanadium reactions, improving EE by 2-3 percentage points at 100 mA/cm2."
+    },
+    {
+      "gold_id": "DOC10-EFU-008",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 6.1: Flow Field VRFB",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "VRFB with interdigitated flow field at 150 mA/cm2 achieves EE of 82% versus 79% for serpentine, but pressure drop increases from 0.3 bar to 0.8 bar",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 150,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_150_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 82,
+          "unit": "%",
+          "canonical_id": "measurement:ee_82_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 79,
+          "unit": "%",
+          "canonical_id": "measurement:ee_79_percent"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 150 mA/cm2, an interdigitated design with 1 mm channel width and 1 mm rib width achieved an EE of 82% compared to 79% for a serpentine design with equivalent channel dimensions."
+    },
+    {
+      "gold_id": "DOC10-EFU-009",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 6.1: Flow Field Zn-Br",
+      "relation_type": "OPERATION_PERFORMANCE",
+      "claim": "Zn-Br with modified serpentine design at 60 mA/cm2 achieves EE of 71% over 200 cycles, while standard interdigitated shows 8% degradation after 100 cycles",
+      "entities": [
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 71,
+          "unit": "%",
+          "canonical_id": "measurement:ee_71_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 8,
+          "unit": "%/100cycles",
+          "canonical_id": "measurement:zn_br_interdigitated_degradation_8pct"
+        }
+      ],
+      "mechanisms": [
+        "degradation:zinc_dendrite"
+      ],
+      "evidence_text": "At 60 mA/cm2, this design achieved an EE of 71% with stable operation over 200 cycles, while a standard interdigitated design showed flow maldistribution and 8% performance degradation after 100 cycles due to zinc accumulation in channel corners."
+    },
+    {
+      "gold_id": "DOC10-EFU-010",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 7.1: EE Comparison",
+      "relation_type": "COMPARISON",
+      "claim": "At comparable conditions, EE ranking is ORFB 80-83% > VRFB 81-84% > ICRFB with Bi3+ 75-82% at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 83,
+          "unit": "%",
+          "canonical_id": "measurement:orfb_ee_83"
+        },
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:vrfb_ee_84"
+        },
+        {
+          "metric_type": "EE",
+          "value": 82,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ee_82"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "At 100 mA/cm2 (where comparable data exist), the EE ranking is: ORFB 80-83% > VRFB 81-84% > ICRFB with Bi3+ 75-82% > Zn-Br not typically operated at 100 mA/cm2 > SLA not typically operated at 100 mA/cm2."
+    },
+    {
+      "gold_id": "DOC10-EFU-011",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 7.2: Capacity Fade Comparison",
+      "relation_type": "COMPARISON",
+      "claim": "Capacity fade ranking at 500 cycles: AQDS ORFB 0.01-0.015%/cycle < TEMPO-PEG 0.015% < VRFB-SPEEK 0.018% < ICRFB-AEM 0.025% < Zn-Br 0.04-0.06%/cycle < MV-ORFB 0.055%/cycle",
+      "entities": [
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:500_cycles"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.015,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_0_015"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:vrfb_speek_fade_0_018"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.025,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:icrfb_aem_fade_0_025"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.055,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_orfb_fade_0_055"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover",
+        "degradation:dendrite",
+        "degradation:chemical_instability"
+      ],
+      "evidence_text": "Capacity fade rates at matched cycle numbers (500 cycles) and with optimized membranes show the following ranking from lowest to highest fade: AQDS-based ORFB 0.01-0.015%/cycle < TEMPO-PEG ORFB 0.015%/cycle < VRFB with SPEEK 0.018%/cycle < PSV ORFB 0.018%/cycle < ICRFB with AEM 0.025%/cycle < standard VRFB with Nafion 0.035%/cycle < Zn-Br with standard separator 0.04-0.06%/cycle < SLA with ceramic membrane 0.04%/cycle < MV-based ORFB with Nafion 0.055%/cycle."
+    },
+    {
+      "gold_id": "DOC10-EFU-012",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 7.3: Cost-Performance Trade-offs",
+      "relation_type": "COMPARISON",
+      "claim": "System cost ranking: SLA 100-250 $/kWh < Zn-Br 150-300 < ICRFB 200-350 < VRFB 350-500 < ORFB 400-800 $/kWh",
+      "entities": [
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "cost",
+          "value": 200,
+          "unit": "$/kWh",
+          "canonical_id": "measurement:sla_cost_200"
+        },
+        {
+          "metric_type": "cost",
+          "value": 225,
+          "unit": "$/kWh",
+          "canonical_id": "measurement:zn_br_cost_225"
+        },
+        {
+          "metric_type": "cost",
+          "value": 275,
+          "unit": "$/kWh",
+          "canonical_id": "measurement:icrfb_cost_275"
+        },
+        {
+          "metric_type": "cost",
+          "value": 425,
+          "unit": "$/kWh",
+          "canonical_id": "measurement:vrfb_cost_425"
+        },
+        {
+          "metric_type": "cost",
+          "value": 600,
+          "unit": "$/kWh",
+          "canonical_id": "measurement:orfb_cost_600"
+        }
+      ],
+      "mechanisms": [],
+      "evidence_text": "VRFB systems cost approximately 350-500 $/kWh, dominated by vanadium electrolyte (60% of total cost) and membrane (15%). ICRFB systems target 200-350 $/kWh, with lower material costs but higher system complexity due to the additive requirement. Zn-Br systems achieve 150-300 $/kWh, benefiting from low-cost materials but requiring complex bromine management systems. SLA systems target the lowest cost at 100-250 $/kWh due to inexpensive lead and simple cell construction, but face cycle life limitations. ORFB systems currently cost 400-800 $/kWh in laboratory quantities."
+    },
+    {
+      "gold_id": "DOC10-EFU-013",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 4.2: Electrode Modification Comparison",
+      "relation_type": "COMPARISON",
+      "claim": "Thermal treatment EE improvement varies: ICRFB 5-7 pp > SLA 3-4 pp > VRFB 2-3 pp > Zn-Br dendrite reduction > ORFB 1-2 pp at 100 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:chromium_kinetics",
+        "degradation:pbo2_morphology"
+      ],
+      "evidence_text": "For VRFB, thermal treatment reduces the charge transfer resistance by 20-30%, improving EE by 2-3 percentage points at 100 mA/cm2. For ICRFB, the effect is more dramatic: thermal treatment reduces the chromium reaction resistance by 40-50%, improving EE by 5-7 percentage points at 100 mA/cm2. For Zn-Br, thermal treatment improves zinc nucleation uniformity, reducing dendrite formation tendency. For SLA, thermal treatment reduces PbO2 deposition overpotential by 25-35%, improving EE by 3-4 percentage points at 30 mA/cm2. For ORFB, thermal treatment improves TEMPO oxidation kinetics by 15-20%, contributing 1-2 percentage points EE improvement at 100 mA/cm2."
+    },
+    {
+      "gold_id": "DOC10-EFU-014",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.1: VRFB System Definition",
+      "relation_type": "COMPOSITION",
+      "claim": "VRFB electrolyte composition is 1.5-2.0 M vanadium in 2-3 M sulfuric acid supporting electrolyte",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:vanadium",
+          "name": "vanadium",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "electrolyte:sulfuric_acid",
+          "name": "sulfuric acid",
+          "type": "ELECTROLYTE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "The VRFB employs V2+/V3+ and VO2+/VO2+ redox couples in sulfuric acid electrolyte, typically at concentrations of 1.5-2.0 M vanadium. The sulfuric acid supporting electrolyte at 2-3 M concentration provides adequate ionic conductivity while maintaining vanadium solubility."
+    },
+    {
+      "gold_id": "DOC10-EFU-015",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.2: ICRFB System Definition",
+      "relation_type": "COMPOSITION",
+      "claim": "ICRFB electrolyte composition is Fe2+/Fe3+ and Cr2+/Cr3+ in hydrochloric acid with Bi3+ additive at 0.01-0.05 M",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "material:iron",
+          "name": "iron",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "material:chromium",
+          "name": "chromium",
+          "type": "MATERIAL"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "The ICRFB utilizes Fe2+/Fe3+ and Cr2+/Cr3+ redox couples in hydrochloric acid electrolyte. A critical advancement in ICRFB technology has been the introduction of Bi3+ additives to address the slow kinetics of the Cr3+/Cr2+ reaction. With Bi3+ additive (typically 0.01-0.05 M), ICRFBs achieve energy efficiency of 62-85% at current densities of 80-160 mA/cm2."
+    },
+    {
+      "gold_id": "DOC10-EFU-016",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 5.2: Zn-Br Additives",
+      "relation_type": "COMPOSITION",
+      "claim": "Zn-Br electrolyte contains quaternary ammonium bromides at 0.5-1.0 M for bromine complexation and EDTA derivatives at 0.01-0.05 M for zinc morphology control",
+      "entities": [
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine flow battery",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:quaternary_ammonium_bromide",
+          "name": "quaternary ammonium bromide",
+          "type": "ADDITIVE"
+        },
+        {
+          "canonical_id": "additive:edta",
+          "name": "EDTA derivative",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:zinc_dendrite",
+        "degradation:bromine_crossover"
+      ],
+      "evidence_text": "Quaternary ammonium bromides (tetramethylammonium bromide, N-methyl-N-ethylpyrrolidinium bromide) at 0.5-1.0 M concentration form polybromide complex phases that sequester elemental bromine, reducing self-discharge and bromine vapor pressure. Zinc coordination additives (ethylene diamine tetraacetic acid derivatives at 0.01-0.05 M) modify the zinc plating morphology, promoting smooth deposits and suppressing dendrite formation."
+    },
+    {
+      "gold_id": "DOC10-EFU-017",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.1: VRFB Degradation",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "VRFB primary degradation is vanadium crossover through membrane causing capacity fade of 0.02-0.05%/cycle",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "membrane:nafion_117",
+          "name": "Nafion 117",
+          "type": "MEMBRANE"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.035,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:vrfb_fade_0_035"
+        }
+      ],
+      "mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "evidence_text": "The primary degradation mechanism is vanadium crossover through the membrane, leading to capacity fade rates of 0.02-0.05%/cycle depending on membrane selection and operating conditions."
+    },
+    {
+      "gold_id": "DOC10-EFU-018",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.3: Zn-Br Degradation",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "Zn-Br degradation involves zinc dendrite formation during plating, bromine crossover through separator, and self-discharge through bromine diffusion",
+      "entities": [
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:zinc_dendrite",
+        "degradation:bromine_crossover",
+        "degradation:self_discharge"
+      ],
+      "evidence_text": "The primary degradation mechanisms include zinc dendrite formation during plating, bromine crossover through the microporous separator, and self-discharge through bromine diffusion."
+    },
+    {
+      "gold_id": "DOC10-EFU-019",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.4: SLA Degradation",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "SLA degradation involves PbO2 deposition morphology control, lead dioxide adhesion, and dendrite formation with capacity fade of 0.04-0.08%/cycle",
+      "entities": [
+        {
+          "canonical_id": "system:sla",
+          "name": "soluble lead-acid flow battery",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.08,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:sla_fade_0_08"
+        }
+      ],
+      "mechanisms": [
+        "degradation:pbo2_morphology",
+        "degradation:lead_dendrite"
+      ],
+      "evidence_text": "The SLA system faces unique challenges related to electrodeposit morphology control. Lead dioxide deposition at the positive electrode must achieve adequate adhesion and surface area while avoiding excessive roughening that promotes dendrite formation."
+    },
+    {
+      "gold_id": "DOC10-EFU-020",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 2.2: ICRFB Degradation",
+      "relation_type": "DEGRADATION_CHAIN",
+      "claim": "ICRFB degradation involves slow chromium kinetics and hydrogen evolution reaction as parasitic process, causing CE loss especially at high current density",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "CE",
+          "value": 92,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ce_92_160ma"
+        }
+      ],
+      "mechanisms": [
+        "degradation:hydrogen_evolution",
+        "degradation:chromium_kinetics"
+      ],
+      "evidence_text": "The hydrogen evolution reaction represents a significant parasitic process on the chromium side, particularly at high current densities, contributing to CE loss. At 160 mA/cm2, the CE decreases to 92%."
+    },
+    {
+      "gold_id": "DOC10-EFU-021",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 5.2: ICRFB Bi3+ Additive Mechanism",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Bi3+ additive at 0.01-0.05 M reduces chromium reduction overpotential by 200-300 mV, transforming ICRFB from EE 55% to 85% at 80 mA/cm2",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "additive:bi3+",
+          "name": "Bi3+",
+          "type": "ADDITIVE"
+        }
+      ],
+      "conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "measurements": [
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ee_85_with_bi"
+        },
+        {
+          "metric_type": "EE",
+          "value": 55,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ee_55_without_bi"
+        }
+      ],
+      "mechanisms": [
+        "degradation:chromium_kinetics"
+      ],
+      "evidence_text": "At 0.01-0.05 M Bi3+ concentration in the electrolyte, the chromium reduction overpotential is reduced by 200-300 mV, transforming the system from impractical (EE ~55% at 80 mA/cm2) to commercially viable (EE ~85% at 80 mA/cm2). The Bi3+ is believed to deposit as metallic Bi or BiOCl on the electrode surface during charging, providing catalytic sites for the chromium reduction."
+    },
+    {
+      "gold_id": "DOC10-EFU-022",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 3.2: Membrane Selectivity Universal Threshold",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Membrane selectivity above 95% is universally required for capacity fade below 0.02%/cycle across all five RFB systems",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:universal_selectivity_threshold_95"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:universal_fade_threshold_0_02"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover"
+      ],
+      "evidence_text": "For all five RFB systems, membrane selectivity above 95% is required to achieve capacity fade rates below 0.02%/cycle. This threshold emerges from the universal relationship between crossover rate and capacity loss: even modest crossover of electroactive species leads to irreversible capacity loss through chemical reaction with the opposing electrolyte."
+    },
+    {
+      "gold_id": "DOC10-EFU-023",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 4.2: Charge Transfer Resistance Baseline",
+      "relation_type": "MECHANISM_EVIDENCE",
+      "claim": "Charge transfer resistance varies across systems: ICRFB Cr3+/Cr2+ 3-5 ohm cm2 >> SLA PbO2 2-4 > TEMPO 0.6-1.0 > VRFB 0.8-1.2 > Zn-Br bromine 0.2-0.4 ohm cm2",
+      "entities": [
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:chromium_kinetics",
+        "degradation:pbo2_morphology"
+      ],
+      "evidence_text": "For the ICRFB without additives, the Cr3+/Cr2+ reaction exhibits very high overpotential (charge transfer resistance 3-5 ohm cm2), while the Fe2+/Fe3+ reaction is facile (0.3-0.5 ohm cm2). For Zn-Br, the bromine reaction is facile on carbon (0.2-0.4 ohm cm2) but zinc plating requires nucleation sites. For SLA, the PbO2 deposition reaction shows high overpotential (2-4 ohm cm2) while lead plating is more facile (0.5-1.0 ohm cm2). For ORFB, TEMPO oxidation shows moderate overpotential (0.6-1.0 ohm cm2) while viologen reduction is relatively facile (0.3-0.5 ohm cm2)."
+    },
+    {
+      "gold_id": "DOC10-EFU-024",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 8.1: Tier 1 Universal Rules",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Universal design rules: membrane selectivity >95% for fade <0.02%/cycle, thermal treatment at 400-500 C improves all systems 2-7 pp, flow field via Damkohler/Peclet analysis, SOC window management extends cycle life",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:universal_selectivity_95"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:universal_fade_0_02"
+        }
+      ],
+      "mechanisms": [
+        "degradation:crossover",
+        "degradation:kinetic_loss"
+      ],
+      "evidence_text": "The following design rules apply with minimal modification across all five RFB systems: Membrane selectivity above 95% is required for capacity fade below 0.02%/cycle. Electrode surface area enhancement improves performance up to a saturation point. Flow field optimization based on Damkohler and Peclet number analysis provides transferable guidance. SOC management within appropriate windows extends cycle life universally."
+    },
+    {
+      "gold_id": "DOC10-EFU-025",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 8.2: Tier 2 Partially Transferable Rules",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Partially transferable rules: membrane transport mechanism must match electrolyte chemistry, catalytic coatings target specific rate-limiting reactions, additive strategies target system-specific degradation modes",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:icrfb",
+          "name": "ICRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:crossover",
+        "degradation:kinetic_loss",
+        "degradation:chemical_instability"
+      ],
+      "evidence_text": "Membrane transport mechanism selection requires chemistry-specific adaptation. While the selectivity target is universal, the specific ion transport mechanism must match the electrolyte chemistry. Catalytic electrode modifications address the specific rate-limiting reactions of each system. The principle of catalyzing the rate-limiting step is universal, but the specific catalyst is chemistry-dependent. Additive strategies target system-specific degradation modes."
+    },
+    {
+      "gold_id": "DOC10-EFU-026",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 8.3: Tier 3 Chemistry-Specific Rules",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Chemistry-specific rules: deposit morphology management for Zn-Br and SLA, water exclusion below 100 ppm for nonaqueous ORFB, bromine complexation for Zn-Br",
+      "entities": [
+        {
+          "canonical_id": "system:zn_br",
+          "name": "zinc-bromine",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:sla",
+          "name": "SLA",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [
+        "degradation:zinc_dendrite",
+        "degradation:pbo2_morphology",
+        "degradation:disproportionation"
+      ],
+      "evidence_text": "Deposit morphology management applies only to systems with solid phase changes (Zn-Br, SLA). These systems require specialized flow fields, current density protocols, and electrolyte additives that have no analog in all-liquid systems. Water and oxygen exclusion for nonaqueous ORFBs represents a unique requirement arising from the specific degradation chemistry of TEMPO and related species. The 100 ppm water threshold has no equivalent in aqueous systems. Bromine complexation in Zn-Br systems addresses a unique challenge of elemental bromine management that has no parallel in other chemistries."
+    },
+    {
+      "gold_id": "DOC10-EFU-027",
+      "source_doc_id": "DOC10",
+      "source_section": "Section 9: Accelerated Development Framework",
+      "relation_type": "DESIGN_SUMMARY",
+      "claim": "Cross-system development framework: new aqueous inorganic systems should adapt VRFB strategies, new organic systems adapt ORFB precedents, hybrid systems combine VRFB and ORFB approaches with attention to dual-species membrane compatibility",
+      "entities": [
+        {
+          "canonical_id": "system:vrfb",
+          "name": "VRFB",
+          "type": "SYSTEM"
+        },
+        {
+          "canonical_id": "system:orfb",
+          "name": "ORFB",
+          "type": "SYSTEM"
+        }
+      ],
+      "conditions": [],
+      "measurements": [],
+      "mechanisms": [],
+      "evidence_text": "For new aqueous inorganic systems (e.g., Mn-based, Ti-Mn), the VRFB provides the most relevant precedent for membrane selection, electrode modification, and flow field design. The key adaptation required is addressing the specific redox couple kinetics and any cross-contamination issues. For new organic systems, the existing ORFB literature provides direct precedent for molecular design, solvent selection, and membrane compatibility. The key adaptation is addressing the specific degradation mechanisms of the new molecular structures. For hybrid systems combining inorganic and organic couples, design strategies from both VRFB and ORFB platforms may be relevant, with particular attention to membrane compatibility with both species types."
+    }
+  ],
+  "facts": [
+    {
+      "fact_id": "DOC10-FACT-001",
+      "source_doc_id": "DOC10",
+      "claim": "VRFB with Nafion 117 achieves EE 84% at 100 mA/cm2, 81% at 150 mA/cm2, and 78% at 200 mA/cm2 with CE decreasing from 96% to 94%",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 200,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_200_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 96,
+          "unit": "%",
+          "canonical_id": "measurement:ce_96_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-001"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-002",
+      "source_doc_id": "DOC10",
+      "claim": "ICRFB with Bi3+ additive achieves EE 85% at 80 mA/cm2 and CE 97%, but EE drops to 62% at 160 mA/cm2 with CE of 92%",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 160,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_160_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:ee_85_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 62,
+          "unit": "%",
+          "canonical_id": "measurement:ee_62_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 97,
+          "unit": "%",
+          "canonical_id": "measurement:ce_97_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:hydrogen_evolution",
+        "degradation:chromium_kinetics"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-002"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-003",
+      "source_doc_id": "DOC10",
+      "claim": "Zn-Br achieves EE 78% at 40 mA/cm2 with CE 93%, decreasing to EE 64% at 80 mA/cm2 with CE 87%",
+      "required_entities": [
+        "system:zn_br"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 64,
+          "unit": "%",
+          "canonical_id": "measurement:ee_64_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 93,
+          "unit": "%",
+          "canonical_id": "measurement:ce_93_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:zinc_dendrite",
+        "degradation:bromine_crossover"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-003"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-004",
+      "source_doc_id": "DOC10",
+      "claim": "SLA achieves EE 78% at 20 mA/cm2 with CE 89%, decreasing to EE 58% at 40 mA/cm2 with CE 82%",
+      "required_entities": [
+        "system:sla"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 40,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_40_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 78,
+          "unit": "%",
+          "canonical_id": "measurement:ee_78_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 58,
+          "unit": "%",
+          "canonical_id": "measurement:ee_58_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 89,
+          "unit": "%",
+          "canonical_id": "measurement:ce_89_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:pbo2_morphology",
+        "degradation:lead_dendrite"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-004"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-005",
+      "source_doc_id": "DOC10",
+      "claim": "ORFB achieves EE 88% at 20 mA/cm2 with CE 99%, decreasing to EE 76% at 100 mA/cm2 with CE 95%",
+      "required_entities": [
+        "system:orfb"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 20,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_20_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 88,
+          "unit": "%",
+          "canonical_id": "measurement:ee_88_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 76,
+          "unit": "%",
+          "canonical_id": "measurement:ee_76_percent"
+        },
+        {
+          "metric_type": "CE",
+          "value": 99,
+          "unit": "%",
+          "canonical_id": "measurement:ce_99_percent"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:organic_crossover",
+        "degradation:radical_dimerization"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-005"
+      ],
+      "difficulty": "L1",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-006",
+      "source_doc_id": "DOC10",
+      "claim": "Membrane selectivity above 95% is universally required for capacity fade below 0.02%/cycle across all five RFB systems",
+      "required_entities": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zn_br",
+        "system:sla",
+        "system:orfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:universal_selectivity_threshold_95"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.02,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:universal_fade_threshold_0_02"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-022"
+      ],
+      "difficulty": "L3",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC10-FACT-007",
+      "source_doc_id": "DOC10",
+      "claim": "VRFB with SPEEK (42% sulfonation) achieves EE 83% versus 84% for Nafion 117 at 100 mA/cm2, but reduces capacity fade from 0.035%/cycle to 0.018%/cycle",
+      "required_entities": [
+        "system:vrfb",
+        "membrane:speek",
+        "membrane:nafion_117"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 83,
+          "unit": "%",
+          "canonical_id": "measurement:ee_83_percent"
+        },
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:ee_84_percent"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:fade_speek_0_018"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:vanadium_crossover"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-006"
+      ],
+      "difficulty": "L2",
+      "fact_type": "OPERATION_PERFORMANCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-008",
+      "source_doc_id": "DOC10",
+      "claim": "Thermal treatment of carbon felt at 400-500 C improves EE across all systems: ICRFB 5-7 pp > SLA 3-4 pp > VRFB 2-3 pp > ORFB 1-2 pp",
+      "required_entities": [
+        "system:icrfb",
+        "system:sla",
+        "system:vrfb",
+        "system:orfb",
+        "material:carbon_felt"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "temperature",
+          "value": 400,
+          "unit": "C",
+          "canonical_id": "condition:treatment_400_c"
+        }
+      ],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:chromium_kinetics",
+        "degradation:pbo2_morphology"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-007",
+        "DOC10-EFU-013"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC10-FACT-009",
+      "source_doc_id": "DOC10",
+      "claim": "Bi3+ additive at 0.01-0.05 M reduces chromium reduction overpotential by 200-300 mV, transforming ICRFB from EE 55% to 85% at 80 mA/cm2",
+      "required_entities": [
+        "system:icrfb",
+        "additive:bi3+"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 80,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_80_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 85,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ee_85_with_bi"
+        },
+        {
+          "metric_type": "EE",
+          "value": 55,
+          "unit": "%",
+          "canonical_id": "measurement:icrfb_ee_55_without_bi"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:chromium_kinetics"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-021"
+      ],
+      "difficulty": "L2",
+      "fact_type": "MECHANISM_EVIDENCE"
+    },
+    {
+      "fact_id": "DOC10-FACT-010",
+      "source_doc_id": "DOC10",
+      "claim": "Capacity fade ranking at 500 cycles: AQDS ORFB 0.01-0.015% < VRFB-SPEEK 0.018% < ICRFB-AEM 0.025% < Zn-Br 0.04-0.06% < MV-ORFB 0.055%/cycle",
+      "required_entities": [
+        "system:orfb",
+        "system:vrfb",
+        "system:icrfb",
+        "system:zn_br"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "cycle_number",
+          "value": 500,
+          "unit": "cycles",
+          "canonical_id": "condition:500_cycles"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.015,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:aqds_fade_0_015"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.018,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:vrfb_speek_fade_0_018"
+        },
+        {
+          "metric_type": "capacity_fade_rate",
+          "value": 0.055,
+          "unit": "%/cycle",
+          "canonical_id": "measurement:mv_orfb_fade_0_055"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover",
+        "degradation:dendrite",
+        "degradation:chemical_instability"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-011"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC10-FACT-011",
+      "source_doc_id": "DOC10",
+      "claim": "System cost ranking from lowest to highest: SLA 100-250 $/kWh < Zn-Br 150-300 < ICRFB 200-350 < VRFB 350-500 < ORFB 400-800 $/kWh",
+      "required_entities": [
+        "system:sla",
+        "system:zn_br",
+        "system:icrfb",
+        "system:vrfb",
+        "system:orfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC10-EFU-012"
+      ],
+      "difficulty": "L2",
+      "fact_type": "COMPARISON"
+    },
+    {
+      "fact_id": "DOC10-FACT-012",
+      "source_doc_id": "DOC10",
+      "claim": "Universal design rules: membrane selectivity >95% for fade <0.02%/cycle, thermal treatment at 400-500 C benefits all systems, flow field via Damkohler/Peclet analysis, SOC management extends cycle life",
+      "required_entities": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zn_br",
+        "system:sla",
+        "system:orfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [
+        {
+          "metric_type": "membrane_selectivity",
+          "value": 95,
+          "unit": "%",
+          "canonical_id": "measurement:universal_selectivity_95"
+        }
+      ],
+      "required_mechanisms": [
+        "degradation:crossover"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-024"
+      ],
+      "difficulty": "L4",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC10-FACT-013",
+      "source_doc_id": "DOC10",
+      "claim": "Flow field design shows highest transferability: interdigitated for high-rate systems (VRFB, ORFB), serpentine for moderate-rate (ICRFB), parallel for low-rate (SLA), modified for depositing systems (Zn-Br)",
+      "required_entities": [
+        "system:vrfb",
+        "system:orfb",
+        "system:icrfb",
+        "system:sla",
+        "system:zn_br"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC10-EFU-008",
+        "DOC10-EFU-009"
+      ],
+      "difficulty": "L4",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC10-FACT-014",
+      "source_doc_id": "DOC10",
+      "claim": "Additive strategies are the least transferable design domain, with Bi3+ for ICRFB, quaternary ammonium bromides for Zn-Br, water exclusion for ORFB, each targeting chemistry-specific rate-limiting steps",
+      "required_entities": [
+        "system:icrfb",
+        "system:zn_br",
+        "system:orfb"
+      ],
+      "required_conditions": [],
+      "required_metrics": [],
+      "required_mechanisms": [
+        "degradation:chromium_kinetics",
+        "degradation:zinc_dendrite",
+        "degradation:disproportionation"
+      ],
+      "supporting_efus": [
+        "DOC10-EFU-016"
+      ],
+      "difficulty": "L4",
+      "fact_type": "DESIGN_SUMMARY"
+    },
+    {
+      "fact_id": "DOC10-FACT-015",
+      "source_doc_id": "DOC10",
+      "claim": "At 100 mA/cm2, EE ranking is VRFB 84% ~ ORFB 80-83% > ICRFB with Bi3+ 75-82%, while at 60 mA/cm2 ORFB 83-86% ~ VRFB 83-86% > ICRFB 82-85% > Zn-Br 71%",
+      "required_entities": [
+        "system:vrfb",
+        "system:orfb",
+        "system:icrfb",
+        "system:zn_br"
+      ],
+      "required_conditions": [
+        {
+          "quantity_type": "current_density",
+          "value": 100,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_100_ma_cm2"
+        },
+        {
+          "quantity_type": "current_density",
+          "value": 60,
+          "unit": "mA/cm2",
+          "canonical_id": "condition:current_density_60_ma_cm2"
+        }
+      ],
+      "required_metrics": [
+        {
+          "metric_type": "EE",
+          "value": 84,
+          "unit": "%",
+          "canonical_id": "measurement:vrfb_ee_84"
+        },
+        {
+          "metric_type": "EE",
+          "value": 83,
+          "unit": "%",
+          "canonical_id": "measurement:orfb_ee_83"
+        },
+        {
+          "metric_type": "EE",
+          "value": 71,
+          "unit": "%",
+          "canonical_id": "measurement:zn_br_ee_71"
+        }
+      ],
+      "required_mechanisms": [],
+      "supporting_efus": [
+        "DOC10-EFU-010"
+      ],
+      "difficulty": "L3",
+      "fact_type": "COMPARISON"
+    }
+  ],
+  "qas": [
+    {
+      "question_id": "DOC10-QA-001",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the energy efficiency and coulombic efficiency of VRFB at 100 mA/cm2 with Nafion 117?",
+      "reference_answer": "VRFB with Nafion 117 at 100 mA/cm2 achieves an EE of 84% and a CE of 96%.",
+      "reference_answer_points": [
+        "EE of 84%",
+        "CE of 96%",
+        "100 mA/cm2",
+        "Nafion 117"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-001"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-001"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-002",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the energy efficiency of ICRFB with Bi3+ additive at 80 mA/cm2 and at 160 mA/cm2?",
+      "reference_answer": "ICRFB with Bi3+ additive achieves an EE of 85% at 80 mA/cm2 and an EE of 62% at 160 mA/cm2. The CE decreases from 97% at 80 mA/cm2 to 92% at 160 mA/cm2.",
+      "reference_answer_points": [
+        "EE 85% at 80 mA/cm2",
+        "EE 62% at 160 mA/cm2",
+        "CE 97% at 80 mA/cm2",
+        "CE 92% at 160 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-002"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-002"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-003",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the energy efficiency and coulombic efficiency of zinc-bromine system at 40 mA/cm2 and 80 mA/cm2?",
+      "reference_answer": "Zinc-bromine system achieves EE of 78% with CE of 93% at 40 mA/cm2, and EE of 64% with CE of 87% at 80 mA/cm2.",
+      "reference_answer_points": [
+        "EE 78%, CE 93% at 40 mA/cm2",
+        "EE 64%, CE 87% at 80 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-003"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-003"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-004",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What are the energy efficiency values for SLA at 20 mA/cm2 and 40 mA/cm2?",
+      "reference_answer": "SLA achieves an EE of 78% with CE of 89% at 20 mA/cm2, and an EE of 58% with CE of 82% at 40 mA/cm2.",
+      "reference_answer_points": [
+        "EE 78%, CE 89% at 20 mA/cm2",
+        "EE 58%, CE 82% at 40 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-004"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-004"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-005",
+      "source_doc_id": "DOC10",
+      "level": "L1",
+      "question_type": "direct retrieval",
+      "question": "What is the energy efficiency range of ORFB at 20 mA/cm2 and 100 mA/cm2?",
+      "reference_answer": "ORFB achieves EE of 88% with CE of 99% at 20 mA/cm2, and EE of 76% with CE of 95% at 100 mA/cm2.",
+      "reference_answer_points": [
+        "EE 88%, CE 99% at 20 mA/cm2",
+        "EE 76%, CE 95% at 100 mA/cm2"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-005"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-005"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-006",
+      "source_doc_id": "DOC10",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does SPEEK membrane compare to Nafion 117 for VRFB at 100 mA/cm2 in terms of energy efficiency and capacity fade?",
+      "reference_answer": "At 100 mA/cm2, SPEEK membrane (42% sulfonation) achieves an EE of 83% compared to 84% for Nafion 117 - a 1 percentage point difference. However, SPEEK reduces the capacity fade rate from 0.035%/cycle (Nafion 117) to 0.018%/cycle, representing nearly a 2x improvement in cycle life. This trade-off reflects the higher selectivity of SPEEK (96-97%) versus Nafion 117 (~88-94%) for vanadium species.",
+      "reference_answer_points": [
+        "SPEEK EE 83% vs Nafion 84%",
+        "SPEEK fade 0.018%/cycle vs Nafion 0.035%/cycle",
+        "2x improvement in cycle life",
+        "SPEEK selectivity 96-97% vs Nafion 88-94%"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-007",
+      "source_doc_id": "DOC10",
+      "level": "L2",
+      "question_type": "comparison",
+      "question": "How does thermal treatment of carbon felt at 400-500 C affect energy efficiency across the five RFB systems?",
+      "reference_answer": "Thermal treatment of carbon felt at 400-500 C improves EE across all five systems but to different degrees depending on the kinetic limitations of each: ICRFB shows the largest improvement at 5-7 percentage points due to dramatic reduction in chromium reaction resistance (40-50%). SLA shows 3-4 percentage points improvement from PbO2 deposition overpotential reduction (25-35%). VRFB shows 2-3 percentage points from 20-30% reduction in charge transfer resistance. Zinc-bromine benefits through improved zinc nucleation uniformity and reduced dendrite formation. ORFB shows the smallest improvement at 1-2 percentage points as TEMPO oxidation kinetics improve by 15-20%.",
+      "reference_answer_points": [
+        "ICRFB: 5-7 pp improvement",
+        "SLA: 3-4 pp improvement",
+        "VRFB: 2-3 pp improvement",
+        "Zn-Br: dendrite reduction",
+        "ORFB: 1-2 pp improvement"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-008"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-007",
+        "DOC10-EFU-013"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-008",
+      "source_doc_id": "DOC10",
+      "level": "L3",
+      "question_type": "mechanism explanation",
+      "question": "What is the mechanism by which Bi3+ additive transforms ICRFB performance, and what quantitative impact does it have?",
+      "reference_answer": "Bi3+ additive at 0.01-0.05 M concentration reduces the chromium reduction overpotential by 200-300 mV. The mechanism involves deposition of metallic Bi or BiOCl on the electrode surface during charging, which provides catalytic sites for the chromium reduction reaction. This transforms the system from impractical (EE ~55% at 80 mA/cm2 without additive) to commercially viable (EE ~85% at 80 mA/cm2 with additive). The additive is gradually consumed at approximately 0.001 M per 100 cycles, requiring periodic replenishment.",
+      "reference_answer_points": [
+        "Reduces Cr overpotential by 200-300 mV",
+        "Bi/BiOCl deposits as catalyst",
+        "EE improves from 55% to 85% at 80 mA/cm2",
+        "Consumes ~0.001 M per 100 cycles"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-021"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-009",
+      "source_doc_id": "DOC10",
+      "level": "L3",
+      "question_type": "condition-constrained retrieval",
+      "question": "What is the capacity fade ranking across all five RFB systems at 500 cycles with optimized membranes, and what factors drive the differences?",
+      "reference_answer": "The capacity fade ranking from lowest to highest at 500 cycles is: AQDS-based ORFB 0.01-0.015%/cycle (low crossover, molecular stability) < TEMPO-PEG ORFB 0.015%/cycle (reduced crossover via functionalization) < VRFB with SPEEK 0.018%/cycle (good membrane selectivity) < PSV ORFB 0.018%/cycle < ICRFB with AEM 0.025%/cycle < standard VRFB with Nafion 0.035%/cycle < Zn-Br 0.04-0.06%/cycle (dendrite formation, bromine crossover) < SLA with ceramic membrane 0.04%/cycle (deposit morphology issues) < MV-based ORFB with Nafion 0.055%/cycle (high crossover). The key drivers are membrane selectivity, active species crossover rate, and whether the system involves solid phase deposition.",
+      "reference_answer_points": [
+        "AQDS ORFB: 0.01-0.015%/cycle (lowest)",
+        "VRFB-SPEEK: 0.018%/cycle",
+        "ICRFB-AEM: 0.025%/cycle",
+        "Zn-Br: 0.04-0.06%/cycle",
+        "MV-ORFB: 0.055%/cycle (highest)",
+        "Drivers: membrane selectivity, crossover, solid deposition"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-010"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-011"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-010",
+      "source_doc_id": "DOC10",
+      "level": "L4",
+      "question_type": "multi-hop reasoning",
+      "question": "What is the relationship between membrane selectivity and capacity fade across all five RFB systems, and how does the Nafion 117 to advanced membrane transition affect each system?",
+      "reference_answer": "Membrane selectivity above 95% is universally required for capacity fade below 0.02%/cycle across all five RFB systems. This threshold reflects the universal relationship between crossover and capacity loss - even modest crossover leads to irreversible capacity loss through chemical reaction with opposing electrolyte. For VRFB, transitioning from Nafion 117 (selectivity ~88-94%, fade 0.035%/cycle) to SPEEK (96-97%, fade 0.018%/cycle) nearly halves the fade rate. For ORFB with AQDS, Nafion already provides good selectivity (94-96%) due to Donnan exclusion of sulfonated species. For nonaqueous ORFB with neutral TEMPO, Nafion selectivity is lower (85-88%) and size-exclusion membranes (96-98%) provide significant benefit. For Zn-Br, the microporous separator operates on physical exclusion with bromine crossover of 1.8 x 10^-6 cm2/s. For SLA, Nafion allows significant Pb2+ crossover due to divalent cation character, and ceramic-polymer composites (93% selectivity) reduce fade from 0.08%/cycle to 0.04%/cycle.",
+      "reference_answer_points": [
+        "Selectivity >95% universally required for fade <0.02%/cycle",
+        "VRFB: Nafion to SPEEK reduces fade 0.035->0.018%/cycle",
+        "ORFB: AQDS benefits from Donnan exclusion on Nafion",
+        "Zn-Br: microporous separator with 1.8 x 10^-6 cm2/s bromine crossover",
+        "SLA: ceramic composite reduces fade 0.08->0.04%/cycle"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-006",
+        "DOC10-FACT-007"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-022",
+        "DOC10-EFU-006"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-011",
+      "source_doc_id": "DOC10",
+      "level": "L4",
+      "question_type": "synthesis",
+      "question": "Analyze the three-tier transferability framework for RFB design rules. Which rules are universally transferable, partially transferable, and chemistry-specific?",
+      "reference_answer": "Tier 1 (Universally Transferable): Membrane selectivity >95% required for fade <0.02%/cycle across all systems. Thermal treatment of carbon felt at 400-500 C improves all systems (2-7 pp depending on kinetic limitations). Flow field optimization via Damkohler/Peclet analysis applies universally - interdigitated for high-rate, serpentine for moderate-rate, parallel for low-rate. SOC window management extends cycle life universally. Tier 2 (Partially Transferable): Membrane transport mechanism must match electrolyte chemistry (proton/cation/anion/pore transport). Catalytic coatings target specific rate-limiting steps (Bi for ICRFB chromium, TiN for Zn-Br, thermal for VRFB). Additive strategies follow universal principle of targeting rate-limiting steps but require chemistry-specific choices. Tier 3 (Chemistry-Specific): Deposit morphology management only for Zn-Br and SLA. Water exclusion below 100 ppm only for nonaqueous ORFB. Bromine complexation only for Zn-Br. Hydrogen evolution suppression only for ICRFB.",
+      "reference_answer_points": [
+        "Tier 1: selectivity >95%, thermal treatment, flow field, SOC management",
+        "Tier 2: transport mechanism, catalytic coatings, additive principles",
+        "Tier 3: deposit morphology, water exclusion, bromine complexation"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-012",
+        "DOC10-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-024",
+        "DOC10-EFU-025",
+        "DOC10-EFU-026"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-012",
+      "source_doc_id": "DOC10",
+      "level": "L5",
+      "question_type": "synthesis",
+      "question": "Synthesize the cross-system evidence to identify the most promising RFB chemistry for grid-scale storage considering energy efficiency, capacity fade, and system cost.",
+      "reference_answer": "Based on cross-system comparison, ORFB with optimized molecular design (functionalized TEMPO, PSV, AQDS) offers the best combination of high EE (76-88%), low capacity fade (0.01-0.018%/cycle), and future cost potential (150-300 $/kWh at scale). However, current ORFB costs are high (400-800 $/kWh) due to low production volumes. VRFB represents the most mature technology with good EE (78-84%) and moderate fade (0.018-0.035%/cycle with advanced membranes), but high vanadium cost (350-500 $/kWh) limits deployment. ICRFB with Bi3+ offers competitive EE (62-85%) at potentially lower cost (200-350 $/kWh) but requires additive management. Zn-Br (150-300 $/kWh) and SLA (100-250 $/kWh) offer lowest costs but face cycle life limitations from solid phase management. For immediate deployment, VRFB remains the safest choice. For next-generation systems, ORFB with continued molecular optimization and manufacturing scale-up presents the highest upside potential.",
+      "reference_answer_points": [
+        "ORFB: best EE/fade but high current cost",
+        "VRFB: most mature, moderate cost/fade",
+        "ICRFB: competitive with additive management",
+        "Zn-Br/SLA: lowest cost but cycle life limitations",
+        "VRFB for immediate, ORFB for next-generation"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-010",
+        "DOC10-FACT-011",
+        "DOC10-FACT-015"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-010",
+        "DOC10-EFU-011",
+        "DOC10-EFU-012"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-013",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy synthesis",
+      "question": "Design a transferable optimization strategy for a new RFB chemistry (e.g., Mn-based aqueous inorganic) by leveraging cross-system design rules. Which strategies from VRFB, ICRFB, and ORFB platforms should be adapted and why?",
+      "reference_answer": "For a new Mn-based aqueous inorganic RFB, the following cross-system strategy should be adapted: (1) From VRFB: Membrane selection should follow the SPEEK pathway rather than Nafion 117, as advanced sulfonated polymer membranes provide 96-97% selectivity with comparable conductivity, reducing expected capacity fade from ~0.035%/cycle to ~0.018%/cycle. The VRFB flow field strategy using interdigitated designs at 100-150 mA/cm2 should be adapted since both are aqueous inorganic systems with similar electrolyte conductivities. Electrode thermal treatment at 400-500 C should be applied (expected 2-3 pp EE improvement based on VRFB precedent). (2) From ICRFB: If manganese kinetics prove slow (charge transfer resistance >1.5 ohm cm2), catalytic additive strategies should be considered, analogous to Bi3+ for chromium. Candidate additives might include Pb2+, Bi3+, or oxide nanoparticles that deposit during charging to provide catalytic surfaces. The ICRFB experience demonstrates that additive strategies can transform impractical systems (EE 55%) into viable ones (EE 85%). Hydrogen evolution suppression strategies from ICRFB (thiourea additions) may also be relevant if manganese operates at negative potentials favoring HER. (3) From ORFB: If pH-dependent Mn speciation is an issue, buffer selection strategies from aqueous ORFB (phosphate at pH 7-8, borate at pH 9) should be adapted. Oxygen exclusion strategies from quinone ORFB apply if reduced Mn species are oxygen-sensitive. The ORFB approach of identifying and targeting the specific degradation mechanism (rather than generic system optimization) should be adopted as the analytical framework. (4) System-specific adaptations: Manganese cross-contamination may be less severe than VRFB since both half-cells use the same element, analogous to VRFB's intrinsic advantage. However, multiple Mn oxidation states (+2, +3, +4, +7) create unique management challenges. The operating current density should be established through Damkohler analysis, targeting 100 mA/cm2 initially based on VRFB precedent, with adjustment based on kinetic characterization.",
+      "reference_answer_points": [
+        "From VRFB: SPEEK membrane, interdigitated flow field, thermal treatment",
+        "From ICRFB: catalytic additives if slow kinetics, HER suppression",
+        "From ORFB: buffer selection, oxygen exclusion, targeted degradation analysis",
+        "Mn-specific: multi-state oxidation management, cross-contamination assessment"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-006",
+        "DOC10-FACT-008",
+        "DOC10-FACT-009",
+        "DOC10-FACT-012",
+        "DOC10-FACT-014"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-006",
+        "DOC10-EFU-007",
+        "DOC10-EFU-021",
+        "DOC10-EFU-024",
+        "DOC10-EFU-027"
+      ]
+    },
+    {
+      "question_id": "DOC10-QA-014",
+      "source_doc_id": "DOC10",
+      "level": "L6",
+      "question_type": "cross-system strategy synthesis",
+      "question": "Develop a comprehensive cross-system electrode modification strategy that identifies when to apply thermal treatment, catalytic coatings, or structural modifications based on the rate-limiting characteristics of each RFB chemistry.",
+      "reference_answer": "The cross-system electrode modification strategy should be based on identifying the rate-limiting step and its magnitude (charge transfer resistance) for each system: (1) Thermal treatment (400-500 C, 4-6 hours) is the universal first-line approach applicable to all systems. It should be prioritized when: the rate-limiting reaction has charge transfer resistance >0.5 ohm cm2 on untreated carbon felt; the system involves aqueous electrolytes where wettability improvement is beneficial; and the operating current density exceeds 60 mA/cm2 where kinetic losses become significant. Expected benefits: ICRFB (5-7 pp, highest priority due to 3-5 ohm cm2 Cr resistance), SLA (3-4 pp, 2-4 ohm cm2 PbO2 resistance), VRFB (2-3 pp, 0.8-1.2 ohm cm2), Zn-Br (dendrite suppression, improved nucleation), ORFB (1-2 pp, 0.6-1.0 ohm cm2 TEMPO resistance). (2) Catalytic coatings should be applied when thermal treatment alone is insufficient, specifically when: charge transfer resistance >1.5 ohm cm2 remains after thermal treatment; the rate-limiting reaction involves a multi-electron transfer with high activation barrier; and the catalyst material is compatible with the electrolyte chemistry. System-specific catalysts: ICRFB should use Bi2O3 or Bi metal (0.1-0.3 mg/cm2) on the negative electrode targeting chromium catalysis, with Bi3+ electrolyte additive providing synergistic effect (EE 55% -> 85%). Zn-Br should use TiN coating (0.2-0.5 mg/cm2) on the negative electrode for zinc plating uniformity, extending cycle life 30-40%. SLA should consider PbO2-coated titanium mesh positive electrodes to eliminate in-situ deposition challenges. VRFB may use Bi2O3 on negative electrode for V2+/V3+ improvement (EE 84% -> 86%). ORFB generally does not require catalytic coatings due to intrinsically facile kinetics; Pt should be avoided due to cost and durability concerns. (3) Structural modifications (porosity optimization, compression tuning) apply when: the system involves solid phase deposition (Zn-Br, SLA); flow maldistribution is observed; or electrode thickness optimization can improve the trade-off between surface area and pressure drop. For depositing systems, electrode compression at 10-20% with optimized pore size (10-30 um) provides space for deposit growth while maintaining electrical contact. For all-liquid systems, 15-20% compression optimizes the electrical contact/flow permeability trade-off universally.",
+      "reference_answer_points": [
+        "Thermal treatment: universal first-line, 400-500 C, all systems benefit 1-7 pp",
+        "Catalytic coatings: for Rct >1.5 ohm cm2 after thermal treatment, chemistry-specific catalysts",
+        "Structural modifications: for depositing systems, 10-20% compression",
+        "Decision framework based on charge transfer resistance magnitude"
+      ],
+      "expected_facts": [
+        "DOC10-FACT-008",
+        "DOC10-FACT-009"
+      ],
+      "expected_efus": [
+        "DOC10-EFU-007",
+        "DOC10-EFU-013",
+        "DOC10-EFU-021"
+      ]
+    }
+  ]
+}

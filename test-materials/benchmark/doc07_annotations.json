@@ -1,0 +1,1164 @@
+{
+  "doc_id": "DOC07",
+  "doc_title": "Mitigation of Capacity Fade and Efficiency Loss in Zinc-Bromine Flow Batteries Through Separator Engineering and Complexing Agent Optimization",
+  "metadata": {
+    "domain": "energy_storage",
+    "system_type": "zinc-bromine_flow_battery",
+    "word_count_approx": 3444,
+    "num_efu": 28,
+    "num_facts": 28,
+    "num_qa_pairs": 28,
+    "stress_points_count": 12
+  },
+  "efu": [
+    {
+      "canonical_id": "DOC07_EFU_OP_001",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_20_ma_cm2",
+      "metric": "measurement:ce_92_percent",
+      "value_numeric": 92,
+      "value_unit": "%",
+      "evidence_text": "At 20 mA/cm², the cells achieved an average coulombic efficiency (CE) of 92% and an energy efficiency (EE) of 78% during the first 50 cycles.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_002",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_40_ma_cm2",
+      "metric": "measurement:ce_89_percent",
+      "value_numeric": 89,
+      "value_unit": "%",
+      "evidence_text": "Increasing the current density to 40 mA/cm² yielded CE values of approximately 89% and EE of 72%",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_003",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_60_ma_cm2",
+      "metric": "measurement:ce_87_percent",
+      "value_numeric": 87,
+      "value_unit": "%",
+      "evidence_text": "At 60 mA/cm², CE decreased further to 87% and EE to 68%",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_004",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_80_ma_cm2",
+      "metric": "measurement:ce_85_percent",
+      "value_numeric": 85,
+      "value_unit": "%",
+      "evidence_text": "the highest current density of 80 mA/cm² produced the lowest efficiencies observed in this study: CE of 85% and EE of 64%.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_005",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_20_ma_cm2",
+      "metric": "measurement:ee_78_percent",
+      "value_numeric": 78,
+      "value_unit": "%",
+      "evidence_text": "At 20 mA/cm², the cells achieved an average coulombic efficiency (CE) of 92% and an energy efficiency (EE) of 78% during the first 50 cycles.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_006",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:cycle_050",
+      "metric": "measurement:zinc_utilization_72_percent",
+      "value_numeric": 72,
+      "value_unit": "%",
+      "evidence_text": "At 20 mA/cm², zinc utilization remained at 72% after 50 cycles but gradually decreased to 62% by cycle 200.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 4
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_007",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:cycle_200",
+      "metric": "measurement:zinc_utilization_55_percent",
+      "value_numeric": 55,
+      "value_unit": "%",
+      "evidence_text": "cells operated at 80 mA/cm² showed zinc utilization of only 55% at cycle 200",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 4
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_OP_008",
+      "type": "OPERATION_PERFORMANCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_40_ma_cm2",
+      "metric": "measurement:ee_72_percent",
+      "value_numeric": 72,
+      "value_unit": "%",
+      "evidence_text": "Increasing the current density to 40 mA/cm² yielded CE values of approximately 89% and EE of 72%",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_COMP_001",
+      "type": "COMPOSITION",
+      "system": "system:zinc_bromine_flow_battery",
+      "component": "electrolyte:zinc_bromine",
+      "specification": "2 M ZnBr₂ and 0.3 M MEP",
+      "value_numeric": 0.3,
+      "value_unit": "M MEP",
+      "evidence_text": "galvanostatic charge-discharge conditions at current densities of 20, 40, 60, and 80 mA/cm², with a fixed electrolyte composition of 2 M ZnBr₂ and 0.3 M MEP at 25°C.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_COMP_002",
+      "type": "COMPOSITION",
+      "system": "system:zinc_bromine_flow_battery",
+      "component": "complexing_agent:mep",
+      "specification": "MEP concentration 0.5 M",
+      "value_numeric": 0.5,
+      "value_unit": "M",
+      "evidence_text": "incorporation of 0.5 M MEP reduced crossover to 0.03 mL/h",
+      "location": {
+        "section": "Abstract",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_COMP_003",
+      "type": "COMPOSITION",
+      "system": "system:zinc_bromine_flow_battery",
+      "component": "complexing_agent:mep",
+      "specification": "MEP concentration varied 0 to 0.5 M",
+      "value_numeric": null,
+      "value_unit": "M (range)",
+      "evidence_text": "cells were assembled with varying concentrations of MEP (0, 0.1, 0.3, and 0.5 M) and subjected to 100 charge-discharge cycles at a fixed current density of 40 mA/cm²",
+      "location": {
+        "section": "Bromine Crossover and Complexing Agent Effects",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_COMP_004",
+      "type": "COMPOSITION",
+      "system": "system:zinc_bromine_flow_battery",
+      "component": "separator:microporous_membrane",
+      "specification": "pore size 0.1–0.5 μm, porosity 42%",
+      "value_numeric": null,
+      "value_unit": "μm pore size",
+      "evidence_text": "a microporous membrane with pore size of 0.1–0.5 μm and porosity of 42%",
+      "location": {
+        "section": "Separator Morphology and Long-Term Cycling Stability",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_COMP_005",
+      "type": "COMPOSITION",
+      "system": "system:zinc_bromine_flow_battery",
+      "component": "separator:porous_separator",
+      "specification": "average pore size 5 μm, porosity 55%",
+      "value_numeric": null,
+      "value_unit": "μm pore size",
+      "evidence_text": "a conventional porous separator with average pore size of 5 μm and porosity of 55%",
+      "location": {
+        "section": "Separator Morphology and Long-Term Cycling Stability",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_001",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "complexing_agent:mep_at_0_M",
+      "comparison": "complexing_agent:mep_at_0.5_M",
+      "metric": "bromine_crossover_rate",
+      "change_value": "0.03 mL/h vs 0.12 mL/h",
+      "change_type": "reduction",
+      "evidence_text": "In the absence of MEP, the bromine crossover rate averaged 0.12 mL/h during the first 50 cycles... The highest MEP concentration of 0.5 M achieved the lowest crossover rate of 0.03 mL/h",
+      "location": {
+        "section": "Bromine Crossover and Complexing Agent Effects",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_002",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "separator:porous_separator",
+      "comparison": "separator:microporous_membrane",
+      "metric": "zinc_dendrite_growth_rate",
+      "change_value": "0.6 μm/cycle vs 1.7 μm/cycle at 40mA/cm²",
+      "change_type": "65% reduction",
+      "evidence_text": "the microporous membrane reduced the dendrite growth rate to 0.6 μm/cycle during the first 100 cycles—a 65% reduction compared to the conventional porous separator under identical conditions.",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 3
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_003",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "separator:porous_separator",
+      "comparison": "separator:microporous_membrane",
+      "metric": "metric:ohmic_resistance",
+      "change_value": "0.8 Ω·cm² stable vs 1.4 Ω·cm² at cycle 200",
+      "change_type": "stable vs degraded",
+      "evidence_text": "The microporous membrane simultaneously maintained a stable ohmic resistance of 0.8 Ω·cm² through 200 cycles, whereas the porous separator showed resistance increasing from 0.8 Ω·cm² to 1.4 Ω·cm²",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 3
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_004",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "complexing_agent:mep_at_0.3_M",
+      "comparison": "complexing_agent:nmp_br_at_0.3_M",
+      "metric": "bromine_crossover_rate",
+      "change_value": "0.07 mL/h NMP-Br vs 0.05 mL/h MEP",
+      "change_type": "NMP-Br inferior",
+      "evidence_text": "Cells with NMP-Br at 0.3 M exhibited a crossover rate of 0.07 mL/h and CE of 87%, both inferior to the MEP-containing counterpart.",
+      "location": {
+        "section": "Bromine Crossover and Complexing Agent Effects",
+        "paragraph": 5
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_005",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "condition:current_density_20_ma_cm2",
+      "comparison": "condition:current_density_80_ma_cm2",
+      "metric": "measurement:ee_64_percent",
+      "change_value": "78% to 64%",
+      "change_type": "decline",
+      "evidence_text": "energy efficiency declining from 78% to 64% across the same operational window",
+      "location": {
+        "section": "Abstract",
+        "paragraph": 1
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_CMP_006",
+      "type": "COMPARISON",
+      "system": "system:zinc_bromine_flow_battery",
+      "baseline": "separator:porous_separator_at_cycle_200",
+      "comparison": "separator:microporous_membrane_at_cycle_200",
+      "metric": "measurement:ce_89_percent",
+      "change_value": "89% stable vs 81% degraded",
+      "change_type": "improved retention",
+      "evidence_text": "The microporous membrane demonstrated substantially improved retention of efficiency metrics. Coulombic efficiency remained stable at 89–90% throughout 200 cycles",
+      "location": {
+        "section": "Separator Morphology and Long-Term Cycling Stability",
+        "paragraph": 3
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DC_001",
+      "type": "DEGRADATION_CHAIN",
+      "system": "system:zinc_bromine_flow_battery",
+      "trigger": "condition:high_current_density",
+      "mechanism": "degradation:zinc_dendrite_growth",
+      "consequence": "separator_penetration_and_short_circuit",
+      "severity": "critical",
+      "evidence_text": "The highest current density of 80 mA/cm² produced dendrite growth rates exceeding 3.0 μm/cycle beyond cycle 100, leading to premature cell failure through separator penetration at approximately cycle 175.",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DC_002",
+      "type": "DEGRADATION_CHAIN",
+      "system": "system:zinc_bromine_flow_battery",
+      "trigger": "high_bromine_generation_rate",
+      "mechanism": "degradation:bromine_crossover",
+      "consequence": "zinc_corrosion_and_CE_loss",
+      "severity": "major",
+      "evidence_text": "the rate of Br₂ generation at the positive electrode exceeds the complexation kinetics of MEP, resulting in a transient accumulation of free bromine... diffuses more readily across the porous separator toward the negative electrode, where it chemically reacts with the plated zinc",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DC_003",
+      "type": "DEGRADATION_CHAIN",
+      "system": "system:zinc_bromine_flow_battery",
+      "trigger": "degradation:zinc_dendrite_growth",
+      "mechanism": "metric:ohmic_resistance_increase",
+      "consequence": "energy_efficiency_decline",
+      "severity": "major",
+      "evidence_text": "the resistance increase stems from multiple sources: physical displacement of electrolyte by dendrite structures at the separator interface, partial clogging of separator pores by detached zinc particles, and increased ionic path length as dendrites create non-uniform current distributions.",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DC_004",
+      "type": "DEGRADATION_CHAIN",
+      "system": "system:zinc_bromine_flow_battery",
+      "trigger": "degradation:zinc_dendrite_growth",
+      "mechanism": "zinc_utilization_decline",
+      "consequence": "capacity_fade",
+      "severity": "major",
+      "evidence_text": "incomplete zinc stripping during discharge—due to trapped metallic zinc within dendrite structures—and partial electrical isolation of zinc deposits from the carbon felt substrate as dendrites grow away from the electrode surface.",
+      "location": {
+        "section": "Electrochemical Performance and Coulombic Efficiency Trends",
+        "paragraph": 4
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DC_005",
+      "type": "DEGRADATION_CHAIN",
+      "system": "system:zinc_bromine_flow_battery",
+      "trigger": "separator:porous_separator_degradation",
+      "mechanism": "degradation:bromine_crossover",
+      "consequence": "CE_decline_from_89%_to_81%",
+      "severity": "major",
+      "evidence_text": "The conventional porous separator exhibited the most rapid performance degradation. Coulombic efficiency began at 89% but declined steadily to 81% by cycle 200",
+      "location": {
+        "section": "Separator Morphology and Long-Term Cycling Stability",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_MECH_001",
+      "type": "MECHANISM_EVIDENCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "mechanism": "MEP_polybromide_complexation",
+      "evidence_type": "mechanism_description",
+      "description": "MEP forms an immiscible polybromide complex phase that reduces free bromine activity in the aqueous phase, lowering the chemical potential gradient driving crossover.",
+      "evidence_text": "The mechanism underlying this improvement involves the formation of a polybromide-MEP complex phase that is immiscible with the aqueous electrolyte and effectively traps molecular bromine. When MEP is present at sufficient concentration, the equilibrium between free Br₂ and complexed polybromide shifts strongly toward the complexed form, reducing the thermodynamic activity of bromine in the aqueous phase.",
+      "location": {
+        "section": "Bromine Crossover and Complexing Agent Effects",
+        "paragraph": 3
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_MECH_002",
+      "type": "MECHANISM_EVIDENCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "mechanism": "dendrite_tip_current_focusing",
+      "evidence_type": "mechanism_description",
+      "description": "Dendrite growth accelerates due to geometric focusing effects that increase local current density at dendrite tips, creating positive feedback.",
+      "evidence_text": "The accelerating growth rate reflects a positive feedback mechanism: as dendrites protrude from the electrode surface, the local current density at the dendrite tips increases due to geometric focusing effects, which in turn drives faster zinc deposition at these locations.",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_MECH_003",
+      "type": "MECHANISM_EVIDENCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "mechanism": "microporous_membrane_dendrite_suppression",
+      "evidence_type": "mechanism_description",
+      "description": "Microporous membranes physically obstruct dendrite penetration and promote homogeneous current distribution, reducing nucleation hotspots.",
+      "evidence_text": "The superior performance of the microporous membrane is attributed to its smaller, more uniform pores, which physically obstruct dendrite penetration and reduce the probability of pore clogging by zinc particulates. Additionally, the more uniform pore structure supports a more homogeneous current distribution across the electrode surface",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 3
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_MECH_004",
+      "type": "MECHANISM_EVIDENCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "mechanism": "MEP_vs_NMP-Br_structural_effect",
+      "evidence_type": "comparative_observation",
+      "description": "The ethyl substituent on MEP versus methyl on NMP-Br enhances hydrophobicity and reduces polybromide complex aqueous solubility, improving crossover suppression.",
+      "evidence_text": "The structural difference between the two complexing agents—the ethyl substituent on MEP versus the methyl group on NMP-Br—appears to enhance hydrophobicity and reduce the partition coefficient of the polybromide complex in the aqueous phase.",
+      "location": {
+        "section": "Bromine Crossover and Complexing Agent Effects",
+        "paragraph": 5
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_MECH_005",
+      "type": "MECHANISM_EVIDENCE",
+      "system": "system:zinc_bromine_flow_battery",
+      "mechanism": "ohmic_resistance_dendrite_correlation",
+      "evidence_type": "correlation",
+      "description": "Ohmic resistance increase is strongly correlated with dendrite development through electrolyte displacement, pore clogging, and non-uniform current distribution.",
+      "evidence_text": "The evolution of ohmic resistance showed a strong correlation with dendrite development... the resistance increase stems from multiple sources: physical displacement of electrolyte by dendrite structures at the separator interface, partial clogging of separator pores by detached zinc particles, and increased ionic path length as dendrites create non-uniform current distributions.",
+      "location": {
+        "section": "Zinc Dendrite Growth and Ohmic Resistance Evolution",
+        "paragraph": 2
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DS_001",
+      "type": "DESIGN_SUMMARY",
+      "system": "system:zinc_bromine_flow_battery",
+      "design_choice": "0.3 M MEP + microporous membrane + 40 mA/cm²",
+      "performance_summary": "CE 89%, EE ~70%, zinc utilization >65%, ohmic resistance <0.85 Ω·cm² over 200 cycles",
+      "trade_offs": "Lower MEP reduces viscosity penalty; microporous membrane reduces porosity but stabilizes resistance",
+      "evidence_text": "a zinc-bromine flow battery configured with 0.3 M MEP, a microporous or asymmetric microporous membrane, and operated at 40 mA/cm² can achieve coulombic efficiency of 89%, energy efficiency of approximately 70%, zinc utilization above 65%, and stable ohmic resistance below 0.85 Ω·cm² over at least 200 cycles.",
+      "location": {
+        "section": "Discussion",
+        "paragraph": 5
+      }
+    },
+    {
+      "canonical_id": "DOC07_EFU_DS_002",
+      "type": "DESIGN_SUMMARY",
+      "system": "system:zinc_bromine_flow_battery",
+      "design_choice": "asymmetric_microporous_membrane",
+      "performance_summary": "CE 90-91%, EE 70% at cycle 200, bromine crossover 0.035 mL/h, stable ohmic resistance 0.75 Ω·cm²",
+      "trade_offs": "More complex manufacturing; best long-term stability",
+      "evidence_text": "This configuration achieved CE of 90–91% and EE of 70% at cycle 200, with bromine crossover of 0.035 mL/h and stable ohmic resistance of 0.75 Ω·cm².",
+      "location": {
+        "section": "Separator Morphology and Long-Term Cycling Stability",
+        "paragraph": 4
+      }
+    }
+  ],
+  "facts": [
+    {
+      "canonical_id": "DOC07_FACT_001",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "At 20 mA/cm², zinc-bromine flow battery cells achieved 92% coulombic efficiency and 78% energy efficiency during the first 50 cycles with 2 M ZnBr₂ and 0.3 M MEP electrolyte.",
+      "derived_from_efu": [
+        "DOC07_EFU_OP_001",
+        "DOC07_EFU_OP_005",
+        "DOC07_EFU_COMP_001"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_002",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "At 80 mA/cm², coulombic efficiency dropped to 85% and energy efficiency to 64%, representing the lowest efficiencies observed in the study.",
+      "derived_from_efu": [
+        "DOC07_EFU_OP_004"
+      ],
+      "complexity": "L1"
+    },
+    {
+      "canonical_id": "DOC07_FACT_003",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "Zinc utilization decreased from 72% after 50 cycles at 20 mA/cm² to 55% at cycle 200 when operated at 80 mA/cm².",
+      "derived_from_efu": [
+        "DOC07_EFU_OP_006",
+        "DOC07_EFU_OP_007"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_004",
+      "type": "COMPARISON",
+      "fact_statement": "Increasing MEP concentration from 0 M to 0.5 M reduced bromine crossover rate from 0.12 mL/h to 0.03 mL/h at 40 mA/cm², representing a 75% reduction.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_001",
+        "DOC07_EFU_COMP_002"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_005",
+      "type": "COMPARISON",
+      "fact_statement": "At 40 mA/cm², the microporous membrane achieved a 65% reduction in zinc dendrite growth rate compared to the conventional porous separator (0.6 μm/cycle vs. higher rate).",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_002"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_006",
+      "type": "COMPARISON",
+      "fact_statement": "MEP outperformed N-methylpyrrolidinium bromide (NMP-Br) as a bromine complexing agent; at 0.3 M, MEP achieved 0.05 mL/h crossover and 89% CE versus 0.07 mL/h and 87% CE for NMP-Br.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_004"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_007",
+      "type": "COMPARISON",
+      "fact_statement": "The microporous membrane maintained stable ohmic resistance of 0.8 Ω·cm² over 200 cycles, while the porous separator showed resistance increasing from 0.8 to 1.4 Ω·cm² over the same period.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_003"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_008",
+      "type": "COMPARISON",
+      "fact_statement": "Energy efficiency declined from 78% at 20 mA/cm² to 64% at 80 mA/cm², while coulombic efficiency decreased from 92% to 85% across the same current density range.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_005",
+        "DOC07_EFU_OP_001",
+        "DOC07_EFU_OP_004"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_009",
+      "type": "COMPARISON",
+      "fact_statement": "The microporous membrane retained coulombic efficiency at 89–90% over 200 cycles, while the porous separator declined from 89% to 81% at 40 mA/cm².",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_006"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_010",
+      "type": "DEGRADATION_CHAIN",
+      "fact_statement": "At 80 mA/cm², zinc dendrite growth rates exceeded 3.0 μm/cycle beyond cycle 100, leading to premature cell failure through separator penetration at approximately cycle 175.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_001"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_011",
+      "type": "DEGRADATION_CHAIN",
+      "fact_statement": "When bromine generation exceeds MEP complexation kinetics, free bromine accumulates and diffuses across the separator, reacting with plated zinc to cause irreversible capacity loss.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_002"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_012",
+      "type": "DEGRADATION_CHAIN",
+      "fact_statement": "Zinc dendrite growth causes ohmic resistance increases through electrolyte displacement, separator pore clogging by detached zinc particles, and non-uniform current distributions.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_003",
+        "DOC07_EFU_MECH_005"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_013",
+      "type": "DEGRADATION_CHAIN",
+      "fact_statement": "Trapped metallic zinc within dendrite structures and electrical isolation of zinc deposits from the carbon felt substrate cause zinc utilization decline during extended cycling.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_004"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_014",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "MEP forms a polybromide complex phase that is immiscible with the aqueous electrolyte; this reduces free bromine thermodynamic activity and lowers the chemical potential gradient driving crossover.",
+      "derived_from_efu": [
+        "DOC07_EFU_MECH_001"
+      ],
+      "complexity": "L4"
+    },
+    {
+      "canonical_id": "DOC07_FACT_015",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "The ethyl substituent on MEP versus the methyl group on NMP-Br enhances hydrophobicity and reduces the partition coefficient of the polybromide complex in the aqueous phase, explaining MEP's superior crossover suppression.",
+      "derived_from_efu": [
+        "DOC07_EFU_MECH_004"
+      ],
+      "complexity": "L4"
+    },
+    {
+      "canonical_id": "DOC07_FACT_016",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "Microporous membranes suppress dendrite growth by physically obstructing penetration and promoting homogeneous current distribution, which reduces localized hotspots that nucleate dendrites.",
+      "derived_from_efu": [
+        "DOC07_EFU_MECH_003"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_017",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "Dendrite growth accelerates through a positive feedback mechanism: as dendrites protrude, geometric focusing effects increase local current density at tips, driving faster zinc deposition.",
+      "derived_from_efu": [
+        "DOC07_EFU_MECH_002"
+      ],
+      "complexity": "L4"
+    },
+    {
+      "canonical_id": "DOC07_FACT_018",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "At 0.3 M MEP and 40 mA/cm², bromine crossover was 0.05 mL/h with CE of 89% maintained through 200 cycles; at 0.1 M MEP, crossover was 0.08 mL/h with CE of 86%.",
+      "derived_from_efu": [
+        "DOC07_EFU_COMP_003"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_019",
+      "type": "COMPARISON",
+      "fact_statement": "The asymmetric microporous membrane (0.1 μm zinc-facing, 0.3 μm bromine-facing) achieved CE of 90–91% and EE of 70% at cycle 200 with bromine crossover of 0.035 mL/h, outperforming both symmetric separators.",
+      "derived_from_efu": [
+        "DOC07_EFU_DS_002"
+      ],
+      "complexity": "L3"
+    },
+    {
+      "canonical_id": "DOC07_FACT_020",
+      "type": "DEGRADATION_CHAIN",
+      "fact_statement": "The conventional porous separator at 40 mA/cm² exhibited bromine crossover of 0.09 mL/h and CE decline from 89% to 81% by cycle 200, with visible dendrite penetration marks and bromine staining.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_005"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_021",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "At 0.5 M MEP, the bromine crossover rate was 0.03 mL/h with CE of 91%, but pumping power increased by approximately 15% and ohmic resistance of the positive half-cell rose from 0.6 to 0.7 Ω·cm².",
+      "derived_from_efu": [
+        "DOC07_EFU_COMP_002"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_022",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "At 40 mA/cm² with a porous separator, zinc dendrite growth rates were 1.1 μm/cycle (0–50 cycles), 1.7 μm/cycle (50–100 cycles), and 2.4 μm/cycle (100–200 cycles), showing progressive acceleration.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_002"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_023",
+      "type": "DESIGN_SUMMARY",
+      "fact_statement": "A zinc-bromine flow battery with 0.3 M MEP, microporous membrane, operated at 40 mA/cm² can achieve 89% CE, ~70% EE, >65% zinc utilization, and <0.85 Ω·cm² ohmic resistance over 200 cycles.",
+      "derived_from_efu": [
+        "DOC07_EFU_DS_001"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_024",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "At low current density (20 mA/cm²), bromine crossover dominates capacity fade (~60%), while at 80 mA/cm² zinc dendrite growth becomes primary (~70%), showing the degradation hierarchy shifts with operating conditions.",
+      "derived_from_efu": [
+        "DOC07_EFU_DC_001",
+        "DOC07_EFU_DC_002"
+      ],
+      "complexity": "L4"
+    },
+    {
+      "canonical_id": "DOC07_FACT_025",
+      "type": "OPERATION_PERFORMANCE",
+      "fact_statement": "After 100 cycles, cells at 20 mA/cm² exhibited ohmic resistance of 0.9 Ω·cm² while those at 80 mA/cm² reached 1.6 Ω·cm², measured by electrochemical impedance spectroscopy.",
+      "derived_from_efu": [
+        "DOC07_EFU_OP_003",
+        "DOC07_EFU_OP_004"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_026",
+      "type": "COMPARISON",
+      "fact_statement": "Without MEP at 40 mA/cm², the bromine crossover rate increased from 0.12 mL/h during the first 50 cycles to 0.16 mL/h between cycles 100 and 200 as separator degradation created additional diffusion pathways.",
+      "derived_from_efu": [
+        "DOC07_EFU_CMP_001"
+      ],
+      "complexity": "L2"
+    },
+    {
+      "canonical_id": "DOC07_FACT_027",
+      "type": "MECHANISM_EVIDENCE",
+      "fact_statement": "The dense polybromide phase that accumulates in the positive electrolyte tank during charging acts as a secondary reservoir, releasing bromide ions during discharge while maintaining low free bromine concentrations throughout the cycle.",
+      "derived_from_efu": [
+        "DOC07_EFU_MECH_001"
+      ],
+      "complexity": "L4"
+    },
+    {
+      "canonical_id": "DOC07_FACT_028",
+      "type": "DESIGN_SUMMARY",
+      "fact_statement": "0.3 M MEP represents a practical compromise between bromine containment and overall cell performance, achieving 89% CE and 0.05 mL/h crossover while avoiding excessive viscosity increases seen at 0.5 M.",
+      "derived_from_efu": [
+        "DOC07_EFU_DS_001",
+        "DOC07_EFU_COMP_003"
+      ],
+      "complexity": "L3"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "canonical_id": "DOC07_QA_001",
+      "level": "L1",
+      "question": "What was the coulombic efficiency at 20 mA/cm² during the first 50 cycles?",
+      "answer": "92%",
+      "type": "value_lookup",
+      "derived_from_fact": "DOC07_FACT_001",
+      "evidence_text": "At 20 mA/cm², the cells achieved an average coulombic efficiency (CE) of 92% and an energy efficiency (EE) of 78% during the first 50 cycles."
+    },
+    {
+      "canonical_id": "DOC07_QA_002",
+      "level": "L1",
+      "question": "What was the energy efficiency at 80 mA/cm²?",
+      "answer": "64%",
+      "type": "value_lookup",
+      "derived_from_fact": "DOC07_FACT_002",
+      "evidence_text": "the highest current density of 80 mA/cm² produced the lowest efficiencies observed in this study: CE of 85% and EE of 64%."
+    },
+    {
+      "canonical_id": "DOC07_QA_003",
+      "level": "L1",
+      "question": "What was the zinc utilization at cycle 200 for cells operated at 80 mA/cm²?",
+      "answer": "55%",
+      "type": "value_lookup",
+      "derived_from_fact": "DOC07_FACT_003",
+      "evidence_text": "cells operated at 80 mA/cm² showed zinc utilization of only 55% at cycle 200"
+    },
+    {
+      "canonical_id": "DOC07_QA_004",
+      "level": "L1",
+      "question": "What bromine crossover rate was achieved with 0.5 M MEP?",
+      "answer": "0.03 mL/h",
+      "type": "value_lookup",
+      "derived_from_fact": "DOC07_FACT_004",
+      "evidence_text": "The highest MEP concentration of 0.5 M achieved the lowest crossover rate of 0.03 mL/h"
+    },
+    {
+      "canonical_id": "DOC07_QA_005",
+      "level": "L1",
+      "question": "What was the dendrite growth rate with the microporous membrane at 40 mA/cm² during the first 100 cycles?",
+      "answer": "0.6 μm/cycle",
+      "type": "value_lookup",
+      "derived_from_fact": "DOC07_FACT_005",
+      "evidence_text": "the microporous membrane reduced the dendrite growth rate to 0.6 μm/cycle during the first 100 cycles"
+    },
+    {
+      "canonical_id": "DOC07_QA_006",
+      "level": "L2",
+      "question": "At 40 mA/cm², what was the coulombic efficiency and bromine crossover rate with 0.3 M MEP?",
+      "answer": "89% coulombic efficiency and 0.05 mL/h bromine crossover rate, maintained through 200 cycles.",
+      "type": "conditional_lookup",
+      "derived_from_fact": "DOC07_FACT_018",
+      "evidence_text": "At 0.3 M MEP, the crossover rate further decreased to 0.05 mL/h with a corresponding CE of 89%, which was maintained consistently through 200 cycles."
+    },
+    {
+      "canonical_id": "DOC07_QA_007",
+      "level": "L2",
+      "question": "How did the ohmic resistance of the porous separator change from initial to cycle 200 at 40 mA/cm²?",
+      "answer": "It increased from 0.8 Ω·cm² initially to 1.4 Ω·cm² at cycle 200.",
+      "type": "trend_lookup",
+      "derived_from_fact": "DOC07_FACT_007",
+      "evidence_text": "the porous separator showed resistance increasing from 0.8 Ω·cm² to 1.4 Ω·cm² over the same period."
+    },
+    {
+      "canonical_id": "DOC07_QA_008",
+      "level": "L2",
+      "question": "What CE and bromine crossover were achieved with the asymmetric microporous membrane at cycle 200?",
+      "answer": "CE of 90–91%, bromine crossover of 0.035 mL/h, and stable ohmic resistance of 0.75 Ω·cm².",
+      "type": "conditional_lookup",
+      "derived_from_fact": "DOC07_FACT_019",
+      "evidence_text": "This configuration achieved CE of 90–91% and EE of 70% at cycle 200, with bromine crossover of 0.035 mL/h and stable ohmic resistance of 0.75 Ω·cm²."
+    },
+    {
+      "canonical_id": "DOC07_QA_009",
+      "level": "L2",
+      "question": "What was the zinc dendrite growth rate at 20 mA/cm² with a porous separator between cycles 100 and 200?",
+      "answer": "1.8 μm/cycle.",
+      "type": "conditional_lookup",
+      "derived_from_fact": "DOC07_FACT_022",
+      "evidence_text": "At a current density of 20 mA/cm² with a conventional porous separator... the rate accelerated to 1.3 μm/cycle between cycles 50 and 100, and further to 1.8 μm/cycle between cycles 100 and 200."
+    },
+    {
+      "canonical_id": "DOC07_QA_010",
+      "level": "L3",
+      "question": "Why does MEP outperform NMP-Br in reducing bromine crossover?",
+      "answer": "MEP has an ethyl substituent versus the methyl group on NMP-Br, which enhances hydrophobicity and reduces the partition coefficient of the polybromide complex in the aqueous phase, resulting in lower crossover (0.05 vs 0.07 mL/h at 0.3 M) and higher CE (89% vs 87%).",
+      "type": "mechanism_comparison",
+      "derived_from_fact": "DOC07_FACT_006",
+      "evidence_text": "The structural difference between the two complexing agents—the ethyl substituent on MEP versus the methyl group on NMP-Br—appears to enhance hydrophobicity and reduce the partition coefficient of the polybromide complex in the aqueous phase."
+    },
+    {
+      "canonical_id": "DOC07_QA_011",
+      "level": "L3",
+      "question": "How do zinc dendrites contribute to increasing ohmic resistance?",
+      "answer": "Dendrites increase ohmic resistance through three mechanisms: (1) physical displacement of electrolyte at the separator interface, (2) partial clogging of separator pores by detached zinc particles, and (3) increased ionic path length from non-uniform current distributions created by dendrites.",
+      "type": "mechanism_reasoning",
+      "derived_from_fact": "DOC07_FACT_012",
+      "evidence_text": "the resistance increase stems from multiple sources: physical displacement of electrolyte by dendrite structures at the separator interface, partial clogging of separator pores by detached zinc particles, and increased ionic path length as dendrites create non-uniform current distributions."
+    },
+    {
+      "canonical_id": "DOC07_QA_012",
+      "level": "L3",
+      "question": "Why is 0.3 M MEP considered a practical optimum rather than 0.5 M?",
+      "answer": "While 0.5 M MEP achieves the lowest crossover (0.03 mL/h) and highest CE (91%), it increases viscosity by enough to raise pumping power ~15%, increases positive half-cell resistance from 0.6 to 0.7 Ω·cm², and reduces zinc ion mobility (3% decrease in limiting current density). 0.3 M achieves 89% CE with 0.05 mL/h crossover while avoiding these excessive penalties.",
+      "type": "tradeoff_reasoning",
+      "derived_from_fact": "DOC07_FACT_028",
+      "evidence_text": "0.3 M may represent a more balanced compromise between bromine containment and overall cell performance when pumping energy penalties are considered."
+    },
+    {
+      "canonical_id": "DOC07_QA_013",
+      "level": "L3",
+      "question": "What caused the conventional porous separator to degrade most rapidly during long-term cycling?",
+      "answer": "The porous separator suffered from both bromine crossover and dendrite penetration: its 5 μm average pores offered minimal resistance to bromine diffusion, CE declined from 89% to 81%, energy efficiency dropped from 72% to 58%, ohmic resistance increased to 1.4 Ω·cm², and post-mortem analysis revealed bromine staining and visible dendrite penetration marks.",
+      "type": "multi_factor_reasoning",
+      "derived_from_fact": "DOC07_FACT_020",
+      "evidence_text": "The conventional porous separator exhibited the most rapid performance degradation. Coulombic efficiency began at 89% but declined steadily to 81% by cycle 200, while energy efficiency dropped from 72% to 58%. Post-mortem examination revealed significant bromine staining... together with visible dendrite penetration marks."
+    },
+    {
+      "canonical_id": "DOC07_QA_014",
+      "level": "L4",
+      "question": "What is the positive feedback mechanism that accelerates zinc dendrite growth over cycling?",
+      "answer": "As dendrites protrude from the electrode surface, geometric focusing effects increase the local current density at dendrite tips. This higher local current density drives faster zinc deposition at those locations, causing dendrites to grow taller, which further intensifies current focusing—a self-reinforcing loop that accelerates growth from 0.8 to 1.8 μm/cycle at 20 mA/cm² and from 1.1 to 2.4 μm/cycle at 40 mA/cm².",
+      "type": "mechanism_synthesis",
+      "derived_from_fact": "DOC07_FACT_017",
+      "evidence_text": "The accelerating growth rate reflects a positive feedback mechanism: as dendrites protrude from the electrode surface, the local current density at the dendrite tips increases due to geometric focusing effects, which in turn drives faster zinc deposition at these locations."
+    },
+    {
+      "canonical_id": "DOC07_QA_015",
+      "level": "L4",
+      "question": "How does the bromine complexation mechanism by MEP reduce crossover at the molecular level?",
+      "answer": "MEP forms a polybromide complex phase that is immiscible with the aqueous electrolyte. At sufficient concentration, the equilibrium between free Br₂ and complexed polybromide shifts toward the complexed form, reducing free bromine thermodynamic activity. This reduced activity lowers the chemical potential gradient that drives bromine diffusion across the separator. Additionally, the dense polybromide phase in the positive tank acts as a secondary reservoir that releases bromide during discharge.",
+      "type": "mechanism_synthesis",
+      "derived_from_fact": "DOC07_FACT_014",
+      "evidence_text": "The mechanism underlying this improvement involves the formation of a polybromide-MEP complex phase that is immiscible with the aqueous electrolyte... reducing the thermodynamic activity of bromine in the aqueous phase. This reduced activity directly lowers the chemical potential gradient driving bromine diffusion across the separator."
+    },
+    {
+      "canonical_id": "DOC07_QA_016",
+      "level": "L4",
+      "question": "How does the degradation hierarchy shift between 20 mA/cm² and 80 mA/cm² operation?",
+      "answer": "At 20 mA/cm², bromine crossover dominates capacity fade (~60% of loss) because slow zinc plating produces uniform deposits with minimal dendrites. At 80 mA/cm², zinc dendrite growth becomes the primary failure mode (~70% of loss) due to geometric focusing, separator penetration, and zinc utilization decline. This shift means optimal mitigation strategies differ by operating regime: crossover suppression is critical at low current density, while dendrite management is essential at high current density.",
+      "type": "cross_section_synthesis",
+      "derived_from_fact": "DOC07_FACT_024",
+      "evidence_text": "At low current density (20 mA/cm²), bromine crossover dominates capacity fade because the relatively slow zinc plating rate produces uniform, compact deposits... As current density increases to 80 mA/cm², zinc dendrite growth becomes the primary failure mode"
+    },
+    {
+      "canonical_id": "DOC07_QA_017",
+      "level": "L4",
+      "question": "How does the asymmetric microporous membrane's design address the distinct challenges on each side of the cell?",
+      "answer": "The asymmetric membrane uses 0.1 μm zinc-facing pores to provide maximum dendrite penetration resistance where zinc plating occurs, while 0.3 μm bromine-facing pores reduce hydraulic resistance and allow sufficient bromide ion transport. This dual-pore design also promotes more uniform zinc plating by distributing current density evenly across the electrode-separator interface, achieving CE of 90–91% and EE of 70% at cycle 200.",
+      "type": "design_reasoning",
+      "derived_from_fact": "DOC07_FACT_019",
+      "evidence_text": "The zinc-facing 0.1 μm pores offered enhanced resistance to dendrite penetration while the larger 0.3 μm bromine-facing pores allowed sufficient bromide ion transport without excessive flow resistance. The asymmetric design also facilitated more uniform zinc plating"
+    },
+    {
+      "canonical_id": "DOC07_QA_018",
+      "level": "L5",
+      "question": "What is the optimal configuration identified in this study and what performance does it achieve?",
+      "answer": "The optimal configuration is 0.3 M MEP + microporous membrane (0.1–0.5 μm pores) operated at 40 mA/cm². This achieves 89% coulombic efficiency, ~70% energy efficiency, >65% zinc utilization, and stable ohmic resistance below 0.85 Ω·cm² over 200 cycles. The asymmetric microporous membrane offers further incremental improvement with 90–91% CE. This design balances bromine containment (0.05 mL/h crossover), dendrite suppression (0.6 μm/cycle), and manageable viscosity/conductivity penalties.",
+      "type": "document_synthesis",
+      "derived_from_fact": "DOC07_FACT_023",
+      "evidence_text": "coordinated optimization of the bromine complexing agent concentration and separator architecture can substantially extend the operational lifetime of zinc-bromine flow batteries"
+    },
+    {
+      "canonical_id": "DOC07_QA_019",
+      "level": "L5",
+      "question": "Why should MEP concentration be scaled with current density rather than kept constant?",
+      "answer": "At 20 mA/cm², 0.3 M MEP is sufficient to complex all generated bromine (CE 92%). At 80 mA/cm², the same 0.3 M is inadequate because bromine generation exceeds complexation kinetics, causing transient free bromine accumulation and elevated crossover. High-power applications targeting 80 mA/cm² therefore need 0.5 M MEP or higher. This concentration-rate interplay means universal fixed concentrations are suboptimal; instead, MEP loading should be designed for the target current density with acceptance of viscosity and conductivity trade-offs at higher concentrations.",
+      "type": "document_synthesis",
+      "derived_from_fact": "DOC07_FACT_028",
+      "evidence_text": "The effectiveness of MEP as a bromine complexing agent depends critically on its concentration relative to the bromine generation rate... optimal MEP loading should be scaled with the designed current density rather than fixed universally."
+    },
+    {
+      "canonical_id": "DOC07_QA_020",
+      "level": "L6",
+      "question": "Based on the findings, what additional engineering strategies could further extend zinc-bromine flow battery lifetime beyond the 200 cycles demonstrated?",
+      "answer": "Several complementary strategies emerge from the identified degradation mechanisms: (1) Electrode surface treatments promoting uniform zinc nucleation would reduce dendrite initiation sites, attacking the root cause of the positive feedback loop. (2) Electrolyte flow optimization could enhance mass transport of MEP to the positive electrode and flush dendrite precursors away from the separator interface. (3) Advanced separator coatings with chemical resistance to bromine attack would prevent separator degradation that creates additional diffusion pathways over time. (4) Combining asymmetric microporous membranes with optimized MEP concentration (potentially higher than 0.3 M for >40 mA/cm² operation) could address both crossover and dendrites simultaneously. (5) Pulsed charging protocols or periodic discharge conditioning might help redistribute zinc deposits and break up nascent dendrites before they penetrate the separator.",
+      "type": "open_reasoning",
+      "derived_from_fact": "DOC07_FACT_023",
+      "evidence_text": "Further improvements may be realized through electrode surface treatments that promote more uniform zinc nucleation, electrolyte flow optimization that enhances mass transport and flushes dendrite precursors, and advanced separator coatings that provide chemical resistance to bromine attack in addition to physical pore-size control."
+    },
+    {
+      "canonical_id": "DOC07_QA_021",
+      "level": "L6",
+      "question": "How might the interaction between separator pore size and MEP concentration create synergistic or antagonistic effects not explicitly tested in this study?",
+      "answer": "Synergistic effects could arise if smaller pores (microporous) work with higher MEP to doubly suppress crossover—MEP reduces free bromine activity while small pores increase diffusion path tortuosity. However, antagonistic effects are also possible: high MEP increases viscosity, which with small pores could create excessive hydraulic resistance and pumping losses. Additionally, if MEP-complexed polybromide species are larger than free bromine, microporous membranes might selectively exclude the complexed phase, potentially disrupting the equilibrium MEP is designed to establish. The optimal pairing may therefore require co-optimization rather than independent optimization of each parameter.",
+      "type": "hypothesis_generation",
+      "derived_from_fact": "DOC07_FACT_014",
+      "evidence_text": "The mechanism underlying this improvement involves the formation of a polybromide-MEP complex phase... reducing the thermodynamic activity of bromine in the aqueous phase."
+    },
+    {
+      "canonical_id": "DOC07_QA_022",
+      "level": "L6",
+      "question": "What fundamental limitations prevent zinc-bromine flow batteries from reaching the theoretical energy density of 430 Wh/kg, and which of these are addressed by this study's strategies?",
+      "answer": "The 430 Wh/kg theoretical energy density is limited by several practical factors: (1) Incomplete zinc utilization (55–72% in this study) from trapped zinc in dendrites and electrical isolation—partially addressed by microporous membranes that reduce dendrite growth. (2) Coulombic efficiency losses (85–92%) from bromine crossover and parasitic reactions—addressed by MEP complexation. (3) Energy efficiency losses from ohmic resistance and polarization—partially addressed by separator engineering that stabilizes resistance. (4) The need for excess electrolyte and complexing agent mass that does not contribute to energy storage but is required for stability. (5) Separator and electrode mass that adds to system weight without storing energy. This study addresses the electrochemical inefficiencies but not the system-level mass penalties, suggesting that practical energy densities will remain well below the theoretical value even with optimized configurations.",
+      "type": "domain_reasoning",
+      "derived_from_fact": "DOC07_FACT_023",
+      "evidence_text": "zinc-bromine flow batteries occupy a distinctive niche by combining the high theoretical energy density of the zinc-bromine redox couple (430 Wh/kg)"
+    },
+    {
+      "canonical_id": "DOC07_QA_023",
+      "level": "L6",
+      "question": "If a commercial ZBFB must achieve 90% CE and >68% EE over 1000 cycles at 60 mA/cm², what combination of strategies from this study and beyond would likely be required?",
+      "answer": "Achieving 90% CE and >68% EE at 60 mA/cm² over 1000 cycles would require pushing beyond the demonstrated performance. From this study: 0.5 M MEP would be needed (since 0.3 M only gives 87% CE at 60 mA/cm²), combined with an asymmetric microporous membrane (best stability). Additional strategies not tested but implied: flow field optimization to ensure uniform electrolyte distribution, electrode surface functionalization to promote planar zinc growth, possibly a composite separator with gradual pore gradient, and potentially a protective interlayer on the zinc electrode. The trade-off is that 0.5 M MEP increases viscosity and pumping power ~15%, while 60 mA/cm² still produces dendrite growth rates (~2+ μm/cycle with porous separator) that would likely challenge even microporous membranes over 1000 cycles. Periodic maintenance cycles or flow reversal strategies might be needed for true 1000-cycle operation.",
+      "type": "extrapolation",
+      "derived_from_fact": "DOC07_FACT_001",
+      "evidence_text": "At 60 mA/cm², CE decreased further to 87% and EE to 68%"
+    },
+    {
+      "canonical_id": "DOC07_QA_024",
+      "level": "L6",
+      "question": "How do the findings about zinc dendrite suppression by microporous membranes generalize to other metal-anode battery systems (e.g., zinc-air, lithium-metal)?",
+      "answer": "The principle of using tortuous, size-selective separators to physically block dendrite penetration generalizes broadly. In lithium-metal batteries, similar approaches using ceramic-polymer composite electrolytes or single-ion conducting membranes aim to block lithium dendrites. In zinc-air systems, separators must also block hydroxide crossover while allowing oxygen diffusion, adding complexity. The key insight from this study—that smaller, more uniform pores both obstruct dendrites and promote homogeneous current distribution—applies across metal-anode systems. However, the specific pore size requirements differ: lithium dendrites can be much finer than zinc dendrites, requiring sub-100 nm pores for effective blocking. Additionally, the aqueous ZBFB environment allows larger pores (0.1–0.5 μm) to be effective because hydrated zinc ions are smaller than the solvated lithium ions in organic electrolytes. The asymmetric pore design philosophy—tailoring structure to each electrode's challenges—offers a particularly generalizable strategy.",
+      "type": "cross_domain_reasoning",
+      "derived_from_fact": "DOC07_FACT_016",
+      "evidence_text": "The superior performance of the microporous membrane is attributed to its smaller, more uniform pores, which physically obstruct dendrite penetration"
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "canonical_id": "DOC07_STRESS_001",
+      "type": "synonym_variation",
+      "canonical_term": "system:zinc_bromine_flow_battery",
+      "variations_found": [
+        "zinc-bromine flow batteries",
+        "ZBFBs",
+        "zinc-bromine cells",
+        "zinc-bromine flow battery systems",
+        "zinc-bromine chemistry",
+        "zinc-bromine redox couple"
+      ],
+      "contexts": [
+        "Zinc-bromine flow batteries (ZBFBs) have attracted considerable attention",
+        "parametric study of zinc-bromine flow battery degradation",
+        "laboratory-scale zinc-bromine cells",
+        "extending operational lifetime in zinc-bromine flow battery systems",
+        "the zinc-bromine chemistry suffers from several degradation pathways",
+        "the zinc-bromine redox couple (430 Wh/kg)"
+      ],
+      "normalization_challenge": "System name appears in multiple abbreviated and expanded forms throughout the document; systems must recognize all variants as referring to the same technology.",
+      "severity": "high"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_002",
+      "type": "synonym_variation",
+      "canonical_term": "degradation:bromine_crossover",
+      "variations_found": [
+        "bromine crossover",
+        "Br₂ diffusion",
+        "bromine migration",
+        "bromine permeation",
+        "bromine species that had permeated"
+      ],
+      "contexts": [
+        "bromine crossover rate averaged 0.12 mL/h",
+        "diffuses more readily across the porous separator",
+        "bromine diffusion while permitting zinc ion transport",
+        "bromine permeate through the separator",
+        "bromine species that had permeated from the positive half-cell"
+      ],
+      "normalization_challenge": "Bromine crossover is described using multiple verbs (crossover, diffusion, migration, permeation) and structural variants; normalization must map all to the same degradation mechanism.",
+      "severity": "high"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_003",
+      "type": "synonym_variation",
+      "canonical_term": "complexing_agent:mep",
+      "variations_found": [
+        "MEP",
+        "N-methyl-N-ethylpyrrolidinium bromide",
+        "bromine complexing agent",
+        "complexing agent",
+        "bromine sequestration agent",
+        "quaternary ammonium salts"
+      ],
+      "contexts": [
+        "MEP as the bromine sequestration agent",
+        "N-methyl-N-ethylpyrrolidinium bromide (MEP)",
+        "bromine complexing agents such as MEP",
+        "complexing agent concentration",
+        "quaternary ammonium salts to form a dense, immiscible polybromide phase"
+      ],
+      "normalization_challenge": "MEP is referred to by full chemical name, abbreviation, generic functional role, and broader chemical class; systems must link all to the specific compound.",
+      "severity": "high"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_004",
+      "type": "synonym_variation",
+      "canonical_term": "separator:porous_separator",
+      "variations_found": [
+        "porous separator",
+        "conventional porous separator",
+        "porous polyolefin membrane",
+        "unmodified porous separator"
+      ],
+      "contexts": [
+        "cells employing unmodified porous separators",
+        "conventional porous separator with average pore size of 5 μm",
+        "Separators ranging from porous polyolefin membranes"
+      ],
+      "normalization_challenge": "Multiple adjectives modify the base term; systems must normalize adjectival variants to the same canonical separator entity.",
+      "severity": "medium"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_005",
+      "type": "synonym_variation",
+      "canonical_term": "separator:microporous_membrane",
+      "variations_found": [
+        "microporous membrane",
+        "microporous composite structure",
+        "microporous membranes with sub-micrometer pores",
+        "asymmetric microporous membrane"
+      ],
+      "contexts": [
+        "microporous membrane with pore size of 0.1–0.5 μm",
+        "microporous composite structures",
+        "microporous membranes with sub-micrometer pores",
+        "modified microporous membrane with asymmetric pore structure"
+      ],
+      "normalization_challenge": "The general 'microporous membrane' term and its asymmetric variant must be distinguished or unified depending on the level of granularity required.",
+      "severity": "medium"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_006",
+      "type": "synonym_variation",
+      "canonical_term": "degradation:zinc_dendrite_growth",
+      "variations_found": [
+        "zinc dendrite growth",
+        "dendrite proliferation",
+        "dendrite formation",
+        "dendrite penetration",
+        "dendritic structures",
+        "dendrite propagation"
+      ],
+      "contexts": [
+        "zinc dendrite growth rate",
+        "zinc dendrite proliferation",
+        "dendrite formation at the negative electrode",
+        "dendrite penetration marks",
+        "formation of dendritic structures",
+        "easy pathways for dendrite propagation"
+      ],
+      "normalization_challenge": "Zinc dendrite degradation is described using nouns (growth, proliferation, formation) and verbs (penetrate, propagate) in various constructions.",
+      "severity": "high"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_007",
+      "type": "synonym_variation",
+      "canonical_term": "metric:ohmic_resistance",
+      "variations_found": [
+        "ohmic resistance",
+        "area-specific resistance",
+        "area resistance",
+        "resistance"
+      ],
+      "contexts": [
+        "ohmic resistance measurements",
+        "area-specific resistance values",
+        "area resistance of 0.8 Ω·cm²",
+        "resistance increasing from 0.8 Ω·cm² to 1.4 Ω·cm²"
+      ],
+      "normalization_challenge": "'Area-specific resistance' and 'ohmic resistance' are used interchangeably; systems must recognize these as the same metric with the same units (Ω·cm²).",
+      "severity": "medium"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_008",
+      "type": "synonym_variation",
+      "canonical_term": "electrode:carbon_felt",
+      "variations_found": [
+        "carbon felt",
+        "graphite felt",
+        "carbon felt electrodes"
+      ],
+      "contexts": [
+        "using carbon felt electrodes",
+        "Carbon felt and graphite felt remain the predominant electrode materials",
+        "defect sites on the carbon felt surface"
+      ],
+      "normalization_challenge": "Carbon felt and graphite felt are mentioned both separately and together; they are related but distinct electrode materials that may need separate or unified normalization.",
+      "severity": "low"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_009",
+      "type": "term_ambiguity",
+      "canonical_term": "Br₂",
+      "ambiguous_forms": [
+        "Br₂",
+        "elemental bromine",
+        "molecular bromine",
+        "free bromine",
+        "bromine"
+      ],
+      "contexts": [
+        "bromide ions are oxidized to elemental bromine (Br₂)",
+        "molecular bromine and polybromide species",
+        "free bromine in the electrolyte",
+        "traps molecular bromine"
+      ],
+      "normalization_challenge": "'Bromine' appears as Br₂ (elemental), in polybromide complexes, and as bromide ions (Br⁻); context is required to distinguish the specific chemical form.",
+      "severity": "high"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_010",
+      "type": "term_ambiguity",
+      "canonical_term": "measurement:ce_XX_percent",
+      "ambiguous_forms": [
+        "coulombic efficiency",
+        "CE",
+        "efficiency metrics"
+      ],
+      "contexts": [
+        "average coulombic efficiency (CE) of 92%",
+        "CE values of approximately 89%",
+        "efficiency metrics as a function of cycle number"
+      ],
+      "normalization_challenge": "CE is used interchangeably with its full form; efficiency metrics may also refer to EE or VE, requiring context disambiguation.",
+      "severity": "low"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_011",
+      "type": "unit_normalization",
+      "canonical_term": "metric:zinc_dendrite_growth_rate",
+      "original_form": "μm/cycle",
+      "normalized_form": "μm/cycle",
+      "variants_found": [
+        "μm/cycle",
+        "micrometers per cycle"
+      ],
+      "contexts": [
+        "dendrite growth rate from 0.8 μm/cycle to 2.4 μm/cycle",
+        "0.6 μm/cycle through the full test duration"
+      ],
+      "normalization_challenge": "Growth rate units are consistent but the per-cycle normalization must be preserved when comparing across different cycle windows.",
+      "severity": "low"
+    },
+    {
+      "canonical_id": "DOC07_STRESS_012",
+      "type": "multi_entity_coreference",
+      "canonical_terms": [
+        "separator:porous_separator",
+        "separator:microporous_membrane"
+      ],
+      "coreference_pattern": "The separator",
+      "contexts": [
+        "The separator comparison highlights the dual function that this component must fulfill",
+        "separator engineering represents a high-leverage strategy",
+        "the separator toward the negative half-cell"
+      ],
+      "normalization_challenge": "Generic references to 'the separator' require contextual resolution to determine which specific separator type is being discussed, especially in comparative passages.",
+      "severity": "medium"
+    }
+  ]
+}

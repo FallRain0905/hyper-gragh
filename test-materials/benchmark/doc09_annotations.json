@@ -1,0 +1,1310 @@
+{
+  "doc_id": "DOC09",
+  "doc_title": "Performance and Degradation Mechanisms in Aqueous Organic Redox Flow Batteries: A Comparative Study of Quinone, TEMPO, and Viologen Chemistries",
+  "entities": [
+    {
+      "canonical_id": "system:organic_redox_flow_battery",
+      "name": "organic redox flow battery",
+      "aliases": [
+        "ORFB",
+        "aqueous organic redox flow battery",
+        "organic-based redox flow battery"
+      ]
+    },
+    {
+      "canonical_id": "active_species:anthraquinone",
+      "name": "anthraquinone",
+      "aliases": [
+        "AQ",
+        "anthraquinone active species",
+        "quinone",
+        "reduced anthrahydroquinone",
+        "anthrahydroquinone"
+      ]
+    },
+    {
+      "canonical_id": "active_species:tempo",
+      "name": "TEMPO",
+      "aliases": [
+        "(2,2,6,6-tetramethylpiperidin-1-yl)oxyl",
+        "nitroxyl radical",
+        "TEMPO radical",
+        "TEMPO/TEMPO+ couple"
+      ]
+    },
+    {
+      "canonical_id": "active_species:methyl_viologen",
+      "name": "methyl viologen",
+      "aliases": [
+        "MV",
+        "viologen",
+        "bipyridinium",
+        "bipyridinium-based compound",
+        "MV+",
+        "MV0",
+        "methyl viologen dication"
+      ]
+    },
+    {
+      "canonical_id": "active_species:benzoquinone",
+      "name": "benzoquinone",
+      "aliases": [
+        "BQ",
+        "benzoquinone core",
+        "neutral benzoquinone species"
+      ]
+    },
+    {
+      "canonical_id": "membrane:anion_exchange_membrane",
+      "name": "anion-exchange membrane",
+      "aliases": [
+        "AEM",
+        "Fumasep FAA-3-PK-75",
+        "anion-exchange membrane separator"
+      ]
+    },
+    {
+      "canonical_id": "membrane:nafion_117",
+      "name": "Nafion 117",
+      "aliases": [
+        "Nafion",
+        "Nafion membrane",
+        "sulfonated membrane"
+      ]
+    },
+    {
+      "canonical_id": "electrode:carbon_felt",
+      "name": "carbon felt",
+      "aliases": [
+        "SGL Carbon GFD 4.6 EA",
+        "carbon felt electrode"
+      ]
+    },
+    {
+      "canonical_id": "electrode:graphite_felt",
+      "name": "graphite felt",
+      "aliases": [
+        "graphite felt electrode"
+      ]
+    },
+    {
+      "canonical_id": "solvent:aqueous_koh",
+      "name": "aqueous KOH",
+      "aliases": [
+        "alkaline electrolyte",
+        "aqueous potassium hydroxide"
+      ]
+    },
+    {
+      "canonical_id": "solvent:aqueous_nacl",
+      "name": "aqueous NaCl",
+      "aliases": [
+        "neutral aqueous solution",
+        "aqueous sodium chloride"
+      ]
+    },
+    {
+      "canonical_id": "condition:current_density_20_ma_cm2",
+      "name": "current density 20 mA/cm²",
+      "aliases": [
+        "20 mA/cm²"
+      ]
+    },
+    {
+      "canonical_id": "condition:current_density_40_ma_cm2",
+      "name": "current density 40 mA/cm²",
+      "aliases": [
+        "40 mA/cm²"
+      ]
+    },
+    {
+      "canonical_id": "condition:current_density_60_ma_cm2",
+      "name": "current density 60 mA/cm²",
+      "aliases": [
+        "60 mA/cm²"
+      ]
+    },
+    {
+      "canonical_id": "condition:current_density_100_ma_cm2",
+      "name": "current density 100 mA/cm²",
+      "aliases": [
+        "100 mA/cm²"
+      ]
+    },
+    {
+      "canonical_id": "condition:ph_7",
+      "name": "pH 7",
+      "aliases": [
+        "neutral pH",
+        "pH 7 condition"
+      ]
+    },
+    {
+      "canonical_id": "condition:ph_8",
+      "name": "pH 8",
+      "aliases": [
+        "pH 8 condition"
+      ]
+    },
+    {
+      "canonical_id": "condition:ph_9",
+      "name": "pH 9",
+      "aliases": [
+        "pH 9 condition"
+      ]
+    },
+    {
+      "canonical_id": "condition:ph_12",
+      "name": "pH 12",
+      "aliases": [
+        "pH 12 condition"
+      ]
+    },
+    {
+      "canonical_id": "condition:ph_14",
+      "name": "pH 14",
+      "aliases": [
+        "highly alkaline condition",
+        "pH 14 condition",
+        "elevated pH"
+      ]
+    },
+    {
+      "canonical_id": "condition:cycle_100",
+      "name": "100 cycles",
+      "aliases": []
+    },
+    {
+      "canonical_id": "condition:cycle_150",
+      "name": "150 cycles",
+      "aliases": []
+    },
+    {
+      "canonical_id": "condition:cycle_200",
+      "name": "200 cycles",
+      "aliases": []
+    },
+    {
+      "canonical_id": "condition:cycle_300",
+      "name": "300 cycles",
+      "aliases": []
+    },
+    {
+      "canonical_id": "condition:cycle_500",
+      "name": "500 cycles",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_93_percent",
+      "name": "coulombic efficiency 93%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_95_percent",
+      "name": "coulombic efficiency 95%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_96_percent",
+      "name": "coulombic efficiency 96%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_97_percent",
+      "name": "coulombic efficiency 97%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_98_percent",
+      "name": "coulombic efficiency 98%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ce_99_percent",
+      "name": "coulombic efficiency 99%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_76_percent",
+      "name": "energy efficiency 76%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_78_percent",
+      "name": "energy efficiency 78%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_81_percent",
+      "name": "energy efficiency 81%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_82_percent",
+      "name": "energy efficiency 82%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_84_percent",
+      "name": "energy efficiency 84%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_87_percent",
+      "name": "energy efficiency 87%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:ee_88_percent",
+      "name": "energy efficiency 88%",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_004_percent_per_cycle",
+      "name": "capacity fade rate 0.04% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_005_percent_per_cycle",
+      "name": "capacity fade rate 0.05% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_006_percent_per_cycle",
+      "name": "capacity fade rate 0.06% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_008_percent_per_cycle",
+      "name": "capacity fade rate 0.08% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_009_percent_per_cycle",
+      "name": "capacity fade rate 0.09% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_011_percent_per_cycle",
+      "name": "capacity fade rate 0.11% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "measurement:capacity_fade_rate_015_percent_per_cycle",
+      "name": "capacity fade rate 0.15% per cycle",
+      "aliases": []
+    },
+    {
+      "canonical_id": "degradation:quinone_dimerization",
+      "name": "quinone dimerization",
+      "aliases": [
+        "dimerization",
+        "anthraquinone dimerization",
+        "dimer formation",
+        "dimerized anthraquinone"
+      ]
+    },
+    {
+      "canonical_id": "degradation:organic_crossover",
+      "name": "organic crossover",
+      "aliases": [
+        "crossover",
+        "permeation",
+        "permeation rate",
+        "membrane crossover",
+        "organic species permeation"
+      ]
+    },
+    {
+      "canonical_id": "degradation:capacity_imbalance",
+      "name": "capacity imbalance",
+      "aliases": [
+        "SOC imbalance",
+        "state-of-charge imbalance",
+        "asymmetric capacity fade"
+      ]
+    },
+    {
+      "canonical_id": "degradation:side_reaction",
+      "name": "side reaction",
+      "aliases": [
+        "secondary reaction",
+        "undesired reaction"
+      ]
+    },
+    {
+      "canonical_id": "metric:membrane_selectivity",
+      "name": "membrane selectivity",
+      "aliases": [
+        "ion selectivity",
+        "membrane ion selectivity",
+        "separator selectivity"
+      ]
+    }
+  ],
+  "gold_efus": [
+    {
+      "efu_id": "EFU01",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "active_species:anthraquinone",
+        "active_species:tempo",
+        "condition:current_density_100_ma_cm2",
+        "measurement:ce_97_percent",
+        "measurement:ee_82_percent"
+      ],
+      "evidence_text": "At a current density of 100 mA/cm², the anthraquinone-TEMPO full cell achieved a coulombic efficiency (CE) of 97%, a voltage efficiency (VE) of 85%, and an energy efficiency (EE) of 82% over 200 cycles.",
+      "human_readable": "The anthraquinone-TEMPO full cell at 100 mA/cm² delivered CE=97% and EE=82% over 200 cycles."
+    },
+    {
+      "efu_id": "EFU02",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "condition:ph_12",
+        "condition:current_density_100_ma_cm2",
+        "measurement:ce_95_percent"
+      ],
+      "evidence_text": "At pH 12 and a current density of 100 mA/cm², the anthraquinone half-cell demonstrated a CE of 95% and stable charge-discharge profiles over the initial 100 cycles.",
+      "human_readable": "Anthraquinone half-cell at pH 12 and 100 mA/cm² achieved CE=95% over 100 cycles."
+    },
+    {
+      "efu_id": "EFU03",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "active_species:tempo",
+        "condition:ph_8",
+        "condition:current_density_100_ma_cm2",
+        "measurement:ce_98_percent",
+        "measurement:ee_87_percent"
+      ],
+      "evidence_text": "At a current density of 100 mA/cm² and pH 8, the TEMPO half-cell achieved a CE of 98%, a VE of 89%, and an EE of 87%.",
+      "human_readable": "TEMPO half-cell at pH 8 and 100 mA/cm² achieved CE=98%, EE=87%."
+    },
+    {
+      "efu_id": "EFU04",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "active_species:methyl_viologen",
+        "condition:ph_7",
+        "condition:current_density_60_ma_cm2",
+        "measurement:ce_99_percent"
+      ],
+      "evidence_text": "Operating at pH 7 and 60 mA/cm², the methyl viologen half-cell achieved a CE of 99% for the first reduction step, which decreased to 95% when cycling through both reduction states.",
+      "human_readable": "Methyl viologen at pH 7 and 60 mA/cm² achieved CE=99% for single-electron, CE=95% for two-electron process."
+    },
+    {
+      "efu_id": "EFU05",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "condition:ph_12",
+        "condition:current_density_20_ma_cm2",
+        "measurement:ee_84_percent"
+      ],
+      "evidence_text": "The EE consequently increased from 74% at 100 mA/cm² to 84% at 20 mA/cm² for the pH 12 anthraquinone system.",
+      "human_readable": "Anthraquinone system at pH 12 showed EE=74% at 100 mA/cm², improving to EE=84% at 20 mA/cm²."
+    },
+    {
+      "efu_id": "EFU06",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "active_species:methyl_viologen",
+        "condition:ph_14",
+        "condition:ph_7",
+        "condition:current_density_60_ma_cm2",
+        "measurement:ce_95_percent",
+        "measurement:ee_76_percent"
+      ],
+      "evidence_text": "At 60 mA/cm², this cell achieved a CE of 95%, a VE of 80%, and an EE of 76% over 150 cycles.",
+      "human_readable": "Anthraquinone-methyl viologen full cell at 60 mA/cm² achieved CE=95%, EE=76% over 150 cycles."
+    },
+    {
+      "efu_id": "EFU07",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "membrane:anion_exchange_membrane",
+        "condition:ph_9",
+        "condition:current_density_100_ma_cm2",
+        "measurement:ce_96_percent",
+        "measurement:ee_81_percent"
+      ],
+      "evidence_text": "For the anthraquinone-TEMPO cell at pH 9 and 100 mA/cm², the AEM achieved a CE of 96% and an EE of 81%.",
+      "human_readable": "AEM in anthraquinone-TEMPO cell at pH 9 and 100 mA/cm² gave CE=96%, EE=81%."
+    },
+    {
+      "efu_id": "EFU08",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "canonical_ids": [
+        "membrane:nafion_117",
+        "condition:ph_9",
+        "condition:current_density_100_ma_cm2",
+        "measurement:ce_93_percent",
+        "measurement:ee_78_percent"
+      ],
+      "evidence_text": "Nafion 117 yielded a lower CE of 93% and EE of 78%.",
+      "human_readable": "Nafion 117 at pH 9 and 100 mA/cm² gave CE=93%, EE=78%."
+    },
+    {
+      "efu_id": "EFU09",
+      "efu_type": "COMPOSITION",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "active_species:anthraquinone",
+        "solvent:aqueous_koh",
+        "condition:ph_12",
+        "condition:ph_14",
+        "electrode:carbon_felt"
+      ],
+      "evidence_text": "The negolyte comprised anthraquinone dissolved in aqueous KOH at either pH 12 or pH 14... Carbon felt electrodes (SGL Carbon, GFD 4.6 EA) were employed as the standard electrode material.",
+      "human_readable": "The ORFB negolyte was composed of anthraquinone in aqueous KOH (pH 12 or 14) with carbon felt electrodes."
+    },
+    {
+      "efu_id": "EFU10",
+      "efu_type": "COMPOSITION",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "active_species:tempo",
+        "active_species:methyl_viologen",
+        "solvent:aqueous_nacl",
+        "condition:ph_7",
+        "condition:ph_8",
+        "condition:ph_9"
+      ],
+      "evidence_text": "The posolyte contained either TEMPO or methyl viologen in aqueous NaCl buffered to pH 7, 8, or 9.",
+      "human_readable": "The ORFB posolyte contained TEMPO or methyl viologen in aqueous NaCl at pH 7, 8, or 9."
+    },
+    {
+      "efu_id": "EFU11",
+      "efu_type": "COMPOSITION",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "membrane:anion_exchange_membrane",
+        "membrane:nafion_117",
+        "electrode:carbon_felt",
+        "electrode:graphite_felt"
+      ],
+      "evidence_text": "A commercial anion-exchange membrane (AEM, Fumasep FAA-3-PK-75) was employed as the primary separator, with Nafion 117 tested in parallel experiments. Carbon felt electrodes (SGL Carbon, GFD 4.6 EA) were employed as the standard electrode material, with graphite felt used in select comparative experiments.",
+      "human_readable": "The ORFB used AEM or Nafion 117 separator, and carbon felt or graphite felt electrodes."
+    },
+    {
+      "efu_id": "EFU12",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "condition:ph_12",
+        "condition:ph_14",
+        "measurement:capacity_fade_rate_005_percent_per_cycle",
+        "measurement:capacity_fade_rate_008_percent_per_cycle"
+      ],
+      "evidence_text": "Increasing the alkalinity to pH 14... increased the capacity fade rate from 0.05% per cycle to 0.08% per cycle.",
+      "human_readable": "Anthraquinone capacity fade increased from 0.05%/cycle at pH 12 to 0.08%/cycle at pH 14."
+    },
+    {
+      "efu_id": "EFU13",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "membrane:anion_exchange_membrane",
+        "membrane:nafion_117",
+        "metric:membrane_selectivity"
+      ],
+      "evidence_text": "Membrane selectivity measurements indicated that the AEM achieved an ion selectivity of 94% at pH 9, compared to 89% for Nafion 117 under identical conditions.",
+      "human_readable": "AEM showed 94% ion selectivity at pH 9, versus 89% for Nafion 117."
+    },
+    {
+      "efu_id": "EFU14",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "active_species:methyl_viologen",
+        "active_species:tempo",
+        "active_species:anthraquinone",
+        "degradation:organic_crossover"
+      ],
+      "evidence_text": "Crossover rates followed the order methyl viologen > TEMPO > anthraquinone under standardized conditions (AEM, pH 9, 60 mA/cm²), with measured permeability values of 4.8 x 10⁻⁷, 2.4 x 10⁻⁷, and 0.7 x 10⁻⁷ cm²/s, respectively.",
+      "human_readable": "Crossover rates ranked: methyl viologen (4.8e-7) > TEMPO (2.4e-7) > anthraquinone (0.7e-7) cm²/s."
+    },
+    {
+      "efu_id": "EFU15",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "active_species:tempo",
+        "active_species:anthraquinone",
+        "active_species:methyl_viologen",
+        "condition:current_density_40_ma_cm2",
+        "condition:cycle_500",
+        "measurement:capacity_fade_rate_004_percent_per_cycle",
+        "measurement:capacity_fade_rate_008_percent_per_cycle"
+      ],
+      "evidence_text": "Extended cycling at 40 mA/cm² for 500 cycles showed that TEMPO underwent negligible structural degradation, whereas anthraquinone experienced progressive capacity loss... Methyl viologen demonstrated a capacity fade rate of 0.04% per cycle.",
+      "human_readable": "Over 500 cycles at 40 mA/cm²: TEMPO had negligible fade, anthraquinone had progressive loss, methyl viologen faded at 0.04%/cycle."
+    },
+    {
+      "efu_id": "EFU16",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "active_species:tempo",
+        "active_species:methyl_viologen",
+        "degradation:capacity_imbalance",
+        "condition:current_density_40_ma_cm2",
+        "condition:cycle_500"
+      ],
+      "evidence_text": "In the anthraquinone-TEMPO system at 40 mA/cm², the crossover-induced imbalance reached 14% after 500 cycles... The capacity imbalance was more severe for the anthraquinone-methyl viologen system, reaching 18% after 150 cycles.",
+      "human_readable": "Capacity imbalance: anthraquinone-TEMPO reached 14% after 500 cycles; anthraquinone-methyl viologen reached 18% after 150 cycles."
+    },
+    {
+      "efu_id": "EFU17",
+      "efu_type": "COMPARISON",
+      "canonical_ids": [
+        "membrane:anion_exchange_membrane",
+        "membrane:nafion_117",
+        "active_species:benzoquinone",
+        "condition:ph_7"
+      ],
+      "evidence_text": "For the benzoquinone-TEMPO pairing at pH 7, Nafion 117 marginally outperformed the AEM, achieving a CE of 95% versus 93% for the AEM.",
+      "human_readable": "At pH 7, Nafion 117 (CE=95%) outperformed AEM (CE=93%) for benzoquinone-TEMPO."
+    },
+    {
+      "efu_id": "EFU18",
+      "efu_type": "DEGRADATION_CHAIN",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "degradation:quinone_dimerization",
+        "condition:ph_14",
+        "condition:cycle_300",
+        "measurement:capacity_fade_rate_008_percent_per_cycle"
+      ],
+      "evidence_text": "This accelerated degradation at elevated pH was correlated with enhanced dimerization of the anthrahydroquinone intermediate... At pH 14 and 40 mA/cm², the dimerization extent reached approximately 12% of the total active species after 300 cycles, compared to 6% at pH 12.",
+      "human_readable": "At pH 14, anthraquinone dimerization reached 12% after 300 cycles, causing 0.08%/cycle capacity fade."
+    },
+    {
+      "efu_id": "EFU19",
+      "efu_type": "DEGRADATION_CHAIN",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "degradation:quinone_dimerization",
+        "condition:ph_12",
+        "condition:ph_14"
+      ],
+      "evidence_text": "the rate constant increasing by a factor of 3.2 upon raising pH from 12 to 14. This pH sensitivity arises because deprotonation of the hydroquinone hydroxyl groups at pH 14 increases the electron density on the aromatic ring, accelerating electrophilic attack on a neighboring quinone molecule.",
+      "human_readable": "Dimerization rate constant increased 3.2x from pH 12 to 14 due to deprotonation and increased nucleophilicity."
+    },
+    {
+      "efu_id": "EFU20",
+      "efu_type": "DEGRADATION_CHAIN",
+      "canonical_ids": [
+        "active_species:tempo",
+        "degradation:organic_crossover",
+        "degradation:capacity_imbalance",
+        "membrane:anion_exchange_membrane"
+      ],
+      "evidence_text": "The primary loss mechanism for TEMPO was identified as slow crossover through the AEM, with a measured permeation rate of 2.1 x 10⁻⁷ cm²/s, which contributed to a gradual state-of-charge (SOC) imbalance between the negolyte and posolyte reservoirs.",
+      "human_readable": "TEMPO's primary loss mechanism was crossover through AEM (2.1e-7 cm²/s), causing SOC imbalance."
+    },
+    {
+      "efu_id": "EFU21",
+      "efu_type": "DEGRADATION_CHAIN",
+      "canonical_ids": [
+        "active_species:methyl_viologen",
+        "degradation:organic_crossover",
+        "degradation:capacity_imbalance",
+        "membrane:anion_exchange_membrane",
+        "membrane:nafion_117",
+        "measurement:capacity_fade_rate_015_percent_per_cycle"
+      ],
+      "evidence_text": "For the methyl viologen system, where Nafion 117 exhibited severe capacity fade at 0.15% per cycle due to enhanced viologen crossover facilitated by cation exchange pathways in the sulfonated membrane structure.",
+      "human_readable": "Methyl viologen with Nafion 117 suffered 0.15%/cycle fade due to enhanced crossover via cation exchange pathways."
+    },
+    {
+      "efu_id": "EFU22",
+      "efu_type": "DEGRADATION_CHAIN",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "active_species:tempo",
+        "condition:current_density_40_ma_cm2",
+        "condition:cycle_500",
+        "degradation:capacity_imbalance"
+      ],
+      "evidence_text": "Beyond cycle 300, the fade rate increased from 0.06% to 0.11% per cycle, concomitant with a measurable increase in the UV-Vis absorption at 380 nm indicating progressive accumulation of dimerized quinone species.",
+      "human_readable": "After cycle 300 at 40 mA/cm², fade rate accelerated from 0.06% to 0.11%/cycle with increased dimer absorption at 380 nm."
+    },
+    {
+      "efu_id": "EFU23",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "degradation:quinone_dimerization",
+        "condition:ph_14"
+      ],
+      "evidence_text": "This accelerated degradation at elevated pH was correlated with enhanced dimerization of the anthrahydroquinone intermediate, as evidenced by the appearance of a characteristic absorption band at 380 nm in the UV-Vis spectrum.",
+      "human_readable": "Anthraquinone dimerization at pH 14 was evidenced by UV-Vis absorption band at 380 nm."
+    },
+    {
+      "efu_id": "EFU24",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "canonical_ids": [
+        "active_species:tempo",
+        "condition:cycle_200"
+      ],
+      "evidence_text": "UV-Vis monitoring confirmed the absence of significant dimerization or decomposition products, with the characteristic absorption peak at 460 nm maintaining constant intensity.",
+      "human_readable": "TEMPO showed no degradation products over 200 cycles; 460 nm absorption remained constant."
+    },
+    {
+      "efu_id": "EFU25",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "active_species:tempo",
+        "condition:cycle_200",
+        "degradation:quinone_dimerization"
+      ],
+      "evidence_text": "Post-cycling analysis of the negolyte by high-performance liquid chromatography (HPLC) confirmed the presence of dimerized anthraquinone species at a concentration corresponding to approximately 9% of the initial active material, while the posolyte TEMPO concentration remained within 2% of its starting value.",
+      "human_readable": "HPLC confirmed 9% anthraquinone dimerization after 200 cycles, while TEMPO remained at 98% of initial concentration."
+    },
+    {
+      "efu_id": "EFU26",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "canonical_ids": [
+        "active_species:methyl_viologen",
+        "degradation:organic_crossover",
+        "condition:cycle_150"
+      ],
+      "evidence_text": "After 150 cycles, HPLC analysis detected only 3% dimerized anthraquinone but a 15% reduction in methyl viologen concentration, with the lost material recovered in the opposing electrolyte reservoir, unequivocally establishing crossover as the dominant degradation pathway.",
+      "human_readable": "Methyl viologen lost 15% of concentration to crossover after 150 cycles, recovered in opposing reservoir."
+    },
+    {
+      "efu_id": "EFU27",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "canonical_ids": [
+        "active_species:anthraquinone",
+        "condition:ph_14",
+        "condition:ph_12",
+        "degradation:quinone_dimerization"
+      ],
+      "evidence_text": "The kinetic analysis of the UV-Vis absorption at 380 nm indicated that dimerization followed a second-order dependence on anthrahydroquinone concentration.",
+      "human_readable": "Anthraquinone dimerization follows second-order kinetics in anthrahydroquinone concentration."
+    },
+    {
+      "efu_id": "EFU28",
+      "efu_type": "DESIGN_SUMMARY",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "active_species:anthraquinone",
+        "active_species:tempo",
+        "membrane:anion_exchange_membrane",
+        "condition:ph_12",
+        "condition:ph_8",
+        "condition:current_density_100_ma_cm2"
+      ],
+      "evidence_text": "The full cell pairing anthraquinone (pH 12) with TEMPO (pH 8) across the AEM yielded an open-circuit voltage of 1.34 V and achieved a CE of 97%, a VE of 85%, and an EE of 82% at 100 mA/cm² over 200 cycles.",
+      "human_readable": "Optimal ORFB design: anthraquinone (pH 12) || TEMPO (pH 8) with AEM, giving OCV=1.34V, EE=82% at 100 mA/cm²."
+    },
+    {
+      "efu_id": "EFU29",
+      "efu_type": "DESIGN_SUMMARY",
+      "canonical_ids": [
+        "system:organic_redox_flow_battery",
+        "active_species:anthraquinone",
+        "active_species:methyl_viologen",
+        "membrane:anion_exchange_membrane",
+        "condition:ph_14",
+        "condition:ph_7"
+      ],
+      "evidence_text": "The alternative full cell configuration pairing anthraquinone at pH 14 with methyl viologen at pH 7 delivered an open-circuit voltage of 1.05 V.",
+      "human_readable": "Alternative design: anthraquinone (pH 14) || methyl viologen (pH 7) gave OCV=1.05V, lower than AQ-TEMPO."
+    },
+    {
+      "efu_id": "EFU30",
+      "efu_type": "DESIGN_SUMMARY",
+      "canonical_ids": [
+        "membrane:anion_exchange_membrane",
+        "membrane:nafion_117",
+        "metric:membrane_selectivity",
+        "active_species:anthraquinone",
+        "active_species:benzoquinone"
+      ],
+      "evidence_text": "These findings suggest that system-specific membrane optimization rather than universal separator selection represents the optimal path forward.",
+      "human_readable": "Membrane selection should be system-specific: AEM for alkaline quinones, Nafion for neutral benzoquinone."
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "FACT01",
+      "statement": "The anthraquinone-TEMPO full cell achieved a coulombic efficiency of 97% and an energy efficiency of 82% at 100 mA/cm² over 200 cycles with the AEM separator.",
+      "derived_from_efus": [
+        "EFU01"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "fact_id": "FACT02",
+      "statement": "Anthraquinone half-cell CE at pH 12 and 100 mA/cm² was 95% over 100 cycles.",
+      "derived_from_efus": [
+        "EFU02"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "fact_id": "FACT03",
+      "statement": "TEMPO half-cell at pH 8 and 100 mA/cm² achieved CE of 98% and EE of 87%.",
+      "derived_from_efus": [
+        "EFU03"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "fact_id": "FACT04",
+      "statement": "Methyl viologen at pH 7 and 60 mA/cm² achieved CE of 99% for the first reduction step.",
+      "derived_from_efus": [
+        "EFU04"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "fact_id": "FACT05",
+      "statement": "The capacity fade rate of anthraquinone increased from 0.05% per cycle at pH 12 to 0.08% per cycle at pH 14.",
+      "derived_from_efus": [
+        "EFU12"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT06",
+      "statement": "The AEM separator achieved 94% ion selectivity at pH 9, compared to 89% for Nafion 117 under identical conditions.",
+      "derived_from_efus": [
+        "EFU13"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT07",
+      "statement": "Organic crossover rates ranked methyl viologen (4.8 x 10⁻⁷ cm²/s) > TEMPO (2.4 x 10⁻⁷ cm²/s) > anthraquinone (0.7 x 10⁻⁷ cm²/s) through AEM at pH 9 and 60 mA/cm².",
+      "derived_from_efus": [
+        "EFU14"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT08",
+      "statement": "Over 500 cycles at 40 mA/cm², TEMPO showed negligible degradation, anthraquinone showed progressive capacity loss, and methyl viologen faded at 0.04% per cycle.",
+      "derived_from_efus": [
+        "EFU15"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT09",
+      "statement": "Anthraquinone dimerization at pH 14 reached approximately 12% after 300 cycles at 40 mA/cm², compared to 6% at pH 12.",
+      "derived_from_efus": [
+        "EFU18"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT10",
+      "statement": "The quinone dimerization rate constant increased by a factor of 3.2 when pH was raised from 12 to 14, attributed to increased deprotonation and nucleophilicity of anthrahydroquinone.",
+      "derived_from_efus": [
+        "EFU19"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT11",
+      "statement": "TEMPO's primary loss mechanism was crossover through the AEM at 2.1 x 10⁻⁷ cm²/s, causing gradual SOC imbalance between negolyte and posolyte reservoirs.",
+      "derived_from_efus": [
+        "EFU20"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT12",
+      "statement": "Methyl viologen with Nafion 117 suffered severe capacity fade at 0.15% per cycle due to enhanced viologen crossover via cation exchange pathways.",
+      "derived_from_efus": [
+        "EFU21"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT13",
+      "statement": "In the AQ-TEMPO system at 40 mA/cm², the capacity fade rate accelerated from 0.06% to 0.11% per cycle after cycle 300, with concurrent increase in 380 nm UV-Vis absorption indicating dimer accumulation.",
+      "derived_from_efus": [
+        "EFU22"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT14",
+      "statement": "HPLC confirmed approximately 9% anthraquinone dimerization after 200 cycles in the full cell, while TEMPO concentration remained within 2% of its initial value.",
+      "derived_from_efus": [
+        "EFU25"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "fact_id": "FACT15",
+      "statement": "After 150 cycles, methyl viologen lost 15% of its concentration to crossover, with the lost material recovered in the opposing electrolyte reservoir, establishing crossover as the dominant degradation pathway.",
+      "derived_from_efus": [
+        "EFU26"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT16",
+      "statement": "Anthraquinone dimerization follows second-order kinetics with respect to anthrahydroquinone concentration.",
+      "derived_from_efus": [
+        "EFU27"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT17",
+      "statement": "The anthraquinone-TEMPO full cell with AEM achieved an open-circuit voltage of 1.34 V (anthraquinone at pH 12, TEMPO at pH 8), outperforming the anthraquinone-methyl viologen cell OCV of 1.05 V.",
+      "derived_from_efus": [
+        "EFU28",
+        "EFU29"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "fact_id": "FACT18",
+      "statement": "Capacity imbalance in the anthraquinone-TEMPO system reached 14% after 500 cycles at 40 mA/cm², driven by differential crossover rates (TEMPO 2.1 x 10⁻⁷ vs anthraquinone 0.7 x 10⁻⁷ cm²/s).",
+      "derived_from_efus": [
+        "EFU16",
+        "EFU14"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "fact_id": "FACT19",
+      "statement": "The anthraquinone-methyl viologen cell at 60 mA/cm² achieved CE=95%, VE=80%, EE=76% over 150 cycles, with capacity imbalance reaching 18% after 150 cycles driven by high methyl viologen crossover.",
+      "derived_from_efus": [
+        "EFU06",
+        "EFU16"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "fact_id": "FACT20",
+      "statement": "Membrane selection should be system-specific: AEM is superior for alkaline quinone systems (94% vs 89% selectivity) while Nafion 117 marginally outperforms AEM for neutral benzoquinone systems (CE 95% vs 93%).",
+      "derived_from_efus": [
+        "EFU13",
+        "EFU17",
+        "EFU30"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "fact_id": "FACT21",
+      "statement": "Periodic electrolyte remixing restored approximately 85% of the lost capacity in the AQ-TEMPO system, confirming that permanent active material degradation accounted for only a fraction of observed capacity loss; the majority was crossover-induced imbalance.",
+      "derived_from_efus": [
+        "EFU20",
+        "EFU22"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "fact_id": "FACT22",
+      "statement": "The doubly negative charge of reduced anthrahydroquinone anion caused strong Donnan exclusion from the AEM, resulting in the lowest crossover rate (0.7 x 10⁻⁷ cm²/s) among all three species.",
+      "derived_from_efus": [
+        "EFU14"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "fact_id": "FACT23",
+      "statement": "TEMPO's redox potential remained insensitive to pH, shifting only 15 mV between pH 7 and pH 9, consistent with its single-electron mechanism not involving proton transfer. This pH independence provides a practical advantage for pH-decoupled cell designs.",
+      "derived_from_efus": [
+        "EFU03"
+      ],
+      "difficulty": "L5"
+    },
+    {
+      "fact_id": "FACT24",
+      "statement": "Three distinct degradation mechanisms operate in ORFBs with varying contributions across species: dimerization dominates for anthraquinone (especially at pH 14), crossover dominates for methyl viologen, and both mechanisms are minimal for TEMPO which suffers only from moderate crossover.",
+      "derived_from_efus": [
+        "EFU18",
+        "EFU21",
+        "EFU20",
+        "EFU15"
+      ],
+      "difficulty": "L5"
+    },
+    {
+      "fact_id": "FACT25",
+      "statement": "The nonlinear capacity fade profile of anthraquinone beyond cycle 300—where fade rate increased from 0.06% to 0.11% per cycle—suggests an autocatalytic dimerization pathway in which existing dimers promote further dimer formation, or that precipitated dimer material provides nucleation sites.",
+      "derived_from_efus": [
+        "EFU22"
+      ],
+      "difficulty": "L6"
+    }
+  ],
+  "qa_questions": [
+    {
+      "question_id": "QA01",
+      "level": "L1",
+      "question": "What was the coulombic efficiency of the anthraquinone-TEMPO full cell at 100 mA/cm² over 200 cycles?",
+      "answer": "97%",
+      "supporting_facts": [
+        "FACT01"
+      ],
+      "reasoning": "Direct fact retrieval from the document stating CE = 97% at 100 mA/cm² for 200 cycles."
+    },
+    {
+      "question_id": "QA02",
+      "level": "L1",
+      "question": "What was the capacity fade rate of anthraquinone at pH 14?",
+      "answer": "0.08% per cycle",
+      "supporting_facts": [
+        "FACT05"
+      ],
+      "reasoning": "Direct retrieval of the stated fade rate for anthraquinone at pH 14."
+    },
+    {
+      "question_id": "QA03",
+      "level": "L1",
+      "question": "What was the crossover rate of methyl viologen through the AEM at pH 9 and 60 mA/cm²?",
+      "answer": "4.8 x 10⁻⁷ cm²/s",
+      "supporting_facts": [
+        "FACT07"
+      ],
+      "reasoning": "Direct retrieval of the stated permeability value."
+    },
+    {
+      "question_id": "QA04",
+      "level": "L1",
+      "question": "What was the ion selectivity of the AEM at pH 9?",
+      "answer": "94%",
+      "supporting_facts": [
+        "FACT06"
+      ],
+      "reasoning": "Direct retrieval of the stated membrane selectivity."
+    },
+    {
+      "question_id": "QA05",
+      "level": "L2",
+      "question": "How much higher was the capacity fade rate of anthraquinone at pH 14 compared to pH 12?",
+      "answer": "0.03% per cycle higher (0.08% at pH 14 vs 0.05% at pH 12)",
+      "supporting_facts": [
+        "FACT05"
+      ],
+      "reasoning": "Simple subtraction: 0.08% - 0.05% = 0.03% per cycle difference."
+    },
+    {
+      "question_id": "QA06",
+      "level": "L2",
+      "question": "What was the dimerization extent of anthraquinone at pH 14 after 300 cycles at 40 mA/cm² compared to pH 12?",
+      "answer": "12% at pH 14 vs 6% at pH 12, a factor of 2 difference",
+      "supporting_facts": [
+        "FACT09"
+      ],
+      "reasoning": "Comparison of two directly stated values from the document."
+    },
+    {
+      "question_id": "QA07",
+      "level": "L2",
+      "question": "Which active species had the highest crossover rate through the AEM?",
+      "answer": "Methyl viologen, with 4.8 x 10⁻⁷ cm²/s",
+      "supporting_facts": [
+        "FACT07"
+      ],
+      "reasoning": "Comparison across three stated values identifies methyl viologen as highest."
+    },
+    {
+      "question_id": "QA08",
+      "level": "L2",
+      "question": "What was the open-circuit voltage of the anthraquinone-methyl viologen full cell?",
+      "answer": "1.05 V",
+      "supporting_facts": [
+        "FACT17"
+      ],
+      "reasoning": "Direct retrieval of OCV for the AQ-MV cell."
+    },
+    {
+      "question_id": "QA09",
+      "level": "L3",
+      "question": "Why does anthraquinone dimerization accelerate at pH 14 compared to pH 12?",
+      "answer": "Because deprotonation of hydroquinone hydroxyl groups at pH 14 increases electron density on the aromatic ring, accelerating electrophilic attack on neighboring quinone molecules. The rate constant increases by a factor of 3.2.",
+      "supporting_facts": [
+        "FACT10"
+      ],
+      "reasoning": "Requires connecting pH effect to deprotonation mechanism to kinetic rate constant change."
+    },
+    {
+      "question_id": "QA10",
+      "level": "L3",
+      "question": "Why does Nafion 117 perform poorly with methyl viologen?",
+      "answer": "Because the sulfonated cation exchange pathways in Nafion 117 facilitate enhanced viologen crossover. The doubly charged methyl viologen dication interacts strongly with the sulfonated groups, causing a capacity fade rate of 0.15% per cycle.",
+      "supporting_facts": [
+        "FACT12",
+        "FACT22"
+      ],
+      "reasoning": "Connects membrane chemistry (sulfonated/cation exchange) to viologen charge state and crossover mechanism."
+    },
+    {
+      "question_id": "QA11",
+      "level": "L3",
+      "question": "Why does anthraquinone have the lowest crossover rate among the three species?",
+      "answer": "Because the reduced anthrahydroquinone anion carries a doubly negative charge, which experiences strong Donnan exclusion from the anion-exchange membrane, resulting in a permeability of only 0.7 x 10⁻⁷ cm²/s.",
+      "supporting_facts": [
+        "FACT22",
+        "FACT07"
+      ],
+      "reasoning": "Connects molecular charge state to membrane exclusion mechanism to observed transport rate."
+    },
+    {
+      "question_id": "QA12",
+      "level": "L3",
+      "question": "What evidence confirmed that crossover (not chemical degradation) was the dominant mechanism for methyl viologen capacity fade?",
+      "answer": "HPLC detected a 15% reduction in methyl viologen concentration with the lost material recovered in the opposing electrolyte reservoir, unequivocally establishing crossover as the dominant pathway rather than chemical decomposition.",
+      "supporting_facts": [
+        "FACT15"
+      ],
+      "reasoning": "Requires understanding that material recovery in opposing reservoir implies physical transport, not chemical degradation."
+    },
+    {
+      "question_id": "QA13",
+      "level": "L4",
+      "question": "What fraction of the observed capacity loss in the AQ-TEMPO system at 40 mA/cm² was reversible vs permanent?",
+      "answer": "Approximately 85% of the lost capacity was reversible through electrolyte remixing, meaning only about 15% was permanent degradation (primarily anthraquinone dimerization).",
+      "supporting_facts": [
+        "FACT21"
+      ],
+      "reasoning": "Synthesizes remixing recovery data with total imbalance data to partition loss mechanisms."
+    },
+    {
+      "question_id": "QA14",
+      "level": "L4",
+      "question": "Compare the capacity imbalance development rates between the AQ-TEMPO and AQ-methyl viologen systems.",
+      "answer": "AQ-TEMPO reached 14% imbalance after 500 cycles at 40 mA/cm² (0.028%/cycle). AQ-methyl viologen reached 18% after just 150 cycles at 60 mA/cm² (0.12%/cycle), indicating the viologen system develops imbalance approximately 4.3 times faster.",
+      "supporting_facts": [
+        "FACT18",
+        "FACT19"
+      ],
+      "reasoning": "Requires normalizing imbalance data by cycle count and current density to compare rates."
+    },
+    {
+      "question_id": "QA15",
+      "level": "L4",
+      "question": "Which membrane should be selected for an alkaline anthraquinone-based ORFB, and which for a neutral benzoquinone system?",
+      "answer": "AEM should be selected for alkaline anthraquinone systems (94% selectivity vs 89% for Nafion 117, CE 96% vs 93%). Nafion 117 should be selected for neutral benzoquinone systems (CE 95% vs 93% for AEM).",
+      "supporting_facts": [
+        "FACT20"
+      ],
+      "reasoning": "Synthesizes membrane comparison data across two different pH regimes to derive system-specific recommendations."
+    },
+    {
+      "question_id": "QA16",
+      "level": "L4",
+      "question": "What was the EE of the anthraquinone-TEMPO full cell at 100 mA/cm², and how did it compare to the AQ-methyl viologen cell at 60 mA/cm²?",
+      "answer": "AQ-TEMPO at 100 mA/cm²: EE = 82%. AQ-methyl viologen at 60 mA/cm²: EE = 76%. The AQ-TEMPO system was 6 percentage points more efficient even at a higher current density.",
+      "supporting_facts": [
+        "FACT01",
+        "FACT19"
+      ],
+      "reasoning": "Compares EE values across two different cells at different current densities."
+    },
+    {
+      "question_id": "QA17",
+      "level": "L5",
+      "question": "Given that TEMPO's redox potential shifts by only 15 mV between pH 7 and pH 9, why does this provide a practical advantage for system design?",
+      "answer": "Because TEMPO's pH-insensitive redox potential enables pH decoupling across the membrane, allowing the negolyte and posolyte to operate at different optimal pH values without creating potential mismatch. This is not achievable with pH-sensitive posolyte alternatives, and was exploited in this study by pairing anthraquinone at pH 12 with TEMPO at pH 8 to achieve 1.34 V OCV.",
+      "supporting_facts": [
+        "FACT23",
+        "FACT17"
+      ],
+      "reasoning": "Infers design implications from electrochemical properties and connects to actual cell configuration."
+    },
+    {
+      "question_id": "QA18",
+      "level": "L5",
+      "question": "Based on the degradation mechanisms identified, which active species would be most suitable for a 10-year grid storage application requiring 3650 daily cycles?",
+      "answer": "TEMPO would be most suitable because it showed negligible structural degradation over 500 cycles with >99.5% capacity retention. Anthraquinone would be problematic due to dimerization causing 0.08%/cycle fade (projected ~94% loss after 3650 cycles). Methyl viologen would be unsuitable due to 0.15%/cycle fade with Nafion and rapid capacity imbalance development. However, the AQ-TEMPO pairing with periodic electrolyte remixing could be viable since 85% of capacity loss was reversible.",
+      "supporting_facts": [
+        "FACT08",
+        "FACT05",
+        "FACT12",
+        "FACT21"
+      ],
+      "reasoning": "Projects cycle life from observed fade rates and synthesizes multiple degradation findings to make a recommendation."
+    },
+    {
+      "question_id": "QA19",
+      "level": "L5",
+      "question": "Why does the AEM have higher selectivity than Nafion 117 for alkaline quinone systems, but lower selectivity for neutral benzoquinone systems?",
+      "answer": "The AEM's anion-conducting channels provide strong Donnan exclusion for multiply charged organic anions like anthrahydroquinone (doubly negative), giving 94% selectivity. However, neutral benzoquinone at pH 7 is uncharged and experiences no Donnan exclusion benefit from the AEM; meanwhile, cationic TEMPO+ is better excluded by Nafion's sulfonated groups, giving Nafion a CE advantage (95% vs 93%) for the neutral system.",
+      "supporting_facts": [
+        "FACT20",
+        "FACT22"
+      ],
+      "reasoning": "Infers mechanism from charge state interactions with membrane functional groups."
+    },
+    {
+      "question_id": "QA20",
+      "level": "L6",
+      "question": "If the dimerization of anthraquinone follows an autocatalytic pathway as suggested by the nonlinear fade profile beyond cycle 300, what experimental design modification could test this hypothesis?",
+      "answer": "If dimerization is autocatalytic, removing or inhibiting dimer precipitation should slow further fade. An experiment using (1) a continuous flow cell with rapid dimer removal via filtration, or (2) structural modification introducing 2-position bulky substituents to sterically hinder dimer approach, should reduce the accelerated fade rate beyond cycle 300. If fade instead remains linear, the mechanism is simple second-order kinetics rather than autocatalytic. The document notes that preliminary 2-position substituted derivatives showed 30-50% fade rate reduction.",
+      "supporting_facts": [
+        "FACT25",
+        "FACT10"
+      ],
+      "reasoning": "Designs a critical experiment to distinguish autocatalytic from simple kinetic pathways based on the observed nonlinear behavior."
+    },
+    {
+      "question_id": "QA21",
+      "level": "L6",
+      "question": "If the operating pH of the anthraquinone negolyte were reduced from 14 to 11, what would be the expected effects on cell voltage, capacity fade rate, and energy efficiency based on the trends identified?",
+      "answer": "Cell voltage would decrease because the anthraquinone redox potential shifts less negative at lower pH (from -0.71 V at pH 14 to approximately -0.60 V at pH 11, based on ~60 mV shift observed between pH 12 and 14). Capacity fade rate would decrease because dimerization rate constant decreases with lower pH (factor of 3.2 reduction from pH 14 to 12, so further reduction expected at pH 11). Energy efficiency would likely increase at a given current density because the lower fade rate maintains capacity better over time. This trade-off—lower voltage but higher stability—is the fundamental design tension for quinone-based ORFBs.",
+      "supporting_facts": [
+        "FACT10",
+        "FACT05",
+        "FACT01"
+      ],
+      "reasoning": "Extrapolates pH-dependent trends (potential shift, dimerization kinetics) to an untested condition and integrates multiple effects."
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "term": "quinone",
+      "confusable_with": [
+        "anthraquinone",
+        "benzoquinone"
+      ],
+      "context_note": "The document discusses both anthraquinone (used as negolyte at pH 12-14) and benzoquinone (mentioned in AEM vs Nafion comparison at pH 7). Generic references to 'quinone' must be resolved to the specific compound based on context.",
+      "examples_in_doc": [
+        "anthraquinone served as the negolyte active species",
+        "the benzoquinone-TEMPO pairing at pH 7",
+        "quinone dimerization follows second-order dependence",
+        "structural modification of the anthraquinone core"
+      ]
+    },
+    {
+      "term": "TEMPO",
+      "confusable_with": [
+        "(2,2,6,6-tetramethylpiperidin-1-yl)oxyl",
+        "nitroxyl radical"
+      ],
+      "context_note": "TEMPO is the common abbreviation for (2,2,6,6-tetramethylpiperidin-1-yl)oxyl. The document uses both the abbreviation and full IUPAC name. Nitroxyl radical is a broader class term.",
+      "examples_in_doc": [
+        "(2,2,6,6-tetramethylpiperidin-1-yl)oxyl (TEMPO)",
+        "TEMPO and related nitroxyl radicals",
+        "the TEMPO/TEMPO+ couple"
+      ]
+    },
+    {
+      "term": "viologen",
+      "confusable_with": [
+        "methyl viologen",
+        "bipyridinium"
+      ],
+      "context_note": "Viologen is a class of compounds; methyl viologen is the specific species used in this study. Bipyridinium is the chemical class. The document uses all three terms.",
+      "examples_in_doc": [
+        "methyl viologen, a bipyridinium-based compound",
+        "the viologen redox potential",
+        "methyl viologen dication"
+      ]
+    },
+    {
+      "term": "pH",
+      "confusable_with": [
+        "alkaline condition",
+        "neutral condition"
+      ],
+      "context_note": "Specific pH values (7, 8, 9, 12, 14) are used throughout. 'Alkaline condition' maps to pH 12-14 (KOH-based), while 'neutral condition' maps to pH 7-9 (NaCl-based). Numerical values must be preserved.",
+      "examples_in_doc": [
+        "pH 12 or pH 14",
+        "elevated pH",
+        "alkaline media",
+        "neutral aqueous solution"
+      ]
+    },
+    {
+      "term": "anion-exchange membrane",
+      "confusable_with": [
+        "AEM",
+        "separator",
+        "membrane"
+      ],
+      "context_note": "AEM and anion-exchange membrane are synonymous. 'Separator' and 'membrane' are generic terms that could refer to either AEM or Nafion 117. Context must be used to resolve.",
+      "examples_in_doc": [
+        "anion-exchange membrane (AEM, Fumasep FAA-3-PK-75)",
+        "the AEM outperformed Nafion 117",
+        "across the AEM",
+        "separator optimization"
+      ]
+    },
+    {
+      "term": "crossover",
+      "confusable_with": [
+        "permeation",
+        "transport",
+        "capacity imbalance"
+      ],
+      "context_note": "Crossover and permeation are used interchangeably for species transport through the membrane. Crossover is the physical process; capacity imbalance is the resulting electrochemical consequence. Distinguishing the mechanism from its effect is important.",
+      "examples_in_doc": [
+        "organic crossover through the separator membrane",
+        "measured permeation rate of 2.1 x 10⁻⁷ cm²/s",
+        "crossover-induced imbalance",
+        "crossover as the dominant degradation pathway"
+      ]
+    },
+    {
+      "term": "dimerization",
+      "confusable_with": [
+        "side reaction",
+        "decomposition",
+        "precipitation"
+      ],
+      "context_note": "Dimerization is a specific chemical side reaction where two anthraquinone molecules combine. It is distinct from general decomposition or precipitation (which occurs for MV⁰). The document specifically tracks dimerization via UV-Vis at 380 nm.",
+      "examples_in_doc": [
+        "dimerization of reduced anthrahydroquinone species",
+        "dimerization extent reached approximately 12%",
+        "UV-Vis absorption at 380 nm indicating progressive accumulation of dimerized quinone species",
+        "minimal dimerization but significant capacity imbalance"
+      ]
+    },
+    {
+      "term": "capacity fade rate",
+      "confusable_with": [
+        "capacity imbalance",
+        "capacity loss",
+        "capacity retention"
+      ],
+      "context_note": "Capacity fade rate refers to the irreversible loss per cycle due to chemical degradation (dimerization). Capacity imbalance refers to the reversible mismatch between negolyte and posolyte inventories due to asymmetric crossover. These must be distinguished.",
+      "examples_in_doc": [
+        "capacity fade rate of 0.08% per cycle",
+        "capacity imbalance reached 14%",
+        "approximately 85% of the lost capacity was reversible",
+        "85% of the lost capacity restored by remixing"
+      ]
+    },
+    {
+      "term": "coulombic efficiency (CE)",
+      "confusable_with": [
+        "voltage efficiency (VE)",
+        "energy efficiency (EE)"
+      ],
+      "context_note": "CE measures charge recovery (faradaic), VE measures voltage retention, and EE = CE x VE is the round-trip energy efficiency. All three are reported at different conditions and must not be conflated.",
+      "examples_in_doc": [
+        "CE of 97%, a VE of 85%, and an EE of 82%",
+        "VE from 78% to 88%",
+        "EE of 87%"
+      ]
+    },
+    {
+      "term": "state-of-charge (SOC) imbalance",
+      "confusable_with": [
+        "capacity fade",
+        "crossover",
+        "electrolyte depletion"
+      ],
+      "context_note": "SOC imbalance (also called capacity imbalance) is a reversible condition caused by differential crossover rates. It is distinct from irreversible capacity fade from chemical degradation. Periodic remixing can restore the lost capacity.",
+      "examples_in_doc": [
+        "SOC imbalance between the negolyte and posolyte reservoirs",
+        "crossover-induced imbalance reached 14%",
+        "Periodic remixing of the electrolytes restored approximately 85% of the lost capacity"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,304 @@
+# Failure Case Diagnostics
+
+## both_same
+
+- `DOC01-FACT-001` Nafion 117 has area-specific resistance of 1.65 ohm cm2 at 25 C, which is approximately twice that of Nafion 212 (0.85 ohm cm2)
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.4
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|area resistance of Nafion 117 at 25 C|area resistance of Nafion 212 at 25 C|thickness of Nafion 117|thickness of Nafion 212|vanadium permeability of Nafion 117|vanadium permeability of Nafion 212
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.4
+  - `hyper_final_best_evidence_id`: membrane:nafion_117|membrane:nafion_212
+- `DOC01-FACT-002` Nafion 117 vanadium permeability (1.8 x 10^-7 cm2/s) is roughly half that of Nafion 212 (3.9 x 10^-7 cm2/s) due to its greater thickness
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.6
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|capacity fade rate of Nafion 117 at 100 mA/cm2 and 25 C|capacity fade rate of Nafion 212 at 100 mA/cm2 and 25 C|vanadium crossover
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.6
+  - `hyper_final_best_evidence_id`: condition:cycle_number_0_08_percentpercycle|condition:cycle_number_0_18_percentpercycle|membrane:nafion_117|membrane:nafion_212
+- `DOC01-FACT-003` Nafion 117 CE ranges from 96.0% at 40 mA/cm2 to 98.2% at 200 mA/cm2 at 25 C, showing positive correlation with current density
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2857
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2857
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-004` Nafion 212 CE ranges from 92.1% at 40 mA/cm2 to 95.3% at 200 mA/cm2 at 25 C, consistently lower than Nafion 117 by 3-4 percentage points
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.25
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.25
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-005` Nafion 117 VE declines from 85.8% at 40 mA/cm2 to 80.2% at 200 mA/cm2 at 25 C, showing inverse relationship with current density
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2222
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2222
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-006` Nafion 212 achieves higher VE than Nafion 117 at all tested conditions, with VE of 88.2% at 40 mA/cm2 and 25 C declining to 83.6% at 200 mA/cm2
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2857
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2857
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-007` At 100 mA/cm2 and 25 C, Nafion 117 achieves EE of 80.2% (CE 97.1%, VE 82.6%) while Nafion 212 achieves EE of 80.9% (CE 93.8%, VE 86.2%)
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2727
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2727
+  - `hyper_final_best_evidence_id`: active_species:tempo|condition:current_density_100_ma_cm2|measurement:ce_96_8_percent|measurement:ee_80_2_percent|membrane:nafion_117|unresolved:methyl_viologen_mv
+- `DOC01-FACT-008` CE increases with current density because the Faradaic current grows proportionally while the crossover flux driven by concentration gradients remains relatively constant
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: Bromine crossover|Current density
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.0
+  - `hyper_final_best_evidence_id`: condition:current_density_20_to_80_ma_cm2|degradation:dendrite_growth|measurement:peak_separation_35_mv|metric:bromine_crossover_rate|metric:ce|metric:ee|metric:ve|metric:zinc_utilization
+- `DOC01-FACT-009` VE decreases with current density due to increasing ohmic and activation polarization, with ohmic losses dominating above 80 mA/cm2
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.3333
+  - `hyper_base_best_evidence_id`: activation polarization|voltage efficiency (84-88%) for Nafion 212
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3333
+  - `hyper_final_best_evidence_id`: condition:acid_concentration_3_mol_l|condition:charge_cutoff_voltage|condition:current_density_80_ma_cm2|condition:discharge_cutoff_voltage|condition:electrolyte_volume_per_half_cell|condition:flow_rate_40_ml_min|condition:vanadium_concentration_1_5_mol_l|electrode:graphite_composite_bipolar_plates|membrane:nafion_117|system:bio_logic_vmp_300_potentiostat_galvanostat|system:peristaltic_pumps|system:programmable_circulating_water_bath|unresolved:graphite_felt_sgl_carbon_gfd_4_6_ea
+- `DOC01-FACT-010` Elevated temperature (40 C vs 25 C) reduces CE by 0.3-0.5 percentage points for Nafion 117 due to enhanced vanadium crossover from increased ion diffusivity
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.4
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|area resistance of Nafion 117 at 25 C|area resistance of Nafion 117 at 40 C|area resistance of Nafion 212 at 25 C|area resistance of Nafion 212 at 40 C|temperature 40 C
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.6
+  - `hyper_final_best_evidence_id`: condition:temperature_25_c|condition:temperature_2_1eminus_07_cm2s|condition:temperature_3_8eminus_07_cm2s|condition:temperature_40_c|condition:temperature_60_c|condition:temperature_6_5eminus_07_cm2s
+- `DOC01-FACT-011` Elevated temperature improves VE by 2-3 percentage points due to reduced area resistance and enhanced electrochemical kinetics
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.6
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|area resistance of Nafion 117 at 25 C|area resistance of Nafion 117 at 40 C|area resistance of Nafion 212 at 25 C|area resistance of Nafion 212 at 40 C|temperature 40 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.4
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-012` Vanadium crossover through the membrane leads to state-of-charge imbalance and progressive capacity reduction in VRFBs
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.5
+  - `hyper_base_best_evidence_id`: capacity fade|vanadium crossover
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: degradation:capacity_fading|degradation:degradation_of_membrane_and_electrode_materials|degradation:electrolyte_imbalance|degradation:local_hotspots|degradation:self_discharge_reaction|degradation:vanadium_crossover
+- `DOC01-FACT-013` Crossover-induced self-discharge reactions generate local hotspots that accelerate membrane and electrode degradation
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.25
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|carbon felt electrodes SGL GFD 4.6 EA|electrolyte|vanadium redox flow battery
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: degradation:capacity_fading|degradation:degradation_of_membrane_and_electrode_materials|degradation:electrolyte_imbalance|degradation:local_hotspots|degradation:self_discharge_reaction|degradation:vanadium_crossover
+- `DOC01-FACT-014` Estimated capacity fade rate from vanadium crossover alone is 0.08% per cycle for Nafion 117 versus 0.18% per cycle for Nafion 212 at 100 mA/cm2 and 25 C
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.4444
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|capacity fade rate of Nafion 117 at 100 mA/cm2 and 25 C|capacity fade rate of Nafion 212 at 100 mA/cm2 and 25 C|vanadium crossover
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.4444
+  - `hyper_final_best_evidence_id`: condition:cycle_number_0_08_percentpercycle|condition:cycle_number_0_18_percentpercycle|membrane:nafion_117|membrane:nafion_212
+- `DOC01-FACT-015` For Nafion 212, 40 C EE exceeds 25 C EE across all tested current densities, whereas for Nafion 117 this temperature benefit diminishes at higher current densities
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.5
+  - `hyper_base_best_evidence_id`: CE of Nafion 117 at 100 mA/cm2 and 25 C|CE of Nafion 212 at 100 mA/cm2 and 25 C|EE of Nafion 117 at 100 mA/cm2 and 25 C|EE of Nafion 212 at 100 mA/cm2 and 25 C|Nafion 117|Nafion 212|VE of Nafion 117 at 100 mA/cm2 and 25 C|VE of Nafion 212 at 100 mA/cm2 and 25 C|current density of 100 mA/cm2|temperature 25 C
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: condition:compression_ratio|condition:current_density_40_to_200_ma_cm2|condition:cycle_number_2_min|condition:electrolyte_concentration_4_5_mol_l|condition:electrolyte_volume|condition:flow_rate_50_ml_min|condition:lower_voltage_limit|condition:state_of_charge_initial|condition:temperature_25_c|condition:temperature_25_cm2|condition:temperature_40_c|condition:upper_voltage_limit|condition:vanadium_concentration_1_6_mol_l|system:battery_cycler|system:peristaltic_pumps|system:water_bath_thermostat|unresolved:carbon_felt_sgl_gfd_4_6_ea|unresolved:single_cell_vrfb
+- `DOC01-FACT-016` Proton conduction in Nafion follows an Arrhenius relationship with activation energy of approximately 11.5 kJ/mol, consistent with vehicular transport mechanism
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.3333
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|area resistance of Nafion 117 at 25 C|area resistance of Nafion 117 at 40 C|area resistance of Nafion 212 at 25 C|area resistance of Nafion 212 at 40 C|temperature 40 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3333
+  - `hyper_final_best_evidence_id`: active_species:acetonitrile|active_species:tempo|active_species:tetraethylammonium_tetrafluoroborate|condition:current_density_100_ma_cm2|measurement:ce_98_2_percent|measurement:ee_84_3_percent|membrane:nafion_117
+- `DOC01-FACT-017` Nafion 117 is preferred for long cycle life applications due to higher CE and reduced crossover, while Nafion 212 is preferred for power density and capital cost considerations
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.75
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|capacity fade rate of Nafion 117 at 100 mA/cm2 and 25 C|capacity fade rate of Nafion 212 at 100 mA/cm2 and 25 C|vanadium crossover
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.75
+  - `hyper_final_best_evidence_id`: membrane:nafion_117|membrane:nafion_212
+- `DOC01-FACT-018` Nafion 212 CE sensitivity to current density (3.2 percentage points) exceeds that of Nafion 117 (2.2 percentage points) because parasitic crossover represents a larger fraction of total current at low current densities
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.75
+  - `hyper_base_best_evidence_id`: Nafion 117|Nafion 212|capacity fade rate of Nafion 117 at 100 mA/cm2 and 25 C|capacity fade rate of Nafion 212 at 100 mA/cm2 and 25 C|vanadium crossover
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.75
+  - `hyper_final_best_evidence_id`: membrane:nafion_117|membrane:nafion_212
+- `DOC01-FACT-019` Nafion 117 has thickness of 183 um, equivalent weight of 1100 g/equiv, water uptake of 22%, and ion exchange capacity of 0.91 mmol/g
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2
+  - `hyper_base_best_evidence_id`: Nafion 117|thickness of Nafion 117
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: membrane:nafion_117|metric:membrane_thickness_nafion_117
+- `DOC01-FACT-020` Nafion 212 has thickness of 50.8 um, equivalent weight of 1100 g/equiv, water uptake of 25%, and ion exchange capacity of 0.91 mmol/g
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2
+  - `hyper_base_best_evidence_id`: Nafion 212|thickness of Nafion 212
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: membrane:nafion_212|metric:membrane_thickness_nafion_212
+
+## hyper_base_better
+
+- `DOC04-FACT-014` The mass transfer coefficient is approximately proportional to the square root of flow velocity in the laminar regime, indicating diminishing returns in mass transfer improvement per unit increase in pumping power at high flow rates, which explains why net EE peaks at intermediate flow rates rather than at the highest flow rate
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.2
+  - `hyper_base_best_evidence_id`: Concentration polarization|Mass transfer coefficient
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.0
+  - `hyper_final_best_evidence_id`: condition:flow_rate_10_ml_min|condition:flow_rate_10_to_100_ml_min|condition:flow_rate_40_ml_min|metric:concentration_overpotential|metric:pumping_power|unresolved:net_energy_efficiency_range
+- `DOC08-FACT-012` EIS analysis confirms charge transfer resistance increases from 0.35 to 1.28 ohm cm2 and ohmic resistance increases from 0.45 to 0.68 ohm cm2 over 200 cycles due to passivation layer growth
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.25
+  - `hyper_base_best_evidence_id`: PbO2 passivation layer thickness|charge transfer resistance
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.0
+  - `hyper_final_best_evidence_id`: condition:current_density_20_to_80_ma_cm2|degradation:dendrite_growth|measurement:peak_separation_35_mv|metric:bromine_crossover_rate|metric:ce|metric:ee|metric:ve|metric:zinc_utilization
+
+## hyper_final_better
+
+- `DOC02-FACT-001` SNPBI-1.42 has IEC of 1.42 mmol/g, water uptake of 18%, area resistance of 1.15 ohm cm2, and vanadium permeability of 0.95 x 10^-7 cm2/s
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|PBI IEC|PBI acid doping level|PBI area-specific resistance|PBI coulombic efficiency at 100 mA/cm2|PBI energy efficiency at 100 mA/cm2|PBI vanadium permeability|PBI voltage efficiency at 100 mA/cm2|PBI water uptake
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59|metric:vanadium_permeability_of_pbi|metric:vanadium_permeability_of_snpbi_1_42|metric:vanadium_permeability_of_sptpc_2_59|unresolved:vanadium_permeability_of_speek_apk
+- `DOC02-FACT-002` SPTPC-2.59 has IEC of 2.59 mmol/g, water uptake of 28%, area resistance of 0.82 ohm cm2, and vanadium permeability of 3.2 x 10^-7 cm2/s
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|PBI IEC|PBI acid doping level|PBI area-specific resistance|PBI coulombic efficiency at 100 mA/cm2|PBI energy efficiency at 100 mA/cm2|PBI vanadium permeability|PBI voltage efficiency at 100 mA/cm2|PBI water uptake
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59|metric:vanadium_permeability_of_pbi|metric:vanadium_permeability_of_snpbi_1_42|metric:vanadium_permeability_of_sptpc_2_59|unresolved:vanadium_permeability_of_speek_apk
+- `DOC02-FACT-004` SPEEK/APK has effective IEC of 1.26 mmol/g, water uptake of 21%, area resistance of 1.38 ohm cm2, and vanadium permeability of 2.1 x 10^-7 cm2/s
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|PBI IEC|PBI acid doping level|PBI area-specific resistance|PBI coulombic efficiency at 100 mA/cm2|PBI energy efficiency at 100 mA/cm2|PBI vanadium permeability|PBI voltage efficiency at 100 mA/cm2|PBI water uptake
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59|metric:vanadium_permeability_of_pbi|metric:vanadium_permeability_of_snpbi_1_42|metric:vanadium_permeability_of_sptpc_2_59|unresolved:vanadium_permeability_of_speek_apk
+- `DOC02-FACT-011` SNPBI-1.42 exhibits the highest selectivity among tested non-fluorinated membranes due to optimal balance of moderate resistance (1.15 ohm cm2) and low permeability (0.95 x 10^-7 cm2/s)
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|SNPBI-1.42
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3333
+  - `hyper_final_best_evidence_id`: membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59|metric:vanadium_permeability_of_pbi|metric:vanadium_permeability_of_snpbi_1_42|metric:vanadium_permeability_of_sptpc_2_59|unresolved:vanadium_permeability_of_speek_apk
+- `DOC02-FACT-012` Vanadium permeability increases linearly with IEC by approximately 1.0-1.3 x 10^-7 cm2/s per mmol/g
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: Ion exchange capacity (IEC)|Vanadium permeability
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.6
+  - `hyper_final_best_evidence_id`: membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59|metric:vanadium_permeability_of_pbi|metric:vanadium_permeability_of_snpbi_1_42|metric:vanadium_permeability_of_sptpc_2_59|unresolved:vanadium_permeability_of_speek_apk
+- `DOC02-FACT-014` V(V) species attack electron-rich positions on aromatic polymer backbones, causing chain scission and loss of mechanical integrity
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: capacity fading|precipitation of V(V) species as V2O5
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3333
+  - `hyper_final_best_evidence_id`: degradation:chemical_attack_by_v_v_on_aromatic_backbone|membrane:speek_apk
+- `DOC02-FACT-015` Sulfonated polymers (SNPBI-1.42, SPTPC-2.59, SPEEK/APK) undergo desulfonation under acidic oxidative conditions, progressively reducing IEC and proton conductivity
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|SNPBI-1.42|SPEEK/APK|SPTPC-2.59
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.6
+  - `hyper_final_best_evidence_id`: condition:temperature_0_mmol_g|condition:temperature_1_26_mmol_g|condition:temperature_1_42_mmol_g|condition:temperature_2_59_mmol_g|membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59
+- `DOC02-FACT-016` SNPBI-1.42 degradation involves gradual desulfonation increasing resistance and reducing VE, while SPTPC-2.59 backbone degradation creates free volume increasing permeability and reducing CE
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: PBI|SNPBI-1.42
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.6
+  - `hyper_final_best_evidence_id`: degradation:capacity_fading|degradation:chemical_attack_by_v_v_on_aromatic_backbone|degradation:desulfonation|membrane:snpbi_1_42
+- `DOC02-FACT-017` SNPBI-1.42 is optimal for maximum EE applications, SPTPC-2.59 for maximum VE/power density, and PBI is limited to low current density operation
+  - `hyper_base_label`: PARTIALLY_SUPPORTED
+  - `hyper_base_score`: 0.5
+  - `hyper_base_best_evidence_id`: PBI|SNPBI-1.42|SPEEK/APK|SPTPC-2.59
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.75
+  - `hyper_final_best_evidence_id`: condition:current_density_71_8_percent|condition:current_density_73_percent|condition:current_density_77_9_percent|condition:current_density_80_4_percent|condition:current_density_80_5_percent|condition:current_density_81_4_percent|condition:current_density_82_1_percent|condition:current_density_83_8_percent|condition:current_density_96_3_percent|condition:current_density_96_8_percent|condition:current_density_98_1_percent|condition:current_density_98_4_percent|membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59
+- `DOC02-FACT-022` Membrane selectivity (proton conductivity to vanadium permeability ratio) reaches maximum in IEC range of 1.2-1.5 mmol/g
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: Area-specific resistance|Selectivity|Vanadium permeability
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: condition:temperature_0_mmol_g|condition:temperature_1_26_mmol_g|condition:temperature_1_42_mmol_g|condition:temperature_2_59_mmol_g|membrane:pbi|membrane:snpbi_1_42|membrane:speek_apk|membrane:sptpc_2_59
+- `DOC03-FACT-001` BMC-C electrode achieves the lowest charge-transfer resistance of 1.34 ohm cm2 among the three tested electrode types
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|MC-C electrode|Rct value of 1.34 ohm cm2|Rct value of 2.17 ohm cm2|Rct value of 3.82 ohm cm2
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3333
+  - `hyper_final_best_evidence_id`: condition:temperature_1_34_ohmcm2|condition:temperature_2_17_ohmcm2|condition:temperature_3_82_ohmcm2|electrode:bmc_c|electrode:c_c|electrode:mc_c
+- `DOC03-FACT-002` At 100 mA/cm2, energy efficiency increases progressively from C-C at 65.8% to MC-C at 73.9% to BMC-C at 82.5%
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|EE of 65.8%|EE of 73.9%|EE of 82.5%|MC-C electrode
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: electrode:bmc_c|measurement:ee_82_5_percent
+- `DOC03-FACT-007` MC-C electrode provides favorable cost-performance balance while BMC-C electrode offers maximum efficiency for high-performance VRFB applications
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|MC-C electrode
+  - `hyper_final_label`: PARTIALLY_SUPPORTED
+  - `hyper_final_score`: 0.5
+  - `hyper_final_best_evidence_id`: electrode:bmc_c|measurement:ee_82_5_percent
+- `DOC03-FACT-010` The increased surface roughness from 8.4 um to 14.7 um creates additional triple-phase boundaries that increase geometric current density capability
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|MC-C electrode|mean roughness Ra of 11.2 um|mean roughness Ra of 14.7 um|mean roughness Ra of 8.4 um
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2
+  - `hyper_final_best_evidence_id`: degradation:oxidation_and_loss_of_active_surface_area|electrode:c_c
+- `DOC03-FACT-011` At 100 mA/cm2, voltage efficiency improves progressively from 70% for C-C to 77% for MC-C to 85% for BMC-C, reflecting reduced kinetic limitations through surface modification
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|MC-C electrode|VE of 70%|VE of 77%|VE of 85%
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3636
+  - `hyper_final_best_evidence_id`: electrode:bmc_c|measurement:ve_85_0_percent
+- `DOC03-FACT-012` MC-C electrode achieves a 43.2% reduction in charge-transfer resistance compared to C-C, decreasing from 3.82 ohm cm2 to 2.17 ohm cm2 through mild acid etching that increases surface area and introduces oxygen functional groups
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|MC-C electrode|Rct value of 1.34 ohm cm2|Rct value of 2.17 ohm cm2|Rct value of 3.82 ohm cm2
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.2857
+  - `hyper_final_best_evidence_id`: condition:temperature_1_34_ohmcm2|condition:temperature_2_17_ohmcm2|condition:temperature_3_82_ohmcm2|electrode:bmc_c|electrode:c_c|electrode:mc_c
+- `DOC03-FACT-014` The progressive improvement in wettability from C-C (contact angle 130.4 deg) to MC-C (102 deg) to BMC-C (92.8 deg) correlates with coulombic efficiency improvement from 94% to 96% to 97% at 100 mA/cm2, as improved hydrophilicity facilitates more uniform current distribution and suppresses side reactions
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: BMC-C electrode|C-C electrode|MC-C electrode|contact angle of 102 deg|contact angle of 130.4 deg|contact angle of 92.8 deg
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3077
+  - `hyper_final_best_evidence_id`: electrode:bmc_c|measurement:contact_angle_92_8_degree
+- `DOC04-FACT-013` At 2.0 mol/L H2SO4, limited proton availability restricts proton-coupled electron transfer causing elevated overpotentials, while at 5.0 mol/L H2SO4 the increased viscosity and aggressive chemical environment accelerate membrane degradation through polymer backbone chemical attack, making 3.0 mol/L the optimal balance
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: H2SO4 concentration of 5.0 mol/L|Membrane degradation
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.25
+  - `hyper_final_best_evidence_id`: condition:acid_concentration_2_mol_l|condition:acid_concentration_2_to_5_mol_l|condition:acid_concentration_3_mol_l|degradation:membrane_degradation|metric:charge_transfer_overpotential|metric:ohmic_resistance
+- `DOC05-FACT-011` Initial voltage efficiency values are 83.5% at 25 C, 82.0% at 40 C, and 80.2% at 60 C, with VE declining by approximately 2.5 percentage points at 25 C, 4.0 percentage points at 40 C, and 6.0 percentage points at 60 C over 500 cycles, primarily due to electrode surface degradation rather than membrane ohmic losses
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: 25 C|40 C|60 C|final Coulombic efficiency at 25 C|final Coulombic efficiency at 40 C|final Coulombic efficiency at 60 C|initial Coulombic efficiency at 25 C|initial Coulombic efficiency at 40 C|initial Coulombic efficiency at 60 C
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.1818
+  - `hyper_final_best_evidence_id`: condition:temperature_25_c|measurement:ve_83_5_percent
+- `DOC06-FACT-011` Tafel analysis reveals that Bi3+ addition changes the hydrogen evolution mechanism, with Tafel slope increasing from 118 mV/decade on bare graphite to 142 mV/decade with 1.5 mmol/L Bi3+, while the exchange current density decreases from 2.8 x 10^-6 A/cm2 to 1.1 x 10^-6 A/cm2, and the HER onset potential shifts by +85 mV reflecting increased kinetic barrier for proton reduction on bismuth-modified surface
+  - `hyper_base_label`: UNSUPPORTED
+  - `hyper_base_score`: 0.0
+  - `hyper_base_best_evidence_id`: Bi3+ ions|HER overpotential shift|Tafel slope|exchange current density for HER|hydrogen evolution reaction (HER)|parasitic hydrogen evolution loss
+  - `hyper_final_label`: UNSUPPORTED
+  - `hyper_final_score`: 0.3
+  - `hyper_final_best_evidence_id`: degradation:her|species:bi3_plus|unresolved:bi|unresolved:graphite_felt_electrodes_sgl_carbon_gfd_4_6_ea

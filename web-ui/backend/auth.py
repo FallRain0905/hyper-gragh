@@ -10,6 +10,7 @@ import json
 import os
 import re
 import secrets
+import tempfile
 import time
 from datetime import datetime, timedelta, timezone
 from typing import Any
@@ -109,8 +110,30 @@ def _as_aware_utc(value: datetime | str | None) -> datetime | None:
 
 
 def _sqlite_url() -> str:
-    path = os.getenv("HYPERCHE_SQLITE_PATH", os.path.join(os.path.dirname(__file__), "hyperche_app.db"))
-    return f"sqlite:///{path}"
+    configured = os.getenv("HYPERCHE_SQLITE_PATH")
+    if configured:
+        path = configured
+        os.makedirs(os.path.dirname(os.path.abspath(path)), exist_ok=True)
+        return f"sqlite:///{path}"
+
+    candidates = [
+        os.path.join(os.getenv("LOCALAPPDATA") or "", "HyperChE", "hyperche_app.db"),
+        os.path.join(tempfile.gettempdir(), "HyperChE", "hyperche_app.db"),
+    ]
+    for path in candidates:
+        if not path or path.startswith(os.sep + "HyperChE"):
+            continue
+        try:
+            directory = os.path.dirname(os.path.abspath(path))
+            os.makedirs(directory, exist_ok=True)
+            with tempfile.NamedTemporaryFile(prefix="sqlite_write_test_", dir=directory, delete=True):
+                pass
+            return f"sqlite:///{path}"
+        except Exception:
+            continue
+
+    fallback = os.path.join(tempfile.gettempdir(), "hyperche_app.db")
+    return f"sqlite:///{fallback}"
 
 
 def _database_url() -> str:

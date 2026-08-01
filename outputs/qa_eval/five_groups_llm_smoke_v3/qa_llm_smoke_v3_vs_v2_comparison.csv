@@ -1,0 +1,6 @@
+﻿group,Good Rate v2,Good Rate v3,Good Rate delta,Satisfactory-or-Better Rate v2,Satisfactory-or-Better Rate v3,Satisfactory-or-Better Rate delta,Key-Point Coverage v2,Key-Point Coverage v3,Key-Point Coverage delta,Hallucination Rate v2,Hallucination Rate v3,Hallucination Rate delta,Abstention Accuracy v2,Abstention Accuracy v3,Abstention Accuracy delta,Citation Stability Experimental v2,Citation Stability Experimental v3,Citation Stability Experimental delta
+text_segments,0.5,0.3,-0.2,0.8,0.7,-0.1,0.6666,0.5246,-0.142,0.0,0.0,0.0,0.9,0.9,0.0,0.6,0.5,-0.1
+original_hypergraph,0.2,0.3,0.1,0.5,0.4,-0.1,0.35,0.4667,0.1167,0.1,0.1,0.0,0.7,0.6,-0.1,0.2,0.3,0.1
+chem_prompt_graph,0.3,0.2,-0.1,0.3,0.3,0.0,0.3,0.2,-0.1,0.3,0.3,0.0,0.6,0.6,0.0,0.2,0.2,0.0
+chem_prompt_hypergraph,0.4,0.4,0.0,0.4,0.4,0.0,0.4333,0.4333,0.0,0.3,0.3,0.0,0.7,0.8,0.1,0.3,0.2,-0.1
+chem_norm_hypergraph,0.1,0.4,0.3,0.3,0.6,0.3,0.2497,0.5797,0.33,0.3,0.0,-0.3,0.6,0.7,0.1,0.2,0.4,0.2

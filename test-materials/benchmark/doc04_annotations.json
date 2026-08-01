@@ -1,0 +1,1025 @@
+{
+  "doc_id": "DOC04",
+  "doc_title": "Influence of Electrolyte Concentration and Flow Rate on Performance Metrics in Vanadium Redox Flow Batteries",
+  "domain": "vanadium redox flow battery (VRFB)",
+  "parameters": {
+    "vanadium_concentration": [
+      1.2,
+      1.5,
+      1.6,
+      1.8,
+      2.0,
+      3.0
+    ],
+    "H2SO4_concentration": [
+      2.0,
+      3.0,
+      4.0,
+      5.0
+    ],
+    "flow_rate": [
+      10,
+      20,
+      40,
+      60,
+      100
+    ],
+    "current_density": [
+      50,
+      100,
+      200
+    ]
+  },
+  "gold_efus": [
+    {
+      "canonical_id": "DOC04_EFU_001",
+      "type": "COMPOSITION",
+      "evidence_text": "The theoretical volumetric energy density, calculated from the Nernst equation and the total vanadium concentration assuming complete utilization, increased linearly from 19.3 Wh/L at 1.2 mol/L to 25.7 Wh/L at 1.6 mol/L and further to 32.1 Wh/L at 2.0 mol/L.",
+      "structured_data": {
+        "property": "theoretical volumetric energy density",
+        "values": [
+          {
+            "concentration_mol_L": 1.2,
+            "energy_density_Wh_L": 19.3
+          },
+          {
+            "concentration_mol_L": 1.6,
+            "energy_density_Wh_L": 25.7
+          },
+          {
+            "concentration_mol_L": 2.0,
+            "energy_density_Wh_L": 32.1
+          }
+        ],
+        "trend": "linear increase with vanadium concentration"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_002",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "At 100 mA/cm² and a flow rate of 40 mL/min with 3.0 mol/L H₂SO₄, the practical energy density rose from 14.8 Wh/L at 1.2 mol/L vanadium to 20.3 Wh/L at 1.6 mol/L",
+      "structured_data": {
+        "current_density_mA_cm2": 100,
+        "flow_rate_mL_min": 40,
+        "H2SO4_concentration_mol_L": 3.0,
+        "metric": "practical energy density",
+        "values": [
+          {
+            "vanadium_mol_L": 1.2,
+            "practical_energy_density_Wh_L": 14.8
+          },
+          {
+            "vanadium_mol_L": 1.6,
+            "practical_energy_density_Wh_L": 20.3
+          }
+        ]
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_003",
+      "type": "COMPARISON",
+      "evidence_text": "at 2.0 mol/L vanadium, the practical energy density reached 22.1 Wh/L, merely 69% of the theoretical 32.1 Wh/L, indicating that transport and kinetic limitations become increasingly significant as the concentration increases",
+      "structured_data": {
+        "vanadium_concentration_mol_L": 2.0,
+        "practical_energy_density_Wh_L": 22.1,
+        "theoretical_energy_density_Wh_L": 32.1,
+        "utilization_ratio_percent": 69,
+        "interpretation": "transport and kinetic limitations become significant at high concentration"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_004",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "At 100 mA/cm², VE increased from 81.3% at 1.2 mol/L to 85.6% at 1.6 mol/L, primarily due to the reduced relative impact of fixed overpotential losses at higher operating voltages",
+      "structured_data": {
+        "current_density_mA_cm2": 100,
+        "metric": "voltage efficiency",
+        "values": [
+          {
+            "vanadium_mol_L": 1.2,
+            "VE_percent": 81.3
+          },
+          {
+            "vanadium_mol_L": 1.6,
+            "VE_percent": 85.6
+          }
+        ],
+        "mechanism": "reduced relative impact of fixed overpotential losses at higher operating voltages"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_005",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "Energy efficiency followed the combined trends of CE and VE, peaking at 83.5% for 1.6 mol/L vanadium at 100 mA/cm² and 40 mL/min, compared to 78.2% for 1.2 mol/L and 82.8% for 2.0 mol/L.",
+      "structured_data": {
+        "current_density_mA_cm2": 100,
+        "flow_rate_mL_min": 40,
+        "metric": "energy efficiency",
+        "values": [
+          {
+            "vanadium_mol_L": 1.2,
+            "EE_percent": 78.2
+          },
+          {
+            "vanadium_mol_L": 1.6,
+            "EE_percent": 83.5
+          },
+          {
+            "vanadium_mol_L": 2.0,
+            "EE_percent": 82.8
+          }
+        ],
+        "optimal": {
+          "vanadium_mol_L": 1.6,
+          "EE_percent": 83.5
+        }
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_006",
+      "type": "COMPARISON",
+      "evidence_text": "At the higher current density of 200 mA/cm², the optimal concentration shifted to 1.5 mol/L, where an EE of 76.4% was recorded, surpassing the 72.1% obtained at 1.6 mol/L and the 68.9% at 2.0 mol/L.",
+      "structured_data": {
+        "current_density_mA_cm2": 200,
+        "metric": "energy efficiency",
+        "values": [
+          {
+            "vanadium_mol_L": 1.5,
+            "EE_percent": 76.4
+          },
+          {
+            "vanadium_mol_L": 1.6,
+            "EE_percent": 72.1
+          },
+          {
+            "vanadium_mol_L": 2.0,
+            "EE_percent": 68.9
+          }
+        ],
+        "optimal_shift": "from 1.6 mol/L at 100 mA/cm² to 1.5 mol/L at 200 mA/cm²",
+        "reason": "growing importance of mass-transfer limitations at elevated current densities"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_007",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "At 50 mA/cm², the lower current density minimized concentration polarization effects, and the highest tested concentration of 2.0 mol/L yielded the maximum EE of 86.1%",
+      "structured_data": {
+        "current_density_mA_cm2": 50,
+        "vanadium_concentration_mol_L": 2.0,
+        "metric": "energy efficiency",
+        "EE_percent": 86.1,
+        "condition": "low current density minimizes concentration polarization"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_008",
+      "type": "DEGRADATION_CHAIN",
+      "evidence_text": "Long-term stability testing at 3.0 mol/L vanadium in 3.0 mol/L H₂SO₄ revealed gradual precipitation of V(V) species at the positive electrode after approximately 72 hours of continuous cycling at 25°C, with CE declining from an initial 95.8% to 89.3% over 50 cycles.",
+      "structured_data": {
+        "vanadium_concentration_mol_L": 3.0,
+        "H2SO4_concentration_mol_L": 3.0,
+        "temperature_C": 25,
+        "failure_mode": "V(V) precipitation at positive electrode",
+        "onset_time_hours": 72,
+        "CE_initial_percent": 95.8,
+        "CE_final_percent": 89.3,
+        "cycles": 50,
+        "conclusion": "3.0 mol/L exceeds practical stability limit"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_009",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "increasing H₂SO₄ concentration from 2.0 to 4.0 mol/L raised the solution conductivity from 320 to 480 mS/cm at 25°C and improved VE at 100 mA/cm² from 82.1% to 86.2%",
+      "structured_data": {
+        "vanadium_concentration_mol_L": 1.6,
+        "flow_rate_mL_min": 40,
+        "current_density_mA_cm2": 100,
+        "metric": "effect of H2SO4 concentration",
+        "values": [
+          {
+            "H2SO4_mol_L": 2.0,
+            "conductivity_mS_cm": 320,
+            "VE_percent": 82.1
+          },
+          {
+            "H2SO4_mol_L": 4.0,
+            "conductivity_mS_cm": 480,
+            "VE_percent": 86.2
+          }
+        ]
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_010",
+      "type": "COMPARISON",
+      "evidence_text": "Further increasing the acid concentration to 5.0 mol/L, however, produced diminishing and ultimately negative returns. While conductivity continued to increase marginally to 510 mS/cm, VE actually decreased to 85.1%, and CE dropped sharply from 97.1% to 93.8%.",
+      "structured_data": {
+        "vanadium_concentration_mol_L": 1.6,
+        "current_density_mA_cm2": 100,
+        "H2SO4_mol_L": 5.0,
+        "conductivity_mS_cm": 510,
+        "VE_percent": 85.1,
+        "CE_percent": 93.8,
+        "comparison_baseline": {
+          "H2SO4_4.0_mol_L": {
+            "CE": 97.1,
+            "VE": 86.2
+          }
+        },
+        "negative_effect": "CE dropped due to enhanced hydrogen evolution reaction (HER)"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_011",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "the non-monotonic dependence of energy efficiency on H₂SO₄ concentration resulted in a clear optimum at 4.0 mol/L, where EE reached 83.7% at 100 mA/cm², compared to 79.8% at 2.0 mol/L, 83.5% at 3.0 mol/L, and 79.7% at 5.0 mol/L",
+      "structured_data": {
+        "current_density_mA_cm2": 100,
+        "metric": "energy efficiency vs H2SO4 concentration",
+        "values": [
+          {
+            "H2SO4_mol_L": 2.0,
+            "EE_percent": 79.8
+          },
+          {
+            "H2SO4_mol_L": 3.0,
+            "EE_percent": 83.5
+          },
+          {
+            "H2SO4_mol_L": 4.0,
+            "EE_percent": 83.7
+          },
+          {
+            "H2SO4_mol_L": 5.0,
+            "EE_percent": 79.7
+          }
+        ],
+        "optimal_H2SO4_mol_L": 4.0
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_012",
+      "type": "COMPARISON",
+      "evidence_text": "at 200 mA/cm², reducing H₂SO₄ from 4.0 to 2.0 mol/L caused VE to fall from 79.8% to 71.4%, a decrement of 8.4 percentage points, whereas at 50 mA/cm² the corresponding decrease was only 3.1 percentage points (from 90.2% to 87.1%)",
+      "structured_data": {
+        "metric": "voltage efficiency sensitivity to H2SO4 concentration",
+        "comparison": [
+          {
+            "current_density_mA_cm2": 200,
+            "VE_at_4.0_H2SO4": 79.8,
+            "VE_at_2.0_H2SO4": 71.4,
+            "decrement_pp": 8.4
+          },
+          {
+            "current_density_mA_cm2": 50,
+            "VE_at_4.0_H2SO4": 90.2,
+            "VE_at_2.0_H2SO4": 87.1,
+            "decrement_pp": 3.1
+          }
+        ],
+        "interpretation": "ohmic overpotential scales linearly with current density, making high-conductivity electrolytes more important at high power density"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_013",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "At 1.6 mol/L vanadium, 3.0 mol/L H₂SO₄, and 100 mA/cm², increasing the flow rate from 10 to 20 mL/min raised VE from 81.4% to 84.1%, and further to 85.6% at 40 mL/min.",
+      "structured_data": {
+        "vanadium_concentration_mol_L": 1.6,
+        "H2SO4_concentration_mol_L": 3.0,
+        "current_density_mA_cm2": 100,
+        "metric": "voltage efficiency vs flow rate",
+        "values": [
+          {
+            "flow_rate_mL_min": 10,
+            "VE_percent": 81.4
+          },
+          {
+            "flow_rate_mL_min": 20,
+            "VE_percent": 84.1
+          },
+          {
+            "flow_rate_mL_min": 40,
+            "VE_percent": 85.6
+          }
+        ]
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_014",
+      "type": "MECHANISM_EVIDENCE",
+      "evidence_text": "The concentration polarization overpotential, estimated from voltage decay analysis, decreased from 68 mV at 10 mL/min to 31 mV at 40 mL/min, indicating that the low-flow condition imposed a significant transport limitation.",
+      "structured_data": {
+        "metric": "concentration polarization overpotential",
+        "values": [
+          {
+            "flow_rate_mL_min": 10,
+            "overpotential_mV": 68
+          },
+          {
+            "flow_rate_mL_min": 40,
+            "overpotential_mV": 31
+          }
+        ],
+        "mechanism": "enhanced convective mass transfer at higher flow rates reduces diffusion boundary layer thickness",
+        "implication": "low flow rate imposes significant transport limitation"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_015",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "The mass-transfer coefficient, calculated from the limiting current behavior, increased from 2.1 × 10⁻⁵ m/s at 10 mL/min to 4.3 × 10⁻⁵ m/s at 40 mL/min, but only to 4.7 × 10⁻⁵ m/s at 60 mL/min and 4.9 × 10⁻⁵ m/s at 100 mL/min",
+      "structured_data": {
+        "metric": "mass-transfer coefficient",
+        "unit": "m/s",
+        "values": [
+          {
+            "flow_rate_mL_min": 10,
+            "k_m": "2.1e-5"
+          },
+          {
+            "flow_rate_mL_min": 40,
+            "k_m": "4.3e-5"
+          },
+          {
+            "flow_rate_mL_min": 60,
+            "k_m": "4.7e-5"
+          },
+          {
+            "flow_rate_mL_min": 100,
+            "k_m": "4.9e-5"
+          }
+        ],
+        "trend": "asymptotic approach to mass-transfer limit"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_016",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "The measured pumping power rose from 12 mW at 10 mL/min to 48 mW at 40 mL/min, 108 mW at 60 mL/min, and 300 mW at 100 mL/min. When expressed as a fraction of the gross electrical power output, the parasitic pumping loss increased from 0.6% at 10 mL/min to 2.4% at 40 mL/min, 5.4% at 60 mL/min, and 15.0% at 100 mL/min.",
+      "structured_data": {
+        "metric": "pumping power and parasitic loss",
+        "values": [
+          {
+            "flow_rate_mL_min": 10,
+            "pumping_power_mW": 12,
+            "parasitic_loss_percent": 0.6
+          },
+          {
+            "flow_rate_mL_min": 40,
+            "pumping_power_mW": 48,
+            "parasitic_loss_percent": 2.4
+          },
+          {
+            "flow_rate_mL_min": 60,
+            "pumping_power_mW": 108,
+            "parasitic_loss_percent": 5.4
+          },
+          {
+            "flow_rate_mL_min": 100,
+            "pumping_power_mW": 300,
+            "parasitic_loss_percent": 15.0
+          }
+        ],
+        "scaling": "pumping power approximately scales with square of flow rate"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_017",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "The net system energy efficiency, defined as gross EE minus the pumping energy penalty, exhibited a clear maximum at 40 mL/min, where the net EE was 81.5%, compared to 78.0% at 10 mL/min, 80.9% at 60 mL/min, and 71.5% at 100 mL/min.",
+      "structured_data": {
+        "metric": "net system energy efficiency",
+        "values": [
+          {
+            "flow_rate_mL_min": 10,
+            "net_EE_percent": 78.0
+          },
+          {
+            "flow_rate_mL_min": 40,
+            "net_EE_percent": 81.5
+          },
+          {
+            "flow_rate_mL_min": 60,
+            "net_EE_percent": 80.9
+          },
+          {
+            "flow_rate_mL_min": 100,
+            "net_EE_percent": 71.5
+          }
+        ],
+        "optimal_flow_rate_mL_min": 40
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_018",
+      "type": "COMPARISON",
+      "evidence_text": "At 200 mA/cm², the higher reactant flux requirement moved the optimal flow rate to 60 mL/min, where net EE peaked at 73.2%, compared to 68.9% at 40 mL/min and 64.1% at 100 mL/min. At 50 mA/cm², in contrast, the lower polarization sensitivity meant that even 20 mL/min was sufficient, yielding a net EE of 84.7%",
+      "structured_data": {
+        "metric": "optimal flow rate at different current densities",
+        "values": [
+          {
+            "current_density_mA_cm2": 50,
+            "optimal_flow_mL_min": 20,
+            "net_EE_percent": 84.7
+          },
+          {
+            "current_density_mA_cm2": 200,
+            "optimal_flow_mL_min": 60,
+            "net_EE_at_60_mL_min": 73.2,
+            "net_EE_at_40_mL_min": 68.9,
+            "net_EE_at_100_mL_min": 64.1
+          }
+        ],
+        "interpretation": "optimal flow rate increases with current density due to higher reactant flux requirements"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_019",
+      "type": "MECHANISM_EVIDENCE",
+      "evidence_text": "At 2.0 mol/L vanadium and 100 mL/min, the pumping power reached 420 mW, 40% higher than the 300 mW measured at 1.6 mol/L under identical hydrodynamic conditions, because the viscosity rose from 5.1 mPa·s to 7.8 mPa·s. This viscosity-mediated coupling shifts the net EE optimum to lower flow rates for more concentrated electrolytes",
+      "structured_data": {
+        "comparison": [
+          {
+            "vanadium_mol_L": 1.6,
+            "viscosity_mPa_s": 5.1,
+            "pumping_power_at_100_mL_min_mW": 300
+          },
+          {
+            "vanadium_mol_L": 2.0,
+            "viscosity_mPa_s": 7.8,
+            "pumping_power_at_100_mL_min_mW": 420
+          }
+        ],
+        "pumping_power_increase_percent": 40,
+        "mechanism": "viscosity-mediated coupling between vanadium concentration and pumping loss",
+        "consequence": "optimal flow rate shifts lower for more concentrated electrolytes"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_020",
+      "type": "DESIGN_SUMMARY",
+      "evidence_text": "The combination of 1.6 mol/L vanadium, 4.0 mol/L H₂SO₄, and 40 mL/min at 100 mA/cm² yielded a practical energy density of 21.5 Wh/L with a net EE of 82.1%, representing the best balanced performance in the tested parameter space.",
+      "structured_data": {
+        "optimal_composition": {
+          "vanadium_mol_L": 1.6,
+          "H2SO4_mol_L": 4.0,
+          "flow_rate_mL_min": 40,
+          "current_density_mA_cm2": 100
+        },
+        "performance": {
+          "practical_energy_density_Wh_L": 21.5,
+          "net_EE_percent": 82.1
+        },
+        "designation": "best balanced performance in tested parameter space"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_021",
+      "type": "COMPARISON",
+      "evidence_text": "Increasing vanadium to 2.0 mol/L raised the practical energy density to 23.8 Wh/L but reduced net EE to 78.9% due to viscosity-enhanced pumping losses and mass-transfer limitations. Conversely, reducing to 1.5 mol/L vanadium lowered the practical energy density to 19.1 Wh/L but allowed a net EE of 83.2%",
+      "structured_data": {
+        "trade_offs": [
+          {
+            "vanadium_mol_L": 1.5,
+            "practical_energy_density_Wh_L": 19.1,
+            "net_EE_percent": 83.2,
+            "profile": "efficiency-prioritized"
+          },
+          {
+            "vanadium_mol_L": 2.0,
+            "practical_energy_density_Wh_L": 23.8,
+            "net_EE_percent": 78.9,
+            "profile": "energy-density-prioritized"
+          }
+        ],
+        "design_implication": "Pareto-optimal front requires selection based on application priorities"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_022",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "at 200 mA/cm² the same electrolyte composition required 60 mL/min to achieve acceptable polarization behavior, yielding a practical energy density of 20.8 Wh/L but a reduced net EE of 74.5%",
+      "structured_data": {
+        "vanadium_mol_L": 1.6,
+        "H2SO4_mol_L": 4.0,
+        "flow_rate_mL_min": 60,
+        "current_density_mA_cm2": 200,
+        "practical_energy_density_Wh_L": 20.8,
+        "net_EE_percent": 74.5
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_023",
+      "type": "MECHANISM_EVIDENCE",
+      "evidence_text": "the VE improvement from increasing flow rate from 10 to 40 mL/min was 3.2 percentage points at 2.0 mol/L H₂SO₄ but only 2.1 percentage points at 4.0 mol/L H₂SO₄, implying that high-acid electrolytes are less sensitive to flow optimization",
+      "structured_data": {
+        "metric": "VE improvement from flow rate increase (10 to 40 mL/min)",
+        "values": [
+          {
+            "H2SO4_mol_L": 2.0,
+            "VE_improvement_pp": 3.2
+          },
+          {
+            "H2SO4_mol_L": 4.0,
+            "VE_improvement_pp": 2.1
+          }
+        ],
+        "mechanism": "at low acid concentration, ohmic losses are dominant; at high acid, ohmic losses are already minimal so flow-mediated mass transfer improvement contributes less",
+        "implication": "high-acid electrolytes are less sensitive to flow optimization"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_024",
+      "type": "MECHANISM_EVIDENCE",
+      "evidence_text": "the reduced ohmic overpotential at 4.0 mol/L H₂SO₄ corresponded to a cell resistance decrease from 1.85 Ω·cm² to 1.42 Ω·cm², as determined by electrochemical impedance spectroscopy",
+      "structured_data": {
+        "H2SO4_2.0_mol_L_cell_resistance_ohm_cm2": 1.85,
+        "H2SO4_4.0_mol_L_cell_resistance_ohm_cm2": 1.42,
+        "measurement_method": "electrochemical impedance spectroscopy",
+        "metric": "cell area-specific resistance"
+      }
+    },
+    {
+      "canonical_id": "DOC04_EFU_025",
+      "type": "OPERATION_PERFORMANCE",
+      "evidence_text": "Coulombic efficiency remained consistently high across the tested vanadium concentrations, varying between 96.2% and 97.5%, with the slight decrease at higher concentrations attributable to enhanced vanadium crossover driven by larger concentration gradients across the membrane.",
+      "structured_data": {
+        "metric": "coulombic efficiency range across vanadium concentrations",
+        "CE_range_percent": {
+          "min": 96.2,
+          "max": 97.5
+        },
+        "trend": "slight decrease at higher vanadium concentrations",
+        "mechanism": "enhanced vanadium crossover driven by larger concentration gradients"
+      }
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "DOC04_FACT_001",
+      "fact_text": "The theoretical volumetric energy density increases linearly with vanadium concentration, from 19.3 Wh/L at 1.2 mol/L to 32.1 Wh/L at 2.0 mol/L.",
+      "derived_from": [
+        "DOC04_EFU_001"
+      ],
+      "fact_type": "quantitative_trend"
+    },
+    {
+      "fact_id": "DOC04_FACT_002",
+      "fact_text": "At 100 mA/cm² and 40 mL/min with 3.0 mol/L H₂SO₄, practical energy density increased from 14.8 Wh/L (1.2 mol/L V) to 20.3 Wh/L (1.6 mol/L V).",
+      "derived_from": [
+        "DOC04_EFU_002"
+      ],
+      "fact_type": "quantitative_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_003",
+      "fact_text": "At 2.0 mol/L vanadium, the practical energy density (22.1 Wh/L) is only 69% of the theoretical value (32.1 Wh/L), indicating significant transport and kinetic limitations at high concentration.",
+      "derived_from": [
+        "DOC04_EFU_003"
+      ],
+      "fact_type": "quantitative_comparison"
+    },
+    {
+      "fact_id": "DOC04_FACT_004",
+      "fact_text": "Energy efficiency peaks at 83.5% for 1.6 mol/L vanadium at 100 mA/cm² and 40 mL/min.",
+      "derived_from": [
+        "DOC04_EFU_005"
+      ],
+      "fact_type": "optimum_value"
+    },
+    {
+      "fact_id": "DOC04_FACT_005",
+      "fact_text": "At 200 mA/cm², the optimal vanadium concentration shifts from 1.6 mol/L to 1.5 mol/L due to mass-transfer limitations.",
+      "derived_from": [
+        "DOC04_EFU_006"
+      ],
+      "fact_type": "condition_dependent_optimum"
+    },
+    {
+      "fact_id": "DOC04_FACT_006",
+      "fact_text": "At 50 mA/cm², 2.0 mol/L vanadium yields the highest EE of 86.1% because low current density minimizes concentration polarization.",
+      "derived_from": [
+        "DOC04_EFU_007"
+      ],
+      "fact_type": "condition_dependent_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_007",
+      "fact_text": "3.0 mol/L vanadium electrolyte in 3.0 mol/L H₂SO₄ shows V(V) precipitation after 72 hours at 25°C, with CE declining from 95.8% to 89.3% over 50 cycles.",
+      "derived_from": [
+        "DOC04_EFU_008"
+      ],
+      "fact_type": "degradation_behavior"
+    },
+    {
+      "fact_id": "DOC04_FACT_008",
+      "fact_text": "H₂SO₄ concentration has a non-monotonic effect on EE with an optimum at 4.0 mol/L (83.7% at 100 mA/cm²); both 2.0 and 5.0 mol/L yield approximately 80% EE.",
+      "derived_from": [
+        "DOC04_EFU_011"
+      ],
+      "fact_type": "non_monotonic_trend"
+    },
+    {
+      "fact_id": "DOC04_FACT_009",
+      "fact_text": "At 5.0 mol/L H₂SO₄, CE drops from 97.1% to 93.8% due to enhanced hydrogen evolution reaction (HER) at the negative electrode.",
+      "derived_from": [
+        "DOC04_EFU_010"
+      ],
+      "fact_type": "mechanism_linked_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_010",
+      "fact_text": "The penalty of low H₂SO₄ concentration (2.0 vs 4.0 mol/L) on VE is more severe at high current density: 8.4 pp at 200 mA/cm² versus 3.1 pp at 50 mA/cm².",
+      "derived_from": [
+        "DOC04_EFU_012"
+      ],
+      "fact_type": "quantitative_comparison"
+    },
+    {
+      "fact_id": "DOC04_FACT_011",
+      "fact_text": "Concentration polarization overpotential decreases from 68 mV at 10 mL/min to 31 mV at 40 mL/min (at 1.6 mol/L V, 3.0 mol/L H₂SO₄, 100 mA/cm²).",
+      "derived_from": [
+        "DOC04_EFU_014"
+      ],
+      "fact_type": "quantitative_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_012",
+      "fact_text": "Mass-transfer coefficient asymptotically approaches a limit: 4.3×10⁻⁵ m/s at 40 mL/min, only increasing to 4.9×10⁻⁵ m/s at 100 mL/min.",
+      "derived_from": [
+        "DOC04_EFU_015"
+      ],
+      "fact_type": "quantitative_trend"
+    },
+    {
+      "fact_id": "DOC04_FACT_013",
+      "fact_text": "Net system EE is maximized at 40 mL/min (81.5%) and declines to 71.5% at 100 mL/min due to pumping losses outweighing electrochemical gains.",
+      "derived_from": [
+        "DOC04_EFU_017"
+      ],
+      "fact_type": "optimum_value"
+    },
+    {
+      "fact_id": "DOC04_FACT_014",
+      "fact_text": "The optimal flow rate increases with current density: 20 mL/min at 50 mA/cm², 40 mL/min at 100 mA/cm², and 60 mL/min at 200 mA/cm².",
+      "derived_from": [
+        "DOC04_EFU_018"
+      ],
+      "fact_type": "condition_dependent_optimum"
+    },
+    {
+      "fact_id": "DOC04_FACT_015",
+      "fact_text": "At 2.0 mol/L vanadium, pumping power at 100 mL/min is 420 mW, 40% higher than 300 mW at 1.6 mol/L, due to viscosity increase from 5.1 to 7.8 mPa·s.",
+      "derived_from": [
+        "DOC04_EFU_019"
+      ],
+      "fact_type": "quantitative_comparison"
+    },
+    {
+      "fact_id": "DOC04_FACT_016",
+      "fact_text": "The best balanced performance in the tested parameter space is achieved with 1.6 mol/L vanadium, 4.0 mol/L H₂SO₄, 40 mL/min at 100 mA/cm², yielding 21.5 Wh/L practical energy density and 82.1% net EE.",
+      "derived_from": [
+        "DOC04_EFU_020"
+      ],
+      "fact_type": "design_recommendation"
+    },
+    {
+      "fact_id": "DOC04_FACT_017",
+      "fact_text": "High-acid electrolytes (4.0 mol/L H₂SO₄) are less sensitive to flow rate optimization than low-acid electrolytes (2.0 mol/L), showing only 2.1 pp VE gain versus 3.2 pp when increasing flow from 10 to 40 mL/min.",
+      "derived_from": [
+        "DOC04_EFU_023"
+      ],
+      "fact_type": "quantitative_comparison"
+    },
+    {
+      "fact_id": "DOC04_FACT_018",
+      "fact_text": "At 100 mA/cm², increasing H₂SO₄ from 2.0 to 4.0 mol/L reduces cell resistance from 1.85 to 1.42 Ω·cm² and improves VE from 82.1% to 86.2%.",
+      "derived_from": [
+        "DOC04_EFU_024",
+        "DOC04_EFU_009"
+      ],
+      "fact_type": "quantitative_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_019",
+      "fact_text": "There is a Pareto trade-off between practical energy density and net EE: 1.5 mol/L V gives 19.1 Wh/L at 83.2% EE, while 2.0 mol/L V gives 23.8 Wh/L at 78.9% EE.",
+      "derived_from": [
+        "DOC04_EFU_021"
+      ],
+      "fact_type": "design_trade_off"
+    },
+    {
+      "fact_id": "DOC04_FACT_020",
+      "fact_text": "Viscosity increases substantially with vanadium concentration, from 3.2 mPa·s at 1.2 mol/L to 7.8 mPa·s at 2.0 mol/L at 25°C, contributing to higher pumping losses and mass-transfer resistance.",
+      "derived_from": [
+        "DOC04_EFU_004",
+        "DOC04_EFU_019"
+      ],
+      "fact_type": "physical_property"
+    },
+    {
+      "fact_id": "DOC04_FACT_021",
+      "fact_text": "Temperature-dependent precipitation tests show that higher H₂SO₄ concentration (up to 4.0 mol/L) improves stability against V(V) precipitation, lowering onset temperature from 28°C (2.0 mol/L) to 12°C (4.0 mol/L).",
+      "derived_from": [
+        "DOC04_EFU_008"
+      ],
+      "fact_type": "stability_observation"
+    },
+    {
+      "fact_id": "DOC04_FACT_022",
+      "fact_text": "At 200 mA/cm² with 1.6 mol/L V and 4.0 mol/L H₂SO₄, increasing flow rate to 60 mL/min yields net EE of 73.2% versus 68.9% at 40 mL/min, showing the optimal flow rate shifts upward at high current density.",
+      "derived_from": [
+        "DOC04_EFU_018",
+        "DOC04_EFU_022"
+      ],
+      "fact_type": "condition_dependent_optimum"
+    }
+  ],
+  "qa_questions": [
+    {
+      "question_id": "DOC04_QA_001",
+      "question": "What is the theoretical volumetric energy density at 1.6 mol/L vanadium concentration?",
+      "answer": "25.7 Wh/L",
+      "difficulty": "L1",
+      "tested_fact_id": "DOC04_FACT_001",
+      "reasoning": "Direct fact retrieval from stated EFU value."
+    },
+    {
+      "question_id": "DOC04_QA_002",
+      "question": "What flow rate was used for the energy efficiency peak of 83.5% at 100 mA/cm²?",
+      "answer": "40 mL/min",
+      "difficulty": "L1",
+      "tested_fact_id": "DOC04_FACT_004",
+      "reasoning": "Direct lookup of the flow rate condition associated with the stated EE optimum."
+    },
+    {
+      "question_id": "DOC04_QA_003",
+      "question": "What is the concentration polarization overpotential at 10 mL/min?",
+      "answer": "68 mV",
+      "difficulty": "L1",
+      "tested_fact_id": "DOC04_FACT_011",
+      "reasoning": "Direct fact retrieval."
+    },
+    {
+      "question_id": "DOC04_QA_004",
+      "question": "What H₂SO₄ concentration gives the maximum energy efficiency at 100 mA/cm²?",
+      "answer": "4.0 mol/L",
+      "difficulty": "L1",
+      "tested_fact_id": "DOC04_FACT_008",
+      "reasoning": "Direct retrieval of optimal acid concentration."
+    },
+    {
+      "question_id": "DOC04_QA_005",
+      "question": "How much higher is the practical energy density at 2.0 mol/L vanadium compared to 1.5 mol/L vanadium?",
+      "answer": "4.7 Wh/L higher (23.8 Wh/L vs 19.1 Wh/L)",
+      "difficulty": "L2",
+      "tested_fact_id": "DOC04_FACT_019",
+      "reasoning": "Requires subtraction between two values from the trade-off comparison."
+    },
+    {
+      "question_id": "DOC04_QA_006",
+      "question": "By how many percentage points does VE decrease when H₂SO₄ is reduced from 4.0 to 2.0 mol/L at 200 mA/cm²?",
+      "answer": "8.4 percentage points (from 79.8% to 71.4%)",
+      "difficulty": "L2",
+      "tested_fact_id": "DOC04_FACT_010",
+      "reasoning": "Requires extracting two values and computing their difference."
+    },
+    {
+      "question_id": "DOC04_QA_007",
+      "question": "What is the net system EE at 100 mL/min flow rate?",
+      "answer": "71.5%",
+      "difficulty": "L1",
+      "tested_fact_id": "DOC04_FACT_013",
+      "reasoning": "Direct fact retrieval from the net EE comparison."
+    },
+    {
+      "question_id": "DOC04_QA_008",
+      "question": "How much does the mass-transfer coefficient increase when flow rate increases from 10 to 40 mL/min?",
+      "answer": "From 2.1×10⁻⁵ m/s to 4.3×10⁻⁵ m/s, an increase of 2.2×10⁻⁵ m/s",
+      "difficulty": "L2",
+      "tested_fact_id": "DOC04_FACT_012",
+      "reasoning": "Requires extracting two values and computing the difference."
+    },
+    {
+      "question_id": "DOC04_QA_009",
+      "question": "Why does the optimal vanadium concentration decrease from 1.6 to 1.5 mol/L when current density increases from 100 to 200 mA/cm²?",
+      "answer": "Because mass-transfer limitations become more significant at higher current densities. The higher viscosity of concentrated electrolytes (e.g., 2.0 mol/L) disproportionately penalizes performance at 200 mA/cm², making the lower-viscosity 1.5 mol/L electrolyte more efficient despite its lower theoretical energy density.",
+      "difficulty": "L3",
+      "tested_fact_id": "DOC04_FACT_005",
+      "reasoning": "Requires connecting the optimal concentration shift to the underlying mass-transfer and viscosity mechanisms discussed in the text."
+    },
+    {
+      "question_id": "DOC04_QA_010",
+      "question": "Why does 5.0 mol/L H₂SO₄ reduce CE compared to 4.0 mol/L despite having higher conductivity?",
+      "answer": "At 5.0 mol/L H₂SO₄, the strongly acidic medium enhances the hydrogen evolution reaction (HER) at the negative electrode during charging. This competitive HER represents a direct loss of charge efficiency, causing CE to drop from 97.1% to 93.8% even though conductivity marginally increases from 480 to 510 mS/cm.",
+      "difficulty": "L3",
+      "tested_fact_id": "DOC04_FACT_009",
+      "reasoning": "Requires understanding the competing effects of conductivity (favoring high acid) and HER (penalizing very high acid)."
+    },
+    {
+      "question_id": "DOC04_QA_011",
+      "question": "Why does net system EE decline when flow rate increases beyond 60 mL/min?",
+      "answer": "Although higher flow rates continue to marginally improve voltage efficiency by reducing concentration polarization, the pumping power increases approximately with the square of flow rate. Beyond 60 mL/min, the incremental electrochemical gain is outweighed by parasitic pumping losses. For example, at 100 mL/min, pumping power reaches 300 mW, representing 15% of gross power output, causing net EE to fall to 71.5%.",
+      "difficulty": "L3",
+      "tested_fact_id": "DOC04_FACT_013",
+      "reasoning": "Requires understanding the trade-off between mass-transfer improvement and pumping penalty, not just retrieving the optimal value."
+    },
+    {
+      "question_id": "DOC04_QA_012",
+      "question": "If a VRFB must operate at 200 mA/cm² with 1.6 mol/L vanadium and 4.0 mol/L H₂SO₄, what flow rate should be selected and why?",
+      "answer": "60 mL/min should be selected, as this gives the maximum net EE of 73.2% at 200 mA/cm². At 40 mL/min, net EE drops to 68.9% due to insufficient mass transfer, while at 100 mL/min it falls to 64.1% due to excessive pumping losses.",
+      "difficulty": "L4",
+      "tested_fact_id": "DOC04_FACT_014",
+      "reasoning": "Requires applying the condition-dependent optimum finding to select the best flow rate for a specified operating condition, with justification."
+    },
+    {
+      "question_id": "DOC04_QA_013",
+      "question": "Why is the gap between theoretical and practical energy density larger at 2.0 mol/L than at 1.2 mol/L vanadium?",
+      "answer": "At 2.0 mol/L, the practical energy density is 22.1 Wh/L (69% of theoretical 32.1 Wh/L), while at 1.2 mol/L the practical value is 14.8 Wh/L (77% of theoretical 19.3 Wh/L). The widening gap at higher concentration is caused by increased electrolyte viscosity (from 3.2 to 7.8 mPa·s), which impedes mass transfer, raises concentration polarization, and increases pumping losses. These transport and kinetic limitations become increasingly significant at higher concentrations, reducing the fraction of theoretical energy that can be practically extracted.",
+      "difficulty": "L4",
+      "tested_fact_id": "DOC04_FACT_003",
+      "reasoning": "Requires synthesizing multiple factors (viscosity, mass transfer, polarization, pumping) to explain why the utilization ratio decreases with concentration."
+    },
+    {
+      "question_id": "DOC04_QA_014",
+      "question": "A system designer wants to maximize energy density while maintaining net EE above 80%. Which electrolyte composition and flow rate should be chosen at 100 mA/cm²?",
+      "answer": "The designer should choose 1.6 mol/L vanadium, 4.0 mol/L H₂SO₄, and 40 mL/min. This combination yields a practical energy density of 21.5 Wh/L with a net EE of 82.1%, meeting the >80% EE constraint while providing near-maximum energy density. The 2.0 mol/L option gives higher energy density (23.8 Wh/L) but fails the EE constraint at 78.9%.",
+      "difficulty": "L5",
+      "tested_fact_id": "DOC04_FACT_016",
+      "reasoning": "Requires evaluating multiple combinations against a design constraint (EE > 80%) and selecting the one that best satisfies the primary objective (maximize energy density) subject to the constraint."
+    },
+    {
+      "question_id": "DOC04_QA_015",
+      "question": "Explain why high-acid electrolytes are less sensitive to flow rate optimization than low-acid electrolytes.",
+      "answer": "At 2.0 mol/L H₂SO₄, the limited proton availability means ohmic losses dominate the total overpotential. Increasing flow rate from 10 to 40 mL/min improves VE by 3.2 percentage points because better mass transfer partially compensates for the high resistance. At 4.0 mol/L H₂SO₄, the high conductivity already minimizes ohmic losses, so the remaining overpotential is less affected by flow-mediated mass transfer, yielding only 2.1 percentage points improvement for the same flow rate increase. The dominant loss mechanism shifts from ohmic (flow-insensitive) to concentration polarization (flow-sensitive) as acid concentration increases, but since high-acid electrolytes already minimize ohmic losses, the relative contribution of flow improvement is smaller.",
+      "difficulty": "L5",
+      "tested_fact_id": "DOC04_FACT_017",
+      "reasoning": "Requires understanding the interplay between ohmic losses, mass transfer, and acid concentration, and how the dominant loss mechanism determines flow sensitivity."
+    },
+    {
+      "question_id": "DOC04_QA_016",
+      "question": "How does the coupling between vanadium concentration and viscosity affect the optimal flow rate for system-level energy efficiency?",
+      "answer": "Higher vanadium concentration increases electrolyte viscosity (from 5.1 mPa·s at 1.6 mol/L to 7.8 mPa·s at 2.0 mol/L), which raises pressure drop and pumping power disproportionately. At 2.0 mol/L and 100 mL/min, pumping power is 420 mW (40% higher than 300 mW at 1.6 mol/L). This viscosity-mediated coupling shifts the net EE optimum to lower flow rates for more concentrated electrolytes: at 2.0 mol/L, the optimal flow rate is 40 mL/min rather than 60 mL/min, with net EE of 78.9% versus 82.8% at 1.6 mol/L. System designers must therefore jointly optimize concentration and flow rate rather than treating them as independent variables.",
+      "difficulty": "L5",
+      "tested_fact_id": "DOC04_FACT_015",
+      "reasoning": "Requires connecting viscosity, pumping power, flow rate, and net EE into a causal chain and explaining the design implication."
+    },
+    {
+      "question_id": "DOC04_QA_017",
+      "question": "What would happen to the optimal H₂SO₄ concentration if the VRFB operates primarily at 50 mA/cm² instead of 100 mA/cm²?",
+      "answer": "At 50 mA/cm², the penalty of low acid concentration is smaller (only 3.1 pp VE decrease from 4.0 to 2.0 mol/L H₂SO₄ vs 8.4 pp at 200 mA/cm²), because ohmic overpotential scales linearly with current density and is therefore less dominant at low current. This means the optimal H₂SO₄ concentration range broadens at 50 mA/cm² and the precise optimum matters less. However, considerations of precipitation stability still favor moderate-to-high acid concentrations (3.0–4.0 mol/L), as higher H₂SO₄ suppresses V(V) precipitation by lowering the onset temperature from 28°C to 12°C.",
+      "difficulty": "L6",
+      "tested_fact_id": "DOC04_FACT_010",
+      "reasoning": "Requires extrapolating the current-density-dependent acid sensitivity to a new operating condition, considering that the optimum may shift or broaden, while also incorporating stability constraints."
+    },
+    {
+      "question_id": "DOC04_QA_018",
+      "question": "A VRFB system must operate across a wide range of current densities (50–200 mA/cm²). What electrolyte composition and flow strategy would you recommend, and what compromises are involved?",
+      "answer": "A reasonable compromise is 1.6 mol/L vanadium and 4.0 mol/L H₂SO₄ as the electrolyte composition, as this gives the best balanced performance at the intermediate 100 mA/cm² condition. For flow strategy, a variable flow approach is recommended: 20 mL/min at 50 mA/cm² (net EE 84.7%), 40 mL/min at 100 mA/cm² (net EE 81.5%), and 60 mL/min at 200 mA/cm² (net EE 73.2%). The compromise is that no single flow rate is optimal across all conditions. If a fixed flow rate must be chosen, 40 mL/min represents a middle ground, but this yields suboptimal performance at both low current (unnecessary pumping) and high current (insufficient mass transfer). The 1.6 mol/L vanadium concentration is also a compromise: at 50 mA/cm², 2.0 mol/L would give higher EE (86.1%), while at 200 mA/cm², 1.5 mol/L would be preferable (76.4% vs 72.1%). The designer trades off universal applicability against peak performance at any single operating point.",
+      "difficulty": "L6",
+      "tested_fact_id": "DOC04_FACT_016",
+      "reasoning": "Requires synthesizing the full parameter space (vanadium concentration, acid concentration, flow rate, current density) to develop a multi-condition operational strategy, explicitly identifying the compromises involved."
+    },
+    {
+      "question_id": "DOC04_QA_019",
+      "question": "The cell resistance decreased from 1.85 to 1.42 Ω·cm² when H₂SO₄ increased from 2.0 to 4.0 mol/L. What is the ohmic overpotential reduction at 100 mA/cm² from this resistance change alone?",
+      "answer": "At 100 mA/cm² (0.1 A/cm²), the ohmic overpotential reduction is (1.85 - 1.42) Ω·cm² × 0.1 A/cm² = 0.043 V = 43 mV. This directly contributes to the observed VE improvement from 82.1% to 86.2%.",
+      "difficulty": "L4",
+      "tested_fact_id": "DOC04_FACT_018",
+      "reasoning": "Requires applying Ohm's law (η = iR) to compute the overpotential change from the resistance change at a given current density."
+    },
+    {
+      "question_id": "DOC04_QA_020",
+      "question": "What is the primary degradation mechanism at 3.0 mol/L vanadium and how does it affect coulombic efficiency over cycling?",
+      "answer": "The primary degradation mechanism is V(V) precipitation at the positive electrode, which begins after approximately 72 hours of continuous cycling at 25°C. This precipitation reduces the available active material and likely alters the local electrode environment, causing CE to decline from an initial 95.8% to 89.3% over 50 cycles. The instability arises because 3.0 mol/L exceeds the practical solubility limit of V(V) species in 3.0 mol/L H₂SO₄ at room temperature.",
+      "difficulty": "L3",
+      "tested_fact_id": "DOC04_FACT_007",
+      "reasoning": "Requires identifying the degradation mechanism (precipitation), its location (positive electrode), timing (72 hours), and quantitative impact (CE drop from 95.8% to 89.3%)."
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "stress_id": "DOC04_STRESS_001",
+      "type": "parameter_binding",
+      "description": "Energy efficiency of 83.5% is specifically for 1.6 mol/L vanadium at 100 mA/cm² and 40 mL/min—not a universal claim about 1.6 mol/L vanadium under all conditions.",
+      "trigger_phrases": [
+        "1.6 mol/L vanadium efficiency",
+        "optimal vanadium concentration EE"
+      ],
+      "canonical_context": "1.6 mol/L vanadium, 3.0 mol/L H₂SO₄, 40 mL/min, 100 mA/cm²"
+    },
+    {
+      "stress_id": "DOC04_STRESS_002",
+      "type": "parameter_binding",
+      "description": "The optimal flow rate varies with current density: 20 mL/min at 50 mA/cm², 40 mL/min at 100 mA/cm², 60 mL/min at 200 mA/cm². Claiming '40 mL/min is optimal' without specifying current density would be misleading.",
+      "trigger_phrases": [
+        "optimal flow rate",
+        "best flow rate for VRFB"
+      ],
+      "canonical_context": "current-density-dependent: 20/40/60 mL/min for 50/100/200 mA/cm²"
+    },
+    {
+      "stress_id": "DOC04_STRESS_003",
+      "type": "semantic_distinction",
+      "description": "Theoretical volumetric energy density (25.7 Wh/L at 1.6 mol/L) must be distinguished from practical energy density (20.3 Wh/L under stated conditions). These are different metrics that should not be conflated.",
+      "trigger_phrases": [
+        "energy density at 1.6 mol/L",
+        "VRFB energy density"
+      ],
+      "canonical_context": "theoretical vs practical energy density distinction"
+    },
+    {
+      "stress_id": "DOC04_STRESS_004",
+      "type": "semantic_distinction",
+      "description": "'Vanadium concentration' and 'sulfuric acid concentration' are distinct compositional parameters. Confusing which species' concentration is being discussed leads to misinterpretation of the non-monotonic acid effect.",
+      "trigger_phrases": [
+        "concentration effect",
+        "high concentration reduces efficiency"
+      ],
+      "canonical_context": "must specify vanadium or H2SO4 concentration"
+    },
+    {
+      "stress_id": "DOC04_STRESS_005",
+      "type": "scope_restriction",
+      "description": "The 3.0 mol/L vanadium precipitation data was obtained at 25°C in 3.0 mol/L H₂SO₄. The stability limit would differ at different temperatures and acid concentrations.",
+      "trigger_phrases": [
+        "3.0 mol/L precipitation",
+        "vanadium solubility limit"
+      ],
+      "canonical_context": "25°C, 3.0 mol/L H₂SO₄, 72 hours continuous cycling"
+    },
+    {
+      "stress_id": "DOC04_STRESS_006",
+      "type": "causal_mechanism",
+      "description": "The non-monotonic H₂SO₄ effect has two distinct mechanisms: low acid suffers from ohmic losses (reducing VE), while high acid promotes HER (reducing CE). Attributing both effects to the same mechanism would be incorrect.",
+      "trigger_phrases": [
+        "high acid reduces efficiency",
+        "H₂SO₄ non-monotonic effect"
+      ],
+      "canonical_context": "low acid: ohmic loss → low VE; high acid: HER → low CE"
+    },
+    {
+      "stress_id": "DOC04_STRESS_007",
+      "type": "metric_specificity",
+      "description": "'Net system EE' (gross EE minus pumping penalty) differs from 'gross EE' (electrochemical only). The optimal flow rate differs depending on which metric is used: gross EE continues to increase with flow rate while net EE peaks and declines.",
+      "trigger_phrases": [
+        "energy efficiency vs flow rate",
+        "optimal flow rate for EE"
+      ],
+      "canonical_context": "net system EE includes pumping penalty; gross EE does not"
+    },
+    {
+      "stress_id": "DOC04_STRESS_008",
+      "type": "semantic_distinction",
+      "description": "'Mass transfer' refers to the transport of reactants to the electrode surface (characterized by mass-transfer coefficient), while 'concentration polarization' refers to the resulting overpotential from insufficient mass transfer. These are cause and effect, not synonyms.",
+      "trigger_phrases": [
+        "mass transfer effect",
+        "concentration polarization effect"
+      ],
+      "canonical_context": "mass transfer coefficient (k_m) causes concentration polarization overpotential (η_cp)"
+    },
+    {
+      "stress_id": "DOC04_STRESS_009",
+      "type": "parameter_binding",
+      "description": "The pumping power values (12 mW at 10 mL/min to 300 mW at 100 mL/min) are specific to the tested cell with 25 cm² active area and serpentine flow fields. Different cell geometries would yield different absolute values.",
+      "trigger_phrases": [
+        "pumping power at 100 mL/min",
+        "pumping loss percentage"
+      ],
+      "canonical_context": "25 cm² cell, serpentine flow field, carbon felt electrode"
+    },
+    {
+      "stress_id": "DOC04_STRESS_010",
+      "type": "semantic_distinction",
+      "description": "'Energy density' (in Wh/L) is a property of the electrolyte and cell voltage, while 'energy efficiency' (in %) is a property of the round-trip conversion process. These are fundamentally different metrics with different units that should not be confused.",
+      "trigger_phrases": [
+        "high energy",
+        "energy performance"
+      ],
+      "canonical_context": "energy density [Wh/L] vs energy efficiency [%]—different physical quantities"
+    },
+    {
+      "stress_id": "DOC04_STRESS_011",
+      "type": "scope_restriction",
+      "description": "The 'best balanced performance' designation (1.6 mol/L V, 4.0 mol/L H₂SO₄, 40 mL/min, 100 mA/cm²) applies within the tested parameter space. Untested combinations outside these ranges might perform better.",
+      "trigger_phrases": [
+        "optimal electrolyte composition",
+        "best VRFB configuration"
+      ],
+      "canonical_context": "optimal within tested range: V 1.2–2.0 mol/L, H₂SO₄ 2.0–5.0 mol/L, flow 10–100 mL/min"
+    },
+    {
+      "stress_id": "DOC04_STRESS_012",
+      "type": "causal_mechanism",
+      "description": "The viscosity-mediated coupling between vanadium concentration and pumping loss means that optimal concentration and optimal flow rate cannot be determined independently. Optimizing one while holding the other fixed leads to suboptimal system performance.",
+      "trigger_phrases": [
+        "independent optimization",
+        "optimize concentration and flow"
+      ],
+      "canonical_context": "coupled parameters: high V concentration → high viscosity → higher pumping → lower optimal flow rate"
+    }
+  ]
+}

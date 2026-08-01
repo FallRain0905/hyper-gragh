@@ -1,0 +1,132 @@
+\section{Case Study I: Redox Flow Battery}
+\label{sec:case_flow_battery}
+
+This section presents the first domain instantiation of the Hyper-ChE framework introduced in Section~\ref{sec:framework}. We select redox flow batteries (RFBs) as the target domain because RFB research exhibits pronounced \emph{multi-variable combination-driven} characteristics: battery performance metrics (coulombic efficiency, voltage efficiency, energy efficiency) depend on the synergistic interplay of electrolyte composition, electrode material, membrane material, current density, and temperature. No single parameter carries meaningful interpretive value outside its specific system--condition context, making this domain an ideal testbed for evaluating whether hypergraph structures can preserve condition--result integrity more effectively than pairwise decomposition.
+
+\subsection{Domain Setup and Knowledge Base Statistics}
+\label{subsec:flow_battery_setup}
+
+The experimental corpus comprises 50 academic papers covering six mainstream RFB technology routes: all-vanadium redox flow batteries (VRFB), iron--chromium redox flow batteries (ICRFB), zinc-based flow batteries, soluble lead--acid flow batteries, organic flow batteries, and polysulfide--bromine flow batteries. Following text parsing and chunking preprocessing, 664 text chunks were extracted as basic units for knowledge extraction. Table~\ref{tab:flow_battery_kb} summarizes the knowledge base construction statistics.
+
+\begin{table}[htbp]
+\centering
+\caption{Knowledge base construction statistics for the redox flow battery domain.}
+\label{tab:flow_battery_kb}
+\begin{tabular}{@{}llp{6.5cm}@{}}
+\toprule
+\textbf{Item} & \textbf{Count} & \textbf{Description} \\
+\midrule
+Documents & 50 & Redox flow battery domain literature \\
+Text chunks & 664 & Basic extraction units after parsing and segmentation \\
+Entity nodes & 9,970 & Active species, performance metrics, conditions, systems, electrodes, membranes, etc. \\
+Total relations/hyperedges & 12,987 & Including low-order relations, high-order hyperedges, and a small number of single-node/self-relations \\
+Low-order relations & 10,262 & Binary relations with cardinality $=2$ \\
+High-order relations/hyperedges & 2,715 & Ternary and higher-order relations with cardinality $\geq 3$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The knowledge organization in RFB literature centers not on abstract ``material'' concepts but on \emph{experimental fact units} spanning system--active species/electrolyte--membrane/electrode--operating conditions--performance metrics--degradation mechanisms. This organizational pattern creates extensive higher-order relational structure: the 2,715 high-order hyperedges (20.9\% of all relations) connect up to 20 entities within a single experimental fact, encoding multi-variable contexts that resist faithful representation through pairwise edges alone.
+
+Both retrieval systems share the identical entity node set, yet differ fundamentally in relational representation. Hyper-ChE retains the capability of a single hyperedge to associate multiple entities simultaneously, whereas Graph-RAG projects all higher-order relations onto sets of binary edges. This structural divergence is the sole experimental variable separating the two systems and will drive the retrieval quality differentiation documented below.
+
+It should be noted that this case study relies exclusively on the 50 documents with completed embeddings. Consequently, the evaluation results reported herein constitute a \emph{subset validation} of how relational structure affects retrieval augmentation, rather than a comprehensive review of the RFB domain.
+
+\subsection{Problem Design and Difficulty Stratification}
+\label{subsec:flow_battery_problems}
+
+To enable systematic assessment across progressively complex retrieval demands, we designed 12 representative questions (Q1--Q12) spanning six cognitive difficulty levels. The questions were formulated in natural language without explicit mention of ``hypergraph'' to ensure unbiased retrieval conditions for both systems. Table~\ref{tab:difficulty_levels} presents the stratification framework.
+
+\begin{table}[htbp]
+\centering
+\caption{Problem difficulty stratification for the redox flow battery case study.}
+\label{tab:difficulty_levels}
+\begin{tabular}{@{}clclp{4.5cm}@{}}
+\toprule
+\textbf{Level} & \textbf{Problem Type} & \textbf{Questions} & \textbf{Core Cognitive Demand} \\
+\midrule
+Level 1 & Corpus coverage overview & Q1 & Single-dimension enumeration \\
+Level 2 & Local relation retrieval & Q2, Q3 & Binary relation identification \\
+Level 3 & Higher-order condition combination & Q4, Q5, Q6 & Multi-variable $\times$ performance matching \\
+Level 4 & Multi-material cross comparison & Q7, Q8 & Multi-entity $\times$ multi-metric matrix comparison \\
+Level 5 & Mechanistic explanation chain & Q9, Q10 & Causal chain propagation and attribution \\
+Level 6 & Strategy recommendation & Q11, Q12 & Cross-system induction and knowledge transfer \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+The stratification logic reflects a progression from fact retrieval to conditional reasoning and cross-domain synthesis. Level~1--2 problems depend primarily on single-point or binary information, which binary graphs can still partially accommodate. Level~3--6 problems, however, inherently demand that the retrieval system recall multiple \emph{co-constrained variables as an integrated unit}---a requirement that maps directly to the hypergraph's structural advantage in multi-ary co-occurrence preservation.
+
+\subsection{Quantitative Retrieval Comparison}
+\label{subsec:flow_battery_quantitative}
+
+Table~\ref{tab:retrieval_comparison} reports the retrieval counts for all 12 questions across both systems.
+
+\begin{table}[htbp]
+\centering
+\caption{Retrieval count comparison between Hyper-ChE and Graph-RAG across 12 questions in the redox flow battery case study.}
+\label{tab:retrieval_comparison}
+\begin{tabular}{@{}llcccp{4.8cm}@{}}
+\toprule
+\textbf{Q} & \textbf{Topic} & \textbf{Hyper-ChE} & \textbf{Graph-RAG} & \textbf{Key Difference} \\
+ & & (hyperedges/entities) & (edges/entities) & \\
+\midrule
+Q1 & Corpus overview & $\geq$99 / 62 & 50 / 1 & Hyper-ChE covers more complete system--material--condition combinations \\
+Q2 & Electrode modification & 100 / 60 & 41 / --- & Hyper-ChE better organizes modification methods with performance metrics \\
+Q3 & Electrolyte role & 92 / 61 & 43 / 1 & Hyper-ChE better distinguishes active species, supporting electrolytes, and additives \\
+Q4 & High current density & 88 / 61 & 48 / 1 & Hyper-ChE preserves system--material--current density--efficiency combinations \\
+Q5 & VRFB variable effects & 99 / 66 & 48 / 7 & Hyper-ChE better connects concentration, temperature, current density with performance \\
+Q6 & ICRFB additive mechanism & 99 / 62 & 50 / 4 & Hyper-ChE better organizes additives, active species, HER, and Cr kinetics \\
+Q7 & Membrane comparison & 114 / 62 & 51 / 2 & Hyper-ChE better preserves crossover--conductivity--efficiency tradeoffs \\
+Q8 & Carbon electrode comparison & 101 / 63 & 47 / 5 & Hyper-ChE better links electrode structure, wettability, and rate capability \\
+Q9 & Zinc dendrite mechanism & $\geq$99 / 66 & 39 / --- & Hyper-ChE provides more complete coverage of dendrites, morphology, additives, cycling stability \\
+Q10 & Soluble lead degradation & 105 / 63 & 47 / 1 & Hyper-ChE better organizes PbO$_2$ passivation, side reactions, and lifetime metrics \\
+Q11 & High EE strategies & 124 / 65 & 41 / 6 & Hyper-ChE better supports cross-system induction of membrane, electrode, electrolyte, and operating strategies \\
+Q12 & Experimental directions & 115 / 61 & 53 / --- & Hyper-ChE recommendations contain more complete variable combinations and control experiments \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+On average, Hyper-ChE recalled approximately 103 hyperedges and 63 entities per query, whereas Graph-RAG recalled only about 46 edges. More critically, Graph-RAG returned merely 1 entity for 4 questions (Q1, Q3, Q4, Q10) and showed no entities at all for 3 questions (Q2, Q9, Q12). In 6 out of 12 questions, the Graph-RAG entity count did not exceed 2, revealing extreme sparsity in entity coverage.
+
+This sparsity has a structural explanation rooted in Graph-RAG's retrieval mechanism. In the baseline implementation, the system retrieves binary edges primarily through relation vector search and then back-traces from edges to entities. When the knowledge most relevant to a query is stored in higher-order hyperedges, these hyperedges are filtered out during the binary-edge projection phase. Consequently, the entities that would have been reachable only through higher-order connections become inaccessible, producing the observed retrieval collapse where dozens of edges yield only a single entity or none at all. The quantitative gap in edge counts (103 vs.~46) thus understates the true structural deficit: the retrieved binary edges are \emph{fragments} of decomposed experimental facts, lacking the joint constraint that originally defined the experimental conclusion.
+
+\subsection{Qualitative Analysis of Representative Questions}
+\label{subsec:flow_battery_qualitative}
+
+We now examine three representative questions in depth to elucidate \emph{why} Hyper-ChE produces substantively richer responses and \emph{why} Graph-RAG fails at specific cognitive levels.
+
+\subsubsection{Q4: High Current Density Conditions (Level~3)}
+
+Q4 asks for complete experimental configurations that simultaneously achieve high coulombic efficiency, voltage efficiency, and energy efficiency at current densities $\geq 100$~mA/cm$^2$. This query spans four variable dimensions---system type, membrane material, current density tier, and efficiency values---and requires precise matching of the ``high current density $\times$ high efficiency'' condition combination.
+
+Hyper-ChE responds with quadruples of the form (system--membrane--current density--efficiency): in the VRFB system, SPI at 100~mA/cm$^2$ (CE 96.83\%, EE 79.47\%), SNPBI-1.42 at 100~mA/cm$^2$, SPEEK/APK at 100~mA/cm$^2$ (EE 81.3\%), S/MWCNT-NH$_2$-2 at 100~mA/cm$^2$ (EE 82.04\%), and SPTPC-2.59 at 280~mA/cm$^2$ (EE 80\%). These combinations are preserved because OPERATION hyperedges in Hyper-ChE embed all four variables within a single relational structure; retrieval of one variable automatically brings the co-constrained others into context.
+
+Graph-RAG, despite recalling 48 binary edges, reaches only 1 entity node. The response confirms only two specific combinations (SPTPC at 280~mA/cm$^2$ and SPI at 100~mA/cm$^2$) and provides vague generalizations for the remainder. The reason is structurally transparent: when the OPERATION hyperedges encoding system--membrane--current density--efficiency combinations are decomposed into pairwise fragments, the joint constraint dissipates across independent A--B, B--C, and C--D edges. The retrieval system can no longer reconstruct which membrane belonged with which current density and which efficiency value, because these co-constraints were never stored as unified relational units.
+
+\subsubsection{Q6: ICRFB Additive Mechanisms (Level~3)}
+
+Q6 represents a higher-order condition combination problem involving five variable dimensions: additive morphology, electrode substrate, electrolyte environment, catalytic effect, and efficiency performance. The query additionally requires distinguishing the functional differences among different Bi morphologies.
+
+Hyper-ChE's response demonstrates fine-grained organizational capability over complex knowledge structures. It systematically classifies five distinct bismuth morphologies and their corresponding electrode--electrolyte configurations, providing specific efficiency values as evidentiary support for each category. This structured output is possible because COMPOSITION and OPERATION hyperedges in Hyper-ChE retain the full n-ary context of additive--electrode--electrolyte--performance associations; the retrieval process recovers complete experimental fact units rather than disconnected entity pairs.
+
+Graph-RAG's response, by contrast, is structurally limited. The system reports ``insufficient data to generate a detailed answer.'' This failure stems directly from the binary projection bottleneck: the five-variable experimental facts that would answer this query are stored as higher-order hyperedges in the original knowledge base. When projected to binary edges, the additive--electrode--electrolyte--performance associations fragment into pairwise stubs that no longer carry sufficient joint context to support a coherent multi-dimensional answer.
+
+\subsubsection{Q11: Comprehensive Strategies for High EE at High Current Density (Level~6)}
+
+Q11 is the most cognitively demanding query in the case study, requiring cross-system synthesis of multiple technical pathways across VRFB, ICRFB, and zinc-based systems. The question asks not merely for factual recall but for \emph{evaluative induction}: which strategies are supported by the strongest evidence in the current corpus, and how do they compare in terms of experimental viability?
+
+Hyper-ChE's response exhibits genuine cross-system knowledge synthesis. It organizes strategies along three dimensions---membrane optimization (Nafion alternatives, PBI series, SPNBI and other novel membranes), electrode modification (C-C/MC-C/BMC-C gradient optimization, nitrogen doping, carbon nanotube composites), and electrolyte optimization (acid/salt system selection, additive tuning)---with each dimension supported by specific material--condition--efficiency evidence chains. Crucially, the response can also \emph{compare evidence density} across strategy classes: membrane optimization and electrode modification are most strongly supported by experimental data in the corpus, while electrolyte optimization evidence is more dispersed but still actionable. This meta-evaluative capability arises because COMPARISON hyperedges in Hyper-ChE preserve the full (strategy--condition--performance) context of cross-material evaluations, enabling the system to aggregate and rank strategic options based on the richness of their supporting evidence.
+
+Graph-RAG's response operates at a markedly lower cognitive tier. It mentions a single membrane material and a general trend of efficiency decline at high current density, offering neither cross-system comparison nor evidence-supported recommendations. The binary graph simply lacks the relational infrastructure to sustain the multi-entity, multi-metric, cross-system reasoning that Level~6 questions demand.
+
+\subsection{Key Findings from the Flow Battery Case}
+\label{subsec:flow_battery_findings}
+
+The quantitative and qualitative evidence from this case study supports three principal conclusions regarding the value of hypergraph knowledge representation for scientific literature retrieval.
+
+\textbf{Condition integrity.} In Level~3 and above questions, answer quality critically depends on whether multiple experimental condition parameters are recalled \emph{as an integrated unit}. Hyper-ChE's OPERATION and COMPOSITION hyperedges preserve system type, material name, current density, and efficiency value within a single relational structure, thereby maintaining the coherence of condition combinations that binary decomposition would fragment.
+
+\textbf{Contextual explainability.} Hyper-ChE retrieves not only factual data but also mechanistic context organized through DEGRADATION and COMPARISON hyperedges. The retrieved context thus carries a dual-layer structure of ``data + mechanism'' that supports more interpretable and scientifically grounded responses.
+
+\textbf{Cross-system association.} At Level~6, Hyper-ChE's higher-order hyperedges serve as \emph{semantic bridges} across different RFB systems, enabling the cross-system inductive reasoning that pairwise graphs cannot sustain. This capability is essential for strategy recommendation and knowledge transfer tasks where insights must be aggregated across disparate experimental contexts.

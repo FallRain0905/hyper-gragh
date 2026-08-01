@@ -1,0 +1,830 @@
+{
+  "doc_id": "DOC02",
+  "doc_title": "Polybenzimidazole-Derived and Non-Fluorinated Hydrocarbon Membranes for Vanadium Redox Flow Batteries: Structure–Property–Performance Relationships",
+  "domain": "chemical_engineering",
+  "sub_domain": "polymer_membranes",
+  "application": "vanadium_redox_flow_battery",
+  "doc_metadata": {
+    "word_count": 3250,
+    "section_count": 6,
+    "table_count": 1,
+    "figure_count": 0
+  },
+  "gold_efus": [
+    {
+      "canonical_id": "DOC02_EFU_001",
+      "efu_type": "COMPOSITION",
+      "entity": "PBI membrane",
+      "property": "ion exchange capacity",
+      "value": "1.2 mmol/g",
+      "value_numeric": 1.2,
+      "unit": "mmol/g",
+      "evidence_text": "The pristine PBI membrane exhibited the lowest ion exchange capacity of 1.2 mmol/g, consistent with its non-sulfonated aromatic structure where proton transport relies primarily on the intrinsic imidazole groups and absorbed acid within the membrane matrix.",
+      "location": "Section 2.1, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_002",
+      "efu_type": "COMPOSITION",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "ion exchange capacity",
+      "value": "1.42 mmol/g",
+      "value_numeric": 1.42,
+      "unit": "mmol/g",
+      "evidence_text": "The SNPBI-1.42 membrane, synthesized through controlled sulfonation of naphthyl-substituted PBI, achieved an ion exchange capacity of 1.42 mmol/g—representing a moderate increase of 18.3% relative to the unmodified PBI.",
+      "location": "Section 2.1, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_003",
+      "efu_type": "COMPOSITION",
+      "entity": "SPEEK/APK composite membrane",
+      "property": "ion exchange capacity",
+      "value": "1.8 mmol/g",
+      "value_numeric": 1.8,
+      "unit": "mmol/g",
+      "evidence_text": "The SPEEK/APK composite membrane, prepared by blending sulfonated poly(ether ether ketone) with an amino-phenyl ketone crosslinker, displayed an intermediate ion exchange capacity of 1.8 mmol/g.",
+      "location": "Section 2.1, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_004",
+      "efu_type": "COMPOSITION",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "ion exchange capacity",
+      "value": "2.59 mmol/g",
+      "value_numeric": 2.59,
+      "unit": "mmol/g",
+      "evidence_text": "The SPTPC-2.59 membrane, featuring a densely sulfonated triphenyl-containing poly(arylene ether) backbone with the highest degree of sulfonation among the four materials, exhibited the highest ion exchange capacity of 2.59 mmol/g—more than double that of the pristine PBI.",
+      "location": "Section 2.1, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_005",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "area resistance",
+      "value": "2.85 Ω·cm²",
+      "value_numeric": 2.85,
+      "unit": "Ω·cm²",
+      "condition": "measured in 2.0 M H₂SO₄ at room temperature",
+      "evidence_text": "The pristine PBI displayed the highest area resistance of 2.85 Ω·cm², reflecting the limited density of proton-conducting functional groups within its dense aromatic matrix.",
+      "location": "Section 2.1, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_006",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "area resistance",
+      "value": "1.42 Ω·cm²",
+      "value_numeric": 1.42,
+      "unit": "Ω·cm²",
+      "condition": "measured in 2.0 M H₂SO₄ at room temperature",
+      "evidence_text": "The SNPBI-1.42 membrane demonstrated a substantially reduced area resistance of 1.42 Ω·cm²—exactly half the value measured for pristine PBI—indicating that the introduction of sulfonic acid groups on the naphthyl substituents significantly enhanced proton transport while preserving the overall chain rigidity.",
+      "location": "Section 2.1, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_007",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "area resistance",
+      "value": "0.31 Ω·cm²",
+      "value_numeric": 0.31,
+      "unit": "Ω·cm²",
+      "condition": "measured in 2.0 M H₂SO₄ at room temperature",
+      "evidence_text": "The SPTPC-2.59 membrane achieved the lowest area resistance of 0.31 Ω·cm², representing a 9.2-fold reduction compared to the unmodified PBI.",
+      "location": "Section 2.1, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_008",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "swelling ratio",
+      "value": "3.2%",
+      "value_numeric": 3.2,
+      "unit": "%",
+      "condition": "in 2.0 M H₂SO₄ solution",
+      "evidence_text": "The pristine PBI exhibited the lowest swelling ratio of 3.2%, consistent with its highly rigid backbone structure and extensive interchain hydrogen bonding.",
+      "location": "Section 2.1, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_009",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "swelling ratio",
+      "value": "5.8%",
+      "value_numeric": 5.8,
+      "unit": "%",
+      "condition": "in 2.0 M H₂SO₄ solution",
+      "evidence_text": "The SNPBI-1.42 membrane showed a modestly increased swelling ratio of 5.8%, suggesting that the naphthyl sulfonation preserved the overall structural compactness despite the introduction of additional hydrophilic sulfonic acid groups.",
+      "location": "Section 2.1, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_010",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "swelling ratio",
+      "value": "18.7%",
+      "value_numeric": 18.7,
+      "unit": "%",
+      "condition": "in 2.0 M H₂SO₄ solution",
+      "evidence_text": "The SPTPC-2.59 membrane exhibited the highest swelling ratio of 18.7%, which was 5.8 times greater than that of the pristine PBI.",
+      "location": "Section 2.1, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_011",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "vanadium permeability",
+      "value": "0.8 × 10⁻⁷ cm²/s",
+      "value_numeric": 0.8,
+      "unit": "×10⁻⁷ cm²/s",
+      "condition": "diaphragm diffusion cell with 1.5 M VOSO₄ in 3.0 M H₂SO₄ as feed",
+      "evidence_text": "The pristine PBI demonstrated the lowest vanadium permeability of 0.8 × 10⁻⁷ cm²/s, underscoring the exceptional ion-blocking capability of its densely packed aromatic structure.",
+      "location": "Section 2.1, paragraph 4",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_012",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "vanadium permeability",
+      "value": "1.2 × 10⁻⁷ cm²/s",
+      "value_numeric": 1.2,
+      "unit": "×10⁻⁷ cm²/s",
+      "condition": "diaphragm diffusion cell with 1.5 M VOSO₄ in 3.0 M H₂SO₄ as feed",
+      "evidence_text": "The SNPBI-1.42 membrane exhibited a slightly elevated vanadium permeability of 1.2 × 10⁻⁷ cm²/s, representing a 50% increase relative to the unmodified PBI but maintaining a highly selective barrier.",
+      "location": "Section 2.1, paragraph 4",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_013",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "vanadium permeability",
+      "value": "8.5 × 10⁻⁷ cm²/s",
+      "value_numeric": 8.5,
+      "unit": "×10⁻⁷ cm²/s",
+      "condition": "diaphragm diffusion cell with 1.5 M VOSO₄ in 3.0 M H₂SO₄ as feed",
+      "evidence_text": "The SPTPC-2.59 membrane displayed the highest vanadium permeability of 8.5 × 10⁻⁷ cm²/s, exceeding that of the pristine PBI by more than one order of magnitude.",
+      "location": "Section 2.1, paragraph 4",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_014",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "Coulombic efficiency",
+      "value": "98.6%",
+      "value_numeric": 98.6,
+      "unit": "%",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "At a current density of 80 mA/cm², the pristine PBI membrane achieved a Coulombic efficiency of 98.6%, a voltage efficiency of 83.6%, and an energy efficiency of 82.4%.",
+      "location": "Section 2.2, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_015",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "energy efficiency",
+      "value": "91.2%",
+      "value_numeric": 91.2,
+      "unit": "%",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "The SNPBI-1.42 membrane demonstrated a Coulombic efficiency of 97.8%, a voltage efficiency of 93.3%, and an energy efficiency of 91.2% at the same 80 mA/cm² current density.",
+      "location": "Section 2.2, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_016",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "Coulombic efficiency",
+      "value": "92.1%",
+      "value_numeric": 92.1,
+      "unit": "%",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "The SPTPC-2.59 membrane, despite possessing the lowest area resistance, exhibited the lowest Coulombic efficiency of 92.1% and a voltage efficiency of 95.1%, yielding an energy efficiency of 87.6% at 80 mA/cm².",
+      "location": "Section 2.2, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_017",
+      "efu_type": "COMPARISON",
+      "entity": "SNPBI-1.42 vs PBI membranes",
+      "property": "energy efficiency difference",
+      "value": "8.8 percentage points advantage for SNPBI-1.42",
+      "value_numeric": 8.8,
+      "unit": "percentage points",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "The slight decrease in Coulombic efficiency relative to pristine PBI (by 0.8 percentage points) was accompanied by a substantial improvement in voltage efficiency (by 9.7 percentage points), resulting in a net gain of 8.8 percentage points in energy efficiency.",
+      "location": "Section 2.2, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_018",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "capacity fade rate",
+      "value": "0.012% per cycle",
+      "value_numeric": 0.012,
+      "unit": "% per cycle",
+      "condition": "80 mA/cm², 500 continuous cycles",
+      "evidence_text": "The SNPBI-1.42 membrane demonstrated superior capacity retention, with the initial discharge capacity of 1320 mAh decreasing to 1221 mAh after 500 cycles, yielding a capacity retention of 92.5% and the lowest fade rate among all tested membranes at 0.012% per cycle.",
+      "location": "Section 2.3, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_019",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "capacity fade rate",
+      "value": "0.031% per cycle",
+      "value_numeric": 0.031,
+      "unit": "% per cycle",
+      "condition": "80 mA/cm², 500 continuous cycles",
+      "evidence_text": "The SPTPC-2.59 membrane exhibited the poorest long-term capacity retention, with the initial discharge capacity of 1340 mAh falling to 1132 mAh over 500 cycles, representing a capacity retention of only 84.5% and the highest fade rate of 0.031% per cycle.",
+      "location": "Section 2.3, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_020",
+      "efu_type": "DEGRADATION_CHAIN",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "post-cycling IEC retention",
+      "value": "84.2%",
+      "value_numeric": 84.2,
+      "unit": "%",
+      "condition": "after 500 cycles at 80 mA/cm²",
+      "evidence_text": "The SNPBI-1.42 membrane retained 96.3% of its initial ion exchange capacity after cycling, compared to 89.7% for the pristine PBI, 93.1% for the SPEEK/APK composite, and 84.2% for the SPTPC-2.59 membrane.",
+      "location": "Section 2.3, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_021",
+      "efu_type": "DEGRADATION_CHAIN",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "post-cycling IEC retention",
+      "value": "96.3%",
+      "value_numeric": 96.3,
+      "unit": "%",
+      "condition": "after 500 cycles at 80 mA/cm²",
+      "evidence_text": "The SNPBI-1.42 membrane retained 96.3% of its initial ion exchange capacity after cycling, compared to 89.7% for the pristine PBI, 93.1% for the SPEEK/APK composite, and 84.2% for the SPTPC-2.59 membrane.",
+      "location": "Section 2.3, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_022",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "entity": "SPTPC-2.59 membrane",
+      "property": "capacity fade mechanism",
+      "value": "vanadium crossover and mechanical fatigue from swelling",
+      "condition": "80 mA/cm², 500 cycles",
+      "evidence_text": "In the SPTPC-2.59 membrane, the rapid capacity fade of 0.031% per cycle is attributed primarily to the substantial vanadium crossover (8.5 × 10⁻⁷ cm²/s), which leads to progressive electrolyte imbalance, accumulation of vanadium species in the opposing half-cell, and accelerated self-discharge reactions that compromise the long-term capacity. The elevated swelling ratio of 18.7% in this membrane may also contribute to gradual mechanical degradation and the formation of microscopic defects that further exacerbate vanadium permeation over extended cycling.",
+      "location": "Section 2.3, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_023",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "entity": "PBI membrane",
+      "property": "capacity fade mechanism",
+      "value": "oxidative degradation of imidazole rings by VO₂⁺ species",
+      "condition": "80 mA/cm², 500 cycles",
+      "evidence_text": "In the pristine PBI membrane, the capacity fade rate of 0.028% per cycle, despite the lowest vanadium permeability, is associated with the progressive oxidative degradation of the imidazole rings by VO₂⁺ species, which gradually reduces the proton conductivity and increases the polarization losses over hundreds of cycles.",
+      "location": "Section 2.3, paragraph 2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_024",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "entity": "PBI and SPTPC-2.59 membranes",
+      "property": "oxidative degradation indicator",
+      "value": "new carbonyl absorption bands at 1720 cm⁻¹",
+      "condition": "after 500 charge–discharge cycles",
+      "evidence_text": "Fourier-transform infrared spectroscopy of the cycled membranes indicated the appearance of new carbonyl absorption bands at 1720 cm⁻¹ in the pristine PBI and SPTPC-2.59 samples, consistent with oxidative cleavage of the aromatic ether linkages, while the SNPBI-1.42 membrane showed minimal changes in its infrared signature after 500 cycles.",
+      "location": "Section 2.3, paragraph 4",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_025",
+      "efu_type": "COMPARISON",
+      "entity": "all four membranes",
+      "property": "energy efficiency ranking",
+      "value": "SNPBI-1.42 > SPEEK/APK > SPTPC-2.59 > PBI",
+      "value_numeric": [91.2, 90.4, 87.6, 82.4],
+      "unit": "%",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "The SNPBI-1.42 membrane achieves the highest energy efficiency of 91.2% at 80 mA/cm², outperforming both the pristine PBI (82.4%) and the SPTPC-2.59 (87.6%) at the same current density.",
+      "location": "Abstract and Section 2.2",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_026",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SPEEK/APK composite membrane",
+      "property": "capacity fade rate",
+      "value": "0.018% per cycle",
+      "value_numeric": 0.018,
+      "unit": "% per cycle",
+      "condition": "80 mA/cm², 500 continuous cycles",
+      "evidence_text": "The SPEEK/APK composite membrane showed an initial discharge capacity of 1285 mAh declining to 1172 mAh after 500 cycles, corresponding to a capacity retention of 91.2% and a fade rate of 0.018% per cycle.",
+      "location": "Section 2.3, paragraph 1",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_027",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "energy efficiency at 200 mA/cm²",
+      "value": "83.2%",
+      "value_numeric": 83.2,
+      "unit": "%",
+      "condition": "200 mA/cm² current density",
+      "evidence_text": "At the highest tested current density of 200 mA/cm², the energy efficiency values reached 72.5%, 83.2%, 78.6%, and 75.8% for PBI, SNPBI-1.42, SPEEK/APK, and SPTPC-2.59, respectively.",
+      "location": "Section 2.2, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_028",
+      "efu_type": "DESIGN_SUMMARY",
+      "entity": "non-fluorinated VRFB membranes",
+      "property": "optimal IEC design range",
+      "value": "1.3 to 1.6 mmol/g",
+      "value_numeric": [1.3, 1.6],
+      "unit": "mmol/g",
+      "evidence_text": "The optimal ion exchange capacity range for non-fluorinated membranes appears to fall between 1.3 and 1.6 mmol/g, where the balance between proton transport efficiency and vanadium selectivity is most favorable.",
+      "location": "Section 3.3, paragraph 1",
+      "certainty": "inferred"
+    },
+    {
+      "canonical_id": "DOC02_EFU_029",
+      "efu_type": "DESIGN_SUMMARY",
+      "entity": "non-fluorinated VRFB membranes",
+      "property": "maximum recommended swelling ratio",
+      "value": "below approximately 8%",
+      "value_numeric": 8.0,
+      "unit": "%",
+      "evidence_text": "The swelling ratio serves as a practical indicator of long-term mechanical stability and should be maintained below approximately 8% for membranes intended for extended VRFB operation.",
+      "location": "Section 3.3, paragraph 3",
+      "certainty": "inferred"
+    },
+    {
+      "canonical_id": "DOC02_EFU_030",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "energy efficiency at 40 mA/cm²",
+      "value": "85.1%",
+      "value_numeric": 85.1,
+      "unit": "%",
+      "condition": "40 mA/cm² current density",
+      "evidence_text": "At 40 mA/cm², the energy efficiency values were 85.1%, 93.6%, 93.2%, and 91.4% for PBI, SNPBI-1.42, SPEEK/APK, and SPTPC-2.59, respectively.",
+      "location": "Section 2.2, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_031",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "PBI membrane",
+      "property": "energy efficiency at 120 mA/cm²",
+      "value": "80.3%",
+      "value_numeric": 80.3,
+      "unit": "%",
+      "condition": "120 mA/cm² current density",
+      "evidence_text": "As the current density increased to 120 mA/cm², the energy efficiency values decreased to 80.3%, 89.4%, 87.1%, and 84.2%, respectively.",
+      "location": "Section 2.2, paragraph 3",
+      "certainty": "explicit"
+    },
+    {
+      "canonical_id": "DOC02_EFU_032",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "entity": "SNPBI-1.42 membrane",
+      "property": "voltage efficiency",
+      "value": "93.3%",
+      "value_numeric": 93.3,
+      "unit": "%",
+      "condition": "80 mA/cm² current density",
+      "evidence_text": "The SNPBI-1.42 membrane demonstrated a Coulombic efficiency of 97.8%, a voltage efficiency of 93.3%, and an energy efficiency of 91.2% at the same 80 mA/cm² current density.",
+      "location": "Section 2.2, paragraph 2",
+      "certainty": "explicit"
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "DOC02_FACT_001",
+      "fact_statement": "The pristine PBI membrane has an ion exchange capacity of 1.2 mmol/g.",
+      "derivation_source": ["DOC02_EFU_001"],
+      "fact_category": "physicochemical_property",
+      "difficulty_level": 1
+    },
+    {
+      "fact_id": "DOC02_FACT_002",
+      "fact_statement": "The SNPBI-1.42 membrane has an ion exchange capacity of 1.42 mmol/g, which is 18.3% higher than pristine PBI.",
+      "derivation_source": ["DOC02_EFU_002"],
+      "fact_category": "physicochemical_property",
+      "difficulty_level": 1
+    },
+    {
+      "fact_id": "DOC02_FACT_003",
+      "fact_statement": "The SPTPC-2.59 membrane has the highest IEC (2.59 mmol/g) among the four tested membranes, more than double that of pristine PBI.",
+      "derivation_source": ["DOC02_EFU_004"],
+      "fact_category": "physicochemical_property",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_004",
+      "fact_statement": "The area resistance of PBI (2.85 Ω·cm²) is 9.2 times higher than that of SPTPC-2.59 (0.31 Ω·cm²).",
+      "derivation_source": ["DOC02_EFU_005", "DOC02_EFU_007"],
+      "fact_category": "transport_property",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_005",
+      "fact_statement": "The SNPBI-1.42 membrane has exactly half the area resistance of pristine PBI (1.42 vs 2.85 Ω·cm²).",
+      "derivation_source": ["DOC02_EFU_005", "DOC02_EFU_006"],
+      "fact_category": "transport_property",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_006",
+      "fact_statement": "The swelling ratio of SPTPC-2.59 (18.7%) is 5.8 times greater than that of pristine PBI (3.2%).",
+      "derivation_source": ["DOC02_EFU_008", "DOC02_EFU_010"],
+      "fact_category": "transport_property",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_007",
+      "fact_statement": "The vanadium permeability of SPTPC-2.59 (8.5 × 10⁻⁷ cm²/s) exceeds that of pristine PBI (0.8 × 10⁻⁷ cm²/s) by more than one order of magnitude.",
+      "derivation_source": ["DOC02_EFU_011", "DOC02_EFU_013"],
+      "fact_category": "transport_property",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_008",
+      "fact_statement": "The SNPBI-1.42 membrane achieves the highest energy efficiency (91.2%) at 80 mA/cm² among all tested membranes.",
+      "derivation_source": ["DOC02_EFU_015", "DOC02_EFU_025"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_009",
+      "fact_statement": "The SNPBI-1.42 membrane gains 8.8 percentage points in energy efficiency over pristine PBI at 80 mA/cm² due to a 9.7 percentage point improvement in voltage efficiency that outweighs a 0.8 percentage point Coulombic efficiency loss.",
+      "derivation_source": ["DOC02_EFU_017"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_010",
+      "fact_statement": "The SNPBI-1.42 membrane has the lowest capacity fade rate (0.012% per cycle) over 500 cycles at 80 mA/cm².",
+      "derivation_source": ["DOC02_EFU_018"],
+      "fact_category": "cycling_stability",
+      "difficulty_level": 2
+    },
+    {
+      "fact_id": "DOC02_FACT_011",
+      "fact_statement": "The SPTPC-2.59 membrane has the highest capacity fade rate (0.031% per cycle) despite having the lowest area resistance, indicating that low resistance does not guarantee good cycling stability.",
+      "derivation_source": ["DOC02_EFU_019", "DOC02_EFU_007"],
+      "fact_category": "cycling_stability",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_012",
+      "fact_statement": "The capacity fade rate ranking from lowest to highest is: SNPBI-1.42 (0.012%) < SPEEK/APK (0.018%) < PBI (0.028%) < SPTPC-2.59 (0.031%) per cycle at 80 mA/cm².",
+      "derivation_source": ["DOC02_EFU_018", "DOC02_EFU_019", "DOC02_EFU_026"],
+      "fact_category": "cycling_stability",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_013",
+      "fact_statement": "The SNPBI-1.42 membrane retained 96.3% of its initial IEC after 500 cycles, which is higher than PBI (89.7%), SPEEK/APK (93.1%), and SPTPC-2.59 (84.2%).",
+      "derivation_source": ["DOC02_EFU_020", "DOC02_EFU_021"],
+      "fact_category": "cycling_stability",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_014",
+      "fact_statement": "The rapid capacity fade of SPTPC-2.59 is attributed primarily to substantial vanadium crossover (8.5 × 10⁻⁷ cm²/s) leading to progressive electrolyte imbalance and self-discharge, with elevated swelling (18.7%) contributing to mechanical degradation.",
+      "derivation_source": ["DOC02_EFU_022"],
+      "fact_category": "degradation_mechanism",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_015",
+      "fact_statement": "Pristine PBI's capacity fade (0.028% per cycle) is caused by oxidative degradation of imidazole rings by VO₂⁺ species, not by vanadium crossover.",
+      "derivation_source": ["DOC02_EFU_023"],
+      "fact_category": "degradation_mechanism",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_016",
+      "fact_statement": "FTIR analysis showed new carbonyl absorption bands at 1720 cm⁻¹ in cycled PBI and SPTPC-2.59 membranes, consistent with oxidative cleavage of aromatic ether linkages, while SNPBI-1.42 showed minimal changes.",
+      "derivation_source": ["DOC02_EFU_024"],
+      "fact_category": "degradation_mechanism",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_017",
+      "fact_statement": "At 80 mA/cm², the energy efficiency ranking is SNPBI-1.42 (91.2%) > SPEEK/APK (90.4%) > SPTPC-2.59 (87.6%) > PBI (82.4%).",
+      "derivation_source": ["DOC02_EFU_025"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 3
+    },
+    {
+      "fact_id": "DOC02_FACT_018",
+      "fact_statement": "The SNPBI-1.42 membrane exhibits the most gradual decline in energy efficiency (10.4 percentage points) from 40 to 200 mA/cm², compared to PBI (12.6 pp) and SPTPC-2.59 (15.6 pp).",
+      "derivation_source": ["DOC02_EFU_027", "DOC02_EFU_030"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_019",
+      "fact_statement": "The optimal IEC range for non-fluorinated VRFB membranes is 1.3–1.6 mmol/g, as higher values increase vanadium permeability and lower values increase ohmic losses.",
+      "derivation_source": ["DOC02_EFU_028"],
+      "fact_category": "design_guideline",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_020",
+      "fact_statement": "Long-term cycling stability correlates more strongly with membrane swelling behavior than with any single transport parameter, and the swelling ratio should be maintained below approximately 8% for extended VRFB operation.",
+      "derivation_source": ["DOC02_EFU_029", "DOC02_EFU_022"],
+      "fact_category": "design_guideline",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_021",
+      "fact_statement": "The vanadium permeability of SNPBI-1.42 (1.2 × 10⁻⁷ cm²/s) is 50% higher than pristine PBI (0.8 × 10⁻⁷ cm²/s) but represents only 14% of the SPTPC-2.59 value (8.5 × 10⁻⁷ cm²/s).",
+      "derivation_source": ["DOC02_EFU_011", "DOC02_EFU_012", "DOC02_EFU_013"],
+      "fact_category": "transport_property",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_022",
+      "fact_statement": "The SNPBI-1.42 membrane outperforms all other membranes across all tested current densities (40–200 mA/cm²) in terms of energy efficiency, with the advantage becoming more pronounced at intermediate to high current densities (80–160 mA/cm²).",
+      "derivation_source": ["DOC02_EFU_015", "DOC02_EFU_027", "DOC02_EFU_030"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_023",
+      "fact_statement": "The Coulombic efficiency of pristine PBI (98.6%) is higher than SNPBI-1.42 (97.8%), SPEEK/APK (95.4%), and SPTPC-2.59 (92.1%) at 80 mA/cm², demonstrating that lower IEC generally yields higher Coulombic efficiency.",
+      "derivation_source": ["DOC02_EFU_014", "DOC02_EFU_015", "DOC02_EFU_016"],
+      "fact_category": "electrochemical_performance",
+      "difficulty_level": 4
+    },
+    {
+      "fact_id": "DOC02_FACT_024",
+      "fact_statement": "The rigid backbone modification strategy (SNPBI-1.42) outperforms both the polymer blending approach (SPEEK/APK) and the high-degree sulfonation approach (SPTPC-2.59) in terms of energy efficiency and cycling stability.",
+      "derivation_source": ["DOC02_EFU_015", "DOC02_EFU_018", "DOC02_EFU_019", "DOC02_EFU_026"],
+      "fact_category": "design_guideline",
+      "difficulty_level": 5
+    },
+    {
+      "fact_id": "DOC02_FACT_025",
+      "fact_statement": "Increasing IEC from 1.42 to 2.59 mmol/g reduces area resistance by 9.2× (from 1.42 to 0.31 Ω·cm²) but increases vanadium permeability by 7.1× (from 1.2 × 10⁻⁷ to 8.5 × 10⁻⁷ cm²/s), demonstrating a fundamental conductivity–selectivity trade-off in non-fluorinated membranes.",
+      "derivation_source": ["DOC02_EFU_006", "DOC02_EFU_007", "DOC02_EFU_012", "DOC02_EFU_013"],
+      "fact_category": "design_guideline",
+      "difficulty_level": 5
+    }
+  ],
+  "qa_pairs": [
+    {
+      "qa_id": "DOC02_QA_001",
+      "question": "What is the ion exchange capacity of the SNPBI-1.42 membrane?",
+      "answer": "1.42 mmol/g",
+      "difficulty_level": 1,
+      "required_facts": ["DOC02_FACT_002"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_002",
+      "question": "What is the area resistance of pristine PBI measured in 2.0 M H₂SO₄?",
+      "answer": "2.85 Ω·cm²",
+      "difficulty_level": 1,
+      "required_facts": ["DOC02_FACT_004"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_003",
+      "question": "Which membrane achieves the highest energy efficiency at 80 mA/cm²?",
+      "answer": "SNPBI-1.42 membrane, with 91.2% energy efficiency.",
+      "difficulty_level": 2,
+      "required_facts": ["DOC02_FACT_008"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_004",
+      "question": "What is the capacity fade rate of the SPTPC-2.59 membrane over 500 cycles at 80 mA/cm²?",
+      "answer": "0.031% per cycle",
+      "difficulty_level": 1,
+      "required_facts": ["DOC02_FACT_011"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_005",
+      "question": "What is the vanadium permeability of the SNPBI-1.42 membrane?",
+      "answer": "1.2 × 10⁻⁷ cm²/s",
+      "difficulty_level": 1,
+      "required_facts": ["DOC02_FACT_021"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_006",
+      "question": "How does the SNPBI-1.42 membrane achieve higher energy efficiency than pristine PBI despite slightly lower Coulombic efficiency?",
+      "answer": "The SNPBI-1.42 membrane gains 8.8 percentage points in energy efficiency because its voltage efficiency improves by 9.7 percentage points (from 83.6% to 93.3% at 80 mA/cm²), which far outweighs the small 0.8 percentage point decrease in Coulombic efficiency (from 98.6% to 97.8%). The reduced area resistance (1.42 vs 2.85 Ω·cm²) is the primary driver of the voltage efficiency improvement.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_009", "DOC02_FACT_005"],
+      "question_type": "causal_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_007",
+      "question": "Why does the SPTPC-2.59 membrane, despite having the lowest area resistance, exhibit the highest capacity fade rate?",
+      "answer": "The SPTPC-2.59 membrane's rapid capacity fade (0.031% per cycle) is attributed to two primary factors: (1) its high vanadium permeability (8.5 × 10⁻⁷ cm²/s) causes progressive electrolyte imbalance and accelerated self-discharge, and (2) its high swelling ratio (18.7%) leads to mechanical degradation and microscopic defect formation over extended cycling. Additionally, it showed the lowest post-cycling IEC retention (84.2%), indicating chemical degradation of sulfonic acid groups.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_014", "DOC02_FACT_011"],
+      "question_type": "causal_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_008",
+      "question": "What is the energy efficiency ranking of all four membranes at 80 mA/cm²?",
+      "answer": "SNPBI-1.42 (91.2%) > SPEEK/APK (90.4%) > SPTPC-2.59 (87.6%) > PBI (82.4%)",
+      "difficulty_level": 2,
+      "required_facts": ["DOC02_FACT_017"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_009",
+      "question": "What causes the capacity fade in pristine PBI membrane since it has the lowest vanadium permeability?",
+      "answer": "Pristine PBI's capacity fade (0.028% per cycle) is caused by progressive oxidative degradation of the imidazole rings by VO₂⁺ species in the charged positive electrolyte, which gradually reduces proton conductivity and increases polarization losses. This was confirmed by FTIR analysis showing new carbonyl absorption bands at 1720 cm⁻¹ after 500 cycles, consistent with oxidative cleavage of aromatic ether linkages.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_015", "DOC02_FACT_016"],
+      "question_type": "causal_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_010",
+      "question": "What is the optimal IEC range for non-fluorinated VRFB membranes according to this study?",
+      "answer": "1.3 to 1.6 mmol/g. Membranes with IEC below this range suffer from excessive ohmic losses, while membranes with IEC above this range experience unacceptable vanadium crossover.",
+      "difficulty_level": 2,
+      "required_facts": ["DOC02_FACT_019"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_011",
+      "question": "How does the SNPBI-1.42 membrane's energy efficiency change from 40 to 200 mA/cm²?",
+      "answer": "The SNPBI-1.42 membrane's energy efficiency decreases from 93.6% at 40 mA/cm² to 83.2% at 200 mA/cm², a decline of 10.4 percentage points. This is the most gradual decline among all tested membranes.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_018"],
+      "question_type": "numerical_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_012",
+      "question": "Why does the SNPBI-1.42 membrane outperform SPTPC-2.59 despite having lower proton conductivity (higher area resistance)?",
+      "answer": "The SNPBI-1.42 membrane outperforms SPTPC-2.59 because VRFB performance depends on the balance between proton transport and vanadium selectivity, not just conductivity alone. At 80 mA/cm², SNPBI-1.42's Coulombic efficiency (97.8%) is 5.7 percentage points higher than SPTPC-2.59 (92.1%), which more than compensates for its 1.8 percentage point lower voltage efficiency (93.3% vs 95.1%). The rigid PBI backbone provides better vanadium blocking (1.2 vs 8.5 × 10⁻⁷ cm²/s) and lower swelling (5.8% vs 18.7%), leading to better long-term stability (0.012% vs 0.031% fade rate).",
+      "difficulty_level": 5,
+      "required_facts": ["DOC02_FACT_025", "DOC02_FACT_024", "DOC02_FACT_012"],
+      "question_type": "comparative_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_013",
+      "question": "What is the relationship between membrane swelling ratio and long-term cycling stability?",
+      "answer": "Long-term cycling stability correlates more strongly with swelling ratio than with any single transport parameter. Membranes with swelling ratios below approximately 8% achieve superior durability. SNPBI-1.42 (5.8% swelling, 0.012% fade rate) significantly outperforms SPTPC-2.59 (18.7% swelling, 0.031% fade rate), suggesting that excessive dimensional changes during hydration–dehydration cycles cause mechanical fatigue and defect formation.",
+      "difficulty_level": 4,
+      "required_facts": ["DOC02_FACT_020"],
+      "question_type": "causal_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_014",
+      "question": "What are the three architectural approaches to non-fluorinated VRFB membrane design compared in this study, and which performs best?",
+      "answer": "The three approaches are: (1) rigid backbone modification (PBI → SNPBI-1.42), (2) polymer blending (SPEEK/APK), and (3) high-degree sulfonation of flexible backbones (SPTPC-2.59). The rigid backbone modification strategy performs best, with SNPBI-1.42 achieving 91.2% energy efficiency at 80 mA/cm² and the lowest capacity fade rate of 0.012% per cycle, outperforming SPEEK/APK (90.4%, 0.018%) and SPTPC-2.59 (87.6%, 0.031%).",
+      "difficulty_level": 4,
+      "required_facts": ["DOC02_FACT_024"],
+      "question_type": "comparative_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_015",
+      "question": "How does increasing IEC from 1.42 to 2.59 mmol/g affect the trade-off between proton conductivity and vanadium selectivity?",
+      "answer": "Increasing IEC from 1.42 to 2.59 mmol/g reduces area resistance by 9.2× (from 1.42 to 0.31 Ω·cm²) but simultaneously increases vanadium permeability by 7.1× (from 1.2 × 10⁻⁷ to 8.5 × 10⁻⁷ cm²/s). This demonstrates a fundamental conductivity–selectivity trade-off: higher IEC improves proton transport but creates non-selective ionic channels that also transport vanadium ions. The optimal performance is achieved at intermediate IEC (1.3–1.6 mmol/g) where the balance is most favorable.",
+      "difficulty_level": 5,
+      "required_facts": ["DOC02_FACT_025", "DOC02_FACT_019"],
+      "question_type": "comparative_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_016",
+      "question": "What FTIR evidence supports the different degradation mechanisms for PBI and SNPBI-1.42 membranes?",
+      "answer": "After 500 cycles, FTIR showed new carbonyl absorption bands at 1720 cm⁻¹ in cycled PBI and SPTPC-2.59 samples, consistent with oxidative cleavage of aromatic ether linkages. In contrast, the SNPBI-1.42 membrane showed minimal changes in its infrared signature and retained 96.3% of its initial IEC, confirming that moderate sulfonation of PBI-type backbones does not compromise oxidative resistance.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_016", "DOC02_FACT_013"],
+      "question_type": "evidence_interpretation"
+    },
+    {
+      "qa_id": "DOC02_QA_017",
+      "question": "At what current density does the performance advantage of SNPBI-1.42 become most pronounced?",
+      "answer": "The SNPBI-1.42 membrane consistently maintains the highest energy efficiency across all tested current densities (40–200 mA/cm²), with the performance advantage becoming most pronounced at intermediate to high current densities of 80–160 mA/cm². At 80 mA/cm², its energy efficiency is 91.2% vs 82.4% for PBI and 87.6% for SPTPC-2.59.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_022"],
+      "question_type": "numerical_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_018",
+      "question": "What is the Coulombic efficiency of pristine PBI at 80 mA/cm² and why is it higher than SPTPC-2.59?",
+      "answer": "Pristine PBI achieves 98.6% Coulombic efficiency at 80 mA/cm², compared to 92.1% for SPTPC-2.59. This difference arises because PBI's densely packed aromatic structure (swelling 3.2%, vanadium permeability 0.8 × 10⁻⁷ cm²/s) provides superior vanadium blocking compared to SPTPC-2.59's highly swollen structure (swelling 18.7%, vanadium permeability 8.5 × 10⁻⁷ cm²/s). Lower IEC generally correlates with higher Coulombic efficiency.",
+      "difficulty_level": 3,
+      "required_facts": ["DOC02_FACT_023", "DOC02_FACT_007"],
+      "question_type": "comparative_reasoning"
+    },
+    {
+      "qa_id": "DOC02_QA_019",
+      "question": "What is the capacity retention of SNPBI-1.42 after 500 cycles at 80 mA/cm²?",
+      "answer": "92.5%, with initial discharge capacity of 1320 mAh declining to 1221 mAh.",
+      "difficulty_level": 2,
+      "required_facts": ["DOC02_FACT_010"],
+      "question_type": "fact_retrieval"
+    },
+    {
+      "qa_id": "DOC02_QA_020",
+      "question": "Why is maximum IEC not optimal for VRFB membrane performance?",
+      "answer": "Maximum IEC is not optimal because while it reduces area resistance (improving voltage efficiency), it simultaneously increases vanadium permeability (degrading Coulombic efficiency) and membrane swelling (reducing mechanical stability). The SPTPC-2.59 membrane has the highest IEC (2.59 mmol/g) and lowest resistance (0.31 Ω·cm²) but suffers from high vanadium permeability (8.5 × 10⁻⁷ cm²/s), low Coulombic efficiency (92.1%), and the highest capacity fade rate (0.031%/cycle). The optimal IEC range of 1.3–1.6 mmol/g, exemplified by SNPBI-1.42 (1.42 mmol/g), balances these competing factors.",
+      "difficulty_level": 5,
+      "required_facts": ["DOC02_FACT_025", "DOC02_FACT_019", "DOC02_FACT_011"],
+      "question_type": "comparative_reasoning"
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "stress_id": "DOC02_STRESS_001",
+      "type": "synonym_equivalence",
+      "description": "PBI vs SNPBI-1.42 naming",
+      "trigger_phrases": ["PBI", "SNPBI-1.42", "pristine PBI", "unmodified PBI", "sulfonated naphthyl-substituted PBI"],
+      "note": "The document distinguishes between 'pristine PBI'/'unmodified PBI' (IEC 1.2 mmol/g) and 'SNPBI-1.42' (IEC 1.42 mmol/g). Systems must not conflate these. PBI refers to the unsulfonated base polymer; SNPBI-1.42 is a chemically modified derivative with sulfonic acid groups on naphthyl substituents."
+    },
+    {
+      "stress_id": "DOC02_STRESS_002",
+      "type": "synonym_equivalence",
+      "description": "Membrane naming across the document",
+      "trigger_phrases": ["membrane", "SPEEK/APK", "composite membrane", "blend membrane", "SPTPC-2.59"],
+      "note": "The SPEEK/APK composite membrane is referred to as both 'composite membrane' and 'blend membrane.' The SPTPC-2.59 membrane is described as a 'densely sulfonated triphenyl poly(arylene ether).' Systems must recognize these refer to specific materials, not generic membrane categories."
+    },
+    {
+      "stress_id": "DOC02_STRESS_003",
+      "type": "property_binding",
+      "description": "IEC vs area resistance - values must be paired with correct membrane",
+      "trigger_phrases": ["IEC", "ion exchange capacity", "area resistance", "Ω·cm²"],
+      "note": "Critical bindings: PBI: IEC 1.2 mmol/g, resistance 2.85 Ω·cm²; SNPBI-1.42: IEC 1.42 mmol/g, resistance 1.42 Ω·cm²; SPEEK/APK: IEC 1.8 mmol/g, resistance 0.78 Ω·cm²; SPTPC-2.59: IEC 2.59 mmol/g, resistance 0.31 Ω·cm². The values 1.42 and 2.59 appear both as IEC values and as membrane identifiers in the names."
+    },
+    {
+      "stress_id": "DOC02_STRESS_004",
+      "type": "property_binding",
+      "description": "Swelling ratio vs proton transport correlation",
+      "trigger_phrases": ["swelling ratio", "proton transport", "proton conductivity", "area resistance"],
+      "note": "Higher swelling does not directly indicate better proton transport for VRFB performance. SPTPC-2.59 has the highest swelling (18.7%) and lowest resistance (0.31 Ω·cm²) but underperforms SNPBI-1.42 (swelling 5.8%, resistance 1.42 Ω·cm²) in energy efficiency. Systems must recognize swelling as a mechanical stability indicator rather than a conductivity proxy."
+    },
+    {
+      "stress_id": "DOC02_STRESS_005",
+      "type": "synonym_equivalence",
+      "description": "Non-fluorinated vs hydrocarbon membrane terminology",
+      "trigger_phrases": ["non-fluorinated", "hydrocarbon", "non-fluorinated hydrocarbon", "PBI-derived"],
+      "note": "The document uses 'non-fluorinated,' 'hydrocarbon,' and 'non-fluorinated hydrocarbon' interchangeably to describe the membrane class. 'PBI-derived' refers specifically to PBI and SNPBI-1.42, while 'non-fluorinated hydrocarbon' encompasses all four membranes including SPEEK/APK and SPTPC-2.59. Systems must distinguish between the broader category and the PBI subclass."
+    },
+    {
+      "stress_id": "DOC02_STRESS_006",
+      "type": "numerical_precision",
+      "description": "Current density conditions must be preserved with efficiency values",
+      "trigger_phrases": ["energy efficiency", "Coulombic efficiency", "voltage efficiency", "mA/cm²"],
+      "note": "Efficiency values are strongly current-density dependent. For example, SNPBI-1.42 energy efficiency is 93.6% at 40 mA/cm², 91.2% at 80 mA/cm², 89.4% at 120 mA/cm², 86.7% at 160 mA/cm², and 83.2% at 200 mA/cm². Systems must not report efficiency values without specifying the current density."
+    },
+    {
+      "stress_id": "DOC02_STRESS_007",
+      "type": "causal_directionality",
+      "description": "Capacity fade causes differ across membranes despite similar fade rates",
+      "trigger_phrases": ["capacity fade", "fade rate", "degradation", "capacity retention"],
+      "note": "Pristine PBI (0.028%/cycle fade) and SPTPC-2.59 (0.031%/cycle fade) have similar fade rates but completely different causes: PBI fades due to oxidative degradation of imidazole rings by VO₂⁺, while SPTPC-2.59 fades due to vanadium crossover and mechanical degradation from swelling. Systems must not assume similar rates imply similar mechanisms."
+    },
+    {
+      "stress_id": "DOC02_STRESS_008",
+      "type": "unit_consistency",
+      "description": "Vanadium permeability values share the 10⁻⁷ cm²/s scale",
+      "trigger_phrases": ["vanadium permeability", "cm²/s"],
+      "note": "All vanadium permeability values are expressed in the range of 10⁻⁷ cm²/s. PBI: 0.8, SNPBI-1.42: 1.2, SPEEK/APK: 3.6, SPTPC-2.59: 8.5 (all ×10⁻⁷ cm²/s). Systems must maintain this common scale factor when comparing or aggregating values."
+    },
+    {
+      "stress_id": "DOC02_STRESS_009",
+      "type": "conditional_scope",
+      "description": "Post-cycling characterization applies only to 500-cycle test at 80 mA/cm²",
+      "trigger_phrases": ["after cycling", "post-cycling", "retained", "IEC retention"],
+      "note": "All post-cycling data (IEC retention, FTIR changes) refer specifically to the 500-cycle test conducted at 80 mA/cm². Systems must not generalize these results to other current densities or cycle counts. SNPBI-1.42 retained 96.3% IEC; PBI 89.7%; SPEEK/APK 93.1%; SPTPC-2.59 84.2%."
+    },
+    {
+      "stress_id": "DOC02_STRESS_010",
+      "type": "comparative_scope",
+      "description": "Percentage point differences vs relative percentage changes",
+      "trigger_phrases": ["percentage points", "%", "increase", "decrease"],
+      "note": "The document uses both percentage point differences (e.g., SNPBI-1.42 gains 8.8 percentage points over PBI in energy efficiency) and relative percentage changes (e.g., SNPBI-1.42 IEC is 18.3% higher than PBI). Systems must distinguish between these: 8.8 pp means (91.2 - 82.4) = 8.8, while 18.3% means (1.42 - 1.20) / 1.20 × 100 = 18.3%."
+    }
+  ]
+}

@@ -1,0 +1,1779 @@
+[
+  {
+    "fact_id": "DOC03-FACT-011",
+    "source_doc_id": "DOC03",
+    "claim": "At 100 mA/cm2, voltage efficiency improves progressively from 70% for C-C to 77% for MC-C to 85% for BMC-C, reflecting reduced kinetic limitations through surface modification",
+    "required_entities": [
+      "electrode:c_c",
+      "electrode:mc_c",
+      "electrode:bmc_c",
+      "system:vrfb"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 100,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_100_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "VE",
+        "value": 70,
+        "unit": "%",
+        "canonical_id": "measurement:ve_cc_70_percent"
+      },
+      {
+        "metric_type": "VE",
+        "value": 77,
+        "unit": "%",
+        "canonical_id": "measurement:ve_mcc_77_percent"
+      },
+      {
+        "metric_type": "VE",
+        "value": 85,
+        "unit": "%",
+        "canonical_id": "measurement:ve_bmc_c_85_percent"
+      }
+    ],
+    "required_mechanisms": [
+      "modification:boron_doping",
+      "modification:acid_etching",
+      "mechanism:charge_transfer_resistance_reduction"
+    ],
+    "supporting_efus": [
+      "DOC03-EFU-008"
+    ],
+    "difficulty": "L2",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC03-FACT-012",
+    "source_doc_id": "DOC03",
+    "claim": "MC-C electrode achieves a 43.2% reduction in charge-transfer resistance compared to C-C, decreasing from 3.82 ohm cm2 to 2.17 ohm cm2 through mild acid etching that increases surface area and introduces oxygen functional groups",
+    "required_entities": [
+      "electrode:mc_c",
+      "electrode:c_c",
+      "system:vrfb"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "Rct",
+        "value": 3.82,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:rct_cc_3_82_ohm_cm2"
+      },
+      {
+        "metric_type": "Rct",
+        "value": 2.17,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:rct_mcc_2_17_ohm_cm2"
+      }
+    ],
+    "required_mechanisms": [
+      "modification:acid_etching",
+      "mechanism:surface_area_expansion"
+    ],
+    "supporting_efus": [
+      "DOC03-EFU-005"
+    ],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC03-FACT-013",
+    "source_doc_id": "DOC03",
+    "claim": "BMC-C electrode achieves an additional 38.2% reduction in charge-transfer resistance compared to MC-C, from 2.17 ohm cm2 to 1.34 ohm cm2, attributed to boron doping modifying the electronic structure and creating favorable active sites for vanadium ion adsorption",
+    "required_entities": [
+      "electrode:bmc_c",
+      "electrode:mc_c",
+      "system:vrfb"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "Rct",
+        "value": 2.17,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:rct_mcc_2_17_ohm_cm2"
+      },
+      {
+        "metric_type": "Rct",
+        "value": 1.34,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:rct_bmc_c_1_34_ohm_cm2"
+      }
+    ],
+    "required_mechanisms": [
+      "modification:boron_doping",
+      "mechanism:electron_transfer"
+    ],
+    "supporting_efus": [
+      "DOC03-EFU-006"
+    ],
+    "difficulty": "L3",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC03-FACT-014",
+    "source_doc_id": "DOC03",
+    "claim": "The progressive improvement in wettability from C-C (contact angle 130.4 deg) to MC-C (102 deg) to BMC-C (92.8 deg) correlates with coulombic efficiency improvement from 94% to 96% to 97% at 100 mA/cm2, as improved hydrophilicity facilitates more uniform current distribution and suppresses side reactions",
+    "required_entities": [
+      "electrode:c_c",
+      "electrode:mc_c",
+      "electrode:bmc_c",
+      "system:vrfb"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 100,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_100_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "contact_angle",
+        "value": 130.4,
+        "unit": "deg",
+        "canonical_id": "measurement:contact_angle_cc_130_4_deg"
+      },
+      {
+        "metric_type": "contact_angle",
+        "value": 102,
+        "unit": "deg",
+        "canonical_id": "measurement:contact_angle_mcc_102_deg"
+      },
+      {
+        "metric_type": "contact_angle",
+        "value": 92.8,
+        "unit": "deg",
+        "canonical_id": "measurement:contact_angle_bmc_c_92_8_deg"
+      },
+      {
+        "metric_type": "CE",
+        "value": 94,
+        "unit": "%",
+        "canonical_id": "measurement:ce_cc_94_percent"
+      },
+      {
+        "metric_type": "CE",
+        "value": 96,
+        "unit": "%",
+        "canonical_id": "measurement:ce_mcc_96_percent"
+      },
+      {
+        "metric_type": "CE",
+        "value": 97,
+        "unit": "%",
+        "canonical_id": "measurement:ce_bmc_c_97_percent"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:wettability_enhancement",
+      "mechanism:uniform_current_distribution"
+    ],
+    "supporting_efus": [
+      "DOC03-EFU-001",
+      "DOC03-EFU-002",
+      "DOC03-EFU-003",
+      "DOC03-EFU-007"
+    ],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC03-FACT-015",
+    "source_doc_id": "DOC03",
+    "claim": "At 500 mA/cm2, the C-C electrode exhibits severe kinetic limitations with unusable efficiency levels, while the BMC-C electrode continues to demonstrate usable efficiency, confirming that surface modifications provide particular benefit under high-rate operating conditions where charge-transfer kinetics dominate",
+    "required_entities": [
+      "electrode:c_c",
+      "electrode:bmc_c",
+      "system:vrfb"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 500,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_500_ma_cm2"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "mechanism:charge_transfer_kinetics",
+      "modification:boron_doping"
+    ],
+    "supporting_efus": [
+      "DOC03-EFU-013"
+    ],
+    "difficulty": "L4",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC04-FACT-011",
+    "source_doc_id": "DOC04",
+    "claim": "While the highest flow rate of 100 mL/min produces the highest gross energy efficiency due to excellent mass transfer, the elevated pumping power of 50 mW reduces the net energy efficiency below that achieved at 60 mL/min, demonstrating that maximizing gross electrochemical efficiency does not maximize net system efficiency",
+    "required_entities": [
+      "system:vrfb",
+      "component:pump"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "flow_rate",
+        "value": 100,
+        "unit": "mL/min",
+        "canonical_id": "condition:flow_rate_100_ml_min"
+      },
+      {
+        "quantity_type": "flow_rate",
+        "value": 60,
+        "unit": "mL/min",
+        "canonical_id": "condition:flow_rate_60_ml_min"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "pumping_power",
+        "value": 50,
+        "unit": "mW",
+        "canonical_id": "measurement:pumping_power_50_mw"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:pumping_loss",
+      "mechanism:mass_transfer"
+    ],
+    "supporting_efus": [
+      "DOC04-EFU-010"
+    ],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC04-FACT-012",
+    "source_doc_id": "DOC04",
+    "claim": "Electrolyte with 1.6 mol/L vanadium concentration demonstrates near-optimal overall performance, while at 2.0 mol/L viscosity effects become more pronounced requiring higher flow rates, and at 3.0 mol/L significant viscosity-related challenges occur including uneven flow distribution and elevated concentration polarization",
+    "required_entities": [
+      "system:vrfb",
+      "material:vanadium_electrolyte"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "vanadium_concentration",
+        "value": 1.6,
+        "unit": "mol/L",
+        "canonical_id": "condition:vanadium_concentration_1_6_mol_l"
+      },
+      {
+        "quantity_type": "vanadium_concentration",
+        "value": 2.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:vanadium_concentration_2_0_mol_l"
+      },
+      {
+        "quantity_type": "vanadium_concentration",
+        "value": 3.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:vanadium_concentration_3_0_mol_l"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "degradation:viscosity_increase",
+      "degradation:mass_transfer_limitation"
+    ],
+    "supporting_efus": [
+      "DOC04-EFU-007",
+      "DOC04-EFU-011"
+    ],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC04-FACT-013",
+    "source_doc_id": "DOC04",
+    "claim": "At 2.0 mol/L H2SO4, limited proton availability restricts proton-coupled electron transfer causing elevated overpotentials, while at 5.0 mol/L H2SO4 the increased viscosity and aggressive chemical environment accelerate membrane degradation through polymer backbone chemical attack, making 3.0 mol/L the optimal balance",
+    "required_entities": [
+      "system:vrfb",
+      "reagent:sulfuric_acid",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "H2SO4_concentration",
+        "value": 2.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:h2so4_concentration_2_0_mol_l"
+      },
+      {
+        "quantity_type": "H2SO4_concentration",
+        "value": 3.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:h2so4_concentration_3_0_mol_l"
+      },
+      {
+        "quantity_type": "H2SO4_concentration",
+        "value": 5.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:h2so4_concentration_5_0_mol_l"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "mechanism:proton_conductivity",
+      "degradation:membrane_chemical_attack"
+    ],
+    "supporting_efus": [
+      "DOC04-EFU-008",
+      "DOC04-EFU-016",
+      "DOC04-EFU-019"
+    ],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC04-FACT-014",
+    "source_doc_id": "DOC04",
+    "claim": "The mass transfer coefficient is approximately proportional to the square root of flow velocity in the laminar regime, indicating diminishing returns in mass transfer improvement per unit increase in pumping power at high flow rates, which explains why net EE peaks at intermediate flow rates rather than at the highest flow rate",
+    "required_entities": [
+      "system:vrfb",
+      "component:porous_electrode"
+    ],
+    "required_conditions": [],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "mechanism:mass_transfer",
+      "mechanism:laminar_flow",
+      "degradation:pumping_loss"
+    ],
+    "supporting_efus": [
+      "DOC04-EFU-012",
+      "DOC04-EFU-018"
+    ],
+    "difficulty": "L4",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC04-FACT-015",
+    "source_doc_id": "DOC04",
+    "claim": "The 3.0 mol/L vanadium electrolyte shows increased susceptibility to thermal precipitation when operating temperatures exceed 30 C, particularly at low H2SO4 concentrations, where precipitation physically blocks flow channels within the porous electrode and exacerbates mass transfer limitations",
+    "required_entities": [
+      "system:vrfb",
+      "material:vanadium_electrolyte"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "vanadium_concentration",
+        "value": 3.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:vanadium_concentration_3_0_mol_l"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 30,
+        "unit": "C",
+        "canonical_id": "condition:temperature_30_c"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "degradation:vanadium_precipitation",
+      "degradation:flow_channel_blocking"
+    ],
+    "supporting_efus": [
+      "DOC04-EFU-015"
+    ],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC05-FACT-009",
+    "source_doc_id": "DOC05",
+    "claim": "The temperature-dependent capacity fading follows Arrhenius-type behavior with an estimated effective activation energy of 35-45 kJ/mol for the dominant degradation process, consistent with diffusion-controlled vanadium crossover through hydrated ion-exchange membranes",
+    "required_entities": [
+      "system:vrfb",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 25,
+        "unit": "C",
+        "canonical_id": "condition:temperature_25_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 40,
+        "unit": "C",
+        "canonical_id": "condition:temperature_40_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 60,
+        "unit": "C",
+        "canonical_id": "condition:temperature_60_c"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "capacity_retention",
+        "value": 85,
+        "unit": "%",
+        "canonical_id": "measurement:capacity_retention_85_percent"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 74,
+        "unit": "%",
+        "canonical_id": "measurement:capacity_retention_74_percent"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 60,
+        "unit": "%",
+        "canonical_id": "measurement:capacity_retention_60_percent"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:vanadium_crossover",
+      "mechanism:diffusion_activation"
+    ],
+    "supporting_efus": [
+      "DOC05-EFU-001",
+      "DOC05-EFU-002",
+      "DOC05-EFU-003"
+    ],
+    "difficulty": "L4",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC05-FACT-010",
+    "source_doc_id": "DOC05",
+    "claim": "At 60 C, the capacity fading rate accelerates progressively from 0.06% per cycle during cycles 20-100 to 0.10% per cycle during cycles 100-300 and reaches 0.15% per cycle during cycles 300-500, suggesting multiple feedback mechanisms that amplify primary degradation processes",
+    "required_entities": [
+      "system:vrfb",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 60,
+        "unit": "C",
+        "canonical_id": "condition:temperature_60_c"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 80,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_80_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "capacity_retention",
+        "value": 60,
+        "unit": "%",
+        "canonical_id": "measurement:capacity_retention_60_percent"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:vanadium_crossover",
+      "degradation:v2o5_precipitation",
+      "degradation:hydrogen_evolution"
+    ],
+    "supporting_efus": [
+      "DOC05-EFU-003"
+    ],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC05-FACT-011",
+    "source_doc_id": "DOC05",
+    "claim": "Initial voltage efficiency values are 83.5% at 25 C, 82.0% at 40 C, and 80.2% at 60 C, with VE declining by approximately 2.5 percentage points at 25 C, 4.0 percentage points at 40 C, and 6.0 percentage points at 60 C over 500 cycles, primarily due to electrode surface degradation rather than membrane ohmic losses",
+    "required_entities": [
+      "system:vrfb",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 25,
+        "unit": "C",
+        "canonical_id": "condition:temperature_25_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 40,
+        "unit": "C",
+        "canonical_id": "condition:temperature_40_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 60,
+        "unit": "C",
+        "canonical_id": "condition:temperature_60_c"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 80,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_80_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "VE",
+        "value": 83.5,
+        "unit": "%",
+        "canonical_id": "measurement:ve_initial_83_5_percent_25c"
+      },
+      {
+        "metric_type": "VE",
+        "value": 82.0,
+        "unit": "%",
+        "canonical_id": "measurement:ve_initial_82_0_percent_40c"
+      },
+      {
+        "metric_type": "VE",
+        "value": 80.2,
+        "unit": "%",
+        "canonical_id": "measurement:ve_initial_80_2_percent_60c"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:electrode_surface_fouling",
+      "degradation:membrane_degradation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC05-FACT-012",
+    "source_doc_id": "DOC05",
+    "claim": "The vanadium crossover coefficient increases progressively beyond the initial temperature effect over 500 cycles, increasing by approximately 15% at 25 C, 30% at 40 C, and nearly doubling at 60 C, indicating membrane chemical and physical degradation during extended operation",
+    "required_entities": [
+      "system:vrfb",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 25,
+        "unit": "C",
+        "canonical_id": "condition:temperature_25_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 40,
+        "unit": "C",
+        "canonical_id": "condition:temperature_40_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 60,
+        "unit": "C",
+        "canonical_id": "condition:temperature_60_c"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "crossover_coefficient",
+        "value": 2.1,
+        "unit": "x10^-7 cm2/s",
+        "canonical_id": "measurement:crossover_2_1e7_25c"
+      },
+      {
+        "metric_type": "crossover_coefficient",
+        "value": 3.8,
+        "unit": "x10^-7 cm2/s",
+        "canonical_id": "measurement:crossover_3_8e7_40c"
+      },
+      {
+        "metric_type": "crossover_coefficient",
+        "value": 6.5,
+        "unit": "x10^-7 cm2/s",
+        "canonical_id": "measurement:crossover_6_5e7_60c"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:vanadium_crossover",
+      "degradation:membrane_chemical_attack"
+    ],
+    "supporting_efus": [
+      "DOC05-EFU-004",
+      "DOC05-EFU-005",
+      "DOC05-EFU-006"
+    ],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC05-FACT-013",
+    "source_doc_id": "DOC05",
+    "claim": "A synergistic interaction exists between vanadium crossover and hydrogen evolution at elevated temperatures: as V(V) species cross to the negative half-cell they are reduced, consuming protons and causing local pH increase, while increased temperature simultaneously reduces the activation overpotential for hydrogen evolution, creating a complex temperature-dependent balance between crossover-driven and thermally-driven side reactions",
+    "required_entities": [
+      "system:vrfb",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 60,
+        "unit": "C",
+        "canonical_id": "condition:temperature_60_c"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "degradation:vanadium_crossover",
+      "degradation:hydrogen_evolution",
+      "degradation:synergistic_degradation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC06-FACT-009",
+    "source_doc_id": "DOC06",
+    "claim": "At 120 mA/cm2, Bi3+ addition improves Coulombic efficiency from a baseline of 63% without additive to 87% with 1.5 mmol/L Bi3+ and 92% with 5.0 mmol/L Bi3+, demonstrating that the additive provides benefits across a broad operational current density range including higher current densities where baseline performance is most severely limited",
+    "required_entities": [
+      "system:icrfb",
+      "additive:bi3_plus"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 120,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_120_ma_cm2"
+      },
+      {
+        "quantity_type": "Bi3+_concentration",
+        "value": 1.5,
+        "unit": "mmol/L",
+        "canonical_id": "condition:bi3_1_5_mmol_l"
+      },
+      {
+        "quantity_type": "Bi3+_concentration",
+        "value": 5.0,
+        "unit": "mmol/L",
+        "canonical_id": "condition:bi3_5_0_mmol_l"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "CE",
+        "value": 63,
+        "unit": "%",
+        "canonical_id": "measurement:ce_63_percent_baseline_120"
+      },
+      {
+        "metric_type": "CE",
+        "value": 87,
+        "unit": "%",
+        "canonical_id": "measurement:ce_87_percent_bi3_120"
+      },
+      {
+        "metric_type": "CE",
+        "value": 92,
+        "unit": "%",
+        "canonical_id": "measurement:ce_92_percent_bi3_5mm_120"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:underpotential_deposition",
+      "mechanism:hydrogen_evolution_suppression"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC06-FACT-010",
+    "source_doc_id": "DOC06",
+    "claim": "The Cr(III)/Cr(II) apparent reaction rate constant increases with Bi3+ concentration following a saturation profile: from 2.1 x 10^-3 cm/s without Bi3+ to 3.2 x 10^-3 at 0.5 mmol/L, 4.2 x 10^-3 at 1.0 mmol/L, 4.8 x 10^-3 at 1.5 mmol/L, 5.1 x 10^-3 at 2.0 mmol/L, and 5.8 x 10^-3 cm/s at 5.0 mmol/L, consistent with progressive surface coverage saturation by deposited bismuth",
+    "required_entities": [
+      "system:icrfb",
+      "additive:bi3_plus",
+      "electrode:graphite_felt"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "rate_constant",
+        "value": 2.1,
+        "unit": "x10^-3 cm/s",
+        "canonical_id": "measurement:rate_const_baseline"
+      },
+      {
+        "metric_type": "rate_constant",
+        "value": 4.8,
+        "unit": "x10^-3 cm/s",
+        "canonical_id": "measurement:rate_const_1_5_mm"
+      },
+      {
+        "metric_type": "rate_constant",
+        "value": 5.8,
+        "unit": "x10^-3 cm/s",
+        "canonical_id": "measurement:rate_const_5_0_mm"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:underpotential_deposition",
+      "mechanism:electron_transfer"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC06-FACT-011",
+    "source_doc_id": "DOC06",
+    "claim": "Tafel analysis reveals that Bi3+ addition changes the hydrogen evolution mechanism, with Tafel slope increasing from 118 mV/decade on bare graphite to 142 mV/decade with 1.5 mmol/L Bi3+, while the exchange current density decreases from 2.8 x 10^-6 A/cm2 to 1.1 x 10^-6 A/cm2, and the HER onset potential shifts by +85 mV reflecting increased kinetic barrier for proton reduction on bismuth-modified surface",
+    "required_entities": [
+      "system:icrfb",
+      "additive:bi3_plus",
+      "electrode:graphite_felt"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "Bi3+_concentration",
+        "value": 1.5,
+        "unit": "mmol/L",
+        "canonical_id": "condition:bi3_1_5_mmol_l"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "Tafel_slope",
+        "value": 118,
+        "unit": "mV/decade",
+        "canonical_id": "measurement:tafel_118_mv"
+      },
+      {
+        "metric_type": "Tafel_slope",
+        "value": 142,
+        "unit": "mV/decade",
+        "canonical_id": "measurement:tafel_142_mv"
+      },
+      {
+        "metric_type": "exchange_current_density",
+        "value": 2.8,
+        "unit": "x10^-6 A/cm2",
+        "canonical_id": "measurement:exch_current_2_8e6"
+      },
+      {
+        "metric_type": "exchange_current_density",
+        "value": 1.1,
+        "unit": "x10^-6 A/cm2",
+        "canonical_id": "measurement:exch_current_1_1e6"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:hydrogen_evolution_suppression",
+      "mechanism:underpotential_deposition"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC06-FACT-012",
+    "source_doc_id": "DOC06",
+    "claim": "With 1.5 mmol/L Bi3+, the ICRFB cell maintains stable energy efficiency of 75-76% over 200 cycles with less than 2 percentage points variation, and Coulombic efficiency remains in the range of 92-93% throughout the extended cycling protocol, indicating that the deposited bismuth layer remains stable and catalytically active",
+    "required_entities": [
+      "system:icrfb",
+      "additive:bi3_plus"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 80,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_80_ma_cm2"
+      },
+      {
+        "quantity_type": "Bi3+_concentration",
+        "value": 1.5,
+        "unit": "mmol/L",
+        "canonical_id": "condition:bi3_1_5_mmol_l"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "EE",
+        "value": 75,
+        "unit": "%",
+        "canonical_id": "measurement:ee_75_percent"
+      },
+      {
+        "metric_type": "EE",
+        "value": 76,
+        "unit": "%",
+        "canonical_id": "measurement:ee_76_percent"
+      },
+      {
+        "metric_type": "CE",
+        "value": 92,
+        "unit": "%",
+        "canonical_id": "measurement:ce_92_percent"
+      },
+      {
+        "metric_type": "CE",
+        "value": 93,
+        "unit": "%",
+        "canonical_id": "measurement:ce_93_percent"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:underpotential_deposition"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L2",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC06-FACT-013",
+    "source_doc_id": "DOC06",
+    "claim": "The incremental material cost of Bi3+ addition is modest relative to overall system cost: at 1.5 mmol/L in a 1000 L negative electrolyte reservoir, approximately 470 g of BiCl3 costing $50-100 is required, representing less than 1% of total electrolyte cost and less than 0.1% of total system cost for a utility-scale installation, while providing 25 percentage points improvement in energy efficiency",
+    "required_entities": [
+      "system:icrfb",
+      "additive:bi3_plus"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "Bi3+_concentration",
+        "value": 1.5,
+        "unit": "mmol/L",
+        "canonical_id": "condition:bi3_1_5_mmol_l"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "mechanism:underpotential_deposition"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DESIGN_SUMMARY"
+  },
+  {
+    "fact_id": "DOC07-FACT-013",
+    "source_doc_id": "DOC07",
+    "claim": "At 40 mA/cm2 with 0.3 M MEP, the ohmic resistance increases progressively from an initial 0.78 ohm cm2 to 0.89 ohm cm2 at 50 cycles, 1.05 ohm cm2 at 100 cycles, and 1.28 ohm cm2 at 200 cycles, attributed primarily to separator pore constriction from zinc oxide and bromine byproduct accumulation",
+    "required_entities": [
+      "system:zb_fb",
+      "separator:microporous_pe",
+      "additive:mep"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      },
+      {
+        "quantity_type": "MEP_concentration",
+        "value": 0.3,
+        "unit": "M",
+        "canonical_id": "condition:mep_0_3_m"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 0.78,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_0_78_initial"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 0.89,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_0_89_c50"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 1.05,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_1_05_c100"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 1.28,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_1_28_c200"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:separator_fouling",
+      "degradation:zinc_oxide_accumulation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC07-FACT-014",
+    "source_doc_id": "DOC07",
+    "claim": "At 40 mA/cm2 and 50 cycles, ohmic resistance increases with MEP concentration: 0.75 ohm cm2 with 0 M MEP, 0.82 ohm cm2 with 0.1 M MEP, 0.89 ohm cm2 with 0.3 M MEP, and 1.15 ohm cm2 with 0.5 M MEP, reflecting the viscosity increase of concentrated MEP solutions that reduces ionic mobility",
+    "required_entities": [
+      "system:zb_fb",
+      "separator:microporous_pe",
+      "additive:mep"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 0.75,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_0_75_0m_mep"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 0.82,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_0_82_0_1m_mep"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 0.89,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_0_89_0_3m_mep"
+      },
+      {
+        "metric_type": "ohmic_resistance",
+        "value": 1.15,
+        "unit": "ohm cm2",
+        "canonical_id": "measurement:ohmic_1_15_0_5m_mep"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:viscosity_increase"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC07-FACT-015",
+    "source_doc_id": "DOC07",
+    "claim": "Zinc utilization degrades from initial values of 70-73% to 55-60% over 200 cycles across all current densities, with the degradation mechanism being accumulation of electrically isolated zinc deposits (dead zinc) that become mechanically detached from the conductive substrate; at 80 mA/cm2 the highest initial utilization of 73.6% is accompanied by the most rapid degradation to 55.4% at 200 cycles",
+    "required_entities": [
+      "system:zb_fb",
+      "electrode:zinc_negative",
+      "additive:mep"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 20,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_20_ma_cm2"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 80,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_80_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "zinc_utilization",
+        "value": 73.6,
+        "unit": "%",
+        "canonical_id": "measurement:zn_util_73_6_init"
+      },
+      {
+        "metric_type": "zinc_utilization",
+        "value": 55.4,
+        "unit": "%",
+        "canonical_id": "measurement:zn_util_55_4_c200"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:dead_zinc_formation",
+      "degradation:zinc_dendrite"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC07-FACT-016",
+    "source_doc_id": "DOC07",
+    "claim": "Bromine crossover and zinc dendrite growth form a coupled degradation chain where bromine reacting with zinc roughens the electrode surface creating preferential nucleation sites for dendrites, while dendrites increase effective surface area and disrupt separator integrity providing additional crossover pathways; at 40 mA/cm2 with 0.3 M MEP the crossover rate accelerates from 0.06 to 0.11 mL/h and dendrite growth from 1.2 to 1.7 um/cycle between cycles 1-200",
+    "required_entities": [
+      "system:zb_fb",
+      "separator:microporous_pe",
+      "additive:mep"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      },
+      {
+        "quantity_type": "MEP_concentration",
+        "value": 0.3,
+        "unit": "M",
+        "canonical_id": "condition:mep_0_3_m"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "crossover_rate",
+        "value": 0.06,
+        "unit": "mL/h",
+        "canonical_id": "measurement:crossover_0_06_initial"
+      },
+      {
+        "metric_type": "crossover_rate",
+        "value": 0.11,
+        "unit": "mL/h",
+        "canonical_id": "measurement:crossover_0_11_c200"
+      },
+      {
+        "metric_type": "dendrite_growth_rate",
+        "value": 1.2,
+        "unit": "um/cycle",
+        "canonical_id": "measurement:dendrite_1_2_early"
+      },
+      {
+        "metric_type": "dendrite_growth_rate",
+        "value": 1.7,
+        "unit": "um/cycle",
+        "canonical_id": "measurement:dendrite_1_7_late"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:bromine_crossover",
+      "degradation:zinc_dendrite",
+      "degradation:synergistic_degradation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC07-FACT-017",
+    "source_doc_id": "DOC07",
+    "claim": "The optimal MEP concentration of 0.3 M represents a compromise between bromine sequestration efficiency and viscosity constraints, achieving a CE of 88.7% with a bromine crossover rate of 0.07 mL/h at 40 mA/cm2; 0.5 M MEP achieves lower crossover at 0.05 mL/h but causes excessive ohmic resistance of 1.15 ohm cm2 and EE decline to 61.9%",
+    "required_entities": [
+      "system:zb_fb",
+      "additive:mep"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      },
+      {
+        "quantity_type": "MEP_concentration",
+        "value": 0.3,
+        "unit": "M",
+        "canonical_id": "condition:mep_0_3_m"
+      },
+      {
+        "quantity_type": "MEP_concentration",
+        "value": 0.5,
+        "unit": "M",
+        "canonical_id": "condition:mep_0_5_m"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "CE",
+        "value": 88.7,
+        "unit": "%",
+        "canonical_id": "measurement:ce_88_7_0_3m_mep"
+      },
+      {
+        "metric_type": "crossover_rate",
+        "value": 0.07,
+        "unit": "mL/h",
+        "canonical_id": "measurement:crossover_0_07_0_3m"
+      },
+      {
+        "metric_type": "crossover_rate",
+        "value": 0.05,
+        "unit": "mL/h",
+        "canonical_id": "measurement:crossover_0_05_0_5m"
+      },
+      {
+        "metric_type": "EE",
+        "value": 61.9,
+        "unit": "%",
+        "canonical_id": "measurement:ee_61_9_0_5m_mep"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:bromine_crossover",
+      "degradation:viscosity_increase"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DESIGN_SUMMARY"
+  },
+  {
+    "fact_id": "DOC08-FACT-013",
+    "source_doc_id": "DOC08",
+    "claim": "Increasing Pb2+ concentration from 0.5 to 1.0 to 1.5 mol/L at 20 mA/cm2 and 1.5 mol/L H2SO4 improves capacity retention from 68.4% to 76.8% to 82.1% after 200 cycles, while reducing PbO2 passivation layer thickness from 7.2 um to 5.8 um to 4.9 um and decreasing oxygen evolution rate from 3.4 to 2.7 to 2.2 mL/h, attributed to enhanced mass transport and more favorable PbO2 dissolution thermodynamics",
+    "required_entities": [
+      "system:sl_fb",
+      "electrode:positive_pbo2",
+      "electrolyte:msa"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 20,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_20_ma_cm2"
+      },
+      {
+        "quantity_type": "H2SO4_concentration",
+        "value": 1.5,
+        "unit": "mol/L",
+        "canonical_id": "condition:h2so4_1_5_mol_l"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "capacity_retention",
+        "value": 68.4,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_68_4_0_5pb"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 76.8,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_76_8_1_0pb"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 82.1,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_82_1_1_5pb"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 7.2,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_7_2_0_5pb"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 5.8,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_5_8_1_0pb"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 4.9,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_4_9_1_5pb"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:pbo2_passivation",
+      "degradation:oxygen_evolution"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC08-FACT-014",
+    "source_doc_id": "DOC08",
+    "claim": "At 20 mA/cm2 with 1.0 mol/L Pb2+, capacity retention improves from 65.7% at 1.0 mol/L H2SO4 to 76.8% at 1.5 mol/L H2SO4 to 79.3% at 2.0 mol/L H2SO4, with corresponding passivation layer thickness decreasing from 7.8 um to 5.8 um to 5.2 um and oxygen evolution rates from 3.5 to 2.7 to 2.4 mL/h, confirming the beneficial effect of increased acid concentration on both conductivity and PbO2 dissolution",
+    "required_entities": [
+      "system:sl_fb",
+      "reagent:sulfuric_acid",
+      "electrode:positive_pbo2"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 20,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_20_ma_cm2"
+      },
+      {
+        "quantity_type": "Pb2+_concentration",
+        "value": 1.0,
+        "unit": "mol/L",
+        "canonical_id": "condition:pb2_1_0_mol_l"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "capacity_retention",
+        "value": 65.7,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_65_7_1h2so4"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 76.8,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_76_8_1_5h2so4"
+      },
+      {
+        "metric_type": "capacity_retention",
+        "value": 79.3,
+        "unit": "%",
+        "canonical_id": "measurement:cap_ret_79_3_2h2so4"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 7.8,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_7_8_1h2so4"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 5.8,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_5_8_1_5h2so4"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 5.2,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_5_2_2h2so4"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:pbo2_passivation",
+      "degradation:oxygen_evolution",
+      "mechanism:proton_conductivity"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC08-FACT-015",
+    "source_doc_id": "DOC08",
+    "claim": "At the baseline condition of 20 mA/cm2, 1.0 mol/L Pb2+, and 1.5 mol/L H2SO4, the PbO2 passivation layer thickness grows with a decelerating trend: average growth rate of 0.05 um/cycle during cycles 1-50, 0.032 um/cycle during cycles 51-100, and 0.017 um/cycle during cycles 101-200, attributed to the self-limiting nature where increasing layer resistance reduces local current density at the interface",
+    "required_entities": [
+      "system:sl_fb",
+      "electrode:positive_pbo2"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 20,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_20_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "passivation_thickness",
+        "value": 2.5,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_2_5_c50"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 4.1,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_4_1_c100"
+      },
+      {
+        "metric_type": "passivation_thickness",
+        "value": 5.8,
+        "unit": "um",
+        "canonical_id": "measurement:passiv_5_8_c200"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:pbo2_passivation",
+      "mechanism:self_limiting_growth"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC08-FACT-016",
+    "source_doc_id": "DOC08",
+    "claim": "Oxygen evolution rates during early cycling range from 0.8 mL/h at 10 mA/cm2 to 2.1 mL/h at 20 mA/cm2, 3.2 mL/h at 30 mA/cm2, and 4.2 mL/h at 40 mA/cm2, with rates increasing by 40-75% over 200 cycles as the PbO2 passivation layer develops enhanced catalytic activity for water oxidation; at 40 mA/cm2 the rate stabilizes as the thick passivation layer increases ohmic drop",
+    "required_entities": [
+      "system:sl_fb",
+      "electrode:positive_pbo2"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 10,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_10_ma_cm2"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 40,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_40_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "oxygen_evolution_rate",
+        "value": 0.8,
+        "unit": "mL/h",
+        "canonical_id": "measurement:o2_0_8_10ma"
+      },
+      {
+        "metric_type": "oxygen_evolution_rate",
+        "value": 4.2,
+        "unit": "mL/h",
+        "canonical_id": "measurement:o2_4_2_40ma"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:oxygen_evolution",
+      "degradation:pbo2_passivation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L2",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC08-FACT-017",
+    "source_doc_id": "DOC08",
+    "claim": "X-ray diffraction analysis confirms the presence of both alpha-PbO2 (orthorhombic) and beta-PbO2 (tetragonal) phases in cycled positive electrodes, with beta-phase content increasing from 45% in fresh deposits to 78% after 200 cycles; beta-PbO2 is more electrochemically stable and less soluble than alpha-PbO2, explaining progressive difficulty in fully dissolving the passivation layer during discharge",
+    "required_entities": [
+      "system:sl_fb",
+      "electrode:positive_pbo2"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "beta_phase_fraction",
+        "value": 45,
+        "unit": "%",
+        "canonical_id": "measurement:beta_45_fresh"
+      },
+      {
+        "metric_type": "beta_phase_fraction",
+        "value": 78,
+        "unit": "%",
+        "canonical_id": "measurement:beta_78_c200"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:pbo2_passivation",
+      "mechanism:phase_transformation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "MECHANISM_EVIDENCE"
+  },
+  {
+    "fact_id": "DOC09-FACT-016",
+    "source_doc_id": "DOC09",
+    "claim": "AQDS demonstrates the lowest crossover rate among the three organic active species classes at 0.2 x 10^-6 cm2/s through Nafion 117 due to electrostatic repulsion from sulfonate functional groups, contributing to capacity fade rates as low as 0.012%/cycle at pH 12 and 60 mA/cm2 over 1000 cycles, significantly outperforming TEMPO (0.8 x 10^-6 cm2/s) and MV (2.1 x 10^-6 cm2/s)",
+    "required_entities": [
+      "system:or_fb",
+      "active_species:aqds",
+      "membrane:nafion_117"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "pH",
+        "value": 12,
+        "unit": "",
+        "canonical_id": "condition:ph_12"
+      },
+      {
+        "quantity_type": "current_density",
+        "value": 60,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_60_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "crossover_rate",
+        "value": 0.2,
+        "unit": "x10^-6 cm2/s",
+        "canonical_id": "measurement:aqds_crossover_0_2e6"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.012,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:aqds_fade_0_012"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:crossover",
+      "mechanism:electrostatic_repulsion"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC09-FACT-017",
+    "source_doc_id": "DOC09",
+    "claim": "The tendency toward dimerization varies significantly across organic chemistries: TEMPO radical dimerization proceeds with a rate constant of approximately 0.5 M^-1 s^-1 producing 5% dimer after 200 cycles, viologen radical cation dimerization is more rapid at 2.5 M^-1 s^-1 producing 8% dimer, and benzoquinone semiquinone radical shows the highest tendency at approximately 4 M^-1 s^-1; steric protection reduces these extents by 50-60%",
+    "required_entities": [
+      "system:or_fb",
+      "active_species:tempo",
+      "active_species:viologen",
+      "active_species:quinone"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "dimerization_rate_constant",
+        "value": 0.5,
+        "unit": "M^-1 s^-1",
+        "canonical_id": "measurement:dimer_k_tempo"
+      },
+      {
+        "metric_type": "dimerization_rate_constant",
+        "value": 2.5,
+        "unit": "M^-1 s^-1",
+        "canonical_id": "measurement:dimer_k_viologen"
+      },
+      {
+        "metric_type": "dimerization_rate_constant",
+        "value": 4,
+        "unit": "M^-1 s^-1",
+        "canonical_id": "measurement:dimer_k_benzoquinone"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:dimerization",
+      "mechanism:steric_protection"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC09-FACT-018",
+    "source_doc_id": "DOC09",
+    "claim": "For TEMPO-based nonaqueous systems, the capacity fade rate increases monotonically with water content: from 0.02%/cycle at 10 ppm water to 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm, and 0.08%/cycle at 500 ppm, establishing a critical threshold of approximately 100 ppm water content for maintaining acceptable stability through suppression of oxoammonium disproportionation",
+    "required_entities": [
+      "system:or_fb",
+      "active_species:tempo"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "fade_rate",
+        "value": 0.02,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:tempo_fade_10ppm"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.035,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:tempo_fade_50ppm"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.055,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:tempo_fade_200ppm"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.08,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:tempo_fade_500ppm"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:oxoammonium_disproportionation",
+      "degradation:water_induced_degradation"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "OPERATION_PERFORMANCE"
+  },
+  {
+    "fact_id": "DOC09-FACT-019",
+    "source_doc_id": "DOC09",
+    "claim": "Nucleophilic attack on viologen dications by hydroxide ions becomes a significant degradation pathway under alkaline conditions, occurring at the 2- and 6-positions of pyridine rings to form dihydropyridine adducts; at pH 14 this pathway produces a capacity fade rate of 0.072%/cycle compared to 0.035%/cycle at pH 7, while pH 8-9 provides the best balance of viologen stability and cell performance",
+    "required_entities": [
+      "system:or_fb",
+      "active_species:viologen"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "pH",
+        "value": 7,
+        "unit": "",
+        "canonical_id": "condition:ph_7"
+      },
+      {
+        "quantity_type": "pH",
+        "value": 14,
+        "unit": "",
+        "canonical_id": "condition:ph_14"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "fade_rate",
+        "value": 0.035,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:mv_fade_ph7"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.072,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:mv_fade_ph14"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:nucleophilic_attack"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DEGRADATION_CHAIN"
+  },
+  {
+    "fact_id": "DOC09-FACT-020",
+    "source_doc_id": "DOC09",
+    "claim": "For MV/TEMPO cells at 100 mA/cm2, membrane comparison reveals a strong correlation between selectivity and capacity fade: Nafion 117 (88% selectivity, 0.055%/cycle fade), Nafion 212 (85%, 0.065%/cycle), SPEEK 40% sulfonation (92%, 0.038%/cycle), anion exchange membrane (90%, 0.042%/cycle), and nanoporous size-exclusion membrane (97%, 0.012%/cycle), demonstrating that membrane selectivity above 95% is essential for minimizing crossover-induced fade",
+    "required_entities": [
+      "system:or_fb",
+      "active_species:tempo",
+      "active_species:viologen"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "current_density",
+        "value": 100,
+        "unit": "mA/cm2",
+        "canonical_id": "condition:current_density_100_ma_cm2"
+      }
+    ],
+    "required_metrics": [
+      {
+        "metric_type": "fade_rate",
+        "value": 0.055,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:mv_fade_naf117"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.012,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:mv_fade_nano"
+      },
+      {
+        "metric_type": "membrane_selectivity",
+        "value": 88,
+        "unit": "%",
+        "canonical_id": "measurement:sel_naf117"
+      },
+      {
+        "metric_type": "membrane_selectivity",
+        "value": 97,
+        "unit": "%",
+        "canonical_id": "measurement:sel_nano"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:crossover"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC10-FACT-016",
+    "source_doc_id": "DOC10",
+    "claim": "Thermal treatment of carbon felt at 400-500 C for 4-6 hours provides 2-7 percentage points EE improvement across all five RFB systems, with the greatest benefit for systems with slow kinetics: ICRFB shows 5-7 pp improvement at 100 mA/cm2, SLA shows 3-4 pp at 30 mA/cm2, VRFB shows 2-3 pp at 100 mA/cm2, Zn-Br shows improved zinc nucleation, and ORFB shows 1-2 pp at 100 mA/cm2",
+    "required_entities": [
+      "system:vrfb",
+      "system:icrfb",
+      "system:zb_fb",
+      "system:sl_fb",
+      "system:or_fb",
+      "electrode:carbon_felt"
+    ],
+    "required_conditions": [
+      {
+        "quantity_type": "temperature",
+        "value": 400,
+        "unit": "C",
+        "canonical_id": "condition:temperature_400_c"
+      },
+      {
+        "quantity_type": "temperature",
+        "value": 500,
+        "unit": "C",
+        "canonical_id": "condition:temperature_500_c"
+      }
+    ],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "modification:thermal_treatment",
+      "mechanism:surface_area_expansion",
+      "mechanism:wettability_enhancement"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DESIGN_SUMMARY"
+  },
+  {
+    "fact_id": "DOC10-FACT-017",
+    "source_doc_id": "DOC10",
+    "claim": "Flow field optimization follows transferable fluid dynamic principles across all RFB systems: the Damkohler number determines whether flow field optimization significantly impacts performance with systems having high Damkohler numbers (ICRFB chromium, SLA PbO2) benefiting most; the Peclet number should be maintained at 1-10 for optimal mass transport; and interdigitated designs benefit high-rate systems while serpentine suits moderate-rate and parallel suits low-rate systems",
+    "required_entities": [
+      "system:vrfb",
+      "system:icrfb",
+      "system:zb_fb",
+      "system:sl_fb",
+      "system:or_fb"
+    ],
+    "required_conditions": [],
+    "required_metrics": [],
+    "required_mechanisms": [
+      "mechanism:mass_transfer",
+      "mechanism:laminar_flow"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "DESIGN_SUMMARY"
+  },
+  {
+    "fact_id": "DOC10-FACT-018",
+    "source_doc_id": "DOC10",
+    "claim": "Electrolyte additive strategies are highly chemistry-specific but follow the universal principle of targeting the rate-limiting step: Bi3+ additive transforms ICRFB from impractical (EE ~55%) to commercially viable (EE ~85%) by catalyzing chromium reduction, quaternary ammonium bromides at 0.5-1.0 M sequester bromine in Zn-Br systems reducing self-discharge, and molecular sieves maintain water below 50 ppm in TEMPO nonaqueous ORFBs preventing oxoammonium disproportionation",
+    "required_entities": [
+      "system:icrfb",
+      "system:zb_fb",
+      "system:or_fb",
+      "additive:bi3_plus",
+      "additive:mep"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "EE",
+        "value": 55,
+        "unit": "%",
+        "canonical_id": "measurement:ee_icrfb_no_bi"
+      },
+      {
+        "metric_type": "EE",
+        "value": 85,
+        "unit": "%",
+        "canonical_id": "measurement:ee_icrfb_with_bi"
+      }
+    ],
+    "required_mechanisms": [
+      "mechanism:underpotential_deposition",
+      "mechanism:bromine_complexation",
+      "mechanism:water_exclusion"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC10-FACT-019",
+    "source_doc_id": "DOC10",
+    "claim": "At matched cycle numbers (500 cycles) with optimized membranes, capacity fade rates rank from lowest to highest: AQDS-based ORFB at 0.01-0.015%/cycle, TEMPO-PEG ORFB at 0.015%/cycle, VRFB with SPEEK at 0.018%/cycle, PSV ORFB at 0.018%/cycle, ICRFB with AEM at 0.025%/cycle, standard VRFB with Nafion at 0.035%/cycle, Zn-Br at 0.04-0.06%/cycle, SLA at 0.04%/cycle, and MV-based ORFB with Nafion at 0.055%/cycle",
+    "required_entities": [
+      "system:vrfb",
+      "system:icrfb",
+      "system:zb_fb",
+      "system:sl_fb",
+      "system:or_fb"
+    ],
+    "required_conditions": [],
+    "required_metrics": [
+      {
+        "metric_type": "fade_rate",
+        "value": 0.01,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:fade_aqds_low"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.015,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:fade_aqds_high"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.035,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:fade_vrfb_nafion"
+      },
+      {
+        "metric_type": "fade_rate",
+        "value": 0.055,
+        "unit": "%/cycle",
+        "canonical_id": "measurement:fade_mv_nafion"
+      }
+    ],
+    "required_mechanisms": [
+      "degradation:crossover",
+      "degradation:pbo2_passivation",
+      "degradation:zinc_dendrite"
+    ],
+    "supporting_efus": [],
+    "difficulty": "L4",
+    "fact_type": "COMPARISON"
+  },
+  {
+    "fact_id": "DOC10-FACT-020",
+    "source_doc_id": "DOC10",
+    "claim": "System cost per kWh of energy storage capacity varies significantly across platforms: SLA targets lowest at 100-250 $/kWh, Zn-Br achieves 150-300 $/kWh, ICRFB targets 200-350 $/kWh, VRFB costs 350-500 $/kWh dominated by vanadium electrolyte (60%) and membrane (15%), and ORFB currently costs 400-800 $/kWh in laboratory quantities with potential reduction to 150-300 $/kWh at scale; ORFB with optimized design achieves highest EE (76-88%) and lowest fade (0.01-0.018%/cycle)",
+    "required_entities": [
+      "system:vrfb",
+      "system:icrfb",
+      "system:zb_fb",
+      "system:sl_fb",
+      "system:or_fb"
+    ],
+    "required_conditions": [],
+    "required_metrics": [],
+    "required_mechanisms": [],
+    "supporting_efus": [],
+    "difficulty": "L3",
+    "fact_type": "DESIGN_SUMMARY"
+  }
+]

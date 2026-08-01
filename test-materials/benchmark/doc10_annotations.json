@@ -1,0 +1,1236 @@
+{
+  "doc_id": "DOC10",
+  "doc_title": "Cross-System Design Rules and Strategy Comparison for Redox Flow Batteries",
+  "metadata": {
+    "systems": [
+      "system:vrfb",
+      "system:icrfb",
+      "system:zinc_bromine_flow_battery",
+      "system:soluble_lead_acid_flow_battery",
+      "system:organic_redox_flow_battery"
+    ],
+    "components": [
+      "membrane:nafion_117",
+      "membrane:snpbi_1_42",
+      "membrane:anion_exchange_membrane",
+      "membrane:size_exclusion_membrane",
+      "electrode:graphite_felt",
+      "electrode:carbon_felt",
+      "electrode:activated_carbon_felt",
+      "electrode:lead_electrode",
+      "electrolyte:vanadium_sulfate",
+      "electrolyte:iron_chromium_chloride",
+      "electrolyte:zinc_bromide",
+      "electrolyte:lead_methanesulfonate",
+      "electrolyte:anthraquinone_tempo",
+      "additive:bi3_plus_catalyst"
+    ],
+    "word_count": 3473,
+    "num_efus": 26,
+    "num_facts": 24,
+    "num_qa_pairs": 18,
+    "num_stress_points": 10
+  },
+  "efus": [
+    {
+      "canonical_id": "DOC10_EFU_OP_001",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:vrfb",
+      "condition": "condition:current_density_100_ma_cm2",
+      "components": [
+        "membrane:nafion_117",
+        "electrode:graphite_felt"
+      ],
+      "metrics": {
+        "CE": "94-96%",
+        "VE": "88-91%",
+        "EE": "83-87%"
+      },
+      "evidence_text": "At 100 mA/cm², a well-assembled VRFB typically delivers CE of 94-96%, VE of 88-91%, and EE of 83-87%.",
+      "notes": "Baseline VRFB performance at lower end of standard current density range."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_002",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:vrfb",
+      "condition": "condition:current_density_200_ma_cm2",
+      "components": [
+        "membrane:nafion_117",
+        "electrode:graphite_felt"
+      ],
+      "metrics": {
+        "CE": "97-98%",
+        "VE": "78-82%",
+        "EE": "75-80%"
+      },
+      "evidence_text": "When current density increases to 200 mA/cm², CE rises to 97-98% due to reduced diffusion-driven crossover, but VE declines to 78-82% because of increased ohmic overpotential. EE at this higher current density therefore falls to 75-80%.",
+      "notes": "Higher current density improves CE but degrades VE and EE."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_003",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:icrfb",
+      "condition": "condition:current_density_80_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:carbon_felt",
+        "additive:bi3_plus_catalyst"
+      ],
+      "metrics": {
+        "CE": "92-95%",
+        "EE": "78-82%"
+      },
+      "evidence_text": "At 80 mA/cm², ICRFBs with carbon felt electrodes and anion exchange membranes typically exhibit CE values of 92-95% and EE values of 78-82%.",
+      "notes": "ICRFB baseline at standard current density with Bi3+ catalyst."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_004",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:icrfb",
+      "condition": "condition:current_density_160_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:carbon_felt",
+        "additive:bi3_plus_catalyst"
+      ],
+      "metrics": {
+        "CE": "94-96%",
+        "EE": "70-75%"
+      },
+      "evidence_text": "Increasing current density to 160 mA/cm² improves CE modestly to 94-96% but reduces EE to 70-75%, reflecting the substantial kinetic overpotential associated with the Cr³⁺/Cr²⁺ couple.",
+      "notes": "Higher current density worsens ICRFB EE due to sluggish chromium kinetics."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_005",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_40_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:carbon_felt"
+      ],
+      "metrics": {
+        "CE": "92-94%",
+        "EE": "75-79%"
+      },
+      "evidence_text": "At 40 mA/cm², Zn-Br systems with carbon felt electrodes and anion exchange membranes achieve CE of 92-94% and EE of 75-79%, limited primarily by bromide crossover and polybromide migration.",
+      "notes": "Zn-Br baseline at lower current density."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_006",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:zinc_bromine_flow_battery",
+      "condition": "condition:current_density_80_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:carbon_felt"
+      ],
+      "metrics": {
+        "CE": "95-97%",
+        "EE": "70-74%"
+      },
+      "evidence_text": "At 80 mA/cm², CE improves to 95-97% due to shorter charge durations, but zinc dendrite formation becomes more pronounced, affecting cycle life. EE at 80 mA/cm² typically ranges from 70 to 74%.",
+      "notes": "Higher current density improves CE but promotes dendrites; EE decreases."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_007",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "condition": "condition:current_density_20_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:graphite_felt"
+      ],
+      "metrics": {
+        "CE": "90-93%",
+        "EE": "72-76%"
+      },
+      "evidence_text": "At 20 mA/cm², this system achieves CE of 90-93% and EE of 72-76%. The relatively low CE stems from competing hydrogen evolution on the negative electrode during charging, as well as from incomplete dissolution of deposited lead during discharge cycles.",
+      "notes": "Lowest current density system; hydrogen evolution and incomplete dissolution limit CE."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_008",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "condition": "condition:current_density_40_ma_cm2",
+      "components": [
+        "membrane:anion_exchange_membrane",
+        "electrode:graphite_felt"
+      ],
+      "metrics": {
+        "CE": "92-94%",
+        "EE": "65-70%"
+      },
+      "evidence_text": "At 40 mA/cm², CE improves slightly to 92-94%, but VE drops substantially due to the limited conductivity of the methanesulfonic acid electrolyte and the high overpotential for lead dioxide formation, resulting in EE values of 65-70%.",
+      "notes": "Higher current density degrades lead-acid EE significantly."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_009",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:organic_redox_flow_battery",
+      "condition": "condition:current_density_40_ma_cm2",
+      "components": [
+        "membrane:size_exclusion_membrane",
+        "electrode:activated_carbon_felt"
+      ],
+      "metrics": {
+        "CE": "94-96%",
+        "EE": "78-82%"
+      },
+      "evidence_text": "At 40 mA/cm², a well-optimized organic RFB can achieve CE of 94-96% and EE of 78-82%, comparable to inorganic systems at their standard current densities.",
+      "notes": "Organic RFB performs comparably to inorganic systems at matched current density."
+    },
+    {
+      "canonical_id": "DOC10_EFU_OP_010",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:organic_redox_flow_battery",
+      "condition": "condition:current_density_100_ma_cm2",
+      "components": [
+        "membrane:size_exclusion_membrane",
+        "electrode:activated_carbon_felt"
+      ],
+      "metrics": {
+        "CE": "91-97%",
+        "EE": "68-73%"
+      },
+      "evidence_text": "However, at 100 mA/cm², EE declines to 68-73%, with VE loss reflecting lower intrinsic electron transfer rates for organic redox couples compared to metal-ion systems.",
+      "notes": "Organic RFB EE degrades more at high current density due to slower kinetics."
+    },
+    {
+      "canonical_id": "DOC10_EFU_COMP_001",
+      "type": "COMPOSITION",
+      "subject": "membrane:nafion_117",
+      "property": "areal_resistance",
+      "value": "1.5-2.5 Ω·cm²",
+      "evidence_text": "In VRFBs, Nafion 117 provides the benchmark performance, with areal resistances of approximately 1.5-2.5 Ω·cm² when fully hydrated.",
+      "notes": "Baseline membrane resistance for VRFB systems."
+    },
+    {
+      "canonical_id": "DOC10_EFU_COMP_002",
+      "type": "COMPOSITION",
+      "subject": "membrane:snpbi_1_42",
+      "property": "areal_resistance_and_CE_improvement",
+      "value": "2.5-3.5 Ω·cm², CE improvement 2-4 percentage points vs Nafion 117",
+      "evidence_text": "The SnPBI-1.42 membrane achieves CE improvements of 2-4 percentage points compared to Nafion 117 in ICRFBs at 120 mA/cm², though with slightly higher areal resistance (2.5-3.5 Ω·cm²).",
+      "notes": "Higher resistance but better selectivity for ICRFB application."
+    },
+    {
+      "canonical_id": "DOC10_EFU_COMP_003",
+      "type": "COMPOSITION",
+      "subject": "additive:bi3_plus_catalyst",
+      "property": "optimal_loading_and_concentration",
+      "value": "electrode loading 0.5-2.0 mg/cm², electrolyte concentration 0.01-0.05 M",
+      "evidence_text": "The optimal Bi loading is 0.5-2.0 mg/cm² of geometric electrode area; its concentration in the electrolyte must be maintained above a threshold level—typically 0.01-0.05 M—for catalytic effectiveness.",
+      "notes": "Bi3+ must be maintained in both electrode and electrolyte phases."
+    },
+    {
+      "canonical_id": "DOC10_EFU_CMP_001",
+      "type": "COMPARISON",
+      "comparison_type": "cross_system_EE_at_characteristic_current_density",
+      "subjects": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "metric": "energy_efficiency",
+      "values": {
+        "system:vrfb_at_160_ma_cm2": "80-85%",
+        "system:icrfb_at_120_ma_cm2": "74-79% (inferred from 80mA and 160mA data)",
+        "system:zinc_bromine_at_60_ma_cm2": "75-79%",
+        "system:soluble_lead_acid_at_30_ma_cm2": "72-76% (inferred)",
+        "system:organic_at_40_ma_cm2": "78-82%"
+      },
+      "evidence_text": "A VRFB designed for 160 mA/cm² operation achieves EE values of 80-85% that are broadly comparable to those of a Zn-Br system at 60 mA/cm² (75-79%) and an organic RFB at 40 mA/cm² (78-82%).",
+      "notes": "Cross-system EE comparison at each system's characteristic operating point."
+    },
+    {
+      "canonical_id": "DOC10_EFU_CMP_002",
+      "type": "COMPARISON",
+      "comparison_type": "current_density_ceiling",
+      "subjects": [
+        "system:vrfb",
+        "system:icrfb"
+      ],
+      "metric": "maximum_practical_current_density",
+      "values": {
+        "system:vrfb": "200 mA/cm² or higher",
+        "system:icrfb": "approximately 160 mA/cm²"
+      },
+      "evidence_text": "This proximity explains why ICRFBs achieve lower maximum practical current densities (approximately 160 mA/cm²) compared to VRFBs (200 mA/cm² or higher).",
+      "notes": "ICRFB limited by hydrogen evolution side reaction."
+    },
+    {
+      "canonical_id": "DOC10_EFU_CMP_003",
+      "type": "COMPARISON",
+      "comparison_type": "capacity_fade_rate",
+      "subjects": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "metric": "capacity_fade_rate_per_cycle",
+      "values": {
+        "system:vrfb": "0.05-0.15% per cycle at 160 mA/cm²",
+        "system:icrfb": "0.1-0.3% per cycle at 120 mA/cm²",
+        "system:zinc_bromine": "500-2000 deep cycles total (not per-cycle rate)",
+        "system:soluble_lead_acid": "0.2-0.5% per cycle",
+        "system:organic": "0.05-0.5% per cycle"
+      },
+      "evidence_text": "At 160 mA/cm² with Nafion 117, typical VRFB capacity fade rates are 0.05-0.15% per cycle. At 120 mA/cm², ICRFBs exhibit 0.1-0.3% per cycle. Soluble lead-acid: 0.2-0.5% per cycle. Organic RFBs: 0.05-0.5% per cycle.",
+      "notes": "VRFB shows lowest fade; lead-acid shows highest."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DEG_001",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "system:vrfb",
+      "primary_mechanisms": [
+        "vanadium_ion_crossover",
+        "positive_electrode_corrosion",
+        "v2o5_thermal_precipitation"
+      ],
+      "conditions_triggering": "SOC > 80% and temperature > 40°C for V₂O₅ precipitation",
+      "consequence": "electrolyte_capacity_imbalance",
+      "evidence_text": "VRFB degradation is dominated by three coupled mechanisms: vanadium ion crossover leading to gradual electrolyte capacity imbalance, oxidative corrosion of the carbon felt positive electrode, and thermal precipitation of V₂O₅ at the positive electrode when the state of charge exceeds 80% and temperature rises above 40°C.",
+      "notes": "Three coupled mechanisms; crossover is primary."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DEG_002",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "system:icrfb",
+      "primary_mechanisms": [
+        "bi3_plus_catalyst_depletion",
+        "iron_crossover",
+        "pH_increase_from_hydrogen_evolution"
+      ],
+      "consequence": "catalytic_activity_loss_and_chromium_hydroxide_precipitation",
+      "evidence_text": "The Bi³⁺ catalyst gradually depletes through electrodeposition onto the carbon felt and subsequent detachment as metallic bismuth particles. Iron crossover through the membrane creates a secondary capacity fade mechanism. Hydrogen evolution gradually increases the pH of the negative electrolyte, potentially precipitating chromium hydroxide species.",
+      "notes": "Catalyst depletion is primary; occurs over 50-200 cycles."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DEG_003",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "system:zinc_bromine_flow_battery",
+      "primary_mechanisms": [
+        "zinc_dendrite_growth",
+        "bromine_electrode_corrosion",
+        "bromine_evaporation"
+      ],
+      "consequence": "internal_short_circuit_and_active_surface_area_reduction",
+      "evidence_text": "Dendritic growth during charging can penetrate the separator and cause internal short circuits. Non-uniform zinc deposition progressively reduces the electrochemically active surface area. The bromine-positive electrode contributes to degradation through corrosion of the carbon substrate and evaporation of elemental bromine.",
+      "notes": "Dendrite-induced short circuit is abrupt and irreversible."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DEG_004",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "system:organic_redox_flow_battery",
+      "primary_mechanisms": [
+        "anthraquinone_hydrogenation_dimerization",
+        "tempo_disproportionation"
+      ],
+      "conditions_triggering": "pH_extremes_and_oxygen_exposure",
+      "consequence": "active_material_chemical_decomposition",
+      "evidence_text": "Anthraquinone-based catholytes undergo gradual hydrogenation and dimerization under strongly acidic or basic conditions. TEMPO radicals are susceptible to disproportionation reactions that produce non-redox-active byproducts.",
+      "notes": "Chemical decomposition is intrinsic to active molecules; largely independent of electrode/membrane."
+    },
+    {
+      "canonical_id": "DOC10_EFU_MEC_001",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "additive:bi3_plus_catalyst",
+      "mechanism": "lowers_activation_barrier_for_chromium_reduction",
+      "supporting_evidence": "Bi³⁺ modifies the electrode-electrolyte interfacial environment; optimal loading 0.5-2.0 mg/cm² yields 3-5 percentage point EE improvement at 120 mA/cm²",
+      "evidence_text": "The Bi³⁺ additive functions by modifying the electrode-electrolyte interfacial environment to lower the activation barrier for chromium reduction. At 120 mA/cm², optimized Bi-modified electrodes improve EE by 3-5 percentage points compared to untreated carbon felt.",
+      "notes": "Bi3+ is essential for acceptable ICRFB kinetics."
+    },
+    {
+      "canonical_id": "DOC10_EFU_MEC_002",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "membrane:selectivity_resistance_tradeoff",
+      "mechanism": "CE_loss_dominates_at_low_current_density_VE_loss_dominates_at_high_current_density",
+      "supporting_evidence": "crossover current density switch points: VRFB ~100 mA/cm², ICRFB ~80 mA/cm², Zn-Br ~50 mA/cm²",
+      "evidence_text": "At low current densities (20-60 mA/cm²), CE losses from active species crossover dominate the EE budget, favoring thicker or more selective membranes. At high current densities (120-200 mA/cm²), VE losses from ohmic resistance dominate, favoring thinner membranes. The crossover current density at which the optimal membrane type switches is chemistry-specific: approximately 100 mA/cm² for VRFBs, 80 mA/cm² for ICRFBs, and 50 mA/cm² for zinc-bromine systems.",
+      "notes": "Universal principle with chemistry-specific switch points."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DS_001",
+      "type": "DESIGN_SUMMARY",
+      "rule_name": "Rule_1_Current_Density_Dependent_Membrane_Optimization",
+      "scope": "cross_system",
+      "applicable_systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "design_principle": "Low-current-density systems benefit from high-selectivity membranes; high-current-density systems benefit from low-resistance membranes.",
+      "specific_guidance": {
+        "system:vrfb": "Nafion 117 at 100 mA/cm²; thinner membranes at 200 mA/cm²",
+        "system:icrfb": "SnPBI-1.42 anion exchange membrane at 80-160 mA/cm²",
+        "system:zinc_bromine": "Microporous anion exchange separators at 40-80 mA/cm²",
+        "system:organic": "Size-exclusion membranes (0.3-0.6 nm pores) at 20-100 mA/cm²"
+      },
+      "evidence_text": "The general principle that low-current-density systems benefit from high-selectivity membranes while high-current-density systems benefit from low-resistance membranes holds for all five chemistries examined, even though the specific membrane materials differ.",
+      "notes": "Most transferable design rule across chemistries."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DS_002",
+      "type": "DESIGN_SUMMARY",
+      "rule_name": "Rule_2_Electrode_Surface_Engineering_Match_Rate_Limiting_Couple",
+      "scope": "cross_system",
+      "applicable_systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "design_principle": "Electrode treatments must target the rate-limiting half-reaction; there is no universal electrode treatment.",
+      "specific_guidance": {
+        "system:vrfb": "Target V³⁺/V²⁺ reduction: nitrogen doping or controlled oxidation (2-5 at% oxygen groups)",
+        "system:icrfb": "Bi³⁺ catalyst electrodeposition (0.5-2.0 mg/cm²) more impactful than surface treatments alone",
+        "system:zinc_bromine": "Cu-coated carbon composites for uniform nucleation",
+        "system:organic": "Match electrode functional groups (quinone/N-groups) to specific redox chemistry"
+      },
+      "evidence_text": "Across all systems, the redox couple with slower intrinsic kinetics determines the electrode overpotential contribution to VE loss. In VRFBs, the V³⁺/V²⁺ reduction is typically rate-limiting. In ICRFBs, the Cr³⁺/Cr²⁺ couple is overwhelmingly rate-limiting. In zinc-bromine systems, nucleation on carbon is limiting. For organic RFBs, matching the electrode functional groups to the specific redox chemistry provides the best results.",
+      "notes": "Less transferable than Rule 1; must be adapted per chemistry."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DS_003",
+      "type": "DESIGN_SUMMARY",
+      "rule_name": "Rule_3_Side_Reaction_Suppression_Scales_With_Overpotential",
+      "scope": "cross_system",
+      "applicable_systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "design_principle": "Current density ceiling is set by side reaction tolerance, not just ohmic/kinetic losses.",
+      "specific_guidance": {
+        "system:vrfb": "Tolerates up to 200+ mA/cm²; redox potentials well-separated from H₂/O₂ evolution",
+        "system:icrfb": "Limited to ~160 mA/cm²; Cr³⁺/Cr²⁺ potential close to hydrogen evolution",
+        "system:zinc_bromine": "Dendrite formation sets practical limit above 80 mA/cm²",
+        "system:organic": "Side reaction onset varies by redox couple selection"
+      },
+      "evidence_text": "VRFBs tolerate high current densities well because the vanadium redox potentials are well-separated from hydrogen and oxygen evolution potentials. ICRFBs are more constrained because the Cr³⁺/Cr²⁺ potential is close to the hydrogen evolution potential, making the competing reaction unavoidable at higher current densities.",
+      "notes": "Explains why different chemistries have different maximum current densities despite similar membrane/electrode quality."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DS_004",
+      "type": "DESIGN_SUMMARY",
+      "rule_name": "Rule_4_Degradation_Mode_Hierarchy_Determines_Cycle_Life",
+      "scope": "cross_system",
+      "applicable_systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "design_principle": "Mitigation strategies must target the primary degradation mode; secondary mode mitigation yields diminishing returns.",
+      "specific_guidance": {
+        "system:vrfb": "Primary: crossover capacity imbalance → membrane improvement + electrolyte rebalancing",
+        "system:icrfb": "Primary: catalyst depletion → catalyst retention/replenishment systems",
+        "system:zinc_bromine": "Primary: dendrite short circuits → separator robustness + morphology control",
+        "system:soluble_lead_acid": "Primary: incomplete dissolution → limit DoD to 60-80%",
+        "system:organic": "Primary: chemical decomposition → electrolyte protection + molecular design"
+      },
+      "evidence_text": "The dominant degradation mechanism differs systematically across chemistries. In VRFBs, capacity imbalance from crossover is the primary limit. In ICRFBs, catalyst depletion is primary. In zinc-bromine systems, dendrite-induced short circuits are the primary concern. In soluble lead-acid systems, incomplete dissolution is primary. In organic RFBs, chemical decomposition is primary. Attempting to mitigate secondary degradation modes while ignoring the primary mode yields diminishing returns.",
+      "notes": "Most chemistry-specific rule; no universal degradation mitigation."
+    },
+    {
+      "canonical_id": "DOC10_EFU_DS_005",
+      "type": "DESIGN_SUMMARY",
+      "rule_name": "Rule_5_Cost_Performance_Tradeoffs_Follow_Common_Scaling",
+      "scope": "cross_system",
+      "applicable_systems": [
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "design_principle": "The highest-cost component should receive the most intensive optimization effort.",
+      "specific_guidance": {
+        "system:vrfb": "Electrolyte = 30-40% of cost → optimize utilization efficiency",
+        "system:zinc_bromine_and_organic": "Specialized membrane is highest cost fraction → prioritize membrane R&D",
+        "general": "Electrode costs minor unless precious metal catalysts required"
+      },
+      "evidence_text": "In VRFBs, the vanadium electrolyte typically represents 30-40% of the system cost. In organic RFBs, active materials are less expensive per unit mass but require higher concentrations, resulting in similar overall electrolyte cost fractions. The membrane cost fraction is highest in systems requiring specialized separators. The common scaling principle is that the component with the highest cost fraction should receive the most intensive optimization effort.",
+      "notes": "Economic design rule complementing technical rules 1-4."
+    }
+  ],
+  "facts": [
+    {
+      "canonical_id": "DOC10_FACT_001",
+      "statement": "At 100 mA/cm² with Nafion 117 and graphite felt electrodes, VRFBs achieve CE of 94-96%, VE of 88-91%, and EE of 83-87%.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_001"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:vrfb"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_002",
+      "statement": "At 200 mA/cm² with Nafion 117, VRFB CE rises to 97-98% but VE declines to 78-82%, yielding EE of 75-80%.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_002"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:vrfb"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_003",
+      "statement": "ICRFBs with Bi³⁺ catalyst, carbon felt electrodes, and anion exchange membranes achieve CE of 92-95% and EE of 78-82% at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_003"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:icrfb"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_004",
+      "statement": "At 160 mA/cm², ICRFB CE improves to 94-96% but EE drops to 70-75% due to kinetic overpotential of the Cr³⁺/Cr²⁺ couple.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_004"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:icrfb"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_005",
+      "statement": "Zn-Br systems with carbon felt and anion exchange membranes achieve CE of 92-94% and EE of 75-79% at 40 mA/cm².",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_005"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_006",
+      "statement": "At 80 mA/cm², Zn-Br CE improves to 95-97% but EE falls to 70-74%, with dendrite formation becoming more pronounced.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_006"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_007",
+      "statement": "Soluble lead-acid systems achieve CE of 90-93% and EE of 72-76% at 20 mA/cm², with low CE stemming from hydrogen evolution and incomplete lead dissolution.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_007"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_008",
+      "statement": "At 40 mA/cm², soluble lead-acid CE improves to 92-94% but EE drops to 65-70% due to methanesulfonic acid conductivity limitations and lead dioxide overpotential.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_008"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_009",
+      "statement": "Organic RFBs with activated carbon felt and size-selective membranes achieve CE of 94-96% and EE of 78-82% at 40 mA/cm².",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_009"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_010",
+      "statement": "At 100 mA/cm², organic RFB EE declines to 68-73% due to lower intrinsic electron transfer rates for organic redox couples.",
+      "derived_from_efus": [
+        "DOC10_EFU_OP_010"
+      ],
+      "fact_type": "operational_performance",
+      "systems": [
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L1"
+    },
+    {
+      "canonical_id": "DOC10_FACT_011",
+      "statement": "SnPBI-1.42 anion exchange membrane achieves 2-4 percentage point CE improvement over Nafion 117 in ICRFBs at 120 mA/cm², with areal resistance of 2.5-3.5 Ω·cm².",
+      "derived_from_efus": [
+        "DOC10_EFU_COMP_002"
+      ],
+      "fact_type": "composition_property",
+      "systems": [
+        "system:icrfb"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "canonical_id": "DOC10_FACT_012",
+      "statement": "Optimal Bi³⁺ catalyst loading for ICRFBs is 0.5-2.0 mg/cm² on the electrode and 0.01-0.05 M in the electrolyte; this loading improves EE by 3-5 percentage points at 120 mA/cm².",
+      "derived_from_efus": [
+        "DOC10_EFU_COMP_003",
+        "DOC10_EFU_MEC_001"
+      ],
+      "fact_type": "composition_property",
+      "systems": [
+        "system:icrfb"
+      ],
+      "difficulty": "L2"
+    },
+    {
+      "canonical_id": "DOC10_FACT_013",
+      "statement": "A VRFB at 160 mA/cm² achieves EE of 80-85%, broadly comparable to a Zn-Br system at 60 mA/cm² (75-79%) and an organic RFB at 40 mA/cm² (78-82%), but the capital cost implications differ substantially due to different current densities.",
+      "derived_from_efus": [
+        "DOC10_EFU_CMP_001"
+      ],
+      "fact_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_014",
+      "statement": "ICRFBs achieve lower maximum practical current density (~160 mA/cm²) than VRFBs (200+ mA/cm²) because the Cr³⁺/Cr²⁺ redox potential is close to the hydrogen evolution potential, making parasitic hydrogen evolution unavoidable at high current densities.",
+      "derived_from_efus": [
+        "DOC10_EFU_CMP_002",
+        "DOC10_EFU_DS_003"
+      ],
+      "fact_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_015",
+      "statement": "Capacity fade rates at comparable operating points rank as: VRFB (0.05-0.15%/cycle at 160 mA/cm²) < ICRFB (0.1-0.3%/cycle at 120 mA/cm²) < soluble lead-acid (0.2-0.5%/cycle); organic RFBs show the widest range (0.05-0.5%/cycle) depending on active material stability.",
+      "derived_from_efus": [
+        "DOC10_EFU_CMP_003"
+      ],
+      "fact_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_016",
+      "statement": "The primary degradation mode differs across all five systems: VRFB — crossover capacity imbalance; ICRFB — Bi³⁺ catalyst depletion; Zn-Br — dendrite short circuits; soluble lead-acid — incomplete dissolution; organic — chemical decomposition of active materials.",
+      "derived_from_efus": [
+        "DOC10_EFU_DEG_001",
+        "DOC10_EFU_DEG_002",
+        "DOC10_EFU_DEG_003",
+        "DOC10_EFU_DEG_004",
+        "DOC10_EFU_DS_004"
+      ],
+      "fact_type": "degradation_hierarchy",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "canonical_id": "DOC10_FACT_017",
+      "statement": "The crossover current density at which optimal membrane type switches from high-selectivity to low-resistance is chemistry-specific: ~100 mA/cm² for VRFBs, ~80 mA/cm² for ICRFBs, ~50 mA/cm² for Zn-Br, and 60-80 mA/cm² for organic RFBs.",
+      "derived_from_efus": [
+        "DOC10_EFU_DS_001",
+        "DOC10_EFU_MEC_002"
+      ],
+      "fact_type": "design_rule",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "canonical_id": "DOC10_FACT_018",
+      "statement": "Electrode engineering strategies are less transferable across RFB chemistries than membrane strategies because metallic deposition systems (Zn-Br, lead-acid) have fundamentally different electrode requirements from all-soluble systems (VRFB, ICRFB, organic), and even within all-soluble systems the rate-limiting redox couple determines which surface treatments are beneficial.",
+      "derived_from_efus": [
+        "DOC10_EFU_DS_002"
+      ],
+      "fact_type": "design_rule",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "canonical_id": "DOC10_FACT_019",
+      "statement": "VRFB V₂O₅ thermal precipitation occurs when SOC exceeds 80% and temperature exceeds 40°C, representing a coupled thermal-electrochemical degradation mode unique to the vanadium system among the five chemistries compared.",
+      "derived_from_efus": [
+        "DOC10_EFU_DEG_001"
+      ],
+      "fact_type": "degradation_mechanism",
+      "systems": [
+        "system:vrfb"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_020",
+      "statement": "In organic RFBs, chemical decomposition of active materials (anthraquinone hydrogenation/dimerization, TEMPO disproportionation) is largely independent of electrode and membrane materials, unlike in inorganic RFBs where degradation is dominated by component interactions.",
+      "derived_from_efus": [
+        "DOC10_EFU_DEG_004"
+      ],
+      "fact_type": "degradation_mechanism",
+      "systems": [
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_021",
+      "statement": "The vanadium electrolyte represents 30-40% of VRFB system cost, and organic RFBs show similar electrolyte cost fractions despite lower per-mass active material costs because higher concentrations or larger volumes are required for comparable energy density.",
+      "derived_from_efus": [
+        "DOC10_EFU_DS_005"
+      ],
+      "fact_type": "cost_analysis",
+      "systems": [
+        "system:vrfb",
+        "system:organic_redox_flow_battery"
+      ],
+      "difficulty": "L4"
+    },
+    {
+      "canonical_id": "DOC10_FACT_022",
+      "statement": "Carbon felt electrodes with oxygen-containing functional groups at 2-5 at% concentration improve VRFB VE by 1-3 percentage points at 160 mA/cm² by enhancing wettability and reducing kinetic overpotential for the V³⁺/V²⁺ reduction reaction.",
+      "derived_from_efus": [
+        "DOC10_EFU_DS_002"
+      ],
+      "fact_type": "design_rule",
+      "systems": [
+        "system:vrfb"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_023",
+      "statement": "Zinc-bromine systems achieve CE improvement of 3-5 percentage points at 60 mA/cm² using microporous anion exchange separators compared to Nafion, because pore sizes below 0.5 nm exclude polybromide anions while maintaining ionic conductivity.",
+      "derived_from_efus": [
+        "DOC10_EFU_DS_001"
+      ],
+      "fact_type": "design_rule",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "difficulty": "L3"
+    },
+    {
+      "canonical_id": "DOC10_FACT_024",
+      "statement": "The zinc-bromine system typically achieves 500-2000 deep cycles, shorter than VRFBs and ICRFBs, because dendrite-induced short circuits represent an abrupt and irreversible failure mode not present in fully soluble chemistries.",
+      "derived_from_efus": [
+        "DOC10_EFU_DEG_003"
+      ],
+      "fact_type": "degradation_hierarchy",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "difficulty": "L3"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "question_id": "DOC10_QA_001",
+      "question": "What CE and EE does a VRFB achieve at 100 mA/cm² with Nafion 117?",
+      "answer": "At 100 mA/cm² with Nafion 117 and graphite felt electrodes, a VRFB achieves CE of 94-96% and EE of 83-87%.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_001"
+      ],
+      "difficulty": "L1",
+      "question_type": "direct_retrieval",
+      "systems": [
+        "system:vrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_002",
+      "question": "What is the typical EE range of an ICRFB at 80 mA/cm² with Bi³⁺ catalyst?",
+      "answer": "ICRFBs with Bi³⁺ catalyst, carbon felt electrodes, and anion exchange membranes achieve EE of 78-82% at 80 mA/cm².",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_003"
+      ],
+      "difficulty": "L1",
+      "question_type": "direct_retrieval",
+      "systems": [
+        "system:icrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_003",
+      "question": "What EE does a zinc-bromine battery achieve at 40 mA/cm²?",
+      "answer": "At 40 mA/cm², Zn-Br systems with carbon felt electrodes and anion exchange membranes achieve EE of 75-79%.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_005"
+      ],
+      "difficulty": "L1",
+      "question_type": "direct_retrieval",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_004",
+      "question": "How does increasing current density from 100 to 200 mA/cm² affect VRFB CE and EE?",
+      "answer": "CE rises from 94-96% to 97-98% due to reduced diffusion-driven crossover, but VE declines from 88-91% to 78-82%, causing EE to drop from 83-87% to 75-80%.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_001",
+        "DOC10_FACT_002"
+      ],
+      "difficulty": "L2",
+      "question_type": "condition_reasoning",
+      "systems": [
+        "system:vrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_005",
+      "question": "What is the optimal Bi³⁺ catalyst loading for ICRFB electrodes and what EE improvement does it provide?",
+      "answer": "The optimal Bi loading is 0.5-2.0 mg/cm² of geometric electrode area with electrolyte concentration of 0.01-0.05 M. At 120 mA/cm², this improves EE by 3-5 percentage points compared to untreated carbon felt.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_012"
+      ],
+      "difficulty": "L2",
+      "question_type": "single_system_reasoning",
+      "systems": [
+        "system:icrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_006",
+      "question": "What happens to Zn-Br battery EE and reliability when current density increases from 40 to 80 mA/cm²?",
+      "answer": "EE decreases from 75-79% to 70-74%, CE improves from 92-94% to 95-97%, but zinc dendrite formation becomes more pronounced, threatening cycle life through potential internal short circuits.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_005",
+        "DOC10_FACT_006"
+      ],
+      "difficulty": "L2",
+      "question_type": "condition_reasoning",
+      "systems": [
+        "system:zinc_bromine_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_007",
+      "question": "Which three RFB systems achieve comparable EE values (75-85%) at their respective standard operating current densities?",
+      "answer": "VRFB at 160 mA/cm² (80-85% EE), Zn-Br at 60 mA/cm² (75-79% EE), and organic RFB at 40 mA/cm² (78-82% EE) achieve broadly comparable energy efficiency values, though at very different current densities with different capital cost implications.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_013"
+      ],
+      "difficulty": "L3",
+      "question_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_008",
+      "question": "How do capacity fade rates compare across VRFB, ICRFB, and soluble lead-acid systems?",
+      "answer": "VRFB shows the lowest fade at 0.05-0.15% per cycle (160 mA/cm²), followed by ICRFB at 0.1-0.3% per cycle (120 mA/cm²), and soluble lead-acid at 0.2-0.5% per cycle. Organic RFBs show the widest range (0.05-0.5% per cycle) depending on active material stability.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_015"
+      ],
+      "difficulty": "L3",
+      "question_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_009",
+      "question": "Why does the ICRFB have a lower maximum practical current density than the VRFB?",
+      "answer": "ICRFBs are limited to approximately 160 mA/cm² compared to 200+ mA/cm² for VRFBs because the Cr³⁺/Cr²⁺ redox potential is close to the hydrogen evolution potential. At higher current densities, the overpotential required to drive chromium reduction brings the electrode potential into the hydrogen evolution regime, making the parasitic reaction unavoidable.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_014"
+      ],
+      "difficulty": "L3",
+      "question_type": "cross_system_comparison",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_010",
+      "question": "What is the primary degradation mode for each of the five RFB systems, and what is the recommended mitigation strategy?",
+      "answer": "VRFB: crossover capacity imbalance → membrane improvement + electrolyte rebalancing. ICRFB: Bi³⁺ catalyst depletion → catalyst retention/replenishment. Zn-Br: dendrite short circuits → separator robustness + morphology control. Soluble lead-acid: incomplete dissolution → limit DoD to 60-80%. Organic: chemical decomposition → electrolyte protection + molecular design.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_016"
+      ],
+      "difficulty": "L4",
+      "question_type": "mechanism_reasoning",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_011",
+      "question": "How does the membrane selectivity-resistance trade-off vary across RFB chemistries, and what are the chemistry-specific switchover current densities?",
+      "answer": "The universal principle is that low-current-density systems need high-selectivity membranes while high-current-density systems need low-resistance membranes. The switchover points are: VRFB ~100 mA/cm², ICRFB ~80 mA/cm², Zn-Br ~50 mA/cm², organic RFB 60-80 mA/cm². This means Zn-Br systems should always prioritize selectivity, while VRFBs can tolerate thinner, lower-resistance membranes at their upper operating range.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_017"
+      ],
+      "difficulty": "L4",
+      "question_type": "design_reasoning",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_012",
+      "question": "What VRFB degradation condition triggers V₂O₅ precipitation, and why is this mode absent in the other four systems?",
+      "answer": "V₂O₅ precipitation occurs when SOC exceeds 80% and temperature exceeds 40°C simultaneously. This mode is unique to vanadium because VRFBs are the only system among the five compared that uses multivalent vanadium ions capable of forming insoluble V₂O₅ at elevated SOC and temperature. The other systems either lack vanadium entirely (ICRFB, Zn-Br, lead-acid, organic) or do not form comparable insoluble oxides under operating conditions.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_019"
+      ],
+      "difficulty": "L4",
+      "question_type": "mechanism_reasoning",
+      "systems": [
+        "system:vrfb"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_013",
+      "question": "Why are electrode engineering strategies less transferable across RFB chemistries than membrane optimization strategies?",
+      "answer": "Metallic deposition systems (Zn-Br, lead-acid) require electrodes that support uniform metal plating and stripping, fundamentally different from all-soluble systems (VRFB, ICRFB, organic) where reactions occur on stationary surfaces. Even within all-soluble systems, the rate-limiting redox couple differs: V³⁺/V²⁺ in VRFB, Cr³⁺/Cr²⁺ in ICRFB, and diverse organic couples in organic RFBs. Each requires different surface treatments. In contrast, the membrane's core function—ion transport with species selectivity—is more universal, with the selectivity-resistance trade-off applying across all chemistries even when specific materials differ.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_018"
+      ],
+      "difficulty": "L4",
+      "question_type": "design_reasoning",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_014",
+      "question": "A grid storage application requires 10,000 cycles and operation at 120 mA/cm². Based on the cross-system comparison, which RFB chemistries are potentially suitable and what would be the primary engineering challenges for each?",
+      "answer": "At 120 mA/cm² and 10,000 cycles: (1) VRFB is suitable—capacity fade of 0.05-0.15%/cycle is manageable, and the system operates well at this current density with EE of ~80-85%. Primary challenge is managing crossover through membrane selection. (2) ICRFB is marginal—fade rate of 0.1-0.3%/cycle may accumulate to 30-100% capacity loss over 10,000 cycles, and EE drops to 74-79% at 120 mA/cm². Primary challenge is catalyst retention. (3) Zn-Br is unsuitable—cycle life is typically 500-2000 deep cycles due to dendrite issues, far below the 10,000-cycle target. (4) Soluble lead-acid is unsuitable—fade rates of 0.2-0.5%/cycle would cause 86-99% capacity loss, and standard current density (20-40 mA/cm²) is well below 120 mA/cm². (5) Organic RFB is marginal to unsuitable—fade rates of 0.05-0.5%/cycle span a wide range, and at 100 mA/cm² EE is only 68-73%; chemical decomposition is the primary challenge.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_001",
+        "DOC10_FACT_003",
+        "DOC10_FACT_015",
+        "DOC10_FACT_016",
+        "DOC10_FACT_024"
+      ],
+      "difficulty": "L5",
+      "question_type": "complex_application_reasoning",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_015",
+      "question": "Explain why organic RFBs show the widest range of capacity fade rates (0.05-0.5% per cycle) among the five systems and how this relates to their fundamental degradation mechanism.",
+      "answer": "Organic RFBs show the widest fade rate range because chemical decomposition of active materials is an intrinsic molecular property rather than an engineering-controllable component interaction. Anthraquinone hydrogenation and dimerization rates depend strongly on pH and oxygen exposure, while TEMPO disproportionation produces non-redox-active byproducts. Unlike VRFB crossover (mitigated by better membranes) or ICRFB catalyst depletion (addressed by retention systems), organic molecule decomposition can only be prevented through molecular design of more stable active materials or rigorous electrolyte protection from oxygen and moisture. The wide range reflects varying success in these approaches: well-protected systems with stable molecules achieve 0.05%/cycle, while poorly protected or unstable molecules reach 0.5%/cycle. This makes organic RFB fade rates the most variable and hardest to predict from component specifications alone.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_015",
+        "DOC10_FACT_016",
+        "DOC10_FACT_020"
+      ],
+      "difficulty": "L5",
+      "question_type": "complex_mechanism_analysis",
+      "systems": [
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_016",
+      "question": "A research team has developed an improved microporous membrane that reduces areal resistance by 30% while maintaining the same ion selectivity. Predict which RFB systems would benefit most from this innovation, rank them by expected EE improvement, and justify your ranking using the five cross-system design rules.",
+      "answer": "Using Rule 1 (current density-dependent membrane optimization), systems operating above their switchover current density benefit most from lower-resistance membranes. Ranking: (1) VRFB at 200 mA/cm² would benefit most—operating well above the 100 mA/cm² switchover, VE losses from ohmic resistance dominate; a 30% resistance reduction at this current density could improve VE by 2-3 percentage points and EE by 1.5-2.5 points. (2) VRFB at 160 mA/cm² and ICRFB at 160 mA/cm² would benefit moderately—still above switchover points, but the absolute ohmic contribution is smaller; expected EE improvement of 1-2 percentage points. (3) ICRFB at 80-120 mA/cm² would see modest benefit—near or slightly above the 80 mA/cm² switchover; EE improvement of 0.5-1.5 points. (4) Organic RFB at 60-100 mA/cm² would see small benefit—near the 60-80 mA/cm² switchover; improvement of 0.5-1 point. (5) Zn-Br at 40-80 mA/cm² would benefit least—operating below or near the 50 mA/cm² switchover where CE losses dominate over VE losses; improvement under 0.5 points. (6) Soluble lead-acid at 20-40 mA/cm² would benefit minimally—far below any switchover point; the limiting factor is kinetic overpotential and side reactions, not membrane resistance. This ranking demonstrates that membrane resistance improvements are not universally valuable—their impact depends on whether the target system operates in the VE-limited or CE-limited regime.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_017",
+        "DOC10_FACT_002",
+        "DOC10_FACT_004",
+        "DOC10_FACT_006"
+      ],
+      "difficulty": "L6",
+      "question_type": "cross_system_strategy_synthesis",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_017",
+      "question": "Design a decision framework for selecting among the five RFB chemistries for a 100 MW / 400 MWh grid storage installation, considering the five cross-system design rules, the requirement for 15-year lifetime, and the need to minimize levelized cost of storage. Which chemistry would you recommend and what component-level investments would you prioritize?",
+      "answer": "For 100 MW / 400 MWh (4-hour duration) with 15-year lifetime: First, by Rule 3 (side reaction scaling), VRFB and ICRFB are preferred for high-power applications because they tolerate higher current densities. At 100 MW, stack area is minimized at 160-200 mA/cm², favoring these two systems. By Rule 4 (degradation hierarchy), VRFB has the most manageable primary degradation (crossover, 0.05-0.15%/cycle) compared to ICRFB catalyst depletion (0.1-0.3%/cycle). For 15 years at one cycle per day (5475 cycles), VRFB capacity retention of 92-97% is acceptable, while ICRFB retention of 84-96% is marginal. Zn-Br (500-2000 cycles), lead-acid (0.2-0.5%/cycle fade), and organic (0.05-0.5%/cycle fade with chemical decomposition) all face significant 15-year lifetime risks. By Rule 1 (membrane optimization), VRFB at 160 mA/cm² should use Nafion 117 for best EE (80-85%). By Rule 2 (electrode engineering), priority investment is in negative electrode treatment (nitrogen doping or controlled oxidation, 2-5 at% oxygen) to address the rate-limiting V³⁺/V²⁺ couple. By Rule 5 (cost scaling), the vanadium electrolyte at 30-40% of system cost should be optimized for utilization efficiency—concentration, SOC window, and rebalancing frequency. Recommendation: VRFB with Nafion 117 membranes, surface-treated graphite felt electrodes targeting V³⁺/V²⁺ kinetics, and optimized electrolyte management. Estimated EE: 80-85% at 160 mA/cm². Priority investments: (1) electrolyte formulation and rebalancing system, (2) negative electrode surface engineering, (3) thermal management to prevent V₂O₅ precipitation above 40°C and 80% SOC.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_001",
+        "DOC10_FACT_013",
+        "DOC10_FACT_014",
+        "DOC10_FACT_015",
+        "DOC10_FACT_016",
+        "DOC10_FACT_017",
+        "DOC10_FACT_018",
+        "DOC10_FACT_021",
+        "DOC10_FACT_022"
+      ],
+      "difficulty": "L6",
+      "question_type": "cross_system_strategy_synthesis",
+      "systems": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ]
+    },
+    {
+      "question_id": "DOC10_QA_018",
+      "question": "If a Zn-Br system and a VRFB are both operated at 80 mA/cm², which system achieves higher EE, and why does this comparison violate the principle of condition-complete cross-system comparison?",
+      "answer": "At 80 mA/cm², the Zn-Br system achieves EE of 70-74% (its standard upper range), while a VRFB at 80 mA/cm² would achieve significantly higher EE (~88-90% estimated from the 100 mA/cm² data of 83-87% EE) because 80 mA/cm² is well below the VRFB standard range of 100-200 mA/cm². This comparison violates condition-complete comparison because 80 mA/cm² represents the upper practical limit for Zn-Br but a very low, non-standard operating point for VRFB. Meaningful cross-system comparison requires evaluating each system within its characteristic current density window, not at identical current densities. The document emphasizes that 'operating a system significantly above its standard current density range degrades VE, while operating far below sacrifices power density.' A fair comparison would match each system at its standard operating point: VRFB at 160 mA/cm² (80-85% EE) vs Zn-Br at 60 mA/cm² (~77% EE interpolated), showing VRFB superiority by 3-8 percentage points even at their respective optimal conditions.",
+      "answer_canonical_fact_ids": [
+        "DOC10_FACT_001",
+        "DOC10_FACT_006",
+        "DOC10_FACT_013"
+      ],
+      "difficulty": "L6",
+      "question_type": "cross_system_strategy_synthesis",
+      "systems": [
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery"
+      ]
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "stress_point_id": "DOC10_STRESS_001",
+      "category": "cross_system_term_mapping",
+      "description": "The term 'membrane' refers to different materials with different functions across systems: Nafion 117 (proton-conducting, cation-exchange) in VRFB; SnPBI-1.42 (anion-exchange) in ICRFB; microporous anion exchange separator in Zn-Br; high-sulfate-selectivity AEM in lead-acid; size-exclusion membrane in organic RFB.",
+      "entities_involved": [
+        "membrane:nafion_117",
+        "membrane:snpbi_1_42",
+        "membrane:anion_exchange_membrane",
+        "membrane:size_exclusion_membrane"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "Generic reference to 'membrane' without system context is semantically ambiguous; must resolve to chemistry-specific membrane type."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_002",
+      "category": "cross_system_term_mapping",
+      "description": "The term 'electrode' refers to fundamentally different materials: graphite/carbon felt (stationary surface reactions) in VRFB, ICRFB, and organic RFB; carbon felt with copper mesh (zinc plating substrate) in Zn-Br; lead/graphite (precipitation-dissolution substrate) in soluble lead-acid.",
+      "entities_involved": [
+        "electrode:graphite_felt",
+        "electrode:carbon_felt",
+        "electrode:activated_carbon_felt",
+        "electrode:lead_electrode"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "Electrode optimization strategies from one system rarely transfer directly because electrode function differs (reversible surface vs. plating substrate vs. precipitation support)."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_003",
+      "category": "high_EE_strategy_differentiation",
+      "description": "The strategy to achieve 'high EE' differs qualitatively across systems. In VRFB at 100-200 mA/cm², high EE (75-87%) comes from balancing CE and VE through membrane thickness optimization. In ICRFB at 80-160 mA/cm², high EE (70-82%) requires Bi³⁺ catalyst to overcome sluggish chromium kinetics. In Zn-Br at 40-80 mA/cm², high EE (70-79%) depends on suppressing bromide crossover and polybromide formation. In organic RFB at 20-100 mA/cm², high EE (68-82%) requires size-selective membranes for large organic molecules.",
+      "entities_involved": [
+        "metric:energy_efficiency"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "The phrase 'strategy for high EE' is system-dependent; must not conflate different technical approaches under a single generic label."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_004",
+      "category": "current_density_range_variation",
+      "description": "Current density ranges differ by a factor of 10 across systems: 100-200 mA/cm² (VRFB), 80-160 mA/cm² (ICRFB), 40-80 mA/cm² (Zn-Br), 20-40 mA/cm² (lead-acid), 20-100 mA/cm² (organic). Comparing performance at the same numerical current density is therefore misleading.",
+      "entities_involved": [
+        "condition:current_density_100_ma_cm2",
+        "condition:current_density_200_ma_cm2",
+        "condition:current_density_80_ma_cm2",
+        "condition:current_density_160_ma_cm2",
+        "condition:current_density_40_ma_cm2",
+        "condition:current_density_20_ma_cm2"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "Must normalize current density to each system's characteristic range rather than comparing absolute values; 'high current density' means 200 mA/cm² for VRFB but only 80 mA/cm² for Zn-Br."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_005",
+      "category": "cost_vs_performance_tradeoff",
+      "description": "Cost-performance trade-offs scale differently across systems. VRFB: electrolyte is 30-40% of cost. Organic RFB: similar electrolyte cost fraction despite lower per-mass material cost. Zn-Br and organic: highest membrane cost fractions due to specialized separators. Lead-acid: acid concentration management adds operational cost not present in other systems.",
+      "entities_involved": [
+        "metric:system_cost_fraction"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery",
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "normalization_challenge": "'High cost' refers to different components in different systems; cost reduction strategies must target the correct cost-dominant component."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_006",
+      "category": "scalability_vs_energy_density",
+      "description": "Higher current density reduces stack size (improving power-density scalability) but may reduce EE. The acceptable trade-off point differs: VRFB tolerates 200 mA/cm² at 75-80% EE; ICRFB is limited to 160 mA/cm² at 70-75% EE; Zn-Br is practically limited to 80 mA/cm² at 70-74% EE. Thus scalability and energy density have system-dependent upper bounds.",
+      "entities_involved": [
+        "metric:current_density",
+        "metric:energy_efficiency"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery"
+      ],
+      "normalization_challenge": "Claims about 'high current density operation' or 'scalable design' must be system-qualified; what is high for Zn-Br is low for VRFB."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_007",
+      "category": "degradation_terminology_mapping",
+      "description": "'Capacity fade' has different primary causes across systems: crossover imbalance (VRFB), catalyst depletion (ICRFB), dendrite growth (Zn-Br), incomplete dissolution (lead-acid), chemical decomposition (organic). The term 'fade rate' is therefore not semantically equivalent across systems even when numerical values are similar.",
+      "entities_involved": [
+        "metric:capacity_fade_rate"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "Must not equate fade rates without identifying the underlying mechanism; mitigation strategies differ fundamentally."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_008",
+      "category": "efficiency_metric_binding",
+      "description": "The same numerical CE value has different meanings at different conditions. For example, CE = 96% at 160 mA/cm² in VRFB with Nafion 117 indicates excellent membrane selectivity under high driving force, while CE = 96% at 40 mA/cm² in organic RFB indicates moderate size-exclusion performance under low driving force.",
+      "entities_involved": [
+        "metric:coulombic_efficiency"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "CE and EE values must always be bound to current density, membrane type, and system; unbound numerical comparisons are misleading."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_009",
+      "category": "cross_system_term_mapping",
+      "description": "The term 'catalyst' has different referents: Bi³⁺ in ICRFB (essential for chromium reduction); no general catalyst in VRFB; Cu mesh in Zn-Br (nucleation promoter, not redox catalyst); surface functional groups in organic RFB (kinetic enhancers). The functional role and necessity differ dramatically.",
+      "entities_involved": [
+        "additive:bi3_plus_catalyst"
+      ],
+      "systems_involved": [
+        "system:icrfb",
+        "system:vrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "General statements about 'catalyst importance' must be system-qualified; ICRFB cannot function without Bi³⁺ while VRFB requires no catalyst."
+    },
+    {
+      "stress_point_id": "DOC10_STRESS_010",
+      "category": "design_rule_transferability",
+      "description": "The five design rules have varying transferability. Rule 1 (membrane optimization) is fully transferable across all five systems. Rule 2 (electrode engineering) is partially transferable within all-soluble systems but not to deposition systems. Rule 3 (side reaction suppression) is transferable in principle but with system-specific ceiling values. Rule 4 (degradation hierarchy) is the least transferable, being almost entirely system-specific. Rule 5 (cost scaling) is transferable as a framework but with system-specific component rankings.",
+      "entities_involved": [
+        "DOC10_EFU_DS_001",
+        "DOC10_EFU_DS_002",
+        "DOC10_EFU_DS_003",
+        "DOC10_EFU_DS_004",
+        "DOC10_EFU_DS_005"
+      ],
+      "systems_involved": [
+        "system:vrfb",
+        "system:icrfb",
+        "system:zinc_bromine_flow_battery",
+        "system:soluble_lead_acid_flow_battery",
+        "system:organic_redox_flow_battery"
+      ],
+      "normalization_challenge": "Must not treat all design rules as equally transferable; each rule's applicability range must be explicitly specified."
+    }
+  ]
+}

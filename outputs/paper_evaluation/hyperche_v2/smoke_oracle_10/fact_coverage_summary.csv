@@ -1,0 +1,9 @@
+condition_integrity@k,evidence_density@k,evidence_token_budget@k,gndcg@k,hit@k,k,mode,mrr,partial_count,precision@1,soft_support_score@k,source_gndcg@k,source_hit@k,strict_fact_coverage@k,supported_count,unsupported_count
+0.0833,0.2031,202.1,0.8,0.8,1,hyper_base,0.8,0,0.8,0.2031,1.0,0.7,0.0,0,10
+0.1667,0.2574,498.1,0.792,0.8,3,hyper_base,0.8,1,0.8,0.2574,0.9607,0.8,0.0,0,9
+0.2,0.2716,773.5,0.7868,0.8,5,hyper_base,0.8,1,0.8,0.2716,0.959,0.8,0.0,0,9
+0.2333,0.2299,1326.5,0.808,0.9,10,hyper_base,0.81,1,0.8,0.305,0.9402,0.9,0.0,0,9
+0.0,0.2314,72.4,0.8,0.8,1,hyper_final,0.8,0,0.8,0.2314,1.0,0.5,0.0,0,10
+0.15,0.2916,282.1,0.8,0.8,3,hyper_final,0.8,2,0.8,0.2916,0.9669,0.6,0.0,0,8
+0.15,0.325,499.6,0.8387,0.9,5,hyper_final,0.82,2,0.8,0.325,0.8799,0.8,0.0,0,8
+0.2833,0.325,990.8,0.828,0.9,10,hyper_final,0.82,2,0.8,0.325,0.8015,0.9,0.0,0,8

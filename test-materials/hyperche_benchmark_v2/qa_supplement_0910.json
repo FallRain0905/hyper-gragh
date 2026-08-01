@@ -1,0 +1,444 @@
+[
+  {
+    "question_id": "DOC09-QA-001",
+    "source_doc_id": "DOC09",
+    "level": "L1",
+    "question_type": "direct-fact retrieval",
+    "question": "What is the coulombic efficiency (CE) and energy efficiency (EE) of TEMPO in acetonitrile at 100 mA/cm2 when paired with a viologen anolyte and Nafion 117 membrane?",
+    "reference_answer": "TEMPO in acetonitrile at 100 mA/cm2 with Nafion 117 membrane achieves a CE of 98.2% and an EE of 84.3% when paired with a viologen-based anolyte. The electrolyte concentration is 0.1 M TEMPO with tetraethylammonium tetrafluoroborate supporting electrolyte.",
+    "reference_answer_points": [
+      "CE is 98.2%",
+      "EE is 84.3%",
+      "Current density is 100 mA/cm2",
+      "Membrane is Nafion 117",
+      "Solvent is acetonitrile with 0.1 M TEMPO"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-001"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-002",
+    "source_doc_id": "DOC09",
+    "level": "L1",
+    "question_type": "direct-fact retrieval",
+    "question": "What are the CE and EE of AQDS at pH 12 and 60 mA/cm2, and what is its capacity fade rate?",
+    "reference_answer": "AQDS at pH 12 and 60 mA/cm2 achieves a CE of 96.5%, an EE of 82.1%, and a capacity fade rate of 0.01%/cycle over 1000 cycles. The low fade rate is attributed to its low crossover rate through Nafion 117 at 0.2 x 10^-6 cm2/s.",
+    "reference_answer_points": [
+      "CE is 96.5%",
+      "EE is 82.1%",
+      "Capacity fade rate is 0.01%/cycle",
+      "pH is 12",
+      "Current density is 60 mA/cm2",
+      "Crossover rate is 0.2 x 10^-6 cm2/s"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-005"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-009"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-003",
+    "source_doc_id": "DOC09",
+    "level": "L2",
+    "question_type": "local-relation retrieval",
+    "question": "How does the capacity fade rate of TEMPO compare to PSV (propylsulfonate-functionalized viologen) at 100 mA/cm2 with Nafion 117 membrane?",
+    "reference_answer": "At 100 mA/cm2 with Nafion 117, TEMPO in nonaqueous electrolyte shows a capacity fade rate of 0.02%/cycle, while PSV shows a fade rate of 0.018%/cycle. TEMPO achieves CE of 98.2% and EE of 84.3%, whereas PSV achieves CE of 98.5% and EE of 82.1%. PSV's lower fade rate is attributed to sulfonate functionalization reducing crossover.",
+    "reference_answer_points": [
+      "TEMPO fade rate is 0.02%/cycle",
+      "PSV fade rate is 0.018%/cycle",
+      "TEMPO EE is 84.3% vs PSV EE is 82.1%",
+      "TEMPO CE is 98.2% vs PSV CE is 98.5%",
+      "Both operate at 100 mA/cm2 with Nafion 117"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-001",
+      "DOC09-FACT-006"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-001",
+      "DOC09-EFU-007"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-004",
+    "source_doc_id": "DOC09",
+    "level": "L2",
+    "question_type": "condition-dependent retrieval",
+    "question": "How does TEMPO's energy efficiency change when the current density is reduced from 100 mA/cm2 to 20 mA/cm2, and what explains this trend?",
+    "reference_answer": "TEMPO's EE increases from 84.3% at 100 mA/cm2 to 88.5% at 20 mA/cm2, while CE improves from 98.2% to approximately 99.0%. This trend reflects reduced overpotential losses at lower current densities. The intermediate values are EE 87.1% at 60 mA/cm2 and EE 88.0% at 40 mA/cm2.",
+    "reference_answer_points": [
+      "EE increases from 84.3% to 88.5%",
+      "CE improves from 98.2% to ~99.0%",
+      "Current density reduction from 100 to 20 mA/cm2",
+      "Trend is explained by reduced overpotential losses at lower current densities",
+      "Intermediate values: 87.1% at 60 mA/cm2, 88.0% at 40 mA/cm2"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-002"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-001",
+      "DOC09-EFU-002",
+      "DOC09-EFU-003",
+      "DOC09-EFU-004"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-005",
+    "source_doc_id": "DOC09",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "What is the dimerization extent of viologen radical cation at 0.1 M concentration and pH 7 after 200 cycles at 100 mA/cm2, and how does it compare to TEMPO under equivalent conditions?",
+    "reference_answer": "At 0.1 M concentration, pH 7, and 100 mA/cm2 after 200 cycles, methyl viologen shows a dimerization extent of approximately 8%, with a dimerization rate constant of 2.5 M^-1 s^-1. Under equivalent conditions, TEMPO shows a dimerization extent of 5% with a rate constant of approximately 0.5 M^-1 s^-1 in acetonitrile. At higher viologen concentration (0.2 M), the dimerization extent increases to 14%, reflecting second-order kinetics dependence.",
+    "reference_answer_points": [
+      "MV dimerization extent is 8% at 0.1 M",
+      "MV dimerization rate constant is 2.5 M^-1 s^-1",
+      "TEMPO dimerization extent is 5% under equivalent conditions",
+      "TEMPO dimerization rate constant is 0.5 M^-1 s^-1",
+      "MV dimerization increases to 14% at 0.2 M (second-order kinetics)",
+      "Conditions: pH 7, 100 mA/cm2, 200 cycles"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-009",
+      "DOC09-FACT-010"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-014",
+      "DOC09-EFU-021"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-006",
+    "source_doc_id": "DOC09",
+    "level": "L3",
+    "question_type": "mechanism-condition retrieval",
+    "question": "How does water content in nonaqueous TEMPO electrolyte affect its capacity fade rate, and what is the underlying degradation mechanism?",
+    "reference_answer": "TEMPO capacity fade rate increases dramatically with water content: from 0.02%/cycle at 10 ppm water, to 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm, and 0.08%/cycle at 500 ppm. The degradation mechanism involves disproportionation of the oxoammonium cation (TEMPO+) in the presence of water, producing hydroxylamine derivatives and oxygen-containing byproducts. For stable operation, water content should be maintained below 100 ppm.",
+    "reference_answer_points": [
+      "Fade rate is 0.02%/cycle at 10 ppm water",
+      "Fade rate increases to 0.08%/cycle at 500 ppm water",
+      "Intermediate points: 0.035%/cycle at 50 ppm, 0.055%/cycle at 200 ppm",
+      "Mechanism: oxoammonium cation disproportionation with water",
+      "Products: hydroxylamine derivatives and oxygen byproducts",
+      "Design threshold: water below 100 ppm for stable operation"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-013"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-019",
+      "DOC09-EFU-025"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-007",
+    "source_doc_id": "DOC09",
+    "level": "L4",
+    "question_type": "cross-material comparison",
+    "question": "Compare the crossover rates, dimerization extents, and capacity fade rates of MV, TEMPO, and AQDS in ORFB systems under standardized conditions (100 mA/cm2, Nafion 117, room temperature).",
+    "reference_answer": "Under standardized conditions (100 mA/cm2, Nafion 117, 25 C, 500 cycles): Crossover rates follow MV (2.1 x 10^-6 cm2/s) > TEMPO (0.8 x 10^-6 cm2/s) > AQDS (0.2 x 10^-6 cm2/s). Dimerization extents after 200 cycles: viologen 8% > TEMPO 5%. Capacity fade rates: AQDS 0.025%/cycle > TEMPO 0.02%/cycle > PSV 0.018%/cycle > MV 0.055%/cycle. AQDS has the lowest crossover due to sulfonate groups, while MV has the highest due to its smaller molecular size. SOC imbalance after 300 cycles: MV/TEMPO cell 15% vs AQDS/TEMPO cell 7%.",
+    "reference_answer_points": [
+      "Crossover: MV 2.1 > TEMPO 0.8 > AQDS 0.2 x 10^-6 cm2/s",
+      "Dimerization: viologen 8% > TEMPO 5% after 200 cycles",
+      "Fade rates: AQDS 0.025% > TEMPO 0.02% > PSV 0.018% > MV 0.055%/cycle",
+      "AQDS lowest crossover due to sulfonate functional groups",
+      "MV highest crossover due to smaller molecular size",
+      "SOC imbalance: MV/TEMPO 15% vs AQDS/TEMPO 7% after 300 cycles"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-008",
+      "DOC09-FACT-009",
+      "DOC09-FACT-010"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-012",
+      "DOC09-EFU-013",
+      "DOC09-EFU-014",
+      "DOC09-EFU-015"
+    ]
+  },
+  {
+    "question_id": "DOC09-QA-008",
+    "source_doc_id": "DOC09",
+    "level": "L5",
+    "question_type": "mechanism-chain retrieval",
+    "question": "Explain the complete degradation chain for AQDS from elevated pH conditions to capacity fade, including how pH 14 operation compares to pH 12 in terms of performance metrics.",
+    "reference_answer": "The AQDS degradation chain involves: (1) At elevated pH, nucleophilic addition of hydroxide to oxidized quinone forms non-redox-active hydroxylated products; (2) At pH 14, this produces a capacity fade rate of 0.068%/cycle, compared to 0.012%/cycle at pH 12 and 0.028%/cycle at pH 9; (3) Additionally, dissolved oxygen causes autoxidation, reducing CE from 95.5% to 90.2% at 100 mA/cm2 in oxygen-saturated electrolyte; (4) The optimal operating window is pH 12, balancing solubility and stability. Viologen at pH 14 shows similar nucleophilic attack with fade rate 0.072%/cycle via dihydropyridine adduct formation.",
+    "reference_answer_points": [
+      "Mechanism: nucleophilic addition of hydroxide to oxidized quinone",
+      "Products: non-redox-active hydroxylated products",
+      "Fade rate at pH 14: 0.068%/cycle vs 0.012%/cycle at pH 12",
+      "Secondary mechanism: autoxidation by dissolved oxygen",
+      "CE drops from 95.5% to 90.2% with oxygen saturation",
+      "Optimal pH is 12 for balancing solubility and stability"
+    ],
+    "expected_facts": [
+      "DOC09-FACT-011",
+      "DOC09-FACT-012"
+    ],
+    "expected_efus": [
+      "DOC09-EFU-022",
+      "DOC09-EFU-023",
+      "DOC09-EFU-024"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-001",
+    "source_doc_id": "DOC10",
+    "level": "L1",
+    "question_type": "direct-fact retrieval",
+    "question": "What is the EE and CE of VRFB with Nafion 117 at 100 mA/cm2 and 200 mA/cm2?",
+    "reference_answer": "VRFB with Nafion 117 achieves EE of 84% and CE of 96% at 100 mA/cm2. At 150 mA/cm2, the EE decreases to 81% with CE of 95%. At 200 mA/cm2, the EE further decreases to 78% with CE of 94%. The primary degradation mechanism is vanadium crossover through the membrane.",
+    "reference_answer_points": [
+      "EE is 84% at 100 mA/cm2",
+      "CE is 96% at 100 mA/cm2",
+      "EE decreases to 78% at 200 mA/cm2",
+      "CE decreases to 94% at 200 mA/cm2",
+      "Primary degradation: vanadium crossover"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-001"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-002",
+    "source_doc_id": "DOC10",
+    "level": "L1",
+    "question_type": "direct-fact retrieval",
+    "question": "What are the EE and CE of the Zn-Br system at 40 mA/cm2 and 80 mA/cm2, and what are its primary degradation mechanisms?",
+    "reference_answer": "The Zn-Br system achieves EE of 78% with CE of 93% at 40 mA/cm2. At 60 mA/cm2, the EE is 71% with CE of 90%. At 80 mA/cm2, the EE decreases to 64% with CE of 87%. The primary degradation mechanisms include zinc dendrite formation during plating, bromine crossover through the microporous separator, and self-discharge through bromine diffusion.",
+    "reference_answer_points": [
+      "EE is 78% at 40 mA/cm2 with CE 93%",
+      "EE is 64% at 80 mA/cm2 with CE 87%",
+      "Intermediate: EE 71% at 60 mA/cm2",
+      "Degradation 1: zinc dendrite formation",
+      "Degradation 2: bromine crossover through separator",
+      "Degradation 3: self-discharge through bromine diffusion"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-003"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-003",
+      "DOC10-EFU-018"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-003",
+    "source_doc_id": "DOC10",
+    "level": "L2",
+    "question_type": "system-component comparison",
+    "question": "How does SPEEK membrane (42% sulfonation) compare to Nafion 117 in VRFB performance at 100 mA/cm2 in terms of EE and capacity fade rate?",
+    "reference_answer": "At 100 mA/cm2, VRFB with SPEEK (42% sulfonation) achieves EE of 83% compared to 84% for Nafion 117. However, SPEEK reduces the capacity fade rate from 0.035%/cycle (Nafion 117) to 0.018%/cycle. This trade-off shows that while SPEEK sacrifices 1 percentage point in EE, it nearly halves the capacity fade rate by improving membrane selectivity and reducing vanadium crossover.",
+    "reference_answer_points": [
+      "SPEEK EE is 83% vs Nafion 117 EE is 84%",
+      "SPEEK fade rate is 0.018%/cycle vs Nafion 0.035%/cycle",
+      "1 percentage point sacrifice in EE for SPEEK",
+      "Fade rate reduced by nearly 50% with SPEEK",
+      "Improvement mechanism: better membrane selectivity reducing vanadium crossover"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-007"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-006"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-004",
+    "source_doc_id": "DOC10",
+    "level": "L2",
+    "question_type": "cross-system comparison",
+    "question": "How does thermal treatment of carbon felt at 400-500 C affect the EE of ICRFB and VRFB at 100 mA/cm2, and what explains the difference in improvement magnitude?",
+    "reference_answer": "Thermal treatment of carbon felt at 400-500 C improves ICRFB EE by 5-7 percentage points at 100 mA/cm2, while VRFB EE improves by only 2-3 percentage points. For ICRFB, thermal treatment reduces the chromium reaction resistance by 40-50%. For VRFB, thermal treatment reduces the charge transfer resistance by 20-30% for vanadium reactions. The larger improvement for ICRFB reflects the more severe kinetic limitations of the Cr3+/Cr2+ reaction compared to vanadium redox reactions.",
+    "reference_answer_points": [
+      "ICRFB EE improvement: 5-7 percentage points",
+      "VRFB EE improvement: 2-3 percentage points",
+      "ICRFB: chromium reaction resistance reduced by 40-50%",
+      "VRFB: charge transfer resistance reduced by 20-30%",
+      "Larger ICRFB improvement due to more severe Cr3+/Cr2+ kinetic limitations"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-010"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-007"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-005",
+    "source_doc_id": "DOC10",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "At 100 mA/cm2, compare the EE, system cost, and capacity fade rate of VRFB, ICRFB with Bi3+, and ORFB systems. Which system offers the best balance of efficiency, cost, and cycle life?",
+    "reference_answer": "At 100 mA/cm2: VRFB achieves EE of 81-84% with system cost 350-500 $/kWh and fade rate 0.018-0.035%/cycle. ICRFB with Bi3+ achieves EE of 75-82% with system cost 200-350 $/kWh and fade rate 0.025%/cycle (with AEM). ORFB achieves EE of 80-83% with system cost 400-800 $/kWh and fade rates ranging from 0.01%/cycle (AQDS) to 0.055%/cycle (MV). ICRFB offers the lowest cost but moderate efficiency; VRFB provides balanced performance at moderate cost; ORFB offers the highest efficiency potential but at the highest cost and with chemistry-dependent fade rates.",
+    "reference_answer_points": [
+      "VRFB: EE 81-84%, cost 350-500 $/kWh, fade 0.018-0.035%/cycle",
+      "ICRFB: EE 75-82%, cost 200-350 $/kWh, fade ~0.025%/cycle",
+      "ORFB: EE 80-83%, cost 400-800 $/kWh, fade 0.01-0.055%/cycle",
+      "ICRFB has lowest system cost",
+      "VRFB offers most balanced cost-performance",
+      "ORFB has highest cost but best potential cycle life with AQDS"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-001",
+      "DOC10-FACT-002",
+      "DOC10-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-001",
+      "DOC10-EFU-002",
+      "DOC10-EFU-010",
+      "DOC10-EFU-011",
+      "DOC10-EFU-012"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-006",
+    "source_doc_id": "DOC10",
+    "level": "L3",
+    "question_type": "mechanism-system matching",
+    "question": "Which RFB system has the highest charge transfer resistance, what is its value, and how does this translate to its EE at typical operating current densities compared to other systems?",
+    "reference_answer": "ICRFB has the highest charge transfer resistance at 3-5 ohm cm2 for the Cr3+/Cr2+ reaction (without additive). This high resistance translates to EE of 62-85% at 80-160 mA/cm2, with the lowest value (62%) at 160 mA/cm2. In comparison: SLA PbO2 has 2-4 ohm cm2 (EE 58-78% at 20-40 mA/cm2), TEMPO has 0.6-1.0 ohm cm2 (EE 80-83% at 100 mA/cm2), VRFB has 0.8-1.2 ohm cm2 (EE 78-84% at 100-200 mA/cm2), and Zn-Br bromine reaction has 0.2-0.4 ohm cm2 (EE 64-78% at 40-80 mA/cm2). The Bi3+ additive reduces ICRFB overpotential by 200-300 mV, transforming EE from ~55% to ~85% at 80 mA/cm2.",
+    "reference_answer_points": [
+      "ICRFB has highest charge transfer resistance: 3-5 ohm cm2 for Cr3+/Cr2+",
+      "ICRFB EE: 62-85% at 80-160 mA/cm2",
+      "SLA PbO2: 2-4 ohm cm2, EE 58-78%",
+      "TEMPO: 0.6-1.0 ohm cm2, EE 80-83%",
+      "VRFB: 0.8-1.2 ohm cm2, EE 78-84%",
+      "Zn-Br: 0.2-0.4 ohm cm2, EE 64-78%",
+      "Bi3+ additive reduces ICRFB overpotential by 200-300 mV"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-002",
+      "DOC10-FACT-006"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-021",
+      "DOC10-EFU-023"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-007",
+    "source_doc_id": "DOC10",
+    "level": "L4",
+    "question_type": "multi-system multi-metric comparison",
+    "question": "Compare the EE ranges, optimal current density ranges, system costs, and primary degradation mechanisms across all five RFB systems (VRFB, ICRFB, Zn-Br, SLA, ORFB). Identify which systems are most suitable for high-power vs long-duration energy storage applications.",
+    "reference_answer": "Five-system comparison: (1) VRFB: EE 78-84% at 100-200 mA/cm2, cost 350-500 $/kWh, degradation via vanadium crossover; (2) ICRFB: EE 62-85% at 80-160 mA/cm2, cost 200-350 $/kWh, degradation via slow chromium kinetics and hydrogen evolution; (3) Zn-Br: EE 64-78% at 40-80 mA/cm2, cost 150-300 $/kWh, degradation via zinc dendrites and bromine crossover; (4) SLA: EE 58-78% at 20-40 mA/cm2, cost 100-250 $/kWh, degradation via PbO2 morphology and lead dendrites; (5) ORFB: EE 76-88% at 20-100 mA/cm2, cost 400-800 $/kWh, degradation via organic crossover and radical dimerization. For high-power applications: VRFB (highest current density capability) and ICRFB (with Bi3+) are most suitable. For long-duration storage: SLA and Zn-Br offer lowest costs but limited cycle life; ORFB with AQDS offers best cycle life (0.01%/cycle fade) but at highest cost.",
+    "reference_answer_points": [
+      "VRFB: EE 78-84%, 100-200 mA/cm2, $350-500/kWh, vanadium crossover",
+      "ICRFB: EE 62-85%, 80-160 mA/cm2, $200-350/kWh, Cr kinetics + H2 evolution",
+      "Zn-Br: EE 64-78%, 40-80 mA/cm2, $150-300/kWh, Zn dendrite + Br2 crossover",
+      "SLA: EE 58-78%, 20-40 mA/cm2, $100-250/kWh, PbO2 morphology + Pb dendrite",
+      "ORFB: EE 76-88%, 20-100 mA/cm2, $400-800/kWh, organic crossover + dimerization",
+      "High-power: VRFB and ICRFB (higher current density ranges)",
+      "Long-duration: SLA/Zn-Br lowest cost; ORFB-AQDS best cycle life"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-001",
+      "DOC10-FACT-002",
+      "DOC10-FACT-003",
+      "DOC10-FACT-004",
+      "DOC10-FACT-005"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-001",
+      "DOC10-EFU-002",
+      "DOC10-EFU-003",
+      "DOC10-EFU-004",
+      "DOC10-EFU-005",
+      "DOC10-EFU-012"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-008",
+    "source_doc_id": "DOC10",
+    "level": "L5",
+    "question_type": "cross-system mechanism-chain retrieval",
+    "question": "Explain how the universal membrane selectivity threshold of >95% connects to capacity fade rates across all five RFB systems, and describe the system-specific degradation pathways that dominate when this threshold is not met.",
+    "reference_answer": "The universal membrane selectivity threshold of >95% is required for capacity fade rates below 0.02%/cycle across all five RFB systems. When violated: (1) VRFB: vanadium ion crossover causes redox species mixing and irreversible capacity loss (fade 0.035%/cycle with Nafion 117 at 94-96% selectivity); (2) ICRFB: Fe/Cr crossover combined with hydrogen evolution parasitic reaction reduces CE to 92% at 160 mA/cm2; (3) Zn-Br: bromine crossover through microporous separator causes self-discharge and zinc dendrite formation (fade 0.04-0.06%/cycle); (4) SLA: not primarily crossover-limited but PbO2 morphology and lead dendrite cause fade 0.04-0.08%/cycle; (5) ORFB: organic species crossover leads to SOC imbalance (MV/TEMPO 15% after 300 cycles) and chemical degradation, with fade rates 0.01-0.055%/cycle depending on chemistry. The relationship emerges because even modest crossover of electroactive species leads to irreversible capacity loss through chemical reaction with opposing electrolyte.",
+    "reference_answer_points": [
+      "Universal threshold: membrane selectivity >95% for fade <0.02%/cycle",
+      "VRFB: vanadium crossover → fade 0.035%/cycle",
+      "ICRFB: Fe/Cr crossover + H2 evolution → CE 92% at 160 mA/cm2",
+      "Zn-Br: bromine crossover + Zn dendrite → fade 0.04-0.06%/cycle",
+      "SLA: PbO2 morphology + lead dendrite → fade 0.04-0.08%/cycle",
+      "ORFB: organic crossover + SOC imbalance → fade 0.01-0.055%/cycle",
+      "Root cause: crossover leads to irreversible capacity loss via chemical reaction"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-008",
+      "DOC10-FACT-011"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-017",
+      "DOC10-EFU-018",
+      "DOC10-EFU-019",
+      "DOC10-EFU-020",
+      "DOC10-EFU-022"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-009",
+    "source_doc_id": "DOC10",
+    "level": "L6",
+    "question_type": "cross-system strategy recommendation",
+    "question": "A research team is developing a new aqueous Mn-based redox flow battery. Based on the cross-system design rules from the five benchmark RFB systems, which design strategies should they adopt from VRFB and what adaptations are needed, considering the three tiers of design rule transferability?",
+    "reference_answer": "For a new aqueous Mn-based RFB, the team should adopt a tiered strategy: (1) Tier 1 (Universal Rules): Membrane selectivity >95% for fade <0.02%/cycle; thermal treatment of carbon felt at 400-500 C (expected 2-3 pp EE improvement for aqueous inorganic); flow field optimization via Damkohler/Peclet analysis; SOC window management. (2) Tier 2 (Partially Transferable): Membrane transport mechanism must match Mn electrolyte chemistry - if acidic, Nafion-type cation exchange; if neutral/alkaline, anion exchange may be preferred. Catalytic electrode modifications should target the specific rate-limiting Mn redox reaction (Mn2+/Mn3+ or MnO2 deposition). (3) Tier 3 (Chemistry-Specific): Mn-based systems may face unique challenges similar to Zn-Br (deposit morphology if MnO2 forms) or VRFB (multiple oxidation states). If MnO2 deposition occurs, adapt Zn-Br dendrite management strategies; if soluble Mn2+/Mn3+ only, follow VRFB membrane/electrode strategies directly. Key adaptation: Mn2+/Mn3+ redox kinetics differ from vanadium, so the specific catalytic coating from VRFB may need modification.",
+    "reference_answer_points": [
+      "Tier 1 universal: membrane selectivity >95%, thermal treatment 400-500 C, flow field via Damkohler/Peclet, SOC management",
+      "Tier 2 partially transferable: membrane transport mechanism matched to Mn electrolyte pH",
+      "Tier 2: catalytic coatings target Mn-specific rate-limiting reactions",
+      "Tier 3 chemistry-specific: address MnO2 deposition if present (adapt from Zn-Br)",
+      "Key adaptation: Mn redox kinetics differ from vanadium - modify catalyst",
+      "If soluble-only Mn system: follow VRFB strategies directly"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-014"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-024",
+      "DOC10-EFU-025",
+      "DOC10-EFU-026",
+      "DOC10-EFU-027"
+    ]
+  },
+  {
+    "question_id": "DOC10-QA-010",
+    "source_doc_id": "DOC10",
+    "level": "L6",
+    "question_type": "hybrid-system design recommendation",
+    "question": "A company wants to develop a hybrid RFB combining an inorganic catholyte (Fe2+/Fe3+ in HCl) with an organic anolyte (AQDS). Based on the cross-system design framework, what combined strategies from VRFB and ORFB should they apply, and what are the critical compatibility considerations?",
+    "reference_answer": "For this hybrid inorganic-organic RFB (Fe/HCl catholyte + AQDS anolyte): (1) From VRFB: adopt membrane selection strategy (Nafion 117 or SPEEK proven for aqueous inorganic systems), electrode thermal treatment at 400-500 C (2-3 pp improvement expected), and flow field design via Damkohler/Peclet analysis. (2) From ORFB: adopt AQDS-specific stability management (pH 12 optimal, avoid pH 14 due to 0.068%/cycle fade), oxygen exclusion below 0.1 ppm (prevents CE drop from 95.5% to 90.2%), and SOC imbalance monitoring (AQDS/TEMPO showed 7% imbalance vs 15% for MV/TEMPO). (3) Critical compatibility considerations: membrane must be compatible with both Fe/HCl and AQDS at pH 12 - Nafion is stable in both but ion transport mechanism must handle both Fe species and AQDS sulfonates; membrane selectivity must exceed 95% to prevent fade above 0.02%/cycle; the different pH requirements of Fe/HCl (acidic) and AQDS (alkaline) must be reconciled - either operate at intermediate pH with performance trade-offs or use a bipolar membrane; charge transfer resistance at both electrodes must be minimized - Fe3+/Fe2+ is facile (0.3-0.5 ohm cm2) while AQDS is moderate, so electrode catalysis should focus on the AQDS side.",
+    "reference_answer_points": [
+      "From VRFB: membrane selection (Nafion/SPEEK), thermal treatment 400-500 C, flow field optimization",
+      "From ORFB: AQDS pH 12 optimal, oxygen exclusion <0.1 ppm, SOC imbalance monitoring",
+      "Compatibility: membrane must handle both Fe/HCl and AQDS at target pH",
+      "Critical: reconcile pH - Fe/HCl acidic vs AQDS alkaline - use bipolar membrane or compromise pH",
+      "Membrane selectivity >95% required for fade <0.02%/cycle",
+      "Fe3+/Fe2+ kinetics facile (0.3-0.5 ohm cm2), focus catalysis on AQDS side",
+      "Expected performance: EE 78-82% at 60-100 mA/cm2 with careful design"
+    ],
+    "expected_facts": [
+      "DOC10-FACT-007",
+      "DOC10-FACT-011",
+      "DOC10-FACT-014"
+    ],
+    "expected_efus": [
+      "DOC10-EFU-006",
+      "DOC10-EFU-022",
+      "DOC10-EFU-023",
+      "DOC10-EFU-026",
+      "DOC10-EFU-027"
+    ]
+  }
+]

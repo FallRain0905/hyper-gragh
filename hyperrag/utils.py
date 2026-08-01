@@ -6,6 +6,7 @@ import json
 import logging
 import os
 import re
+import time
 from dataclasses import dataclass
 from functools import wraps
 from hashlib import md5
@@ -143,11 +144,37 @@ def load_json(file_name):
 
 def write_json(json_obj, file_name):
     tmp_file_name = f"{file_name}.tmp"
+    os.makedirs(os.path.dirname(file_name) or ".", exist_ok=True)
     with open(tmp_file_name, "w", encoding="utf-8") as f:
         json.dump(json_obj, f, indent=2, ensure_ascii=False)
         f.flush()
         os.fsync(f.fileno())
-    os.replace(tmp_file_name, file_name)
+
+    # Windows + OneDrive/antivirus can block renaming .tmp files for longer
+    # than a normal retry window. Prefer atomic replace, then fall back to a
+    # direct write so local benchmark builds can still complete.
+    last_error = None
+    for attempt in range(2):
+        try:
+            os.replace(tmp_file_name, file_name)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            time.sleep(0.2 * (attempt + 1))
+
+    logger.warning(
+        "Atomic JSON replace failed for %s; falling back to direct write: %s",
+        file_name,
+        last_error,
+    )
+    with open(file_name, "w", encoding="utf-8") as f:
+        json.dump(json_obj, f, indent=2, ensure_ascii=False)
+        f.flush()
+        os.fsync(f.fileno())
+    try:
+        os.remove(tmp_file_name)
+    except OSError:
+        pass
 
 
 def encode_string_by_tiktoken(content: str, model_name: str = "gpt-4o"):

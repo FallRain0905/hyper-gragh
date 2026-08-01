@@ -1,0 +1,1236 @@
+{
+  "doc_id": "DOC05",
+  "doc_title": "Temperature-Dependent Cycling Stability and Capacity Fading Mechanisms in Vanadium Redox Flow Batteries",
+  "domain": "VRFB_chemistry",
+  "word_count": 3200,
+  "annotation_date": "2025-01-15",
+  "annotator": "chem_expert_v1",
+  "version": "1.0",
+  "efus": [
+    {
+      "canonical_id": "DOC05_EFU_001",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 25,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500,
+        "membrane": "Nafion 115",
+        "electrolyte_concentration_M": 1.6,
+        "electrolyte_volume_mL": 60
+      },
+      "performance_metric": "capacity_retention_percent",
+      "value": 85.0,
+      "value_unit": "%",
+      "evidence_text": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C, 74% at 40°C, and only 60% at 60°C.",
+      "evidence_location": "Abstract",
+      "notes": "Capacity retention is defined as discharge capacity at cycle N relative to initial discharge capacity."
+    },
+    {
+      "canonical_id": "DOC05_EFU_002",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 40,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500,
+        "membrane": "Nafion 115",
+        "electrolyte_concentration_M": 1.6
+      },
+      "performance_metric": "capacity_retention_percent",
+      "value": 74.0,
+      "value_unit": "%",
+      "evidence_text": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C, 74% at 40°C, and only 60% at 60°C.",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_003",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 60,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500,
+        "membrane": "Nafion 115",
+        "electrolyte_concentration_M": 1.6
+      },
+      "performance_metric": "capacity_retention_percent",
+      "value": 60.0,
+      "value_unit": "%",
+      "evidence_text": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C, 74% at 40°C, and only 60% at 60°C.",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_004",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 25,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "coulombic_efficiency_final_percent",
+      "value": 94.8,
+      "value_unit": "%",
+      "evidence_text": "Coulombic efficiency exhibited a gradual decline from 97.2% to 94.8% at 25°C, from 97.0% to 92.1% at 40°C, and from 96.8% to 88.5% at 60°C over the same cycling period.",
+      "evidence_location": "Abstract",
+      "notes": "Initial CE was 97.2% at 25°C."
+    },
+    {
+      "canonical_id": "DOC05_EFU_005",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 40,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "coulombic_efficiency_final_percent",
+      "value": 92.1,
+      "value_unit": "%",
+      "evidence_text": "Coulombic efficiency exhibited a gradual decline from 97.2% to 94.8% at 25°C, from 97.0% to 92.1% at 40°C, and from 96.8% to 88.5% at 60°C over the same cycling period.",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_006",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 60,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "coulombic_efficiency_final_percent",
+      "value": 88.5,
+      "value_unit": "%",
+      "evidence_text": "Coulombic efficiency exhibited a gradual decline from 97.2% to 94.8% at 25°C, from 97.0% to 92.1% at 40°C, and from 96.8% to 88.5% at 60°C over the same cycling period.",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_007",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 25,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "capacity_fade_rate_percent_per_100_cycles",
+      "value": 3.0,
+      "value_unit": "%/100 cycles",
+      "evidence_text": "The capacity fade rates, calculated as the average percentage capacity loss per 100 cycles, were 3.0% per 100 cycles at 25°C, 5.2% per 100 cycles at 40°C, and 8.0% per 100 cycles at 60°C.",
+      "evidence_location": "Section 3.1"
+    },
+    {
+      "canonical_id": "DOC05_EFU_008",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 40,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "capacity_fade_rate_percent_per_100_cycles",
+      "value": 5.2,
+      "value_unit": "%/100 cycles",
+      "evidence_text": "The capacity fade rates, calculated as the average percentage capacity loss per 100 cycles, were 3.0% per 100 cycles at 25°C, 5.2% per 100 cycles at 40°C, and 8.0% per 100 cycles at 60°C.",
+      "evidence_location": "Section 3.1"
+    },
+    {
+      "canonical_id": "DOC05_EFU_009",
+      "efu_type": "OPERATION_PERFORMANCE",
+      "confidence": "high",
+      "subject_entity": "VRFB",
+      "subject_variant": "laboratory-scale VRFB single cell",
+      "operation_condition": {
+        "temperature_c": 60,
+        "current_density_mA_cm2": 80,
+        "cycle_number": 500
+      },
+      "performance_metric": "capacity_fade_rate_percent_per_100_cycles",
+      "value": 8.0,
+      "value_unit": "%/100 cycles",
+      "evidence_text": "The capacity fade rates, calculated as the average percentage capacity loss per 100 cycles, were 3.0% per 100 cycles at 25°C, 5.2% per 100 cycles at 40°C, and 8.0% per 100 cycles at 60°C.",
+      "evidence_location": "Section 3.1"
+    },
+    {
+      "canonical_id": "DOC05_EFU_010",
+      "efu_type": "COMPOSITION",
+      "confidence": "high",
+      "subject_entity": "VRFB electrolyte (negative half-cell)",
+      "composition_items": [
+        {
+          "component": "V³⁺",
+          "concentration_M": 1.6,
+          "role": "active species"
+        },
+        {
+          "component": "total sulfate",
+          "concentration_M": 4.5,
+          "role": "supporting electrolyte"
+        }
+      ],
+      "evidence_text": "The electrolyte consisted of 1.6 M V³⁺ in 4.5 M total sulfate (prepared from VOSO₄ and subsequent electrochemical reduction) for the negative half-cell and 1.6 M VO²⁺ in 4.5 M total sulfate for the positive half-cell, with 60 mL of electrolyte in each reservoir.",
+      "evidence_location": "Section 2"
+    },
+    {
+      "canonical_id": "DOC05_EFU_011",
+      "efu_type": "COMPOSITION",
+      "confidence": "high",
+      "subject_entity": "VRFB cell components",
+      "composition_items": [
+        {
+          "component": "electrode",
+          "material": "graphite felt (SGL GFD4.6)",
+          "thickness_mm": 4.6,
+          "compression_percent": 80
+        },
+        {
+          "component": "membrane",
+          "material": "Nafion 115",
+          "type": "proton exchange membrane"
+        },
+        {
+          "component": "active electrode area",
+          "value_cm2": 25
+        }
+      ],
+      "evidence_text": "The cell employed graphite felt electrodes (SGL GFD4.6, 4.6 mm thickness) compressed to 80% of their original thickness, separated by a Nafion 115 proton exchange membrane... using a laboratory-scale VRFB single cell with an active electrode area of 25 cm².",
+      "evidence_location": "Section 2"
+    },
+    {
+      "canonical_id": "DOC05_EFU_012",
+      "efu_type": "COMPARISON",
+      "confidence": "high",
+      "comparison_type": "performance_across_conditions",
+      "baseline_condition": {
+        "temperature_c": 25,
+        "metric": "capacity_retention_percent",
+        "cycle_number": 500
+      },
+      "compared_condition": {
+        "temperature_c": 60,
+        "metric": "capacity_retention_percent",
+        "cycle_number": 500
+      },
+      "baseline_value": 85.0,
+      "compared_value": 60.0,
+      "difference_description": "60°C capacity retention is 25 percentage points lower than 25°C after 500 cycles (60% vs 85%)",
+      "statistical_significance": "N/A (controlled experiment)",
+      "evidence_text": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C, 74% at 40°C, and only 60% at 60°C.",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_013",
+      "efu_type": "COMPARISON",
+      "confidence": "high",
+      "comparison_type": "fade_rate_ratio",
+      "baseline_condition": {
+        "temperature_c": 25,
+        "metric": "capacity_fade_rate"
+      },
+      "compared_condition": {
+        "temperature_c": 40,
+        "metric": "capacity_fade_rate"
+      },
+      "baseline_value": 3.0,
+      "compared_value": 5.2,
+      "difference_description": "Increasing temperature from 25°C to 40°C increased the fade rate by a factor of 1.73 (from 3.0% to 5.2% per 100 cycles)",
+      "evidence_text": "increasing from 25°C to 40°C (a 15°C rise) increased the fade rate by a factor of 1.73, while increasing from 40°C to 60°C (a 20°C rise) increased it by a factor of 1.54.",
+      "evidence_location": "Section 3.1"
+    },
+    {
+      "canonical_id": "DOC05_EFU_014",
+      "efu_type": "COMPARISON",
+      "confidence": "high",
+      "comparison_type": "fade_rate_ratio",
+      "baseline_condition": {
+        "temperature_c": 40,
+        "metric": "capacity_fade_rate"
+      },
+      "compared_condition": {
+        "temperature_c": 60,
+        "metric": "capacity_fade_rate"
+      },
+      "baseline_value": 5.2,
+      "compared_value": 8.0,
+      "difference_description": "Increasing temperature from 40°C to 60°C increased the fade rate by a factor of 1.54 (from 5.2% to 8.0% per 100 cycles)",
+      "evidence_text": "increasing from 25°C to 40°C (a 15°C rise) increased the fade rate by a factor of 1.73, while increasing from 40°C to 60°C (a 20°C rise) increased it by a factor of 1.54.",
+      "evidence_location": "Section 3.1"
+    },
+    {
+      "canonical_id": "DOC05_EFU_015",
+      "efu_type": "COMPARISON",
+      "confidence": "high",
+      "comparison_type": "crossover_coefficient_ratio",
+      "baseline_condition": {
+        "temperature_c": 25,
+        "cycle": 200,
+        "metric": "vanadium_crossover_diffusion_coefficient"
+      },
+      "compared_condition": {
+        "temperature_c": 60,
+        "cycle": 200,
+        "metric": "vanadium_crossover_diffusion_coefficient"
+      },
+      "baseline_value": 2.1e-07,
+      "compared_value": 6.5e-07,
+      "difference_description": "Vanadium crossover diffusion coefficient at 60°C is 3.1x higher than at 25°C after 200 cycles (6.5e-7 vs 2.1e-7 cm²/s)",
+      "evidence_text": "By cycle 200, these values had risen to 2.1 × 10⁻⁷ cm²/s, 3.8 × 10⁻⁷ cm²/s, and 6.5 × 10⁻⁷ cm²/s respectively.",
+      "evidence_location": "Section 3.2"
+    },
+    {
+      "canonical_id": "DOC05_EFU_016",
+      "efu_type": "COMPARISON",
+      "confidence": "high",
+      "comparison_type": "remixing_recovery_efficiency",
+      "baseline_condition": {
+        "temperature_c": 25,
+        "cycle": 500,
+        "metric": "remixing_recovery_efficiency"
+      },
+      "compared_condition": {
+        "temperature_c": 60,
+        "cycle": 500,
+        "metric": "remixing_recovery_efficiency"
+      },
+      "baseline_value": 62.0,
+      "compared_value": 41.0,
+      "difference_description": "Remixing recovery efficiency at 500 cycles dropped from 62% at 25°C to 41% at 60°C, a 21 percentage point reduction",
+      "evidence_text": "with recovery efficiencies of 62% at 25°C, 55% at 40°C, and 41% at 60°C relative to the faded capacity",
+      "evidence_location": "Abstract"
+    },
+    {
+      "canonical_id": "DOC05_EFU_017",
+      "efu_type": "DEGRADATION_CHAIN",
+      "confidence": "high",
+      "degradation_chain": [
+        {
+          "step": 1,
+          "process": "vanadium_crossover",
+          "description": "Asymmetric vanadium ion transport through Nafion 115 membrane, predominantly from positive to negative half-cell",
+          "driving_force": "concentration gradient and temperature-activated diffusion",
+          "temperature_effect": "crossover diffusion coefficient increases from 2.1e-7 cm²/s (25°C) to 6.5e-7 cm²/s (60°C) at cycle 200"
+        },
+        {
+          "step": 2,
+          "process": "electrolyte_imbalance_SOC_divergence",
+          "description": "Progressive divergence in state-of-charge between positive and negative half-cells",
+          "measured_effect": "SOC differential reaches 8% (25°C), 15% (40°C), 24% (60°C) after 500 cycles",
+          "consequence": "limits usable capacity because the lower-SOC half-cell determines the capacity limit"
+        },
+        {
+          "step": 3,
+          "process": "capacity_fading",
+          "description": "Net reduction in discharge capacity",
+          "measured_effect": "capacity retention drops to 85% (25°C), 74% (40°C), 60% (60°C) after 500 cycles"
+        }
+      ],
+      "evidence_text": "Post-cycling analysis revealed that vanadium crossover rates increased exponentially with temperature... Electrolyte imbalance, quantified by the state-of-charge (SOC) difference between the positive and negative half-cells, diverged progressively... These findings elucidate the coupled roles of thermal acceleration of vanadium ion transport through the ion exchange membrane and the resulting electrolyte imbalance as primary drivers of temperature-enhanced capacity fading in VRFBs.",
+      "evidence_location": "Abstract and Section 3"
+    },
+    {
+      "canonical_id": "DOC05_EFU_018",
+      "efu_type": "DEGRADATION_CHAIN",
+      "confidence": "high",
+      "degradation_chain": [
+        {
+          "step": 1,
+          "process": "elevated_temperature",
+          "description": "Operating temperature above 40°C accelerates side reaction kinetics",
+          "activation": "water oxidation at positive electrode (OER), water reduction at negative electrode (HER)"
+        },
+        {
+          "step": 2,
+          "process": "electrolyte_imbalance_compounding",
+          "description": "Side reactions drive SOC divergence; oxygen evolution reduces positive SOC, hydrogen evolution alters negative SOC",
+          "feedback": "increased overpotentials from SOC divergence further drive parasitic reactions"
+        },
+        {
+          "step": 3,
+          "process": "membrane_chemical_degradation",
+          "description": "Sulfonic acid group loss and polymer backbone cleavage in Nafion membrane",
+          "measured_effect": "permanent increase in membrane permeability; cannot be reversed by remixing"
+        },
+        {
+          "step": 4,
+          "process": "irreversible_capacity_loss",
+          "description": "Vanadium precipitation from positive electrolyte and permanent membrane damage",
+          "measured_effect": "at 60°C, visible precipitate after 300 cycles; remixing recovers only 41% at cycle 500"
+        }
+      ],
+      "evidence_text": "At elevated temperatures, water oxidation at the positive electrode becomes increasingly favorable... These side reactions create a compounding effect: as the SOC diverges, the overpotentials at each electrode increase, further driving the parasitic reactions... Post-mortem analysis of the membrane from the 60°C cell revealed significant chemical degradation including sulfonic acid group loss and polymer backbone cleavage... Additionally, visible vanadium precipitate was observed in the positive electrolyte reservoir at 60°C after 300 cycles",
+      "evidence_location": "Section 3.3 and 3.4"
+    },
+    {
+      "canonical_id": "DOC05_EFU_019",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "confidence": "high",
+      "mechanism_name": "temperature_activated_vanadium_crossover",
+      "mechanism_category": "mass_transport",
+      "supporting_evidence": [
+        "Crossover diffusion coefficients increased with both temperature and cycling duration",
+        "Effective diffusion coefficient at cycle 200: 2.1e-7 cm²/s (25°C), 3.8e-7 cm²/s (40°C), 6.5e-7 cm²/s (60°C)",
+        "Activation energy estimated at 28-32 kJ/mol from diffusion coefficient temperature dependence",
+        "Asymmetric transport: V(V) (VO₂⁺) exhibits higher membrane permeability due to smaller hydrated radius"
+      ],
+      "contradicting_evidence": [],
+      "quantitative_support": {
+        "metric": "crossover_diffusion_coefficient_ratio_60C_vs_25C",
+        "value": 3.1,
+        "at_cycle": 200
+      },
+      "evidence_text": "Vanadium crossover measurements conducted at 50-cycle intervals revealed the underlying transport mechanism driving CE loss... The effective vanadium crossover diffusion coefficients, calculated from the measured concentration changes in each half-cell, increased with both temperature and cycling duration... The crossover data further revealed an asymmetric transport behavior: vanadium ions migrated predominantly from the positive half-cell (VO²⁺/VO₂⁺) to the negative half-cell (V²⁺/V³⁺) at all temperatures.",
+      "evidence_location": "Section 3.2"
+    },
+    {
+      "canonical_id": "DOC05_EFU_020",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "confidence": "high",
+      "mechanism_name": "shift_in_dominant_degradation_mode_with_temperature",
+      "mechanism_category": "degradation_pathway_analysis",
+      "supporting_evidence": [
+        "At 25°C: crossover contributes ~70% of fade, side reactions + precipitation ~30%",
+        "At 40°C: crossover contributes ~55%, side reactions 30%, precipitation 15%",
+        "At 60°C: crossover contributes only 35%, side reactions + precipitation 65%",
+        "Remixing effectiveness declines with temperature: 62% recovery (25°C) vs 41% (60°C), consistent with shift toward irreversible mechanisms"
+      ],
+      "contradicting_evidence": [],
+      "quantitative_support": {
+        "metric": "crossover_contribution_to_fade_percent_60C",
+        "value": 35.0,
+        "unit": "%"
+      },
+      "evidence_text": "at 25°C, vanadium crossover accounts for approximately 70% of the total capacity fade, with side reactions and minor precipitation contributing the remaining 30%. At 40°C, crossover contributes approximately 55%, side reactions 30%, and precipitation 15% of the total fade. At 60°C, the picture shifts dramatically: crossover contributes only 35%, while side reactions and precipitation together account for 65% of the capacity loss.",
+      "evidence_location": "Section 3.5"
+    },
+    {
+      "canonical_id": "DOC05_EFU_021",
+      "efu_type": "MECHANISM_EVIDENCE",
+      "confidence": "high",
+      "mechanism_name": "SOC_divergence_linear_capacity_loss_relationship",
+      "mechanism_category": "capacity-limiting phenomenon",
+      "supporting_evidence": [
+        "Each 1% increase in SOC differential corresponds to ~0.6-0.8% capacity loss",
+        "At 60°C, 24% SOC differential accounts for ~60% of the total 40% capacity loss",
+        "SOC divergence driven by asymmetric crossover and differential side reaction rates"
+      ],
+      "contradicting_evidence": [],
+      "quantitative_support": {
+        "metric": "capacity_loss_per_SOC_differential_percent",
+        "value_range": [
+          0.6,
+          0.8
+        ],
+        "unit": "% capacity loss per % SOC diff"
+      },
+      "evidence_text": "The relationship between SOC divergence and capacity retention follows an approximately linear trend across all temperatures: each 1% increase in SOC differential corresponds to a capacity loss of approximately 0.6-0.8% relative to the theoretical balanced capacity. At 60°C, the 24% SOC differential accounts for roughly 60% of the total 40% capacity loss",
+      "evidence_location": "Section 3.3"
+    },
+    {
+      "canonical_id": "DOC05_EFU_022",
+      "efu_type": "DESIGN_SUMMARY",
+      "confidence": "high",
+      "design_type": "electrolyte_remixing_protocol",
+      "design_purpose": "mitigate electrolyte imbalance and restore capacity lost to crossover-driven SOC divergence",
+      "key_parameters": {
+        "remixing_interval_cycles": 100,
+        "mixing_duration_minutes": 30,
+        "atmosphere": "nitrogen",
+        "method": "combine both electrolytes, mix thoroughly, redistribute equally"
+      },
+      "performance_outcomes": {
+        "25C_recovery_first_remix_percent": 89,
+        "25C_recovery_500th_cycle_remix_percent": 62,
+        "25C_net_retention_with_remixing_500cycles": 92.5,
+        "40C_recovery_first_remix_percent": 82,
+        "40C_recovery_500th_cycle_remix_percent": 55,
+        "40C_net_retention_with_remixing_500cycles": 84,
+        "60C_recovery_first_remix_percent": 71,
+        "60C_recovery_500th_cycle_remix_percent": 41,
+        "60C_net_retention_with_remixing_500cycles": 70.5
+      },
+      "design_tradeoffs": "Recovery efficiency declines with cycling and temperature due to accumulation of irreversible degradation; remixing cannot reverse membrane chemical degradation or vanadium precipitation",
+      "evidence_text": "At 25°C, where the SOC divergence was modest, the first remixing event at cycle 100 restored 89% of the faded capacity... At 40°C, the effectiveness of remixing was moderately reduced. The first remixing at cycle 100 recovered 82% of the faded capacity, but by cycle 500, only 55% of the accumulated fade could be reversed. At 60°C, remixing provided only partial relief from capacity fading. The first remixing at cycle 100 recovered 71% of the faded capacity",
+      "evidence_location": "Section 3.4"
+    },
+    {
+      "canonical_id": "DOC05_EFU_023",
+      "efu_type": "DESIGN_SUMMARY",
+      "confidence": "high",
+      "design_type": "experimental_design_for_temperature_dependent_degradation_study",
+      "design_purpose": "systematically isolate thermal contribution to capacity fading with consistent non-thermal parameters",
+      "key_parameters": {
+        "test_temperatures_celsius": [
+          25,
+          40,
+          60
+        ],
+        "current_density_mA_cm2": 80,
+        "cell_active_area_cm2": 25,
+        "electrolyte_concentration_M": 1.6,
+        "electrolyte_volume_mL_per_reservoir": 60,
+        "membrane": "Nafion 115",
+        "electrode": "SGL GFD4.6 graphite felt",
+        "flow_rate_mL_min": 40,
+        "voltage_limits_V": [
+          0.9,
+          1.65
+        ],
+        "max_cycles": 500,
+        "termination_threshold_capacity_percent": 45
+      },
+      "performance_outcomes": {
+        "primary_metrics_measured": [
+          "capacity retention",
+          "coulombic efficiency",
+          "voltage efficiency",
+          "energy efficiency",
+          "vanadium crossover rate",
+          "SOC divergence",
+          "remixing recovery efficiency"
+        ]
+      },
+      "design_tradeoffs": "Single current density (80 mA/cm²) limits generalizability to other operating rates; laboratory-scale cell may not fully capture stack-level thermal effects",
+      "evidence_text": "All cycling experiments were conducted using a laboratory-scale VRFB single cell with an active electrode area of 25 cm²... Three identical cells were assembled and operated in temperature-controlled environmental chambers maintained at 25°C, 40°C, and 60°C (±0.5°C) respectively.",
+      "evidence_location": "Section 2"
+    }
+  ],
+  "gold_facts": [
+    {
+      "fact_id": "DOC05_FACT_001",
+      "fact_statement": "At 25°C and 80 mA/cm², the VRFB achieved 85% capacity retention after 500 cycles.",
+      "derived_from_efus": [
+        "DOC05_EFU_001"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_002",
+      "fact_statement": "At 40°C and 80 mA/cm², the VRFB achieved 74% capacity retention after 500 cycles.",
+      "derived_from_efus": [
+        "DOC05_EFU_002"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "74% at 40°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_003",
+      "fact_statement": "At 60°C and 80 mA/cm², the VRFB achieved only 60% capacity retention after 500 cycles.",
+      "derived_from_efus": [
+        "DOC05_EFU_003"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "only 60% at 60°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_004",
+      "fact_statement": "The initial discharge capacities at 25°C, 40°C, and 60°C were 1420 mAh, 1415 mAh, and 1435 mAh respectively at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC05_EFU_001",
+        "DOC05_EFU_002",
+        "DOC05_EFU_003"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "the battery achieved initial discharge capacities of 1420 mAh, 1415 mAh, and 1435 mAh at 25°C, 40°C, and 60°C respectively"
+    },
+    {
+      "fact_id": "DOC05_FACT_005",
+      "fact_statement": "Coulombic efficiency declined from 97.2% to 94.8% at 25°C over 500 cycles at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC05_EFU_004"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "Coulombic efficiency exhibited a gradual decline from 97.2% to 94.8% at 25°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_006",
+      "fact_statement": "Coulombic efficiency declined from 97.0% to 92.1% at 40°C over 500 cycles at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC05_EFU_005"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "from 97.0% to 92.1% at 40°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_007",
+      "fact_statement": "Coulombic efficiency declined from 96.8% to 88.5% at 60°C over 500 cycles at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC05_EFU_006"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "from 96.8% to 88.5% at 60°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_008",
+      "fact_statement": "The capacity fade rates at 25°C, 40°C, and 60°C were 3.0%, 5.2%, and 8.0% per 100 cycles respectively at 80 mA/cm².",
+      "derived_from_efus": [
+        "DOC05_EFU_007",
+        "DOC05_EFU_008",
+        "DOC05_EFU_009"
+      ],
+      "fact_type": "derived_calculation",
+      "difficulty_level": "L1",
+      "supporting_evidence": "The capacity fade rates, calculated as the average percentage capacity loss per 100 cycles, were 3.0% per 100 cycles at 25°C, 5.2% per 100 cycles at 40°C, and 8.0% per 100 cycles at 60°C."
+    },
+    {
+      "fact_id": "DOC05_FACT_009",
+      "fact_statement": "The vanadium crossover diffusion coefficient after 200 cycles at 25°C was 2.1 × 10⁻⁷ cm²/s.",
+      "derived_from_efus": [
+        "DOC05_EFU_015"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "By cycle 200, these values had risen to 2.1 × 10⁻⁷ cm²/s"
+    },
+    {
+      "fact_id": "DOC05_FACT_010",
+      "fact_statement": "The vanadium crossover diffusion coefficient after 200 cycles at 40°C was 3.8 × 10⁻⁷ cm²/s.",
+      "derived_from_efus": [
+        "DOC05_EFU_015"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "3.8 × 10⁻⁷ cm²/s"
+    },
+    {
+      "fact_id": "DOC05_FACT_011",
+      "fact_statement": "The vanadium crossover diffusion coefficient after 200 cycles at 60°C was 6.5 × 10⁻⁷ cm²/s.",
+      "derived_from_efus": [
+        "DOC05_EFU_015"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "6.5 × 10⁻⁷ cm²/s"
+    },
+    {
+      "fact_id": "DOC05_FACT_012",
+      "fact_statement": "The SOC difference between half-cells after 500 cycles was 8% at 25°C, 15% at 40°C, and 24% at 60°C.",
+      "derived_from_efus": [
+        "DOC05_EFU_017"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L1",
+      "supporting_evidence": "the SOC differential reached 8% at 25°C, 15% at 40°C, and 24% at 60°C after 500 cycles"
+    },
+    {
+      "fact_id": "DOC05_FACT_013",
+      "fact_statement": "Increasing temperature from 25°C to 40°C increased the capacity fade rate by a factor of 1.73.",
+      "derived_from_efus": [
+        "DOC05_EFU_013"
+      ],
+      "fact_type": "derived_calculation",
+      "difficulty_level": "L2",
+      "supporting_evidence": "increasing from 25°C to 40°C (a 15°C rise) increased the fade rate by a factor of 1.73"
+    },
+    {
+      "fact_id": "DOC05_FACT_014",
+      "fact_statement": "Increasing temperature from 40°C to 60°C increased the capacity fade rate by a factor of 1.54.",
+      "derived_from_efus": [
+        "DOC05_EFU_014"
+      ],
+      "fact_type": "derived_calculation",
+      "difficulty_level": "L2",
+      "supporting_evidence": "increasing from 40°C to 60°C (a 20°C rise) increased it by a factor of 1.54"
+    },
+    {
+      "fact_id": "DOC05_FACT_015",
+      "fact_statement": "The non-linear relationship between temperature and fade rate (1.73x for 15°C vs 1.54x for 20°C) indicates that multiple degradation pathways with different temperature sensitivities are involved.",
+      "derived_from_efus": [
+        "DOC05_EFU_013",
+        "DOC05_EFU_014"
+      ],
+      "fact_type": "interpretive_inference",
+      "difficulty_level": "L3",
+      "supporting_evidence": "This non-linearity suggests that the temperature dependence of capacity fading cannot be captured by a simple Arrhenius-type single-process model and instead reflects the combined activation of multiple degradation pathways with differing temperature sensitivities."
+    },
+    {
+      "fact_id": "DOC05_FACT_016",
+      "fact_statement": "Periodic electrolyte remixing at 100-cycle intervals improved net 500-cycle capacity retention from 85% to 92.5% at 25°C, from 74% to 84% at 40°C, and from 60% to 70.5% at 60°C.",
+      "derived_from_efus": [
+        "DOC05_EFU_022"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L2",
+      "supporting_evidence": "periodic remixing improved the net capacity retention from 85% to 92.5% at 25°C... from 74% to 84% at 40°C... and from 60% to 70.5% at 60°C"
+    },
+    {
+      "fact_id": "DOC05_FACT_017",
+      "fact_statement": "The first remixing at cycle 100 recovered 89% of faded capacity at 25°C, 82% at 40°C, and 71% at 60°C.",
+      "derived_from_efus": [
+        "DOC05_EFU_022"
+      ],
+      "fact_type": "explicit_performance_value",
+      "difficulty_level": "L2",
+      "supporting_evidence": "the first remixing event at cycle 100 restored 89% of the faded capacity... The first remixing at cycle 100 recovered 82%... The first remixing at cycle 100 recovered 71%"
+    },
+    {
+      "fact_id": "DOC05_FACT_018",
+      "fact_statement": "The effectiveness of remixing declined at higher temperatures because the dominant degradation mode shifts from reversible crossover-driven imbalance to irreversible side reactions and vanadium precipitation.",
+      "derived_from_efus": [
+        "DOC05_EFU_020",
+        "DOC05_EFU_022"
+      ],
+      "fact_type": "interpretive_inference",
+      "difficulty_level": "L4",
+      "supporting_evidence": "at 60°C, irreversible degradation mechanisms dominate the capacity loss. Post-mortem analysis of the membrane from the 60°C cell revealed significant chemical degradation including sulfonic acid group loss and polymer backbone cleavage"
+    },
+    {
+      "fact_id": "DOC05_FACT_019",
+      "fact_statement": "At 25°C, vanadium crossover accounts for ~70% of total capacity fade; at 60°C, this contribution drops to ~35%, while side reactions and precipitation rise to 65%.",
+      "derived_from_efus": [
+        "DOC05_EFU_020"
+      ],
+      "fact_type": "interpretive_inference",
+      "difficulty_level": "L3",
+      "supporting_evidence": "at 25°C, vanadium crossover accounts for approximately 70% of the total capacity fade... At 60°C, the picture shifts dramatically: crossover contributes only 35%, while side reactions and precipitation together account for 65%"
+    },
+    {
+      "fact_id": "DOC05_FACT_020",
+      "fact_statement": "Each 1% increase in SOC differential corresponds to approximately 0.6-0.8% capacity loss relative to the theoretical balanced capacity.",
+      "derived_from_efus": [
+        "DOC05_EFU_021"
+      ],
+      "fact_type": "quantitative_relationship",
+      "difficulty_level": "L3",
+      "supporting_evidence": "each 1% increase in SOC differential corresponds to a capacity loss of approximately 0.6-0.8% relative to the theoretical balanced capacity"
+    },
+    {
+      "fact_id": "DOC05_FACT_021",
+      "fact_statement": "At 60°C, the 24% SOC differential accounts for roughly 60% of the total 40% capacity loss, with the remainder from irreversible vanadium precipitation and active species depletion.",
+      "derived_from_efus": [
+        "DOC05_EFU_021"
+      ],
+      "fact_type": "quantitative_decomposition",
+      "difficulty_level": "L4",
+      "supporting_evidence": "At 60°C, the 24% SOC differential accounts for roughly 60% of the total 40% capacity loss, with the remainder attributed to irreversible vanadium precipitation and active species depletion through parasitic reactions"
+    },
+    {
+      "fact_id": "DOC05_FACT_022",
+      "fact_statement": "Vanadium ions migrate predominantly from the positive half-cell to the negative half-cell due to the higher membrane permeability of V(V) species (VO₂⁺), which has a smaller hydrated ionic radius and lower charge density.",
+      "derived_from_efus": [
+        "DOC05_EFU_019"
+      ],
+      "fact_type": "mechanistic_explanation",
+      "difficulty_level": "L4",
+      "supporting_evidence": "The crossover data further revealed an asymmetric transport behavior: vanadium ions migrated predominantly from the positive half-cell (VO²⁺/VO₂⁺) to the negative half-cell (V²⁺/V³⁺) at all temperatures... the V(V) species (VO₂⁺) exhibits higher membrane permeability due to its smaller hydrated ionic radius and lower charge density"
+    },
+    {
+      "fact_id": "DOC05_FACT_023",
+      "fact_statement": "At 60°C, visible vanadium precipitate was observed in the positive electrolyte reservoir after 300 cycles, representing an irreversible loss of active material.",
+      "derived_from_efus": [
+        "DOC05_EFU_018"
+      ],
+      "fact_type": "explicit_observation",
+      "difficulty_level": "L2",
+      "supporting_evidence": "visible vanadium precipitate was observed in the positive electrolyte reservoir at 60°C after 300 cycles, representing an irreversible loss of active material from the dissolved electrolyte phase"
+    },
+    {
+      "fact_id": "DOC05_FACT_024",
+      "fact_statement": "The cell at 60°C would have fallen below the 45% termination threshold at approximately 850 cycles, based on the observed linear fade rate in later cycling stages.",
+      "derived_from_efus": [
+        "DOC05_EFU_003"
+      ],
+      "fact_type": "projected_extrapolation",
+      "difficulty_level": "L3",
+      "supporting_evidence": "the cell at 60°C would have fallen below the 45% termination threshold had the test been extended to approximately 850 cycles, based on the observed linear fade rate in the later cycling stages"
+    },
+    {
+      "fact_id": "DOC05_FACT_025",
+      "fact_statement": "The electrolyte used 1.6 M vanadium species in 4.5 M total sulfate, with SGL GFD4.6 graphite felt electrodes (compressed to 80%) and Nafion 115 membrane, operated at 80 mA/cm² between 0.9 V and 1.65 V.",
+      "derived_from_efus": [
+        "DOC05_EFU_010",
+        "DOC05_EFU_011"
+      ],
+      "fact_type": "system_composition",
+      "difficulty_level": "L1",
+      "supporting_evidence": "The electrolyte consisted of 1.6 M V³⁺ in 4.5 M total sulfate... graphite felt electrodes (SGL GFD4.6, 4.6 mm thickness) compressed to 80%... Nafion 115 proton exchange membrane... at a constant current density of 80 mA/cm² between voltage limits of 0.9 V and 1.65 V"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "qa_id": "DOC05_QA_001",
+      "question": "What was the capacity retention of the VRFB after 500 cycles at 25°C?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "85%",
+      "supporting_facts": [
+        "DOC05_FACT_001"
+      ],
+      "evidence_text": "After 500 charge-discharge cycles, the capacity retention decreased markedly with increasing temperature: 85% at 25°C"
+    },
+    {
+      "qa_id": "DOC05_QA_002",
+      "question": "What was the capacity retention after 500 cycles at 60°C?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "60%",
+      "supporting_facts": [
+        "DOC05_FACT_003"
+      ],
+      "evidence_text": "only 60% at 60°C"
+    },
+    {
+      "qa_id": "DOC05_QA_003",
+      "question": "What was the initial coulombic efficiency at 25°C?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "97.2%",
+      "supporting_facts": [
+        "DOC05_FACT_005"
+      ],
+      "evidence_text": "Coulombic efficiency exhibited a gradual decline from 97.2% to 94.8% at 25°C"
+    },
+    {
+      "qa_id": "DOC05_QA_004",
+      "question": "What was the vanadium crossover diffusion coefficient at 40°C after 200 cycles?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "3.8 × 10⁻⁷ cm²/s",
+      "supporting_facts": [
+        "DOC05_FACT_010"
+      ],
+      "evidence_text": "By cycle 200, these values had risen to 2.1 × 10⁻⁷ cm²/s, 3.8 × 10⁻⁷ cm²/s, and 6.5 × 10⁻⁷ cm²/s respectively."
+    },
+    {
+      "qa_id": "DOC05_QA_005",
+      "question": "What was the SOC difference between half-cells at 60°C after 500 cycles?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "24%",
+      "supporting_facts": [
+        "DOC05_FACT_012"
+      ],
+      "evidence_text": "the SOC differential reached 8% at 25°C, 15% at 40°C, and 24% at 60°C after 500 cycles"
+    },
+    {
+      "qa_id": "DOC05_QA_006",
+      "question": "What electrolyte concentration was used in the experiments?",
+      "question_level": "L1",
+      "question_type": "direct_retrieval",
+      "answer": "1.6 M vanadium in 4.5 M total sulfate",
+      "supporting_facts": [
+        "DOC05_FACT_025"
+      ],
+      "evidence_text": "The electrolyte consisted of 1.6 M V³⁺ in 4.5 M total sulfate"
+    },
+    {
+      "qa_id": "DOC05_QA_007",
+      "question": "How much lower was the 500-cycle capacity retention at 60°C compared to 25°C?",
+      "question_level": "L2",
+      "question_type": "comparison",
+      "answer": "25 percentage points lower (60% vs 85%)",
+      "supporting_facts": [
+        "DOC05_FACT_001",
+        "DOC05_FACT_003"
+      ],
+      "evidence_text": "85% at 25°C... only 60% at 60°C"
+    },
+    {
+      "qa_id": "DOC05_QA_008",
+      "question": "By what factor did increasing temperature from 25°C to 40°C increase the capacity fade rate?",
+      "question_level": "L2",
+      "question_type": "calculation",
+      "answer": "1.73",
+      "supporting_facts": [
+        "DOC05_FACT_013"
+      ],
+      "evidence_text": "increasing from 25°C to 40°C (a 15°C rise) increased the fade rate by a factor of 1.73"
+    },
+    {
+      "qa_id": "DOC05_QA_009",
+      "question": "How much did periodic remixing improve the 500-cycle capacity retention at 40°C?",
+      "question_level": "L2",
+      "question_type": "calculation",
+      "answer": "10 percentage points (from 74% to 84%)",
+      "supporting_facts": [
+        "DOC05_FACT_016"
+      ],
+      "evidence_text": "periodic remixing improved the net capacity retention from 74% to 84% at 40°C"
+    },
+    {
+      "qa_id": "DOC05_QA_010",
+      "question": "What was the first remixing recovery efficiency at cycle 100 for 25°C operation?",
+      "question_level": "L2",
+      "question_type": "direct_retrieval",
+      "answer": "89%",
+      "supporting_facts": [
+        "DOC05_FACT_017"
+      ],
+      "evidence_text": "the first remixing event at cycle 100 restored 89% of the faded capacity"
+    },
+    {
+      "qa_id": "DOC05_QA_011",
+      "question": "Why does the temperature dependence of capacity fading not follow a simple Arrhenius relationship?",
+      "question_level": "L3",
+      "question_type": "inference",
+      "answer": "Because multiple degradation pathways with differing temperature sensitivities are activated simultaneously. The fade rate factor was 1.73x for a 15°C rise (25→40°C) but only 1.54x for a 20°C rise (40→60°C), indicating non-linear behavior that a single-process Arrhenius model cannot capture.",
+      "supporting_facts": [
+        "DOC05_FACT_013",
+        "DOC05_FACT_014",
+        "DOC05_FACT_015"
+      ],
+      "evidence_text": "This non-linearity suggests that the temperature dependence of capacity fading cannot be captured by a simple Arrhenius-type single-process model and instead reflects the combined activation of multiple degradation pathways with differing temperature sensitivities."
+    },
+    {
+      "qa_id": "DOC05_QA_012",
+      "question": "How much capacity loss at 60°C after 500 cycles is attributed to the SOC differential versus irreversible processes?",
+      "question_level": "L3",
+      "question_type": "decomposition",
+      "answer": "The 24% SOC differential accounts for roughly 60% of the total 40% capacity loss (i.e., ~24% capacity loss from SOC divergence). The remaining ~16% capacity loss is attributed to irreversible vanadium precipitation and active species depletion through parasitic reactions.",
+      "supporting_facts": [
+        "DOC05_FACT_021"
+      ],
+      "evidence_text": "At 60°C, the 24% SOC differential accounts for roughly 60% of the total 40% capacity loss, with the remainder attributed to irreversible vanadium precipitation and active species depletion through parasitic reactions"
+    },
+    {
+      "qa_id": "DOC05_QA_013",
+      "question": "At approximately how many cycles would the 60°C cell fall below 45% capacity retention?",
+      "question_level": "L3",
+      "question_type": "extrapolation",
+      "answer": "Approximately 850 cycles",
+      "supporting_facts": [
+        "DOC05_FACT_024"
+      ],
+      "evidence_text": "the cell at 60°C would have fallen below the 45% termination threshold had the test been extended to approximately 850 cycles, based on the observed linear fade rate in the later cycling stages"
+    },
+    {
+      "qa_id": "DOC05_QA_014",
+      "question": "What is the relationship between SOC differential and capacity loss across all temperatures?",
+      "question_level": "L3",
+      "question_type": "relationship",
+      "answer": "An approximately linear relationship: each 1% increase in SOC differential corresponds to a capacity loss of approximately 0.6-0.8% relative to the theoretical balanced capacity.",
+      "supporting_facts": [
+        "DOC05_FACT_020"
+      ],
+      "evidence_text": "each 1% increase in SOC differential corresponds to a capacity loss of approximately 0.6-0.8% relative to the theoretical balanced capacity"
+    },
+    {
+      "qa_id": "DOC05_QA_015",
+      "question": "Why does electrolyte remixing become less effective at higher temperatures?",
+      "question_level": "L4",
+      "question_type": "mechanism_explanation",
+      "answer": "At higher temperatures, the dominant degradation mode shifts from reversible crossover-driven electrolyte imbalance to irreversible processes including side reactions (oxygen and hydrogen evolution) and vanadium precipitation. Remixing can rebalance species distribution but cannot reverse membrane chemical degradation (sulfonic acid group loss, polymer backbone cleavage) or redissolve precipitated vanadium. At 60°C, membrane post-mortem showed significant chemical degradation, and visible precipitate was observed after 300 cycles.",
+      "supporting_facts": [
+        "DOC05_FACT_018",
+        "DOC05_FACT_019",
+        "DOC05_FACT_023"
+      ],
+      "evidence_text": "at 60°C, irreversible degradation mechanisms dominate the capacity loss. Post-mortem analysis of the membrane from the 60°C cell revealed significant chemical degradation including sulfonic acid group loss and polymer backbone cleavage"
+    },
+    {
+      "qa_id": "DOC05_QA_016",
+      "question": "Explain the positive feedback mechanism that accelerates degradation over cycling duration at all temperatures.",
+      "question_level": "L4",
+      "question_type": "mechanism_explanation",
+      "answer": "Increased crossover leads to higher concentrations of foreign vanadium species in each half-cell, which raises ionic strength and modifies local pH, accelerating V(V) compound precipitation from the positive electrolyte. Membrane chemical degradation increases effective pore size and reduces selectivity, permitting even faster crossover in later cycles. Meanwhile, SOC divergence increases electrode overpotentials, which further drives parasitic side reactions (OER and HER). These coupled effects create a compounding degradation loop.",
+      "supporting_facts": [
+        "DOC05_FACT_018"
+      ],
+      "evidence_text": "increased crossover leads to higher concentrations of foreign vanadium species in each half-cell, which raises the ionic strength and modifies the local pH, both of which accelerate the precipitation of V(V) compounds... Membrane chemical degradation, in turn, increases the effective pore size and reduces the selectivity, permitting even faster crossover in later cycles."
+    },
+    {
+      "qa_id": "DOC05_QA_017",
+      "question": "Why is vanadium crossover asymmetric, favoring transport from the positive to the negative half-cell?",
+      "question_level": "L4",
+      "question_type": "mechanism_explanation",
+      "answer": "The V(V) species (VO₂⁺) exhibits higher membrane permeability due to its smaller hydrated ionic radius and lower charge density compared to V(II) species. This intrinsic difference in membrane permeability among vanadium oxidation states creates a directional bias in crossover transport from the positive half-cell (where V(V) is formed during charging) toward the negative half-cell.",
+      "supporting_facts": [
+        "DOC05_FACT_022"
+      ],
+      "evidence_text": "The crossover data further revealed an asymmetric transport behavior: vanadium ions migrated predominantly from the positive half-cell (VO²⁺/VO₂⁺) to the negative half-cell (V²⁺/V³⁺) at all temperatures... the V(V) species (VO₂⁺) exhibits higher membrane permeability due to its smaller hydrated ionic radius and lower charge density compared to V(II) species."
+    },
+    {
+      "qa_id": "DOC05_QA_018",
+      "question": "How do the relative contributions of crossover, side reactions, and precipitation to capacity fade change with temperature, and what are the implications for mitigation strategy selection?",
+      "question_level": "L5",
+      "question_type": "synthesis",
+      "answer": "At 25°C, crossover dominates (~70%), so membrane modification and remixing are highly effective. At 40°C, crossover drops to ~55% with side reactions at 30% and precipitation at 15%, requiring combined strategies. At 60°C, crossover contributes only 35% while side reactions and precipitation dominate at 65%, meaning remixing alone is insufficient and strategies must address side reaction suppression (electrolyte additives) and precipitation inhibition alongside improved thermal management. The mechanistic shift explains why single-solution approaches fail across the full temperature range.",
+      "supporting_facts": [
+        "DOC05_FACT_019",
+        "DOC05_FACT_018",
+        "DOC05_FACT_016"
+      ],
+      "evidence_text": "at 25°C, vanadium crossover accounts for approximately 70% of the total capacity fade... At 60°C, the picture shifts dramatically: crossover contributes only 35%, while side reactions and precipitation together account for 65% of the capacity loss. This mechanistic shift explains why single-solution approaches fail across the full temperature range."
+    },
+    {
+      "qa_id": "DOC05_QA_019",
+      "question": "Why do voltage efficiency and energy efficiency show different temperature trends than capacity retention?",
+      "question_level": "L5",
+      "question_type": "synthesis",
+      "answer": "Voltage efficiency initially benefits from elevated temperature (89.2% at 60°C vs 85.3% at 25°C in first 50 cycles) because higher temperatures improve electrochemical kinetics and mass transport. However, VE degrades faster at elevated temperatures due to increased shunt currents and parasitic reactions. By cycle 500, VE converges to similar values across temperatures (82.5% at 25°C, 81.8% at 40°C, 79.4% at 60°C). Energy efficiency follows the combined CE and VE trends: it starts highest at 60°C (86.4%) but drops most sharply to 71.5%, whereas at 25°C it starts lower (82.8%) but declines more gradually to 78.2%. This crossover in energy efficiency trajectories means that short-term assessments would misleadingly favor high-temperature operation, while long-term cycling reveals the severe penalty of accelerated degradation.",
+      "supporting_facts": [
+        "DOC05_FACT_001",
+        "DOC05_FACT_003",
+        "DOC05_FACT_008"
+      ],
+      "evidence_text": "VE values were 85.3%, 87.1%, and 89.2% at 25°C, 40°C, and 60°C respectively during the initial 50 cycles... by cycle 500, the VE values had converged to 82.5% at 25°C, 81.8% at 40°C, and 79.4% at 60°C. Energy efficiency followed the combined trends of CE and VE, starting at 82.8% at 25°C and declining to 78.2% at cycle 500, while the 60°C cell started at 86.4% but dropped more sharply to 71.5%"
+    },
+    {
+      "qa_id": "DOC05_QA_020",
+      "question": "Based on the degradation analysis, what integrated thermal management and maintenance strategy would you recommend for a VRFB installation in a warm climate where passive cooling cannot maintain electrolyte temperature below 35°C?",
+      "question_level": "L6",
+      "question_type": "design_recommendation",
+      "answer": "An integrated strategy combining four elements: (1) periodic electrolyte remixing at 100-cycle intervals to address the ~55% crossover-driven fade component at 40°C; (2) electrolyte stabilization additives to suppress side reactions (OER/HER) and V(V) precipitation that together contribute ~45% of fade at 40°C; (3) active thermal management to prevent temperature excursions above 45°C where the degradation mode shifts to predominantly irreversible mechanisms; and (4) SOC monitoring between half-cells to trigger early intervention before divergence exceeds 10%. This multi-pronged approach is necessary because no single strategy addresses all degradation pathways at elevated temperature, as demonstrated by the declining effectiveness of remixing alone at 60°C.",
+      "supporting_facts": [
+        "DOC05_FACT_018",
+        "DOC05_FACT_019",
+        "DOC05_FACT_016",
+        "DOC05_FACT_012"
+      ],
+      "evidence_text": "For installations where passive cooling cannot maintain electrolyte temperature below 35°C, the incorporation of both periodic remixing protocols and electrolyte stabilization additives is recommended to achieve acceptable cycle life."
+    },
+    {
+      "qa_id": "DOC05_QA_021",
+      "question": "Evaluate the limitations of extrapolating these laboratory single-cell results to full-scale VRFB stacks operating in field conditions.",
+      "question_level": "L6",
+      "question_type": "critical_evaluation",
+      "answer": "Three major limitations exist: First, the single constant current density (80 mA/cm²) limits rate-dependent generalizability; field systems may operate at varying rates where mass transport and kinetic limitations differ. Second, the 25 cm² laboratory cell cannot capture stack-level effects including non-uniform electrolyte distribution, inter-cell shunt currents, and internal thermal gradients that create hot spots exceeding the bulk temperature. Third, the constant-temperature chamber eliminates the dynamic thermal cycling that field installations experience, where day-night temperature swings induce thermal expansion-contraction stresses on the membrane and additional electrolyte volume transfer effects. These limitations suggest the reported fade rates represent lower bounds for real-world degradation.",
+      "supporting_facts": [
+        "DOC05_FACT_025"
+      ],
+      "evidence_text": "Single current density (80 mA/cm²) limits generalizability to other operating rates; laboratory-scale cell may not fully capture stack-level thermal effects"
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "stress_point_id": "DOC05_NSP_001",
+      "target_concept": "temperature",
+      "alias_variants": [
+        "thermal environment",
+        "operating temperature",
+        "elevated temperature",
+        "thermal stress",
+        "thermal conditions",
+        "warm climate",
+        "high temperature"
+      ],
+      "normalization_challenge": "Temperature appears with multiple modifiers (ambient, elevated, severe, moderate, room-temperature) and in different contexts (experimental parameter, environmental condition, degradation driver). A normalized system must recognize that '60°C', 'severe thermal stress', and 'elevated temperature' in the context of the 60°C experiment all refer to the same condition.",
+      "example_sentences": [
+        "At 60°C representing severe thermal stress",
+        "the resulting electrolyte imbalance as primary drivers of temperature-enhanced capacity fading",
+        "warm-climate installations without active cooling",
+        "The most severe fading was observed at 60°C",
+        "active thermal management for VRFB systems operating in warm climates"
+      ],
+      "canonical_normalization": "temperature_celsius_60"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_002",
+      "target_concept": "capacity fading / capacity fade / capacity loss / capacity retention decrease",
+      "alias_variants": [
+        "capacity fading",
+        "capacity fade",
+        "capacity loss",
+        "capacity retention decrease",
+        "discharge capacity decline",
+        "usable capacity reduction",
+        "net reduction in discharge capacity",
+        "accumulated fade"
+      ],
+      "normalization_challenge": "The document uses multiple terms interchangeably for the reduction in discharge capacity over cycling. A system must map 'capacity fading', 'capacity fade', 'capacity loss', and 'retention decrease' to the same underlying concept. Additionally, 'fade rate' and 'fade' are distinct (rate vs. accumulated magnitude).",
+      "example_sentences": [
+        "temperature-enhanced capacity fading in VRFBs",
+        "capacity fade rate accelerated modestly",
+        "net reduction in discharge capacity",
+        "the accumulated fade could be reversed",
+        "recoverable through remixing",
+        "total 40% capacity loss"
+      ],
+      "canonical_normalization": "capacity_fade"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_003",
+      "target_concept": "cycle number / cycling duration",
+      "alias_variants": [
+        "cycle number",
+        "cycling duration",
+        "charge-discharge cycles",
+        "extended cycle life",
+        "500 cycles",
+        "cycle 500",
+        "over the cycling period"
+      ],
+      "normalization_challenge": "Cycle number appears in various forms: specific counts (cycle 100, 200, 500), durations ('over 500 cycles'), and qualitative references ('extended cycle life'). Normalization must distinguish between a specific cycle count as a temporal marker and cycle count as a test duration metric.",
+      "example_sentences": [
+        "after 500 charge-discharge cycles",
+        "Each cycling test was continued until... 500 cycles were completed",
+        "the first remixing event at cycle 100",
+        "by cycle 500",
+        "at 100-cycle intervals"
+      ],
+      "canonical_normalization": "cycle_count"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_004",
+      "target_concept": "vanadium crossover",
+      "alias_variants": [
+        "vanadium crossover",
+        "vanadium ion transport",
+        "crossover through the ion exchange membrane",
+        "asymmetric vanadium ion transport",
+        "membrane permeability",
+        "species migration across the membrane"
+      ],
+      "normalization_challenge": "Vanadium crossover is described using transport terminology (diffusion, permeability, migration) and mechanism terms. A system must recognize that 'crossover', 'transport through the membrane', and 'species migration' refer to the same process of vanadium ions moving between half-cells.",
+      "example_sentences": [
+        "vanadium crossover through the Nafion 115 membrane",
+        "thermal acceleration of vanadium ion transport through the ion exchange membrane",
+        "asymmetric vanadium ion transport through Nafion 115 membrane",
+        "effective vanadium crossover diffusion coefficients",
+        "vanadium ions migrated predominantly from the positive half-cell"
+      ],
+      "canonical_normalization": "vanadium_crossover"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_005",
+      "target_concept": "electrolyte imbalance",
+      "alias_variants": [
+        "electrolyte imbalance",
+        "SOC divergence",
+        "SOC differential",
+        "SOC difference",
+        "state-of-charge divergence",
+        "desynchronizing the SOC",
+        "species inventory imbalance",
+        "electrolyte imbalance quantified by SOC difference"
+      ],
+      "normalization_challenge": "Electrolyte imbalance is quantified by SOC (state-of-charge) metrics but also described qualitatively. 'SOC divergence', 'SOC differential', 'SOC difference', and 'electrolyte imbalance' are used interchangeably. A system must map all to the same concept of unequal states between half-cells.",
+      "example_sentences": [
+        "Electrolyte imbalance, quantified by the state-of-charge (SOC) difference",
+        "the SOC profiles diverge",
+        "the SOC differential reached 8%",
+        "SOC divergence progressed more rapidly",
+        "desynchronizing the SOC of the two half-cells"
+      ],
+      "canonical_normalization": "electrolyte_imbalance"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_006",
+      "target_concept": "remixing",
+      "alias_variants": [
+        "remixing",
+        "rebalancing",
+        "electrolyte remixing",
+        "mixing thoroughly",
+        "combining and redistributing",
+        "capacity recovery through remixing"
+      ],
+      "normalization_challenge": "The document uses 'remixing' consistently but related concepts like 'rebalancing' or 'restoring species inventory balance' appear. A system must distinguish 'remixing' (physical mixing of electrolytes) from 'rebalancing' (broader concept that could include electrochemical or chemical methods). Note that 'rebalancing' appears only in abstract and conclusion as a broader recommendation.",
+      "example_sentences": [
+        "Periodic electrolyte remixing was demonstrated",
+        "by transferring the entire electrolyte volume... mixing thoroughly",
+        "Periodic electrolyte remixing as a mitigation strategy",
+        "recovery efficiencies of 62% at 25°C... relative to the faded capacity"
+      ],
+      "canonical_normalization": "electrolyte_remixing"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_007",
+      "target_concept": "state of charge (SOC)",
+      "alias_variants": [
+        "SOC",
+        "state-of-charge",
+        "state of charge",
+        "half-cell SOC",
+        "SOC of each half-cell"
+      ],
+      "normalization_challenge": "SOC appears in various forms: 'SOC' (abbreviation), 'state-of-charge' (full form, hyphenated), 'state of charge' (full form, unhyphenated). Normalization must treat all as the same concept. Additionally, SOC is used both as a half-cell property and as a differential metric (SOC difference/divergence).",
+      "example_sentences": [
+        "quantified by the state-of-charge (SOC) difference",
+        "the SOC of each half-cell was estimated",
+        "the SOC profiles diverge",
+        "the SOC differential reached 8%",
+        "the lower-SOC half-cell determines the capacity limit"
+      ],
+      "canonical_normalization": "state_of_charge_SOC"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_008",
+      "target_concept": "coulombic efficiency (CE) degradation",
+      "alias_variants": [
+        "coulombic efficiency degradation",
+        "CE degradation",
+        "CE loss",
+        "CE decline",
+        "charge inefficiency",
+        "coulombic inefficiency"
+      ],
+      "normalization_challenge": "CE degradation is described using multiple phrases. 'CE degradation', 'CE loss', 'CE decline', and 'coulombic inefficiency' all refer to the reduction in coulombic efficiency over cycling. However, 'CE' and 'coulombic efficiency' must be linked, and 'CE drop' (a change) distinguished from 'coulombic inefficiency' (a state).",
+      "example_sentences": [
+        "CE degradation over 500 cycles followed distinctly different trajectories",
+        "total loss of 2.4 percentage points",
+        "elevated temperatures introduce measurable increases in charge inefficiency",
+        "the extent of parasitic processes that consume charge without contributing to reversible energy storage"
+      ],
+      "canonical_normalization": "coulombic_efficiency_degradation"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_009",
+      "target_concept": "capacity retention",
+      "alias_variants": [
+        "capacity retention",
+        "retention rate",
+        "retained capacity",
+        "percent of initial capacity",
+        "net capacity retention with remixing"
+      ],
+      "normalization_challenge": "Capacity retention is the ratio of current to initial capacity. However, the document distinguishes 'capacity retention' (without remixing) from 'net capacity retention with remixing'. A system must track whether the retention value includes remixing effects or not. For example, at 25°C, raw retention is 85% but net retention with remixing is 92.5%.",
+      "example_sentences": [
+        "capacity retention decreased markedly with increasing temperature: 85% at 25°C",
+        "periodic remixing improved the net capacity retention from 85% to 92.5% at 25°C",
+        "net 500-cycle capacity retention",
+        "recovery efficiencies of 62%... relative to the faded capacity"
+      ],
+      "canonical_normalization": "capacity_retention"
+    },
+    {
+      "stress_point_id": "DOC05_NSP_010",
+      "target_concept": "side reactions",
+      "alias_variants": [
+        "side reactions",
+        "parasitic reactions",
+        "parasitic processes",
+        "oxygen evolution reaction",
+        "hydrogen evolution reaction",
+        "OER",
+        "HER",
+        "water oxidation",
+        "water reduction"
+      ],
+      "normalization_challenge": "Side reactions are described using multiple specific and general terms. 'Parasitic reactions', 'side reactions', and 'parasitic processes' are general. 'Oxygen evolution' and 'OER' refer to the same positive-electrode reaction. 'Hydrogen evolution' and 'HER' refer to the same negative-electrode reaction. Normalization must link all to the category of unwanted charge-consuming reactions.",
+      "example_sentences": [
+        "side reactions and minor precipitation contributing",
+        "parasitic reactions asymmetrically alter the active species inventory",
+        "water oxidation at the positive electrode (OER)",
+        "hydrogen evolution at the negative electrode during charging",
+        "the rate of CE degradation itself accelerated... suggesting a positive feedback mechanism"
+      ],
+      "canonical_normalization": "side_reactions_parasitic"
+    }
+  ]
+}

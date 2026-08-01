@@ -1,0 +1,1207 @@
+{
+  "doc_id": "DOC08",
+  "doc_title": "Degradation Mechanisms in Soluble Lead-Acid Flow Batteries: Coupled Effects of Lead Ion Speciation, Surface Morphology Evolution, and Positive Electrode Passivation",
+  "efus": [
+    {
+      "canonical_id": "DOC08:EFU:OP:CE:REF:001",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "coulombic_efficiency",
+      "value_numeric": 90,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "initial"
+      },
+      "evidence_text": "At the reference condition of 20 mA/cm², 1.0 mol/L Pb²⁺, and 1.5 mol/L H₂SO₄, the battery delivered an initial coulombic efficiency of 90%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:CE:REF:002",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "coulombic_efficiency",
+      "value_numeric": 78,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "200"
+      },
+      "evidence_text": "reaching 85% at cycle 100 and 78% at cycle 200",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:VE:REF:003",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "voltage_efficiency",
+      "value_numeric": 82,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "initial"
+      },
+      "evidence_text": "voltage efficiency of 82%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:VE:REF:004",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "voltage_efficiency",
+      "value_numeric": 71,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "200"
+      },
+      "evidence_text": "voltage efficiency decay, decreasing from 82% at cycle 1 to 71% at cycle 200",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:EE:REF:005",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "energy_efficiency",
+      "value_numeric": 74,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "initial"
+      },
+      "evidence_text": "energy efficiency of 74%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:EE:REF:006",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "energy_efficiency",
+      "value_numeric": 64,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "200"
+      },
+      "evidence_text": "energy efficiency decline from 74% to 64% over the same period",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:CR:REF:007",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "capacity_retention",
+      "value_numeric": 80,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "200"
+      },
+      "evidence_text": "the discharge capacity decreased from an initial stabilized value of 18.5 mAh/cm² to 14.8 mAh/cm² after 200 cycles, corresponding to a capacity retention of 80%",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:ELECTROLYTE:001",
+      "type": "COMPOSITION",
+      "subject": "electrolyte:methanesulfonic_acid",
+      "property": "pb2_concentration",
+      "value_numeric": 1.0,
+      "value_unit": "mol/L",
+      "condition": {
+        "canonical_id": "condition:pb2_concentration_10_mol_l",
+        "notes": "reference condition"
+      },
+      "evidence_text": "1.0 mol/L Pb²⁺",
+      "section": "2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:ELECTROLYTE:002",
+      "type": "COMPOSITION",
+      "subject": "electrolyte:methanesulfonic_acid",
+      "property": "h2so4_concentration",
+      "value_numeric": 1.5,
+      "value_unit": "mol/L",
+      "condition": {
+        "canonical_id": "condition:h2so4_concentration_15_mol_l",
+        "notes": "reference condition"
+      },
+      "evidence_text": "1.5 mol/L H₂SO₄",
+      "section": "2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:CD:EE:008",
+      "type": "COMPARISON",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "energy_efficiency",
+      "compared_conditions": [
+        {
+          "current_density": "10 mA/cm²",
+          "ee": "78%"
+        },
+        {
+          "current_density": "20 mA/cm²",
+          "ee": "74%"
+        },
+        {
+          "current_density": "30 mA/cm²",
+          "ee": "66%"
+        },
+        {
+          "current_density": "40 mA/cm²",
+          "ee": "58%"
+        }
+      ],
+      "relationship": "monotonic_decrease",
+      "evidence_text": "At 10 mA/cm², the initial energy efficiency was 78%... At 30 mA/cm²... 66% for energy efficiency. At 40 mA/cm²... the energy efficiency reached only 58%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:CD:CR:009",
+      "type": "COMPARISON",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "capacity_retention",
+      "compared_conditions": [
+        {
+          "current_density": "10 mA/cm²",
+          "retention_200": "88%"
+        },
+        {
+          "current_density": "20 mA/cm²",
+          "retention_200": "80%"
+        },
+        {
+          "current_density": "30 mA/cm²",
+          "retention_200": "72%"
+        },
+        {
+          "current_density": "40 mA/cm²",
+          "retention_200": "63%"
+        }
+      ],
+      "relationship": "monotonic_decrease",
+      "evidence_text": "At 30 mA/cm², the capacity retention dropped to 72% after 200 cycles, while at 40 mA/cm² it reached only 63%. In contrast, operation at 10 mA/cm² yielded significantly improved capacity retention of 88%",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:PB:CR:010",
+      "type": "COMPARISON",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "capacity_retention",
+      "compared_conditions": [
+        {
+          "pb2_concentration": "0.5 mol/L",
+          "retention_200": "74%"
+        },
+        {
+          "pb2_concentration": "1.0 mol/L",
+          "retention_200": "80%"
+        },
+        {
+          "pb2_concentration": "1.5 mol/L",
+          "retention_200": "85%"
+        }
+      ],
+      "relationship": "monotonic_increase",
+      "evidence_text": "at 0.5 mol/L Pb²⁺ and 20 mA/cm², the capacity retention fell to 74% after 200 cycles, compared to 80% at 1.0 mol/L and 85% at 1.5 mol/L",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:H2SO4:CE:011",
+      "type": "COMPARISON",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "coulombic_efficiency",
+      "compared_conditions": [
+        {
+          "h2so4": "1.0 mol/L",
+          "ce": "86%"
+        },
+        {
+          "h2so4": "1.5 mol/L",
+          "ce": "90%"
+        },
+        {
+          "h2so4": "2.0 mol/L",
+          "ce": "89%"
+        }
+      ],
+      "relationship": "non_monotonic",
+      "evidence_text": "at 1.0 mol/L H₂SO₄, the initial coulombic efficiency was 86%, which increased to 90% at 1.5 mol/L, but then decreased slightly to 89% at 2.0 mol/L",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DEG:PBO2:THICKNESS:012",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "degradation:pbo2_passivation",
+      "property": "pbo2_layer_thickness",
+      "value_numeric": 120,
+      "value_unit": "nm",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "200"
+      },
+      "chain_steps": [
+        "Pb²⁺ oxidation at positive electrode during charge",
+        "PbO₂ formation on electrode surface",
+        "Incomplete dissolution during discharge",
+        "Cumulative layer growth over cycles",
+        "Increased interfacial resistance and voltage loss"
+      ],
+      "evidence_text": "a compact PbO₂ layer with initial thickness of approximately 15 nm after 50 cycles... growing to 45 nm after 100 cycles and 120 nm after 200 cycles",
+      "section": "3.4"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DEG:PBO2:VOLTAGE_LOSS:013",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "degradation:pbo2_passivation",
+      "property": "cumulative_voltage_loss",
+      "value_numeric": 340,
+      "value_unit": "mV",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "cycle": "200"
+      },
+      "chain_steps": [
+        "PbO₂ layer growth to 120 nm",
+        "Ohmic drop across semiconducting layer (~200 mV)",
+        "Charge-transfer overpotential increase (~140 mV)",
+        "Reduced accessible capacity within voltage window"
+      ],
+      "evidence_text": "The cumulative voltage loss attributed to positive electrode degradation reached 340 mV at cycle 200",
+      "section": "3.4"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DEG:ROUGHNESS:014",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "metric:surface_roughness_ra",
+      "property": "surface_roughness_ra",
+      "value_numeric": 4.2,
+      "value_unit": "μm",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "cycle": "200"
+      },
+      "chain_steps": [
+        "Initial surface inhomogeneities (scratches, defects)",
+        "Preferential Pb deposition at protrusions",
+        "Local current density enhancement",
+        "Amplified dendritic growth",
+        "Increased Ra from 0.8 to 4.2 μm",
+        "Reduced plating uniformity and CE decline"
+      ],
+      "evidence_text": "the arithmetic mean surface roughness (Ra) increased from an initial value of 0.8 μm... to 4.2 μm after 200 cycles",
+      "section": "3.3"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DEG:STRAT:015",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "degradation:electrolyte_stratification",
+      "property": "capacity_loss_contribution",
+      "value_numeric": 15,
+      "value_unit": "% of total fade",
+      "condition": {
+        "current_density": "20 mA/cm²",
+        "cell_orientation": "vertical"
+      },
+      "chain_steps": [
+        "Pb²⁺ depletion near electrodes during operation",
+        "Density-driven concentration gradient across cell height",
+        "Non-uniform reactant distribution",
+        "Local polarization and uneven current distribution",
+        "Approximately 3% additional capacity loss in vertical orientation"
+      ],
+      "evidence_text": "Electrolyte stratification accounts for the remaining 15%... the vertical orientation showing approximately 3% additional capacity loss after 200 cycles",
+      "section": "4.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:COUPLING:016",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "degradation:pbo2_passivation",
+      "property": "coupling_with_surface_roughness",
+      "mechanism_description": "Negative electrode surface roughness increase creates Pb²⁺ concentration fluctuations that propagate through shared electrolyte, accelerating positive electrode PbO₂ passivation",
+      "supporting_evidence": [
+        "Ra increases from 0.8 to 4.2 μm over 200 cycles",
+        "Degradation rate accelerates from 0.06% to 0.16% per cycle after 150 cycles",
+        "PbO₂ layer grows from 15 nm to 120 nm over same period"
+      ],
+      "evidence_text": "as the negative electrode surface roughness increases, non-uniform current distribution creates temporal fluctuations in local Pb²⁺ concentration... driving faster PbO₂ accumulation and creating a positive feedback loop",
+      "section": "4.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:PASSIVATION:RATE:017",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "degradation:pbo2_passivation",
+      "property": "acid_concentration_dependence",
+      "mechanism_description": "Higher H₂SO₄ concentration promotes more complete PbO₂ dissolution during discharge, inversely reducing passivation layer growth rate",
+      "supporting_evidence": [
+        "At 1.0 mol/L H₂SO₄, PbO₂ thickness = 150 nm after 200 cycles",
+        "At 1.5 mol/L H₂SO₄, PbO₂ thickness = 120 nm after 200 cycles",
+        "At 2.0 mol/L H₂SO₄, PbO₂ thickness = 95 nm after 200 cycles"
+      ],
+      "evidence_text": "at 1.0 mol/L H₂SO₄, the PbO₂ layer reached 150 nm after 200 cycles... compared to 120 nm at 1.5 mol/L and 95 nm at 2.0 mol/L. This inverse relationship suggests higher proton availability promotes more complete PbO₂ dissolution during discharge",
+      "section": "3.4"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:LOCAL_POL:018",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "degradation:pbo2_passivation",
+      "property": "dominant_degradation_contribution",
+      "value_numeric": 60,
+      "value_unit": "% of total capacity fade",
+      "mechanism_description": "Local polarization at positive electrode interface, driven by Pb²⁺ depletion and accumulated PbO₂ insulation, is the rate-limiting degradation pathway",
+      "supporting_evidence": [
+        "PbO₂ layer grows from 15 nm to 120 nm",
+        "Voltage loss of 340 mV attributed to positive electrode",
+        "Interfacial resistance increases from 0.22 to 0.61 Ω·cm²"
+      ],
+      "evidence_text": "local polarization at the positive electrode interface... constitutes the rate-limiting degradation pathway, accounting for approximately 60% of the total capacity fade",
+      "section": "Abstract"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:NEG_ELECTRODE:019",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "metric:surface_roughness_ra",
+      "property": "charge_transfer_resistance_increase",
+      "value_numeric": 87,
+      "value_unit": "% increase",
+      "mechanism_description": "Growing surface roughness reduces active surface area for uniform deposition and creates electrically shielded regions",
+      "supporting_evidence": [
+        "Charge-transfer resistance increases from 0.15 to 0.28 Ω·cm²",
+        "Ra increases from 0.8 to 4.2 μm",
+        "Dendrites grow preferentially at surface defects"
+      ],
+      "evidence_text": "The charge-transfer resistance at the negative electrode increased from 0.15 Ω·cm²... to 0.28 Ω·cm² after 200 cycles at 20 mA/cm². This 87% increase correlates with reduced active surface area",
+      "section": "3.3"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DS:OPT:020",
+      "type": "DESIGN_SUMMARY",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "optimized_operating_conditions",
+      "recommendation": {
+        "pb2_concentration": "1.0–1.5 mol/L",
+        "h2so4_concentration": "1.5–1.8 mol/L",
+        "current_density": "≤20 mA/cm²",
+        "electrode_surface_ra": "<0.5 μm (pre-treatment target)"
+      },
+      "expected_outcome": "Cycle life exceeding 500 cycles with capacity retention >85%",
+      "trade_offs": "Lower current density reduces power density; higher Pb²⁺ increases cost and viscosity",
+      "evidence_text": "optimized electrolyte composition (1.0–1.5 mol/L Pb²⁺, 1.5–1.8 mol/L H₂SO₄), moderate current density operation (≤20 mA/cm²), electrode surface engineering to minimize initial roughness",
+      "section": "5"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:CE:10MA:021",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "coulombic_efficiency",
+      "value_numeric": 92,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_10_ma_cm2",
+        "current_density": "10 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "initial"
+      },
+      "evidence_text": "At 10 mA/cm², the initial coulombic efficiency was 92%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:CE:40MA:022",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "coulombic_efficiency",
+      "value_numeric": 83,
+      "value_unit": "%",
+      "condition": {
+        "canonical_id": "condition:current_density_40_ma_cm2",
+        "current_density": "40 mA/cm²",
+        "pb2_concentration": "1.0 mol/L",
+        "h2so4_concentration": "1.5 mol/L",
+        "cycle": "initial"
+      },
+      "evidence_text": "At the highest current density of 40 mA/cm², the coulombic efficiency dropped further to 83%",
+      "section": "3.1"
+    },
+    {
+      "canonical_id": "DOC08:EFU:DEG:PB:ROUGHNESS_CD:023",
+      "type": "DEGRADATION_CHAIN",
+      "subject": "metric:surface_roughness_ra",
+      "property": "current_density_dependence",
+      "value_numeric": 5.8,
+      "value_unit": "μm",
+      "condition": {
+        "canonical_id": "condition:current_density_30_ma_cm2",
+        "current_density": "30 mA/cm²",
+        "cycle": "200"
+      },
+      "chain_steps": [
+        "Higher current density drives faster deposition kinetics",
+        "Greater non-uniformity in local current distribution",
+        "Enhanced dendritic growth rate",
+        "Ra reaches 5.8 μm at 30 mA/cm² vs 4.2 μm at 20 mA/cm²"
+      ],
+      "evidence_text": "At 10 mA/cm², the Ra value reached only 2.4 μm after 200 cycles, whereas at 30 mA/cm² it increased to 5.8 μm",
+      "section": "3.3"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:DEG_RATE:024",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "degradation:pbo2_passivation",
+      "property": "degradation_rate_acceleration",
+      "value_numeric": 2.7,
+      "value_unit": "fold increase",
+      "mechanism_description": "Coupled degradation creates positive feedback: initial rate 0.06%/cycle increases to 0.16%/cycle after 150 cycles as surface roughness and PbO₂ passivation amplify each other",
+      "supporting_evidence": [
+        "0.06% per cycle during first 50 cycles",
+        "0.16% per cycle during final 50 cycles",
+        "Surface roughness exceeds 2 μm threshold after 100 cycles"
+      ],
+      "evidence_text": "the degradation rate increased from approximately 0.06% per cycle during the first 50 cycles to 0.16% per cycle during the final 50 cycles",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:DEG_RATE:025",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "average_degradation_rate",
+      "value_numeric": 0.1,
+      "value_unit": "% per cycle",
+      "condition": {
+        "canonical_id": "condition:current_density_20_ma_cm2",
+        "current_density": "20 mA/cm²",
+        "cycle_range": "1-200"
+      },
+      "evidence_text": "an average degradation rate of 0.10% per cycle",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:DEG_RATE_EARLY:026",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "degradation_rate_early_cycles",
+      "value_numeric": 0.06,
+      "value_unit": "% per cycle",
+      "condition": {
+        "current_density": "20 mA/cm²",
+        "cycle_range": "1-50"
+      },
+      "evidence_text": "the degradation rate increased from approximately 0.06% per cycle during the first 50 cycles",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:DEG_RATE_LATE:027",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "degradation_rate_late_cycles",
+      "value_numeric": 0.16,
+      "value_unit": "% per cycle",
+      "condition": {
+        "current_density": "20 mA/cm²",
+        "cycle_range": "150-200"
+      },
+      "evidence_text": "0.16% per cycle during the final 50 cycles",
+      "section": "3.2"
+    },
+    {
+      "canonical_id": "DOC08:EFU:COMP:H2SO4:PBO2:028",
+      "type": "COMPARISON",
+      "subject": "metric:pbo2_layer_thickness",
+      "property": "pbo2_layer_thickness",
+      "compared_conditions": [
+        {
+          "h2so4": "1.0 mol/L",
+          "thickness_nm": "150"
+        },
+        {
+          "h2so4": "1.5 mol/L",
+          "thickness_nm": "120"
+        },
+        {
+          "h2so4": "2.0 mol/L",
+          "thickness_nm": "95"
+        }
+      ],
+      "relationship": "inverse_monotonic",
+      "evidence_text": "at 1.0 mol/L H₂SO₄, the PbO₂ layer reached 150 nm after 200 cycles at 20 mA/cm², compared to 120 nm at 1.5 mol/L and 95 nm at 2.0 mol/L",
+      "section": "3.4"
+    },
+    {
+      "canonical_id": "DOC08:EFU:MECH:VLOSS:029",
+      "type": "MECHANISM_EVIDENCE",
+      "subject": "system:soluble_lead_acid_flow_battery",
+      "property": "total_voltage_loss_breakdown",
+      "mechanism_description": "Total voltage loss of 620 mV comprises ohmic (280 mV), activation (200 mV), and concentration (140 mV) contributions",
+      "supporting_evidence": [
+        "PbO₂ passivation layer contributes 200 mV ohmic drop",
+        "Charge-transfer overpotential increases by 140 mV",
+        "Positive electrode interfacial resistance increases from 0.22 to 0.61 Ω·cm²"
+      ],
+      "evidence_text": "The total voltage loss of approximately 620 mV observed between cycle 5 and cycle 200... comprises roughly 280 mV from ohmic contributions, 200 mV from activation overpotential, and 140 mV from concentration overpotential",
+      "section": "4.3"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:RCT:NEG:030",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "electrode:lead_electrode",
+      "property": "charge_transfer_resistance",
+      "value_numeric": 0.28,
+      "value_unit": "Ω·cm²",
+      "condition": {
+        "current_density": "20 mA/cm²",
+        "cycle": "200"
+      },
+      "evidence_text": "The charge-transfer resistance at the negative electrode increased from 0.15 Ω·cm² on the pristine electrode to 0.28 Ω·cm² after 200 cycles at 20 mA/cm²",
+      "section": "3.3"
+    },
+    {
+      "canonical_id": "DOC08:EFU:OP:RCT:POS:031",
+      "type": "OPERATION_PERFORMANCE",
+      "subject": "electrode:lead_dioxide_electrode",
+      "property": "interfacial_resistance",
+      "value_numeric": 0.61,
+      "value_unit": "Ω·cm²",
+      "condition": {
+        "current_density": "20 mA/cm²",
+        "cycle": "200"
+      },
+      "evidence_text": "the positive electrode interfacial resistance increased from 0.22 Ω·cm² at cycle 5 to 0.61 Ω·cm² at cycle 200",
+      "section": "3.4"
+    }
+  ],
+  "facts": [
+    {
+      "canonical_id": "DOC08:FACT:001",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:CE:REF:001",
+        "DOC08:EFU:OP:CE:REF:002"
+      ],
+      "statement": "At 20 mA/cm² with 1.0 mol/L Pb²⁺ and 1.5 mol/L H₂SO₄, the coulombic efficiency decreased from 90% (initial) to 78% after 200 cycles.",
+      "category": "performance_trend"
+    },
+    {
+      "canonical_id": "DOC08:FACT:002",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:VE:REF:003",
+        "DOC08:EFU:OP:VE:REF:004"
+      ],
+      "statement": "At the reference condition, voltage efficiency decreased from 82% to 71% over 200 cycles.",
+      "category": "performance_trend"
+    },
+    {
+      "canonical_id": "DOC08:FACT:003",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:EE:REF:005",
+        "DOC08:EFU:OP:EE:REF:006"
+      ],
+      "statement": "Energy efficiency at the reference condition declined from 74% to 64% between cycle 1 and cycle 200.",
+      "category": "performance_trend"
+    },
+    {
+      "canonical_id": "DOC08:FACT:004",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:CR:REF:007"
+      ],
+      "statement": "Capacity retention at the reference condition was 80% after 200 cycles, corresponding to a decrease from 18.5 to 14.8 mAh/cm².",
+      "category": "capacity_fade"
+    },
+    {
+      "canonical_id": "DOC08:FACT:005",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:ROUGHNESS:014"
+      ],
+      "statement": "The negative electrode surface roughness (Ra) increased from 0.8 μm to 4.2 μm over 200 cycles at 20 mA/cm².",
+      "category": "morphological_change"
+    },
+    {
+      "canonical_id": "DOC08:FACT:006",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:PBO2:THICKNESS:012"
+      ],
+      "statement": "The PbO₂ passivation layer on the positive electrode grew from 15 nm at cycle 50 to 120 nm at cycle 200 at the reference condition.",
+      "category": "passivation_growth"
+    },
+    {
+      "canonical_id": "DOC08:FACT:007",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:PBO2:VOLTAGE_LOSS:013"
+      ],
+      "statement": "The cumulative voltage loss attributed to positive electrode PbO₂ passivation reached 340 mV after 200 cycles at 20 mA/cm².",
+      "category": "voltage_loss"
+    },
+    {
+      "canonical_id": "DOC08:FACT:008",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:LOCAL_POL:018"
+      ],
+      "statement": "Local polarization at the positive electrode interface accounts for approximately 60% of the total capacity fade.",
+      "category": "mechanism_contribution"
+    },
+    {
+      "canonical_id": "DOC08:FACT:009",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:NEG_ELECTRODE:019"
+      ],
+      "statement": "Negative electrode charge-transfer resistance increased by 87% (from 0.15 to 0.28 Ω·cm²) over 200 cycles at 20 mA/cm².",
+      "category": "resistance_change"
+    },
+    {
+      "canonical_id": "DOC08:FACT:010",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:RCT:POS:031"
+      ],
+      "statement": "Positive electrode interfacial resistance increased from 0.22 Ω·cm² at cycle 5 to 0.61 Ω·cm² at cycle 200.",
+      "category": "resistance_change"
+    },
+    {
+      "canonical_id": "DOC08:FACT:011",
+      "derived_from_efu": [
+        "DOC08:EFU:COMP:CD:EE:008"
+      ],
+      "statement": "Energy efficiency decreases monotonically with increasing current density: 78% at 10 mA/cm², 74% at 20 mA/cm², 66% at 30 mA/cm², and 58% at 40 mA/cm².",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:012",
+      "derived_from_efu": [
+        "DOC08:EFU:COMP:CD:CR:009"
+      ],
+      "statement": "Capacity retention after 200 cycles decreases with current density: 88% at 10 mA/cm², 80% at 20 mA/cm², 72% at 30 mA/cm², and 63% at 40 mA/cm².",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:013",
+      "derived_from_efu": [
+        "DOC08:EFU:COMP:PB:CR:010"
+      ],
+      "statement": "Higher Pb²⁺ concentration improves capacity retention: 74% at 0.5 mol/L, 80% at 1.0 mol/L, and 85% at 1.5 mol/L (at 20 mA/cm², 200 cycles).",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:014",
+      "derived_from_efu": [
+        "DOC08:EFU:COMP:H2SO4:CE:011"
+      ],
+      "statement": "Coulombic efficiency shows a non-monotonic dependence on H₂SO₄ concentration: 86% at 1.0 mol/L, 90% at 1.5 mol/L, and 89% at 2.0 mol/L.",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:015",
+      "derived_from_efu": [
+        "DOC08:EFU:COMP:H2SO4:PBO2:028"
+      ],
+      "statement": "PbO₂ passivation layer thickness after 200 cycles decreases with increasing H₂SO₄ concentration: 150 nm at 1.0 mol/L, 120 nm at 1.5 mol/L, and 95 nm at 2.0 mol/L.",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:016",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:ROUGHNESS:014",
+        "DOC08:EFU:DEG:PB:ROUGHNESS_CD:023"
+      ],
+      "statement": "Surface roughness evolution is strongly current-density dependent: Ra reaches 2.4 μm at 10 mA/cm², 4.2 μm at 20 mA/cm², and 5.8 μm at 30 mA/cm² after 200 cycles.",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:017",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:PASSIVATION:RATE:017"
+      ],
+      "statement": "Higher H₂SO₄ concentration reduces PbO₂ passivation rate because increased proton availability promotes more complete PbO₂ dissolution during discharge.",
+      "category": "mechanistic_insight"
+    },
+    {
+      "canonical_id": "DOC08:FACT:018",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:COUPLING:016"
+      ],
+      "statement": "Negative electrode surface roughness and positive electrode PbO₂ passivation are coupled through Pb²⁺ concentration fluctuations in the shared electrolyte.",
+      "category": "mechanistic_insight"
+    },
+    {
+      "canonical_id": "DOC08:FACT:019",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:DEG_RATE:024"
+      ],
+      "statement": "The degradation rate accelerates over cycling: 0.06% per cycle during the first 50 cycles, increasing to 0.16% per cycle during the final 50 cycles.",
+      "category": "degradation_kinetics"
+    },
+    {
+      "canonical_id": "DOC08:FACT:020",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:STRAT:015"
+      ],
+      "statement": "Electrolyte stratification contributes approximately 15% to the total capacity fade, with vertical cell orientation showing about 3% additional capacity loss after 200 cycles.",
+      "category": "mechanism_contribution"
+    },
+    {
+      "canonical_id": "DOC08:FACT:021",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:VLOSS:029"
+      ],
+      "statement": "The total voltage loss of 620 mV between cycle 5 and cycle 200 comprises 280 mV ohmic, 200 mV activation, and 140 mV concentration contributions.",
+      "category": "voltage_loss"
+    },
+    {
+      "canonical_id": "DOC08:FACT:022",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:PBO2:THICKNESS:012"
+      ],
+      "statement": "PbO₂ layer thickness shows strong current density dependence: 70 nm at 10 mA/cm², 120 nm at 20 mA/cm², 180 nm at 30 mA/cm², and over 250 nm at 40 mA/cm² after 200 cycles.",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:023",
+      "derived_from_efu": [
+        "DOC08:EFU:DS:OPT:020"
+      ],
+      "statement": "Optimized conditions for extending SLAFB cycle life include 1.0–1.5 mol/L Pb²⁺, 1.5–1.8 mol/L H₂SO₄, current density ≤20 mA/cm², and electrode pretreatment to Ra <0.5 μm.",
+      "category": "design_recommendation"
+    },
+    {
+      "canonical_id": "DOC08:FACT:024",
+      "derived_from_efu": [
+        "DOC08:EFU:OP:CE:10MA:021",
+        "DOC08:EFU:OP:CE:40MA:022"
+      ],
+      "statement": "Initial coulombic efficiency decreases with increasing current density: 92% at 10 mA/cm², 90% at 20 mA/cm², 87% at 30 mA/cm², and 83% at 40 mA/cm².",
+      "category": "parameter_dependence"
+    },
+    {
+      "canonical_id": "DOC08:FACT:025",
+      "derived_from_efu": [
+        "DOC08:EFU:MECH:COUPLING:016",
+        "DOC08:EFU:MECH:DEG_RATE:024"
+      ],
+      "statement": "The positive feedback loop between surface roughness and PbO₂ passivation is triggered when Ra exceeds approximately 2 μm, which occurs after about 100 cycles at 20 mA/cm².",
+      "category": "mechanistic_insight"
+    },
+    {
+      "canonical_id": "DOC08:FACT:026",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:PBO2:VOLTAGE_LOSS:013"
+      ],
+      "statement": "Of the 340 mV voltage loss from positive electrode degradation, approximately 200 mV is ohmic drop across the PbO₂ layer and 140 mV is increased charge-transfer overpotential.",
+      "category": "voltage_loss"
+    },
+    {
+      "canonical_id": "DOC08:FACT:027",
+      "derived_from_efu": [
+        "DOC08:EFU:DEG:ROUGHNESS:014"
+      ],
+      "statement": "Dendrites grow preferentially at surface defects (scratches), indicating surface inhomogeneity acts as a nucleation catalyst for non-uniform lead plating.",
+      "category": "mechanistic_insight"
+    }
+  ],
+  "qa_pairs": [
+    {
+      "question_id": "DOC08:QA:L1:001",
+      "difficulty_level": "L1",
+      "question": "What was the initial coulombic efficiency at the reference condition of 20 mA/cm², 1.0 mol/L Pb²⁺, and 1.5 mol/L H₂SO₄?",
+      "answer": "90%",
+      "supporting_fact": "DOC08:FACT:001",
+      "reasoning": "Direct retrieval from a single sentence in section 3.1."
+    },
+    {
+      "question_id": "DOC08:QA:L1:002",
+      "difficulty_level": "L1",
+      "question": "What was the surface roughness (Ra) of the negative electrode after 200 cycles at 20 mA/cm²?",
+      "answer": "4.2 μm",
+      "supporting_fact": "DOC08:FACT:005",
+      "reasoning": "Direct retrieval from profilometry data in section 3.3."
+    },
+    {
+      "question_id": "DOC08:QA:L1:003",
+      "difficulty_level": "L1",
+      "question": "What was the thickness of the PbO₂ passivation layer after 200 cycles at the reference condition?",
+      "answer": "120 nm",
+      "supporting_fact": "DOC08:FACT:006",
+      "reasoning": "Direct retrieval from SEM-EDS data in section 3.4."
+    },
+    {
+      "question_id": "DOC08:QA:L1:004",
+      "difficulty_level": "L1",
+      "question": "What was the cumulative voltage loss attributed to positive electrode degradation after 200 cycles?",
+      "answer": "340 mV",
+      "supporting_fact": "DOC08:FACT:007",
+      "reasoning": "Direct retrieval from a single sentence in section 3.4."
+    },
+    {
+      "question_id": "DOC08:QA:L1:005",
+      "difficulty_level": "L1",
+      "question": "What was the capacity retention after 200 cycles at the reference condition?",
+      "answer": "80%",
+      "supporting_fact": "DOC08:FACT:004",
+      "reasoning": "Direct retrieval from capacity data in section 3.2."
+    },
+    {
+      "question_id": "DOC08:QA:L2:001",
+      "difficulty_level": "L2",
+      "question": "By how many percentage points did the energy efficiency decrease over 200 cycles at the reference condition?",
+      "answer": "10 percentage points (from 74% to 64%)",
+      "supporting_fact": "DOC08:FACT:003",
+      "reasoning": "Requires aggregating initial (74%) and final (64%) values from the same paragraph in section 3.1 and computing the difference."
+    },
+    {
+      "question_id": "DOC08:QA:L2:002",
+      "difficulty_level": "L2",
+      "question": "How much did the positive electrode interfacial resistance increase between cycle 5 and cycle 200 at the reference condition?",
+      "answer": "0.39 Ω·cm² (from 0.22 to 0.61 Ω·cm²)",
+      "supporting_fact": "DOC08:FACT:010",
+      "reasoning": "Requires subtracting two values mentioned in close proximity in section 3.4."
+    },
+    {
+      "question_id": "DOC08:QA:L2:003",
+      "difficulty_level": "L2",
+      "question": "What was the capacity retention at 30 mA/cm² after 200 cycles?",
+      "answer": "72%",
+      "supporting_fact": "DOC08:FACT:012",
+      "reasoning": "Simple retrieval from the comparison data in section 3.2."
+    },
+    {
+      "question_id": "DOC08:QA:L2:004",
+      "difficulty_level": "L2",
+      "question": "At what cycle number did the PbO₂ layer thickness reach 45 nm at the reference condition?",
+      "answer": "100 cycles",
+      "supporting_fact": "DOC08:FACT:006",
+      "reasoning": "The document states the layer grew to 45 nm after 100 cycles; requires reading the progression sequence."
+    },
+    {
+      "question_id": "DOC08:QA:L3:001",
+      "difficulty_level": "L3",
+      "question": "Why does higher H₂SO₄ concentration reduce PbO₂ passivation layer thickness?",
+      "answer": "Higher proton availability promotes more complete dissolution of the PbO₂ layer during discharge, thereby mitigating cumulative growth.",
+      "supporting_fact": "DOC08:FACT:017",
+      "reasoning": "Requires connecting the inverse relationship between H₂SO₄ concentration and PbO₂ thickness with the mechanistic explanation provided in the same section (3.4)."
+    },
+    {
+      "question_id": "DOC08:QA:L3:002",
+      "difficulty_level": "L3",
+      "question": "How does increasing current density from 20 to 40 mA/cm² affect the initial coulombic efficiency, voltage efficiency, and energy efficiency simultaneously?",
+      "answer": "At 40 mA/cm², coulombic efficiency drops from 90% to 83%, voltage efficiency from 82% to 70%, and energy efficiency from 74% to 58%, compared to the reference at 20 mA/cm².",
+      "supporting_fact": "DOC08:FACT:011",
+      "reasoning": "Requires comparing three metrics across two current density conditions from the same section (3.1)."
+    },
+    {
+      "question_id": "DOC08:QA:L3:003",
+      "difficulty_level": "L3",
+      "question": "What is the relationship between surface roughness and charge-transfer resistance at the negative electrode?",
+      "answer": "As surface roughness increases from 0.8 μm to 4.2 μm, the charge-transfer resistance increases by 87% from 0.15 to 0.28 Ω·cm², because growing roughness creates electrically shielded regions that reduce active surface area.",
+      "supporting_fact": "DOC08:FACT:009",
+      "reasoning": "Requires linking the morphological data (Ra increase) with the EIS data (Rct increase) and the explanation in section 3.3."
+    },
+    {
+      "question_id": "DOC08:QA:L3:004",
+      "difficulty_level": "L3",
+      "question": "What percentage of the total cell voltage increase from cycle 5 to cycle 200 is attributed to positive electrode degradation?",
+      "answer": "Approximately 55% (340 mV out of approximately 620 mV total voltage loss).",
+      "supporting_fact": "DOC08:FACT:007",
+      "reasoning": "Requires combining the 340 mV positive electrode voltage loss from section 3.4 with the total 620 mV voltage loss mentioned in section 4.3."
+    },
+    {
+      "question_id": "DOC08:QA:L4:001",
+      "difficulty_level": "L4",
+      "question": "Explain the positive feedback loop that accelerates degradation after approximately 100 cycles.",
+      "answer": "As negative electrode surface roughness increases beyond 2 μm after ~100 cycles, non-uniform current distribution creates Pb²⁺ concentration fluctuations. These propagate through the shared electrolyte to the positive electrode, where local Pb²⁺ depletion drives formation of poorly conducting oxide phases, accelerating PbO₂ passivation. The faster passivation further reduces electrochemical performance, establishing a coupled degradation loop that increases the fade rate from 0.06% to 0.16% per cycle.",
+      "supporting_fact": "DOC08:FACT:018",
+      "reasoning": "Requires synthesizing the coupling mechanism from section 4.1 with the degradation rate data from section 3.2 and the surface roughness/PbO₂ thickness data from sections 3.3 and 3.4."
+    },
+    {
+      "question_id": "DOC08:QA:L4:002",
+      "difficulty_level": "L4",
+      "question": "How do the relative contributions of the three degradation pathways change when current density is reduced from 40 to 10 mA/cm²?",
+      "answer": "At 40 mA/cm², positive electrode passivation contributes ~70%, negative electrode morphology ~15%, and electrolyte stratification ~15%. At 10 mA/cm², passivation drops to ~45%, negative electrode morphology increases to ~30%, and stratification rises to ~25% because longer residence times allow greater concentration gradient development.",
+      "supporting_fact": "DOC08:FACT:020",
+      "reasoning": "Requires synthesizing data from section 4.2 which describes how relative contributions shift with operating conditions, comparing the 40 mA/cm² and 10 mA/cm² cases."
+    },
+    {
+      "question_id": "DOC08:QA:L4:003",
+      "difficulty_level": "L4",
+      "question": "What is the breakdown of the 340 mV voltage loss from positive electrode degradation, and how does it relate to the PbO₂ layer properties?",
+      "answer": "Of the 340 mV, approximately 200 mV is ohmic drop across the 120 nm PbO₂ semiconducting layer (resistivity ~10⁻² Ω·cm), and 140 mV is increased charge-transfer overpotential due to blocked surface sites. The PbO₂ layer accounts for ~65% of the total interfacial resistance increase from 0.22 to 0.61 Ω·cm².",
+      "supporting_fact": "DOC08:FACT:026",
+      "reasoning": "Requires synthesizing the voltage loss breakdown from section 3.4 with the mechanistic explanation in section 4.3 and the resistance data."
+    },
+    {
+      "question_id": "DOC08:QA:L5:001",
+      "difficulty_level": "L5",
+      "question": "If a SLAFB operates at 20 mA/cm² with 1.0 mol/L Pb²⁺ and 1.0 mol/L H₂SO₄, estimate its expected capacity retention after 200 cycles and justify your reasoning.",
+      "answer": "Approximately 79%. At 1.5 mol/L H₂SO₄, retention is 80%. At 1.0 mol/L H₂SO₄, the PbO₂ layer is thicker (150 nm vs 120 nm), indicating worse passivation. However, the H₂SO₄ effect on retention is modest (79% vs 80% vs 81% at 1.0, 1.5, 2.0 mol/L respectively), so the retention would be slightly lower than the reference, around 79%.",
+      "supporting_fact": "DOC08:FACT:015",
+      "reasoning": "Requires combining the capacity retention data at different H₂SO₄ concentrations (section 3.2) with the PbO₂ thickness data (section 3.4) to interpolate and justify the estimate."
+    },
+    {
+      "question_id": "DOC08:QA:L5:002",
+      "difficulty_level": "L5",
+      "question": "Calculate the average capacity fade rate per cycle between cycles 50 and 100, and explain why it differs from the rate between cycles 150 and 200.",
+      "answer": "Between cycles 50 and 100, retention drops from 94% to 88%, so fade is 6% over 50 cycles = 0.12% per cycle. Between cycles 150 and 200, retention drops from approximately 84% (interpolated) to 80%, giving ~0.16% per cycle. The acceleration occurs because the positive feedback loop between surface roughness (exceeding 2 μm after 100 cycles) and PbO₂ passivation becomes active, coupling the two degradation mechanisms.",
+      "supporting_fact": "DOC08:FACT:019",
+      "reasoning": "Requires extracting retention values at cycles 50 and 100, interpolating for cycle 150, computing rates, and explaining the difference using the coupling mechanism from section 4.1."
+    },
+    {
+      "question_id": "DOC08:QA:L5:003",
+      "difficulty_level": "L5",
+      "question": "A SLAFB designer must choose between operating at 20 mA/cm² with 0.5 mol/L Pb²⁺ or at 10 mA/cm² with 1.0 mol/L Pb²⁺. Which configuration gives better capacity retention after 200 cycles, and by how much?",
+      "answer": "10 mA/cm² with 1.0 mol/L Pb²⁺ gives 88% retention, while 20 mA/cm² with 0.5 mol/L Pb²⁺ gives 74% retention. The difference is 14 percentage points. The low-current-density configuration is superior because both lower current density and higher Pb²⁺ concentration independently improve retention.",
+      "supporting_fact": "DOC08:FACT:012",
+      "reasoning": "Requires cross-referencing the current density effect (section 3.2) with the Pb²⁺ concentration effect (section 3.2) to compare two different operating configurations."
+    },
+    {
+      "question_id": "DOC08:QA:L6:001",
+      "difficulty_level": "L6",
+      "question": "Design a comprehensive experimental validation strategy to test whether the proposed positive feedback loop between negative electrode roughness and positive electrode passivation is the true cause of the observed degradation rate acceleration after 100 cycles. Include specific measurements, expected outcomes, and how they would distinguish the coupling hypothesis from independent, uncoupled degradation mechanisms.",
+      "answer": "The validation strategy should include: (1) In-situ simultaneous monitoring of negative electrode Ra and positive electrode PbO₂ thickness using combined profilometry and optical techniques, expecting both to accelerate concurrently after the ~2 μm Ra threshold. (2) A control experiment with a membrane-separated configuration to isolate the electrolyte coupling pathway—if degradation rates decouple, this confirms the shared-electrolyte mechanism. (3) Localized EIS mapping to verify that regions with highest PbO₂ growth correlate spatially with times of maximum roughness fluctuation. (4) A cell with intentionally pre-roughened negative electrode (Ra > 2 μm) should show accelerated PbO₂ growth from cycle 1, bypassing the initial slow-degradation period. (5) Operando Pb²⁺ concentration mapping near both electrodes would directly verify the concentration fluctuation propagation mechanism. If the coupling hypothesis is correct, all five experiments would show correlated degradation; if mechanisms are independent, pre-roughening and membrane separation would not significantly alter the passivation rate.",
+      "supporting_fact": "DOC08:FACT:025",
+      "reasoning": "Requires deep understanding of the coupling mechanism (section 4.1), the degradation rate data (section 3.2), the surface roughness and PbO₂ data (sections 3.3–3.4), and creative experimental design to test causal relationships."
+    },
+    {
+      "question_id": "DOC08:QA:L6:002",
+      "difficulty_level": "L6",
+      "question": "Based on all degradation mechanisms quantified in this study, derive an analytical expression for capacity retention as a function of cycle number N at the reference condition, incorporating the transition from uncoupled to coupled degradation regimes at approximately 100 cycles.",
+      "answer": "A piecewise model is needed: For N ≤ 100, CR(N) ≈ 100% - 0.06N (linear fade at 0.06% per cycle). For N > 100, CR(N) ≈ 94% - 0.06(100) - 0.16(N-100) + β(N-100)², where the quadratic term β accounts for the accelerating feedback. Fitting to the data points (50, 94%), (100, 88%), (200, 80%) gives β ≈ 0.0008. The physical interpretation: the linear term represents base passivation and morphology effects, while the quadratic term captures the coupled contribution that scales with the product of Ra(t) and PbO₂ thickness(t), both of which grow approximately linearly with cycle number. This implies CR(N) ≈ 100 - 0.06N - 0.0008(N-100)² for N > 100. The model predicts CR(300) ≈ 66%, indicating the battery would fall below 70% retention between cycles 250 and 300.",
+      "supporting_fact": "DOC08:FACT:019",
+      "reasoning": "Requires synthesizing all quantitative degradation data (sections 3.1–3.4), the coupling mechanism (section 4.1), the relative contribution analysis (section 4.2), and mathematical modeling skills to derive and validate a predictive expression."
+    },
+    {
+      "question_id": "DOC08:QA:L6:003",
+      "difficulty_level": "L6",
+      "question": "Critically evaluate the trade-off between power density and cycle life for SLAFBs based on the complete dataset, and propose a rational operating strategy that maximizes the total energy throughput (cumulative discharged energy per unit electrode area) over the battery lifetime.",
+      "answer": "Total energy throughput = power density × capacity retention × cycle life. At 40 mA/cm², power density is highest but retention is 63% after 200 cycles with rapid fade suggesting ~250 cycle lifetime; at 20 mA/cm², retention is 80% after 200 cycles suggesting ~400 cycle lifetime; at 10 mA/cm², retention is 88% suggesting >500 cycles. Assuming discharge capacity is proportional to retention and voltage is ~1.8 V, the total throughput at 20 mA/cm² (18.5 mAh/cm² × 0.80 × 400 cycles × 1.8 V) likely exceeds that at 40 mA/cm² (18.5 × 0.63 × 250 × 1.8 V) despite lower power. The optimal strategy is a variable protocol: initial operation at 20 mA/cm² for ~300 cycles, followed by a reduced current density of 15 mA/cm² to slow the coupled degradation feedback loop once Ra exceeds 3 μm. This adaptive protocol could extend lifetime beyond 500 cycles while maintaining acceptable power density. Adding periodic current reversal every 50 cycles to dissolve PbO₂ could further improve throughput by 10–15%.",
+      "supporting_fact": "DOC08:FACT:023",
+      "reasoning": "Requires integrating all performance data (sections 3.1–3.2), degradation mechanism insights (sections 4.1–4.3), design recommendations (section 4.4), and performing multi-objective optimization across power density, cycle life, and capacity retention."
+    }
+  ],
+  "normalization_stress_points": [
+    {
+      "stress_id": "DOC08:STRESS:001",
+      "term_in_document": "Pb²⁺",
+      "canonical_form": "Pb2+",
+      "synonyms_traps": [
+        "lead ion",
+        "Pb ion",
+        "lead(II) ion",
+        "divalent lead",
+        "Pb(II)"
+      ],
+      "notes": "Pb²⁺ (lead ion) appears throughout; models must normalize all variants to the same canonical form.",
+      "example_sentences": [
+        "lead ions exist as Pb²⁺ in the methanesulfonic acid",
+        "Pb²⁺ depletion near the electrodes",
+        "non-uniform Pb deposition from the Pb²⁺ electrolyte"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:002",
+      "term_in_document": "Pb deposition",
+      "canonical_form": "lead_deposition",
+      "synonyms_traps": [
+        "lead plating",
+        "Pb plating",
+        "metallic lead deposition",
+        "Pb⁰ deposition",
+        "lead metal deposition"
+      ],
+      "notes": "Pb deposition, lead plating, and metallic lead deposition all refer to the same process of Pb²⁺ reducing to Pb⁰ at the negative electrode.",
+      "example_sentences": [
+        "non-uniform Pb deposition from the Pb²⁺ electrolyte leads to dendritic growth",
+        "preferential deposition at protrusions",
+        "Pb deposition process at the negative electrode"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:003",
+      "term_in_document": "PbO₂ passivation",
+      "canonical_form": "lead_dioxide_passivation",
+      "synonyms_traps": [
+        "positive electrode passivation",
+        "PbO₂ layer growth",
+        "lead dioxide accumulation",
+        "passivation layer formation",
+        "positive electrode degradation"
+      ],
+      "notes": "PbO₂ passivation and positive electrode passivation are used interchangeably; both refer to the insulating PbO₂ layer buildup on the positive electrode.",
+      "example_sentences": [
+        "the formation of a partially insulating PbO₂ layer—a phenomenon termed PbO₂ passivation",
+        "positive electrode passivation and local polarization effects",
+        "PbO₂ passivation progressively blocks active surface sites"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:004",
+      "term_in_document": "surface roughness",
+      "canonical_form": "surface_roughness_ra",
+      "synonyms_traps": [
+        "morphology",
+        "surface morphology",
+        "surface topography",
+        "roughness amplitude",
+        "Ra value",
+        "arithmetic mean roughness"
+      ],
+      "notes": "Surface roughness (Ra) and morphology are closely related but distinct; Ra is the quantitative metric while morphology is the qualitative description.",
+      "example_sentences": [
+        "the evolving surface morphology characterized by increasing surface roughness",
+        "surface roughness (Ra) increased from 0.8 μm to 4.2 μm",
+        "Negative electrode morphology degradation contributes approximately 25%"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:005",
+      "term_in_document": "local polarization",
+      "canonical_form": "local_polarization",
+      "synonyms_traps": [
+        "concentration polarization",
+        "interfacial polarization",
+        "electrode polarization",
+        "local overpotential",
+        "polarization loss"
+      ],
+      "notes": "Local polarization specifically refers to spatially non-uniform polarization effects near the electrode interface, distinct from bulk concentration polarization.",
+      "example_sentences": [
+        "local polarization at the positive electrode interface, driven by Pb²⁺ depletion",
+        "local polarization effects arising from Pb²⁺ concentration gradients",
+        "leading to local polarization and uneven current distribution"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:006",
+      "term_in_document": "voltage loss",
+      "canonical_form": "voltage_loss",
+      "synonyms_traps": [
+        "overpotential",
+        "overpotential increase",
+        "potential drop",
+        "cell voltage decay",
+        "voltage efficiency loss"
+      ],
+      "notes": "Voltage loss is the measurable decrease in cell voltage; overpotential is the thermodynamic excess potential. The document uses both terms in different contexts.",
+      "example_sentences": [
+        "contributing to a cumulative voltage loss of 340 mV",
+        "increased charge-transfer overpotential due to reduced active surface area",
+        "The total voltage loss of approximately 620 mV"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:007",
+      "term_in_document": "methanesulfonic acid",
+      "canonical_form": "methanesulfonic_acid",
+      "synonyms_traps": [
+        "MSA",
+        "methane sulfonic acid",
+        "CH₃SO₃H"
+      ],
+      "notes": "Methanesulfonic acid (MSA) is the primary supporting electrolyte; fluoboric acid is mentioned as an alternative.",
+      "example_sentences": [
+        "methanesulfonic acid (MSA) based electrolytes",
+        "methanesulfonic acid (MSA) or fluoboric acid supporting electrolyte"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:008",
+      "term_in_document": "capacity retention",
+      "canonical_form": "capacity_retention",
+      "synonyms_traps": [
+        "capacity fade",
+        "capacity fading",
+        "discharge capacity retention",
+        "capacity maintenance",
+        "remaining capacity"
+      ],
+      "notes": "Capacity retention is the ratio of current discharge capacity to initial; capacity fade is the inverse concept (1 - retention).",
+      "example_sentences": [
+        "capacity retention of 80% after 200 cycles",
+        "capacity fade accelerated during the later stages",
+        "total capacity loss of 20% after 200 cycles"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:009",
+      "term_in_document": "dendritic growth",
+      "canonical_form": "dendrite_formation",
+      "synonyms_traps": [
+        "dendrite formation",
+        "dendritic deposition",
+        "tree-like growth",
+        "needle-like deposition"
+      ],
+      "notes": "Dendritic growth and dendrite formation refer to the same unstable electrodeposition morphology.",
+      "example_sentences": [
+        "non-uniform Pb deposition from the Pb²⁺ electrolyte leads to dendritic growth",
+        "severe dendritic growth was observed after 150 cycles"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:010",
+      "term_in_document": "electrolyte stratification",
+      "canonical_form": "electrolyte_stratification",
+      "synonyms_traps": [
+        "concentration gradient",
+        "density-driven stratification",
+        "electrolyte inhomogeneity",
+        "reactant depletion gradient"
+      ],
+      "notes": "Electrolyte stratification specifically refers to gravity-driven vertical concentration gradients; general concentration gradients may include horizontal components.",
+      "example_sentences": [
+        "density-driven electrolyte stratification represents a system-level degradation mode",
+        "Electrolyte stratification accounts for the remaining 15%"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:011",
+      "term_in_document": "coulombic efficiency",
+      "canonical_form": "coulombic_efficiency",
+      "synonyms_traps": [
+        "CE",
+        "charge efficiency",
+        "faradaic efficiency",
+        "current efficiency"
+      ],
+      "notes": "Coulombic efficiency and faradaic efficiency are equivalent in this context; CE is the standard abbreviation.",
+      "example_sentences": [
+        "coulombic efficiency of 90% at 20 mA/cm²",
+        "coulombic efficiency decreased from 90% to 78%"
+      ]
+    },
+    {
+      "stress_id": "DOC08:STRESS:012",
+      "term_in_document": "positive feedback loop",
+      "canonical_form": "positive_feedback_loop",
+      "synonyms_traps": [
+        "coupled degradation",
+        "self-amplifying degradation",
+        "degradation coupling",
+        "synergistic degradation"
+      ],
+      "notes": "The positive feedback loop between roughness and passivation is the central coupled degradation mechanism.",
+      "example_sentences": [
+        "establishing a positive feedback loop of morphological degradation",
+        "creating a positive feedback loop that accelerates degradation"
+      ]
+    }
+  ]
+}

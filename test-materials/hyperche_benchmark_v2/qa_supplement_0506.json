@@ -1,0 +1,356 @@
+[
+  {
+    "question_id": "DOC05-QA-001",
+    "source_doc_id": "DOC05",
+    "level": "L1",
+    "question_type": "direct fact retrieval",
+    "question": "What is the capacity retention of the VRFB after 500 cycles at 60°C?",
+    "reference_answer": "The VRFB achieves a capacity retention of 60% after 500 cycles at 60°C, which is the lowest among the three tested temperatures (25°C, 40°C, and 60°C).",
+    "reference_answer_points": [
+      "Capacity retention is 60%",
+      "Operating temperature is 60°C",
+      "Cycle number is 500 cycles"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-001"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-002",
+    "source_doc_id": "DOC05",
+    "level": "L1",
+    "question_type": "direct fact retrieval",
+    "question": "What is the vanadium crossover rate measured at 40°C?",
+    "reference_answer": "The vanadium crossover rate at 40°C is 3.8 x 10^-7 cm2/s, which represents an intermediate value between the crossover rates at 25°C and 60°C.",
+    "reference_answer_points": [
+      "Crossover rate is 3.8 x 10^-7 cm2/s",
+      "Temperature is 40°C",
+      "The value is higher than 25°C (2.1 x 10^-7) but lower than 60°C (6.5 x 10^-7)"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-002"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-002"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-003",
+    "source_doc_id": "DOC05",
+    "level": "L2",
+    "question_type": "comparative retrieval",
+    "question": "How does the SOC imbalance compare between 25°C and 60°C operation after 500 cycles?",
+    "reference_answer": "After 500 cycles, the SOC imbalance increases from 8% at 25°C to 24% at 60°C, representing a threefold increase. This larger SOC imbalance at 60°C is attributed to the accelerated vanadium crossover and side reactions at elevated temperature.",
+    "reference_answer_points": [
+      "SOC imbalance at 25°C is 8%",
+      "SOC imbalance at 60°C is 24%",
+      "The increase factor is 3x (from 8% to 24%)",
+      "Cause is accelerated crossover and side reactions at high temperature"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-003",
+      "DOC05-FACT-004"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-003"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-004",
+    "source_doc_id": "DOC05",
+    "level": "L2",
+    "question_type": "comparative retrieval",
+    "question": "Compare the vanadium crossover coefficients at 25°C and 60°C and explain the trend.",
+    "reference_answer": "The vanadium crossover coefficient increases from 2.1 x 10^-7 cm2/s at 25°C to 6.5 x 10^-7 cm2/s at 60°C, corresponding to approximately a 3.1-fold increase. This trend indicates that elevated temperature significantly enhances vanadium ion transport across the membrane due to increased ion mobility and decreased electrolyte viscosity.",
+    "reference_answer_points": [
+      "Crossover at 25°C is 2.1 x 10^-7 cm2/s",
+      "Crossover at 60°C is 6.5 x 10^-7 cm2/s",
+      "Increase factor is approximately 3.1x",
+      "Mechanism: increased ion mobility and decreased viscosity at higher temperature"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-005",
+      "DOC05-FACT-006"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-004"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-005",
+    "source_doc_id": "DOC05",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "At 40°C and after 500 cycles, what are the capacity retention and SOC imbalance of the VRFB, and how does the crossover rate relate to these performance metrics?",
+    "reference_answer": "At 40°C after 500 cycles, the VRFB exhibits a capacity retention of 74% and an SOC imbalance of 15%. The corresponding crossover rate is 3.8 x 10^-7 cm2/s. These intermediate values (between 25°C and 60°C) demonstrate that the 40°C condition represents a moderate degradation scenario where the vanadium crossover contributes to capacity fade through asymmetric active material loss and uneven SOC distribution across the positive and negative half-cells.",
+    "reference_answer_points": [
+      "Capacity retention at 40°C is 74%",
+      "SOC imbalance at 40°C is 15%",
+      "Crossover rate at 40°C is 3.8 x 10^-7 cm2/s",
+      "40°C represents an intermediate degradation case between 25°C and 60°C",
+      "Crossover drives capacity fade via active material loss and uneven SOC distribution"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-007",
+      "DOC05-FACT-008",
+      "DOC05-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-005"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-006",
+    "source_doc_id": "DOC05",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "For VRFB operation at 60°C over 500 cycles, what is the relationship among capacity retention, vanadium crossover, and SOC imbalance, and why does this temperature lead to the worst performance?",
+    "reference_answer": "At 60°C over 500 cycles, the VRFB shows the worst performance with capacity retention of 60%, the highest vanadium crossover of 6.5 x 10^-7 cm2/s, and the largest SOC imbalance of 24%. This temperature leads to the worst performance because the elevated temperature exponentially increases vanadium ion permeation through the membrane (highest crossover), which causes asymmetric depletion of active species on both sides and results in severe SOC imbalance, ultimately accelerating capacity degradation.",
+    "reference_answer_points": [
+      "Capacity retention at 60°C is 60% (lowest)",
+      "Crossover at 60°C is 6.5 x 10^-7 cm2/s (highest)",
+      "SOC imbalance at 60°C is 24% (largest)",
+      "Highest crossover causes asymmetric active species depletion",
+      "Severe SOC imbalance accelerates capacity fade"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-010",
+      "DOC05-FACT-011",
+      "DOC05-FACT-012"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-006"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-007",
+    "source_doc_id": "DOC05",
+    "level": "L4",
+    "question_type": "multi-condition comparison",
+    "question": "Compare the capacity retention, vanadium crossover coefficient, and SOC imbalance across all three temperatures (25°C, 40°C, and 60°C) after 500 cycles, and summarize the temperature dependence trend for each metric.",
+    "reference_answer": "After 500 cycles, all three performance metrics degrade monotonically with increasing temperature: (1) Capacity retention decreases from 85% at 25°C to 74% at 40°C and further to 60% at 60°C; (2) Vanadium crossover increases from 2.1 x 10^-7 cm2/s at 25°C to 3.8 x 10^-7 cm2/s at 40°C and to 6.5 x 10^-7 cm2/s at 60°C; (3) SOC imbalance increases from 8% at 25°C to 15% at 40°C and to 24% at 60°C. The consistent trend across all metrics confirms that elevated temperature accelerates capacity degradation primarily by enhancing vanadium crossover, which in turn exacerbates SOC imbalance.",
+    "reference_answer_points": [
+      "Capacity retention: 85% (25°C) > 74% (40°C) > 60% (60°C)",
+      "Crossover: 2.1 (25°C) < 3.8 (40°C) < 6.5 x 10^-7 cm2/s (60°C)",
+      "SOC imbalance: 8% (25°C) < 15% (40°C) < 24% (60°C)",
+      "All metrics show monotonic degradation with temperature increase",
+      "Crossover enhancement is the primary driver of capacity fade and SOC imbalance"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-013",
+      "DOC05-FACT-014",
+      "DOC05-FACT-015",
+      "DOC05-FACT-016"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-007"
+    ]
+  },
+  {
+    "question_id": "DOC05-QA-008",
+    "source_doc_id": "DOC05",
+    "level": "L5",
+    "question_type": "mechanistic chain analysis",
+    "question": "Explain the complete degradation chain in a VRFB operating at elevated temperature (60°C): starting from the root cause, trace how temperature affects vanadium crossover, how crossover leads to SOC imbalance, and how SOC imbalance ultimately drives capacity retention down to 60% after 500 cycles.",
+    "reference_answer": "The degradation chain at 60°C follows a causal sequence: (1) Root cause: Elevated temperature (60°C) increases vanadium ion mobility and decreases electrolyte viscosity; (2) Crossover enhancement: These effects raise the vanadium crossover coefficient to 6.5 x 10^-7 cm2/s, the highest among all tested conditions; (3) SOC imbalance development: Asymmetric crossover of different vanadium species (V2+, V3+, VO2+, VO2+) between half-cells leads to unequal state-of-charge distribution, resulting in 24% SOC imbalance; (4) Capacity fade: The severe SOC imbalance limits the usable capacity of both half-cells and promotes side reactions, ultimately reducing capacity retention to 60% after 500 cycles. This chain demonstrates that temperature -> crossover -> SOC imbalance -> capacity fade is the dominant degradation pathway at elevated temperature.",
+    "reference_answer_points": [
+      "Step 1: 60°C increases ion mobility and decreases viscosity",
+      "Step 2: Crossover coefficient reaches 6.5 x 10^-7 cm2/s (highest)",
+      "Step 3: Asymmetric crossover causes 24% SOC imbalance (largest)",
+      "Step 4: SOC imbalance limits usable capacity and promotes side reactions",
+      "Final outcome: Capacity retention drops to 60% after 500 cycles",
+      "Complete chain: Temperature ↑ → Crossover ↑ → SOC Imbalance ↑ → Capacity ↓"
+    ],
+    "expected_facts": [
+      "DOC05-FACT-017",
+      "DOC05-FACT-018",
+      "DOC05-FACT-019",
+      "DOC05-FACT-020"
+    ],
+    "expected_efus": [
+      "DOC05-EFU-008"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-001",
+    "source_doc_id": "DOC06",
+    "level": "L1",
+    "question_type": "direct fact retrieval",
+    "question": "What is the coulombic efficiency (CE) of the ICRFB with 5.0 mmol/L Bi3+ additive compared to the baseline without Bi3+?",
+    "reference_answer": "With 5.0 mmol/L Bi3+ additive, the ICRFB achieves a coulombic efficiency (CE) of 96%, which is a significant improvement from the baseline CE of 72% without Bi3+. This represents an absolute improvement of 24 percentage points.",
+    "reference_answer_points": [
+      "CE with Bi3+ (5.0 mmol/L) is 96%",
+      "Baseline CE without Bi3+ is 72%",
+      "Absolute improvement is 24 percentage points"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-001"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-001"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-002",
+    "source_doc_id": "DOC06",
+    "level": "L1",
+    "question_type": "direct fact retrieval",
+    "question": "What is the HER overpotential shift caused by Bi3+ addition in the ICRFB?",
+    "reference_answer": "The addition of Bi3+ shifts the hydrogen evolution reaction (HER) overpotential by +85 mV. This positive shift indicates that Bi3+ effectively suppresses the HER side reaction on the negative electrode, thereby improving the coulombic efficiency of the ICRFB system.",
+    "reference_answer_points": [
+      "HER overpotential shift is +85 mV",
+      "Bi3+ suppresses HER side reaction",
+      "The overpotential shift is measured on the negative electrode"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-002"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-002"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-003",
+    "source_doc_id": "DOC06",
+    "level": "L2",
+    "question_type": "comparative retrieval",
+    "question": "Compare the energy efficiency (EE) and Cr reaction rate constant of the ICRFB with and without Bi3+ additive.",
+    "reference_answer": "With Bi3+ addition, the ICRFB shows an energy efficiency (EE) improvement from 51% to 85% (a 34 percentage point increase), and the Cr reaction rate constant increases from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s (approximately 2.3-fold enhancement). Both improvements indicate that Bi3+ not only suppresses HER but also promotes the desired chromium redox kinetics, contributing to the overall performance enhancement.",
+    "reference_answer_points": [
+      "EE improves from 51% (baseline) to 85% (with Bi3+)",
+      "Cr rate constant increases from 2.1 to 4.8 x 10^-3 cm/s",
+      "Improvement factor for EE is 34 percentage points",
+      "Improvement factor for Cr rate constant is ~2.3x",
+      "Bi3+ simultaneously suppresses HER and enhances Cr redox kinetics"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-003",
+      "DOC06-FACT-004"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-003"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-004",
+    "source_doc_id": "DOC06",
+    "level": "L2",
+    "question_type": "comparative retrieval",
+    "question": "How do the CE and HER overpotential change when Bi3+ concentration increases from 0.5 mmol/L to 5.0 mmol/L?",
+    "reference_answer": "As the Bi3+ concentration increases from 0.5 mmol/L to 5.0 mmol/L, the coulombic efficiency (CE) improves substantially from approximately 72% to 96%, while the HER overpotential shifts positively by +85 mV. The Bi3+ additive progressively suppresses the hydrogen evolution side reaction as its concentration increases, resulting in higher CE and reduced parasitic hydrogen evolution. The optimal concentration is 5.0 mmol/L, achieving the best CE of 96% and the most positive HER overpotential shift.",
+    "reference_answer_points": [
+      "CE increases from ~72% to 96% as Bi3+ increases to 5.0 mmol/L",
+      "HER overpotential shifts by +85 mV with Bi3+ addition",
+      "Higher Bi3+ concentration provides stronger HER suppression",
+      "Optimal Bi3+ concentration is 5.0 mmol/L for best CE"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-005",
+      "DOC06-FACT-006"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-004"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-005",
+    "source_doc_id": "DOC06",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "With 5.0 mmol/L Bi3+ additive, what are the CE, EE, and Cr reaction rate constant of the ICRFB, and how does the HER overpotential shift contribute to these improvements?",
+    "reference_answer": "With 5.0 mmol/L Bi3+ additive, the ICRFB achieves a coulombic efficiency (CE) of 96%, an energy efficiency (EE) of 85%, and a Cr reaction rate constant of 4.8 x 10^-3 cm/s. The HER overpotential shifts positively by +85 mV, which indicates that Bi3+ deposits on the electrode surface and blocks active sites for hydrogen evolution. This HER suppression reduces parasitic side reactions, thereby increasing CE from 72% to 96%. The improved Cr redox kinetics (rate constant from 2.1 to 4.8 x 10^-3 cm/s) further enhances both charge transfer efficiency and overall energy efficiency.",
+    "reference_answer_points": [
+      "CE is 96% with 5.0 mmol/L Bi3+",
+      "EE is 85% with 5.0 mmol/L Bi3+",
+      "Cr rate constant is 4.8 x 10^-3 cm/s with Bi3+",
+      "HER overpotential shifts +85 mV due to Bi3+ deposition",
+      "HER suppression reduces parasitic reactions, increasing CE",
+      "Enhanced Cr kinetics improves charge transfer and EE"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-007",
+      "DOC06-FACT-008",
+      "DOC06-FACT-009"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-005"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-006",
+    "source_doc_id": "DOC06",
+    "level": "L3",
+    "question_type": "condition-constrained retrieval",
+    "question": "For the ICRFB with Bi3+ additive in the optimal concentration range (0.5-5.0 mmol/L), what is the relationship among Bi3+ concentration, HER suppression, and CE improvement?",
+    "reference_answer": "In the Bi3+ concentration range of 0.5-5.0 mmol/L, there is a positive correlation between Bi3+ concentration and both HER suppression and CE improvement. As Bi3+ concentration increases within this range: (1) the HER overpotential shifts increasingly positive (up to +85 mV at 5.0 mmol/L), indicating stronger suppression of parasitic hydrogen evolution; (2) the CE monotonically improves from approximately 72% (baseline) to 96% (at 5.0 mmol/L). The Bi3+ ions deposit on the negative electrode surface, physically blocking active sites that would otherwise catalyze HER, which is the primary mechanism for the CE improvement in this concentration range.",
+    "reference_answer_points": [
+      "Bi3+ range is 0.5-5.0 mmol/L",
+      "HER overpotential shifts up to +85 mV at 5.0 mmol/L",
+      "CE improves from ~72% to 96% across the range",
+      "Positive correlation: higher Bi3+ → stronger HER suppression → higher CE",
+      "Mechanism: Bi3+ deposits on electrode surface blocking HER active sites"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-010",
+      "DOC06-FACT-011",
+      "DOC06-FACT-012"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-006"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-007",
+    "source_doc_id": "DOC06",
+    "level": "L4",
+    "question_type": "multi-parameter comparison",
+    "question": "Compare all key performance metrics of the ICRFB before and after adding Bi3+ additive (5.0 mmol/L): CE, EE, HER overpotential shift, and Cr reaction rate constant. Explain how these metrics collectively demonstrate the effectiveness of Bi3+ addition.",
+    "reference_answer": "The addition of 5.0 mmol/L Bi3+ improves all key performance metrics of the ICRFB: (1) Coulombic efficiency (CE) increases from 72% to 96% (+24 percentage points), indicating significantly reduced parasitic reactions; (2) Energy efficiency (EE) rises from 51% to 85% (+34 percentage points), showing overall system efficiency enhancement; (3) HER overpotential shifts positively by +85 mV, demonstrating effective suppression of hydrogen evolution side reactions; (4) Cr reaction rate constant increases from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s (~2.3x enhancement), indicating improved chromium redox kinetics. Collectively, these metrics demonstrate that Bi3+ acts through a dual mechanism: suppressing HER (improving CE) and catalyzing Cr redox reactions (improving rate constant), which together produce the substantial EE improvement.",
+    "reference_answer_points": [
+      "CE: 72% → 96% (+24 percentage points)",
+      "EE: 51% → 85% (+34 percentage points)",
+      "HER overpotential: +85 mV positive shift",
+      "Cr rate constant: 2.1 → 4.8 x 10^-3 cm/s (~2.3x)",
+      "Dual mechanism: HER suppression + Cr kinetics enhancement",
+      "All metrics show monotonic improvement with Bi3+ addition"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-013",
+      "DOC06-FACT-014",
+      "DOC06-FACT-015",
+      "DOC06-FACT-016"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-007"
+    ]
+  },
+  {
+    "question_id": "DOC06-QA-008",
+    "source_doc_id": "DOC06",
+    "level": "L5",
+    "question_type": "mechanistic chain analysis",
+    "question": "Trace the complete mechanistic chain in the ICRFB with Bi3+ additive: starting from Bi3+ deposition on the electrode, explain how it suppresses HER (manifested as +85 mV overpotential shift), how this leads to CE improvement from 72% to 96%, and how the combined effect with enhanced Cr kinetics (rate constant 2.1 to 4.8 x 10^-3 cm/s) results in EE rising from 51% to 85%.",
+    "reference_answer": "The mechanistic chain in Bi3+-modified ICRFB operates as follows: (1) Bi3+ deposition: Bi3+ ions from the electrolyte deposit onto the negative electrode surface, partially covering the electrode active sites; (2) HER suppression: The deposited Bi3+ blocks catalytic sites for hydrogen evolution, increasing the activation overpotential for HER by +85 mV. This makes HER thermodynamically and kinetically less favorable; (3) CE improvement: With HER suppressed, fewer electrons are wasted on parasitic hydrogen evolution, so the charge transfer efficiency improves, raising CE from 72% to 96%; (4) Cr kinetics enhancement: Simultaneously, Bi3+ modifies the electrode surface to facilitate chromium redox reactions, increasing the Cr reaction rate constant from 2.1 x 10^-3 cm/s to 4.8 x 10^-3 cm/s; (5) EE improvement: The combined effects of higher CE (less parasitic loss) and faster Cr kinetics (lower polarization) reduce both chemical and voltage losses during charge/discharge, resulting in EE improvement from 51% to 85%. This chain demonstrates that Bi3+ acts through both catalytic (Cr kinetics) and protective (HER suppression) mechanisms.",
+    "reference_answer_points": [
+      "Step 1: Bi3+ deposits on the negative electrode surface",
+      "Step 2: Bi3+ blocks HER active sites, shifting overpotential by +85 mV",
+      "Step 3: HER suppression reduces parasitic electron loss, CE increases 72% → 96%",
+      "Step 4: Bi3+ enhances Cr redox kinetics, rate constant 2.1 → 4.8 x 10^-3 cm/s",
+      "Step 5: Combined effect reduces chemical and voltage losses",
+      "Final outcome: EE improves from 51% to 85%",
+      "Dual mechanism: catalytic (Cr kinetics) + protective (HER suppression)"
+    ],
+    "expected_facts": [
+      "DOC06-FACT-017",
+      "DOC06-FACT-018",
+      "DOC06-FACT-019",
+      "DOC06-FACT-020"
+    ],
+    "expected_efus": [
+      "DOC06-EFU-008"
+    ]
+  }
+]
