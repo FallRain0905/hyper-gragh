@@ -50,6 +50,8 @@ def resolve_prompt_domain(prompt_profile: str | None, domain: str | None = None)
     profile = (prompt_profile or "chemistry").strip()
     if profile == "generic_json":
         return "generic_json"
+    if profile in {"default", "original", "original_hyperrag", "hyperrag_original"}:
+        return "default"
     if profile == "chemistry":
         return domain or "flow_battery"
     return domain or profile

@@ -252,8 +252,9 @@ async def amain() -> None:
     parser.add_argument("--cache-dir", required=True, type=Path, help="Output HyperRAG cache directory.")
     parser.add_argument("--mode", default="hyper_final", help="Experiment mode from configs/experiments/modes.yaml.")
     parser.add_argument("--domain", default="flow_battery", help="Chemistry domain for chemistry prompt_profile.")
-    parser.add_argument("--chunk-size", type=int, default=None)
+    parser.add_argument("--chunk-size", type=int, default=positive_int_env("CHUNK_SIZE", 1000))
     parser.add_argument("--chunk-overlap", type=int, default=None)
+    parser.add_argument("--max-entities-per-chunk", type=int, default=positive_int_env("MAX_ENTITIES_PER_CHUNK", 40))
     parser.add_argument("--doc-id-prefix", default="DOC", help="Stable document ID prefix, e.g. RFB.")
     parser.add_argument("--doc-start", type=int, default=None, help="Only include files whose numeric index is >= this value.")
     parser.add_argument("--doc-end", type=int, default=None, help="Only include files whose numeric index is <= this value.")
@@ -297,6 +298,7 @@ async def amain() -> None:
         },
         "chunk_size": args.chunk_size,
         "chunk_overlap": args.chunk_overlap,
+        "max_entities_per_chunk": args.max_entities_per_chunk,
     }
     run_config_path = write_run_config(cache_dir, resolved, extra=extra)
     print(f"[BuildExperiment] run_config written: {run_config_path}", flush=True)
@@ -345,6 +347,7 @@ async def amain() -> None:
         ),
         "embedding_func_max_async": args.embedding_max_async,
         "embedding_batch_num": args.embedding_batch_num,
+        "max_entities_per_chunk": args.max_entities_per_chunk,
     }
     if args.chunk_size is not None:
         rag_kwargs["chunk_token_size"] = args.chunk_size

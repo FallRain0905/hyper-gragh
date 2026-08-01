@@ -10,7 +10,7 @@ modes:
 
   hyper_base:
     query_mode: hyper
-    prompt_profile: generic_json
+    prompt_profile: default
     enable_entity_normalization: false
     enable_measurement_instances: false
     enable_efu_repair: false

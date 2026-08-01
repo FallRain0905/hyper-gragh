@@ -55,7 +55,7 @@ Hyper-RAG/
 |   |   |-- flow_battery/
 |   |   |-- flow_battery_streamline/
 |   |   |-- pfas_piezocatalysis/
-|   |   `-- generic_json/              # Generic JSON profile for prompt ablation
+|   |   `-- generic_json/              # Legacy generic JSON profile, not the main baseline
 |   `-- experiment.py                  # Experiment mode resolver
 |-- hyperche/
 |   `-- normalization/                 # Conservative chemical entity normalization
@@ -145,7 +145,7 @@ Representative relation / hyperedge types include:
 
 ### Generic JSON
 
-`hyperrag/domains/generic_json/` keeps the same JSON output schema as the chemical prompts but uses generic entity and relation labels. It is intended for prompt-profile ablation, especially the `hyper_base` experiment mode.
+`hyperrag/domains/generic_json/` keeps the same JSON output schema as the chemical prompts but uses generic entity and relation labels. It was introduced for an early prompt-profile ablation. The main benchmark baseline now uses the original Hyper-RAG delimiter-based `default` prompt, so `hyper_base` reflects the upstream-style extraction pipeline rather than a newly designed JSON baseline.
 
 ## Experiment Modes
 
@@ -154,7 +154,7 @@ Experiment modes are configured in `configs/experiments/modes.yaml`.
 | Mode | Query View | Prompt Profile | Normalization | Measurement Instances | EFU Repair | Hybrid Rerank |
 | --- | --- | --- | --- | --- | --- | --- |
 | `graph_final` | graph | chemistry | on | on | on | on |
-| `hyper_base` | hyper | generic_json | off | off | off | off |
+| `hyper_base` | hyper | default | off | off | off | off |
 | `hyper_chem_prompt` | hyper | chemistry | off | off | off | off |
 | `hyper_norm` | hyper | chemistry | on | off | off | off |
 | `hyper_final` | hyper | chemistry | on | on | on | on |
@@ -194,8 +194,9 @@ python scripts\build_experiment_cache.py `
 Useful options:
 
 ```powershell
---chunk-size 1200
+--chunk-size 1000
 --chunk-overlap 100
+--max-entities-per-chunk 40
 --llm-timeout 600
 --embedding-timeout 120
 --llm-max-async 4

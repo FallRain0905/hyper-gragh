@@ -71,12 +71,13 @@ class HyperRAG:
     log_level: str = field(default=current_log_level)
 
     # text chunking
-    chunk_token_size: int = 1200
+    chunk_token_size: int = 1000
     chunk_overlap_token_size: int = 100
     tiktoken_model_name: str = "gpt-4o-mini"
 
     # entity extraction
     entity_extract_max_gleaning: int = 1
+    max_entities_per_chunk: int = 40
     entity_summary_to_max_tokens: int = 500
     entity_additional_properties_to_max_tokens: int = 250
     relation_summary_to_max_tokens: int = 750
@@ -152,6 +153,7 @@ class HyperRAG:
                     "index_profile": self.index_profile,
                     "chunk_token_size": self.chunk_token_size,
                     "chunk_overlap_token_size": self.chunk_overlap_token_size,
+                    "max_entities_per_chunk": self.max_entities_per_chunk,
                     "tiktoken_model_name": self.tiktoken_model_name,
                     "corpus_manifest_path": self.corpus_manifest_path,
                     "corpus_id": os.path.basename(os.path.normpath(self.working_dir)),

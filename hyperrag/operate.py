@@ -80,6 +80,74 @@ def _log_step_exception(chunk_key: str, step: str, label: str, error: Exception)
     logger.error(f"[{chunk_key}] {step} FAILED - {label}: {detail}")
 
 
+def _get_max_entities_per_chunk(global_config: dict) -> int:
+    try:
+        return int(global_config.get("max_entities_per_chunk") or 0)
+    except (TypeError, ValueError):
+        return 0
+
+
+def _limit_json_entities_for_chunk(
+    entities_json: list[dict],
+    chunk_key: str,
+    global_config: dict,
+    *,
+    stage: str,
+) -> list[dict]:
+    max_entities = _get_max_entities_per_chunk(global_config)
+    if max_entities <= 0 or len(entities_json) <= max_entities:
+        return entities_json
+
+    kept = entities_json[:max_entities]
+    dropped = entities_json[max_entities:]
+    logger.warning(
+        f"[{chunk_key}] {stage}: entity count capped at {max_entities}; "
+        f"dropped {len(dropped)} of {len(entities_json)} entities. "
+        f"dropped_examples={[e.get('name') or e.get('node_id') or e.get('instance_id') for e in dropped[:8]]}"
+    )
+    return kept
+
+
+def _limit_default_extraction_for_chunk(
+    maybe_nodes: dict,
+    maybe_edges: dict,
+    maybe_edges_low: dict,
+    maybe_edges_high: dict,
+    chunk_key: str,
+    global_config: dict,
+) -> tuple[dict, dict, dict, dict]:
+    max_entities = _get_max_entities_per_chunk(global_config)
+    if max_entities <= 0 or len(maybe_nodes) <= max_entities:
+        return maybe_nodes, maybe_edges, maybe_edges_low, maybe_edges_high
+
+    kept_names = set(list(maybe_nodes.keys())[:max_entities])
+    dropped_names = [name for name in maybe_nodes.keys() if name not in kept_names]
+
+    def _filter_edges(edges: dict) -> dict:
+        filtered = {}
+        dropped_edge_count = 0
+        for key, value in edges.items():
+            names = set(key if isinstance(key, (tuple, list, set)) else [key])
+            if names.issubset(kept_names):
+                filtered[key] = value
+            else:
+                dropped_edge_count += len(value) if isinstance(value, list) else 1
+        return filtered, dropped_edge_count
+
+    filtered_edges, dropped_edges = _filter_edges(maybe_edges)
+    filtered_low, dropped_low = _filter_edges(maybe_edges_low)
+    filtered_high, dropped_high = _filter_edges(maybe_edges_high)
+    filtered_nodes = {name: maybe_nodes[name] for name in maybe_nodes.keys() if name in kept_names}
+
+    logger.warning(
+        f"[{chunk_key}] Original prompt extraction capped at {max_entities} entities; "
+        f"dropped_entities={len(dropped_names)}, dropped_edges={dropped_edges}, "
+        f"dropped_low={dropped_low}, dropped_high={dropped_high}, "
+        f"dropped_entity_examples={dropped_names[:8]}"
+    )
+    return filtered_nodes, filtered_edges, filtered_low, filtered_high
+
+
 def _as_text_list(value) -> list[str]:
     if value is None:
         return []
@@ -2011,6 +2079,13 @@ async def _process_json_format_extraction(
         logger.warning(f"[{chunk_key}] Step 1: No entities extracted, aborting pipeline")
         return [], []
 
+    entities_json = _limit_json_entities_for_chunk(
+        entities_json,
+        chunk_key,
+        global_config,
+        stage="Step 1L pre-normalization entity limit",
+    )
+
     # Step 1N: normalize extracted entities before relation extraction.
     # Relation prompts and validation should use canonical entity names directly.
     entities_json = await _normalize_json_entities_for_extraction(
@@ -2020,6 +2095,12 @@ async def _process_json_format_extraction(
         global_config,
         use_llm_func,
         content,
+    )
+    entities_json = _limit_json_entities_for_chunk(
+        entities_json,
+        chunk_key,
+        global_config,
+        stage="Step 1L post-normalization entity limit",
     )
 
     # Log entity type distribution
@@ -2374,6 +2455,14 @@ async def extract_entities(
                 )
 
         already_processed += 1
+        maybe_nodes, maybe_edges, maybe_edges_low, maybe_edges_high = _limit_default_extraction_for_chunk(
+            maybe_nodes,
+            maybe_edges,
+            maybe_edges_low,
+            maybe_edges_high,
+            chunk_key,
+            global_config,
+        )
         already_entities += len(maybe_nodes)
         already_relations += len(maybe_edges)
         already_relations_low += len(maybe_edges_low)
