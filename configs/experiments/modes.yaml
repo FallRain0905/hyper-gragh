@@ -6,6 +6,7 @@ modes:
     enable_measurement_instances: true
     enable_efu_repair: true
     enable_hybrid_rerank: true
+    index_profile: dual_concat
 
   hyper_base:
     query_mode: hyper
@@ -14,6 +15,7 @@ modes:
     enable_measurement_instances: false
     enable_efu_repair: false
     enable_hybrid_rerank: false
+    index_profile: canonical_only
 
   hyper_chem_prompt:
     query_mode: hyper
@@ -22,6 +24,7 @@ modes:
     enable_measurement_instances: false
     enable_efu_repair: false
     enable_hybrid_rerank: false
+    index_profile: canonical_only
 
   hyper_norm:
     query_mode: hyper
@@ -30,6 +33,7 @@ modes:
     enable_measurement_instances: false
     enable_efu_repair: false
     enable_hybrid_rerank: false
+    index_profile: dual_concat
 
   hyper_final:
     query_mode: hyper
@@ -38,6 +42,16 @@ modes:
     enable_measurement_instances: true
     enable_efu_repair: true
     enable_hybrid_rerank: true
+    index_profile: dual_concat
+
+  hyper_final_dual_separate:
+    query_mode: hyper
+    prompt_profile: chemistry
+    enable_entity_normalization: true
+    enable_measurement_instances: true
+    enable_efu_repair: true
+    enable_hybrid_rerank: true
+    index_profile: dual_separate
 
   final_no_measurement:
     query_mode: hyper
@@ -46,6 +60,7 @@ modes:
     enable_measurement_instances: false
     enable_efu_repair: true
     enable_hybrid_rerank: true
+    index_profile: dual_concat
 
   final_no_repair:
     query_mode: hyper
@@ -54,6 +69,7 @@ modes:
     enable_measurement_instances: true
     enable_efu_repair: false
     enable_hybrid_rerank: true
+    index_profile: dual_concat
 
   final_no_rerank:
     query_mode: hyper
@@ -62,6 +78,7 @@ modes:
     enable_measurement_instances: true
     enable_efu_repair: true
     enable_hybrid_rerank: false
+    index_profile: dual_concat
 
   final_full:
     query_mode: hyper
@@ -70,3 +87,4 @@ modes:
     enable_measurement_instances: true
     enable_efu_repair: true
     enable_hybrid_rerank: true
+    index_profile: dual_concat

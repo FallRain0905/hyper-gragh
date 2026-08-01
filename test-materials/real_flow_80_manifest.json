@@ -1,0 +1,581 @@
+{
+  "source_dir": "C:\\Users\\surface\\OneDrive\\Desktop\\case1\\mineru_output\\all_markdown",
+  "output_dir": "C:\\Users\\surface\\OneDrive\\Desktop\\Hyper-Gragh\\Hyper-RAG\\test-materials\\real_flow_80_markdown",
+  "selection_rule": "001_full.md through 080_full.md",
+  "selected_count": 80,
+  "selected_docs": [
+    {
+      "index": 1,
+      "file": "001_full.md",
+      "title": "2024 Energy Lectureship Awards for Energy Storage",
+      "chars": 17757
+    },
+    {
+      "index": 2,
+      "file": "002_full.md",
+      "title": "3-TMA PROXYL: A high-potential, highly soluble nitroxide for enhanced stability and performance in aqueous organic redox flow batteries",
+      "chars": 46157
+    },
+    {
+      "index": 3,
+      "file": "003_full.md",
+      "title": "A comparative study of water-contained deep eutectic solvent electrolyte with different active species for enhancing the performance of redox flow batteries",
+      "chars": 65108
+    },
+    {
+      "index": 4,
+      "file": "004_full.md",
+      "title": "A critical review on the recent progress of vanadium redox flow battery materials for electrolytes, membranes and electrodes preparation",
+      "chars": 88687
+    },
+    {
+      "index": 5,
+      "file": "005_full.md",
+      "title": "A dihydroxyethylamino-functionalized naphthoquinone derivative with highly stable and reversible two-electron reaction for aqueous organic redox flow batteries",
+      "chars": 83349
+    },
+    {
+      "index": 6,
+      "file": "006_full.md",
+      "title": "A high current density and long cycle life iron-chromium redox flow battery electrolyte",
+      "chars": 54515
+    },
+    {
+      "index": 7,
+      "file": "007_full.md",
+      "title": "A High-Current, Stable Nonaqueous Organic Redox Flow Battery",
+      "chars": 36617
+    },
+    {
+      "index": 8,
+      "file": "008_full.md",
+      "title": "A Method to Inhibit Disproportionation of $\\pmb { M } \\mathbf { n } ^ { 3 + }$ for Low-Cost Mn-Fe All-Flow Battery",
+      "chars": 30260
+    },
+    {
+      "index": 9,
+      "file": "009_full.md",
+      "title": "ACS Publications and the ACS Energy_and Fuels (ENFL) Division Announce Two Energy Lectureship Awards",
+      "chars": 3275
+    },
+    {
+      "index": 10,
+      "file": "010_full.md",
+      "title": "Adaptive estimation of SOC and capacity of iron-chromium redox flow battery based on improved parameter identification and unscented Kalman filtering",
+      "chars": 63368
+    },
+    {
+      "index": 11,
+      "file": "011_full.md",
+      "title": "All-soluble all-iron aqueous redox flow batteries: Towards sustainable energy storage",
+      "chars": 85975
+    },
+    {
+      "index": 12,
+      "file": "012_full.md",
+      "title": "An analytical model for shunt currents in electrolyser, fuel cell,and flow battery stacks",
+      "chars": 101771
+    },
+    {
+      "index": 13,
+      "file": "013_full.md",
+      "title": "An aqueous anthraquinone solar redox flow battery for efficient conversion and storage of solar energy",
+      "chars": 35432
+    },
+    {
+      "index": 14,
+      "file": "014_full.md",
+      "title": "Architecting catalytic negative electrodes for practical vanadium flow batteries: From preloading to in-situ construction",
+      "chars": 102473
+    },
+    {
+      "index": 15,
+      "file": "015_full.md",
+      "title": "Assembling-induced redox property adjustment of Fe(II)/Fe(IV) electroredox couple-based commercial dye catholyte via bio-inspired multicoordination sphere construction strategy for stable aqueous redox flow batteries",
+      "chars": 91846
+    },
+    {
+      "index": 16,
+      "file": "016_full.md",
+      "title": "Bifunctional catalyst design for vanadium flow batteries: Oxygen vacancies for catalysis and metallic Bi for hydrogen evolution suppression",
+      "chars": 71978
+    },
+    {
+      "index": 17,
+      "file": "017_full.md",
+      "title": "Boosting energy density: Recent advances in single-molecule redox-targeting flow batteries",
+      "chars": 112511
+    },
+    {
+      "index": 18,
+      "file": "018_full.md",
+      "title": "Computationally efcient modeling of redox flow batteries for green finance applications: Integrating EZBattery and DeepONet for performance prediction",
+      "chars": 126722
+    },
+    {
+      "index": 19,
+      "file": "019_full.md",
+      "title": "Confining ${ \\bf B i } _ { 2 } { \\bf O } _ { 3 }$ nanoparticles in mesoporous carbon as a high-performance negative electrode for vanadium redox flow batteries",
+      "chars": 58265
+    },
+    {
+      "index": 20,
+      "file": "020_full.md",
+      "title": "Development of a zinc-air flow battery with acetonitrile-based organic electrolyte",
+      "chars": 54310
+    },
+    {
+      "index": 21,
+      "file": "021_full.md",
+      "title": "Development of an all-aqueous membrane-free inorganic redox flow battery",
+      "chars": 51998
+    },
+    {
+      "index": 22,
+      "file": "022_full.md",
+      "title": "Dextrosil-Viologen: A Robust and Sustainable Anolyte for Aqueous Organic Redox Flow Batteries",
+      "chars": 37723
+    },
+    {
+      "index": 23,
+      "file": "023_full.md",
+      "title": "Dissolution and redeposition of bismuth catalysts on negative electrodes of iron-chromium redox flow batteries",
+      "chars": 70615
+    },
+    {
+      "index": 24,
+      "file": "024_full.md",
+      "title": "Durable alkaline zinc-iron flow batteries using a SPEEK/Polysulfone blend membrane",
+      "chars": 46282
+    },
+    {
+      "index": 25,
+      "file": "025_full.md",
+      "title": "Effect of membrane diffusion potential on losses in vanadium redox flow batteries",
+      "chars": 73115
+    },
+    {
+      "index": 26,
+      "file": "026_full.md",
+      "title": "Effects of $\\mathrm { T i } ^ { 4 + }$ ， $\\mathrm { F e } ^ { 3 + }$ ,and ${ \\mathrm { C r } } ^ { 3 + }$ originating from vanadium raw materials on the performance of vanadium redox flow battery electrolyte",
+      "chars": 88744
+    },
+    {
+      "index": 27,
+      "file": "027_full.md",
+      "title": "Electrolyte engineering for efficient and stable vanadium redox flow batteries",
+      "chars": 203996
+    },
+    {
+      "index": 28,
+      "file": "028_full.md",
+      "title": "Electrolytes for bromine-based flow batteries: Challenges, strategies, and prospects",
+      "chars": 103962
+    },
+    {
+      "index": 29,
+      "file": "029_full.md",
+      "title": "Journal Pre-proof",
+      "chars": 50058
+    },
+    {
+      "index": 30,
+      "file": "030_full.md",
+      "title": "Emerging polyoxometalate clusters-based redox flow batteries: Performance metrics, application prospects, and development strategies",
+      "chars": 162179
+    },
+    {
+      "index": 31,
+      "file": "031_full.md",
+      "title": "Enhanced electrode modification for iron-chromium redox flow batteries via polyaniline-derived nitrogen-rich carbon layer coatig",
+      "chars": 62486
+    },
+    {
+      "index": 32,
+      "file": "032_full.md",
+      "title": "Enhanced zincate ion transport by expanding layer spacing of layered double hydroxides in the negative electrode of alkaline zinc-based flow battery",
+      "chars": 56534
+    },
+    {
+      "index": 33,
+      "file": "033_full.md",
+      "title": "Enhancing $\\mathrm { T i O } ^ { 2 + } / \\mathrm { T i } ^ { 3 + }$ redox kinetics by nitrogen-doped carbon nanofiber composite electrodes for titanium-cerium flow batteries",
+      "chars": 49264
+    },
+    {
+      "index": 34,
+      "file": "034_full.md",
+      "title": "Glycine as an effective electrolyte additive to improve the cycling performance of iron-chromium redox flow batteries",
+      "chars": 50563
+    },
+    {
+      "index": 35,
+      "file": "035_full.md",
+      "title": "Graphite microparticles as bifunctional component for constructing high-performance electrode with gradient structure for vanadium redox flow batteries",
+      "chars": 52713
+    },
+    {
+      "index": 36,
+      "file": "036_full.md",
+      "title": "Heteroatom-tuned Bi $\\mathbf { p _ { z } }$ -orbital hybridization of single-atom catalysts for high-power density vanadium flow batteries",
+      "chars": 40389
+    },
+    {
+      "index": 37,
+      "file": "037_full.md",
+      "title": "High entropy alloy-modified graphite felt for balancing the negative reaction in iron-chromium redox flow batteries at $40 \\%$",
+      "chars": 60159
+    },
+    {
+      "index": 38,
+      "file": "038_full.md",
+      "title": "High performance $\\mathrm { Z r O _ { 2 } }$ modified sulfonated poly (ether ether ketone) ion-exchange membrane for Iron-chromium redox flow battery application",
+      "chars": 42568
+    },
+    {
+      "index": 39,
+      "file": "039_full.md",
+      "title": "High-voltage organic molecules for nonaqueous redox flow batteries: Molecular design rules for stability and energy density",
+      "chars": 124012
+    },
+    {
+      "index": 40,
+      "file": "040_full.md",
+      "title": "Highly Soluble Viologen-PEG Conjugates for Aqueous Organic Redox Flow Batteries",
+      "chars": 62286
+    },
+    {
+      "index": 41,
+      "file": "041_full.md",
+      "title": "Impact of discharge cut-off voltage on alizarin-based redox flow batteries",
+      "chars": 50707
+    },
+    {
+      "index": 42,
+      "file": "042_full.md",
+      "title": "Interphase Engineering by Electrolyte Additives for Lithium-Rich Layered Oxides: Advances and Perspectives",
+      "chars": 85794
+    },
+    {
+      "index": 43,
+      "file": "043_full.md",
+      "title": "Ionic covalent organic polymer (iCOP) composite membranes with enhanced efficiency for iron-chromium redox flow battery",
+      "chars": 62545
+    },
+    {
+      "index": 44,
+      "file": "044_full.md",
+      "title": "lonic-Diluent-Engineered Ether Electrolyte for Rechargeable Sodium Batteries",
+      "chars": 56466
+    },
+    {
+      "index": 45,
+      "file": "045_full.md",
+      "title": "Lewis acid-mediated hydrogen-bond networks boosting the conductivity and stability of membranes for flow batteries",
+      "chars": 43610
+    },
+    {
+      "index": 46,
+      "file": "046_full.md",
+      "title": "Membrane contamination-driven sulfonate structuring for enhanced stability in all-iron redox flow batteries",
+      "chars": 63779
+    },
+    {
+      "index": 47,
+      "file": "047_full.md",
+      "title": "Meta-substituted thienoviologen with enhanced radical stability via $\\textstyle \\pi - \\pi$ interaction modulation for neutral aqueous organic flow batteries",
+      "chars": 66057
+    },
+    {
+      "index": 48,
+      "file": "048_full.md",
+      "title": "Metal-Free Aqueous Flow Battery with Novel Ultrafiltered Lignin as Electrolyte",
+      "chars": 36132
+    },
+    {
+      "index": 49,
+      "file": "049_full.md",
+      "title": "Migration-Resistant Phenylethylguanidinium Salts Stabilizing Perovskite Solar Cells",
+      "chars": 44067
+    },
+    {
+      "index": 50,
+      "file": "050_full.md",
+      "title": "$\\bf { M n } _ { 3 } \\bf { O } _ { 4 }$ -modified superhydrophilic carbon felt for enhanced $\\mathrm { C e } ^ { 3 + } / \\mathrm { C e } ^ { 4 + }$ redox kinetics in iron-cerium flow batteries",
+      "chars": 57383
+    },
+    {
+      "index": 51,
+      "file": "051_full.md",
+      "title": "Modelling extreme shunt currents and their role in vanadium redox flow battery degradation: A tool for multi-cell stack design optimisation",
+      "chars": 55722
+    },
+    {
+      "index": 52,
+      "file": "052_full.md",
+      "title": "Modulating single-atom sulfur-vacancy defect in ${ \\bf M o S } _ { 2 - \\bf x }$ catalysts to boost cathode redox kinetics for vanadium flow batteries",
+      "chars": 52685
+    },
+    {
+      "index": 53,
+      "file": "053_full.md",
+      "title": "Molecular and System-Level Advances in Zinc/Organic Hybrid Redox Flow Batteries",
+      "chars": 141769
+    },
+    {
+      "index": 54,
+      "file": "054_full.md",
+      "title": "Molecular Engineering Strategies for Symmetric Aqueous Organic Redox Flow Batteries",
+      "chars": 43271
+    },
+    {
+      "index": 55,
+      "file": "055_full.md",
+      "title": "Monitoring the long-term performance of organic redox flow battery by a distribution of relaxation time analysis",
+      "chars": 52084
+    },
+    {
+      "index": 56,
+      "file": "056_full.md",
+      "title": "Multi-hydrogen bond engineered imidazolium-functionalized naphthalene diimides for stable two-electron storage in aqueous organic flow batteries",
+      "chars": 64262
+    },
+    {
+      "index": 57,
+      "file": "057_full.md",
+      "title": "Multi-redox organic species for high-energy-density aqueous redox flow batteries: Mechanism, characteristics,and applications",
+      "chars": 178733
+    },
+    {
+      "index": 58,
+      "file": "058_full.md",
+      "title": "Multiscale mechanisms and operational optimization of flow rate regulation in iron-chromium redox flow batteries",
+      "chars": 59342
+    },
+    {
+      "index": 59,
+      "file": "059_full.md",
+      "title": "Nitrogen and phosphorus co-doping on carbon cloth electrodes with enhanced reaction kinetics and Inhibited hydrogen evolution reaction for high-performance Iron-Chromium redox flow batteries",
+      "chars": 61123
+    },
+    {
+      "index": 60,
+      "file": "060_full.md",
+      "title": "Nonaqueous Mg Flow Battery with a Polymer Catholyte",
+      "chars": 18481
+    },
+    {
+      "index": 61,
+      "file": "061_full.md",
+      "title": "Numerical investigations of scalable loop-type flow fields with enhanced convective mass transfer for vanadium redox flow batteries",
+      "chars": 64574
+    },
+    {
+      "index": 62,
+      "file": "062_full.md",
+      "title": "One stone two birds: Enhancing energy density and temperature adaptability for vanadium-based redox flow batteries via dual active species strategy",
+      "chars": 77195
+    },
+    {
+      "index": 63,
+      "file": "063_full.md",
+      "title": "Optimization of ion-regulated polybenzimidazole membrane structure for iron-chromium redox flow battery application",
+      "chars": 66442
+    },
+    {
+      "index": 64,
+      "file": "064_full.md",
+      "title": "Oxygen vacancy-engineered BiOX catalysts: Synergistically boosting redox kinetics and suppressing hydrogen evolution in Iron chromium flow batteries",
+      "chars": 76840
+    },
+    {
+      "index": 65,
+      "file": "065_full.md",
+      "title": "$\\mathrm { P b } { \\sf O } _ { 2 }$ electrode passivation and factors influencing cycle-life of high areal capacity soluble lead flow batteries",
+      "chars": 103936
+    },
+    {
+      "index": 66,
+      "file": "066_full.md",
+      "title": "Performance evaluation of vanadium redox flow battery based on asymmetric flow rate design",
+      "chars": 38550
+    },
+    {
+      "index": 67,
+      "file": "067_full.md",
+      "title": "Performance research in vanadium redox flow battery: Design of serpentine-biomimetic asymmetric flow field configuration",
+      "chars": 65076
+    },
+    {
+      "index": 68,
+      "file": "068_full.md",
+      "title": "Polymeric Active Materials for Redox Flow Battery Application",
+      "chars": 76968
+    },
+    {
+      "index": 69,
+      "file": "069_full.md",
+      "title": "Journal Pre-proof",
+      "chars": 166336
+    },
+    {
+      "index": 70,
+      "file": "070_full.md",
+      "title": "Precisely regulating etching and doping of carbon felt for high-performance all vanadium redox flow batteries",
+      "chars": 39410
+    },
+    {
+      "index": 71,
+      "file": "071_full.md",
+      "title": "Redox Targeting-Based Vanadium Redox-Flow Battery",
+      "chars": 45045
+    },
+    {
+      "index": 72,
+      "file": "072_full.md",
+      "title": "Research on structural optimization of cold plates for power batteries based on honeycomb flow channels",
+      "chars": 56794
+    },
+    {
+      "index": 73,
+      "file": "073_full.md",
+      "title": "Simply designed sulfonated polybenzimidazole membranes for iron-chromium redox flow battery",
+      "chars": 61526
+    },
+    {
+      "index": 74,
+      "file": "074_full.md",
+      "title": "Stabilizing Capacity Retention in NMC811/Graphite Full Cells via TMSPi Electrolyte Additives",
+      "chars": 48671
+    },
+    {
+      "index": 75,
+      "file": "075_full.md",
+      "title": "State of charge estimation of vanadium redox flow battery based on time-frequency feature and layered physical constraints",
+      "chars": 120738
+    },
+    {
+      "index": 76,
+      "file": "076_full.md",
+      "title": "Statistical benchmarking of chloride and sulphate posolytes for al-iron redox flow batteries",
+      "chars": 62370
+    },
+    {
+      "index": 77,
+      "file": "077_full.md",
+      "title": "Sulfonated polybenzimidazole copolymer membranes with optimized microstructure for enhanced performance of iron-chromium redox flow battery",
+      "chars": 50953
+    },
+    {
+      "index": 78,
+      "file": "078_full.md",
+      "title": "The effect of lead-based catalyst in-situ electrodeposition on the performance of iron-chromium redox flow batteries",
+      "chars": 58399
+    },
+    {
+      "index": 79,
+      "file": "079_full.md",
+      "title": "The impact of flow channel shape on the creep rate and degradation of vanadium-redox flow battery components",
+      "chars": 57747
+    },
+    {
+      "index": 80,
+      "file": "080_full.md",
+      "title": "Thermodynamic regulation of electrolyte to achieve air-tolerant viologen-based flow battery",
+      "chars": 33945
+    }
+  ],
+  "old_case1_embedded_count": 49,
+  "old_case1_embedded_files": [
+    "001_full.md",
+    "002_full.md",
+    "003_full.md",
+    "004_full.md",
+    "005_full.md",
+    "006_full.md",
+    "007_full.md",
+    "008_full.md",
+    "010_full.md",
+    "011_full.md",
+    "012_full.md",
+    "013_full.md",
+    "014_full.md",
+    "015_full.md",
+    "016_full.md",
+    "017_full.md",
+    "018_full.md",
+    "019_full.md",
+    "020_full.md",
+    "021_full.md",
+    "022_full.md",
+    "023_full.md",
+    "024_full.md",
+    "025_full.md",
+    "026_full.md",
+    "027_full.md",
+    "028_full.md",
+    "029_full.md",
+    "030_full.md",
+    "031_full.md",
+    "032_full.md",
+    "065_full.md",
+    "066_full.md",
+    "067_full.md",
+    "068_full.md",
+    "069_full.md",
+    "070_full.md",
+    "071_full.md",
+    "072_full.md",
+    "073_full.md",
+    "074_full.md",
+    "075_full.md",
+    "076_full.md",
+    "077_full.md",
+    "078_full.md",
+    "079_full.md",
+    "080_full.md",
+    "081_full.md",
+    "082_full.md"
+  ],
+  "old_case1_embedded_inside_selected_count": 47,
+  "selected_docs_not_in_old_case1_count": 33,
+  "selected_docs_not_in_old_case1": [
+    "009_full.md",
+    "033_full.md",
+    "034_full.md",
+    "035_full.md",
+    "036_full.md",
+    "037_full.md",
+    "038_full.md",
+    "039_full.md",
+    "040_full.md",
+    "041_full.md",
+    "042_full.md",
+    "043_full.md",
+    "044_full.md",
+    "045_full.md",
+    "046_full.md",
+    "047_full.md",
+    "048_full.md",
+    "049_full.md",
+    "050_full.md",
+    "051_full.md",
+    "052_full.md",
+    "053_full.md",
+    "054_full.md",
+    "055_full.md",
+    "056_full.md",
+    "057_full.md",
+    "058_full.md",
+    "059_full.md",
+    "060_full.md",
+    "061_full.md",
+    "062_full.md",
+    "063_full.md",
+    "064_full.md"
+  ],
+  "old_case1_docs_outside_selected": [
+    "081_full.md",
+    "082_full.md"
+  ]
+}

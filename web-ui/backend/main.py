@@ -2591,6 +2591,8 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
                 ("enable_efu_repair", "enable_efu_repair"),
                 ("enableHybridRerank", "enable_hybrid_rerank"),
                 ("enable_hybrid_rerank", "enable_hybrid_rerank"),
+                ("indexProfile", "index_profile"),
+                ("index_profile", "index_profile"),
             ]:
                 if setting_key in settings:
                     experiment_config[config_key] = settings[setting_key]
@@ -2607,6 +2609,7 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
                 "enable_measurement_instances": settings.get("enableMeasurementInstances", settings.get("enable_measurement_instances", True)),
                 "enable_efu_repair": settings.get("enableEfuRepair", settings.get("enable_efu_repair", True)),
                 "enable_hybrid_rerank": settings.get("enableHybridRerank", settings.get("enable_hybrid_rerank", True)),
+                "index_profile": settings.get("indexProfile", settings.get("index_profile", "dual_concat")),
             }
             current_domain = requested_domain
         main_logger.info(f"Using Hyper-RAG domain: {current_domain}, experiment={experiment_config.get('experiment_mode')}")
@@ -2650,6 +2653,7 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
             "enable_measurement_instances": bool(experiment_config.get("enable_measurement_instances", True)),
             "enable_efu_repair": bool(experiment_config.get("enable_efu_repair", True)),
             "enable_hybrid_rerank": bool(experiment_config.get("enable_hybrid_rerank", True)),
+            "index_profile": experiment_config.get("index_profile", "dual_concat"),
         }
 
         if requested_chunk_size:
@@ -2694,6 +2698,7 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
             instance.enable_measurement_instances = bool(settings.get("enableMeasurementInstances", settings.get("enable_measurement_instances", experiment_config.get("enable_measurement_instances", True))))
             instance.enable_efu_repair = bool(settings.get("enableEfuRepair", settings.get("enable_efu_repair", experiment_config.get("enable_efu_repair", True))))
             instance.enable_hybrid_rerank = bool(settings.get("enableHybridRerank", settings.get("enable_hybrid_rerank", experiment_config.get("enable_hybrid_rerank", True))))
+            instance.index_profile = settings.get("indexProfile", settings.get("index_profile", experiment_config.get("index_profile", getattr(instance, "index_profile", "dual_concat"))))
         except Exception:
             instance.domain = requested_domain
     except Exception as e:

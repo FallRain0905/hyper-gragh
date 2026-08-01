@@ -4,6 +4,9 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from datetime import datetime, timezone
+import hashlib
+import json
 import os
 from pathlib import Path
 import re
@@ -20,23 +23,131 @@ from hyperrag.llm import openai_complete_if_cache, openai_embedding
 from hyperrag.utils import EmbeddingFunc
 
 
-def read_input(path: Path) -> str:
-    if path.is_file():
-        return path.read_text(encoding="utf-8-sig")
-    if not path.is_dir():
-        raise FileNotFoundError(f"Input path not found: {path}")
-    parts = []
-    for file_path in sorted(iter_text_files(path)):
-        parts.append(f"\n\n# Source File: {file_path.name}\n\n")
-        parts.append(file_path.read_text(encoding="utf-8-sig"))
-    if not parts:
-        raise FileNotFoundError(f"No .md/.txt files found under: {path}")
-    return "".join(parts)
+def text_hash(text: str) -> str:
+    return hashlib.md5((text or "").encode("utf-8")).hexdigest()
+
+
+def safe_id(value: str) -> str:
+    text = re.sub(r"\s+", "_", str(value or "").strip())
+    text = re.sub(r"[^A-Za-z0-9_.-]+", "_", text).strip("._-")
+    return text or "doc"
+
+
+def extract_numeric_index(path: Path, fallback: int) -> int:
+    match = re.search(r"(\d+)", path.stem)
+    return int(match.group(1)) if match else fallback
+
+
+def infer_title(text: str, file_path: Path) -> str:
+    for line in (text or "").splitlines()[:40]:
+        stripped = line.strip()
+        if stripped.startswith("#"):
+            stripped = stripped.lstrip("#").strip()
+        if stripped and not stripped.lower().startswith("source file:"):
+            return stripped[:240]
+    return file_path.stem
 
 
 def iter_text_files(path: Path) -> Iterable[Path]:
     for suffix in ("*.md", "*.markdown", "*.txt"):
         yield from path.rglob(suffix)
+
+
+def read_input_documents(
+    path: Path,
+    *,
+    doc_id_prefix: str,
+    doc_start: int | None = None,
+    doc_end: int | None = None,
+) -> list[dict]:
+    if path.is_file():
+        text = path.read_text(encoding="utf-8-sig")
+        doc_number = doc_start or extract_numeric_index(path, 1)
+        doc_id = f"{safe_id(doc_id_prefix)}_{doc_number:03d}"
+        return [
+            {
+                "doc_id": doc_id,
+                "source_doc_id": doc_id,
+                "source_file": path.name,
+                "source_path": str(path.resolve()),
+                "title": infer_title(text, path),
+                "text_hash": text_hash(text),
+                "content": text,
+            }
+        ]
+    if not path.is_dir():
+        raise FileNotFoundError(f"Input path not found: {path}")
+    documents = []
+    files = sorted(iter_text_files(path))
+    for ordinal, file_path in enumerate(files, start=1):
+        doc_number = extract_numeric_index(file_path, ordinal)
+        if doc_start is not None and doc_number < doc_start:
+            continue
+        if doc_end is not None and doc_number > doc_end:
+            continue
+        text = file_path.read_text(encoding="utf-8-sig")
+        content = f"# Source File: {file_path.name}\n\n{text}"
+        doc_id = f"{safe_id(doc_id_prefix)}_{doc_number:03d}"
+        documents.append(
+            {
+                "doc_id": doc_id,
+                "source_doc_id": doc_id,
+                "source_file": file_path.name,
+                "source_path": str(file_path.resolve()),
+                "title": infer_title(text, file_path),
+                "text_hash": text_hash(text),
+                "content": content,
+            }
+        )
+    if not documents:
+        raise FileNotFoundError(f"No .md/.txt files found under: {path}")
+    return documents
+
+
+def append_jsonl(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def write_manifest(path: Path, documents: list[dict]) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w", encoding="utf-8") as handle:
+        for doc in documents:
+            payload = {
+                "doc_id": doc["doc_id"],
+                "source_doc_id": doc["source_doc_id"],
+                "source_file": doc.get("source_file", ""),
+                "source_path": doc.get("source_path", ""),
+                "title": doc.get("title", ""),
+                "text_hash": doc.get("text_hash", ""),
+                "chars": len(doc.get("content", "")),
+            }
+            handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def load_completed_doc_ids(cache_dir: Path, progress_path: Path) -> set[str]:
+    completed = set()
+    full_docs_path = cache_dir / "kv_store_full_docs.json"
+    if full_docs_path.exists():
+        try:
+            data = json.loads(full_docs_path.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                completed.update(str(key) for key in data.keys())
+                for value in data.values():
+                    if isinstance(value, dict) and value.get("doc_id"):
+                        completed.add(str(value["doc_id"]))
+        except Exception as exc:
+            print(f"[BuildExperiment] warning: failed to read existing full docs: {exc}", flush=True)
+    if progress_path.exists():
+        for line in progress_path.read_text(encoding="utf-8").splitlines():
+            try:
+                item = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if item.get("status") == "success" and item.get("doc_id"):
+                completed.add(str(item["doc_id"]))
+    return completed
 
 
 def env_required(name: str) -> str:
@@ -143,6 +254,11 @@ async def amain() -> None:
     parser.add_argument("--domain", default="flow_battery", help="Chemistry domain for chemistry prompt_profile.")
     parser.add_argument("--chunk-size", type=int, default=None)
     parser.add_argument("--chunk-overlap", type=int, default=None)
+    parser.add_argument("--doc-id-prefix", default="DOC", help="Stable document ID prefix, e.g. RFB.")
+    parser.add_argument("--doc-start", type=int, default=None, help="Only include files whose numeric index is >= this value.")
+    parser.add_argument("--doc-end", type=int, default=None, help="Only include files whose numeric index is <= this value.")
+    parser.add_argument("--resume", action="store_true", help="Skip documents already completed in this cache.")
+    parser.add_argument("--manifest", type=Path, default=None, help="Optional corpus_manifest.jsonl output path.")
     parser.add_argument("--llm-timeout", type=float, default=float(os.getenv("LLM_TIMEOUT", "600")))
     parser.add_argument("--embedding-timeout", type=float, default=float(os.getenv("EMB_TIMEOUT", "120")))
     parser.add_argument("--llm-max-async", type=int, default=positive_int_env("LLM_MAX_ASYNC", 4))
@@ -160,8 +276,18 @@ async def amain() -> None:
 
     resolved = resolve_experiment_mode(args.mode, domain=args.domain)
     cache_dir = args.cache_dir
+    cache_dir.mkdir(parents=True, exist_ok=True)
+    manifest_path = args.manifest or (cache_dir / "corpus_manifest.jsonl")
+    progress_path = cache_dir / "build_progress.jsonl"
     extra = {
         "input": str(args.input.resolve()),
+        "doc_id_prefix": args.doc_id_prefix,
+        "doc_start": args.doc_start,
+        "doc_end": args.doc_end,
+        "resume": args.resume,
+        "corpus_manifest_path": str(manifest_path.resolve()),
+        "build_progress_path": str(progress_path.resolve()),
+        "index_profile": resolved.get("index_profile"),
         "llm": {"model": llm_model, "base_url": llm_base_url, "api_key_count": len(llm_api_keys)},
         "embedding": {
             "model": emb_model,
@@ -177,8 +303,19 @@ async def amain() -> None:
     print(f"[BuildExperiment] resolved mode: {resolved}", flush=True)
     print(f"[BuildExperiment] key pools: llm={len(llm_api_keys)}, embedding={len(emb_api_keys)}", flush=True)
 
-    content = read_input(args.input)
-    print(f"[BuildExperiment] loaded input chars={len(content)}", flush=True)
+    documents = read_input_documents(
+        args.input,
+        doc_id_prefix=args.doc_id_prefix,
+        doc_start=args.doc_start,
+        doc_end=args.doc_end,
+    )
+    write_manifest(manifest_path, documents)
+    print(
+        f"[BuildExperiment] loaded input docs={len(documents)} "
+        f"chars={sum(len(doc.get('content', '')) for doc in documents)}",
+        flush=True,
+    )
+    print(f"[BuildExperiment] corpus_manifest written: {manifest_path}", flush=True)
 
     rag_kwargs = {
         "working_dir": str(cache_dir),
@@ -190,6 +327,8 @@ async def amain() -> None:
         "enable_measurement_instances": resolved["enable_measurement_instances"],
         "enable_efu_repair": resolved["enable_efu_repair"],
         "enable_hybrid_rerank": resolved["enable_hybrid_rerank"],
+        "index_profile": resolved.get("index_profile", "dual_concat"),
+        "corpus_manifest_path": str(manifest_path.resolve()),
         "llm_model_func": build_llm_func(
             model=llm_model,
             base_url=llm_base_url,
@@ -213,7 +352,66 @@ async def amain() -> None:
         rag_kwargs["chunk_overlap_token_size"] = args.chunk_overlap
 
     rag = HyperRAG(**rag_kwargs)
-    await rag.ainsert(content)
+    run_config_path = write_run_config(cache_dir, resolved, extra=extra)
+    print(f"[BuildExperiment] run_config refreshed after HyperRAG init: {run_config_path}", flush=True)
+    completed_doc_ids = load_completed_doc_ids(cache_dir, progress_path) if args.resume else set()
+    if completed_doc_ids:
+        print(f"[BuildExperiment] resume enabled; completed docs detected={len(completed_doc_ids)}", flush=True)
+
+    total = len(documents)
+    for index, doc in enumerate(documents, start=1):
+        doc_id = str(doc["doc_id"])
+        if args.resume and doc_id in completed_doc_ids:
+            print(f"[BuildExperiment] skip completed {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
+            append_jsonl(
+                progress_path,
+                {
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "status": "skipped",
+                    "doc_id": doc_id,
+                    "source_file": doc.get("source_file", ""),
+                    "reason": "resume_completed",
+                },
+            )
+            continue
+        print(f"[BuildExperiment] start {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
+        append_jsonl(
+            progress_path,
+            {
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "status": "start",
+                "doc_id": doc_id,
+                "source_file": doc.get("source_file", ""),
+                "text_hash": doc.get("text_hash", ""),
+            },
+        )
+        try:
+            await rag.ainsert(doc)
+            append_jsonl(
+                progress_path,
+                {
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "status": "success",
+                    "doc_id": doc_id,
+                    "source_file": doc.get("source_file", ""),
+                    "text_hash": doc.get("text_hash", ""),
+                },
+            )
+            print(f"[BuildExperiment] success {index}/{total}: {doc_id}", flush=True)
+        except Exception as exc:
+            append_jsonl(
+                progress_path,
+                {
+                    "timestamp": datetime.now(timezone.utc).isoformat(),
+                    "status": "error",
+                    "doc_id": doc_id,
+                    "source_file": doc.get("source_file", ""),
+                    "error_type": type(exc).__name__,
+                    "error": str(exc),
+                },
+            )
+            print(f"[BuildExperiment] error {index}/{total}: {doc_id}: {type(exc).__name__}: {exc}", flush=True)
+            raise
     print(f"[BuildExperiment] cache build complete: {cache_dir.resolve()}", flush=True)
 
 

@@ -78,6 +78,114 @@ def _format_llm_exception(error: Exception) -> str:
 def _log_step_exception(chunk_key: str, step: str, label: str, error: Exception) -> None:
     detail = _format_llm_exception(error)
     logger.error(f"[{chunk_key}] {step} FAILED - {label}: {detail}")
+
+
+def _as_text_list(value) -> list[str]:
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple, set)):
+        return [str(item).strip() for item in value if str(item).strip()]
+    text = str(value).strip()
+    return [text] if text else []
+
+
+def _unique_text(values) -> list[str]:
+    seen = set()
+    result = []
+    for value in values:
+        text = str(value or "").strip()
+        if not text or text in seen:
+            continue
+        seen.add(text)
+        result.append(text)
+    return result
+
+
+def _compact_text(value: str, limit: int = 1200) -> str:
+    text = re.sub(r"\s+", " ", str(value or "")).strip()
+    if len(text) <= limit:
+        return text
+    return text[:limit].rstrip() + "..."
+
+
+def _chunk_metadata(chunk_key: str, chunk_dp: dict | None = None) -> dict:
+    chunk_dp = chunk_dp or {}
+    return {
+        "source_id": chunk_key,
+        "source_doc_id": chunk_dp.get("source_doc_id") or chunk_dp.get("doc_id") or chunk_dp.get("full_doc_id") or "",
+        "source_chunk_id": chunk_dp.get("source_chunk_id") or chunk_dp.get("chunk_id") or chunk_key,
+        "chunk_id": chunk_dp.get("chunk_id") or chunk_key,
+        "source_file": chunk_dp.get("source_file", ""),
+        "text_hash": chunk_dp.get("text_hash", ""),
+    }
+
+
+def _attach_chunk_metadata(item: dict, metadata: dict) -> dict:
+    for field in ("source_doc_id", "source_chunk_id", "chunk_id", "source_file", "text_hash"):
+        if metadata.get(field) and not item.get(field):
+            item[field] = metadata[field]
+    return item
+
+
+def _split_evidence_sentences(content: str) -> list[str]:
+    content = str(content or "")
+    if not content.strip():
+        return []
+    parts = re.split(r"(?<=[。！？!?;；])\s+|(?<=[.!?])\s+(?=[A-Z0-9])|\n+", content)
+    sentences = [_compact_text(part, 600) for part in parts if part and part.strip()]
+    if not sentences and content.strip():
+        sentences = [_compact_text(content, 600)]
+    return sentences
+
+
+def _terms_from_relation(relation: dict) -> list[str]:
+    terms = []
+    for key in ("source", "target", "relation_type", "keywords", "description", "evidence_span"):
+        terms.extend(_as_text_list(relation.get(key)))
+    terms.extend(_as_text_list(relation.get("vertices")))
+    terms.extend(_as_text_list(relation.get("entityN")))
+    terms.extend(_as_text_list(relation.get("entities_pair")))
+    terms.extend(_as_text_list(relation.get("entities_set")))
+    terms.extend(re.findall(r"\b\d+(?:\.\d+)?\s*(?:%|mA\s*/?\s*cm[-−]?\s*2|mA\s*cm[-−]?\s*2|mol\s*/?\s*L|mmol\s*/?\s*g|ohm\s*cm2|cycles?|°C|V)\b", " ".join(map(str, terms)), flags=re.I))
+    cleaned = []
+    for term in terms:
+        term = re.sub(r"\s+", " ", str(term or "")).strip()
+        if len(term) >= 2:
+            cleaned.append(term)
+    return _unique_text(cleaned)
+
+
+def _repair_relation_source_span(relation: dict, content: str) -> str:
+    existing = relation.get("source_span") or relation.get("evidence_span")
+    if existing:
+        return _compact_text(existing, 1200)
+
+    sentences = _split_evidence_sentences(content)
+    if not sentences:
+        return _compact_text(content, 600)
+
+    terms = _terms_from_relation(relation)
+    if not terms:
+        return _compact_text(sentences[0], 600)
+
+    term_lowers = [term.lower() for term in terms]
+    scored = []
+    for index, sentence in enumerate(sentences):
+        lower = sentence.lower()
+        score = 0.0
+        for term, term_lower in zip(terms, term_lowers):
+            if term_lower and term_lower in lower:
+                score += 3.0 if len(term_lower) > 4 else 1.0
+        score += len(set(re.findall(r"\d+(?:\.\d+)?", lower)) & set(re.findall(r"\d+(?:\.\d+)?", " ".join(term_lowers)))) * 1.5
+        if score:
+            scored.append((score, index, sentence))
+
+    if not scored:
+        return _compact_text(content, 600)
+
+    scored.sort(key=lambda item: (-item[0], item[1]))
+    chosen = sorted({index for _, index, _ in scored[:2]})
+    return _compact_text(" ".join(sentences[index] for index in chosen), 1200)
     logger.debug(
         f"[{chunk_key}] {step} FAILED traceback:\n"
         f"{''.join(traceback.format_exception(type(error), error, error.__traceback__))}"
@@ -405,6 +513,11 @@ def convert_json_entity_to_standard_format(entity: dict, chunk_key: str = "") ->
         "need_review",
         "source_mentions",
         "attributes",
+        "source_doc_id",
+        "source_chunk_id",
+        "chunk_id",
+        "source_file",
+        "text_hash",
     ):
         if entity.get(field) is not None:
             result[field] = entity[field]
@@ -432,6 +545,13 @@ def convert_json_relation_to_standard_format(relation: dict, chunk_key: str = ""
             result["relation_type"] = relation["relation_type"]
         if relation.get("evidence_span"):
             result["evidence_span"] = relation["evidence_span"]
+        if relation.get("source_span"):
+            result["source_span"] = relation["source_span"]
+        if relation.get("evidence_instances"):
+            result["evidence_instances"] = relation["evidence_instances"]
+        for field in ("source_doc_id", "source_chunk_id", "chunk_id", "source_file", "text_hash"):
+            if relation.get(field) is not None:
+                result[field] = relation[field]
         for field in ("repair_applied", "repair_rules", "repair_confidence"):
             if relation.get(field) is not None:
                 result[field] = relation[field]
@@ -454,6 +574,13 @@ def convert_json_relation_to_standard_format(relation: dict, chunk_key: str = ""
             result["relation_type"] = relation["relation_type"]
         if relation.get("evidence_span"):
             result["evidence_span"] = relation["evidence_span"]
+        if relation.get("source_span"):
+            result["source_span"] = relation["source_span"]
+        if relation.get("evidence_instances"):
+            result["evidence_instances"] = relation["evidence_instances"]
+        for field in ("source_doc_id", "source_chunk_id", "chunk_id", "source_file", "text_hash"):
+            if relation.get(field) is not None:
+                result[field] = relation[field]
         for field in ("repair_applied", "repair_rules", "repair_confidence"):
             if relation.get(field) is not None:
                 result[field] = relation[field]
@@ -1274,6 +1401,9 @@ async def _merge_nodes_then_upsert(
 ):
     already_entity_types = []
     already_source_ids = []
+    already_source_doc_ids = []
+    already_source_chunk_ids = []
+    already_source_files = []
     already_description = []
     already_structured_fields = {}
 
@@ -1283,6 +1413,9 @@ async def _merge_nodes_then_upsert(
         already_source_ids.extend(
             split_string_by_multi_markers(already_node["source_id"], [GRAPH_FIELD_SEP])
         )
+        already_source_doc_ids.extend(_as_text_list(already_node.get("source_doc_ids") or already_node.get("source_doc_id")))
+        already_source_chunk_ids.extend(_as_text_list(already_node.get("source_chunk_ids") or already_node.get("source_chunk_id")))
+        already_source_files.extend(_as_text_list(already_node.get("source_files") or already_node.get("source_file")))
         already_description.append(already_node["description"])
 
         # Extract structured fields from existing node if available
@@ -1311,6 +1444,9 @@ async def _merge_nodes_then_upsert(
     source_id = GRAPH_FIELD_SEP.join(
         set([dp["source_id"] for dp in nodes_data] + already_source_ids)
     )
+    source_doc_ids = sorted(set(_unique_text([dp.get("source_doc_id") for dp in nodes_data] + already_source_doc_ids)))
+    source_chunk_ids = sorted(set(_unique_text([dp.get("source_chunk_id") for dp in nodes_data] + already_source_chunk_ids)))
+    source_files = sorted(set(_unique_text([dp.get("source_file") for dp in nodes_data] + already_source_files)))
 
     # Merge structured fields with smart strategy
     merged_structured_fields = _merge_structured_fields(nodes_data, already_structured_fields)
@@ -1330,6 +1466,15 @@ async def _merge_nodes_then_upsert(
         source_id=source_id,
         additional_properties=additional_properties,  # For display and backward compatibility
     )
+    if source_doc_ids:
+        node_data["source_doc_id"] = source_doc_ids[0] if len(source_doc_ids) == 1 else GRAPH_FIELD_SEP.join(source_doc_ids)
+        node_data["source_doc_ids"] = source_doc_ids
+    if source_chunk_ids:
+        node_data["source_chunk_id"] = source_chunk_ids[0] if len(source_chunk_ids) == 1 else GRAPH_FIELD_SEP.join(source_chunk_ids)
+        node_data["source_chunk_ids"] = source_chunk_ids
+    if source_files:
+        node_data["source_file"] = source_files[0] if len(source_files) == 1 else GRAPH_FIELD_SEP.join(source_files)
+        node_data["source_files"] = source_files
 
     # Add merged structured fields (for structured queries)
     node_data.update(merged_structured_fields)
@@ -1416,7 +1561,7 @@ def _merge_edge_evidence_instances(
         key = (
             str(instance.get("source_id", "")),
             str(instance.get("description", "")),
-            str(instance.get("evidence_span", "")),
+            str(instance.get("source_span") or instance.get("evidence_span", "")),
             str(instance.get("relation_type", "")),
         )
         if key in seen:
@@ -1429,13 +1574,19 @@ def _merge_edge_evidence_instances(
             add(dict(item))
 
     for edge in edges_data:
+        source_span = edge.get("source_span") or edge.get("evidence_span", "")
         add(
             {
                 "source_id": edge.get("source_id", ""),
+                "source_doc_id": edge.get("source_doc_id", ""),
+                "source_chunk_id": edge.get("source_chunk_id", ""),
+                "source_file": edge.get("source_file", ""),
                 "vertices": list(edge.get("entityN") or edge.get("entities_set") or edge.get("entities_pair") or id_set),
                 "description": edge.get("description", ""),
                 "keywords": edge.get("keywords", ""),
-                "evidence_span": edge.get("evidence_span", ""),
+                "source_span": source_span,
+                "sentence": source_span,
+                "evidence_span": source_span,
                 "relation_type": edge.get("relation_type", ""),
                 "level_hg": edge.get("level_hg", ""),
                 "weight": edge.get("weight"),
@@ -1471,6 +1622,9 @@ async def _merge_edges_then_upsert(
 ):
     already_weights = []
     already_source_ids = []
+    already_source_doc_ids = []
+    already_source_chunk_ids = []
+    already_source_files = []
     already_description = []
     already_keywords = []
     already_evidence_spans = []
@@ -1483,11 +1637,18 @@ async def _merge_edges_then_upsert(
         already_source_ids.extend(
             split_string_by_multi_markers(already_edge["source_id"], [GRAPH_FIELD_SEP])
         )
+        already_source_doc_ids.extend(_as_text_list(already_edge.get("source_doc_ids") or already_edge.get("source_doc_id")))
+        already_source_chunk_ids.extend(_as_text_list(already_edge.get("source_chunk_ids") or already_edge.get("source_chunk_id")))
+        already_source_files.extend(_as_text_list(already_edge.get("source_files") or already_edge.get("source_file")))
         already_description.append(already_edge["description"])
         already_keywords.extend(
             split_string_by_multi_markers(already_edge["keywords"], [GRAPH_FIELD_SEP])
         )
         # Load existing evidence_span and relation_type
+        if already_edge.get("source_spans"):
+            already_evidence_spans.extend(_as_text_list(already_edge.get("source_spans")))
+        if already_edge.get("source_span"):
+            already_evidence_spans.append(already_edge["source_span"])
         if already_edge.get("evidence_span"):
             already_evidence_spans.append(already_edge["evidence_span"])
         if already_edge.get("relation_type"):
@@ -1503,17 +1664,29 @@ async def _merge_edges_then_upsert(
     source_id = GRAPH_FIELD_SEP.join(
         set([dp["source_id"] for dp in edges_data] + already_source_ids)
     )
+    source_doc_ids = sorted(set(_unique_text([dp.get("source_doc_id") for dp in edges_data] + already_source_doc_ids)))
+    source_chunk_ids = sorted(set(_unique_text([dp.get("source_chunk_id") for dp in edges_data] + already_source_chunk_ids)))
+    source_files = sorted(set(_unique_text([dp.get("source_file") for dp in edges_data] + already_source_files)))
 
-    # Merge evidence_spans (preserve for traceability)
-    evidence_spans = [dp.get("evidence_span", "") for dp in edges_data if dp.get("evidence_span")]
-    all_evidence_spans = evidence_spans + already_evidence_spans
-    evidence_span = GRAPH_FIELD_SEP.join(sorted(set(all_evidence_spans))) if all_evidence_spans else ""
+    # Preserve the best representative span at the edge level and keep all spans
+    # losslessly under evidence_instances/source_spans.
+    evidence_spans = [
+        dp.get("source_span") or dp.get("evidence_span", "")
+        for dp in edges_data
+        if dp.get("source_span") or dp.get("evidence_span")
+    ]
+    all_evidence_spans = _unique_text(evidence_spans + already_evidence_spans)
+    evidence_span = all_evidence_spans[0] if all_evidence_spans else ""
 
     # Merge relation_types (may have multiple types for same entity set)
     relation_types = [dp.get("relation_type", "") for dp in edges_data if dp.get("relation_type")]
     all_relation_types = relation_types + already_relation_types
     relation_type = GRAPH_FIELD_SEP.join(sorted(set(all_relation_types))) if all_relation_types else ""
     evidence_instances = _merge_edge_evidence_instances(edges_data, existing_evidence_instances, id_set)
+    efu_id = compute_mdhash_id(
+        "|".join(sorted(map(str, id_set))) + "|" + str(relation_type),
+        prefix="efu-",
+    )
 
     # Track UNKNOWN vertex creation
     unknown_count = 0
@@ -1579,6 +1752,7 @@ async def _merge_edges_then_upsert(
     )
 
     edge_dict = dict(
+        efu_id=efu_id,
         vertices=list(id_set),
         node_ids=list(id_set),
         evidence_instances=evidence_instances,
@@ -1587,16 +1761,31 @@ async def _merge_edges_then_upsert(
         source_id=source_id,
         weight=weight
     )
+    if source_doc_ids:
+        edge_dict["source_doc_id"] = source_doc_ids[0] if len(source_doc_ids) == 1 else GRAPH_FIELD_SEP.join(source_doc_ids)
+        edge_dict["source_doc_ids"] = source_doc_ids
+    if source_chunk_ids:
+        edge_dict["source_chunk_id"] = source_chunk_ids[0] if len(source_chunk_ids) == 1 else GRAPH_FIELD_SEP.join(source_chunk_ids)
+        edge_dict["source_chunk_ids"] = source_chunk_ids
+    if source_files:
+        edge_dict["source_file"] = source_files[0] if len(source_files) == 1 else GRAPH_FIELD_SEP.join(source_files)
+        edge_dict["source_files"] = source_files
+    if all_evidence_spans:
+        edge_dict["source_spans"] = all_evidence_spans
     # Add evidence_span and relation_type if present
     if evidence_span:
         edge_dict["evidence_span"] = evidence_span
+        edge_dict["source_span"] = evidence_span
     if relation_type:
         edge_dict["relation_type"] = relation_type
 
     await knowledge_hypergraph_inst.upsert_hyperedge(id_set, edge_dict)
 
     edge_data = dict(
+        efu_id=efu_id,
         id_set=id_set,
+        vertices=list(id_set),
+        node_ids=list(id_set),
         description=description,
         keywords=filter_keywords,
         source_id=source_id,
@@ -1606,8 +1795,20 @@ async def _merge_edges_then_upsert(
         vertex_count=len(id_set),
         evidence_instances=evidence_instances,
     )
+    if source_doc_ids:
+        edge_data["source_doc_id"] = source_doc_ids[0] if len(source_doc_ids) == 1 else GRAPH_FIELD_SEP.join(source_doc_ids)
+        edge_data["source_doc_ids"] = source_doc_ids
+    if source_chunk_ids:
+        edge_data["source_chunk_id"] = source_chunk_ids[0] if len(source_chunk_ids) == 1 else GRAPH_FIELD_SEP.join(source_chunk_ids)
+        edge_data["source_chunk_ids"] = source_chunk_ids
+    if source_files:
+        edge_data["source_file"] = source_files[0] if len(source_files) == 1 else GRAPH_FIELD_SEP.join(source_files)
+        edge_data["source_files"] = source_files
+    if all_evidence_spans:
+        edge_data["source_spans"] = all_evidence_spans
     if evidence_span:
         edge_data["evidence_span"] = evidence_span
+        edge_data["source_span"] = evidence_span
     if relation_type:
         edge_data["relation_type"] = relation_type
 
@@ -1668,12 +1869,100 @@ def _log_unknown_summary(relationships_data: list[dict]):
     logger.warning("UNKNOWN SUMMARY unknown_by_relation_type=%s", dict(unknown_by_relation_type))
 
 
+def _format_value_unit(dp: dict) -> str:
+    parts = []
+    if dp.get("value") is not None:
+        parts.append(f"value={dp.get('value')}")
+    if dp.get("value_min") is not None or dp.get("value_max") is not None:
+        parts.append(f"value_range={dp.get('value_min')} to {dp.get('value_max')}")
+    if dp.get("unit"):
+        parts.append(f"unit={dp.get('unit')}")
+    return "; ".join(parts)
+
+
+def _join_field(label: str, values) -> str:
+    items = _unique_text(_as_text_list(values))
+    return f"{label}: {', '.join(items)}" if items else ""
+
+
+def _build_entity_embedding_text(dp: dict, *, view: str) -> str:
+    value_unit = _format_value_unit(dp)
+    if view == "surface":
+        fields = [
+            _join_field("Raw name", dp.get("raw_name") or dp.get("entity_name")),
+            _join_field("Display name", dp.get("display_name") or dp.get("canonical_name")),
+            _join_field("Surface mentions", dp.get("source_mentions") or dp.get("mentions")),
+            _join_field("Entity type", dp.get("entity_type")),
+            _join_field("Source documents", dp.get("source_doc_ids") or dp.get("source_doc_id")),
+            _join_field("Source chunks", dp.get("source_chunk_ids") or dp.get("source_chunk_id")),
+            _join_field("Description", dp.get("description")),
+            _join_field("Value", value_unit),
+        ]
+    else:
+        fields = [
+            _join_field("Canonical ID", dp.get("canonical_id") or dp.get("entity_name")),
+            _join_field("Canonical name", dp.get("canonical_name") or dp.get("entity_name")),
+            _join_field("Entity type", dp.get("entity_type")),
+            _join_field("Semantic group", dp.get("semantic_group")),
+            _join_field("Description", dp.get("description")),
+            _join_field("Value", value_unit),
+        ]
+    return "\n".join(field for field in fields if field)
+
+
+def _collect_vertices_from_evidence(instances: list[dict]) -> list[str]:
+    vertices = []
+    for instance in instances or []:
+        vertices.extend(_as_text_list(instance.get("vertices")))
+    return _unique_text(vertices)
+
+
+def _build_relationship_embedding_text(dp: dict, *, view: str) -> str:
+    evidence_instances = dp.get("evidence_instances") or []
+    source_spans = []
+    raw_vertices = []
+    for instance in evidence_instances:
+        if not isinstance(instance, dict):
+            continue
+        source_spans.extend(_as_text_list(instance.get("source_span") or instance.get("evidence_span") or instance.get("sentence")))
+        raw_vertices.extend(_as_text_list(instance.get("vertices")))
+
+    if view == "surface":
+        fields = [
+            _join_field("Relation type", dp.get("relation_type")),
+            _join_field("Raw vertices", raw_vertices or dp.get("id_set")),
+            _join_field("Surface source span", source_spans or dp.get("source_span") or dp.get("evidence_span")),
+            _join_field("Source documents", dp.get("source_doc_ids") or dp.get("source_doc_id")),
+            _join_field("Source chunks", dp.get("source_chunk_ids") or dp.get("source_chunk_id")),
+            _join_field("Surface description", dp.get("description")),
+            _join_field("Keywords", dp.get("keywords")),
+        ]
+    else:
+        fields = [
+            _join_field("EFU ID", dp.get("efu_id")),
+            _join_field("Relation type", dp.get("relation_type")),
+            _join_field("Canonical vertices", dp.get("node_ids") or dp.get("vertices") or dp.get("id_set")),
+            _join_field("Normalized description", dp.get("description")),
+            _join_field("Keywords", dp.get("keywords")),
+        ]
+    return "\n".join(field for field in fields if field)
+
+
+def _build_dual_embedding_text(canonical_text: str, surface_text: str) -> str:
+    if not surface_text:
+        return canonical_text
+    if not canonical_text:
+        return surface_text
+    return f"[Canonical]\n{canonical_text}\n\n[Surface]\n{surface_text}"
+
+
 async def _process_json_format_extraction(
     content: str,
     chunk_key: str,
     use_llm_func: callable,
     global_config: dict,
-    domain: str = 'default'
+    domain: str = 'default',
+    chunk_meta: dict | None = None,
 ) -> tuple[list, list]:
     """
     Process JSON format extraction for domain-specific prompts
@@ -1697,6 +1986,7 @@ async def _process_json_format_extraction(
 
     chunk_extract_start = time.perf_counter()
     logger.info(f"[{chunk_key}] Starting JSON format extraction for domain: {domain}")
+    source_metadata = _chunk_metadata(chunk_key, chunk_meta)
 
     # Step 1: Extract entities using domain-specific prompt
     logger.debug(f"[{chunk_key}] Step 1: Generating entity extraction prompt...")
@@ -1738,6 +2028,8 @@ async def _process_json_format_extraction(
     logger.info(f"[{chunk_key}] Step 1: Entity types: {dict(entity_types)}")
 
     # Convert to standard format
+    for entity_json in entities_json:
+        _attach_chunk_metadata(entity_json, source_metadata)
     entities = [convert_json_entity_to_standard_format(entity, chunk_key) for entity in entities_json]
     logger.debug(f"[{chunk_key}] Step 1: Converted {len(entities)} entities to standard format")
 
@@ -1866,11 +2158,19 @@ async def _process_json_format_extraction(
     # Convert all relations to standard format after entity-reference validation.
     relations = []
     for relation_json in low_relations_json:
+        _attach_chunk_metadata(relation_json, source_metadata)
+        source_span = _repair_relation_source_span(relation_json, content)
+        relation_json.setdefault("source_span", source_span)
+        relation_json.setdefault("evidence_span", source_span)
         standard_relation = convert_json_relation_to_standard_format(relation_json, chunk_key)
         if standard_relation:
             relations.append(standard_relation)
 
     for relation_json in high_relations_json:
+        _attach_chunk_metadata(relation_json, source_metadata)
+        source_span = _repair_relation_source_span(relation_json, content)
+        relation_json.setdefault("source_span", source_span)
+        relation_json.setdefault("evidence_span", source_span)
         standard_relation = convert_json_relation_to_standard_format(relation_json, chunk_key)
         if standard_relation:
             relations.append(standard_relation)
@@ -1898,6 +2198,8 @@ async def extract_entities(
     entity_vdb: BaseVectorStorage,
     relationships_vdb: BaseVectorStorage,
     global_config: dict,
+    entity_surface_vdb: BaseVectorStorage | None = None,
+    relationships_surface_vdb: BaseVectorStorage | None = None,
 ) -> BaseHypergraphStorage | None:
     use_llm_func: callable = global_config["llm_model_func"]
     entity_extract_max_gleaning = global_config["entity_extract_max_gleaning"]
@@ -1950,7 +2252,7 @@ async def extract_entities(
         if is_json_output:
             try:
                 entities, relations = await _process_json_format_extraction(
-                    content, chunk_key, use_llm_func, global_config, current_domain
+                    content, chunk_key, use_llm_func, global_config, current_domain, chunk_dp
                 )
                 logger.debug(f"[{chunk_key}] JSON extraction returned: {len(entities)} entities, {len(relations)} relations")
             except Exception as e:
@@ -2024,6 +2326,7 @@ async def extract_entities(
         maybe_edges = defaultdict(list)
         maybe_edges_low = defaultdict(list)
         maybe_edges_high = defaultdict(list)
+        source_metadata = _chunk_metadata(chunk_key, chunk_dp)
         for record in records:
             record = re.search(r"\((.*)\)", record)
             if record is None:
@@ -2036,6 +2339,7 @@ async def extract_entities(
                 record_attributes, chunk_key
             )
             if if_entities is not None:
+                _attach_chunk_metadata(if_entities, source_metadata)
                 maybe_nodes[if_entities["entity_name"]].append(if_entities)
                 continue
 
@@ -2043,6 +2347,10 @@ async def extract_entities(
                 record_attributes, chunk_key
             )
             if if_relation is not None:
+                _attach_chunk_metadata(if_relation, source_metadata)
+                source_span = _repair_relation_source_span(if_relation, content)
+                if_relation.setdefault("source_span", source_span)
+                if_relation.setdefault("evidence_span", source_span)
                 maybe_edges[tuple((if_relation["entityN"]))].append(
                     if_relation
                 )
@@ -2054,6 +2362,10 @@ async def extract_entities(
                 record_attributes, chunk_key
             )
             if if_relation is not None:
+                _attach_chunk_metadata(if_relation, source_metadata)
+                source_span = _repair_relation_source_span(if_relation, content)
+                if_relation.setdefault("source_span", source_span)
+                if_relation.setdefault("evidence_span", source_span)
                 maybe_edges[tuple((if_relation["entityN"]))].append(
                     if_relation
                 )
@@ -2165,28 +2477,79 @@ async def extract_entities(
 
     if entity_vdb is not None:
         entity_vdb_start = time.perf_counter()
-        data_for_vdb = {
-            compute_mdhash_id(dp["entity_name"], prefix="ent-"): {
-                "content": dp["entity_name"] + dp["description"],
+        index_profile = str(global_config.get("index_profile", "dual_concat"))
+        data_for_vdb = {}
+        data_for_surface_vdb = {}
+        for dp in all_entities_data:
+            canonical_text = _build_entity_embedding_text(dp, view="canonical")
+            surface_text = _build_entity_embedding_text(dp, view="surface")
+            if index_profile == "canonical_only" or index_profile == "dual_separate":
+                content = canonical_text
+                index_view = "canonical"
+            else:
+                content = _build_dual_embedding_text(canonical_text, surface_text)
+                index_view = "dual_concat"
+            data_for_vdb[compute_mdhash_id(dp["entity_name"], prefix="ent-")] = {
+                "content": content,
                 "entity_name": dp["entity_name"],
+                "canonical_id": dp.get("canonical_id", dp["entity_name"]),
+                "canonical_name": dp.get("canonical_name", dp["entity_name"]),
+                "raw_name": dp.get("raw_name", dp["entity_name"]),
+                "entity_type": dp.get("entity_type", ""),
+                "semantic_group": dp.get("semantic_group", ""),
+                "index_view": index_view,
             }
-            for dp in all_entities_data
-        }
+            if index_profile == "dual_separate":
+                data_for_surface_vdb[compute_mdhash_id(dp["entity_name"] + "|surface", prefix="ent-surface-")] = {
+                    "content": surface_text or canonical_text,
+                    "entity_name": dp["entity_name"],
+                    "canonical_id": dp.get("canonical_id", dp["entity_name"]),
+                    "canonical_name": dp.get("canonical_name", dp["entity_name"]),
+                    "raw_name": dp.get("raw_name", dp["entity_name"]),
+                    "entity_type": dp.get("entity_type", ""),
+                    "semantic_group": dp.get("semantic_group", ""),
+                    "index_view": "surface",
+                }
         await entity_vdb.upsert(data_for_vdb)
+        if entity_surface_vdb is not None and data_for_surface_vdb:
+            await entity_surface_vdb.upsert(data_for_surface_vdb)
         logger.info(f"Entity vector upsert wall time: {time.perf_counter() - entity_vdb_start:.2f}s")
 
     if relationships_vdb is not None:
         relationship_vdb_start = time.perf_counter()
-        data_for_vdb = {
-            compute_mdhash_id(str(sorted(dp["id_set"])), prefix="rel-"): {
+        index_profile = str(global_config.get("index_profile", "dual_concat"))
+        data_for_vdb = {}
+        data_for_surface_vdb = {}
+        for dp in all_relationships_data:
+            canonical_text = _build_relationship_embedding_text(dp, view="canonical")
+            surface_text = _build_relationship_embedding_text(dp, view="surface")
+            if index_profile == "canonical_only" or index_profile == "dual_separate":
+                content = canonical_text
+                index_view = "canonical"
+            else:
+                content = _build_dual_embedding_text(canonical_text, surface_text)
+                index_view = "dual_concat"
+            rel_key_basis = str(sorted(dp["id_set"])) + "|" + str(dp.get("relation_type", ""))
+            data_for_vdb[compute_mdhash_id(rel_key_basis, prefix="rel-")] = {
                 "id_set": dp["id_set"],
-                "content": dp["keywords"]
-                           + str(dp["id_set"])
-                           + dp["description"],
+                "relation_type": dp.get("relation_type", ""),
+                "source_doc_id": dp.get("source_doc_id", ""),
+                "source_chunk_id": dp.get("source_chunk_id", ""),
+                "index_view": index_view,
+                "content": content,
             }
-            for dp in all_relationships_data
-        }
+            if index_profile == "dual_separate":
+                data_for_surface_vdb[compute_mdhash_id(rel_key_basis + "|surface", prefix="rel-surface-")] = {
+                    "id_set": dp["id_set"],
+                    "relation_type": dp.get("relation_type", ""),
+                    "source_doc_id": dp.get("source_doc_id", ""),
+                    "source_chunk_id": dp.get("source_chunk_id", ""),
+                    "index_view": "surface",
+                    "content": surface_text or canonical_text,
+                }
         await relationships_vdb.upsert(data_for_vdb)
+        if relationships_surface_vdb is not None and data_for_surface_vdb:
+            await relationships_surface_vdb.upsert(data_for_surface_vdb)
         logger.info(f"Relationship vector upsert wall time: {time.perf_counter() - relationship_vdb_start:.2f}s")
 
     return knowledge_hypergraph_inst

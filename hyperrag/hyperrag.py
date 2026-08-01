@@ -1,9 +1,11 @@
 ﻿import os
 import asyncio
+import hashlib
+import re
 from dataclasses import asdict, dataclass, field
 from datetime import datetime
 from functools import partial
-from typing import Type, cast
+from typing import Any, Type, cast
 
 from .operate import (
     chunking_by_token_size,
@@ -114,8 +116,13 @@ class HyperRAG:
     enable_hybrid_rerank: bool = True
     experiment_mode: str = "hyper_final"
     query_mode: str = "hyper"
+    index_profile: str = "dual_concat"
+    corpus_manifest_path: str = ""
 
     def __post_init__(self):
+        if not os.path.exists(self.working_dir):
+            os.makedirs(self.working_dir, exist_ok=True)
+
         log_file = os.path.join(self.working_dir, "HyperRAG.log")
         set_logger(log_file)
         logger.setLevel(self.log_level)
@@ -125,9 +132,7 @@ class HyperRAG:
         _print_config = ",\n  ".join([f"{k} = {v}" for k, v in asdict(self).items()])
         logger.debug(f"HyperRAG init with param:\n  {_print_config}\n")
 
-        if not os.path.exists(self.working_dir):
-            logger.info(f"Creating working directory {self.working_dir}")
-            os.makedirs(self.working_dir)
+        logger.info(f"Working directory ready: {self.working_dir}")
 
         try:
             from .experiment import write_run_config
@@ -144,6 +149,11 @@ class HyperRAG:
                     "enable_measurement_instances": self.enable_measurement_instances,
                     "enable_efu_repair": self.enable_efu_repair,
                     "enable_hybrid_rerank": self.enable_hybrid_rerank,
+                    "index_profile": self.index_profile,
+                    "chunk_token_size": self.chunk_token_size,
+                    "chunk_overlap_token_size": self.chunk_overlap_token_size,
+                    "tiktoken_model_name": self.tiktoken_model_name,
+                    "corpus_manifest_path": self.corpus_manifest_path,
                     "corpus_id": os.path.basename(os.path.normpath(self.working_dir)),
                 },
             )
@@ -180,14 +190,61 @@ class HyperRAG:
             namespace="entities",
             global_config=asdict(self),
             embedding_func=self.embedding_func,
-            meta_fields={"entity_name"},
+            meta_fields={
+                "entity_name",
+                "canonical_id",
+                "canonical_name",
+                "raw_name",
+                "entity_type",
+                "semantic_group",
+                "index_view",
+                "content",
+            },
         )
         self.relationships_vdb = self.vector_db_storage_cls(
             namespace="relationships",
             global_config=asdict(self),
             embedding_func=self.embedding_func,
-            meta_fields={"id_set"},
+            meta_fields={
+                "id_set",
+                "relation_type",
+                "source_doc_id",
+                "source_chunk_id",
+                "index_view",
+                "content",
+            },
         )
+        self.entities_surface_vdb = None
+        self.relationships_surface_vdb = None
+        if self.index_profile == "dual_separate":
+            self.entities_surface_vdb = self.vector_db_storage_cls(
+                namespace="entities_surface",
+                global_config=asdict(self),
+                embedding_func=self.embedding_func,
+                meta_fields={
+                    "entity_name",
+                    "canonical_id",
+                    "canonical_name",
+                    "raw_name",
+                    "entity_type",
+                    "semantic_group",
+                    "index_view",
+                    "content",
+                },
+            )
+            self.relationships_surface_vdb = self.vector_db_storage_cls(
+                namespace="relationships_surface",
+                global_config=asdict(self),
+                embedding_func=self.embedding_func,
+                meta_fields={
+                    "id_set",
+                    "relation_type",
+                    "source_doc_id",
+                    "source_chunk_id",
+                    "index_view",
+                    "content",
+                },
+            )
         self.chunks_vdb = self.vector_db_storage_cls(
             namespace="chunks",
             global_config=asdict(self),
@@ -216,15 +273,69 @@ class HyperRAG:
         loop = always_get_an_event_loop()
         return loop.run_until_complete(self.ainsert(string_or_strings))
 
+    @staticmethod
+    def _safe_stable_id(value: Any) -> str:
+        text = str(value or "").strip()
+        text = re.sub(r"\s+", "_", text)
+        text = re.sub(r"[^A-Za-z0-9_.-]+", "_", text).strip("._-")
+        return text or "doc"
+
+    @staticmethod
+    def _text_hash(text: str) -> str:
+        return hashlib.md5((text or "").encode("utf-8")).hexdigest()
+
+    def _normalize_insert_document(self, item: Any, index: int) -> tuple[str, dict]:
+        if isinstance(item, str):
+            content = item.strip()
+            return compute_mdhash_id(content, prefix="doc-hyperrag-"), {
+                "content": content,
+                "text_hash": self._text_hash(content),
+            }
+
+        if not isinstance(item, dict):
+            raise TypeError(
+                "HyperRAG.ainsert expects a string, a document dict, or a list of those."
+            )
+
+        content = str(item.get("content") or item.get("text") or "").strip()
+        if not content:
+            raise ValueError(f"Document at index {index} has empty content.")
+
+        raw_doc_id = (
+            item.get("doc_id")
+            or item.get("source_doc_id")
+            or item.get("id")
+            or compute_mdhash_id(content, prefix="doc-hyperrag-")
+        )
+        doc_id = self._safe_stable_id(raw_doc_id)
+        source_doc_id = self._safe_stable_id(item.get("source_doc_id") or doc_id)
+        doc_data = {k: v for k, v in item.items() if k != "text"}
+        doc_data.update(
+            {
+                "doc_id": doc_id,
+                "source_doc_id": source_doc_id,
+                "content": content,
+                "text_hash": item.get("text_hash") or self._text_hash(content),
+            }
+        )
+        return doc_id, doc_data
+
     async def ainsert(self, string_or_strings):
         try:
-            if isinstance(string_or_strings, str):
+            if isinstance(string_or_strings, (str, dict)):
                 string_or_strings = [string_or_strings]
+            elif not isinstance(string_or_strings, list):
+                string_or_strings = list(string_or_strings)
 
-            new_docs = {
-                compute_mdhash_id(c.strip(), prefix="doc-hyperrag-"): {"content": c.strip()}
-                for c in string_or_strings
-            }
+            new_docs = {}
+            for index, item in enumerate(string_or_strings):
+                doc_key, doc_data = self._normalize_insert_document(item, index)
+                if doc_key in new_docs:
+                    suffix = self._text_hash(doc_data["content"])[:8]
+                    doc_key = f"{doc_key}_{suffix}"
+                    doc_data["doc_id"] = doc_key
+                    doc_data["source_doc_id"] = doc_key
+                new_docs[doc_key] = doc_data
             _add_doc_keys = await self.full_docs.filter_keys(list(new_docs.keys()))
             new_docs = {k: v for k, v in new_docs.items() if k in _add_doc_keys}
             if not len(new_docs):
@@ -236,6 +347,8 @@ class HyperRAG:
             inserting_chunks = {}
             for doc_key, doc in new_docs.items():
                 chunks = {}
+                doc_id = doc.get("doc_id") or doc_key
+                source_file = doc.get("source_file", "")
                 for dp in chunking_by_token_size(
                     doc["content"],
                     overlap_token_size=self.chunk_overlap_token_size,
@@ -243,11 +356,16 @@ class HyperRAG:
                     tiktoken_model=self.tiktoken_model_name,
                 ):
                     source_chunk_id = dp.get("source_chunk_id")
-                    if source_chunk_id:
-                        safe_chunk_id = "".join(
-                            ch if ch.isalnum() or ch in {"-", "_", "."} else "_"
-                            for ch in str(source_chunk_id)
-                        ).strip("._-")
+                    if doc.get("doc_id"):
+                        if source_chunk_id:
+                            safe_chunk_id = self._safe_stable_id(source_chunk_id)
+                            chunk_key = f"{doc_id}_{safe_chunk_id}"
+                        else:
+                            chunk_key = f"{doc_id}_CHK_{int(dp.get('chunk_order_index', 0)) + 1:03d}"
+                        if chunk_key in inserting_chunks or chunk_key in chunks:
+                            chunk_key = f"{chunk_key}-{compute_mdhash_id(dp['content'])[-8:]}"
+                    elif source_chunk_id:
+                        safe_chunk_id = self._safe_stable_id(source_chunk_id)
                         chunk_key = f"chunk-hyperrag-{safe_chunk_id}"
                         if chunk_key in inserting_chunks or chunk_key in chunks:
                             chunk_key = f"{chunk_key}-{compute_mdhash_id(dp['content'])[-8:]}"
@@ -256,6 +374,13 @@ class HyperRAG:
                     chunks[chunk_key] = {
                         **dp,
                         "full_doc_id": doc_key,
+                        "doc_id": doc_id,
+                        "source_doc_id": doc.get("source_doc_id") or doc_id,
+                        "source_file": source_file,
+                        "title": doc.get("title", ""),
+                        "chunk_id": chunk_key,
+                        "source_chunk_id": source_chunk_id or chunk_key,
+                        "text_hash": self._text_hash(dp["content"]),
                     }
                 inserting_chunks.update(chunks)
             _add_chunk_keys = await self.text_chunks.filter_keys(
@@ -278,6 +403,8 @@ class HyperRAG:
                 knowledge_hypergraph_inst=self.chunk_entity_relation_hypergraph,
                 entity_vdb=self.entities_vdb,
                 relationships_vdb=self.relationships_vdb,
+                entity_surface_vdb=self.entities_surface_vdb,
+                relationships_surface_vdb=self.relationships_surface_vdb,
                 global_config=asdict(self),
             )
             if maybe_new_kg is None:
@@ -298,6 +425,8 @@ class HyperRAG:
             self.llm_response_cache,
             self.entities_vdb,
             self.relationships_vdb,
+            self.entities_surface_vdb,
+            self.relationships_surface_vdb,
             self.chunks_vdb,
             self.chunk_entity_relation_hypergraph,
         ]:
