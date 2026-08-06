@@ -1,7 +1,7 @@
-"""Run a 10-question QA smoke test with LLM generation and LLM judging.
+"""Run QA benchmark with LLM generation and LLM judging.
 
-This script is intentionally narrow: it keeps the five fixed Hyper-ChE groups,
-does not build caches, and reads existing benchmark/candidate data.
+This script does not build caches. It reads existing benchmark data and cache
+directories, then evaluates fixed QA groups with one generator and one judge.
 """
 
 from __future__ import annotations
@@ -37,11 +37,30 @@ from scripts.evaluate_fact_coverage import (  # noqa: E402
 
 
 GROUPS = {
-    "text_segments": {"label": "Original text segments", "cache": "hyper_chem_prompt", "view": "text"},
-    "original_hypergraph": {"label": "Original Hyper-RAG hypergraph", "cache": "hyper_base", "view": "hyper"},
-    "chem_prompt_graph": {"label": "Chemistry prompt graph projection", "cache": "hyper_chem_prompt", "view": "graph"},
-    "chem_prompt_hypergraph": {"label": "Chemistry prompt hypergraph", "cache": "hyper_chem_prompt", "view": "hyper"},
-    "chem_norm_hypergraph": {"label": "Final Hyper-ChE chemistry-normalized hypergraph", "cache": "hyper_final", "view": "hyper"},
+    "hybrid_text": {
+        "label": "Hybrid Text",
+        "cache": "hyper_chem_prompt",
+        "view": "text",
+        "rerank": True,
+    },
+    "chem_prompt_graph": {
+        "label": "C-Graph",
+        "cache": "hyper_chem_prompt",
+        "view": "graph",
+        "rerank": False,
+    },
+    "chem_prompt_hypergraph": {
+        "label": "C-HG",
+        "cache": "hyper_chem_prompt",
+        "view": "hyper",
+        "rerank": False,
+    },
+    "norm_hg_reranker": {
+        "label": "Norm-HG + Reranker",
+        "cache": "hyper_final",
+        "view": "hyper",
+        "rerank": True,
+    },
 }
 K_EVIDENCE = 5
 EVIDENCE_BUDGET_CHARS = 1500
@@ -64,7 +83,35 @@ def split_keys(value: Any) -> list[str]:
 class LLMClientPool:
     def __init__(self, settings_path: Path, provider_name: str = "siliconflow", model_override: str | None = None, base_url_override: str | None = None) -> None:
         self.entries: list[dict[str, str]] = []
-        if provider_name.lower() == "multi_env":
+        provider_key = provider_name.lower()
+        if provider_key in {"deepseek_env", "deepseek"}:
+            keys = split_keys(os.getenv("DEEPSEEK_API_KEY"))
+            base_url = str(base_url_override or os.getenv("DEEPSEEK_BASE_URL") or "https://api.deepseek.com")
+            model = str(model_override or os.getenv("DEEPSEEK_MODEL") or "deepseek-v4-flash")
+            for key in keys:
+                self.entries.append({"provider": "deepseek", "api_key": key, "base_url": base_url, "model": model})
+            self.provider_name = "deepseek_env"
+            self.base_url = base_url
+            self.model = model
+        elif provider_key in {"siliconflow_env", "siliconflow"} and os.getenv("SILICONFLOW_API_KEY"):
+            keys = split_keys(os.getenv("SILICONFLOW_API_KEY"))
+            base_url = str(base_url_override or os.getenv("SILICONFLOW_BASE_URL") or "https://api.siliconflow.cn/v1")
+            model = str(model_override or os.getenv("SILICONFLOW_MODEL") or "")
+            for key in keys:
+                self.entries.append({"provider": "siliconflow", "api_key": key, "base_url": base_url, "model": model})
+            self.provider_name = "siliconflow_env"
+            self.base_url = base_url
+            self.model = model
+        elif provider_key == "custom_env":
+            keys = split_keys(os.getenv("LLM_API_KEY"))
+            base_url = str(base_url_override or os.getenv("LLM_BASE_URL") or "")
+            model = str(model_override or os.getenv("LLM_MODEL") or "")
+            for key in keys:
+                self.entries.append({"provider": "custom_env", "api_key": key, "base_url": base_url, "model": model})
+            self.provider_name = "custom_env"
+            self.base_url = base_url
+            self.model = model
+        elif provider_key == "multi_env":
             deepseek_keys = split_keys(os.getenv("DEEPSEEK_API_KEY"))
             siliconflow_keys = split_keys(os.getenv("SILICONFLOW_API_KEY"))
             deepseek_base = os.getenv("DEEPSEEK_BASE_URL") or "https://api.deepseek.com"
@@ -101,6 +148,7 @@ class LLMClientPool:
             self.provider_name = str(chosen.get("name") or provider_name)
             self.base_url = base_url
             self.model = model
+        self.entries = [entry for entry in self.entries if entry.get("api_key") and entry.get("base_url") and entry.get("model")]
         if not self.entries:
             raise RuntimeError(f"No API keys found for provider {provider_name!r}.")
         for entry in self.entries:
@@ -125,23 +173,136 @@ class LLMClientPool:
         errors = []
         for _ in range(max_retries):
             entry = self._next_entry()
+            model_name = str(entry.get("model") or "")
+            use_json_mode = not any(marker in model_name for marker in ("GLM-4.5", "Qwen/Qwen3.5", "deepseek-v4-flash"))
             try:
                 client = OpenAI(api_key=entry["api_key"], base_url=entry["base_url"])
+                request_kwargs = {
+                    "model": entry["model"],
+                    "messages": [{"role": "user", "content": prompt}],
+                    "temperature": temperature,
+                    "top_p": top_p,
+                    "max_tokens": max_tokens,
+                    "timeout": 120,
+                }
+                if use_json_mode:
+                    request_kwargs["response_format"] = {"type": "json_object"}
                 response = client.chat.completions.create(
-                    model=entry["model"],
-                    messages=[{"role": "user", "content": prompt}],
-                    temperature=temperature,
-                    top_p=top_p,
-                    response_format={"type": "json_object"},
-                    max_tokens=max_tokens,
-                    timeout=120,
+                    **request_kwargs,
                 )
                 content = response.choices[0].message.content or "{}"
-                return json.loads(content)
+                return self._parse_json_content(content)
             except Exception as exc:  # noqa: BLE001 - collect provider errors for a smoke script
-                errors.append(f"{entry['provider']}:{type(exc).__name__}:{str(exc)[:400]}")
+                message = str(exc)
+                if use_json_mode and ("Json mode is not supported" in message or "response_format" in message):
+                    errors.append(f"{entry['provider']}:{type(exc).__name__}:json_mode_disabled:{message[:300]}")
+                    try:
+                        response = client.chat.completions.create(
+                            model=entry["model"],
+                            messages=[{"role": "user", "content": prompt}],
+                            temperature=temperature,
+                            top_p=top_p,
+                            max_tokens=max_tokens,
+                            timeout=120,
+                        )
+                        content = response.choices[0].message.content or "{}"
+                        return self._parse_json_content(content)
+                    except Exception as fallback_exc:  # noqa: BLE001
+                        errors.append(f"{entry['provider']}:{type(fallback_exc).__name__}:plain_json_fallback_failed:{str(fallback_exc)[:300]}")
+                        time.sleep(1.0)
+                        continue
+                errors.append(f"{entry['provider']}:{type(exc).__name__}:{message[:400]}")
                 time.sleep(1.0)
         raise RuntimeError("LLM call failed after retries: " + " || ".join(errors))
+
+    @staticmethod
+    def _parse_json_content(content: str) -> dict[str, Any]:
+        text = str(content or "").strip()
+        if text.startswith("```"):
+            text = re.sub(r"^```(?:json)?\s*", "", text, flags=re.IGNORECASE).strip()
+            text = re.sub(r"\s*```$", "", text).strip()
+        try:
+            value = json.loads(text)
+            return value if isinstance(value, dict) else {}
+        except Exception:
+            start = text.find("{")
+            end = text.rfind("}")
+            if start >= 0 and end > start:
+                value = json.loads(text[start : end + 1])
+                return value if isinstance(value, dict) else {}
+            raise
+
+
+def _valid_bool(value: Any) -> bool:
+    return isinstance(value, bool)
+
+
+def validate_generation(value: dict[str, Any]) -> tuple[bool, str]:
+    if not isinstance(value, dict):
+        return False, "generation is not a JSON object"
+    if not isinstance(value.get("answer"), str):
+        return False, "generation.answer must be a string"
+    if not isinstance(value.get("citations"), list):
+        return False, "generation.citations must be a list"
+    if not _valid_bool(value.get("abstained")):
+        return False, "generation.abstained must be boolean"
+    return True, ""
+
+
+def validate_judgment(value: dict[str, Any]) -> tuple[bool, str]:
+    if not isinstance(value, dict):
+        return False, "judge output is not a JSON object"
+    if value.get("quality_label") not in {"GOOD", "SATISFACTORY", "POOR"}:
+        return False, "quality_label must be GOOD/SATISFACTORY/POOR"
+    try:
+        kpc = float(value.get("key_point_coverage"))
+    except Exception:
+        return False, "key_point_coverage must be numeric"
+    if not 0.0 <= kpc <= 1.0:
+        return False, "key_point_coverage must be in [0, 1]"
+    for key in ("good", "satisfactory_or_better", "hallucinated", "abstained"):
+        if not _valid_bool(value.get(key)):
+            return False, f"{key} must be boolean"
+    if not str(value.get("rationale") or "").strip():
+        return False, "rationale must be non-empty"
+    if not isinstance(value.get("missing_key_points"), list):
+        return False, "missing_key_points must be a list"
+    if not isinstance(value.get("covered_key_points"), list):
+        return False, "covered_key_points must be a list"
+    if not isinstance(value.get("unsupported_claims_found"), list):
+        return False, "unsupported_claims_found must be a list"
+    return True, ""
+
+
+def complete_valid_json(
+    pool: LLMClientPool,
+    prompt: str,
+    validator,
+    *,
+    temperature: float,
+    top_p: float,
+    max_tokens: int,
+    max_retries: int,
+    label: str,
+) -> dict[str, Any]:
+    errors: list[str] = []
+    for attempt in range(max_retries):
+        try:
+            value = pool.complete_json(
+                prompt,
+                temperature=temperature,
+                top_p=top_p,
+                max_tokens=max_tokens,
+                max_retries=1,
+            )
+        except Exception as exc:  # noqa: BLE001 - surface as a validated stage failure
+            errors.append(f"attempt={attempt + 1}: call_error={type(exc).__name__}: {str(exc)[:500]}")
+            continue
+        ok, reason = validator(value)
+        if ok:
+            return value
+        errors.append(f"attempt={attempt + 1}: {reason}; output={json.dumps(value, ensure_ascii=False)[:500]}")
+    raise RuntimeError(f"{label} validation failed: " + " || ".join(errors))
 
 
 def build_qa_set(qa_all: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -862,6 +1023,7 @@ Evaluate strictly. Return JSON only:
   "good": false,
   "satisfactory_or_better": false,
   "key_point_coverage": 0.0,
+  "covered_key_points": [],
   "hallucinated": false,
   "abstained": false,
   "citation_stability_experimental": 0.0,
@@ -871,9 +1033,15 @@ Evaluate strictly. Return JSON only:
 }}
 
 Rules:
-- good=true only when the answer is correct, sufficiently complete, grounded, and non-hallucinated.
-- satisfactory_or_better=true when the answer is at least partially useful and non-hallucinated.
-- key_point_coverage is the fraction of required key points covered.
+- GOOD means the answer covers all required key points, is grounded in the evidence, and is non-hallucinated.
+- SATISFACTORY means the answer covers the core conclusion or the most important required key points, may miss minor non-critical details, and is non-hallucinated.
+- POOR means the answer is wrong, empty/refuses when answerable, misses the core conclusion, or hallucinates.
+- good=true only when quality_label is GOOD.
+- satisfactory_or_better=true when quality_label is GOOD or SATISFACTORY.
+- Evaluate every required key point one by one.
+- covered_key_points must list the required key points that are actually covered.
+- missing_key_points must list the required key points that are not covered.
+- key_point_coverage = len(covered_key_points) / len(required_key_points). If there are no required key points, set 0.0.
 - hallucinated=true if the answer contains any concrete claim that is unsupported by the retrieved evidence, conflicts with the reference answer, uses the wrong entity/material/condition/metric binding, gives an incorrect numeric value/unit, or overgeneralizes beyond the evidence.
 - Do not mark an empty answer or an explicit abstention as hallucinated unless it also makes unsupported concrete claims. Empty answers and abstentions should be poor but not hallucinated.
 - Judge grounding against the retrieved evidence blocks, not only against the reference answer.
@@ -890,6 +1058,10 @@ def aggregate_summary(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     for group in GROUPS:
         items = by_group[group]
         n = max(1, len(items))
+        answerable_items = [item for item in items if item.get("answerable")]
+        unanswerable_items = [item for item in items if not item.get("answerable")]
+        answerable_n = max(1, len(answerable_items))
+        unanswerable_n = max(1, len(unanswerable_items))
         rows.append(
             {
                 "group": group,
@@ -898,6 +1070,8 @@ def aggregate_summary(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "Satisfactory-or-Better Rate": round(sum(1 for item in items if item["satisfactory_or_better"]) / n, 4),
                 "Key-Point Coverage": round(statistics.mean(float(item.get("key_point_coverage", 0.0)) for item in items), 4),
                 "Hallucination Rate": round(sum(1 for item in items if item["hallucinated"]) / n, 4),
+                "Answerable Empty Rate": round(sum(1 for item in answerable_items if item.get("abstained")) / answerable_n, 4),
+                "Unanswerable Abstention Accuracy": round(sum(1 for item in unanswerable_items if item.get("abstained")) / unanswerable_n, 4),
                 "Abstention Accuracy": round(sum(1 for item in items if item["abstention_correct"]) / n, 4),
                 "Citation Stability Experimental": round(statistics.mean(float(item.get("citation_stability_experimental", 0.0)) for item in items), 4),
             }
@@ -915,6 +1089,10 @@ def aggregate_by_field(records: list[dict[str, Any]], field: str) -> list[dict[s
         for value in values:
             items = buckets[(group, value)]
             n = max(1, len(items))
+            answerable_items = [item for item in items if item.get("answerable")]
+            unanswerable_items = [item for item in items if not item.get("answerable")]
+            answerable_n = max(1, len(answerable_items))
+            unanswerable_n = max(1, len(unanswerable_items))
             rows.append(
                 {
                     "group": group,
@@ -924,6 +1102,8 @@ def aggregate_by_field(records: list[dict[str, Any]], field: str) -> list[dict[s
                     "Satisfactory-or-Better Rate": round(sum(1 for item in items if item["satisfactory_or_better"]) / n, 4),
                     "Key-Point Coverage": round(statistics.mean(float(item.get("key_point_coverage", 0.0)) for item in items), 4),
                     "Hallucination Rate": round(sum(1 for item in items if item["hallucinated"]) / n, 4),
+                    "Answerable Empty Rate": round(sum(1 for item in answerable_items if item.get("abstained")) / answerable_n, 4) if answerable_items else "",
+                    "Unanswerable Abstention Accuracy": round(sum(1 for item in unanswerable_items if item.get("abstained")) / unanswerable_n, 4) if unanswerable_items else "",
                     "Abstention Accuracy": round(sum(1 for item in items if item["abstention_correct"]) / n, 4),
                     "Citation Stability Experimental": round(statistics.mean(float(item.get("citation_stability_experimental", 0.0)) for item in items), 4),
                 }
@@ -1005,13 +1185,27 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--benchmark-dir", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, default=REPO_ROOT / "outputs" / "qa_eval" / "five_groups_llm_smoke")
+    parser.add_argument("--cache-root", type=Path, default=REPO_ROOT / "web-ui" / "backend" / "hyperrag_cache" / "flow_benchmark_v1")
+    parser.add_argument("--question-file", type=Path, help="Use a generated QA question file instead of selecting from benchmark-dir/qa_questions.json.")
     parser.add_argument("--settings", type=Path, default=REPO_ROOT / "web-ui" / "backend" / "settings.json")
     parser.add_argument("--provider", default="siliconflow")
     parser.add_argument("--model")
     parser.add_argument("--base-url")
+    parser.add_argument("--answer-model-label", default="")
+    parser.add_argument("--judge-provider")
+    parser.add_argument("--judge-model")
+    parser.add_argument("--judge-base-url")
     parser.add_argument("--evidence-budget-chars", type=int, default=1500)
     parser.add_argument("--output-prefix", default="qa_llm_smoke")
-    parser.add_argument("--chem-norm-evidence-v2", action="store_true")
+    parser.add_argument(
+        "--chem-norm-evidence-v2",
+        action="store_true",
+        help=(
+            "Deprecated compatibility switch for the old lossless/atomic evidence-card "
+            "experiment. Current QA benchmarks leave this disabled and use the same "
+            "evidence formatting path for all groups."
+        ),
+    )
     parser.add_argument("--qa-mode", choices=["smoke", "full", "extra60", "all"], default="smoke")
     parser.add_argument("--temperature", type=float, default=0.0)
     parser.add_argument("--top-p", type=float, default=1.0)
@@ -1022,29 +1216,45 @@ def main() -> None:
     args.output_dir.mkdir(parents=True, exist_ok=True)
     global EVIDENCE_BUDGET_CHARS
     EVIDENCE_BUDGET_CHARS = args.evidence_budget_chars
-    pool = LLMClientPool(args.settings, args.provider, model_override=args.model, base_url_override=args.base_url)
-    qa_all = load_json(args.benchmark_dir / "qa_questions.json").get("qa_questions", [])
-    if args.qa_mode == "full":
-        qa_set = build_full_qa_set(qa_all)
-        question_file = "qa_40_questions.json"
-    elif args.qa_mode == "extra60":
-        qa_set = build_extra_qa_set(qa_all, 60)
-        question_file = "qa_extra60_questions.json"
-    elif args.qa_mode == "all":
-        qa_set = [qa_record_from_source(qa, canonical_question_type(qa), answerable=True) for qa in qa_all]
-        question_file = "qa_all_questions.json"
+    generator_pool = LLMClientPool(args.settings, args.provider, model_override=args.model, base_url_override=args.base_url)
+    judge_pool = LLMClientPool(
+        args.settings,
+        args.judge_provider or args.provider,
+        model_override=args.judge_model or args.model,
+        base_url_override=args.judge_base_url or args.base_url,
+    )
+    if args.question_file:
+        qa_data = load_json(args.question_file)
+        qa_set = qa_data.get("qa_questions", qa_data if isinstance(qa_data, list) else [])
+        question_file = Path(args.question_file).name
     else:
-        qa_set = build_qa_set(qa_all)
-        question_file = "qa_10_questions.json"
+        qa_all = load_json(args.benchmark_dir / "qa_questions.json").get("qa_questions", [])
+        if args.qa_mode == "full":
+            qa_set = build_full_qa_set(qa_all)
+            question_file = "qa_40_questions.json"
+        elif args.qa_mode == "extra60":
+            qa_set = build_extra_qa_set(qa_all, 60)
+            question_file = "qa_extra60_questions.json"
+        elif args.qa_mode == "all":
+            qa_set = [qa_record_from_source(qa, canonical_question_type(qa), answerable=True) for qa in qa_all]
+            question_file = "qa_all_questions.json"
+        else:
+            qa_set = build_qa_set(qa_all)
+            question_file = "qa_10_questions.json"
     (args.output_dir / question_file).write_text(json.dumps({"qa_questions": qa_set}, ensure_ascii=False, indent=2), encoding="utf-8")
 
     evidence_by_group = {}
-    cache_root = REPO_ROOT / "web-ui" / "backend" / "hyperrag_cache" / "flow_benchmark_v1"
+    cache_root = args.cache_root
     equivalences = load_equivalence_map(DEFAULT_EQUIVALENCE_MAP)
     for group, spec in GROUPS.items():
         graph, chunks = load_cache(cache_root / spec["cache"])
         evidence_by_group[group] = evidence_from_chunks(chunks) if spec["view"] == "text" else evidence_from_graph(graph, spec["view"], equivalences)
         if args.chem_norm_evidence_v2 and group == "chem_norm_hypergraph":
+            print(
+                "[QASmoke] warning: --chem-norm-evidence-v2 is deprecated and should not be used "
+                "for the current four-group QA benchmark.",
+                flush=True,
+            )
             evidence_by_group[group] = expand_chem_norm_atomic_evidence(evidence_by_group[group])
 
     records: list[dict[str, Any]] = []
@@ -1068,27 +1278,41 @@ def main() -> None:
         except Exception:
             errors = []
     completed = {(item.get("question_id"), item.get("group")) for item in records}
+    persisted_record_keys = set(completed)
     errors = [item for item in errors if (item.get("question_id"), item.get("group")) not in completed]
     errors_path.write_text(json.dumps(errors, ensure_ascii=False, indent=2), encoding="utf-8")
     total = len(qa_set) * len(GROUPS)
 
     def persist_progress() -> None:
-        with records_path.open("w", encoding="utf-8", newline="\n") as f:
+        with records_path.open("a", encoding="utf-8", newline="\n") as f:
             for item in records:
+                key = (item.get("question_id"), item.get("group"))
+                if key in persisted_record_keys:
+                    continue
                 f.write(json.dumps(item, ensure_ascii=False) + "\n")
+                persisted_record_keys.add(key)
         raw_path.write_text(json.dumps(raw_records, ensure_ascii=False, indent=2), encoding="utf-8")
         errors_path.write_text(json.dumps(errors, ensure_ascii=False, indent=2), encoding="utf-8")
 
     def run_one(task_index: int, qa: dict[str, Any], group: str) -> tuple[str, dict[str, Any]]:
         print(f"[QASmoke] {task_index}/{total} generation+judge {group} {qa['question_id']}", flush=True)
-        evidence = rank_evidence(qa["question"], evidence_by_group[group], K_EVIDENCE, equivalences, enable_hybrid_rerank=False)
+        evidence = rank_evidence(
+            qa["question"],
+            evidence_by_group[group],
+            K_EVIDENCE,
+            equivalences,
+            enable_hybrid_rerank=bool(GROUPS[group].get("rerank")),
+        )
         evidence_context = format_evidence_context(qa["question"], evidence)
-        generated = pool.complete_json(
+        generated = complete_valid_json(
+            generator_pool,
             generation_prompt(qa, evidence_context),
+            validate_generation,
             temperature=args.temperature,
             top_p=args.top_p,
-            max_tokens=384,
+            max_tokens=800,
             max_retries=args.llm_max_retries,
+            label="generation",
         )
         answer_text = str(generated.get("answer") or "")
         answer_record = {
@@ -1096,14 +1320,18 @@ def main() -> None:
             "citations": generated.get("citations") or [],
             "abstained": bool(generated.get("abstained")) or "don't know based on the retrieved evidence" in answer_text.lower(),
         }
-        judged = pool.complete_json(
+        judged = complete_valid_json(
+            judge_pool,
             judge_prompt(qa, answer_record, evidence_context),
+            validate_judgment,
             temperature=args.temperature,
             top_p=args.top_p,
-            max_tokens=512,
+            max_tokens=1200,
             max_retries=args.llm_max_retries,
+            label="judge",
         )
         abstention_correct = (not answer_record["abstained"]) if qa["answerable"] else bool(answer_record["abstained"])
+        quality_label = str(judged.get("quality_label") or "")
         record = {
             "question_id": qa["question_id"],
             "category": qa.get("category"),
@@ -1113,14 +1341,20 @@ def main() -> None:
             "question": qa["question"],
             "reference_answer": qa["reference_answer"],
             "required_key_points": qa.get("required_key_points") or [],
+            "answer_model_label": args.answer_model_label or generator_pool.model,
+            "generator_provider": generator_pool.provider_name,
+            "generator_model": generator_pool.model,
+            "judge_provider": judge_pool.provider_name,
+            "judge_model": judge_pool.model,
             "generated_answer": answer_text,
             "citations": answer_record["citations"],
-            "quality_label": judged.get("quality_label"),
-            "good": bool(judged.get("good")),
-            "satisfactory_or_better": bool(judged.get("satisfactory_or_better")),
+            "quality_label": quality_label,
+            "good": quality_label == "GOOD",
+            "satisfactory_or_better": quality_label in {"GOOD", "SATISFACTORY"},
             "key_point_coverage": float(judged.get("key_point_coverage", 0.0) or 0.0),
+            "covered_key_points": judged.get("covered_key_points") or [],
             "hallucinated": bool(judged.get("hallucinated")),
-            "abstained": bool(judged.get("abstained")) or answer_record["abstained"],
+            "abstained": answer_record["abstained"],
             "abstention_correct": abstention_correct,
             "citation_stability_experimental": float(judged.get("citation_stability_experimental", judged.get("citation_stability", 0.0)) or 0.0),
             "missing_key_points": judged.get("missing_key_points") or [],
@@ -1159,10 +1393,14 @@ def main() -> None:
                 raw_records.append(payload["raw"])
                 errors = [item for item in errors if (item.get("question_id"), item.get("group")) != (qa["question_id"], group)]
             except Exception as exc:  # noqa: BLE001
-                errors.append({"question_id": qa["question_id"], "group": group, "error": str(exc)})
+                error_type = "judge_error" if "judge validation failed" in str(exc).lower() else "generation_or_api_error"
+                errors.append({"question_id": qa["question_id"], "group": group, "error_type": error_type, "error": str(exc)})
             persist_progress()
     else:
-        print(f"[QASmoke] parallel workers={workers}, api_keys={len(pool.entries)}, pending_tasks={len(pending)}", flush=True)
+        print(
+            f"[QASmoke] parallel workers={workers}, generator_keys={len(generator_pool.entries)}, judge_keys={len(judge_pool.entries)}, pending_tasks={len(pending)}",
+            flush=True,
+        )
         with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as executor:
             future_map = {executor.submit(run_one, task_index, qa, group): (task_index, qa, group) for task_index, qa, group in pending}
             for future in concurrent.futures.as_completed(future_map):
@@ -1174,7 +1412,8 @@ def main() -> None:
                     errors = [item for item in errors if (item.get("question_id"), item.get("group")) != (qa["question_id"], group)]
                     print(f"[QASmoke] done {group} {qa['question_id']} ({len(records)}/{total} records)", flush=True)
                 except Exception as exc:  # noqa: BLE001
-                    errors.append({"question_id": qa["question_id"], "group": group, "error": str(exc)})
+                    error_type = "judge_error" if "judge validation failed" in str(exc).lower() else "generation_or_api_error"
+                    errors.append({"question_id": qa["question_id"], "group": group, "error_type": error_type, "error": str(exc)})
                     print(f"[QASmoke] error {group} {qa['question_id']}: {exc}", flush=True)
                 persist_progress()
 
@@ -1190,17 +1429,24 @@ def main() -> None:
     (args.output_dir / f"{args.output_prefix}_summary.json").write_text(
         json.dumps(
             {
-                "provider": pool.provider_name,
-                "base_url": pool.base_url,
-                "model": pool.model,
-                "api_key_count": len(pool.entries),
+                "generator_provider": generator_pool.provider_name,
+                "generator_base_url": generator_pool.base_url,
+                "generator_model": generator_pool.model,
+                "generator_api_key_count": len(generator_pool.entries),
+                "judge_provider": judge_pool.provider_name,
+                "judge_base_url": judge_pool.base_url,
+                "judge_model": judge_pool.model,
+                "judge_api_key_count": len(judge_pool.entries),
                 "parallel_workers": workers,
                 "llm_max_retries": args.llm_max_retries,
                 "qa_mode": args.qa_mode,
+                "question_file": str(args.question_file) if args.question_file else None,
+                "answer_model_label": args.answer_model_label or generator_pool.model,
                 "temperature": args.temperature,
                 "top_p": args.top_p,
                 "evidence_budget_chars": EVIDENCE_BUDGET_CHARS,
                 "chem_norm_evidence_v2": args.chem_norm_evidence_v2,
+                "cache_root": str(cache_root),
                 "question_count": len(qa_set),
                 "groups": list(GROUPS),
                 "group_specs": GROUPS,
@@ -1208,6 +1454,8 @@ def main() -> None:
                 "by_question_type": by_question_type_rows,
                 "by_answerability": by_answerability_rows,
                 "pairwise_comparison": pairwise_rows,
+                "judge_errors": sum(1 for item in errors if item.get("error_type") == "judge_error"),
+                "generation_or_api_errors": sum(1 for item in errors if item.get("error_type") != "judge_error"),
                 "errors": errors,
             },
             ensure_ascii=False,
@@ -1215,7 +1463,18 @@ def main() -> None:
         ),
         encoding="utf-8",
     )
-    print(json.dumps({"output_dir": str(args.output_dir), "summary": summary_rows, "errors": len(errors)}, ensure_ascii=False, indent=2))
+    print(
+        json.dumps(
+            {
+                "output_dir": str(args.output_dir),
+                "summary": summary_rows,
+                "errors": len(errors),
+                "judge_errors": sum(1 for item in errors if item.get("error_type") == "judge_error"),
+            },
+            ensure_ascii=False,
+            indent=2,
+        )
+    )
 
 
 if __name__ == "__main__":

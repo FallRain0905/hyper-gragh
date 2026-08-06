@@ -22,6 +22,8 @@ HyperChE adds:
 - Domain prompt packs for flow batteries and PFAS piezocatalysis.
 - A conservative chemical entity normalization module.
 - Measurement and condition instance nodes for numeric experimental facts.
+- Stable real-paper corpus tracking with `doc_id`, `chunk_id`, source file metadata, manifests, and resumable build logs.
+- Surface/canonical-aware embedding text templates for new experiment caches.
 - Experiment modes for main experiments and ablation studies.
 - Fact Coverage@k and QA evaluation CLIs.
 - A React + FastAPI Web application branded as HyperChE.
@@ -65,7 +67,9 @@ Hyper-RAG/
 |-- scripts/
 |   |-- build_experiment_cache.py      # Build benchmark caches by experiment mode
 |   |-- evaluate_fact_coverage.py      # Fact Coverage@k evaluator
-|   |-- evaluate_qa_answers.py         # Seven-dimension QA answer evaluator
+|   |-- evaluate_qa_answers.py         # Legacy seven-dimension QA answer evaluator
+|   |-- run_qa_smoke_llm.py            # Current LLM QA benchmark runner
+|   |-- generate_qa40_with_llm.py      # Generate QA questions separately from answering
 |   |-- normalize_hypergraph.py        # Offline normalization audit tool
 |   `-- report_normalization.py        # Normalization report helper
 |-- web-ui/
@@ -89,6 +93,7 @@ Hyper-RAG/
 - Hyper-RAG, Graph-RAG, and naive RAG query modes.
 - Conservative entity normalization with exact aliases, fuzzy candidates, negative rules, and optional LLM judgment.
 - Numeric measurement/condition instance nodes, such as `measurement:ee_80_9_percent` and `condition:current_density_100_ma_cm2`.
+- Resumable experiment-cache construction for large paper corpora.
 - Collapsible retrieval graph in answers to avoid heavy rendering.
 - Public demo page with streaming Hyper-RAG answers.
 - Admin-managed global API providers and user-managed personal API keys.
@@ -147,6 +152,19 @@ Representative relation / hyperedge types include:
 
 `hyperrag/domains/generic_json/` keeps the same JSON output schema as the chemical prompts but uses generic entity and relation labels. It was introduced for an early prompt-profile ablation. The main benchmark baseline now uses the original Hyper-RAG delimiter-based `default` prompt, so `hyper_base` reflects the upstream-style extraction pipeline rather than a newly designed JSON baseline.
 
+## Current Experiment Scope
+
+The current paper-experiment track is intentionally simplified. The active QA comparison uses four groups:
+
+| Group | Meaning |
+| --- | --- |
+| `hybrid_text` | Strong text retrieval baseline over the same cache chunks. |
+| `chem_prompt_graph` | Chemical prompt extraction, evaluated as a pairwise graph view. |
+| `chem_prompt_hypergraph` | Chemical prompt extraction, evaluated as a hypergraph view. |
+| `norm_hg_reranker` | Normalized hypergraph with retrieval reranking enabled. |
+
+Atomic evidence cards were used only in an earlier QA debugging branch. They are not part of the current main experiment. Do not pass `--chem-norm-evidence-v2` unless you intentionally want to reproduce that old ablation.
+
 ## Experiment Modes
 
 Experiment modes are configured in `configs/experiments/modes.yaml`.
@@ -204,6 +222,56 @@ Useful options:
 --embedding-batch-num 8
 ```
 
+For large real-paper corpora, use stable document IDs and resumable logs:
+
+```powershell
+$env:LLM_API_KEY="key1;key2;key3"
+$env:LLM_BASE_URL="https://api.siliconflow.cn/v1"
+$env:LLM_MODEL="deepseek-ai/DeepSeek-V4-Flash"
+$env:EMB_API_KEY="key1;key2;key3"
+$env:EMB_BASE_URL="https://api.siliconflow.cn/v1"
+$env:EMB_MODEL="Qwen/Qwen3-Embedding-4B"
+$env:EMB_DIM="2560"
+$env:ENTITY_EXTRACT_MAX_GLEANING="0"
+
+python scripts\build_experiment_cache.py `
+  --input C:\Users\surface\OneDrive\Desktop\case1\mineru_output\all_markdown `
+  --cache-dir web-ui\backend\hyperrag_cache\real_flow_80_fast_v3\hyper_base `
+  --mode hyper_base `
+  --domain flow_battery `
+  --doc-id-prefix RFB `
+  --doc-start 1 `
+  --doc-end 15 `
+  --resume `
+  --chunk-size 1000 `
+  --max-entities-per-chunk 40 `
+  --llm-max-async 6 `
+  --embedding-max-async 10 `
+  --embedding-batch-num 16
+```
+
+Each cache directory records:
+
+```text
+run_config.json
+corpus_manifest.jsonl
+build_progress.jsonl
+kv_store_full_docs.json
+kv_store_text_chunks.json
+kv_store_community_reports.json
+vdb_entities.json
+vdb_relationships.json
+```
+
+Operational notes:
+
+- `build_progress.jsonl` is an audit log, not the only source of truth. Treat a document as completed only when it is also present in persisted cache storage.
+- Do not run multiple builders against the same cache directory at the same time.
+- Parallel builds are allowed only when each process writes to a separate cache directory.
+- `hyper_base` uses the original/default prompt and does not use one-pass JSON extraction or normalization.
+- `hyper_chem_prompt` uses the chemistry JSON prompt and one-pass extraction, but no normalization.
+- The current fast build phase does not run `hyper_final` normalization.
+
 ### 2. Configure A Multi-Mode Cache Map
 
 Copy the example:
@@ -260,7 +328,45 @@ outputs/fact_coverage/{run_id}/
 `-- run.log
 ```
 
-### 4. Run QA Answer Evaluation
+### 4. Run Current QA Benchmark
+
+The current LLM QA benchmark runner is `scripts/run_qa_smoke_llm.py`. It separates question files from answer generation and judging, supports resume through existing records, and writes raw records rather than summary-only outputs.
+
+Example for the current four-group QA benchmark:
+
+```powershell
+$env:DEEPSEEK_API_KEY="key1;key2"
+$env:SILICONFLOW_API_KEY="key1;key2"
+$env:SILICONFLOW_BASE_URL="https://api.siliconflow.cn/v1"
+$env:SILICONFLOW_MODEL="Qwen/Qwen3.5-122B-A10B"
+
+python scripts\run_qa_smoke_llm.py `
+  --benchmark-dir test-materials\hyperche_benchmark_v2 `
+  --cache-root web-ui\backend\hyperrag_cache\real_flow_80_fast_v3 `
+  --qa-mode full `
+  --provider siliconflow `
+  --judge-provider deepseek `
+  --output-dir outputs\qa_eval\four_groups_40qa_current `
+  --output-prefix qa_40 `
+  --parallel-workers 4
+```
+
+Main QA outputs:
+
+```text
+outputs/qa_eval/{run_id}/
+|-- qa_40_questions.json
+|-- qa_40_records.jsonl
+|-- qa_40_raw.json
+|-- qa_40_summary.csv
+|-- qa_40_summary.json
+|-- qa_40_debug_failures.md
+`-- errors.json
+```
+
+Do not pass `--chem-norm-evidence-v2` for the current experiment. That flag is deprecated and only preserves compatibility with the old atomic-card ablation.
+
+### 5. Legacy QA Answer Evaluation
 
 Create a QA answer map from the example:
 

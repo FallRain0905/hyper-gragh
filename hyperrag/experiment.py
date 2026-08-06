@@ -17,6 +17,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MODES_PATH = REPO_ROOT / "configs" / "experiments" / "modes.yaml"
 DEFAULT_EXPERIMENT_MODE = "hyper_final"
 EXPERIMENT_SWITCHES = (
+    "enable_one_pass_extraction",
     "enable_entity_normalization",
     "enable_measurement_instances",
     "enable_efu_repair",
@@ -107,6 +108,7 @@ def write_run_config(
         "prompt_profile": resolved_config.get("prompt_profile"),
         "domain": resolved_config.get("domain"),
         "effective_domain": resolved_config.get("effective_domain", resolved_config.get("domain")),
+        "enable_one_pass_extraction": bool(resolved_config.get("enable_one_pass_extraction", True)),
         "enable_entity_normalization": bool(resolved_config.get("enable_entity_normalization", True)),
         "enable_measurement_instances": bool(resolved_config.get("enable_measurement_instances", True)),
         "enable_efu_repair": bool(resolved_config.get("enable_efu_repair", True)),

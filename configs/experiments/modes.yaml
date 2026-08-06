@@ -2,6 +2,7 @@ modes:
   graph_final:
     query_mode: graph
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: true
@@ -11,6 +12,7 @@ modes:
   hyper_base:
     query_mode: hyper
     prompt_profile: default
+    enable_one_pass_extraction: false
     enable_entity_normalization: false
     enable_measurement_instances: false
     enable_efu_repair: false
@@ -20,6 +22,7 @@ modes:
   hyper_chem_prompt:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: false
     enable_measurement_instances: false
     enable_efu_repair: false
@@ -29,6 +32,7 @@ modes:
   hyper_norm:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: false
     enable_efu_repair: false
@@ -38,6 +42,7 @@ modes:
   hyper_final:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: true
@@ -47,6 +52,7 @@ modes:
   hyper_final_dual_separate:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: true
@@ -56,6 +62,7 @@ modes:
   final_no_measurement:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: false
     enable_efu_repair: true
@@ -65,6 +72,7 @@ modes:
   final_no_repair:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: false
@@ -74,6 +82,7 @@ modes:
   final_no_rerank:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: true
@@ -83,6 +92,7 @@ modes:
   final_full:
     query_mode: hyper
     prompt_profile: chemistry
+    enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
     enable_efu_repair: true

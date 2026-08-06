@@ -11,11 +11,17 @@ import os
 from pathlib import Path
 import re
 import sys
-from typing import Iterable
+from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
+
+for _stream in (sys.stdout, sys.stderr):
+    try:
+        _stream.reconfigure(encoding="utf-8", errors="replace")
+    except Exception:
+        pass
 
 from hyperrag import HyperRAG
 from hyperrag.experiment import resolve_experiment_mode, write_run_config
@@ -129,6 +135,7 @@ def write_manifest(path: Path, documents: list[dict]) -> None:
 def load_completed_doc_ids(cache_dir: Path, progress_path: Path) -> set[str]:
     completed = set()
     full_docs_path = cache_dir / "kv_store_full_docs.json"
+    chunk_docs = set()
     if full_docs_path.exists():
         try:
             data = json.loads(full_docs_path.read_text(encoding="utf-8"))
@@ -139,6 +146,21 @@ def load_completed_doc_ids(cache_dir: Path, progress_path: Path) -> set[str]:
                         completed.add(str(value["doc_id"]))
         except Exception as exc:
             print(f"[BuildExperiment] warning: failed to read existing full docs: {exc}", flush=True)
+    text_chunks_path = cache_dir / "kv_store_text_chunks.json"
+    if text_chunks_path.exists():
+        try:
+            data = json.loads(text_chunks_path.read_text(encoding="utf-8"))
+            if isinstance(data, dict):
+                for value in data.values():
+                    if isinstance(value, dict):
+                        doc_id = value.get("source_doc_id") or value.get("doc_id")
+                        if doc_id:
+                            chunk_docs.add(str(doc_id))
+        except Exception as exc:
+            print(f"[BuildExperiment] warning: failed to read existing text chunks: {exc}", flush=True)
+    completed.update(chunk_docs)
+
+    progress_completed = set()
     if progress_path.exists():
         for line in progress_path.read_text(encoding="utf-8").splitlines():
             try:
@@ -146,7 +168,14 @@ def load_completed_doc_ids(cache_dir: Path, progress_path: Path) -> set[str]:
             except json.JSONDecodeError:
                 continue
             if item.get("status") == "success" and item.get("doc_id"):
-                completed.add(str(item["doc_id"]))
+                progress_completed.add(str(item["doc_id"]))
+    stale_progress = sorted(progress_completed - completed)
+    if stale_progress:
+        print(
+            "[BuildExperiment] warning: ignoring progress-only completed docs not present in storage: "
+            f"{stale_progress[:10]}{'...' if len(stale_progress) > 10 else ''}",
+            flush=True,
+        )
     return completed
 
 
@@ -161,20 +190,80 @@ def split_key_pool(value: str) -> list[str]:
     return [part.strip() for part in re.split(r"[;,\r\n]+", value or "") if part.strip()]
 
 
+def _split_provider_keys(value: Any) -> list[str]:
+    if isinstance(value, list):
+        return [str(part).strip() for part in value if str(part).strip()]
+    return split_key_pool(str(value or ""))
+
+
+def load_llm_provider_entries(*, default_model: str, default_base_url: str | None, default_api_keys: list[str]) -> list[dict]:
+    """Load optional multi-provider LLM config from LLM_PROVIDER_CONFIG.
+
+    The value is a JSON array/object. Each provider can use either snake_case or
+    camelCase fields: name, base_url/baseUrl, model/modelName, api_keys/apiKeys/apiKey.
+    """
+    raw = os.getenv("LLM_PROVIDER_CONFIG")
+    if not raw:
+        return [
+            {
+                "provider": "default",
+                "model": default_model,
+                "base_url": default_base_url,
+                "api_key": key,
+                "key_index": index,
+                "key_total": len(default_api_keys),
+            }
+            for index, key in enumerate(default_api_keys)
+        ]
+
+    try:
+        data = json.loads(raw)
+    except json.JSONDecodeError as exc:
+        raise RuntimeError(f"LLM_PROVIDER_CONFIG must be valid JSON: {exc}") from exc
+    providers = data if isinstance(data, list) else data.get("providers", [])
+    if not isinstance(providers, list):
+        raise RuntimeError("LLM_PROVIDER_CONFIG must be a provider array or an object with providers=[...].")
+
+    entries = []
+    for provider_index, provider in enumerate(providers):
+        if not isinstance(provider, dict) or provider.get("enabled", True) is False:
+            continue
+        name = str(provider.get("name") or f"provider_{provider_index + 1}")
+        base_url = provider.get("base_url", provider.get("baseUrl", default_base_url))
+        model = str(provider.get("model") or provider.get("modelName") or default_model)
+        keys = _split_provider_keys(
+            provider.get("api_keys", provider.get("apiKeys", provider.get("apiKey", "")))
+        )
+        for key_index, key in enumerate(keys):
+            entries.append(
+                {
+                    "provider": name,
+                    "model": model,
+                    "base_url": base_url,
+                    "api_key": key,
+                    "key_index": key_index,
+                    "key_total": len(keys),
+                }
+            )
+    if not entries:
+        raise RuntimeError("LLM_PROVIDER_CONFIG did not contain any enabled provider keys.")
+    return entries
+
+
 class AsyncKeyPool:
-    def __init__(self, keys: list[str], *, name: str):
-        if not keys:
+    def __init__(self, items: list[Any], *, name: str):
+        if not items:
             raise RuntimeError(f"{name} key pool is empty")
-        self.keys = keys
+        self.items = items
         self.name = name
         self._index = 0
         self._lock = asyncio.Lock()
 
-    async def next(self) -> tuple[int, str]:
+    async def next(self) -> tuple[int, Any]:
         async with self._lock:
-            idx = self._index % len(self.keys)
+            idx = self._index % len(self.items)
             self._index += 1
-            return idx, self.keys[idx]
+            return idx, self.items[idx]
 
 
 def positive_int_env(name: str, default: int) -> int:
@@ -188,28 +277,30 @@ def positive_int_env(name: str, default: int) -> int:
 
 
 def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], timeout: float):
-    pool = AsyncKeyPool(api_keys, name="LLM_API_KEY")
+    entries = load_llm_provider_entries(default_model=model, default_base_url=base_url, default_api_keys=api_keys)
+    pool = AsyncKeyPool(entries, name="LLM provider pool")
 
     async def llm_func(prompt: str, system_prompt=None, history_messages=None, **kwargs):
-        attempts = max(1, min(len(api_keys), positive_int_env("LLM_KEY_ATTEMPTS", len(api_keys))))
+        attempts = max(1, min(len(entries), positive_int_env("LLM_KEY_ATTEMPTS", len(entries))))
         last_exc = None
         for attempt in range(attempts):
-            key_index, api_key = await pool.next()
+            entry_index, entry = await pool.next()
             try:
                 return await openai_complete_if_cache(
-                    model,
+                    entry["model"],
                     prompt,
                     system_prompt=system_prompt,
                     history_messages=history_messages or [],
-                    base_url=base_url,
-                    api_key=api_key,
+                    base_url=entry.get("base_url"),
+                    api_key=entry["api_key"],
                     timeout=timeout,
                     **kwargs,
                 )
             except Exception as exc:
                 last_exc = exc
                 print(
-                    f"[BuildExperiment] LLM call failed with key={key_index + 1}/{len(api_keys)} "
+                    f"[BuildExperiment] LLM call failed with provider={entry.get('provider')} "
+                    f"entry={entry_index + 1}/{len(entries)} key={entry.get('key_index', 0) + 1}/{entry.get('key_total', '?')} "
                     f"attempt={attempt + 1}/{attempts}: {type(exc).__name__}: {exc}",
                     flush=True,
                 )
@@ -265,6 +356,8 @@ async def amain() -> None:
     parser.add_argument("--llm-max-async", type=int, default=positive_int_env("LLM_MAX_ASYNC", 4))
     parser.add_argument("--embedding-max-async", type=int, default=positive_int_env("EMB_MAX_ASYNC", 8))
     parser.add_argument("--embedding-batch-num", type=int, default=positive_int_env("EMB_BATCH_NUM", 8))
+    parser.add_argument("--entity-extract-max-gleaning", type=int, default=positive_int_env("ENTITY_EXTRACT_MAX_GLEANING", 0))
+    parser.add_argument("--disable-one-pass-extraction", action="store_true", help="Use legacy JSON entity-then-relationship extraction.")
     args = parser.parse_args()
 
     llm_api_keys = split_key_pool(env_required("LLM_API_KEY"))
@@ -299,6 +392,8 @@ async def amain() -> None:
         "chunk_size": args.chunk_size,
         "chunk_overlap": args.chunk_overlap,
         "max_entities_per_chunk": args.max_entities_per_chunk,
+        "entity_extract_max_gleaning": args.entity_extract_max_gleaning,
+        "enable_one_pass_extraction": not args.disable_one_pass_extraction,
     }
     run_config_path = write_run_config(cache_dir, resolved, extra=extra)
     print(f"[BuildExperiment] run_config written: {run_config_path}", flush=True)
@@ -325,6 +420,7 @@ async def amain() -> None:
         "experiment_mode": resolved["experiment_mode"],
         "query_mode": resolved["query_mode"],
         "prompt_profile": resolved["prompt_profile"],
+        "enable_one_pass_extraction": not args.disable_one_pass_extraction,
         "enable_entity_normalization": resolved["enable_entity_normalization"],
         "enable_measurement_instances": resolved["enable_measurement_instances"],
         "enable_efu_repair": resolved["enable_efu_repair"],
@@ -348,6 +444,7 @@ async def amain() -> None:
         "embedding_func_max_async": args.embedding_max_async,
         "embedding_batch_num": args.embedding_batch_num,
         "max_entities_per_chunk": args.max_entities_per_chunk,
+        "entity_extract_max_gleaning": args.entity_extract_max_gleaning,
     }
     if args.chunk_size is not None:
         rag_kwargs["chunk_token_size"] = args.chunk_size

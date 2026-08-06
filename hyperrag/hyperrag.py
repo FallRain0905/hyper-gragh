@@ -76,7 +76,7 @@ class HyperRAG:
     tiktoken_model_name: str = "gpt-4o-mini"
 
     # entity extraction
-    entity_extract_max_gleaning: int = 1
+    entity_extract_max_gleaning: int = 0
     max_entities_per_chunk: int = 40
     entity_summary_to_max_tokens: int = 500
     entity_additional_properties_to_max_tokens: int = 250
@@ -111,6 +111,7 @@ class HyperRAG:
 
     # experiment controls
     prompt_profile: str = "chemistry"
+    enable_one_pass_extraction: bool = True
     enable_entity_normalization: bool = True
     enable_measurement_instances: bool = True
     enable_efu_repair: bool = True
@@ -146,6 +147,7 @@ class HyperRAG:
                     "prompt_profile": self.prompt_profile,
                     "domain": self.domain,
                     "effective_domain": self.domain,
+                    "enable_one_pass_extraction": self.enable_one_pass_extraction,
                     "enable_entity_normalization": self.enable_entity_normalization,
                     "enable_measurement_instances": self.enable_measurement_instances,
                     "enable_efu_repair": self.enable_efu_repair,
