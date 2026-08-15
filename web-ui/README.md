@@ -28,9 +28,14 @@ cd web-ui/backend
 pip install -r requirements.txt
 ```
 
-可下载解析好的 3 个 demo 数据库 [here](https://pan.baidu.com/s/1mrDJVpMW59gLtRRSXafXdw?pwd=w642#list/path=%2Fsharelink484952695-6132723540665%2FHyper-RAG%2Fweb-ui&parentPath=%2Fsharelink484952695-6132723540665).
+网站只保留一个公开实例：液流电池知识库（数据库目录 `case1`）。缓存由当前 GitHub 分支的 Git LFS 管理：
 
-解压后复制到 `web-ui/backend/hyperrag_cache` 目录下
+```bash
+git lfs install
+git lfs pull --include="web-ui/backend/hyperrag_cache/case1/**"
+```
+
+下载完成后应存在 `web-ui/backend/hyperrag_cache/case1`。后端可通过 `GET /public/demo/status` 检查缓存是否完整；默认配置为 `HYPERCHE_PUBLIC_DEMO_DATABASE=case1`。
 
 3. 启动开发服务器：
 

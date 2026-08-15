@@ -539,13 +539,13 @@ return
     }, [availableModes, compareMode1, compareMode2])
 
     return (
-        <div className="flex h-screen bg-gray-50">
+        <div className="relative flex h-screen bg-transparent p-3 sm:p-4">
             {/* Sidebar */}
-            <div className="w-52 bg-gray-100 border-r border-gray-200 flex flex-col">
+            <div className="hyperche-card mr-3 flex w-56 flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/80 shadow-sm backdrop-blur-xl">
 
                 {/* Mode Selector */}
-                <div className="flex items-center space-x-1 p-3 text-base">
-                    <div className="flex flex-col bg-gray-100 rounded-lg p-1 w-full space-y-1">
+                <div className="flex items-center space-x-1 p-4 text-base">
+                    <div className="flex w-full flex-col space-y-1 rounded-2xl bg-slate-50 p-2">
                         <div className="flex items-center space-x-2 mb-3">
                             <Settings className="w-5 h-5 shrink-0 text-gray-500" />
                             <span className="font-medium text-gray-700 flex-1">Mode: </span>
@@ -721,9 +721,9 @@ return
             </div>
 
             {/* Main Content */}
-            <div className="flex-1 flex flex-col">
+            <div className="min-w-0 flex-1 flex flex-col overflow-hidden rounded-3xl border border-slate-200 bg-white/75 shadow-sm backdrop-blur-xl">
                 {/* Top Bar */}
-                <div className="bg-white border-b border-gray-200 p-4">
+                <div className="border-b border-slate-200/80 bg-white/75 p-4 backdrop-blur-xl">
                     <div className="flex items-center justify-between w-full">
                         <div className="flex items-center space-x-4">
                             <Database className="w-5 h-5 text-gray-500" />
@@ -743,22 +743,21 @@ return
                 {/* Chat Area */}
                 <div className="flex-1 flex flex-col">
                     {/* Messages */}
-                    <ScrollArea className="p-4 pb-0 h-[calc(100vh-210px)] bg-white">
+                    <ScrollArea className="h-[calc(100vh-225px)] bg-transparent p-4 pb-0 sm:p-6">
                         {activeConversation?.messages.length === 0 ? (
-                            <div className="flex-1 flex items-center justify-center mt-20">
-                                <div className="text-center">
-                                    <Bot className="w-16 h-16 text-gray-400 mx-auto mb-4" />
+                            <div className="flex flex-1 items-center justify-center pt-20">
+                                <div className="text-center hyperche-reveal">
+                                    <div className="hyperche-pulse mx-auto mb-5 flex h-20 w-20 items-center justify-center rounded-[2rem] border border-blue-100 bg-blue-50 text-blue-600"><Bot className="h-9 w-9" /></div>
                                     <h3 className="text-lg font-medium text-gray-900 mb-2">
-                                        Welcome to Hyper-RAG
+                                        开始使用 HyperChE
                                     </h3>
                                     <p className="text-gray-500 max-w-md">
-                                        Ask me anything about your knowledge base. I&apos;ll help you find the
-                                        information you need using advanced RAG technology.
+                                        选择检索模式与知识库，输入你的科研问题开始检索。
                                     </p>
                                 </div>
                             </div>
                         ) : (
-                            <div className="space-y-6 mx-auto">
+                            <div className="mx-auto max-w-5xl space-y-6">
                                 {activeConversation?.messages.map((message) => (
                                     <div key={message.id + message.content} className="flex space-x-4">
                                         <Avatar>
@@ -990,7 +989,7 @@ return
                     </ScrollArea>
 
                     {/* Input Area */}
-                    <div className="border-t border-gray-200 bg-white p-2">
+                    <div className="border-t border-slate-200/80 bg-white/75 p-3 backdrop-blur-xl">
                         <div className="max-w-4xl mx-auto">
                             <div className="flex space-x-4 items-center">
                                 <Textarea

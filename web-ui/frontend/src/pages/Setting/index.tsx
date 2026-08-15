@@ -31,8 +31,10 @@ import {
 } from '@ant-design/icons'
 import { useTranslation } from 'react-i18next'
 import LanguageSelector from '../../components/LanguageSelector'
+import RuntimeSettingsPanel from '@/components/RuntimeSettingsPanel'
 import { SERVER_URL } from '../../utils'
 import { authStore } from '../../store/auth'
+import { PUBLIC_DEMO } from '../../config/publicDemo'
 
 const { Title, Text } = Typography
 const { Option } = Select
@@ -47,7 +49,6 @@ const Setting: React.FC = () => {
   const [availableDatabases, setAvailableDatabases] = useState<any[]>([])
   const [testResults, setTestResults] = useState<any>({})
   const [isCustomEmbedding, setIsCustomEmbedding] = useState(false)
-  const [availableDomains, setAvailableDomains] = useState<any[]>([])
   const [userApiKeys, setUserApiKeys] = useState<any[]>([])
   const [userKeyLoading, setUserKeyLoading] = useState(false)
   const [quotaConfig, setQuotaConfig] = useState<any>({
@@ -81,8 +82,7 @@ const Setting: React.FC = () => {
     embeddingBaseUrl: '', // 嵌入模型的API地址
     embeddingApiKey: '', // 嵌入模型的API密钥
     // 新增Mode配置，默认显示所有modes（包含Cog-RAG）
-    availableModes: ['llm', 'naive', 'graph', 'hyper', 'hyper-lite', 'cog', 'cog-hybrid', 'cog-entity', 'cog-theme'],
-    hyperrag_domain: 'default'
+    availableModes: ['llm', 'naive', 'graph', 'hyper', 'hyper-lite', 'cog', 'cog-hybrid', 'cog-entity', 'cog-theme']
   }
 
   // 可用的查询模式配置
@@ -435,24 +435,7 @@ const Setting: React.FC = () => {
       console.error('加载数据库列表失败:', error)
       // 如果API不存在，提供一些默认选项
       setAvailableDatabases([
-        { name: 'example', description: 'HyperChE 化工示例库' },
-        { name: 'case1', description: '液流电池示例库' }
-      ])
-    }
-  }
-
-  // 加载可用领域列表
-  const loadDomains = async () => {
-    try {
-      const response = await fetch(`${SERVER_URL}/domains`)
-      if (response.ok) {
-        const data = await response.json()
-        setAvailableDomains(data.domains || [])
-      }
-    } catch (error) {
-      console.error('加载领域列表失败:', error)
-      setAvailableDomains([
-        { name: 'default', description: '通用领域（分隔符格式）', output_format: 'delimiter' }
+        { name: PUBLIC_DEMO.database, description: PUBLIC_DEMO.name }
       ])
     }
   }
@@ -788,7 +771,6 @@ const Setting: React.FC = () => {
   useEffect(() => {
     loadSettings()
     loadDatabases()
-    loadDomains()
     authStore.refreshQuota()
     loadUserApiKeys()
     loadQuotaConfig()
@@ -796,7 +778,9 @@ const Setting: React.FC = () => {
 
   return (
     <div className="p-6">
-      <Card className="border-gray-200 rounded-xl">
+      <div className="mx-auto max-w-7xl">
+        <RuntimeSettingsPanel />
+        <Card className="border-gray-200 rounded-3xl shadow-sm">
         <div className="mb-4">
           <div className="flex items-center text-2xl font-bold">
             <SettingOutlined style={{ marginRight: '8px' }} />
@@ -1406,51 +1390,6 @@ const Setting: React.FC = () => {
             />
           </Card>
 
-          {/* 嵌入领域配置区块 */}
-          <Card
-            title={
-              <span>
-                <AppstoreOutlined style={{ marginRight: '8px' }} />
-                嵌入领域配置
-              </span>
-            }
-            style={adminOnlyStyle}
-          >
-            <Alert
-              message="嵌入领域配置"
-              description="选择文档嵌入时使用的知识提取领域。不同领域使用不同的实体类型、关系类型和输出格式。更换领域后需要清空数据库重新嵌入文档。"
-              type="info"
-              showIcon
-              style={{ marginBottom: '24px' }}
-            />
-            <Form.Item
-              name="hyperrag_domain"
-              label="嵌入领域"
-              extra="选择文档嵌入时使用的知识提取领域"
-            >
-              <Select placeholder="选择嵌入领域">
-                {availableDomains.map(domain => (
-                  <Option key={domain.name} value={domain.name}>
-                    <div>
-                      <div style={{ fontWeight: 'bold' }}>
-                        {domain.name === 'default' ? '通用领域 (Default)' : domain.name}
-                      </div>
-                      <div style={{ fontSize: '12px', color: '#666' }}>
-                        {domain.description || '无描述'} | 输出格式: {domain.output_format}
-                      </div>
-                    </div>
-                  </Option>
-                ))}
-              </Select>
-            </Form.Item>
-            <Alert
-              message="注意"
-              description="切换领域后，已有的嵌入数据不会自动更新。建议新建数据库并用新领域重新嵌入文档。"
-              type="warning"
-              showIcon
-            />
-          </Card>
-
           {/* Mode配置区块 */}
           <Card
             title={
@@ -1622,6 +1561,7 @@ const Setting: React.FC = () => {
           </Form.Item>
         </Form>
       </Card>
+      </div>
     </div>
   )
 }

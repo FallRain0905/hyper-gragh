@@ -1,4 +1,4 @@
-FROM python:3.11-slim
+﻿FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -18,6 +18,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY web-ui/backend/ ./
 COPY hyperrag ./hyperrag
 
+RUN mkdir -p /app/hyperrag_cache /app/runtime /app/uploads /app/knowledge_bases
+
 EXPOSE 8000
 
-CMD ["fastapi", "run", "main.py", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]

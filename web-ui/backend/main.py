@@ -83,6 +83,8 @@ class SafeLogFilter(logging.Filter):
 def extract_user_friendly_error(error_message: str) -> str:
     """Extract a concise user-facing error message from provider errors."""
     error_lower = str(error_message or "").lower()
+    if "notfounderror" in error_lower or "not found" in error_lower or "404" in error_lower:
+        return "API endpoint not found. Check the provider base URL and model name. For OpenAI-compatible services, configure the API base (for example, .../v1), not /embedding or /embeddings."
     if "insufficient" in error_lower or "balance" in error_lower:
         return "API account balance is insufficient. Please recharge or switch to another available key."
     if "permissiondenied" in error_lower or "permission denied" in error_lower or "403" in error_lower:
@@ -215,6 +217,19 @@ from auth import AUTH_COOKIE_NAME, auth_store, create_token
 from db import get_hypergraph, getFrequentVertices, get_vertices, get_hyperedges, get_vertice, get_vertice_neighbor, get_hyperedge_neighbor_server, add_vertex, add_hyperedge, delete_vertex, delete_hyperedge, update_vertex, update_hyperedge, get_hyperedge_detail, db_manager, get_theme_hypergraph, get_theme_vertices, get_theme_hyperedges, get_theme_vertex_neighbor
 from file_manager import file_manager
 from kb_manager import KnowledgeBaseManager
+from public_demo import (
+    DEFAULT_PUBLIC_DEMO_DATABASE,
+    inspect_public_demo_cache,
+    public_demo_metadata,
+)
+from mineru import (
+    download_mineru_markdown,
+    get_mineru_batch_status,
+    load_mineru_config,
+    public_mineru_config,
+    submit_mineru_batch,
+    validate_upload,
+)
 import json
 import os
 import gc
@@ -290,11 +305,37 @@ LLM_PROVIDER_POOL_STATE = {
     "providers": {},
 }
 
-def get_runtime_settings_context() -> dict:
-    """Docstring."""
+DEFAULT_USER_RUNTIME_SETTINGS = {
+    "hyperrag_domain": "default",
+    "experimentMode": "hyper_final",
+    "promptProfile": "chemistry",
+    "indexProfile": "dual_concat",
+    "enableEntityNormalization": True,
+    "enableMeasurementInstances": True,
+    "enableEfuRepair": True,
+    "enableHybridRerank": True,
+}
+
+def get_user_runtime_settings(user_id: str | None = None) -> dict:
+    effective_user_id = user_id or CURRENT_USER_ID.get()
+    if not effective_user_id:
+        return DEFAULT_USER_RUNTIME_SETTINGS.copy()
+    return auth_store.get_user_runtime_settings(effective_user_id)
+
+def load_effective_settings() -> dict:
+    settings: dict = {}
     try:
         with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
             settings = json.load(f)
+    except Exception:
+        settings = {}
+    settings.update(get_user_runtime_settings())
+    return settings
+
+def get_runtime_settings_context() -> dict:
+    """Return the effective global API and per-user HyperRAG configuration."""
+    try:
+        settings = load_effective_settings()
         return {
             "model": settings.get("modelName"),
             "base_url": settings.get("baseUrl"),
@@ -302,12 +343,13 @@ def get_runtime_settings_context() -> dict:
             "embedding_base_url": settings.get("embeddingBaseUrl"),
             "embedding_dim": settings.get("embeddingDim"),
             "hyperrag_domain": settings.get("hyperrag_domain", "default"),
-            "experiment_mode": settings.get("experimentMode", settings.get("experiment_mode", "hyper_final")),
-            "prompt_profile": settings.get("promptProfile", settings.get("prompt_profile", "chemistry")),
-            "enable_entity_normalization": settings.get("enableEntityNormalization", settings.get("enable_entity_normalization", True)),
-            "enable_measurement_instances": settings.get("enableMeasurementInstances", settings.get("enable_measurement_instances", True)),
-            "enable_efu_repair": settings.get("enableEfuRepair", settings.get("enable_efu_repair", True)),
-            "enable_hybrid_rerank": settings.get("enableHybridRerank", settings.get("enable_hybrid_rerank", True)),
+            "experiment_mode": settings.get("experimentMode", "hyper_final"),
+            "prompt_profile": settings.get("promptProfile", "chemistry"),
+            "index_profile": settings.get("indexProfile", "dual_concat"),
+            "enable_entity_normalization": settings.get("enableEntityNormalization", True),
+            "enable_measurement_instances": settings.get("enableMeasurementInstances", True),
+            "enable_efu_repair": settings.get("enableEfuRepair", True),
+            "enable_hybrid_rerank": settings.get("enableHybridRerank", True),
         }
     except Exception as e:
         return {"settings_error": safe_str(e)}
@@ -317,6 +359,28 @@ def split_api_keys(value: str | None) -> list[str]:
     if not value:
         return []
     return [item.strip() for item in re.split(r"[\n,;]+", value) if item.strip()]
+
+
+def normalize_openai_base_url_setting(value: str | None, resource: str) -> str:
+    """Store an API base URL rather than an SDK-managed resource endpoint.
+
+    The OpenAI SDK appends ``/chat/completions`` and ``/embeddings`` itself.
+    Accepting a full endpoint in the settings UI without normalizing it would
+    otherwise produce paths such as ``/v1/embedding/embeddings`` and a 404.
+    """
+    if not value:
+        return ""
+
+    normalized = safe_str(value).strip().rstrip("/")
+    suffixes = {
+        "chat": ("/chat/completions", "/completions"),
+        "embedding": ("/embeddings", "/embedding"),
+    }
+    for suffix in suffixes.get(resource, ()):
+        if normalized.lower().endswith(suffix):
+            normalized = normalized[: -len(suffix)].rstrip("/")
+            break
+    return normalized
 
 def mask_api_keys_for_settings(value: str | None) -> str:
     """Return one masked line per configured key so the settings UI preserves key count."""
@@ -734,6 +798,7 @@ class QuotaConfigRequest(BaseModel):
     trial_docs_limit: int = 3
     trial_llm_calls_limit: int = 50
     trial_embedding_calls_limit: int = 200
+    reset_usage: bool = False
 
 
 class UserApiKeyRequest(BaseModel):
@@ -976,6 +1041,39 @@ async def quota_me(user: dict = Depends(require_current_user)):
     return {"success": True, "quota": auth_store.get_quota(user["id"])}
 
 
+@app.get("/admin/overview")
+async def get_admin_overview(user: dict = Depends(require_admin_user)):
+    users_data = auth_store.list_users()
+    return {
+        "success": True,
+        "overview": {
+            "users_total": len(users_data),
+            "regular_users": sum(1 for item in users_data if item.get("role") != "admin"),
+            "admins": sum(1 for item in users_data if item.get("role") == "admin"),
+            "quota_config": auth_store.get_quota_limits(),
+        },
+    }
+
+
+@app.get("/admin/users")
+async def get_admin_users(user: dict = Depends(require_admin_user)):
+    return {"success": True, "users": auth_store.list_users()}
+
+
+@app.post("/admin/users/{user_id}/quota/reset")
+async def reset_admin_user_quota(user_id: str, user: dict = Depends(require_admin_user)):
+    try:
+        return {"success": True, "quota": auth_store.reset_user_quota(user_id)}
+    except ValueError as e:
+        raise HTTPException(status_code=404, detail=safe_str(e))
+
+
+@app.post("/admin/quotas/reset")
+async def reset_all_admin_user_quotas(user: dict = Depends(require_admin_user)):
+    count = auth_store.reset_all_user_quotas()
+    return {"success": True, "reset_users": count}
+
+
 @app.get("/admin/quota-config")
 async def get_admin_quota_config(user: dict = Depends(require_admin_user)):
     return {"success": True, "quota_config": auth_store.get_quota_limits()}
@@ -988,7 +1086,8 @@ async def save_admin_quota_config(payload: QuotaConfigRequest, user: dict = Depe
         payload.trial_llm_calls_limit,
         payload.trial_embedding_calls_limit,
     )
-    return {"success": True, "quota_config": limits}
+    reset_users = auth_store.reset_all_user_quotas() if payload.reset_usage else 0
+    return {"success": True, "quota_config": limits, "reset_users": reset_users}
 
 
 @app.get("/user-api-keys")
@@ -1412,6 +1511,7 @@ class SettingsModel(BaseModel):
     llmGlobalMaxAsync: int = 16
     llmPerKeyMaxAsync: int = 4
     llmMaxRetries: int = 1
+    llmKeyCooldownSeconds: int = 60
     llmProviderStrategy: str = "priority_round_robin"
     llmProviders: List[LLMProviderModel] = Field(default_factory=list)
     # HyperRAG 闂傚倷娴囬褍顫濋敃鍌︾稏濠㈣埖鍔曠粻浼存煙闂傚鍔嶉柛銈嗗姈閵囧嫰寮介顫捕闂佹椿鍘介〃濠囧蓟濞戙垹鐒洪柛鎰剁細缁ㄧ敻姊虹紒妯烩拻闁告鍥ㄥ€剁€规洖娲犻崑鎾舵喆閸曨剛顦ュ┑鐐跺皺婵炩偓鐎规洘鍨块獮姗€骞栭鐔溠囨煙閸忚偐鏆橀柛銊ョ秺椤㈡挸鈽夐姀鈾€鎷洪梺鍛婄☉閿曘儳鈧灚鐟╅弻娑樷槈閸楃偞鐏撻梺?
@@ -1422,7 +1522,28 @@ class SettingsModel(BaseModel):
     # Cog-RAG闂傚倸鍊搁崐鐑芥嚄閸洖纾块柣銏㈩焾閻ょ偓绻濋棃娑卞剬闁逞屽墾缁犳挸鐣锋總绋课ㄩ柕澹懎骞€闂佽崵鍠愮划宀€鎹㈠鈧悰顔跨疀閺囨浜鹃柨婵嗛閺嬫稓绱掗埀顒勫醇閵忊€虫瀾闂婎偄娲︾粙鎴﹀礄?
     enableCogRAG: bool = True  # 闂傚倸鍊搁崐椋庣矆娓氣偓楠炲鏁嶉崟顐ｇ€抽悗骞垮劚椤︻垰效?缂傚倸鍊搁崐鎼佸磹妞嬪海鐭嗗〒姘ｅ亾鐎规洘鍔欓幃婊堟嚍閵夈儲鐣遍梻浣稿閸嬪懎煤閺嶎厼鍑犲ù锝呯畭娴滄粓鏌曟径妯虹仯妞ゆ柨妾?RAG闂傚倸鍊搁崐椋庣矆娓氣偓楠炲鍨鹃幇浣圭稁婵犵數濮甸懝鍓х玻濡ゅ懏鐓涢柛銉ｅ劚閻忊晝绱掗埀?
     # Hyper-RAG 婵犵數濮烽。钘壩ｉ崨鏉戠；闁告侗鍙庨悢鍡樹繆椤栨瑧绉挎繛鎴烆焸閺冨牆宸濇い鏃堟？缁ㄥ灚绻濋悽闈涗粶婵☆偅鐟╅獮鎰節濮橆厼浜楅梺閫炲苯澧撮柟顔筋殜閻涱噣宕归鐓庮潛婵犵數鍋涢惇浼村礉閹存繍鍤?
-    hyperrag_domain: str = "default"  # "default", "flow_battery", or custom domains
+    mineruApiBaseUrl: str = "https://mineru.net/api/v4"
+    mineruApiToken: str = ""
+    mineruModelVersion: str = "pipeline"
+    mineruLanguage: str = "ch"
+    mineruEnableOcr: bool = True
+    mineruEnableFormula: bool = True
+    mineruEnableTable: bool = True
+    mineruExtraFormats: List[str] = Field(default_factory=lambda: ["docx", "html"])
+    mineruPollIntervalSeconds: int = 3
+    mineruMaxPollAttempts: int = 100
+    mineruMaxFileMb: int = 200
+    mineruMaxResultMb: int = 300
+
+class UserRuntimeSettingsModel(BaseModel):
+    hyperrag_domain: str = "default"
+    experimentMode: str = "hyper_final"
+    promptProfile: str = "chemistry"
+    indexProfile: str = "dual_concat"
+    enableEntityNormalization: bool = True
+    enableMeasurementInstances: bool = True
+    enableEfuRepair: bool = True
+    enableHybridRerank: bool = True
 
 class APITestModel(BaseModel):
     apiKey: str
@@ -1457,11 +1578,17 @@ async def get_settings(user: dict = Depends(require_current_user)):
                     "message": "Operation completed"
                 }
             # 婵犵數濮烽弫鎼佸磻閻愬搫鍨傞柛顐ｆ礀缁犱即鏌涘┑鍕姢闁活厽鎸搁—鍐偓锝庝簻椤掋垻鈧娲橀悡锟犲蓟閻斿憡缍囬柛鎾楀懏娈搁梻浣虹帛閸旀洟鏁冮鍫濊摕闁挎繂顦粻娑欍亜閹烘垵鈧綊骞夐悡搴樻斀闁绘劕寮堕崳娲煟閳哄﹤鐏︾€殿喖顭烽幃銏ゆ偂鎼达綆鍚嬫俊鐐€栭弻銊╁触鐎ｎ喗鍊甸柣鎴烆焽缁犻箖鏌ㄥ┑鍡樺櫤闁瑰吋鍔欓弻銊╁即閵娿倝鍋楅梺缁樹緱閸犳绮欐径鎰闁?Key
-            settings_safe = settings.copy()
+            default_settings = SettingsModel().dict()
+            settings_safe = {
+                **default_settings,
+                **{key: value for key, value in settings.items() if key in default_settings},
+            }
             if 'apiKey' in settings_safe:
-                settings_safe['apiKey'] = '***' if settings_safe['apiKey'] else ''
+                settings_safe['apiKey'] = mask_api_keys_for_settings(settings_safe.get('apiKey'))
             if 'embeddingApiKey' in settings_safe:
                 settings_safe['embeddingApiKey'] = mask_api_keys_for_settings(settings_safe.get('embeddingApiKey'))
+            if 'mineruApiToken' in settings_safe:
+                settings_safe['mineruApiToken'] = '***' if settings_safe.get('mineruApiToken') else ''
             if isinstance(settings_safe.get('llmProviders'), list):
                 safe_providers = []
                 for provider in settings_safe.get('llmProviders', []):
@@ -1478,30 +1605,14 @@ async def get_settings(user: dict = Depends(require_current_user)):
             if user.get("role") != "admin":
                 settings_safe["apiKey"] = ""
                 settings_safe["embeddingApiKey"] = ""
+                settings_safe["mineruApiToken"] = ""
                 settings_safe["llmProviders"] = []
             return settings_safe
         else:
             # 闂傚倸鍊风粈渚€骞栭位鍥敃閿曗偓閻ょ偓绻濇繝鍌滃闁藉啰鍠栭弻鏇熺箾閸喖澹勫┑鐐叉▕娴滄粓宕橀埀顒€顪冮妶搴″箺闁搞劏鍩栫粋鎺懳熺悰鈩冩杸闂佸疇妫勫Λ妤呮倶閵夛妇绠惧璺侯儐缁€瀣殽閻愯尙绠抽柍褜鍓ㄧ紞鍡涘窗閺嶎偆鐭嗛柛顐犲灪閸犳劙鐓崶銊р槈闁?
-            return {
-                "apiKey": "",
-                "modelProvider": "openai",
-                "modelName": "gpt-4o-mini",
-                "baseUrl": "https://api.openai.com/v1",
-                "selectedDatabase": "",
-                "maxTokens": 2000,
-                "temperature": 0.7,
-                "llmTimeout": 600,
-                "llmModelMaxAsync": 16,
-                "llmGlobalMaxAsync": 16,
-                "llmPerKeyMaxAsync": 4,
-                "llmMaxRetries": 1,
-                "llmProviderStrategy": "priority_round_robin",
-                "llmProviders": [],
-                "embeddingModel": "text-embedding-3-small",
-                "embeddingDim": 1536,
-                "embeddingBaseUrl": "",
-                "embeddingApiKey": ""
-            }
+            settings_safe = SettingsModel().dict()
+            settings_safe["is_admin"] = user.get("role") == "admin"
+            return settings_safe
     except Exception as e:
         return {"success": False, "message": safe_str(e)}
 
@@ -1527,16 +1638,10 @@ async def save_settings(settings: SettingsModel, user: dict = Depends(require_ad
         )
 
         # 婵犵數濮烽弫鍛婃叏閻戝鈧倹绂掔€ｎ亞鍔﹀銈嗗坊閸嬫捇鏌涢悢閿嬪仴闁糕斁鍋撳銈嗗坊閸嬫挾绱撳鍜冭含妤犵偛鍟灒闁煎鍊楅悾钘夘渻閵堝簼绨芥い顐㈢翱ey闂?**闂傚倸鍊搁崐鐑芥倿閿旈敮鍋撶粭娑樻噽閻瑩鏌熸潏楣冩闁搞倖鍔栭妵鍕冀椤愵澀绮堕梺鎼炲妼閸婂綊濡甸崟顖氬唨闁靛ě浣插亾閹烘鐓冮柣鐔稿鏍＄紓浣虹帛缁诲牆螞閸愩劉妲堟繛鍡樺姈閸婄兘姊绘担椋庝覆閻庨潧鐭傚畷鎶芥晲婢跺﹨鎽曞┑鐐村灦椤倿鎮㈤崗鐓庝簵闁瑰吋鐣崹濠氬焵椤掍礁鍔ら柍瑙勫灴閹晠顢曢～顓烆棜婵犵數鍋為幐濠氬春閸愵喖纾婚柟鍓х帛閻撴瑦銇勯弽銊ㄥ闁哄棴绲块埀顒冾潐濞叉ê鐣濋幖浣哥畺闁绘劖浜介埀顒€鍊搁娆忣潖閺呭﹤鈹戦悩鍨毄闁稿鍋ゅ畷褰掑醇閺囩偟顔囬梺鍛婄缚閸庢娊鎯岄幘鍓佹／闁诡垎灞藉壄婵?
-        if settings_dict.get('apiKey') == '***':
-            # 闂傚倸鍊峰ù鍥х暦閸偅鍙忛柡澶嬪殮濞差亜鐓涢柛婊€鐒﹂弲顏堟偡濠婂嫬鐏村┑锛勬暬楠炲洭寮剁捄銊モ偓鐐差渻閵堝棗绗傜紒鈧担鍦浄闁靛繈鍊栭埛鎴犵磽娴ｇ櫢渚涙繛鍫熸閺岋絽螖閳ь剟鏁冮敂鎯у灊濠电姵鑹剧粻铏繆閵堝嫮顦﹀ù鐙€鍨辩换娑欐綇閸撗勫仹濡炪値鍘奸悧鎾诲春濞戙垹绫嶉柛顐ゅ枔閸樹粙姊洪棃娑氬闁瑰啿绻樿棢闁绘劗鏁哥壕濂告倵閿濆簼鎲炬俊鍙夋倐閺屽秶绱掑Ο璇茬３濡ょ姷鍋涢悧蹇撯槈閻㈢纾介柣娑氱y
-            if os.path.exists(SETTINGS_FILE):
-                with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
-                    existing_settings = json.load(f)
-                # 婵犵數濮烽弫鎼佸磿閹寸姴绶ら柦妯侯棦濞差亝鏅滈柣鎰靛墮鎼村﹪姊洪崨濠傚Е濞存粍鐗犲畷鎴﹀箻鐠囨彃鐎銈嗗姧缂嶅棗螞閸愵喗鍊甸悷娆忓绾炬悂鏌涢妸銈囩煓妤犵偛鍟存慨鈧柕鍫濇噹缁愭稒绻濋悽闈浶㈤悗姘煎櫍瀵娊濮€閵堝棌鎷绘繛杈剧到濠€鍗烇耿娴犲鐓曢柡鍌濇硶閻掑摜鈧娲栧﹢杈╁垝濮橆剦娼伴柕鏇炲潖y
-                settings_dict['apiKey'] = existing_settings.get('apiKey', '')
-            else:
-                # 婵犵數濮烽弫鍛婃叏閻戝鈧倹绂掔€ｎ亞鍔﹀銈嗗坊閸嬫捇鏌涢悢閿嬪仴闁糕斁鍋撳銈嗗坊閸嬫挾绱撳鍜冭含妤犵偛鍟灒閻犲洩灏欑粣鐐寸節閻㈤潧浠ч柛瀣崌閹繝濮€閵堝棌鎷洪梺鍝勫€堕崕鎻掆枍閸涘瓨鐓曢柣鏇氱閻忥絿绱掗纰辩吋妤犵偞甯掕灃濞达絽鎼獮妤佺節閻㈤潧孝闁挎洏鍊濋獮濠冩償閵婏絺鍋撻崒鐐茬闁兼祴鏅濋惁鍫ユ⒑闁偛鑻晶顖炴煙瀹勭増鍤囬柟顔界矊铻ｅ〒姘煎灙閸嬫挸鈽夐姀鈾€鎷洪梺鍛婄☉閿曘儳鈧灚鐟╅弻娑樷槈閸楃偞鐏撻梺閫炲苯澧婚柛娆忓暙椤繐煤椤忓嫪绱堕梺鍛婃处閸嬧偓闁稿鎸剧划娆徫涢崹顐ｃ仢闁轰焦鍔欏畷銊╊敂閸涱垪鍋撴繝姘拺闂傚牊绋撶粻鐐烘煕婵犲啰澧电€殿喗鐓￠、妤呭礋椤掆偓閳ь剙鐖奸弻锝夊箛椤栨氨鍘銈冨劚椤︾敻寮婚敐鍫㈢杸闁哄洨鍋為悘鍫ユ⒑鐠団€虫灕妞ゎ偄顦甸獮蹇涘川椤栨粎鐓撻柣鐘充航閸斿酣鍩ｉ妶澶嬧拺闁煎鍊曟牎闂佸憡姊归〃濠傜暦娴兼潙绠婚悹鍝勬惈閻忓﹤鈹戦绛嬬劸婵炲绋掔€靛ジ鎮╃紒妯煎幈闂佸搫娲㈤崝宀勭嵁濡ゅ懏鐓欓柤鑹版硾閸氬湱绱掓潏銊﹀鞍闁瑰嘲鎳愰幏鐘诲焺閸愭儳鎮堢紓鍌氬€搁崐鎼佸磹閻熼偊娼╅柕濞炬櫅缁?
-                settings_dict['apiKey'] = ''
+        settings_dict['apiKey'] = resolve_masked_api_key_text(
+            settings_dict.get('apiKey'),
+            existing_settings.get('apiKey', ''),
+        )
 
         # embeddingApiKey supports multiple keys separated by newline/comma/semicolon.
         # Preserve masked rows returned by GET /settings while allowing users to add/remove keys.
@@ -1544,7 +1649,19 @@ async def save_settings(settings: SettingsModel, user: dict = Depends(require_ad
             settings_dict.get('embeddingApiKey'),
             existing_settings.get('embeddingApiKey', ''),
         )
+        if settings_dict.get('mineruApiToken') == '***':
+            settings_dict['mineruApiToken'] = existing_settings.get('mineruApiToken', '')
 
+        # Persist canonical OpenAI-compatible API base URLs. The SDK appends
+        # resource paths, so saving /embedding or /chat/completions causes 404s.
+        settings_dict['baseUrl'] = normalize_openai_base_url_setting(
+            settings_dict.get('baseUrl'),
+            'chat',
+        )
+        settings_dict['embeddingBaseUrl'] = normalize_openai_base_url_setting(
+            settings_dict.get('embeddingBaseUrl') or settings_dict.get('baseUrl'),
+            'embedding',
+        )
         # 缂傚倸鍊搁崐鐑芥嚄閸洘鎯為幖娣妼閸屻劑鏌涢幘妤€鎳嶇粭澶岀磽娴ｇ绾х紒妤侇暥edding闂傚倸鍊搁崐鐑芥嚄閸洖纾块柣銏㈩焾閻ょ偓绻濋棃娑卞剬闁逞屽墾缁犳挸鐣锋總绋课ㄩ柕澹懎骞€闂佽崵鍠愮划宀€鎹㈠鈧畷娲焵椤掍降浜滈柟鍝勭Х閸忓矂鏌嶉娑欑闁靛洤瀚版俊鎼佸Ψ閿旂粯锛嗛梻浣筋嚃閸犳稑鈻斿☉顫稏婵犻潧娲︾紞鍥煃閸濆嫸宸ラ柡鍜佸墴濮?
         if 'embeddingBaseUrl' not in settings_dict:
             settings_dict['embeddingBaseUrl'] = ''
@@ -1555,6 +1672,10 @@ async def save_settings(settings: SettingsModel, user: dict = Depends(require_ad
             for provider_index, provider in enumerate(settings_dict.get('llmProviders', [])):
                 if not isinstance(provider, dict):
                     continue
+                provider['baseUrl'] = normalize_openai_base_url_setting(
+                    provider.get('baseUrl') or settings_dict.get('baseUrl'),
+                    'chat',
+                )
                 existing_provider = None
                 for old_provider in existing_providers:
                     if not isinstance(old_provider, dict):
@@ -1602,6 +1723,79 @@ async def save_settings(settings: SettingsModel, user: dict = Depends(require_ad
     except Exception as e:
         main_logger.error("Log message")
         return {"success": False, "message": safe_str(e)}
+
+@app.get("/user-runtime-settings")
+async def read_user_runtime_settings(user: dict = Depends(require_current_user)):
+    return {"success": True, "settings": get_user_runtime_settings(user["id"])}
+
+
+@app.post("/user-runtime-settings")
+async def save_user_runtime_settings(
+    payload: UserRuntimeSettingsModel,
+    user: dict = Depends(require_current_user),
+):
+    saved = auth_store.set_user_runtime_settings(user["id"], payload.dict())
+    return {"success": True, "settings": saved}
+
+
+def _require_mineru_batch_owner(batch_id: str, user: dict) -> None:
+    if user.get("role") == "admin":
+        return
+    owner = auth_store.get_config(f"mineru_batch_owner:{batch_id}")
+    if not owner or owner != user.get("id"):
+        raise HTTPException(status_code=403, detail="无权访问该转换任务")
+
+
+@app.get("/document-convert/mineru/config")
+async def get_document_convert_config(user: dict = Depends(require_current_user)):
+    return {"success": True, **public_mineru_config(load_mineru_config(SETTINGS_FILE))}
+
+
+@app.post("/document-convert/mineru")
+async def create_document_convert_task(
+    file: UploadFile = File(...),
+    user: dict = Depends(require_current_user),
+):
+    config = load_mineru_config(SETTINGS_FILE)
+    try:
+        content = await file.read()
+        filename = validate_upload(file.filename or "document.pdf", len(content), config)
+        consume_document_quota_if_needed(user, 1)
+        task = await submit_mineru_batch(filename, content, config)
+        auth_store.set_config(f"mineru_batch_owner:{task['batch_id']}", user["id"])
+        auth_store.set_config(f"mineru_batch_filename:{task['batch_id']}", filename)
+        return {"success": True, **task, "poll_interval_seconds": config["poll_interval_seconds"]}
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=safe_str(e)) from e
+    except HTTPException:
+        raise
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=safe_str(e)) from e
+    finally:
+        await file.close()
+
+
+@app.get("/document-convert/mineru/{batch_id}")
+async def get_document_convert_status(batch_id: str, user: dict = Depends(require_current_user)):
+    _require_mineru_batch_owner(batch_id, user)
+    try:
+        status = await get_mineru_batch_status(batch_id, load_mineru_config(SETTINGS_FILE))
+        status["filename"] = auth_store.get_config(f"mineru_batch_filename:{batch_id}", "")
+        return {"success": True, **status}
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=safe_str(e)) from e
+
+
+@app.get("/document-convert/mineru/{batch_id}/result")
+async def get_document_convert_result(batch_id: str, user: dict = Depends(require_current_user)):
+    _require_mineru_batch_owner(batch_id, user)
+    try:
+        result = await download_mineru_markdown(batch_id, load_mineru_config(SETTINGS_FILE))
+        result["filename"] = auth_store.get_config(f"mineru_batch_filename:{batch_id}", "")
+        return {"success": True, **result}
+    except Exception as e:
+        raise HTTPException(status_code=502, detail=safe_str(e)) from e
+
 
 @app.get("/llm-provider-pool/status")
 async def get_llm_provider_pool_status(user: dict = Depends(require_admin_user)):
@@ -1836,7 +2030,7 @@ async def test_database_connection(db_test: DatabaseTestModel):
 
 # 闂傚倸鍊搁崐鐑芥嚄閸洍鈧箓宕奸姀鈥冲簥闂佸壊鍋侀崕杈╃矆婢跺备鍋撻崗澶婁壕闂佸憡娲﹂崜娆撳礈?HyperRAG 闂傚倸鍊峰ù鍥敋瑜庨〃銉х矙閸柭も偓鍧楁⒑椤掆偓缁夊澹曠紒妯圭箚妞ゆ牗鑹鹃幃鎴炪亜?- 闂傚倸鍊搁崐宄懊归崶顒€违闁逞屽墴閺屾稓鈧綆鍋呭畷灞炬叏婵犲啯銇濇い銏℃礋閺佹劙宕堕崜浣风礃缂傚倸鍊风拋鏌ュ磻閹剧粯鍊甸柨婵嗛閺嬬喖鏌涙繝鍌滀粵缂佺粯鐩獮瀣倷閸偄娅ф繝鐢靛仜閻楀﹤螞閸愵喖钃熸繛鎴烇供濞尖晠鏌ㄥ┑鍡樺櫢濠㈣娲熷濠氬磼濞嗘埈妲梺鍦拡閸嬪﹨妫熷銈嗘尪閸ㄥ湱澹曢崸妤佺厸閻忕偠顕ч崝姘舵煛鐎ｂ晝鍔嶉柕鍥у瀵潙螖閳ь剚绂嶉幆顬棃鎮╅棃娑楁勃闂佸憡姊归悧鐘荤嵁韫囨稑宸濋柡澶嬪灩椤旀劖绻涙潏鍓у埌闁硅绻濋幃妤咁敆閸曨兘鎷虹紓鍌欑劍閿曗晛鈻撻弮鍫熺厽婵°倐鍋撴俊顐ｇ〒閸掓帗绻濋崶銊︽珖闂佺鏈銊╊敊?
 hyperrag_instances = {}
-hyperrag_working_dir = "hyperrag_cache"
+hyperrag_working_dir = str(Path(__file__).resolve().parent / "hyperrag_cache")
 
 # 闂傚倸鍊搁崐鐑芥嚄閸洍鈧箓宕奸姀鈥冲簥闂佸壊鍋侀崕杈╃矆婢跺备鍋撻崗澶婁壕闂佸憡娲﹂崜娆撳礈?Cog-RAG 闂傚倸鍊峰ù鍥敋瑜庨〃銉х矙閸柭も偓鍧楁⒑椤掆偓缁夊澹曠紒妯圭箚妞ゆ牗鑹鹃幃鎴炪亜?- 闂傚倸鍊搁崐宄懊归崶顒€违闁逞屽墴閺屾稓鈧綆鍋呭畷宀勬煙椤旂瓔娈滅€规洖缍婇、鏇㈡晲閸屾稑顏搁梺璇查閻忔艾顭垮Ο灏栧亾濮樼厧澧撮柨婵堝仜閳规垹鈧絽鐏氶弲锝夋⒑缂佹ɑ鐓ュ鐟帮躬瀹曨垶鍩€椤掑嫭鈷掗柛灞剧懆閸忓矂鏌熼搹顐ｅ碍闁挎洏鍨藉畷锟犳倻閸℃ê鍏?
 cograg_instances = {}
@@ -2565,8 +2759,7 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
         db_working_dir = os.path.join(hyperrag_working_dir, db_dir_name)
         Path(db_working_dir).mkdir(parents=True, exist_ok=True)
         
-        with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
-            settings = json.load(f)
+        settings = load_effective_settings()
 
         embedding_dim = settings.get("embeddingDim")
 
@@ -2679,8 +2872,7 @@ def get_or_create_hyperrag(database: str = None, chunk_size: int = None, chunk_o
     
     instance = hyperrag_instances[database]
     try:
-        with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
-            settings = json.load(f)
+        settings = load_effective_settings()
         requested_domain = settings.get("hyperrag_domain", getattr(instance, "domain", "default"))
         experiment_mode = settings.get("experimentMode", settings.get("experiment_mode", getattr(instance, "experiment_mode", "hyper_final")))
         try:
@@ -2813,21 +3005,29 @@ def normalize_query_result(result: Any) -> dict:
     return {"response": safe_str(result), "entities": [], "themes": [], "hyperedges": [], "text_units": []}
 
 
+def get_public_demo_status() -> dict:
+    """Inspect the one configured public demo without exposing server paths."""
+    configured = file_manager.sanitize_database_name(
+        os.getenv("HYPERCHE_PUBLIC_DEMO_DATABASE", DEFAULT_PUBLIC_DEMO_DATABASE)
+    )
+    status = inspect_public_demo_cache(hyperrag_working_dir, configured)
+    status.update({"success": True, "demo": public_demo_metadata(configured)})
+    return status
+
+
 def resolve_public_demo_database() -> tuple[str | None, dict | None]:
-    """Resolve the read-only public demo database."""
-    configured = file_manager.sanitize_database_name(os.getenv("HYPERCHE_PUBLIC_DEMO_DATABASE", "public_example"))
+    """Resolve the single read-only liquid-flow-battery demo database."""
+    status = get_public_demo_status()
+    if not status["ready"]:
+        return None, None
+
+    configured = status["database"]
     metadata = getattr(kb_manager, "_load_metadata", lambda: {})()
-
-    configured_dir = os.path.join(hyperrag_working_dir, configured)
-    if os.path.isdir(configured_dir):
-        return configured, metadata.get(configured)
-    if configured in metadata:
-        return metadata[configured].get("database_name", configured), metadata[configured]
-
-    for kb in metadata.values():
-        if kb.get("name") == "example" or kb.get("database_name") == "example":
-            return kb.get("database_name"), kb
-    return None, None
+    kb = dict(public_demo_metadata(configured))
+    kb.update(metadata.get(configured) or {})
+    kb["database_name"] = configured
+    kb.setdefault("domain", "flow_battery")
+    return configured, kb
 
 
 def build_rag_query_response(query: QueryModel, result: Any, database: str, rag_system: str = "hyperrag") -> dict:
@@ -2946,27 +3146,32 @@ async def query_hyperrag(query: QueryModel, user: dict = Depends(require_current
             )
 
             result = await rag.aquery(query.question, param)
-
-            return {
-                "success": True,
-                "response": result.get("response", ""),
-                "entities": result.get("entities", []),
-                "hyperedges": result.get("hyperedges", []),
-                "text_units": result.get("text_units", []),
-                "mode": query.mode,
-                "rag_system": "hyperrag",
-                "question": query.question,
-                "database": query.database or "default"
-            }
+            return build_rag_query_response(query, result, query.database, "hyperrag")
         else:
             return {"success": False, "message": f"Unknown query mode: {query.mode}"}
 
     except Exception as e:
-        main_logger.error("Log message")
-        return {"success": False, "message": f"Query failed: {safe_str(e)}"}
-        
-    except Exception as e:
-        return {"success": False, "message": f"Query failed: {safe_str(e)}"}
+        detailed_error = log_detailed_exception(
+            main_logger,
+            "HyperRAG query failed",
+            e,
+            {
+                "mode": query.mode,
+                "database": query.database,
+                "runtime_settings": get_runtime_settings_context(),
+            },
+        )
+        return {
+            "success": False,
+            "message": f"Query failed: {extract_user_friendly_error(detailed_error)}",
+            "error_type": type(e).__name__,
+        }
+
+@app.get("/public/demo/status")
+async def public_demo_status():
+    """Return cache readiness for the single public liquid-flow-battery demo."""
+    return get_public_demo_status()
+
 
 @app.post("/public/demo/query")
 async def public_demo_query(query: QueryModel):
@@ -2981,7 +3186,7 @@ async def public_demo_query(query: QueryModel):
         if not database:
             return {
                 "success": False,
-                "message": "Public demo database is not configured. Set HYPERCHE_PUBLIC_DEMO_DATABASE or create an example KB.",
+                "message": "液流电池公开实例缓存未安装完整。请下载 Git LFS 中的 web-ui/backend/hyperrag_cache/case1 文件。",
             }
 
         rag = get_or_create_hyperrag(database)
@@ -3001,7 +3206,7 @@ async def public_demo_query(query: QueryModel):
         result = await rag.aquery(query.question, param)
         payload = build_rag_query_response(query, result, database, "hyperrag")
         payload["demo"] = True
-        payload["kb_name"] = kb.get("name") if kb else "example"
+        payload["kb_name"] = kb.get("name") if kb else "液流电池公开知识库"
         payload["domain"] = getattr(rag, "domain", None)
         return payload
 
@@ -3023,7 +3228,7 @@ async def public_demo_query_stream(query: QueryModel):
 
             database, kb = resolve_public_demo_database()
             if not database:
-                yield f"event: error\ndata: {json.dumps({'message': 'Public demo database is not configured.'}, ensure_ascii=False)}\n\n"
+                yield f"event: error\ndata: {json.dumps({'message': '液流电池公开实例缓存未安装完整。请先执行 git lfs pull。'}, ensure_ascii=False)}\n\n"
                 return
 
             rag = get_or_create_hyperrag(database)
@@ -3034,7 +3239,7 @@ async def public_demo_query_stream(query: QueryModel):
                 "success": True,
                 "demo": True,
                 "database": database,
-                "kb_name": kb.get("name") if kb else "example",
+                "kb_name": kb.get("name") if kb else "液流电池公开知识库",
                 "domain": getattr(rag, "domain", None),
                 "mode": query.mode,
             }
@@ -4149,17 +4354,13 @@ async def embed_files_with_progress(request: FileEmbedRequest, user: dict = Depe
             request.chunk_overlap = kb.get("chunk_overlap", request.chunk_overlap)
             request.update_file_database = True
             # 闂傚倸鍊峰ù鍥х暦閸偅鍙忕€规洖娲ㄩ惌鍡椕归敐鍫綈婵炲懐濮撮湁闁绘ê妯婇崕鎰版煕鐎ｅ吀閭柡灞剧洴閸╁嫰宕橀崹顔煎絾缂傚倷鐒﹂崬鑽ょ礊娓氣偓瀵鈽夐姀鐘靛姶闂佸憡鍔楅崑鎾绘偩婵傚憡鈷?- 闂傚倸鍊搁崐鐑芥嚄閸洖纾块柣銏㈩焾閻ょ偓绻涢幋娆忕仾闁稿鍊濋弻鏇熺箾瑜嶇€氼厼鈻撴导瀛樷拺闁革富鍙€濡炬悂鏌涢悩宕囧⒌鐎规洩绻濋獮搴ㄦ嚍閵夈儮鍋撻崹顐ょ闁瑰鍎愭导鍡涙煙鏉堥箖妾柛瀣€块弻宥堫檨闁告挾鍠栧濠氭晲婢跺浜归柡澶婄墐閺呪晛危椤旂晫绡€闁冲皝鍋撻柛灞剧矌閻撴捇姊虹拠鈥虫灈婵炲皷鈧磭鏆﹂柛妤冨亹濡插牊淇婇娑欍仧婵☆偆鍠栧缁樻媴鐟欏嫬浠╅梺绋块椤嘲顫忔禒瀣妞ゆ牭绲鹃弲婵嬫⒑閼恒儍顏埶囬鈶斤綁宕奸妷锔惧幍闂佽鍨庣仦鑺ヮ啀闂?domain
+            # Keep knowledge-base domain changes scoped to the current user.
             try:
-                if os.path.exists(SETTINGS_FILE):
-                    with open(SETTINGS_FILE, 'r', encoding='utf-8') as f:
-                        _settings = json.load(f)
-                else:
-                    _settings = {}
-                _settings["hyperrag_domain"] = kb.get("domain", "default")
-                with open(SETTINGS_FILE, 'w', encoding='utf-8') as f:
-                    json.dump(_settings, f, ensure_ascii=False, indent=2)
+                runtime_settings = get_user_runtime_settings(user.get("id"))
+                runtime_settings["hyperrag_domain"] = kb.get("domain", "default")
+                auth_store.set_user_runtime_settings(user["id"], runtime_settings)
             except Exception as e:
-                main_logger.warning("Log message")
+                main_logger.warning(f"Unable to persist user HyperRAG domain: {safe_str(e)}")
 
     # 缂傚倸鍊搁崐鎼佸磹閻戣姤鍊块柨鏇炲€搁拑鐔兼煏婵炵偓娅撻柡浣稿閺屾稑鈽夐崡鐐茬闂佸搫妫庨崐婵嬪蓟濞戙垹鐒洪柛蹇婃櫆閸ㄥ墎绮嬪澶娢у璺侯儑閸樻悂姊虹粙鎸庢拱缂佸鍨块、姘煥閸涱垳锛滈梺閫炲苯澧撮柛鈹惧亾濡炪倖甯婇懗鍓佸姬閳ь剟姊洪棃娑㈢崪缂佹彃澧藉☉鍨偅閸愨晛鈧灚鎱ㄥΟ鐓庡付婵炲懎绉甸〃銉╂倷閹绘帗娈茬紓浣虹帛缁诲牆鐣烽幒妤€围闁告侗鍣崥娆撴⒒閸屾瑧绐旈柍褜鍓涢崑娑㈡嚐椤栨稒娅犳い鏍仦閻撴瑥銆掑顒備虎濠碘€虫健閺屽秷顧侀柛鎾卞妿缁辩偤宕卞☉妯碱槶濠殿喗顭堥崺鏍磻閳哄懏鈷戞い鎺嗗亾缂佸鏁婚幃锟犲即閻旇櫣鐦堥梻鍌氱墛缁嬫帡藟閻樼鍋撳☉娆戠畼缂?
     if request.kb_name and not request.target_database:

@@ -11,6 +11,7 @@ import os
 from pathlib import Path
 import re
 import sys
+import time
 from typing import Any, Iterable
 
 REPO_ROOT = Path(__file__).resolve().parents[1]
@@ -26,7 +27,7 @@ for _stream in (sys.stdout, sys.stderr):
 from hyperrag import HyperRAG
 from hyperrag.experiment import resolve_experiment_mode, write_run_config
 from hyperrag.llm import openai_complete_if_cache, openai_embedding
-from hyperrag.utils import EmbeddingFunc
+from hyperrag.utils import EmbeddingFunc, logger
 
 
 def text_hash(text: str) -> str:
@@ -279,14 +280,37 @@ def positive_int_env(name: str, default: int) -> int:
 def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], timeout: float):
     entries = load_llm_provider_entries(default_model=model, default_base_url=base_url, default_api_keys=api_keys)
     pool = AsyncKeyPool(entries, name="LLM provider pool")
+    request_counter = 0
+
+    def log_pool(message: str) -> None:
+        print(message, flush=True)
+        logger.info(message)
 
     async def llm_func(prompt: str, system_prompt=None, history_messages=None, **kwargs):
+        nonlocal request_counter
+        request_counter += 1
+        request_id = request_counter
         attempts = max(1, min(len(entries), positive_int_env("LLM_KEY_ATTEMPTS", len(entries))))
         last_exc = None
+        request_start = time.perf_counter()
+        log_pool(
+            f"[LLMPool] REQUEST START id={request_id} model={model} "
+            f"prompt_chars={len(prompt or '')} pool_size={len(entries)} "
+            f"max_attempts={attempts} timeout={timeout:.1f}s"
+        )
         for attempt in range(attempts):
             entry_index, entry = await pool.next()
+            attempt_start = time.perf_counter()
+            provider = entry.get("provider") or "unknown"
+            key_slot = entry.get("key_index", 0) + 1
+            key_total = entry.get("key_total", "?")
+            log_pool(
+                f"[LLMPool] ATTEMPT START id={request_id} attempt={attempt + 1}/{attempts} "
+                f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                f"key_slot={key_slot}/{key_total} model={entry['model']}"
+            )
             try:
-                return await openai_complete_if_cache(
+                response = await openai_complete_if_cache(
                     entry["model"],
                     prompt,
                     system_prompt=system_prompt,
@@ -296,14 +320,30 @@ def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], tim
                     timeout=timeout,
                     **kwargs,
                 )
+                log_pool(
+                    f"[LLMPool] ATTEMPT DONE id={request_id} attempt={attempt + 1}/{attempts} "
+                    f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                    f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
+                    f"response_chars={len(response) if isinstance(response, str) else 0}"
+                )
+                log_pool(
+                    f"[LLMPool] REQUEST DONE id={request_id} "
+                    f"elapsed={time.perf_counter() - request_start:.2f}s"
+                )
+                return response
             except Exception as exc:
                 last_exc = exc
-                print(
-                    f"[BuildExperiment] LLM call failed with provider={entry.get('provider')} "
-                    f"entry={entry_index + 1}/{len(entries)} key={entry.get('key_index', 0) + 1}/{entry.get('key_total', '?')} "
-                    f"attempt={attempt + 1}/{attempts}: {type(exc).__name__}: {exc}",
-                    flush=True,
+                log_pool(
+                    f"[LLMPool] ATTEMPT FAILED id={request_id} attempt={attempt + 1}/{attempts} "
+                    f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                    f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
+                    f"error={type(exc).__name__}: {exc}"
                 )
+        log_pool(
+            f"[LLMPool] REQUEST FAILED id={request_id} "
+            f"elapsed={time.perf_counter() - request_start:.2f}s attempts={attempts} "
+            f"error={type(last_exc).__name__}: {last_exc}"
+        )
         raise last_exc
 
     return llm_func
@@ -459,6 +499,9 @@ async def amain() -> None:
         print(f"[BuildExperiment] resume enabled; completed docs detected={len(completed_doc_ids)}", flush=True)
 
     total = len(documents)
+    success_count = 0
+    error_count = 0
+    failed_doc_ids: list[str] = []
     for index, doc in enumerate(documents, start=1):
         doc_id = str(doc["doc_id"])
         if args.resume and doc_id in completed_doc_ids:
@@ -498,7 +541,10 @@ async def amain() -> None:
                 },
             )
             print(f"[BuildExperiment] success {index}/{total}: {doc_id}", flush=True)
+            success_count += 1
         except Exception as exc:
+            error_count += 1
+            failed_doc_ids.append(doc_id)
             append_jsonl(
                 progress_path,
                 {
@@ -511,8 +557,17 @@ async def amain() -> None:
                 },
             )
             print(f"[BuildExperiment] error {index}/{total}: {doc_id}: {type(exc).__name__}: {exc}", flush=True)
-            raise
-    print(f"[BuildExperiment] cache build complete: {cache_dir.resolve()}", flush=True)
+            print(
+                f"[BuildExperiment] continuing after failed document {doc_id}; "
+                "it remains incomplete and will be retried by the next --resume run",
+                flush=True,
+            )
+            continue
+    print(
+        f"[BuildExperiment] cache build pass complete: {cache_dir.resolve()} "
+        f"success={success_count} errors={error_count} failed_docs={failed_doc_ids}",
+        flush=True,
+    )
 
 
 def main() -> None:

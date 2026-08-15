@@ -14,6 +14,7 @@ from collections import Counter, defaultdict
 import json
 import math
 import re
+import sys
 from pathlib import Path
 from typing import Any
 
@@ -49,9 +50,6 @@ GROUP_LABELS = {
     "original_hypergraph": "Original Hyper-RAG",
     "chem_prompt_graph": "C-Graph",
     "chem_prompt_hypergraph": "C-HG",
-    "chem_norm_hypergraph": "Norm-HG",
-    "chem_norm_dual_index": "Norm-HG + Surface/Canonical Dual Index",
-    "chem_norm_reranker": "Norm-HG + Reranker",
 }
 
 TOKEN_CACHE: dict[tuple[str, str], list[str]] = {}
@@ -315,6 +313,11 @@ def main() -> None:
     parser.add_argument("--limit", type=int, help="Evaluate only the first N queries for smoke tests.")
     args = parser.parse_args()
 
+    print(
+        "[RetrievalBenchmark] WARNING: legacy evaluator uses system-local Top-k IDCG; "
+        "use build_shared_retrieval_pool.py + evaluate_shared_retrieval_qrels.py for formal cross-system comparison.",
+        file=sys.stderr,
+    )
     args.output_dir.mkdir(parents=True, exist_ok=True)
     candidates, qrel_map, query_map = read_inputs(args.candidates, args.qrels, args.queries)
     by_query_group: dict[tuple[str, str], list[dict[str, Any]]] = defaultdict(list)
@@ -328,9 +331,6 @@ def main() -> None:
         ("original_hypergraph", "current_order", "original_hypergraph"),
         ("chem_prompt_graph", "current_order", "chem_prompt_graph"),
         ("chem_prompt_hypergraph", "current_order", "chem_prompt_hypergraph"),
-        ("chem_norm_hypergraph", "current_order", "chem_norm_hypergraph"),
-        ("chem_norm_dual_index", "dual_index", "chem_norm_hypergraph"),
-        ("chem_norm_reranker", "reranker", "chem_norm_hypergraph"),
     ]
 
     summary_rows: list[dict[str, Any]] = []
@@ -407,6 +407,8 @@ def main() -> None:
     write_csv(args.output_dir / "retrieval_benchmark_per_query.csv", per_query_rows)
     write_csv(args.output_dir / "retrieval_benchmark_ranked_topk.csv", ranked_rows)
     report = {
+        "evaluation_status": "diagnostic_only_system_local_idcg",
+        "warning": "Not valid for formal cross-system gNDCG comparison; use pooled chunk-level qrels and shared IDCG.",
         "candidate_file": str(args.candidates),
         "qrels_file": str(args.qrels),
         "queries_file": str(args.queries),

@@ -71,6 +71,8 @@ user_quotas = Table(
     Column("trial_embedding_calls_used", Integer, nullable=False, default=0),
     Column("trial_llm_calls_used", Integer, nullable=False, default=0),
     Column("trial_docs_used", Integer, nullable=False, default=0),
+    # Kept under the legacy column name for database compatibility. The value
+    # now represents the next daily quota reset time.
     Column("monthly_reset_at", DateTime(timezone=True), nullable=False),
 )
 
@@ -263,6 +265,38 @@ class AuthStore:
             else:
                 conn.execute(insert(app_config).values(key=key, value=str(value)))
 
+    def get_user_runtime_settings(self, user_id: str) -> dict[str, Any]:
+        defaults: dict[str, Any] = {
+            "hyperrag_domain": "default",
+            "experimentMode": "hyper_final",
+            "promptProfile": "chemistry",
+            "indexProfile": "dual_concat",
+            "enableEntityNormalization": True,
+            "enableMeasurementInstances": True,
+            "enableEfuRepair": True,
+            "enableHybridRerank": True,
+        }
+        raw = self.get_config(f"user_runtime_settings:{user_id}")
+        if not raw:
+            return defaults
+        try:
+            saved = json.loads(raw)
+        except (TypeError, json.JSONDecodeError):
+            return defaults
+        if not isinstance(saved, dict):
+            return defaults
+        return {**defaults, **{key: saved[key] for key in defaults if key in saved}}
+
+    def set_user_runtime_settings(self, user_id: str, payload: dict[str, Any]) -> dict[str, Any]:
+        current = self.get_user_runtime_settings(user_id)
+        allowed = set(current)
+        merged = {**current, **{key: payload[key] for key in allowed if key in payload}}
+        self.set_config(
+            f"user_runtime_settings:{user_id}",
+            json.dumps(merged, ensure_ascii=False, separators=(",", ":")),
+        )
+        return merged
+
     def get_quota_limits(self) -> dict[str, int]:
         return {
             "trial_docs_limit": int(self.get_config("trial_docs_limit", os.getenv("TRIAL_DOC_LIMIT", "3")) or 3),
@@ -280,8 +314,8 @@ class AuthStore:
         return self.get_quota_limits()
 
     def ensure_admin_user(self) -> None:
-        email = (os.getenv("HYPERCHE_ADMIN_EMAIL") or "admin@123.com").strip().lower()
-        password = os.getenv("HYPERCHE_ADMIN_PASSWORD") or "admin123"
+        email = (os.getenv("HYPERCHE_ADMIN_EMAIL") or "cupzhouth@admin.com").strip().lower()
+        password = os.getenv("HYPERCHE_ADMIN_PASSWORD") or "zhouth"
         display_name = os.getenv("HYPERCHE_ADMIN_NAME") or "HyperChE Admin"
         now = utcnow()
         with self.engine.begin() as conn:
@@ -325,7 +359,10 @@ class AuthStore:
         return self.get_quota_limits()["trial_embedding_calls_limit"]
 
     def _quota_reset_at(self) -> datetime:
-        return utcnow() + timedelta(days=30)
+        now = utcnow()
+        # Reset at the next UTC midnight. Keeping one global boundary makes
+        # the daily public allowance predictable for every account.
+        return datetime(now.year, now.month, now.day, tzinfo=timezone.utc) + timedelta(days=1)
 
     def _ensure_quota(self, conn, user_id: str) -> None:
         row = conn.execute(select(user_quotas).where(user_quotas.c.user_id == user_id)).mappings().first()
@@ -341,8 +378,13 @@ class AuthStore:
             )
             return
 
+        now = utcnow()
         reset_at = _as_aware_utc(row["monthly_reset_at"])
-        if reset_at and reset_at <= utcnow():
+        expected_reset_at = self._quota_reset_at()
+        # The existing column name is kept for database compatibility, but its
+        # value must always point to the next UTC midnight. Any other future
+        # boundary is a legacy monthly row and is migrated on first access.
+        if not reset_at or reset_at <= now or reset_at != expected_reset_at:
             conn.execute(
                 update(user_quotas)
                 .where(user_quotas.c.user_id == user_id)
@@ -350,7 +392,7 @@ class AuthStore:
                     trial_embedding_calls_used=0,
                     trial_llm_calls_used=0,
                     trial_docs_used=0,
-                    monthly_reset_at=self._quota_reset_at(),
+                    monthly_reset_at=expected_reset_at,
                 )
             )
 
@@ -411,6 +453,87 @@ class AuthStore:
             self._ensure_quota(conn, user_id)
             return dict(row)
 
+    def list_users(self) -> list[dict[str, Any]]:
+        """Return users with quota usage for the administrator console."""
+        limits = self.get_quota_limits()
+        with self.engine.begin() as conn:
+            rows = conn.execute(
+                select(
+                    users.c.id,
+                    users.c.email,
+                    users.c.display_name,
+                    users.c.role,
+                    users.c.created_at,
+                    users.c.last_login_at,
+                ).order_by(users.c.created_at.desc())
+            ).mappings().all()
+
+            result = []
+            for row in rows:
+                self._ensure_quota(conn, row["id"])
+                quota = conn.execute(
+                    select(user_quotas).where(user_quotas.c.user_id == row["id"])
+                ).mappings().one()
+                is_admin = row["role"] == "admin"
+                result.append(
+                    {
+                        "id": row["id"],
+                        "email": row["email"],
+                        "display_name": row["display_name"],
+                        "role": row["role"],
+                        "created_at": row["created_at"].isoformat() if row["created_at"] else None,
+                        "last_login_at": row["last_login_at"].isoformat() if row["last_login_at"] else None,
+                        "quota": {
+                            "trial_docs_used": 0 if is_admin else quota["trial_docs_used"],
+                            "trial_docs_limit": 999999 if is_admin else limits["trial_docs_limit"],
+                            "trial_llm_calls_used": 0 if is_admin else quota["trial_llm_calls_used"],
+                            "trial_llm_calls_limit": 999999 if is_admin else limits["trial_llm_calls_limit"],
+                            "trial_embedding_calls_used": 0 if is_admin else quota["trial_embedding_calls_used"],
+                            "trial_embedding_calls_limit": 999999 if is_admin else limits["trial_embedding_calls_limit"],
+                            "daily_reset_at": quota["monthly_reset_at"].isoformat() if quota["monthly_reset_at"] else None,
+                            "unlimited": is_admin,
+                        },
+                    }
+                )
+            return result
+
+    def reset_user_quota(self, user_id: str) -> dict[str, Any]:
+        with self.engine.begin() as conn:
+            user_exists = conn.execute(select(users.c.id).where(users.c.id == user_id)).first()
+            if not user_exists:
+                raise ValueError("User not found")
+            self._ensure_quota(conn, user_id)
+            conn.execute(
+                update(user_quotas)
+                .where(user_quotas.c.user_id == user_id)
+                .values(
+                    trial_embedding_calls_used=0,
+                    trial_llm_calls_used=0,
+                    trial_docs_used=0,
+                    monthly_reset_at=self._quota_reset_at(),
+                )
+            )
+        return self.get_quota(user_id)
+
+    def reset_all_user_quotas(self) -> int:
+        """Reset all non-admin usage after public daily limits change."""
+        with self.engine.begin() as conn:
+            user_ids = conn.execute(select(users.c.id).where(users.c.role != "admin")).scalars().all()
+            reset_at = self._quota_reset_at()
+            for user_id in user_ids:
+                self._ensure_quota(conn, user_id)
+                conn.execute(
+                    update(user_quotas)
+                    .where(user_quotas.c.user_id == user_id)
+                    .values(
+                        trial_embedding_calls_used=0,
+                        trial_llm_calls_used=0,
+                        trial_docs_used=0,
+                        monthly_reset_at=reset_at,
+                    )
+                )
+            return len(user_ids)
+
     def user_from_token(self, token: str | None) -> dict[str, Any] | None:
         if not token:
             return None
@@ -430,6 +553,7 @@ class AuthStore:
                 "trial_embedding_calls_used": 0,
                 "trial_embedding_calls_limit": 999999,
                 "monthly_reset_at": None,
+                "daily_reset_at": None,
                 "unlimited": True,
             }
         with self.engine.begin() as conn:
@@ -443,6 +567,7 @@ class AuthStore:
                 "trial_embedding_calls_used": row["trial_embedding_calls_used"],
                 "trial_embedding_calls_limit": self.trial_embedding_limit,
                 "monthly_reset_at": row["monthly_reset_at"].isoformat() if row["monthly_reset_at"] else None,
+                "daily_reset_at": row["monthly_reset_at"].isoformat() if row["monthly_reset_at"] else None,
             }
 
     def consume_quota(self, user_id: str, quota_type: str, amount: int = 1) -> None:

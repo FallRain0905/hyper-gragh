@@ -14,6 +14,7 @@ from .utils import (
     logger,
     clean_str,
     compute_mdhash_id,
+    relationship_vector_id,
     decode_tokens_by_tiktoken,
     encode_string_by_tiktoken,
     is_float_regex,
@@ -78,6 +79,37 @@ def _format_llm_exception(error: Exception) -> str:
 def _log_step_exception(chunk_key: str, step: str, label: str, error: Exception) -> None:
     detail = _format_llm_exception(error)
     logger.error(f"[{chunk_key}] {step} FAILED - {label}: {detail}")
+
+
+async def _await_with_llm_heartbeat(
+    awaitable,
+    *,
+    chunk_key: str,
+    step: str,
+    label: str,
+    interval: float = 60.0,
+):
+    """Await a long LLM request while emitting periodic progress logs.
+
+    Provider calls for long chemistry chunks can legitimately take many minutes.
+    Without this heartbeat, the log stays silent between "Calling LLM" and
+    "LLM returned", which makes a healthy but slow request look stuck.
+    """
+    task = asyncio.create_task(awaitable)
+    start = time.perf_counter()
+    try:
+        while True:
+            done, _ = await asyncio.wait({task}, timeout=interval)
+            if task in done:
+                return await task
+            logger.info(
+                f"[{chunk_key}] {step}: still waiting for {label} "
+                f"after {time.perf_counter() - start:.2f}s"
+            )
+    except Exception:
+        if not task.done():
+            task.cancel()
+        raise
 
 
 def _get_max_entities_per_chunk(global_config: dict) -> int:
@@ -534,6 +566,21 @@ def parse_json_combined_relationships(json_str: str, chunk_key: str = "") -> tup
     )
     return low_relations, high_relations
 
+def _repair_invalid_json_escapes(json_text: str) -> tuple[str, int]:
+    """Escape JSON-invalid backslashes commonly emitted in chemistry/LaTeX text.
+
+    Valid JSON escapes (including ``\\uXXXX``) are preserved. Sequences such as
+    ``\\mathrm``, ``\\mu``, ``\\ce`` and ``\\Delta`` are converted to literal
+    backslashes so the model response can be parsed without another LLM call.
+    """
+    return re.subn(
+        r'\\(?!["\\/bfnrt]|u[0-9a-fA-F]{4})',
+        r'\\\\',
+        json_text,
+    )
+
+
+
 def parse_json_one_pass_extraction(json_str: str, chunk_key: str = "") -> tuple[list, list, list]:
     """
     Parse one-pass JSON extraction output.
@@ -563,9 +610,13 @@ def parse_json_one_pass_extraction(json_str: str, chunk_key: str = "") -> tuple[
         logger.warning(f"[{chunk_key}] parse_json_one_pass_extraction: JSON decode error at position {e.pos}: {e.msg}")
         try:
             fixed_json = re.sub(r',\s*([}\]])', r'\1', extracted_json)
+            fixed_json, repaired_escape_count = _repair_invalid_json_escapes(fixed_json)
             fixed_json = re.sub(r'\s+', ' ', fixed_json)
             data = json.loads(fixed_json)
-            logger.info(f"[{chunk_key}] parse_json_one_pass_extraction: Successfully parsed after fixing")
+            logger.info(
+                f"[{chunk_key}] parse_json_one_pass_extraction: Successfully parsed after fixing "
+                f"(invalid_escapes_repaired={repaired_escape_count})"
+            )
         except Exception as e2:
             logger.warning(f"[{chunk_key}] parse_json_one_pass_extraction: Fix attempt failed: {e2}")
             return [], [], []
@@ -594,6 +645,35 @@ def parse_json_one_pass_extraction(json_str: str, chunk_key: str = "") -> tuple[
         f"{len(high_relations)} high-order hyperedges"
     )
     return entities, low_relations, high_relations
+
+
+def _is_valid_empty_one_pass_extraction(json_str: str) -> bool:
+    """Return True only for a well-formed one-pass response with three empty lists."""
+    cleaned = re.sub(r'```json\s*', '', json_str or "")
+    cleaned = re.sub(r'```\s*', '', cleaned).strip()
+    json_match = re.search(r'\{.*\}', cleaned, re.DOTALL)
+    if not json_match:
+        return False
+    try:
+        data = json.loads(json_match.group())
+    except json.JSONDecodeError:
+        try:
+            fixed_json = re.sub(r',\s*([}\]])', r'\1', json_match.group())
+            data = json.loads(fixed_json)
+        except Exception:
+            return False
+    if not isinstance(data, dict):
+        return False
+    required_fields = (
+        "entities",
+        "low_order_relations",
+        "high_order_hyperedges",
+    )
+    return all(
+        field in data and isinstance(data[field], list) and len(data[field]) == 0
+        for field in required_fields
+    )
+
 
 def convert_json_entity_to_standard_format(entity: dict, chunk_key: str = "") -> dict:
     """
@@ -2138,7 +2218,12 @@ async def _process_json_format_extraction(
             try:
                 logger.info(f"[{chunk_key}] Step 1P: Calling LLM for one-pass entity + relation extraction...")
                 step_start = time.perf_counter()
-                one_pass_result = await counted_llm_func(one_pass_prompt)
+                one_pass_result = await _await_with_llm_heartbeat(
+                    counted_llm_func(one_pass_prompt),
+                    chunk_key=chunk_key,
+                    step="Step 1P",
+                    label="one-pass entity + relation extraction",
+                )
                 logger.info(
                     f"[{chunk_key}] Step 1P: LLM returned {len(one_pass_result)} chars "
                     f"in {time.perf_counter() - step_start:.2f}s"
@@ -2152,15 +2237,62 @@ async def _process_json_format_extraction(
                         f"[{chunk_key}] Step 1P: One-pass parsed entities={len(entities_json)}, "
                         f"low={len(one_pass_low_relations_json)}, high={len(one_pass_high_relations_json)}"
                     )
+                elif _is_valid_empty_one_pass_extraction(one_pass_result):
+                    one_pass_used = True
+                    logger.info(
+                        f"[{chunk_key}] Step 1P: Provider returned a valid empty extraction; "
+                        "accepting this chunk without entities or relations"
+                    )
+                    logger.info(
+                        f"[{chunk_key}] LLM call summary: calls={llm_call_count}, "
+                        f"elapsed={time.perf_counter() - chunk_extract_start:.2f}s, "
+                        "status=valid_empty"
+                    )
+                    return [], []
                 else:
-                    if bool(global_config.get("enable_one_pass_fallback", False)):
-                        logger.warning(f"[{chunk_key}] Step 1P: One-pass returned no entities; falling back to two-step JSON extraction")
-                    else:
-                        logger.warning(f"[{chunk_key}] Step 1P: One-pass returned no entities; skipping chunk without two-step fallback")
+                    logger.warning(
+                        f"[{chunk_key}] Step 1P: One-pass returned no entities; "
+                        "refreshing once from the provider and replacing the cached response"
+                    )
+                    refresh_start = time.perf_counter()
+                    refreshed_result = await _await_with_llm_heartbeat(
+                        counted_llm_func(one_pass_prompt, force_cache_refresh=True),
+                        chunk_key=chunk_key,
+                        step="Step 1P-R",
+                        label="one-pass cache refresh",
+                    )
+                    logger.info(
+                        f"[{chunk_key}] Step 1P-R: LLM returned {len(refreshed_result)} chars "
+                        f"in {time.perf_counter() - refresh_start:.2f}s"
+                    )
+                    entities_json, one_pass_low_relations_json, one_pass_high_relations_json = parse_json_one_pass_extraction(
+                        refreshed_result, chunk_key
+                    )
+                    if entities_json:
+                        one_pass_used = True
                         logger.info(
-                            f"[{chunk_key}] LLM call summary: calls={llm_call_count}, elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=one_pass_no_entities"
+                            f"[{chunk_key}] Step 1P-R: Cache refresh recovered entities={len(entities_json)}, "
+                            f"low={len(one_pass_low_relations_json)}, high={len(one_pass_high_relations_json)}"
+                        )
+                    elif _is_valid_empty_one_pass_extraction(refreshed_result):
+                        logger.info(
+                            f"[{chunk_key}] Step 1P-R: Provider confirmed a valid empty extraction; "
+                            "accepting this chunk without entities or relations"
+                        )
+                        logger.info(
+                            f"[{chunk_key}] LLM call summary: calls={llm_call_count}, elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=valid_empty"
                         )
                         return [], []
+                    elif bool(global_config.get("enable_one_pass_fallback", False)):
+                        logger.warning(f"[{chunk_key}] Step 1P: One-pass returned no entities; falling back to two-step JSON extraction")
+                    else:
+                        logger.warning(
+                            f"[{chunk_key}] Step 1P-R: Refreshed response was malformed or unusable; "
+                            "recording a retryable document error without stopping the build pass"
+                        )
+                        raise RuntimeError(
+                            f"[{chunk_key}] one-pass extraction returned malformed or unusable output"
+                        )
             except Exception as e:
                 _log_step_exception(chunk_key, "Step 1P", "One-pass extraction error", e)
                 if bool(global_config.get("enable_one_pass_fallback", False)):
@@ -2169,7 +2301,7 @@ async def _process_json_format_extraction(
                     logger.info(
                         f"[{chunk_key}] LLM call summary: calls={llm_call_count}, elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=one_pass_failed"
                     )
-                    return [], []
+                    raise RuntimeError(f"[{chunk_key}] one-pass extraction failed") from e
 
     if not one_pass_used:
         # Step 1: Extract entities using domain-specific prompt
@@ -2183,7 +2315,12 @@ async def _process_json_format_extraction(
         try:
             logger.info(f"[{chunk_key}] Step 1: Calling LLM for entity extraction...")
             step_start = time.perf_counter()
-            entity_result = await counted_llm_func(entity_prompt)
+            entity_result = await _await_with_llm_heartbeat(
+                counted_llm_func(entity_prompt),
+                chunk_key=chunk_key,
+                step="Step 1",
+                label="entity extraction",
+            )
             logger.info(f"[{chunk_key}] Step 1: LLM returned {len(entity_result)} chars in {time.perf_counter() - step_start:.2f}s")
             entities_json = parse_json_entities(entity_result, chunk_key)
             logger.info(f"[{chunk_key}] Step 1: Parsed {len(entities_json)} entities from JSON")
@@ -2192,14 +2329,14 @@ async def _process_json_format_extraction(
             logger.info(
                 f"[{chunk_key}] LLM call summary: calls={llm_call_count}, elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=failed_step1"
             )
-            return [], []
+            raise RuntimeError(f"[{chunk_key}] entity extraction failed") from e
 
     if not entities_json:
         logger.warning(f"[{chunk_key}] Step 1: No entities extracted, aborting pipeline")
         logger.info(
             f"[{chunk_key}] LLM call summary: calls={llm_call_count}, elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=no_entities"
         )
-        return [], []
+        raise RuntimeError(f"[{chunk_key}] no entities extracted")
 
     entities_json = _limit_json_entities_for_chunk(
         entities_json,
@@ -2293,7 +2430,12 @@ async def _process_json_format_extraction(
             try:
                 logger.info(f"[{chunk_key}] Step 2: Calling LLM for combined low/high relationship extraction...")
                 step_start = time.perf_counter()
-                combined_result = await counted_llm_func(combined_prompt)
+                combined_result = await _await_with_llm_heartbeat(
+                    counted_llm_func(combined_prompt),
+                    chunk_key=chunk_key,
+                    step="Step 2",
+                    label="combined low/high relationship extraction",
+                )
                 logger.info(f"[{chunk_key}] Step 2: LLM returned {len(combined_result)} chars in {time.perf_counter() - step_start:.2f}s")
                 low_relations_json, high_relations_json = parse_json_combined_relationships(
                     combined_result, chunk_key
@@ -2306,6 +2448,7 @@ async def _process_json_format_extraction(
                     logger.debug(f"[{chunk_key}] Step 2: High-order hyperedge types: {dict(rel_types)}")
             except Exception as e:
                 _log_step_exception(chunk_key, "Step 2", "Combined relationship extraction error", e)
+                raise RuntimeError(f"[{chunk_key}] combined relationship extraction failed") from e
         else:
             logger.info(f"[{chunk_key}] Step 2: Combined relationship template not found; using legacy low/high extraction")
 
@@ -2319,8 +2462,14 @@ async def _process_json_format_extraction(
 
             try:
                 logger.info(f"[{chunk_key}] Step 2a: Calling LLM for low-order relations...")
-                low_result = await counted_llm_func(low_prompt)
-                logger.info(f"[{chunk_key}] Step 2a: LLM returned {len(low_result)} chars")
+                low_step_start = time.perf_counter()
+                low_result = await _await_with_llm_heartbeat(
+                    counted_llm_func(low_prompt),
+                    chunk_key=chunk_key,
+                    step="Step 2a",
+                    label="low-order relation extraction",
+                )
+                logger.info(f"[{chunk_key}] Step 2a: LLM returned {len(low_result)} chars in {time.perf_counter() - low_step_start:.2f}s")
                 low_relations_json = parse_json_relations(low_result, chunk_key)
                 logger.info(f"[{chunk_key}] Step 2a: Parsed {len(low_relations_json)} low-order relations")
                 if low_relations_json:
@@ -2328,6 +2477,7 @@ async def _process_json_format_extraction(
                     logger.debug(f"[{chunk_key}] Step 2a: Relation types: {dict(rel_types)}")
             except Exception as e:
                 _log_step_exception(chunk_key, "Step 2a", "Low-order relation extraction error", e)
+                raise RuntimeError(f"[{chunk_key}] low-order relation extraction failed") from e
 
             logger.debug(f"[{chunk_key}] Step 2b: Generating high-order prompt with {len(entity_info)} entities...")
             high_prompt = get_high_order_extraction_prompt(
@@ -2339,8 +2489,14 @@ async def _process_json_format_extraction(
 
             try:
                 logger.info(f"[{chunk_key}] Step 2b: Calling LLM for high-order relations (hyperedges)...")
-                high_result = await counted_llm_func(high_prompt)
-                logger.info(f"[{chunk_key}] Step 2b: LLM returned {len(high_result)} chars")
+                high_step_start = time.perf_counter()
+                high_result = await _await_with_llm_heartbeat(
+                    counted_llm_func(high_prompt),
+                    chunk_key=chunk_key,
+                    step="Step 2b",
+                    label="high-order relation extraction",
+                )
+                logger.info(f"[{chunk_key}] Step 2b: LLM returned {len(high_result)} chars in {time.perf_counter() - high_step_start:.2f}s")
                 high_relations_json = parse_json_hyperedges(high_result, chunk_key)
                 logger.info(f"[{chunk_key}] Step 2b: Parsed {len(high_relations_json)} high-order relations (hyperedges)")
                 if high_relations_json:
@@ -2348,6 +2504,7 @@ async def _process_json_format_extraction(
                     logger.debug(f"[{chunk_key}] Step 2b: Hyperedge types: {dict(rel_types)}")
             except Exception as e:
                 _log_step_exception(chunk_key, "Step 2b", "High-order relation extraction error", e)
+                raise RuntimeError(f"[{chunk_key}] high-order relation extraction failed") from e
 
     if global_config.get("enable_efu_repair", True):
         high_relations_json = _repair_high_order_relations(
@@ -2454,7 +2611,7 @@ async def extract_entities(
     already_relations_low = 0
     already_relations_high = 0
 
-    async def _process_single_content(chunk_key_dp: tuple[str, TextChunkSchema]):
+    async def _process_single_content_impl(chunk_key_dp: tuple[str, TextChunkSchema]):
         nonlocal already_processed, already_entities, already_relations, already_relations_low, already_relations_high
         chunk_key = chunk_key_dp[0]
         chunk_dp = chunk_key_dp[1]
@@ -2473,7 +2630,7 @@ async def extract_entities(
                 logger.error(f"[{chunk_key}] JSON extraction FAILED with exception: {type(e).__name__}: {e}")
                 import traceback
                 logger.debug(f"[{chunk_key}] Traceback: {traceback.format_exc()}")
-                return None, None, None, None
+                raise
 
             # Initialize containers for this chunk
             chunk_maybe_nodes = defaultdict(list)
@@ -2642,14 +2799,83 @@ async def extract_entities(
         )
         return dict(maybe_nodes), dict(maybe_edges), dict(maybe_edges_low), dict(maybe_edges_high)
 
+    chunk_progress_lock = asyncio.Lock()
+    chunk_progress = Counter(started=0, completed=0, failed=0, cancelled=0)
+    active_chunk_keys: set[str] = set()
+
+    async def _update_chunk_progress(event: str, chunk_key: str) -> str:
+        async with chunk_progress_lock:
+            if event == "START":
+                chunk_progress["started"] += 1
+                active_chunk_keys.add(chunk_key)
+            elif event == "DONE":
+                chunk_progress["completed"] += 1
+                active_chunk_keys.discard(chunk_key)
+            elif event == "FAILED":
+                chunk_progress["failed"] += 1
+                active_chunk_keys.discard(chunk_key)
+            elif event == "CANCELLED":
+                chunk_progress["cancelled"] += 1
+                active_chunk_keys.discard(chunk_key)
+            return (
+                f"started={chunk_progress['started']}/{len(ordered_chunks)} "
+                f"completed={chunk_progress['completed']}/{len(ordered_chunks)} "
+                f"failed={chunk_progress['failed']} cancelled={chunk_progress['cancelled']} "
+                f"active={len(active_chunk_keys)}"
+            )
+
+    async def _process_single_content(chunk_key_dp: tuple[str, TextChunkSchema]):
+        chunk_key, chunk_dp = chunk_key_dp
+        content = chunk_dp.get("content", "")
+        chunk_start = time.perf_counter()
+        progress = await _update_chunk_progress("START", chunk_key)
+        logger.info(
+            f"[ChunkProgress] START chunk={chunk_key} {progress} content_chars={len(content)}"
+        )
+        try:
+            result = await _process_single_content_impl(chunk_key_dp)
+        except asyncio.CancelledError:
+            progress = await _update_chunk_progress("CANCELLED", chunk_key)
+            logger.warning(
+                f"[ChunkProgress] CANCELLED chunk={chunk_key} "
+                f"elapsed={time.perf_counter() - chunk_start:.2f}s {progress}"
+            )
+            raise
+        except Exception as exc:
+            progress = await _update_chunk_progress("FAILED", chunk_key)
+            logger.error(
+                f"[ChunkProgress] FAILED chunk={chunk_key} "
+                f"elapsed={time.perf_counter() - chunk_start:.2f}s {progress} "
+                f"error={type(exc).__name__}: {exc}"
+            )
+            raise
+
+        progress = await _update_chunk_progress("DONE", chunk_key)
+        entity_count = len(result[0]) if result and result[0] is not None else 0
+        relation_count = len(result[1]) if result and result[1] is not None else 0
+        progress_event = "EMPTY" if entity_count == 0 and relation_count == 0 else "DONE"
+        logger.info(
+            f"[ChunkProgress] {progress_event} chunk={chunk_key} "
+            f"elapsed={time.perf_counter() - chunk_start:.2f}s {progress} "
+            f"entities={entity_count} relations={relation_count}"
+        )
+        return result
+
     # ----------------------------------------------------------------------------
     # use_llm_func is wrapped in ascynio.Semaphore, limiting max_async callings
     begin_time = datetime.now()
     extract_start = time.perf_counter()
     logger.info(f"Starting parallel processing of {len(ordered_chunks)} chunks...")
+    logger.info(
+        "Chunk extraction runtime config: "
+        f"one_pass={bool(global_config.get('enable_one_pass_extraction', True))}, "
+        f"one_pass_fallback={bool(global_config.get('enable_one_pass_fallback', False))}, "
+        f"llm_model_max_async={global_config.get('llm_model_max_async', 'unknown')}, "
+        f"chunk_count={len(ordered_chunks)}"
+    )
     results = await asyncio.gather(
         *[_process_single_content(c) for c in ordered_chunks],
-        return_exceptions=True
+        return_exceptions=True,
     )
     logger.info(f"Chunk LLM extraction wall time: {time.perf_counter() - extract_start:.2f}s")
 
@@ -2666,6 +2892,10 @@ async def extract_entities(
             logger.debug(f"Chunk {i+1}/{len(results)} ({chunk_key}) SUCCESS")
 
     logger.info(f"Chunk processing complete: {success_count} succeeded, {failure_count} failed")
+    if failure_count:
+        raise RuntimeError(
+            f"{failure_count}/{len(results)} chunk extractions failed after all concurrent tasks settled"
+        )
 
     # print()  # clear the progress bar
     maybe_nodes = defaultdict(list)
@@ -2710,16 +2940,18 @@ async def extract_entities(
     )
     _log_unknown_summary(all_relationships_data)
     logger.info(f"Hypergraph merge/upsert wall time: {time.perf_counter() - merge_start:.2f}s")
-    if not len(all_entities_data):
-        logger.warning("Didn't extract any entities, maybe your LLM is not working")
-        return None
-    if not len(all_relationships_data):
-        logger.warning(
-            "Didn't extract any relationships, maybe your LLM is not working"
+    if not len(all_entities_data) and not len(all_relationships_data):
+        logger.info(
+            "No entities or relationships were extracted from this document; "
+            "treating it as a valid empty extraction so document/chunk storage can be finalized"
         )
-        return None
+        return knowledge_hypergraph_inst
+    if not len(all_entities_data):
+        logger.warning("No entities were extracted; preserving any valid relationship data")
+    if not len(all_relationships_data):
+        logger.info("No relationships were extracted; preserving extracted entities")
 
-    if entity_vdb is not None:
+    if entity_vdb is not None and all_entities_data:
         entity_vdb_start = time.perf_counter()
         index_profile = str(global_config.get("index_profile", "dual_concat"))
         data_for_vdb = {}
@@ -2759,7 +2991,7 @@ async def extract_entities(
             await entity_surface_vdb.upsert(data_for_surface_vdb)
         logger.info(f"Entity vector upsert wall time: {time.perf_counter() - entity_vdb_start:.2f}s")
 
-    if relationships_vdb is not None:
+    if relationships_vdb is not None and all_relationships_data:
         relationship_vdb_start = time.perf_counter()
         index_profile = str(global_config.get("index_profile", "dual_concat"))
         data_for_vdb = {}
@@ -2773,8 +3005,7 @@ async def extract_entities(
             else:
                 content = _build_dual_embedding_text(canonical_text, surface_text)
                 index_view = "dual_concat"
-            rel_key_basis = str(sorted(dp["id_set"])) + "|" + str(dp.get("relation_type", ""))
-            data_for_vdb[compute_mdhash_id(rel_key_basis, prefix="rel-")] = {
+            data_for_vdb[relationship_vector_id(dp["id_set"])] = {
                 "id_set": dp["id_set"],
                 "relation_type": dp.get("relation_type", ""),
                 "source_doc_id": dp.get("source_doc_id", ""),
@@ -2783,7 +3014,7 @@ async def extract_entities(
                 "content": content,
             }
             if index_profile == "dual_separate":
-                data_for_surface_vdb[compute_mdhash_id(rel_key_basis + "|surface", prefix="rel-surface-")] = {
+                data_for_surface_vdb[relationship_vector_id(dp["id_set"], surface=True)] = {
                     "id_set": dp["id_set"],
                     "relation_type": dp.get("relation_type", ""),
                     "source_doc_id": dp.get("source_doc_id", ""),
@@ -3299,12 +3530,29 @@ async def hyper_query(
         combine the information from the local_query and global_query,
         so that we can have the final retrieval information.
     """
+    entity_context = entity_context or {
+        "context": None,
+        "entities": [],
+        "hyperedges": [],
+        "text_units": [],
+    }
+    relation_context = relation_context or {
+        "context": None,
+        "entities": [],
+        "hyperedges": [],
+        "text_units": [],
+    }
     context = combine_contexts(relation_context.get("context"), entity_context.get("context"))
 
     contextJson = {
         "entities": deduplicate_by_key(entity_context.get("entities", []) + relation_context.get("entities", []), "entity_name"),
         "hyperedges": deduplicate_by_key(entity_context.get("hyperedges", []) + relation_context.get("hyperedges", []), "entity_set"),
-        "text_units": deduplicate_by_key(entity_context.get("text_units", []) + relation_context.get("text_units", []), "content")
+        "text_units": deduplicate_by_key(entity_context.get("text_units", []) + relation_context.get("text_units", []), "content"),
+        # Preserve the original merged field above, while exposing the two
+        # upstream retrieval branches for read-only evaluation adapters. This
+        # does not change either branch's ranking or the legacy merge order.
+        "entity_text_units": entity_context.get("text_units", []),
+        "relation_text_units": relation_context.get("text_units", []),
     }
 
     if query_param.only_need_context:
@@ -3406,12 +3654,26 @@ async def hyper_query_stream(
         combine the information from the local_query and global_query,
         so that we can have the final retrieval information.
     """
+    entity_context = entity_context or {
+        "context": None,
+        "entities": [],
+        "hyperedges": [],
+        "text_units": [],
+    }
+    relation_context = relation_context or {
+        "context": None,
+        "entities": [],
+        "hyperedges": [],
+        "text_units": [],
+    }
     context = combine_contexts(relation_context.get("context"), entity_context.get("context"))
 
     contextJson = {
         "entities": deduplicate_by_key(entity_context.get("entities", []) + relation_context.get("entities", []), "entity_name"),
         "hyperedges": deduplicate_by_key(entity_context.get("hyperedges", []) + relation_context.get("hyperedges", []), "entity_set"),
-        "text_units": deduplicate_by_key(entity_context.get("text_units", []) + relation_context.get("text_units", []), "content")
+        "text_units": deduplicate_by_key(entity_context.get("text_units", []) + relation_context.get("text_units", []), "content"),
+        "entity_text_units": entity_context.get("text_units", []),
+        "relation_text_units": relation_context.get("text_units", []),
     }
 
     if query_param.only_need_context:
@@ -3707,6 +3969,9 @@ async def graph_query(
             ]
         }
         if query_param.only_need_context:
+            if query_param.return_type == "json":
+                contextJson["response"] = context_string or ""
+                return contextJson
             return context_string
         if context_string is None:
             return PROMPTS["fail_response"]

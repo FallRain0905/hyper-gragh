@@ -79,6 +79,21 @@ def compute_mdhash_id(content, prefix: str = ""):
     return prefix + md5(content.encode()).hexdigest()
 
 
+def relationship_vector_id(id_set, *, surface: bool = False) -> str:
+    """Return a stable vector ID for one graph hyperedge.
+
+    The graph store keys a hyperedge by its vertex set. Relation metadata such
+    as ``relation_type`` can change when more evidence is merged, so it must not
+    be part of the vector primary key. JSON serialization is used instead of
+    ``str(list)`` to make the key explicit, order-independent, and stable for
+    non-ASCII vertex names.
+    """
+    vertices = sorted(str(item) for item in id_set)
+    basis = json.dumps(vertices, ensure_ascii=False, separators=(",", ":"))
+    prefix = "rel-surface-" if surface else "rel-"
+    return compute_mdhash_id(basis, prefix=prefix)
+
+
 def limit_async_func_call(max_size: int, waitting_time: float = 0.0001):
     """Add restriction of maximum async calling times for a async func"""
 
