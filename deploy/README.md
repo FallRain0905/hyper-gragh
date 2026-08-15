@@ -16,18 +16,18 @@
 
 ```bash
 git lfs install
-git clone -b codex/full-project-transfer-20260801 https://github.com/FallRain0905/hyper-gragh.git
+GIT_LFS_SKIP_SMUDGE=1 git clone -b codex/full-project-transfer-20260801 https://github.com/FallRain0905/hyper-gragh.git
 cd hyper-gragh
-git lfs pull
+git lfs pull --include="web-ui/backend/hyperrag_cache/case1/**"
 ```
 
 如果服务器已经有旧仓库：
 
 ```bash
 cd /opt/hyper-gragh
-git fetch origin codex/full-project-transfer-20260801
-git switch -C codex/full-project-transfer-20260801 FETCH_HEAD
-git lfs pull
+GIT_LFS_SKIP_SMUDGE=1 git fetch origin codex/full-project-transfer-20260801
+GIT_LFS_SKIP_SMUDGE=1 git switch -C codex/full-project-transfer-20260801 FETCH_HEAD
+git lfs pull --include="web-ui/backend/hyperrag_cache/case1/**"
 ```
 
 确认缓存文件不是 LFS 指针：
@@ -37,7 +37,7 @@ git lfs ls-files | grep 'web-ui/backend/hyperrag_cache/case1'
 ls -lh web-ui/backend/hyperrag_cache/case1
 ```
 
-`case1` 的 7 个文件总大小约 331 MB，首次拉取和构建需要一些时间。
+`case1` 的 7 个文件总大小约 331 MB，首次拉取和构建需要一些时间。仓库中还保留了历史评估产物的 LFS 记录，因此部署时必须使用上面的 `GIT_LFS_SKIP_SMUDGE=1` 和 `--include`，避免服务器下载与 Web UI 无关的 LFS 文件。
 
 ## 三、创建服务器配置
 
@@ -114,8 +114,8 @@ http://服务器IP:5000/
 cd /opt/hyper-gragh
 git fetch origin codex/full-project-transfer-20260801
 git switch codex/full-project-transfer-20260801
-git pull --ff-only origin codex/full-project-transfer-20260801
-git lfs pull
+GIT_LFS_SKIP_SMUDGE=1 git pull --ff-only origin codex/full-project-transfer-20260801
+git lfs pull --include="web-ui/backend/hyperrag_cache/case1/**"
 cd web-ui
 docker compose up -d --build
 ```
@@ -139,3 +139,4 @@ docker run --rm \
 ```
 
 不要执行 `docker compose down -v`，除非确认要删除用户、额度、个人 API 配置和上传数据。
+
