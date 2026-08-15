@@ -1,4 +1,4 @@
-﻿# HyperChE 服务器部署
+# HyperChE 服务器部署
 
 本仓库的生产部署只带 `web-ui/backend/hyperrag_cache/case1` 这一套较小的公开示例缓存。
 `hyper_base`、`hyper_chem` 以及实验缓存不会被 Docker 镜像打包，也不会作为部署缓存使用。
@@ -120,7 +120,7 @@ cd web-ui
 docker compose up -d --build
 ```
 
-`settings.json` 不在 Git 中，更新代码不会覆盖服务器上的 API 配置。数据库、上传文件和知识库使用 Docker named volumes 持久化。
+`settings.json` 不在 Git 中，更新代码不会覆盖服务器上的 API 配置。数据库、上传文件、知识库以及可写的 `case1` 运行缓存使用 Docker named volumes 持久化。仓库中的 `case1` 只作为只读种子，后端首次启动时会复制到 `hyperche_case1` 数据卷，避免查询日志和 LLM 响应缓存写入 Git 工作区。
 
 ## 六、停止和备份
 

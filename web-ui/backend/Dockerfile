@@ -1,4 +1,4 @@
-﻿FROM python:3.11-slim
+FROM python:3.11-slim
 
 WORKDIR /app
 
@@ -18,7 +18,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY web-ui/backend/ ./
 COPY hyperrag ./hyperrag
 
-RUN mkdir -p /app/hyperrag_cache /app/runtime /app/uploads /app/knowledge_bases
+RUN mkdir -p /app/cache_seed/case1 /app/hyperrag_cache/case1 /app/runtime /app/uploads /app/knowledge_bases \
+    && chmod +x /app/docker-entrypoint.sh
+
+ENTRYPOINT ["/app/docker-entrypoint.sh"]
 
 EXPOSE 8000
 

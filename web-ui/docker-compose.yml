@@ -1,4 +1,4 @@
-﻿services:
+services:
   backend:
     build:
       context: ..
@@ -11,9 +11,12 @@
       APP_SECRET_KEY: ${APP_SECRET_KEY:?Set APP_SECRET_KEY in web-ui/.env}
       HYPERCHE_ADMIN_EMAIL: ${HYPERCHE_ADMIN_EMAIL:-cupzhouth@admin.com}
       HYPERCHE_ADMIN_PASSWORD: ${HYPERCHE_ADMIN_PASSWORD:-zhouth}
+      HYPERCHE_CACHE_SEED_DIR: /app/cache_seed/case1
+      HYPERCHE_CACHE_RUNTIME_DIR: /app/hyperrag_cache/case1
     volumes:
       - ./backend/settings.json:/app/settings.json
-      - ./backend/hyperrag_cache/case1:/app/hyperrag_cache/case1:ro
+      - ./backend/hyperrag_cache/case1:/app/cache_seed/case1:ro
+      - hyperche_case1:/app/hyperrag_cache/case1
       - hyperche_runtime:/app/runtime
       - hyperche_uploads:/app/uploads
       - hyperche_knowledge_bases:/app/knowledge_bases
@@ -56,6 +59,7 @@ networks:
     driver: bridge
 
 volumes:
+  hyperche_case1:
   hyperche_runtime:
   hyperche_uploads:
   hyperche_knowledge_bases:
