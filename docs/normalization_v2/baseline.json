@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-10-19T08:07:08.394181+00:00",
+  "status": "legacy_code_pushed_design_only",
+  "repository": "https://github.com/FallRain0905/hyper-gragh",
+  "legacy_commit": "1f1aef7358072e8f1714bbddc1f4e3e2d3b19921",
+  "legacy_tag": "normalization-legacy-20261019",
+  "legacy_branch": "codex/full-project-transfer-20260801",
+  "design_branch": "codex/normalization-registry-plan-20261019",
+  "verified_remote_branch_commit": "1f1aef7358072e8f1714bbddc1f4e3e2d3b19921",
+  "verified_remote_tag_target": "1f1aef7358072e8f1714bbddc1f4e3e2d3b19921",
+  "snapshot_changed_files": 120,
+  "snapshot_scope": "Current application, normalization, build/evaluation scripts, tests and relevant docs. Runtime secrets, generated caches and local editor notes excluded.",
+  "git_author_policy": "Reused the prior repository commit identity Hyper-RAG <hyper.rag@example.com> as a per-command override; no global identity or proxy configuration changed.",
+  "regression": {
+    "command": "python -m pytest tests/test_posthoc_normalization.py tests/test_final_cache.py tests/test_pfas_final_cache.py tests/test_pfas_cluster_recovery.py tests/test_pfas_posthoc_transport.py tests/test_published_cache_runtime.py tests/test_qa_runtime_requests.py -q",
+    "passed": 66,
+    "failed": 0,
+    "warning": "Existing Pydantic class-based Config deprecation",
+    "scope": "Offline selected legacy normalization and runtime protections; not a claim that every application test or the v2 implementation has passed."
+  },
+  "source_checks": {
+    "scanned_source_files": 267,
+    "sensitive_pattern_hits": 0,
+    "python_syntax_issues": 0,
+    "limitation": "Pattern-based source screening is not a formal proof that no secret exists anywhere in repository history."
+  },
+  "protected_source_files": [
+    {
+      "path": ".gitignore",
+      "git_blob_at_baseline": "47d729a66866d27cfb470e9efcdb838f63f9f48d",
+      "worktree_sha256": "ae6563768dcc7c6ea45f672447bdf4bc746efd981fe1f9e0103f2ac1f51e2b7e",
+      "bytes": 5450
+    },
+    {
+      "path": "configs/experiments/modes.yaml",
+      "git_blob_at_baseline": "1f069f8bd8578b357675a856ec213ea7439803cc",
+      "worktree_sha256": "445b64f17a975b6572d30484967d4b08f6f81546928562861ff04346974fca7a",
+      "bytes": 2887
+    },
+    {
+      "path": "configs/normalization/alias_registry.yaml",
+      "git_blob_at_baseline": "2b699f1a3f47487a929f5da80eb18043fe403865",
+      "worktree_sha256": "93ddcd7322b5f57d74396250e51f20ae5d0aba38683e50a34174410e1ad34380",
+      "bytes": 20389
+    },
+    {
+      "path": "configs/normalization/pfas.yaml",
+      "git_blob_at_baseline": "17581ca064871b05a798bee704db1aa3df44df66",
+      "worktree_sha256": "b612714a94cd0c6a680219b8ad9e60e177a602e3d71198936c2bafde57fbbae2",
+      "bytes": 2713
+    },
+    {
+      "path": "configs/normalization/pfas_negative_pairs.yaml",
+      "git_blob_at_baseline": "ca787f6ff6dfec7d5693915ba130e4f53502595c",
+      "worktree_sha256": "8d324374031f64916801827c80ca26eff156533186d68788e70866d72a3f913d",
+      "bytes": 1203
+    },
+    {
+      "path": "hyperche/normalization/pipeline.py",
+      "git_blob_at_baseline": "2a796ddfe32af4551093e7d53548fce3a518bb8e",
+      "worktree_sha256": "88e13e6e3324bbcfc020358784ef02575079843001cff198d5c2263ee618f08a",
+      "bytes": 32520
+    },
+    {
+      "path": "hyperche/normalization/entity_normalizer.py",
+      "git_blob_at_baseline": "1196154dc1d22571a5aa1d717515eedf1946b621",
+      "worktree_sha256": "4c44e5c5314f33a91ad7c71360734e7301109ac17ed901dfde772c4e8b07a2c0",
+      "bytes": 42641
+    },
+    {
+      "path": "hyperche/normalization/posthoc_cache.py",
+      "git_blob_at_baseline": "a037de7c197adfdc114693f86cb969ffb309c04a",
+      "worktree_sha256": "c6a9f625b710cb7e10a23910d7c9cf5c5c23c9745abe41637366d09dfeec454e",
+      "bytes": 137450
+    },
+    {
+      "path": "hyperche/normalization/final_cache.py",
+      "git_blob_at_baseline": "740a3df4fd6191bcfb3e0bdd89b51de3f79b5a14",
+      "worktree_sha256": "b5a3ef4c716732fb3b8515e9f488582593c79bd80ddff370f9bcbf41e62b7a8f",
+      "bytes": 43921
+    },
+    {
+      "path": "hyperche/prompts/registry.py",
+      "git_blob_at_baseline": "807932a4cd52f17c1e4572c7a31493113b96e5fe",
+      "worktree_sha256": "9dcf1c76fe84a2889b7a39b6c9a22292e5e132520babc6276dc5c4a851abc04c",
+      "bytes": 4181
+    },
+    {
+      "path": "hyperrag/experiment.py",
+      "git_blob_at_baseline": "4896d384368485249e28e9c19e5e68418a4f7f8a",
+      "worktree_sha256": "873305c967969461da6e0690f3df209bf1f8e0929bc1182a0647e121ec074c6f",
+      "bytes": 5521
+    },
+    {
+      "path": "hyperrag/hyperrag.py",
+      "git_blob_at_baseline": "72d1255c65f1f4d47b0f652f6a6b28d2e5a11d71",
+      "worktree_sha256": "337f1a5e8388267d886b8812dd8680301615f5ba1f9a2b8d3f943a0e7f477f81",
+      "bytes": 21832
+    },
+    {
+      "path": "hyperrag/operate.py",
+      "git_blob_at_baseline": "1e4d52d9e6af64105915cc0c1c3cbcbe70f2f23b",
+      "worktree_sha256": "4676a6cc753016d9da26cba00bbe26ac9ec2d79ae8b34adc7a6fa312cb73d8fa",
+      "bytes": 180142
+    },
+    {
+      "path": "hyperrag/storage.py",
+      "git_blob_at_baseline": "80942b9c4e728a264642c3d27ee57fba764b0ced",
+      "worktree_sha256": "e0f53b692b31ff6f6367f5cfb32ed296b8de0a7a22797d97a0bc1c59f40426a1",
+      "bytes": 7727
+    },
+    {
+      "path": "scripts/build_experiment_cache.py",
+      "git_blob_at_baseline": "e5ed4d92f870f298a6e71b3ce3575c16b22a19bf",
+      "worktree_sha256": "aa27c75438a07b88e5aad5dd913088268631903ce73180ac887748f032225ade",
+      "bytes": 31268
+    },
+    {
+      "path": "scripts/normalize_cache_posthoc.py",
+      "git_blob_at_baseline": "b76a5469159cd1e7191a23fe9a788a8220e80916",
+      "worktree_sha256": "f801fe7fb7504e8f6f5a34956c4ede240251bdb2f286ee26c11aaa946a9acd93",
+      "bytes": 17796
+    },
+    {
+      "path": "scripts/build_final_cache_posthoc.py",
+      "git_blob_at_baseline": "63bf573ae4b50523867f4e1939d7524e3424c7b1",
+      "worktree_sha256": "7e1e5f36d28cc1f1127459bbae9a76bf60583a7ee54b02747325c2581c534002",
+      "bytes": 6078
+    },
+    {
+      "path": "web-ui/backend/cache_runtime.py",
+      "git_blob_at_baseline": "d05fbec3e7679df677307af03b6cc90a3f12eee7",
+      "worktree_sha256": "81751794af04f9e364a74f51e8a4a52d112558e714188f7c68d26a72164c07d4",
+      "bytes": 1250
+    },
+    {
+      "path": "web-ui/backend/providers.py",
+      "git_blob_at_baseline": "c6f1abeda923690178f7a1c88b09a5d3c929cf44",
+      "worktree_sha256": "edba121fad892aefa87f8c8e484631b24575ed58ec6e2666d6e3024176c5ff71",
+      "bytes": 7314
+    },
+    {
+      "path": "web-ui/backend/runtime_requests.py",
+      "git_blob_at_baseline": "f1e89136348b9fe84c7e6e4824c292645e328bb4",
+      "worktree_sha256": "ed9b66ea57c8f2d45499928a2c5004b7373e0ebeed60d24e8078a30d2f94e47c",
+      "bytes": 4319
+    }
+  ],
+  "hyper_extract_reference": {
+    "root": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract",
+    "commit": "a8e27199ffd3984042e870d0b6963810a0d70f5d",
+    "version": "0.10.5",
+    "license": "Apache-2.0",
+    "reference_files": [
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract\\hyperextract\\utils\\template_engine\\factory.py",
+        "sha256": "c954b1543e0a056c5d52a264b7ad0b2ebbf10d9672abbc2df1ea7cf80e0cc0a3"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract\\hyperextract\\utils\\template_engine\\parsers\\identifiers.py",
+        "sha256": "119b165c2b98fae57192cdab779accc15a715dddfffade680c32a4e3ab695bb4"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract\\hyperextract\\utils\\template_engine\\parsers\\output.py",
+        "sha256": "eda52f4da8bc9fa996d3d451fca98b0bd41056ad2184a501008a164250380038"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract\\hyperextract\\templates\\presets\\general\\base_hypergraph.yaml",
+        "sha256": "61e6f254b61b212c8a053e5b40262ca610463c31f56489a6fe5ef4519b0a4349"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\hyper-extract\\hyperextract\\types\\graph.py",
+        "sha256": "fe6787a844c83d708a18e7831ed04643a04c99e584353de2e89c34aa4dfeb8fb"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\ontomem-src\\ontomem-0.6.1\\ontomem\\core\\omem.py",
+        "sha256": "fa01485d1e8c9d4fa29655a6d52fd16ad27862971da9bb480666623dcdcc28cd"
+      },
+      {
+        "path": "C:\\Users\\19855\\Desktop\\hypercode\\repos\\ontomem-src\\ontomem-0.6.1\\ontomem\\merger\\classic_merger\\merge_field.py",
+        "sha256": "66184188befdc4a23ca2316635e6b79b4aa8d6b0fa537d8d23b64e8a73e7ef42"
+      }
+    ]
+  },
+  "legacy_pfas_metrics": {
+    "scope": "Read-only counts from the accepted legacy hyper_norm cache; not new-engine measurements. A logical valid LLM judgement is not an HTTP request count.",
+    "original_graph_entities": 15300,
+    "normalized_entities": 12375,
+    "candidate_pairs": 88969,
+    "classes": {
+      "needs_llm": 42950,
+      "rule_blocked": 46019
+    },
+    "reason_counts_overlap": {
+      "formula_match": 68635,
+      "context_overlap": 5121,
+      "vector_lsh": 14437,
+      "lexical_similarity": 6881,
+      "abbreviation_match": 3808,
+      "alias_registry": 224,
+      "normalized_exact": 895
+    },
+    "shared_tio2_pairs": 50956,
+    "shared_tio2_needs_llm": 15913,
+    "exempt_vs_capped": {
+      "exempt": {
+        "needs_llm": 25207,
+        "rule_blocked": 44359
+      },
+      "capped": {
+        "needs_llm": 17743,
+        "rule_blocked": 1660
+      }
+    },
+    "input_hashes": {
+      "normalization_candidates.jsonl": "04c6475010c1dad8072bbaebd8ce211e80567289b09a0daa23386c1c9160f66e",
+      "normalization_decisions.jsonl": "7cd7334612437f732a355be18f01a371837078661d0339c679f207fce2e31f20",
+      "normalization_state.json": "fdfd715585f259d2fdfd748315e2ce4ad4da1675f1f86c4dda267533a6422a59"
+    }
+  },
+  "data_restore_scope": "Git tag restores code only; corpora, accepted caches and credentials are separate existing data. No accepted cache or corpus was modified for this documentation."
+}

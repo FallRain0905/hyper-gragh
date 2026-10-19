@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "checked_at": "2026-10-19T08:09:23.514768+00:00",
+  "scope": "Planning consistency and legacy source preservation only; not v2 implementation, scientific-quality or cost acceptance.",
+  "passed": true,
+  "checks": [
+    {
+      "check": "all_18_decisions",
+      "passed": true
+    },
+    {
+      "check": "all_12_work_packages",
+      "passed": true
+    },
+    {
+      "check": "all_14_gates",
+      "passed": true
+    },
+    {
+      "check": "decision_work_references",
+      "passed": true
+    },
+    {
+      "check": "gate_references",
+      "passed": true
+    },
+    {
+      "check": "every_decision_covered",
+      "passed": true
+    },
+    {
+      "check": "every_work_package_covered",
+      "passed": true
+    },
+    {
+      "check": "dependency_graph_topologically_ordered",
+      "passed": true
+    },
+    {
+      "check": "no_implementation_or_gate_completion_claim",
+      "passed": true
+    },
+    {
+      "check": "design_versions_match",
+      "passed": true
+    },
+    {
+      "check": "fixed_cost_and_safety_controls",
+      "passed": true
+    },
+    {
+      "check": "all_work_packages_have_written_sections",
+      "passed": true
+    },
+    {
+      "check": "all_local_document_links_exist",
+      "passed": true,
+      "detail": 16
+    },
+    {
+      "check": "all_20_legacy_source_hashes_unchanged",
+      "passed": true
+    },
+    {
+      "check": "legacy_tag_target",
+      "passed": true
+    },
+    {
+      "check": "no_algorithm_runtime_or_configuration_change_after_baseline",
+      "passed": true
+    },
+    {
+      "check": "legacy_regression_evidence",
+      "passed": true
+    }
+  ],
+  "input_sha256": {
+    "ACCEPTANCE.yaml": "46fab79f7fc41fcf47b6c85f3bb251849e23c0bb5b2886c2a814469670bbb28b",
+    "baseline.json": "894e762c92ddb7f5ecdc58b550a1569a95f060cd73041a9f7070cd1e63f1170e",
+    "DECISIONS.yaml": "aba32399fac4e7fb6a284722cfef82fc52935679556b8521ef9f2b277c2d2164",
+    "DESIGN.md": "11c708028de3fd48998ce89dcde6bab1726e4cf3cc5ef70f16be07767ab7bc34",
+    "IMPLEMENTATION_PLAN.md": "0ecdcbac41276358c7ca31e53db0059a6c549594a1b498cd120631c4f0cf4b30",
+    "README.md": "8d1a408efe3763fbc64e95cfd289c3ab7231cb7ed8aff129bab37e8716b83fdb"
+  },
+  "counts": {
+    "decisions": 18,
+    "work_packages": 12,
+    "acceptance_gates": 14,
+    "local_links": 16
+  },
+  "source_commit": "1f1aef7358072e8f1714bbddc1f4e3e2d3b19921"
+}

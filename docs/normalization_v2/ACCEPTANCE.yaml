@@ -1,0 +1,174 @@
+schema_version: 1
+design_version: design-1
+status: planned
+strategy: registry_offline_v2
+completion_rule: All gates passed with inspectable evidence; partial implementation is not full delivery.
+default_switch_rule: Full functional and compatibility acceptance plus independent scientific-quality and measured total-cost acceptance.
+fixed_controls:
+  candidate_cap: 5
+  candidate_cap_exemptions: []
+  identity_candidate_embedding_calls: 0
+  extra_identity_judgement_calls_during_extraction: 0
+  actual_request_concurrency_max: 10
+  physical_key_concurrency_max: 1
+  judgement_attempts_max: 3
+  output_token_budgets: [4096, 8192, 16384]
+  automatic_global_alias_promotion: false
+  default_strategy_auto_switch: false
+  efu_repair: false
+evidence_contract:
+  gate_fields: [gate_id, status, code_commit, protocol_hash, evidence_paths, evidence_sha256, limitations]
+  real_run_fields: [run_id, source_hashes, registry_hash, rules_hash, model_profile_id, model_parameters, request_budget, actual_requests, retries, usage_availability, failures, unresolved, preservation_checks]
+  statuses: [planned, running, passed, failed, insufficient_evidence]
+  scientific_protocol_must_be_frozen_before_run: true
+  prices_or_usage_missing_means_unavailable: true
+gates:
+  - id: G01
+    title: Legacy baseline and strategy isolation
+    decisions: [D01, D12, D13, D14, D18]
+    work_packages: [W01, W12]
+    status: planned
+    requirements:
+      - Legacy Git tag resolves to the verified baseline commit and contains both normalization paths and dependencies.
+      - Existing legacy entry points and absent-strategy configuration preserve prior behavior.
+      - Explicit v2 never invokes legacy online normalization or all-pairs generation.
+      - Source-target conflicts and accepted-cache overwrite are rejected before requests.
+  - id: G02
+    title: Registry and template correctness
+    decisions: [D02, D03, D04]
+    work_packages: [W02, W10]
+    status: planned
+    requirements:
+      - Both domain registries compile, export and reload with identical semantic hashes.
+      - Conflicting aliases, invalid fields, dangling identifiers and redirects fail preflight.
+      - Chemical case, oxidation, charge, material variants and document scopes remain protected.
+  - id: G03
+    title: Lightweight verifiable extraction
+    decisions: [D01, D02, D13]
+    work_packages: [W04]
+    status: planned
+    requirements:
+      - Extraction call stage count is unchanged and identity judgement calls are zero.
+      - Raw names, local references, explicit clues and program-assigned source metadata are preserved.
+      - Missing clues remain absent; invalid or ambiguous quote offsets are not invented.
+      - Truncation and invalid JSON cannot be accepted as empty successful extraction.
+  - id: G04
+    title: Deterministic resolution and bounded uncertainty
+    decisions: [D03, D04, D05, D06, D09]
+    work_packages: [W05]
+    status: planned
+    requirements:
+      - Known valid bindings require no LLM, and no-candidate names create provisional identities without LLM.
+      - Candidate count never exceeds five, with no formula or exact-match exemption.
+      - Same surface with different document meanings cannot reuse an incompatible binding.
+      - Shared components are not automatically same-as, and unknown guards do not prove identity.
+      - Unrelated registry edits preserve successful decisions while relevant identity-policy changes invalidate their exact dependencies.
+  - id: G05
+    title: Real request leases, validation and budgets
+    decisions: [D05, D06, D09, D10, D17]
+    work_packages: [W06, W09, W10]
+    status: planned
+    requirements:
+      - Candidate IDs, evidence spans, identity guards and complete response status are strictly checked.
+      - Retries and token budgets obey the fixed controls; successful logical tasks are never reissued.
+      - SDK hidden retries are disabled and every actual send is accounted for by the scheduler.
+      - CLI, Web, processes and roles share the same physical-key scheduling boundary.
+      - Network peak is at most ten and key peak is at most one in mixed-worker tests.
+      - Cancellation and crashes release leases; API failures and budget deferrals remain technically incomplete.
+      - No secret, Authorization header or raw credential-bearing exception appears in artifacts or logs.
+  - id: G06
+    title: Provenance and source transactions
+    decisions: [D07, D09, D11]
+    work_packages: [W03]
+    status: planned
+    requirements:
+      - Original contributions and binding history remain queryable after updates and withdrawal.
+      - Reimport is idempotent and only one document revision is active.
+      - A failed new extraction leaves the previous valid generation active.
+      - Identity splits rebind original mentions without deleting historical evidence.
+  - id: G07
+    title: Scientific quantities and fact identity
+    decisions: [D04, D07, D08, D09]
+    work_packages: [W07]
+    status: planned
+    requirements:
+      - Removal, defluorination and mineralization, distinct targets, units, ranges and conditions remain distinct.
+      - Same numeric value from different experiments retains separate occurrences.
+      - Role swaps, direction, negation and hypothetical versus measured assertions retain distinct fact identities.
+      - Structural buckets do not overwrite role-aware facts or their source occurrences.
+      - No missing endpoint or measurement is invented and EFU remains disabled.
+  - id: G08
+    title: Incremental graph and index projections
+    decisions: [D07, D08, D11, D12]
+    work_packages: [W08]
+    status: planned
+    requirements:
+      - Only changed projection signatures require embeddings; unchanged reruns make zero new calls.
+      - New provenance without changed index text does not force re-embedding.
+      - Model, dimension or format mismatches are rejected or built as a new explicit generation.
+      - All matrices have correct dimensions, finite nonzero rows and matching IDs.
+      - V2 retrieval reconstructs full facts and original evidence through its dedicated adapter.
+  - id: G09
+    title: End-to-end recovery and atomic publication
+    decisions: [D09, D10, D11, D14]
+    work_packages: [W03, W08, W09, W12]
+    status: planned
+    requirements:
+      - Every stage supports stop and resume with successful records preserved.
+      - Outbox replay is idempotent and partial projections cannot be published as consistent.
+      - Injected ledger, graph, vector and manifest faults leave the previous release readable.
+      - Run state, exit status and published manifest agree about completion and outstanding failures.
+  - id: G10
+    title: CLI, Web, ownership and profiles
+    decisions: [D01, D03, D10, D12, D13]
+    work_packages: [W09, W10]
+    status: planned
+    requirements:
+      - UI and CLI freeze equivalent configurations and explicitly record the selected strategy and model profile.
+      - Prompt and registry publishing use the shared compiler and pin version hashes.
+      - Ownership checks prevent cross-user edits, and strategy changes do not mutate accepted caches.
+      - Progress distinguishes dictionary hits, semantic uncertainty, technical failures and budget use.
+  - id: G11
+    title: Read-only legacy import and accepted artifacts
+    decisions: [D12, D13, D17]
+    work_packages: [W04, W11, W12]
+    status: planned
+    requirements:
+      - Old successful source responses are imported without extraction or judgement replay.
+      - Missing source fields are unavailable rather than synthesized from aggregated prose.
+      - Frozen case1/case2 cache, graph, vector, config, QA and paper-result hashes remain unchanged.
+      - New outputs have separate namespaces and cannot silently redefine historical experiment groups.
+  - id: G12
+    title: Independent scientific identity quality
+    decisions: [D04, D08, D15, D17]
+    work_packages: [W11, W12]
+    status: planned
+    requirements:
+      - Sampling, strata, reference evidence, statistical protocol and quality margins are frozen before runs.
+      - Reference identity evidence is independent of the evaluated model decisions and registry-tuning sample.
+      - Deterministic high-risk regression examples have zero false merges.
+      - False merges, missed merges and unresolved rates are reported with denominators and uncertainty.
+      - Human-deferred scientific items are explicit and paired comparisons use a common valid subset.
+      - Missing independent evidence is insufficient_evidence, never an assumed quality pass.
+  - id: G13
+    title: Measured total efficiency and cost
+    decisions: [D02, D06, D10, D15, D16, D17]
+    work_packages: [W11, W12]
+    status: planned
+    requirements:
+      - Offline replay counts are separated from real request and token measurements.
+      - Extraction overhead, normalization, retries, embedding and source-update work are included.
+      - Comparisons pin input scope, model parameters, rules and any price snapshot before measurement.
+      - Savings are demonstrated under the frozen cost protocol, not inferred from candidate reduction alone.
+      - Missing prices or usage are disclosed and no amount is fabricated.
+  - id: G14
+    title: Complete delivery and decision traceability
+    decisions: [D12, D14, D15, D16, D18]
+    work_packages: [W01, W11, W12]
+    status: planned
+    requirements:
+      - All twelve work packages and all gates have inspectable evidence linked to D/W/G identifiers.
+      - Reports can be recomputed offline and include all exclusions, limitations and model-review status.
+      - Legacy recovery and new rollback are exercised with code and data requirements stated separately.
+      - Only necessary small artifacts are archived, with SHA256 readback and no whole-project nested backup.
+      - Defaults change only after full functional, compatibility, quality and total-cost acceptance.

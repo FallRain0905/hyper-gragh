@@ -1,0 +1,143 @@
+schema_version: 1
+design_version: design-1
+date: '2026-10-19'
+status: planning_baseline
+implementation_status: not_started
+strategy: registry_offline_v2
+legacy_tag: normalization-legacy-20261019
+legacy_commit: 1f1aef7358072e8f1714bbddc1f4e3e2d3b19921
+scope_rule: Deliver the complete design; work packages are dependency stages, not an MVP release.
+change_control:
+  require_adr: true
+  required_fields: [reason, evidence, affected_decisions, data_impact, compatibility, rollback, acceptance_changes]
+  synchronize_files: [DESIGN.md, IMPLEMENTATION_PLAN.md, DECISIONS.yaml, ACCEPTANCE.yaml]
+  material_changes_require_explicit_authorization:
+    - move_identity_judgement_into_extraction
+    - promote_model_aliases_globally_without_review
+    - remove_candidate_bounds
+    - overwrite_accepted_caches_or_results
+    - silently_change_model_or_provider
+    - switch_default_strategy_before_full_acceptance
+    - change_chemical_identity_granularity
+decisions:
+  - id: D01
+    origin: explicit_user_requirement
+    rule: Identity normalization is an independent offline stage; extraction performs no normalization LLM call or global identity search.
+    work_packages: [W01, W04, W10]
+  - id: D02
+    origin: explicit_user_requirement_and_conversation_design
+    rule: Extraction preserves raw names, local references and explicitly stated identity clues in the existing extraction calls; missing clues stay absent and provenance is attached by code.
+    work_packages: [W02, W04]
+  - id: D03
+    origin: explicit_user_preference_and_conversation_design
+    rule: Versioned YAML identities and scoped confirmed bindings are the primary deterministic resolution mechanism.
+    work_packages: [W02, W05, W10]
+  - id: D04
+    origin: conversation_design_and_implementation_detail
+    rule: Concepts, variants or samples, mentions and observations have distinct identities; unknown attributes, roles and shared components cannot prove sameness.
+    work_packages: [W02, W05, W07]
+  - id: D05
+    origin: conversation_design
+    rule: Known unambiguous bindings need no LLM; no-candidate names get provisional identities; only bounded new ambiguous tasks may use LLM.
+    work_packages: [W05, W06]
+  - id: D06
+    origin: implementation_planning
+    rule: Candidates are capped at five with no exemption; no all-pairs formula buckets or new normalization embeddings; cache reuse requires matching identity scope and frozen task versions.
+    work_packages: [W05, W06]
+  - id: D07
+    origin: user_selected_source_ledger_and_conversation_design
+    rule: Preserve immutable raw contributions and append-only binding decisions; merge evidence deterministically without routine LLM summaries, scalar overwrites or averaging experiments.
+    work_packages: [W03, W04, W07, W08]
+  - id: D08
+    origin: conversation_design_and_implementation_detail
+    rule: Quantities keep units, conditions and occurrence provenance; full facts preserve roles, scope and assertion status separately from structural graph buckets; EFU repair remains false.
+    work_packages: [W02, W07, W08]
+  - id: D09
+    origin: conversation_design_and_existing_user_failure_policy
+    rule: Semantic uncertainty is explicit and recoverable; technical failure or budget deferral never counts as successful resolution or silently discarded data.
+    work_packages: [W03, W05, W06, W09]
+  - id: D10
+    origin: existing_user_limits_and_implementation_planning
+    rule: Freeze model profiles and budgets explicitly; share physical credential leases across jobs and roles with actual total concurrency at most ten and per-key concurrency at most one.
+    work_packages: [W06, W09, W10]
+  - id: D11
+    origin: user_selected_local_updates_and_implementation_detail
+    rule: Source revisions activate atomically, projections use an idempotent outbox, and only changed model/content/view signatures trigger re-embedding.
+    work_packages: [W03, W08, W09]
+  - id: D12
+    origin: explicit_user_requirement
+    rule: Preserve both legacy normalization paths, their CLIs and defaults; route v2 explicitly to separate outputs without changing accepted caches or historical experiment meanings.
+    work_packages: [W01, W08, W10, W12]
+  - id: D13
+    origin: existing_user_cache_preservation_and_implementation_planning
+    rule: Import complete successful old extractions read-only; unavailable fields remain unavailable; importing never regenerates successful extraction or invents evidence.
+    work_packages: [W01, W04, W10, W11]
+  - id: D14
+    origin: explicit_user_requirement
+    rule: No MVP substitution; all architecture, integration, recovery and acceptance work packages are required for full delivery.
+    work_packages: [W01, W09, W12]
+  - id: D15
+    origin: implementation_planning
+    rule: Freeze an independent scoped identity evaluation protocol before judging outputs; old LLM labels and self-review do not constitute independent scientific truth.
+    work_packages: [W11, W12]
+  - id: D16
+    origin: user_cost_objective_and_implementation_planning
+    rule: Evaluate total extraction plus normalization plus embedding cost with real usage and disclosed missing data; no unmeasured savings claims or ranking-driven rule changes.
+    work_packages: [W11, W12]
+  - id: D17
+    origin: existing_user_instruction
+    rule: Reuse successful calls and records; semantic human-review items may be listed and deferred while other work continues, but technical failures need bounded recovery and separate denominators.
+    work_packages: [W06, W11, W12]
+  - id: D18
+    origin: explicit_user_request_to_prevent_decision_drift
+    rule: Maintain versioned design, decisions, work packages, acceptance evidence and rollback metadata together; partial or undocumented status cannot be reported as completion.
+    work_packages: [W01, W11, W12]
+work_packages:
+  - id: W01
+    title: Baseline and compatibility routing
+    depends_on: []
+    status: planned
+  - id: W02
+    title: Declarative compiler and both domain registries
+    depends_on: [W01]
+    status: planned
+  - id: W03
+    title: Transactional provenance ledger
+    depends_on: [W01, W02]
+    status: planned
+  - id: W04
+    title: Lightweight extraction records and legacy import
+    depends_on: [W01, W02, W03]
+    status: planned
+  - id: W05
+    title: Deterministic resolution and bounded candidates
+    depends_on: [W02, W03, W04]
+    status: planned
+  - id: W06
+    title: Bounded judgement and shared request worker
+    depends_on: [W03, W05]
+    status: planned
+  - id: W07
+    title: Quantities and role-aware facts
+    depends_on: [W03, W05, W06]
+    status: planned
+  - id: W08
+    title: Incremental projections and atomic publication
+    depends_on: [W03, W07]
+    status: planned
+  - id: W09
+    title: CLI and recoverable job lifecycle
+    depends_on: [W01, W02, W03, W04, W05, W06, W07, W08]
+    status: planned
+  - id: W10
+    title: Web, prompt packs and explicit model profiles
+    depends_on: [W01, W02, W06, W09]
+    status: planned
+  - id: W11
+    title: Compatibility, independent identity quality and total cost
+    depends_on: [W04, W05, W06, W07, W08, W09, W10]
+    status: planned
+  - id: W12
+    title: Full acceptance, documentation and rollback drill
+    depends_on: [W01, W02, W03, W04, W05, W06, W07, W08, W09, W10, W11]
+    status: planned
