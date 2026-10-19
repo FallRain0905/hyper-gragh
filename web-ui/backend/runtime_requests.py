@@ -10,8 +10,15 @@ import numpy as np
 
 
 class RuntimeRequestLimiter:
-    def __init__(self):
+    def __init__(self, *, broker=None):
         self._loops = weakref.WeakKeyDictionary()
+        self._broker = broker
+
+    def _shared_broker(self):
+        if self._broker is None:
+            from hyperche.request_leases import RequestBroker
+            self._broker = RequestBroker()
+        return self._broker
 
     def _state(self):
         loop = asyncio.get_running_loop()
@@ -33,6 +40,16 @@ class RuntimeRequestLimiter:
         except BaseException:
             key_slot.release()
             raise
+        try:
+            # Physical keys are shared across endpoints, event loops and
+            # processes. Local semaphores retain provider-specific limits.
+            actual_lease = await self._shared_broker().acquire(
+                key or ("anonymous:" + endpoint), role="qa-or-embedding",
+            )
+        except BaseException:
+            group.release()
+            key_slot.release()
+            raise
         state["active"] += 1
         state["peak"] = max(state["peak"], state["active"])
         state["key_active"][identity] = state["key_active"].get(identity, 0) + 1
@@ -47,6 +64,7 @@ class RuntimeRequestLimiter:
             released = True
             state["active"] -= 1
             state["key_active"][identity] -= 1
+            actual_lease.release()
             group.release()
             key_slot.release()
 

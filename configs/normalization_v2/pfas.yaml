@@ -1,0 +1,975 @@
+schema_version: registry-offline-v2.1
+domain: pfas
+description: 'Declarative identities for the PFAS / piezocatalysis corpus.  Acid, anion and salt forms are separate
+  identities; composites do not merge with their components; phase and sample variants stay below their parent concept.
+
+  '
+roles:
+- name: target_contaminant
+  description: PFAS target compound.
+- name: water_matrix
+  description: Water matrix or background solution.
+- name: process
+  description: Treatment process.
+redirects:
+  pfas:ptfe_polymer: pfas:ptfe
+entities:
+- canonical_id: pfas:pfoa_acid
+  canonical_name: perfluorooctanoic acid
+  kind: chemical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  aliases:
+  - perfluorooctanoic acid
+  - perfluorooctanoic acid (PFOA)
+  properties:
+    chain_length: 8
+    head_group: carboxylate
+    protonation: acid
+  parent_id: pfas:pfoa
+- canonical_id: pfas:pfos_acid
+  canonical_name: perfluorooctanesulfonic acid
+  kind: chemical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  aliases:
+  - perfluorooctanesulfonic acid
+  - perfluorooctane sulfonic acid
+  - perfluorooctanesulfonic acid (PFOS)
+  properties:
+    chain_length: 8
+    head_group: sulfonate
+    protonation: acid
+  parent_id: pfas:pfos
+- canonical_id: pfas:pfba_acid
+  canonical_name: perfluorobutanoic acid
+  kind: chemical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  aliases:
+  - perfluorobutanoic acid
+  - heptafluorobutyric acid
+  - perfluorobutyric acid
+  properties:
+    chain_length: 4
+    head_group: carboxylate
+    protonation: acid
+  parent_id: pfas:pfba
+- canonical_id: pfas:pfbs_acid
+  canonical_name: perfluorobutanesulfonic acid
+  kind: chemical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  aliases:
+  - perfluorobutanesulfonic acid
+  - perfluorobutane sulfonic acid
+  properties:
+    chain_length: 4
+    head_group: sulfonate
+    protonation: acid
+  parent_id: pfas:pfbs
+- canonical_id: pfas:ptfe_polymer
+  canonical_name: PTFE
+  kind: material
+  redirect_to: pfas:ptfe
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfas_family
+  canonical_name: PFAS
+  kind: material_family
+  aliases:
+  - per- and polyfluoroalkyl substances
+  - perfluoroalkyl substances
+  - per- and polyfluoroalkyl substances (PFAS)
+  properties:
+    family: perfluoroalkyl_and_polyfluoroalkyl_substances
+- canonical_id: pfas:pfoa
+  canonical_name: PFOA
+  kind: chemical
+  aliases: []
+  scoped_aliases:
+  - text: C8-PFCA
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: 'Chain-length shorthand; retained as a scoped migration suggestion rather than a general same-as alias.
+
+      '
+  - text: C8
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Bare C8 is ambiguous across PFAS chain lengths.
+  properties:
+    chain_length: 8
+    head_group: carboxylate
+    form: unspecified
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfoa_anion
+  canonical_name: PFOA anion
+  kind: chemical
+  aliases:
+  - perfluorooctanoate
+  - text: PFOA-
+    normalizer: exact
+  - text: PFOA anion
+    normalizer: common_name
+  - text: PFOA⁻
+    normalizer: exact
+  properties:
+    chain_length: 8
+    head_group: carboxylate
+    protonation: anion
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfos
+  canonical_name: PFOS
+  kind: chemical
+  aliases: []
+  scoped_aliases:
+  - text: C8S
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Chain-length shorthand is ambiguous and only a migration candidate.
+  properties:
+    chain_length: 8
+    head_group: sulfonate
+    form: unspecified
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfos_anion
+  canonical_name: PFOS anion
+  kind: chemical
+  aliases:
+  - perfluorooctanesulfonate
+  - text: PFOS-
+    normalizer: exact
+  - text: PFOS anion
+    normalizer: common_name
+  - text: PFOS⁻
+    normalizer: exact
+  properties:
+    chain_length: 8
+    head_group: sulfonate
+    protonation: anion
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfba
+  canonical_name: PFBA
+  kind: chemical
+  aliases: []
+  properties:
+    chain_length: 4
+    head_group: carboxylate
+    form: unspecified
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfba_anion
+  canonical_name: PFBA anion
+  kind: chemical
+  aliases:
+  - perfluorobutanoate
+  - text: PFBA-
+    normalizer: exact
+  - text: PFBA anion
+    normalizer: common_name
+  - text: PFBA⁻
+    normalizer: exact
+  properties:
+    chain_length: 4
+    head_group: carboxylate
+    protonation: anion
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfbs
+  canonical_name: PFBS
+  kind: chemical
+  aliases: []
+  properties:
+    chain_length: 4
+    head_group: sulfonate
+    form: unspecified
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:pfbs_anion
+  canonical_name: PFBS anion
+  kind: chemical
+  aliases:
+  - perfluorobutanesulfonate
+  - text: PFBS-
+    normalizer: exact
+  - text: PFBS anion
+    normalizer: common_name
+  - text: PFBS⁻
+    normalizer: exact
+  properties:
+    chain_length: 4
+    head_group: sulfonate
+    protonation: anion
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:genx
+  canonical_name: GenX
+  kind: chemical
+  aliases: []
+  properties:
+    chain_class: ether
+    form: unspecified
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:genx_ammonium_salt
+  canonical_name: GenX ammonium salt
+  kind: chemical
+  granularity: variant
+  parent_id: pfas:genx
+  aliases:
+  - ammonium salt of HFPO-DA
+  - HFPO-DA ammonium salt
+  - GenX ammonium
+  properties:
+    protonation: ammonium_salt
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: pfas:ptfe
+  canonical_name: PTFE
+  kind: material
+  aliases:
+  - polytetrafluoroethylene
+  properties:
+    polymer: true
+  scoped_aliases:
+  - text: Teflon
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Brand name may denote distinct fluoropolymers.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:batio3
+  canonical_name: BaTiO3
+  kind: material
+  name_normalizer: chemical_formula
+  aliases:
+  - text: BaTiO₃
+    normalizer: chemical_formula
+  - text: barium titanate
+    normalizer: common_name
+  scoped_aliases:
+  - text: BTO
+    normalizer: common_name
+    scope:
+      doc_id: document:sample_a
+    review_status: reviewed
+    notes: 'In document:sample_a the abbreviation BTO denotes barium titanate. The same abbreviation is declared
+      for Bi4Ti3O12 in another document.
+
+      '
+  properties:
+    formula: BaTiO3
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:bi4ti3o12
+  canonical_name: Bi4Ti3O12
+  kind: material
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Bi₄Ti₃O₁₂
+    normalizer: chemical_formula
+  scoped_aliases:
+  - text: BTO
+    normalizer: common_name
+    scope:
+      doc_id: document:sample_b
+    review_status: reviewed
+    notes: 'In document:sample_b the abbreviation BTO denotes bismuth titanate.
+
+      '
+  - text: bismuth titanate
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Bismuth titanates include multiple stoichiometries.
+  properties:
+    formula: Bi4Ti3O12
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:bifeo3
+  canonical_name: BiFeO3
+  kind: material
+  name_normalizer: chemical_formula
+  aliases:
+  - text: BiFeO₃
+    normalizer: chemical_formula
+  - text: bismuth ferrite
+    normalizer: common_name
+  properties:
+    formula: BiFeO3
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:bdd
+  canonical_name: BDD
+  kind: material
+  aliases:
+  - boron-doped diamond
+  - boron doped diamond
+  properties:
+    material_class: diamond
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:pvdf
+  canonical_name: PVDF
+  kind: material
+  aliases:
+  - polyvinylidene fluoride
+  - poly(vinylidene fluoride)
+  properties:
+    formula: (C2H2F2)n
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: catalyst:cu_n_c
+  canonical_name: Cu-N-C
+  kind: material
+  aliases:
+  - Cu N C
+  - Cu-N-C catalyst
+  - CuNC
+  properties:
+    metal: Cu
+    support: nitrogen_doped_carbon
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: catalyst:cu_n_c_pvdf
+  canonical_name: Cu-N-C/PVDF
+  kind: material
+  granularity: variant
+  parent_id: catalyst:cu_n_c
+  aliases:
+  - Cu N C/PVDF
+  - Cu-N-C/PVDF composite
+  properties:
+    constituents:
+    - Cu-N-C
+    - PVDF
+    composite: true
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:tio2
+  canonical_name: TiO2
+  kind: material
+  name_normalizer: chemical_formula
+  aliases:
+  - text: TiO₂
+    normalizer: chemical_formula
+  - text: titanium dioxide
+    normalizer: common_name
+  properties:
+    formula: TiO2
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:tio2_anatase
+  canonical_name: anatase TiO2
+  kind: material
+  granularity: variant
+  parent_id: material:tio2
+  name_normalizer: chemical_formula
+  aliases:
+  - text: anatase
+    normalizer: common_name
+  - text: anatase TiO₂
+    normalizer: chemical_formula
+  - text: TiO2 anatase
+    normalizer: chemical_formula
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  properties:
+    phase: anatase
+- canonical_id: material:tio2_rutile
+  canonical_name: rutile TiO2
+  kind: material
+  granularity: variant
+  parent_id: material:tio2
+  name_normalizer: chemical_formula
+  aliases:
+  - text: rutile
+    normalizer: common_name
+  - text: rutile TiO₂
+    normalizer: chemical_formula
+  - text: TiO2 rutile
+    normalizer: chemical_formula
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  properties:
+    phase: rutile
+- canonical_id: material:batio3_tio2_core_shell
+  canonical_name: BaTiO3@TiO2
+  kind: material
+  granularity: variant
+  parent_id: material:batio3
+  name_normalizer: chemical_formula
+  aliases:
+  - text: BaTiO₃@TiO₂
+    normalizer: chemical_formula
+  - text: BaTiO3@TiO2 core-shell
+    normalizer: chemical_formula
+  - text: BaTiO3/TiO2 core-shell
+    normalizer: chemical_formula
+  properties:
+    constituents:
+    - BaTiO3
+    - TiO2
+    morphology: core_shell
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: material:pt_bto_bo_composite
+  canonical_name: Pt/BTO/BO
+  kind: material
+  granularity: variant
+  parent_id: material:batio3
+  aliases:
+  - Pt/BTO/BO
+  - Pt-BTO-BO
+  - Pt/BaTiO3/Bi4Ti3O12
+  properties:
+    constituents:
+    - Pt
+    - BaTiO3
+    - Bi4Ti3O12
+    composite: true
+  scoped_aliases:
+  - text: Pt-based composite
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Family wording cannot establish which composite is meant.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: feature:oxygen_vacancy
+  canonical_name: oxygen vacancy
+  kind: material_feature
+  aliases:
+  - OV
+  - OVs
+  - Vo
+  - oxygen vacancies
+  properties:
+    defect: oxygen_vacancy
+- canonical_id: feature:heterojunction
+  canonical_name: heterojunction
+  kind: material_feature
+  aliases:
+  - heterojunction structure
+  - heterojunctions
+- canonical_id: property:d33
+  canonical_name: d33
+  kind: metric
+  aliases:
+  - d33 coefficient
+  - piezoelectric coefficient d33
+  properties:
+    symbol: d33
+- canonical_id: process:piezocatalysis
+  canonical_name: piezocatalysis
+  kind: process
+  aliases:
+  - piezocatalytic degradation
+  - piezocatalytic process
+- canonical_id: process:contact_electro_catalysis
+  canonical_name: contact-electro-catalysis
+  kind: process
+  aliases:
+  - contact electro catalysis
+  - contact electrocatalysis
+  - CEC
+- canonical_id: matrix:afff
+  canonical_name: AFFF
+  kind: mixture
+  aliases:
+  - aqueous film-forming foam
+  - aqueous film forming foam
+  - AFFF solution
+- canonical_id: metric:degradation_efficiency
+  canonical_name: degradation efficiency
+  kind: metric
+  aliases: []
+  scoped_aliases:
+  - text: removal efficiency
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Removal does not imply chemical degradation.
+  - text: degradation rate
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Kinetic rate and endpoint fraction are distinct.
+- canonical_id: metric:defluorination_efficiency
+  canonical_name: defluorination efficiency
+  kind: metric
+  aliases:
+  - defluorination ratio
+  scoped_aliases:
+  - text: defluorination rate
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Kinetic rate and endpoint fraction are distinct.
+- canonical_id: metric:mineralization_efficiency
+  canonical_name: mineralization efficiency
+  kind: metric
+  aliases: []
+  scoped_aliases:
+  - text: mineralization rate
+    normalizer: common_name
+    scope:
+      domain: pfas
+    review_status: migration_suggestion
+    notes: Kinetic rate and endpoint fraction are distinct.
+- canonical_id: sample:sample_a
+  canonical_name: Sample A
+  kind: sample
+  granularity: variant
+  aliases: []
+  scoped_aliases:
+  - text: Sample A
+    normalizer: common_name
+    scope:
+      doc_id: document:sample_a
+    review_status: reviewed
+    notes: Only valid inside document:sample_a.
+  - text: A
+    normalizer: common_name
+    scope:
+      doc_id: document:sample_a
+    review_status: migration_suggestion
+    notes: Single-letter sample label is document-local.
+  properties:
+    sample_label: A
+  status: retired
+  notes: Unscoped sample labels are never globally resolved; use source-local provisional identities.
+- canonical_id: sample:sample_b
+  canonical_name: Sample B
+  kind: sample
+  granularity: variant
+  aliases: []
+  scoped_aliases:
+  - text: Sample B
+    normalizer: common_name
+    scope:
+      doc_id: document:sample_a
+    review_status: reviewed
+    notes: Only valid inside document:sample_a.
+  status: retired
+  notes: Unscoped sample labels are never globally resolved; use source-local provisional identities.
+- canonical_id: metric:removal_efficiency
+  canonical_name: removal efficiency
+  kind: metric
+  aliases:
+  - removal fraction
+  - removal percentage
+- canonical_id: metric:degradation_rate
+  canonical_name: degradation rate
+  kind: metric
+- canonical_id: metric:defluorination_rate
+  canonical_name: defluorination rate
+  kind: metric
+- canonical_id: metric:mineralization_rate
+  canonical_name: mineralization rate
+  kind: metric
+- canonical_id: pfas:hfpo_da_acid
+  canonical_name: HFPO-DA
+  kind: chemical
+  aliases:
+  - HFPO-DA
+  - hexafluoropropylene oxide dimer acid
+  - hexafluoropropylene oxide dimer acid (GenX)
+  parent_id: pfas:genx
+  properties:
+    protonation: acid
+  variant_dimensions:
+  - protonation
+  - counterion
+  - charge
+  - phase
+  - composition
+negative_pairs:
+- left: pfas:pfoa
+  right: pfas:pfoa_anion
+  reason: Acid and anion forms are distinct protonation states.
+- left: pfas:pfos
+  right: pfas:pfos_anion
+  reason: Acid and anion forms are distinct protonation states.
+- left: pfas:pfba
+  right: pfas:pfba_anion
+  reason: Acid and anion forms are distinct protonation states.
+- left: pfas:pfbs
+  right: pfas:pfbs_anion
+  reason: Acid and anion forms are distinct protonation states.
+- left: pfas:genx
+  right: pfas:genx_ammonium_salt
+  reason: Acid and ammonium salt are distinct forms.
+- left: pfas:pfoa
+  right: pfas:pfos
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfoa
+  right: pfas:pfba
+  reason: Distinct PFAS chain lengths.
+- left: pfas:pfoa
+  right: pfas:pfbs
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfoa
+  right: pfas:genx
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfoa
+  right: pfas:ptfe
+  reason: Monomer and polymer must not merge.
+- left: pfas:pfos
+  right: pfas:pfba
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfos
+  right: pfas:pfbs
+  reason: Distinct PFAS chain lengths.
+- left: pfas:pfos
+  right: pfas:genx
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfos
+  right: pfas:ptfe
+  reason: Monomer and polymer must not merge.
+- left: pfas:pfba
+  right: pfas:pfbs
+  reason: Distinct PFAS head groups and chain identities.
+- left: pfas:pfba
+  right: pfas:genx
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfba
+  right: pfas:ptfe
+  reason: Monomer and polymer must not merge.
+- left: pfas:pfbs
+  right: pfas:genx
+  reason: Distinct PFAS target compounds.
+- left: pfas:pfbs
+  right: pfas:ptfe
+  reason: Monomer and polymer must not merge.
+- left: pfas:genx
+  right: pfas:ptfe
+  reason: Monomer and polymer must not merge.
+- left: material:batio3
+  right: material:bi4ti3o12
+  reason: Different chemical formulas despite the shared BTO abbreviation.
+- left: material:batio3
+  right: material:bifeo3
+  reason: Different chemical identities.
+- left: material:batio3
+  right: material:batio3_tio2_core_shell
+  reason: Composite core-shell material is not the parent material.
+- left: material:tio2
+  right: material:tio2_anatase
+  reason: Phase variant must not collapse into the parent concept.
+- left: material:tio2
+  right: material:tio2_rutile
+  reason: Phase variant must not collapse into the parent concept.
+- left: material:tio2_anatase
+  right: material:tio2_rutile
+  reason: Anatase and rutile are distinct phases.
+- left: catalyst:cu_n_c
+  right: catalyst:cu_n_c_pvdf
+  reason: Composite is not the same identity as its catalyst component.
+- left: material:pvdf
+  right: catalyst:cu_n_c_pvdf
+  reason: A component is not the composite.
+- left: material:pt_bto_bo_composite
+  right: material:batio3
+  reason: Composite is not its BaTiO3 component.
+- left: material:pt_bto_bo_composite
+  right: material:bi4ti3o12
+  reason: Composite is not its Bi4Ti3O12 component.
+- left: metric:degradation_efficiency
+  right: metric:defluorination_efficiency
+  reason: Parent-compound removal and fluoride release are distinct metrics.
+- left: metric:defluorination_efficiency
+  right: metric:mineralization_efficiency
+  reason: Defluorination and mineralization are distinct reported metrics.
+- left: metric:degradation_efficiency
+  right: metric:mineralization_efficiency
+  reason: Degradation and mineralization are distinct reported metrics.
+- left: sample:sample_a
+  right: sample:sample_b
+  reason: Document samples are distinct identities.
+high_risk_groups:
+- name: pfas_targets
+  canonical_ids:
+  - pfas:pfoa
+  - pfas:pfos
+  - pfas:pfba
+  - pfas:pfbs
+  - pfas:genx
+  reason: Target compounds must never be collapsed.
+- name: pfas_protonation_forms
+  canonical_ids:
+  - pfas:pfoa
+  - pfas:pfoa_anion
+  - pfas:pfos
+  - pfas:pfos_anion
+  - pfas:pfba
+  - pfas:pfba_anion
+  - pfas:pfbs
+  - pfas:pfbs_anion
+  - pfas:genx
+  - pfas:genx_ammonium_salt
+  reason: Acid, anion and salt forms are explicitly distinct.
+- name: pfas_polymers
+  canonical_ids:
+  - pfas:ptfe
+  - material:pvdf
+  reason: Fluoropolymers are not PFAS target molecules.
+- name: bto_abbreviation
+  canonical_ids:
+  - material:batio3
+  - material:bi4ti3o12
+  reason: Same abbreviation with different chemistry, resolved only by document scope.
+- name: titanium_phases
+  canonical_ids:
+  - material:tio2
+  - material:tio2_anatase
+  - material:tio2_rutile
+  reason: Concept versus phase variants.
+- name: composite_materials
+  canonical_ids:
+  - catalyst:cu_n_c
+  - catalyst:cu_n_c_pvdf
+  - material:batio3
+  - material:tio2
+  - material:batio3_tio2_core_shell
+  - material:pt_bto_bo_composite
+  reason: Components must not merge into composites.
+- name: pfas_metrics
+  canonical_ids:
+  - metric:degradation_efficiency
+  - metric:defluorination_efficiency
+  - metric:mineralization_efficiency
+  - evidence:fluoride_release
+  reason: Degradation, defluorination, mineralization and evidence are distinct.
+- name: document_samples
+  canonical_ids:
+  - sample:sample_a
+  - sample:sample_b
+  reason: Sample labels are document-scoped identities.
+- name: pfas_family
+  canonical_ids:
+  - pfas:pfas_family
+  - pfas:pfoa
+  - pfas:pfos
+  - pfas:pfba
+  - pfas:pfbs
+  - pfas:genx
+  - pfas:ptfe
+  reason: Family, target compounds and polymers are different levels.
+defaults:
+  seed_curation_version: conservative-1
+  annotation_status: machine_curated_not_independent_human_gold

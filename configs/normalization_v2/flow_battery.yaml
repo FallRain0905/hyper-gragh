@@ -1,0 +1,1438 @@
+schema_version: registry-offline-v2.1
+domain: flow_battery
+description: 'Declarative identities for the flow-battery corpus.  Acid, ion, valence and membrane-model distinctions
+  are explicit.  Legacy IDs that were renamed are preserved as redirect stubs; they are not separately indexed.
+
+  '
+roles:
+- name: active_species
+  description: Redox-active species in a flow battery.
+- name: separator
+  description: Ion-exchange membrane or separator.
+- name: flow_battery_system
+  description: Complete flow-battery system.
+redirects:
+  system:slfb: system:soluble_lead_acid_flow_battery
+  active_species:vo_2_plus: species:vanadyl_ion
+  active_species:vo2_2_plus: species:dioxovanadium_v
+  active_species:v2_plus: species:v_ii
+  active_species:v3_plus: species:v_iii
+  active_species:cr2_cr3: species:cr_iii_cr_ii
+  active_species:h2so4: species:h2so4
+  active_species:oh_radical: species:hydroxyl_radical
+  active_species:o2_radical: species:superoxide_radical
+  active_species:pb2_plus: species:pb2_plus
+  active_species:br2: species:br2
+  active_species:tempo: species:tempo
+  active_species:viologen: species:viologen
+  active_species:quinone: species:quinone
+entities:
+- canonical_id: system:slfb
+  canonical_name: soluble lead-acid flow battery
+  kind: system
+  redirect_to: system:soluble_lead_acid_flow_battery
+- canonical_id: active_species:vo_2_plus
+  canonical_name: V(IV)
+  kind: species
+  redirect_to: species:vanadyl_ion
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:vo2_2_plus
+  canonical_name: V(V)
+  kind: species
+  redirect_to: species:dioxovanadium_v
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:v2_plus
+  canonical_name: V(II)
+  kind: species
+  redirect_to: species:v_ii
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:v3_plus
+  canonical_name: V(III)
+  kind: species
+  redirect_to: species:v_iii
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:cr2_cr3
+  canonical_name: Cr(III)/Cr(II)
+  kind: species
+  redirect_to: species:cr_iii_cr_ii
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:h2so4
+  canonical_name: H2SO4
+  kind: species
+  redirect_to: species:h2so4
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:oh_radical
+  canonical_name: ·OH
+  kind: species
+  redirect_to: species:hydroxyl_radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:o2_radical
+  canonical_name: O2·-
+  kind: species
+  redirect_to: species:superoxide_radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:pb2_plus
+  canonical_name: Pb2+
+  kind: species
+  redirect_to: species:pb2_plus
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:br2
+  canonical_name: Br2
+  kind: species
+  redirect_to: species:br2
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:tempo
+  canonical_name: TEMPO
+  kind: species
+  redirect_to: species:tempo
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:viologen
+  canonical_name: viologen
+  kind: species
+  redirect_to: species:viologen
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: active_species:quinone
+  canonical_name: quinone
+  kind: species
+  redirect_to: species:quinone
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: system:vrfb
+  canonical_name: vanadium redox flow battery
+  kind: system
+  aliases:
+  - VRFB
+  - VRB
+  - VRFBs
+  - all-vanadium redox flow battery
+  - all vanadium flow battery
+  - vanadium flow battery
+  properties:
+    chemistry: all_vanadium
+- canonical_id: system:icrfb
+  canonical_name: iron-chromium redox flow battery
+  kind: system
+  aliases:
+  - ICRFB
+  - Fe-Cr redox flow battery
+  - Fe/Cr flow battery
+  - iron chromium flow battery
+  - iron chromium redox flow battery
+  properties:
+    chemistry: iron_chromium
+- canonical_id: system:zinc_bromine_flow_battery
+  canonical_name: zinc-bromine flow battery
+  kind: system
+  aliases:
+  - zinc bromine flow battery
+  - zinc-bromine battery
+  - Zn-Br flow battery
+  properties:
+    chemistry: zinc_bromine
+- canonical_id: system:soluble_lead_acid_flow_battery
+  canonical_name: soluble lead-acid flow battery
+  kind: system
+  aliases:
+  - soluble lead flow battery
+  - soluble lead-acid flow cell
+- canonical_id: system:organic_redox_flow_battery
+  canonical_name: organic redox flow battery
+  kind: system
+  aliases:
+  - organic flow battery
+  scoped_aliases:
+  - text: aqueous organic redox flow battery
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Aqueous is a material system restriction.
+- canonical_id: system:neutral_aqueous_organic_flow_battery
+  canonical_name: neutral aqueous organic flow battery
+  kind: system
+  aliases:
+  - neutral aqueous organic redox flow battery
+  - neutral organic flow battery
+- canonical_id: membrane:nafion
+  canonical_name: Nafion
+  kind: material
+  aliases:
+  - Nafion membrane
+  - Nafion series membrane
+  properties:
+    polymer_family: perfluorosulfonic_acid
+  scoped_aliases:
+  - text: PFSA membrane
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: 'PFSA is a polymer class that includes non-Nafion membranes; kept as a scoped suggestion rather than
+      a same-as declaration.
+
+      '
+  - text: perfluorosulfonic acid membrane
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Class name, not a unique Nafion identity.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:nafion_117
+  canonical_name: Nafion 117
+  kind: material
+  granularity: variant
+  parent_id: membrane:nafion
+  aliases:
+  - N117
+  - Nafion117
+  - Nafion-117
+  properties:
+    membrane_model: '117'
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:nafion_212
+  canonical_name: Nafion 212
+  kind: material
+  granularity: variant
+  parent_id: membrane:nafion
+  aliases:
+  - N212
+  - Nafion212
+  - Nafion-212
+  properties:
+    membrane_model: '212'
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:nafion_115
+  canonical_name: Nafion 115
+  kind: material
+  granularity: variant
+  parent_id: membrane:nafion
+  aliases:
+  - N115
+  - Nafion115
+  - Nafion-115
+  properties:
+    membrane_model: '115'
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:pbi
+  canonical_name: PBI
+  kind: material
+  aliases:
+  - polybenzimidazole
+  - PBI backbone
+  properties:
+    polymer_family: polybenzimidazole
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:snpbi_1_42
+  canonical_name: SNPBI-1.42
+  kind: material
+  granularity: variant
+  parent_id: membrane:pbi
+  aliases:
+  - SNPBI 1.42
+  - SNPBI-1.42 membrane
+  properties:
+    modification: sulfonated
+    ion_exchange_capacity: '1.42'
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  status: retired
+  notes: Study-specific sample identifier; resolve source-local unless an independently scoped registry entry is
+    provided.
+- canonical_id: membrane:speek_apk
+  canonical_name: SPEEK/APK
+  kind: material
+  granularity: variant
+  aliases:
+  - SPEEK-APK
+  - SPEEK/APK composite membrane
+  properties:
+    modification: composite
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: membrane:sptpc_2_59
+  canonical_name: SPTPC-2.59
+  kind: material
+  granularity: variant
+  aliases:
+  - SPTPC 2.59
+  - SPTPC-2.59 membrane
+  properties:
+    ion_exchange_capacity: '2.59'
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  status: retired
+  notes: Study-specific sample identifier; resolve source-local unless an independently scoped registry entry is
+    provided.
+- canonical_id: membrane:anion_exchange_membrane
+  canonical_name: anion-exchange membrane
+  kind: material
+  aliases:
+  - anion exchange membrane
+  - AEM
+  properties:
+    fixed_charge: positive
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: electrode:graphite_felt
+  canonical_name: graphite felt
+  kind: material
+  aliases:
+  - graphite felt electrode
+  - graphite felt electrodes
+  - GF
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: electrode:carbon_felt
+  canonical_name: carbon felt
+  kind: material
+  aliases:
+  - carbon felt electrode
+  - carbon felt electrodes
+  - CF
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: electrode:activated_carbon_felt
+  canonical_name: activated carbon felt
+  kind: material
+  granularity: variant
+  parent_id: electrode:carbon_felt
+  aliases: []
+  properties:
+    treatment: thermal_activation
+  scoped_aliases:
+  - text: activated graphite felt
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Graphite and carbon felt are distinct substrates.
+  - text: thermally activated carbon felt
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Activation method is a variant, not a universal equivalence.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: electrode:c_c
+  canonical_name: C-C
+  kind: material
+  granularity: variant
+  aliases:
+  - C C
+  - C C electrode
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  status: retired
+  notes: Study-specific sample identifier; resolve source-local unless an independently scoped registry entry is
+    provided.
+- canonical_id: electrode:mc_c
+  canonical_name: MC-C
+  kind: material
+  granularity: variant
+  aliases:
+  - MC C
+  - MC C electrode
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  status: retired
+  notes: Study-specific sample identifier; resolve source-local unless an independently scoped registry entry is
+    provided.
+- canonical_id: electrode:bmc_c
+  canonical_name: BMC-C
+  kind: material
+  granularity: variant
+  aliases:
+  - BMC C
+  - BMC C electrode
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+  status: retired
+  notes: Study-specific sample identifier; resolve source-local unless an independently scoped registry entry is
+    provided.
+- canonical_id: species:h2so4
+  canonical_name: H2SO4
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: H₂SO₄
+    normalizer: chemical_formula
+  - text: sulfuric acid
+    normalizer: common_name
+  - text: sulphuric acid
+    normalizer: common_name
+  properties:
+    formula: H2SO4
+    conjugate_base: HSO4-
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:hcl
+  canonical_name: HCl
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: HCl
+    normalizer: chemical_formula
+  - text: hydrochloric acid
+    normalizer: common_name
+  properties:
+    formula: HCl
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:cr_ii
+  canonical_name: Cr(II)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Cr2+
+    normalizer: chemical_formula
+  - text: Cr²⁺
+    normalizer: chemical_formula
+  - text: Cr(II)
+    normalizer: chemical_formula
+  properties:
+    oxidation_state: II
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:cr_iii
+  canonical_name: Cr(III)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Cr3+
+    normalizer: chemical_formula
+  - text: Cr³⁺
+    normalizer: chemical_formula
+  - text: Cr(III)
+    normalizer: chemical_formula
+  properties:
+    oxidation_state: III
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:cr_iii_cr_ii
+  canonical_name: Cr(III)/Cr(II)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Cr(III)/Cr(II)
+    normalizer: chemical_formula
+  - text: Cr(II)/Cr(III)
+    normalizer: chemical_formula
+  - text: Cr3+/Cr2+
+    normalizer: chemical_formula
+  - text: Cr2+/Cr3+
+    normalizer: chemical_formula
+  properties:
+    couple: true
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_ii
+  canonical_name: V(II)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: V2+
+    normalizer: chemical_formula
+  - text: V²⁺
+    normalizer: chemical_formula
+  - text: V(II)
+    normalizer: chemical_formula
+  properties:
+    oxidation_state: II
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_iii
+  canonical_name: V(III)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: V3+
+    normalizer: chemical_formula
+  - text: V³⁺
+    normalizer: chemical_formula
+  - text: V(III)
+    normalizer: chemical_formula
+  properties:
+    oxidation_state: III
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_iv
+  canonical_name: V(IV)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - V(IV)
+  properties:
+    oxidation_state: IV
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_v
+  canonical_name: V(V)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - V(V)
+  properties:
+    oxidation_state: V
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_ii_v_iii
+  canonical_name: V(II)/V(III)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: V(II)/V(III)
+    normalizer: chemical_formula
+  - text: V2+/V3+
+    normalizer: chemical_formula
+  properties:
+    couple: true
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:v_iv_v_v
+  canonical_name: V(IV)/V(V)
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: V(IV)/V(V)
+    normalizer: chemical_formula
+  - text: VO2+/VO^2+
+    normalizer: chemical_formula
+  properties:
+    couple: true
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:fe2_fe3
+  canonical_name: Fe2+/Fe3+
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Fe²⁺/Fe³⁺
+    normalizer: chemical_formula
+  - text: Fe2+/Fe3+
+    normalizer: chemical_formula
+  - text: Fe(II)/Fe(III)
+    normalizer: chemical_formula
+  - text: Fe3+/Fe2+
+    normalizer: chemical_formula
+  properties:
+    couple: true
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:pb2_plus
+  canonical_name: Pb2+
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Pb(II)
+    normalizer: chemical_formula
+  properties:
+    oxidation_state: II
+  scoped_aliases:
+  - text: lead ion
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Unspecified oxidation state is not necessarily Pb(II).
+  - text: lead ions
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Oxidation state is unspecified.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:bi3_plus
+  canonical_name: Bi3+
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Bi(III)
+    normalizer: chemical_formula
+  scoped_aliases:
+  - text: Bi3+ additive
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Additive wording is a role, not a different chemical identity.
+  - text: Bi-based additive
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: 'Bi-based may include Bi3+ and other bismuth species; not inherited as an unconditional same-as alias.
+
+      '
+  - text: bismuth additive
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Generic additive wording.
+  - text: bismuth-assisted additive
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Generic additive wording.
+  - text: bismuth ion
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Unspecified oxidation state is not necessarily Bi(III).
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:br2
+  canonical_name: Br2
+  kind: species
+  name_normalizer: chemical_formula
+  aliases:
+  - text: bromine
+    normalizer: common_name
+  properties:
+    formula: Br2
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:tempo
+  canonical_name: TEMPO
+  kind: species
+  aliases:
+  - TEMPO radical
+  properties:
+    species_class: nitroxide_radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:viologen
+  canonical_name: viologen
+  kind: species
+  aliases: []
+  scoped_aliases:
+  - text: viologen derivative
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: A derivative is a variant, not the parent concept.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:quinone
+  canonical_name: quinone
+  kind: species
+  aliases: []
+  scoped_aliases:
+  - text: quinone-based active species
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Family wording without a specific structure.
+  - text: quinone active species
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Family wording without a specific structure.
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: metric:ce
+  canonical_name: coulombic efficiency
+  kind: metric
+  aliases:
+  - CE
+  - coulombic efficiency (%)
+- canonical_id: metric:ve
+  canonical_name: voltage efficiency
+  kind: metric
+  aliases:
+  - VE
+  - voltaic efficiency
+  - voltage efficiency (%)
+- canonical_id: metric:ee
+  canonical_name: energy efficiency
+  kind: metric
+  aliases:
+  - EE
+  - energy efficiency (%)
+- canonical_id: metric:energy_density
+  canonical_name: energy density
+  kind: metric
+  aliases:
+  - energy density value
+- canonical_id: metric:ion_exchange_capacity
+  canonical_name: ion exchange capacity
+  kind: metric
+  aliases:
+  - IEC
+  - IEC value
+  - ion-exchange capacity
+- canonical_id: metric:area_resistance
+  canonical_name: area resistance
+  kind: metric
+  aliases:
+  - area-specific resistance
+  - membrane area resistance
+- canonical_id: metric:ohmic_resistance
+  canonical_name: ohmic resistance
+  kind: metric
+  aliases: []
+  scoped_aliases:
+  - text: ohmic loss
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Resistance and a voltage/energy loss have different quantities.
+- canonical_id: metric:charge_transfer_resistance
+  canonical_name: charge-transfer resistance
+  kind: metric
+  aliases:
+  - charge transfer resistance
+  - Rct
+- canonical_id: metric:peak_separation
+  canonical_name: peak separation
+  kind: metric
+  aliases:
+  - CV peak separation
+  - peak-to-peak separation
+- canonical_id: metric:membrane_resistance
+  canonical_name: membrane resistance
+  kind: metric
+  aliases:
+  - separator resistance
+- canonical_id: metric:surface_roughness
+  canonical_name: surface roughness
+  kind: metric
+  aliases:
+  - roughness
+- canonical_id: metric:contact_angle
+  canonical_name: contact angle
+  kind: metric
+  aliases: []
+- canonical_id: metric:wettability
+  canonical_name: wettability
+  kind: metric
+  aliases:
+  - surface wettability
+- canonical_id: evidence:smaller_cv_peak_separation
+  canonical_name: smaller CV peak separation
+  kind: evidence
+  aliases:
+  - reduced CV peak separation
+  properties:
+    evidence_type: electrochemical
+- canonical_id: metric:polarization_voltage
+  canonical_name: polarization voltage
+  kind: metric
+  aliases:
+  - polarization voltage difference
+  - polarization delta
+- canonical_id: metric:voltage_loss
+  canonical_name: voltage loss
+  kind: metric
+  aliases:
+  - voltage-loss
+- canonical_id: metric:capacity_retention
+  canonical_name: capacity retention
+  kind: metric
+  aliases:
+  - capacity retention (%)
+- canonical_id: metric:pumping_loss
+  canonical_name: pumping loss
+  kind: metric
+  aliases:
+  - pump loss
+- canonical_id: metric:mass_transfer
+  canonical_name: mass transfer
+  kind: metric
+  aliases:
+  - electrolyte mass transfer
+- canonical_id: degradation:her
+  canonical_name: hydrogen evolution reaction
+  kind: process
+  aliases:
+  - HER
+  - hydrogen evolution
+  - H2 evolution
+- canonical_id: degradation:electrode_polarization
+  canonical_name: electrode polarization
+  kind: process
+  aliases:
+  - severe electrode polarization
+- canonical_id: degradation:local_polarization
+  canonical_name: local polarization
+  kind: process
+  aliases:
+  - localpolarization
+- canonical_id: degradation:uneven_pb_deposition
+  canonical_name: uneven Pb deposition
+  kind: process
+  aliases:
+  - unevenpbdeposition
+  - uneven lead deposition
+- canonical_id: degradation:vanadium_crossover
+  canonical_name: vanadium crossover
+  kind: process
+  aliases:
+  - vanadium ion crossover
+  - vanadium species crossover
+- canonical_id: degradation:capacity_fading
+  canonical_name: capacity fading
+  kind: process
+  aliases:
+  - capacity decay
+  - capacity fade
+- canonical_id: degradation:dendrite_growth
+  canonical_name: dendrite growth
+  kind: process
+  aliases:
+  - dendrite formation
+  scoped_aliases:
+  - text: zinc dendrite growth
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Specific element cannot be erased.
+- canonical_id: degradation:electrolyte_imbalance
+  canonical_name: electrolyte imbalance
+  kind: process
+- canonical_id: degradation:mass_transfer_limitation
+  canonical_name: mass-transfer limitation
+  kind: process
+  aliases:
+  - mass transfer limitation
+  - mass-transfer polarization
+- canonical_id: degradation:concentration_polarization
+  canonical_name: concentration polarization
+  kind: process
+  aliases:
+  - concentration overpotential
+- canonical_id: condition:current_density
+  canonical_name: current density
+  kind: metric
+  aliases:
+  - applied current density
+- canonical_id: condition:vanadium_concentration
+  canonical_name: vanadium concentration
+  kind: metric
+  aliases:
+  - vanadium electrolyte concentration
+  - vanadium ions concentration
+- canonical_id: condition:acid_concentration
+  canonical_name: acid concentration
+  kind: metric
+  aliases: []
+  scoped_aliases:
+  - text: H2SO4 concentration
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Generic acid concentration does not establish sulfuric acid.
+  - text: sulfuric acid concentration
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Generic acid concentration does not establish sulfuric acid.
+- canonical_id: condition:electrolyte_concentration
+  canonical_name: electrolyte concentration
+  kind: metric
+  aliases: []
+- canonical_id: condition:bi3_concentration
+  canonical_name: Bi3+ concentration
+  kind: metric
+  aliases:
+  - Bi3+ additive concentration
+  - bismuth additive concentration
+- canonical_id: condition:temperature
+  canonical_name: temperature
+  kind: metric
+  aliases:
+  - operating temperature
+- canonical_id: condition:cycle_number
+  canonical_name: cycle number
+  kind: metric
+  aliases:
+  - cycles
+  scoped_aliases:
+  - text: cycle
+    normalizer: common_name
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: Bare "cycle" is too generic for an unscoped metric/condition binding.
+- canonical_id: condition:flow_rate
+  canonical_name: flow rate
+  kind: metric
+  aliases:
+  - electrolyte flow rate
+- canonical_id: condition:ph
+  canonical_name: pH
+  kind: metric
+  aliases:
+  - pH value
+- canonical_id: species:vanadyl_ion
+  canonical_name: VO²⁺
+  kind: species
+  parent_id: species:v_iv
+  name_normalizer: chemical_formula
+  aliases:
+  - text: VO^2+
+    normalizer: chemical_formula
+  - text: vanadyl ion
+    normalizer: common_name
+  properties:
+    oxidation_state: IV
+    charge: 2
+    formula: VO
+  variant_dimensions:
+  - oxidation_state
+  - charge
+  - phase
+  - composition
+- canonical_id: species:dioxovanadium_v
+  canonical_name: VO₂⁺
+  kind: species
+  parent_id: species:v_v
+  name_normalizer: chemical_formula
+  aliases:
+  - text: dioxovanadium(V)
+    normalizer: common_name
+  scoped_aliases:
+  - text: VO2+
+    normalizer: exact
+    scope:
+      domain: flow_battery
+    review_status: migration_suggestion
+    notes: ASCII charge/stoichiometry is ambiguous; candidate only.
+  properties:
+    oxidation_state: V
+    charge: 1
+    formula: VO2
+  variant_dimensions:
+  - oxidation_state
+  - charge
+  - phase
+  - composition
+negative_pairs:
+- left: species:v_iv
+  right: species:v_v
+  reason: Vanadium valence states must remain distinct.
+- left: species:v_ii
+  right: species:v_iii
+  reason: Vanadium valence states must remain distinct.
+- left: species:cr_ii
+  right: species:cr_iii
+  reason: Chromium valence states must remain distinct.
+- left: membrane:nafion_117
+  right: membrane:nafion_212
+  reason: Specific Nafion membrane models must remain distinct.
+- left: membrane:nafion_115
+  right: membrane:nafion_117
+  reason: Specific Nafion membrane models must remain distinct.
+- left: membrane:nafion_115
+  right: membrane:nafion_212
+  reason: Specific Nafion membrane models must remain distinct.
+- left: membrane:pbi
+  right: membrane:snpbi_1_42
+  reason: Modified PBI variants must not collapse to base PBI.
+- left: electrode:c_c
+  right: electrode:mc_c
+  reason: Compared carbon electrodes must remain distinct.
+- left: electrode:c_c
+  right: electrode:bmc_c
+  reason: Compared carbon electrodes must remain distinct.
+- left: electrode:mc_c
+  right: electrode:bmc_c
+  reason: Compared carbon electrodes must remain distinct.
+- left: electrode:graphite_felt
+  right: electrode:carbon_felt
+  reason: Graphite felt and carbon felt are different materials.
+- left: metric:area_resistance
+  right: metric:ce
+  reason: Resistance metric must not merge into coulombic efficiency.
+- left: metric:ohmic_resistance
+  right: metric:ce
+  reason: Resistance metric must not merge into coulombic efficiency.
+- left: metric:charge_transfer_resistance
+  right: metric:ce
+  reason: Resistance metric must not merge into coulombic efficiency.
+- left: metric:membrane_resistance
+  right: metric:ce
+  reason: Resistance metric must not merge into coulombic efficiency.
+- left: metric:surface_roughness
+  right: metric:ce
+  reason: Morphology metric must not merge into coulombic efficiency.
+- left: metric:contact_angle
+  right: metric:ce
+  reason: Contact angle is a morphology metric, not coulombic efficiency.
+- left: metric:wettability
+  right: metric:ce
+  reason: Morphology metric must not merge into coulombic efficiency.
+- left: metric:polarization_voltage
+  right: metric:ve
+  reason: Polarization voltage is not voltage efficiency.
+- left: metric:voltage_loss
+  right: metric:ve
+  reason: Voltage loss is not voltage efficiency.
+- left: metric:voltage_loss
+  right: metric:polarization_voltage
+  reason: Voltage loss and polarization voltage are distinct reported quantities.
+- left: condition:vanadium_concentration
+  right: metric:ce
+  reason: Operating condition must not merge into coulombic efficiency.
+- left: condition:current_density
+  right: metric:ce
+  reason: Operating condition must not merge into coulombic efficiency.
+- left: condition:electrolyte_concentration
+  right: metric:ce
+  reason: Operating condition must not merge into coulombic efficiency.
+- left: condition:current_density
+  right: metric:ee
+  reason: Current density affects energy efficiency but is not that metric.
+- left: condition:current_density
+  right: metric:ve
+  reason: Current density affects voltage efficiency but is not that metric.
+- left: condition:flow_rate
+  right: metric:ee
+  reason: Flow condition must not merge into energy efficiency.
+- left: condition:temperature
+  right: metric:ve
+  reason: Temperature condition must not merge into voltage efficiency.
+- left: condition:vanadium_concentration
+  right: metric:ee
+  reason: Concentration condition must not merge into energy efficiency.
+- left: condition:vanadium_concentration
+  right: metric:ve
+  reason: Concentration condition must not merge into voltage efficiency.
+- left: condition:cycle_number
+  right: metric:capacity_retention
+  reason: Cycle number is a condition, not a retention metric.
+- left: condition:acid_concentration
+  right: metric:ee
+  reason: Acid concentration affects efficiency but is not that metric.
+- left: metric:mass_transfer
+  right: degradation:mass_transfer_limitation
+  reason: A transport metric is not the same identity as a limitation mechanism.
+- left: metric:peak_separation
+  right: evidence:smaller_cv_peak_separation
+  reason: The metric and the comparative evidence statement are distinct.
+- left: species:vanadyl_ion
+  right: species:dioxovanadium_v
+  reason: Charge and oxygen stoichiometry differ.
+high_risk_groups:
+- name: vanadium_oxidation_states
+  canonical_ids:
+  - species:v_ii
+  - species:v_iii
+  - species:v_iv
+  - species:v_v
+  reason: Charge and valence must survive lookup and projection.
+- name: chromium_oxidation_states
+  canonical_ids:
+  - species:cr_ii
+  - species:cr_iii
+  - species:cr_iii_cr_ii
+  reason: Cr(II), Cr(III) and the couple are distinct.
+- name: vanadium_couples
+  canonical_ids:
+  - species:v_ii_v_iii
+  - species:v_iv_v_v
+  reason: Couples are compositions, not individual valence states.
+- name: nafion_models
+  canonical_ids:
+  - membrane:nafion
+  - membrane:nafion_115
+  - membrane:nafion_117
+  - membrane:nafion_212
+  reason: Family versus model identities.
+- name: pbi_variants
+  canonical_ids:
+  - membrane:pbi
+  - membrane:snpbi_1_42
+  - membrane:speek_apk
+  - membrane:sptpc_2_59
+  reason: Modified membranes are variants of distinct families.
+- name: carbon_electrode_variants
+  canonical_ids:
+  - electrode:c_c
+  - electrode:mc_c
+  - electrode:bmc_c
+  reason: Compared electrode treatments must stay distinct.
+- name: metric_semantic_groups
+  canonical_ids:
+  - metric:ce
+  - metric:ve
+  - metric:ee
+  - metric:area_resistance
+  - metric:ohmic_resistance
+  - metric:charge_transfer_resistance
+  - metric:membrane_resistance
+  - metric:surface_roughness
+  - metric:contact_angle
+  - metric:wettability
+  - condition:vanadium_concentration
+  - condition:acid_concentration
+  - condition:electrolyte_concentration
+  - condition:bi3_concentration
+  - condition:current_density
+  - condition:flow_rate
+  - condition:temperature
+  reason: Metrics and operating conditions must not be merged.
+- name: degradation_mechanisms
+  canonical_ids:
+  - degradation:vanadium_crossover
+  - degradation:her
+  - degradation:capacity_fading
+  - degradation:dendrite_growth
+  - degradation:electrolyte_imbalance
+  - degradation:mass_transfer_limitation
+  - degradation:concentration_polarization
+  reason: Mechanism identities remain separate even when co-reported.
+defaults:
+  seed_curation_version: conservative-1
+  annotation_status: machine_curated_not_independent_human_gold

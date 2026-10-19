@@ -1,0 +1,467 @@
+{
+  "status": "machine_curated_not_independent_human_gold",
+  "changes": [
+    {
+      "id": "evidence:lc_ms_ms",
+      "alias": "tandem mass spectrometry",
+      "disposition": "candidate_only",
+      "reason": "Tandem MS alone does not specify LC coupling."
+    },
+    {
+      "id": "evidence:fluoride_release",
+      "alias": "fluoride yield",
+      "disposition": "candidate_only",
+      "reason": "A quantitative yield and evidence of release are related, not identical."
+    },
+    {
+      "id": "system:organic_redox_flow_battery",
+      "alias": "aqueous organic redox flow battery",
+      "disposition": "candidate_only",
+      "reason": "Aqueous is a material system restriction."
+    },
+    {
+      "id": "membrane:nafion",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:nafion_117",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:nafion_212",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:nafion_115",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:pbi",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:snpbi_1_42",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:speek_apk",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:sptpc_2_59",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "membrane:anion_exchange_membrane",
+      "change": "object_kind",
+      "from": "membrane",
+      "to": "material"
+    },
+    {
+      "id": "electrode:graphite_felt",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "electrode:carbon_felt",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "electrode:activated_carbon_felt",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "electrode:activated_carbon_felt",
+      "alias": "activated graphite felt",
+      "disposition": "candidate_only",
+      "reason": "Graphite and carbon felt are distinct substrates."
+    },
+    {
+      "id": "electrode:activated_carbon_felt",
+      "alias": "thermally activated carbon felt",
+      "disposition": "candidate_only",
+      "reason": "Activation method is a variant, not a universal equivalence."
+    },
+    {
+      "id": "electrode:c_c",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "electrode:mc_c",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "electrode:bmc_c",
+      "change": "object_kind",
+      "from": "electrode",
+      "to": "material"
+    },
+    {
+      "id": "species:pb2_plus",
+      "alias": "lead ion",
+      "disposition": "candidate_only",
+      "reason": "Unspecified oxidation state is not necessarily Pb(II)."
+    },
+    {
+      "id": "species:pb2_plus",
+      "alias": "lead ions",
+      "disposition": "candidate_only",
+      "reason": "Oxidation state is unspecified."
+    },
+    {
+      "id": "species:bi3_plus",
+      "alias": "bismuth ion",
+      "disposition": "candidate_only",
+      "reason": "Unspecified oxidation state is not necessarily Bi(III)."
+    },
+    {
+      "id": "metric:ohmic_resistance",
+      "alias": "ohmic loss",
+      "disposition": "candidate_only",
+      "reason": "Resistance and a voltage/energy loss have different quantities."
+    },
+    {
+      "id": "degradation:her",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:electrode_polarization",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:local_polarization",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:uneven_pb_deposition",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:vanadium_crossover",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:capacity_fading",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:dendrite_growth",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:dendrite_growth",
+      "alias": "zinc dendrite growth",
+      "disposition": "candidate_only",
+      "reason": "Specific element cannot be erased."
+    },
+    {
+      "id": "degradation:electrolyte_imbalance",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:mass_transfer_limitation",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "degradation:concentration_polarization",
+      "change": "object_kind",
+      "from": "degradation",
+      "to": "process"
+    },
+    {
+      "id": "condition:current_density",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:vanadium_concentration",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:acid_concentration",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:acid_concentration",
+      "alias": "H2SO4 concentration",
+      "disposition": "candidate_only",
+      "reason": "Generic acid concentration does not establish sulfuric acid."
+    },
+    {
+      "id": "condition:acid_concentration",
+      "alias": "sulfuric acid concentration",
+      "disposition": "candidate_only",
+      "reason": "Generic acid concentration does not establish sulfuric acid."
+    },
+    {
+      "id": "condition:electrolyte_concentration",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:bi3_concentration",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:temperature",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:cycle_number",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:flow_rate",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "condition:ph",
+      "change": "object_kind",
+      "from": "condition",
+      "to": "metric"
+    },
+    {
+      "id": "pfas:pfoa_acid",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfos_acid",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfba_acid",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfbs_acid",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:ptfe_polymer",
+      "change": "object_kind",
+      "from": "polymer",
+      "to": "material"
+    },
+    {
+      "id": "pfas:pfoa",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfoa_anion",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfos",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfos_anion",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfba",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfba_anion",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfbs",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:pfbs_anion",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:genx",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:genx_ammonium_salt",
+      "change": "object_kind",
+      "from": "contaminant",
+      "to": "chemical"
+    },
+    {
+      "id": "pfas:ptfe",
+      "change": "object_kind",
+      "from": "polymer",
+      "to": "material"
+    },
+    {
+      "id": "pfas:ptfe",
+      "alias": "Teflon",
+      "disposition": "candidate_only",
+      "reason": "Brand name may denote distinct fluoropolymers."
+    },
+    {
+      "id": "material:bi4ti3o12",
+      "alias": "bismuth titanate",
+      "disposition": "candidate_only",
+      "reason": "Bismuth titanates include multiple stoichiometries."
+    },
+    {
+      "id": "material:pvdf",
+      "change": "object_kind",
+      "from": "polymer",
+      "to": "material"
+    },
+    {
+      "id": "catalyst:cu_n_c",
+      "change": "object_kind",
+      "from": "catalyst",
+      "to": "material"
+    },
+    {
+      "id": "catalyst:cu_n_c_pvdf",
+      "change": "object_kind",
+      "from": "catalyst",
+      "to": "material"
+    },
+    {
+      "id": "property:d33",
+      "change": "object_kind",
+      "from": "property",
+      "to": "metric"
+    },
+    {
+      "id": "matrix:afff",
+      "change": "object_kind",
+      "from": "water_matrix",
+      "to": "mixture"
+    },
+    {
+      "id": "metric:degradation_efficiency",
+      "alias": "removal efficiency",
+      "disposition": "candidate_only",
+      "reason": "Removal does not imply chemical degradation."
+    },
+    {
+      "id": "metric:degradation_efficiency",
+      "alias": "degradation rate",
+      "disposition": "candidate_only",
+      "reason": "Kinetic rate and endpoint fraction are distinct."
+    },
+    {
+      "id": "metric:defluorination_efficiency",
+      "alias": "defluorination rate",
+      "disposition": "candidate_only",
+      "reason": "Kinetic rate and endpoint fraction are distinct."
+    },
+    {
+      "id": "metric:mineralization_efficiency",
+      "alias": "mineralization rate",
+      "disposition": "candidate_only",
+      "reason": "Kinetic rate and endpoint fraction are distinct."
+    },
+    {
+      "id": "pfas:pfoa",
+      "change": "bare_abbreviation_form_unspecified",
+      "acid_id": "pfas:pfoa_acid",
+      "reason": "Bare abbreviation alone does not prove protonation."
+    },
+    {
+      "id": "pfas:pfos",
+      "change": "bare_abbreviation_form_unspecified",
+      "acid_id": "pfas:pfos_acid",
+      "reason": "Bare abbreviation alone does not prove protonation."
+    },
+    {
+      "id": "pfas:pfba",
+      "change": "bare_abbreviation_form_unspecified",
+      "acid_id": "pfas:pfba_acid",
+      "reason": "Bare abbreviation alone does not prove protonation."
+    },
+    {
+      "id": "pfas:pfbs",
+      "change": "bare_abbreviation_form_unspecified",
+      "acid_id": "pfas:pfbs_acid",
+      "reason": "Bare abbreviation alone does not prove protonation."
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "scope": "Selected offline new-core and legacy regression; not full v2 release acceptance",
+  "command": "python -m pytest tests/normalization_v2 tests/test_posthoc_normalization.py tests/test_final_cache.py tests/test_pfas_final_cache.py tests/test_pfas_cluster_recovery.py tests/test_pfas_posthoc_transport.py tests/test_published_cache_runtime.py tests/test_qa_runtime_requests.py -q",
+  "passed": 164,
+  "new_tests": 98,
+  "legacy_tests": 66,
+  "exit_code": 0,
+  "observed_final_output": "............................................................... [ 87%]\r\n....................                                                     [100%]\r\n============================== warnings summary ===============================\r\nhyperrag\\llm.py:619\r\n  C:\\Users\\19855\\Desktop\\Hyper-rag\\hyper-gragh\\hyperrag\\llm.py:619: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\r\n    class Model(BaseModel):\r\n\r\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\r\n164 passed, 1 warning in 11.64s\r\n"
+}

@@ -1,0 +1,330 @@
+schema_version: registry-offline-v2.1
+domain: base
+description: 'Cross-domain chemistry, radical and evidence-method identities shared by the flow-battery and PFAS
+  registries.  Surface keys are exact lookup keys only; they never prove sameness.
+
+  '
+roles:
+- name: target
+  description: Pollutant, analyte or object being removed or studied.
+- name: catalyst
+  description: Material that catalyses a reaction.
+- name: adsorbent
+  description: Material that binds a target without necessarily reacting.
+- name: electrode
+  description: Electrode or electrode material.
+- name: membrane
+  description: Separator or ion-exchange membrane.
+- name: electrolyte
+  description: Electrolyte solution or supporting salt.
+- name: additive
+  description: Additive or modifier.
+- name: reactant
+  description: Consumed reactant in a reaction.
+- name: product
+  description: Product of a reaction.
+- name: intermediate
+  description: Proposed or detected reaction intermediate.
+- name: radical_scavenger
+  description: Scavenger used in a mechanistic control experiment.
+- name: evidence_method
+  description: Analytical or computational method providing evidence.
+- name: measured_metric
+  description: Quantity that is measured or reported.
+- name: operating_condition
+  description: Experimental or operating condition.
+- name: material_component
+  description: Component of a composite or supported material.
+defaults:
+  alias_review: 'Every alias in this directory names a relation the curator is prepared to defend.  Chemically unsafe
+    legacy aliases are stored as scoped migration_suggestion entries and are excluded from runtime lookup unless
+    a reviewer explicitly asks for unreviewed candidates.
+
+    '
+  formula_policy: 'chemical_formula preserves element case, charge superscripts and stoichiometric subscripts.  common_name
+    is case-folded prose.  Neither policy merges acid, anion, salt, composite, sample or phase variants.
+
+    '
+  seed_curation_version: conservative-1
+  annotation_status: machine_curated_not_independent_human_gold
+entities:
+- canonical_id: species:cobalt
+  canonical_name: Co
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: Co
+    normalizer: chemical_formula
+  - text: cobalt
+    normalizer: common_name
+  properties:
+    element_symbol: Co
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:carbon_monoxide
+  canonical_name: CO
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: CO
+    normalizer: chemical_formula
+  - text: carbon monoxide
+    normalizer: common_name
+  properties:
+    formula: CO
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:hydroxyl_radical
+  canonical_name: ·OH
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: •OH
+    normalizer: chemical_formula
+  - text: .OH
+    normalizer: chemical_formula
+  - text: OH radical
+    normalizer: common_name
+  - text: hydroxyl radical
+    normalizer: common_name
+  - text: hydroxyl radicals
+    normalizer: common_name
+  properties:
+    species_class: radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:sulfate_radical
+  canonical_name: SO4·-
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: SO4•-
+    normalizer: chemical_formula
+  - text: SO4•−
+    normalizer: chemical_formula
+  - text: SO4 radical
+    normalizer: common_name
+  - text: sulfate radical
+    normalizer: common_name
+  properties:
+    species_class: radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:superoxide_radical
+  canonical_name: O2·-
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: O2•-
+    normalizer: chemical_formula
+  - text: O2•−
+    normalizer: chemical_formula
+  - text: superoxide radical
+    normalizer: common_name
+  - text: superoxide
+    normalizer: common_name
+  properties:
+    species_class: radical
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: species:hydrogen_peroxide
+  canonical_name: H2O2
+  kind: species
+  granularity: concept
+  name_normalizer: chemical_formula
+  aliases:
+  - text: H₂O₂
+    normalizer: chemical_formula
+  - text: hydrogen peroxide
+    normalizer: common_name
+  variant_dimensions:
+  - charge
+  - composition
+  - counterion
+  - membrane_model
+  - oxidation_state
+  - phase
+  - protonation
+  - sample_id
+- canonical_id: evidence:epr
+  canonical_name: EPR
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: electron paramagnetic resonance
+    normalizer: common_name
+  - text: ESR
+    normalizer: common_name
+  - text: electron spin resonance
+    normalizer: common_name
+  properties:
+    method_class: spectroscopy
+- canonical_id: evidence:dft
+  canonical_name: DFT
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: density functional theory
+    normalizer: common_name
+  - text: DFT calculation
+    normalizer: common_name
+  - text: DFT calculations
+    normalizer: common_name
+  properties:
+    method_class: computation
+- canonical_id: evidence:lc_ms
+  canonical_name: LC-MS
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: LCMS
+    normalizer: common_name
+  - text: liquid chromatography-mass spectrometry
+    normalizer: common_name
+  properties:
+    method_class: chromatography_mass_spectrometry
+    tandem: false
+- canonical_id: evidence:lc_ms_ms
+  canonical_name: LC-MS/MS
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: LCMS/MS
+    normalizer: common_name
+  - text: LC-MS-MS
+    normalizer: common_name
+  - text: liquid chromatography-tandem mass spectrometry
+    normalizer: common_name
+  - text: liquid chromatography tandem mass spectrometry
+    normalizer: common_name
+  properties:
+    method_class: chromatography_tandem_mass_spectrometry
+    tandem: true
+  scoped_aliases:
+  - text: tandem mass spectrometry
+    normalizer: common_name
+    scope:
+      domain: base
+    review_status: migration_suggestion
+    notes: Tandem MS alone does not specify LC coupling.
+- canonical_id: evidence:fluoride_release
+  canonical_name: fluoride release
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: F- release
+    normalizer: common_name
+  - text: F− release
+    normalizer: common_name
+  - text: fluoride ion release
+    normalizer: common_name
+  properties:
+    observation: defluorination_byproduct
+  scoped_aliases:
+  - text: fluoride yield
+    normalizer: common_name
+    scope:
+      domain: base
+    review_status: migration_suggestion
+    notes: A quantitative yield and evidence of release are related, not identical.
+- canonical_id: evidence:scavenger_test
+  canonical_name: scavenger test
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: quenching experiment
+    normalizer: common_name
+  - text: radical scavenger experiment
+    normalizer: common_name
+  - text: scavenging test
+    normalizer: common_name
+- canonical_id: evidence:control_experiment
+  canonical_name: control experiment
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: blank control
+    normalizer: common_name
+  - text: control test
+    normalizer: common_name
+  - text: control experiments
+    normalizer: common_name
+- canonical_id: evidence:isotope_labeling
+  canonical_name: isotope labeling
+  kind: evidence
+  granularity: concept
+  aliases:
+  - text: isotopic labeling
+    normalizer: common_name
+  - text: isotope labelling
+    normalizer: common_name
+  - text: isotopic labelling
+    normalizer: common_name
+negative_pairs:
+- left: evidence:lc_ms
+  right: evidence:lc_ms_ms
+  reason: Single-stage and tandem mass spectrometry are distinct methods.
+- left: evidence:scavenger_test
+  right: evidence:control_experiment
+  reason: A scavenger response is a mechanistic probe, not a blank control.
+- left: evidence:scavenger_test
+  right: evidence:isotope_labeling
+  reason: Scavenging and isotope labelling answer different mechanistic questions.
+- left: evidence:fluoride_release
+  right: evidence:isotope_labeling
+  reason: A fluoride byproduct measurement is not an isotope-tracing result.
+high_risk_groups:
+- name: analytical_methods
+  canonical_ids:
+  - evidence:epr
+  - evidence:dft
+  - evidence:lc_ms
+  - evidence:lc_ms_ms
+  reason: Evidence methods must not be merged into one "characterization" identity.
+- name: mechanistic_proxies
+  canonical_ids:
+  - evidence:scavenger_test
+  - evidence:control_experiment
+  - evidence:isotope_labeling
+  - evidence:fluoride_release
+  reason: Control experiments and proxy measurements are distinct evidence.

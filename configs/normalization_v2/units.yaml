@@ -1,0 +1,285 @@
+schema_version: registry-offline-v2.1
+domain: units
+description: 'Explicit unit conversions.  Every dimension has one base unit and every
+  factor is a decimal string so that conversion never depends on binary floating point.  Absolute
+  and differential temperatures are separate dimensions: an offset belongs to the
+  absolute scale, not to a difference.
+
+  '
+units:
+- symbol: mg/L
+  dimension: mass_concentration
+  factor: '1'
+  aliases:
+  - mg L-1
+  - mg/L
+  - milligram per litre
+  - milligram per liter
+  notes: Base unit for mass concentration.
+  base_unit: mg/L
+- symbol: µg/L
+  dimension: mass_concentration
+  factor: '0.001'
+  aliases:
+  - ug/L
+  - µg L-1
+  - microgram per litre
+  - microgram per liter
+  base_unit: mg/L
+- symbol: g/L
+  dimension: mass_concentration
+  factor: '1000'
+  aliases:
+  - g L-1
+  - gram per litre
+  - gram per liter
+  base_unit: mg/L
+- symbol: mol/L
+  dimension: amount_concentration
+  factor: '1'
+  aliases:
+  - M
+  - mol L-1
+  - molar
+  notes: Base unit for amount concentration.
+  base_unit: mol/L
+- symbol: mmol/L
+  dimension: amount_concentration
+  factor: '0.001'
+  aliases:
+  - mM
+  - mmol L-1
+  - millimolar
+  base_unit: mol/L
+- symbol: µmol/L
+  dimension: amount_concentration
+  factor: '0.000001'
+  aliases:
+  - uM
+  - µM
+  - umol/L
+  - micromolar
+  base_unit: mol/L
+- symbol: fraction
+  dimension: fraction
+  factor: '1'
+  aliases:
+  - dimensionless
+  notes: Base unit for a dimensionless fraction.
+  base_unit: fraction
+- symbol: '%'
+  dimension: fraction
+  factor: '0.01'
+  aliases:
+  - percent
+  - percent_point
+  base_unit: fraction
+- symbol: ppm
+  dimension: fraction
+  factor: '0.000001'
+  aliases:
+  - parts_per_million
+  base_unit: fraction
+- symbol: A/m2
+  dimension: current_density
+  factor: '1'
+  aliases:
+  - A m-2
+  - ampere per square metre
+  - ampere per square meter
+  notes: Base unit for current density.
+  base_unit: A/m2
+- symbol: mA/cm2
+  dimension: current_density
+  factor: '10'
+  aliases:
+  - mA cm-2
+  - milliampere per square centimetre
+  - milliampere per square centimeter
+  base_unit: A/m2
+- symbol: µA/cm2
+  dimension: current_density
+  factor: '0.01'
+  aliases:
+  - uA/cm2
+  - µA cm-2
+  - microampere per square centimetre
+  base_unit: A/m2
+- symbol: V
+  dimension: potential
+  factor: '1'
+  aliases:
+  - volt
+  - volts
+  base_unit: V
+- symbol: mV
+  dimension: potential
+  factor: '0.001'
+  aliases:
+  - millivolt
+  - millivolts
+  base_unit: V
+- symbol: kV
+  dimension: potential
+  factor: '1000'
+  aliases:
+  - kilovolt
+  - kilovolts
+  base_unit: V
+- symbol: Ω·cm2
+  dimension: area_resistance
+  factor: '1'
+  aliases:
+  - ohm cm2
+  - Ω cm2
+  - ohm·cm2
+  notes: Base unit for area-specific resistance.
+  base_unit: Ω·cm2
+- symbol: mΩ·cm2
+  dimension: area_resistance
+  factor: '0.001'
+  aliases:
+  - milliohm cm2
+  - mΩ cm2
+  base_unit: Ω·cm2
+- symbol: K
+  dimension: absolute_temperature
+  factor: '1'
+  offset: '0'
+  aliases:
+  - kelvin
+  notes: Base unit for absolute temperature.
+  base_unit: K
+- symbol: °C
+  dimension: absolute_temperature
+  factor: '1'
+  offset: '273.15'
+  aliases:
+  - degC
+  - degree Celsius
+  - degrees Celsius
+  notes: Absolute Celsius; converted with the 273.15 offset.
+  base_unit: K
+- symbol: K_diff
+  dimension: temperature_difference
+  factor: '1'
+  offset: '0'
+  aliases:
+  - delta K
+  - ΔK
+  notes: A temperature difference in kelvin; no offset.
+  base_unit: K_diff
+- symbol: °C_diff
+  dimension: temperature_difference
+  factor: '1'
+  offset: '0'
+  aliases:
+  - delta degC
+  - Δ°C
+  - Celsius difference
+  notes: A temperature difference in Celsius; no offset, identical magnitude to K_diff.
+  base_unit: K_diff
+- symbol: mmol/g
+  dimension: mass_capacity
+  factor: '1'
+  aliases:
+  - mmol g-1
+  notes: Base unit for ion-exchange capacity.
+  base_unit: mmol/g
+- symbol: mol/g
+  dimension: mass_capacity
+  factor: '1000'
+  aliases:
+  - mol g-1
+  base_unit: mmol/g
+- symbol: µmol/g
+  dimension: mass_capacity
+  factor: '0.001'
+  aliases:
+  - umol/g
+  - µmol g-1
+  base_unit: mmol/g
+- symbol: s
+  dimension: time
+  factor: '1'
+  aliases:
+  - sec
+  - second
+  - seconds
+  base_unit: s
+- symbol: min
+  dimension: time
+  factor: '60'
+  aliases:
+  - minute
+  - minutes
+  base_unit: s
+- symbol: h
+  dimension: time
+  factor: '3600'
+  aliases:
+  - hr
+  - hour
+  - hours
+  base_unit: s
+- symbol: Pa
+  dimension: pressure
+  factor: '1'
+  aliases:
+  - pascal
+  notes: Base unit for pressure.
+  base_unit: Pa
+- symbol: kPa
+  dimension: pressure
+  factor: '1000'
+  aliases:
+  - kilopascal
+  base_unit: Pa
+- symbol: bar
+  dimension: pressure
+  factor: '100000'
+  aliases: []
+  base_unit: Pa
+- symbol: atm
+  dimension: pressure
+  factor: '101325'
+  aliases:
+  - atmosphere
+  base_unit: Pa
+- symbol: mL/min
+  dimension: volumetric_flow_rate
+  factor: '1'
+  aliases:
+  - mL min-1
+  notes: Base unit for volumetric flow rate.
+  base_unit: mL/min
+- symbol: L/min
+  dimension: volumetric_flow_rate
+  factor: '1000'
+  aliases:
+  - L min-1
+  - litre per minute
+  - liter per minute
+  base_unit: mL/min
+- symbol: mL/s
+  dimension: volumetric_flow_rate
+  factor: '60'
+  aliases:
+  - mL s-1
+  base_unit: mL/min
+- symbol: L/s
+  dimension: volumetric_flow_rate
+  factor: '60000'
+  aliases:
+  - L s-1
+  - litre per second
+  - liter per second
+  base_unit: mL/min
+- symbol: m3/s
+  dimension: volumetric_flow_rate
+  factor: '60000000'
+  aliases:
+  - m3 s-1
+  - cubic metre per second
+  - cubic meter per second
+  base_unit: mL/min

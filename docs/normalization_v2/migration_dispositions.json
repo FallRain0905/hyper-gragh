@@ -1,0 +1,3684 @@
+{
+  "status": "machine_migration_inventory_not_human_gold",
+  "registry_hash": "ba313edaa7a2f95852e959f6fd224d7e298839c359f20e186175c84f12f44f42",
+  "source_sha256": {
+    "configs/normalization/alias_registry.yaml": "93ddcd7322b5f57d74396250e51f20ae5d0aba38683e50a34174410e1ad34380",
+    "configs/normalization/pfas.yaml": "b612714a94cd0c6a680219b8ad9e60e177a602e3d71198936c2bafde57fbbae2"
+  },
+  "counts": {
+    "seed_equivalence": 224,
+    "not_in_trusted_seed": 38,
+    "candidate_only": 24,
+    "identity_split": 26
+  },
+  "records": [
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "VRFB",
+      "new_ids": [
+        "system:vrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "vanadium redox flow battery",
+      "new_ids": [
+        "system:vrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "vanadium redox flow batteries",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "all-vanadium redox flow battery",
+      "new_ids": [
+        "system:vrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "all vanadium flow battery",
+      "new_ids": [
+        "system:vrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:vrfb",
+      "old_name": "VRFB",
+      "surface": "VRFBs",
+      "new_ids": [
+        "system:vrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:icrfb",
+      "old_name": "ICRFB",
+      "surface": "ICRFB",
+      "new_ids": [
+        "system:icrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:icrfb",
+      "old_name": "ICRFB",
+      "surface": "iron-chromium redox flow battery",
+      "new_ids": [
+        "system:icrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:icrfb",
+      "old_name": "ICRFB",
+      "surface": "iron chromium redox flow battery",
+      "new_ids": [
+        "system:icrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:icrfb",
+      "old_name": "ICRFB",
+      "surface": "Fe-Cr redox flow battery",
+      "new_ids": [
+        "system:icrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:icrfb",
+      "old_name": "ICRFB",
+      "surface": "Fe/Cr flow battery",
+      "new_ids": [
+        "system:icrfb"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:zinc_bromine_flow_battery",
+      "old_name": "zinc-bromine flow battery",
+      "surface": "zinc-bromine flow battery",
+      "new_ids": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:zinc_bromine_flow_battery",
+      "old_name": "zinc-bromine flow battery",
+      "surface": "zinc bromine flow battery",
+      "new_ids": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:zinc_bromine_flow_battery",
+      "old_name": "zinc-bromine flow battery",
+      "surface": "zinc-bromine battery",
+      "new_ids": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:zinc_bromine_flow_battery",
+      "old_name": "zinc-bromine flow battery",
+      "surface": "Zn-Br flow battery",
+      "new_ids": [
+        "system:zinc_bromine_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:soluble_lead_acid_flow_battery",
+      "old_name": "soluble lead-acid flow battery",
+      "surface": "soluble lead-acid flow battery",
+      "new_ids": [
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:soluble_lead_acid_flow_battery",
+      "old_name": "soluble lead-acid flow battery",
+      "surface": "soluble lead flow battery",
+      "new_ids": [
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:soluble_lead_acid_flow_battery",
+      "old_name": "soluble lead-acid flow battery",
+      "surface": "soluble lead-acid flow cell",
+      "new_ids": [
+        "system:soluble_lead_acid_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:organic_redox_flow_battery",
+      "old_name": "organic redox flow battery",
+      "surface": "organic redox flow battery",
+      "new_ids": [
+        "system:organic_redox_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:organic_redox_flow_battery",
+      "old_name": "organic redox flow battery",
+      "surface": "aqueous organic redox flow battery",
+      "new_ids": [],
+      "candidate_ids": [
+        "system:organic_redox_flow_battery"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:organic_redox_flow_battery",
+      "old_name": "organic redox flow battery",
+      "surface": "organic flow battery",
+      "new_ids": [
+        "system:organic_redox_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:neutral_aqueous_organic_flow_battery",
+      "old_name": "neutral aqueous organic flow battery",
+      "surface": "neutral aqueous organic flow battery",
+      "new_ids": [
+        "system:neutral_aqueous_organic_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:neutral_aqueous_organic_flow_battery",
+      "old_name": "neutral aqueous organic flow battery",
+      "surface": "neutral aqueous organic redox flow battery",
+      "new_ids": [
+        "system:neutral_aqueous_organic_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "system:neutral_aqueous_organic_flow_battery",
+      "old_name": "neutral aqueous organic flow battery",
+      "surface": "neutral organic flow battery",
+      "new_ids": [
+        "system:neutral_aqueous_organic_flow_battery"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion",
+      "old_name": "Nafion",
+      "surface": "Nafion",
+      "new_ids": [
+        "membrane:nafion"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion",
+      "old_name": "Nafion",
+      "surface": "Nafion membrane",
+      "new_ids": [
+        "membrane:nafion"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion",
+      "old_name": "Nafion",
+      "surface": "Nafion series membrane",
+      "new_ids": [
+        "membrane:nafion"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion",
+      "old_name": "Nafion",
+      "surface": "perfluorosulfonic acid membrane",
+      "new_ids": [],
+      "candidate_ids": [
+        "membrane:nafion"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion",
+      "old_name": "Nafion",
+      "surface": "PFSA membrane",
+      "new_ids": [],
+      "candidate_ids": [
+        "membrane:nafion"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_117",
+      "old_name": "Nafion 117",
+      "surface": "Nafion 117",
+      "new_ids": [
+        "membrane:nafion_117"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_117",
+      "old_name": "Nafion 117",
+      "surface": "N117",
+      "new_ids": [
+        "membrane:nafion_117"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_117",
+      "old_name": "Nafion 117",
+      "surface": "Nafion117",
+      "new_ids": [
+        "membrane:nafion_117"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_117",
+      "old_name": "Nafion 117",
+      "surface": "Nafion-117",
+      "new_ids": [
+        "membrane:nafion_117"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_212",
+      "old_name": "Nafion 212",
+      "surface": "Nafion 212",
+      "new_ids": [
+        "membrane:nafion_212"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_212",
+      "old_name": "Nafion 212",
+      "surface": "N212",
+      "new_ids": [
+        "membrane:nafion_212"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_212",
+      "old_name": "Nafion 212",
+      "surface": "Nafion212",
+      "new_ids": [
+        "membrane:nafion_212"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_212",
+      "old_name": "Nafion 212",
+      "surface": "Nafion-212",
+      "new_ids": [
+        "membrane:nafion_212"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_115",
+      "old_name": "Nafion 115",
+      "surface": "Nafion 115",
+      "new_ids": [
+        "membrane:nafion_115"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_115",
+      "old_name": "Nafion 115",
+      "surface": "N115",
+      "new_ids": [
+        "membrane:nafion_115"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_115",
+      "old_name": "Nafion 115",
+      "surface": "Nafion115",
+      "new_ids": [
+        "membrane:nafion_115"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:nafion_115",
+      "old_name": "Nafion 115",
+      "surface": "Nafion-115",
+      "new_ids": [
+        "membrane:nafion_115"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:pbi",
+      "old_name": "PBI",
+      "surface": "PBI",
+      "new_ids": [
+        "membrane:pbi"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:pbi",
+      "old_name": "PBI",
+      "surface": "polybenzimidazole",
+      "new_ids": [
+        "membrane:pbi"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:pbi",
+      "old_name": "PBI",
+      "surface": "PBI backbone",
+      "new_ids": [
+        "membrane:pbi"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:snpbi_1_42",
+      "old_name": "SNPBI-1.42",
+      "surface": "SNPBI-1.42",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:snpbi_1_42",
+      "old_name": "SNPBI-1.42",
+      "surface": "SNPBI 1.42",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:snpbi_1_42",
+      "old_name": "SNPBI-1.42",
+      "surface": "SNPBI-1.42 membrane",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:speek_apk",
+      "old_name": "SPEEK/APK",
+      "surface": "SPEEK/APK",
+      "new_ids": [
+        "membrane:speek_apk"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:speek_apk",
+      "old_name": "SPEEK/APK",
+      "surface": "SPEEK-APK",
+      "new_ids": [
+        "membrane:speek_apk"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:speek_apk",
+      "old_name": "SPEEK/APK",
+      "surface": "SPEEK/APK composite membrane",
+      "new_ids": [
+        "membrane:speek_apk"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:sptpc_2_59",
+      "old_name": "SPTPC-2.59",
+      "surface": "SPTPC-2.59",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:sptpc_2_59",
+      "old_name": "SPTPC-2.59",
+      "surface": "SPTPC 2.59",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:sptpc_2_59",
+      "old_name": "SPTPC-2.59",
+      "surface": "SPTPC-2.59 membrane",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:anion_exchange_membrane",
+      "old_name": "anion-exchange membrane",
+      "surface": "anion-exchange membrane",
+      "new_ids": [
+        "membrane:anion_exchange_membrane"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:anion_exchange_membrane",
+      "old_name": "anion-exchange membrane",
+      "surface": "anion exchange membrane",
+      "new_ids": [
+        "membrane:anion_exchange_membrane"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "membrane:anion_exchange_membrane",
+      "old_name": "anion-exchange membrane",
+      "surface": "AEM",
+      "new_ids": [
+        "membrane:anion_exchange_membrane"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:graphite_felt",
+      "old_name": "graphite felt",
+      "surface": "graphite felt",
+      "new_ids": [
+        "electrode:graphite_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:graphite_felt",
+      "old_name": "graphite felt",
+      "surface": "graphite felt electrodes",
+      "new_ids": [
+        "electrode:graphite_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:graphite_felt",
+      "old_name": "graphite felt",
+      "surface": "graphite felt electrode",
+      "new_ids": [
+        "electrode:graphite_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:graphite_felt",
+      "old_name": "graphite felt",
+      "surface": "GF",
+      "new_ids": [
+        "electrode:graphite_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:carbon_felt",
+      "old_name": "carbon felt",
+      "surface": "carbon felt",
+      "new_ids": [
+        "electrode:carbon_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:carbon_felt",
+      "old_name": "carbon felt",
+      "surface": "carbon felt electrode",
+      "new_ids": [
+        "electrode:carbon_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:carbon_felt",
+      "old_name": "carbon felt",
+      "surface": "carbon felt electrodes",
+      "new_ids": [
+        "electrode:carbon_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:carbon_felt",
+      "old_name": "carbon felt",
+      "surface": "CF",
+      "new_ids": [
+        "electrode:carbon_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:activated_carbon_felt",
+      "old_name": "activated carbon felt",
+      "surface": "activated carbon felt",
+      "new_ids": [
+        "electrode:activated_carbon_felt"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:activated_carbon_felt",
+      "old_name": "activated carbon felt",
+      "surface": "thermally activated carbon felt",
+      "new_ids": [],
+      "candidate_ids": [
+        "electrode:activated_carbon_felt"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:activated_carbon_felt",
+      "old_name": "activated carbon felt",
+      "surface": "activated graphite felt",
+      "new_ids": [],
+      "candidate_ids": [
+        "electrode:activated_carbon_felt"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:c_c",
+      "old_name": "C-C",
+      "surface": "C-C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:c_c",
+      "old_name": "C-C",
+      "surface": "C C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:c_c",
+      "old_name": "C-C",
+      "surface": "C C electrode",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:mc_c",
+      "old_name": "MC-C",
+      "surface": "MC-C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:mc_c",
+      "old_name": "MC-C",
+      "surface": "MC C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:mc_c",
+      "old_name": "MC-C",
+      "surface": "MC C electrode",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:bmc_c",
+      "old_name": "BMC-C",
+      "surface": "BMC-C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:bmc_c",
+      "old_name": "BMC-C",
+      "surface": "BMC C",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "electrode:bmc_c",
+      "old_name": "BMC-C",
+      "surface": "BMC C electrode",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:h2so4",
+      "old_name": "H2SO4",
+      "surface": "H2SO4",
+      "new_ids": [
+        "species:h2so4"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:h2so4",
+      "old_name": "H2SO4",
+      "surface": "sulfuric acid",
+      "new_ids": [
+        "species:h2so4"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:h2so4",
+      "old_name": "H2SO4",
+      "surface": "sulphuric acid",
+      "new_ids": [
+        "species:h2so4"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:bi3_plus",
+      "old_name": "Bi3+",
+      "surface": "Bi3+",
+      "new_ids": [
+        "species:bi3_plus"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:bi3_plus",
+      "old_name": "Bi3+",
+      "surface": "Bi3+ additive",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:bi3_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:bi3_plus",
+      "old_name": "Bi3+",
+      "surface": "Bi-based additive",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:bi3_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:bi3_plus",
+      "old_name": "Bi3+",
+      "surface": "bismuth additive",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:bi3_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "species:bi3_plus",
+      "old_name": "Bi3+",
+      "surface": "bismuth-assisted additive",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:bi3_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:her",
+      "old_name": "hydrogen evolution reaction",
+      "surface": "hydrogen evolution reaction",
+      "new_ids": [
+        "degradation:her"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:her",
+      "old_name": "hydrogen evolution reaction",
+      "surface": "HER",
+      "new_ids": [
+        "degradation:her"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:her",
+      "old_name": "hydrogen evolution reaction",
+      "surface": "hydrogen evolution",
+      "new_ids": [
+        "degradation:her"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_ii",
+      "old_name": "Cr(II)",
+      "surface": "Cr(II)",
+      "new_ids": [
+        "species:cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_ii",
+      "old_name": "Cr(II)",
+      "surface": "Cr2+",
+      "new_ids": [
+        "species:cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_ii",
+      "old_name": "Cr(II)",
+      "surface": "Cr²⁺",
+      "new_ids": [
+        "species:cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii",
+      "old_name": "Cr(III)",
+      "surface": "Cr(III)",
+      "new_ids": [
+        "species:cr_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii",
+      "old_name": "Cr(III)",
+      "surface": "Cr3+",
+      "new_ids": [
+        "species:cr_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii",
+      "old_name": "Cr(III)",
+      "surface": "Cr³⁺",
+      "new_ids": [
+        "species:cr_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii_cr_ii",
+      "old_name": "Cr(III)/Cr(II)",
+      "surface": "Cr(III)/Cr(II)",
+      "new_ids": [
+        "species:cr_iii_cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii_cr_ii",
+      "old_name": "Cr(III)/Cr(II)",
+      "surface": "Cr(II)/Cr(III)",
+      "new_ids": [
+        "species:cr_iii_cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii_cr_ii",
+      "old_name": "Cr(III)/Cr(II)",
+      "surface": "Cr3+/Cr2+",
+      "new_ids": [
+        "species:cr_iii_cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:cr_iii_cr_ii",
+      "old_name": "Cr(III)/Cr(II)",
+      "surface": "Cr2+/Cr3+",
+      "new_ids": [
+        "species:cr_iii_cr_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_ii",
+      "old_name": "V(II)",
+      "surface": "V(II)",
+      "new_ids": [
+        "species:v_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_ii",
+      "old_name": "V(II)",
+      "surface": "V2+",
+      "new_ids": [
+        "species:v_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_ii",
+      "old_name": "V(II)",
+      "surface": "V²⁺",
+      "new_ids": [
+        "species:v_ii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iii",
+      "old_name": "V(III)",
+      "surface": "V(III)",
+      "new_ids": [
+        "species:v_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iii",
+      "old_name": "V(III)",
+      "surface": "V3+",
+      "new_ids": [
+        "species:v_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iii",
+      "old_name": "V(III)",
+      "surface": "V³⁺",
+      "new_ids": [
+        "species:v_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv",
+      "old_name": "V(IV)",
+      "surface": "V(IV)",
+      "new_ids": [
+        "species:v_iv"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv",
+      "old_name": "V(IV)",
+      "surface": "VO^2+",
+      "new_ids": [
+        "species:vanadyl_ion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv",
+      "old_name": "V(IV)",
+      "surface": "VO²⁺",
+      "new_ids": [
+        "species:vanadyl_ion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv",
+      "old_name": "V(IV)",
+      "surface": "vanadyl ion",
+      "new_ids": [
+        "species:vanadyl_ion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_v",
+      "old_name": "V(V)",
+      "surface": "V(V)",
+      "new_ids": [
+        "species:v_v"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_v",
+      "old_name": "V(V)",
+      "surface": "VO2+",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:dioxovanadium_v"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_v",
+      "old_name": "V(V)",
+      "surface": "VO2(V)",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_v",
+      "old_name": "V(V)",
+      "surface": "VO₂⁺",
+      "new_ids": [
+        "species:dioxovanadium_v"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_ii_v_iii",
+      "old_name": "V(II)/V(III)",
+      "surface": "V(II)/V(III)",
+      "new_ids": [
+        "species:v_ii_v_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_ii_v_iii",
+      "old_name": "V(II)/V(III)",
+      "surface": "V2+/V3+",
+      "new_ids": [
+        "species:v_ii_v_iii"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv_v_v",
+      "old_name": "V(IV)/V(V)",
+      "surface": "V(IV)/V(V)",
+      "new_ids": [
+        "species:v_iv_v_v"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:v_iv_v_v",
+      "old_name": "V(IV)/V(V)",
+      "surface": "VO2+/VO^2+",
+      "new_ids": [
+        "species:v_iv_v_v"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:oh_radical",
+      "old_name": "·OH",
+      "surface": "·OH",
+      "new_ids": [
+        "species:hydroxyl_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:oh_radical",
+      "old_name": "·OH",
+      "surface": "•OH",
+      "new_ids": [
+        "species:hydroxyl_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:oh_radical",
+      "old_name": "·OH",
+      "surface": "OH radical",
+      "new_ids": [
+        "species:hydroxyl_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:oh_radical",
+      "old_name": "·OH",
+      "surface": "hydroxyl radical",
+      "new_ids": [
+        "species:hydroxyl_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:oh_radical",
+      "old_name": "·OH",
+      "surface": "hydroxyl radicals",
+      "new_ids": [
+        "species:hydroxyl_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:o2_radical",
+      "old_name": "O2·-",
+      "surface": "O2·-",
+      "new_ids": [
+        "species:superoxide_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:o2_radical",
+      "old_name": "O2·-",
+      "surface": "O2 radical anion",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:o2_radical",
+      "old_name": "O2·-",
+      "surface": "superoxide radical",
+      "new_ids": [
+        "species:superoxide_radical"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:pb2_plus",
+      "old_name": "Pb2+",
+      "surface": "Pb2+",
+      "new_ids": [
+        "species:pb2_plus"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:pb2_plus",
+      "old_name": "Pb2+",
+      "surface": "Pb(II)",
+      "new_ids": [
+        "species:pb2_plus"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:pb2_plus",
+      "old_name": "Pb2+",
+      "surface": "lead ion",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:pb2_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:pb2_plus",
+      "old_name": "Pb2+",
+      "surface": "lead ions",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:pb2_plus"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:br2",
+      "old_name": "Br2",
+      "surface": "Br2",
+      "new_ids": [
+        "species:br2"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:br2",
+      "old_name": "Br2",
+      "surface": "bromine",
+      "new_ids": [
+        "species:br2"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:tempo",
+      "old_name": "TEMPO",
+      "surface": "TEMPO",
+      "new_ids": [
+        "species:tempo"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:tempo",
+      "old_name": "TEMPO",
+      "surface": "TEMPO radical",
+      "new_ids": [
+        "species:tempo"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:viologen",
+      "old_name": "viologen",
+      "surface": "viologen",
+      "new_ids": [
+        "species:viologen"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:viologen",
+      "old_name": "viologen",
+      "surface": "viologen derivative",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:viologen"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:quinone",
+      "old_name": "quinone",
+      "surface": "quinone",
+      "new_ids": [
+        "species:quinone"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:quinone",
+      "old_name": "quinone",
+      "surface": "quinone-based active species",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:quinone"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "active_species:quinone",
+      "old_name": "quinone",
+      "surface": "quinone active species",
+      "new_ids": [],
+      "candidate_ids": [
+        "species:quinone"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ce",
+      "old_name": "coulombic efficiency",
+      "surface": "coulombic efficiency",
+      "new_ids": [
+        "metric:ce"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ce",
+      "old_name": "coulombic efficiency",
+      "surface": "CE",
+      "new_ids": [
+        "metric:ce"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ce",
+      "old_name": "coulombic efficiency",
+      "surface": "coulombic efficiency (%)",
+      "new_ids": [
+        "metric:ce"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ve",
+      "old_name": "voltage efficiency",
+      "surface": "voltage efficiency",
+      "new_ids": [
+        "metric:ve"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ve",
+      "old_name": "voltage efficiency",
+      "surface": "VE",
+      "new_ids": [
+        "metric:ve"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ve",
+      "old_name": "voltage efficiency",
+      "surface": "voltaic efficiency",
+      "new_ids": [
+        "metric:ve"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ve",
+      "old_name": "voltage efficiency",
+      "surface": "voltage efficiency (%)",
+      "new_ids": [
+        "metric:ve"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ee",
+      "old_name": "energy efficiency",
+      "surface": "energy efficiency",
+      "new_ids": [
+        "metric:ee"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ee",
+      "old_name": "energy efficiency",
+      "surface": "EE",
+      "new_ids": [
+        "metric:ee"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ee",
+      "old_name": "energy efficiency",
+      "surface": "energy efficiency (%)",
+      "new_ids": [
+        "metric:ee"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:energy_density",
+      "old_name": "energy density",
+      "surface": "energy density",
+      "new_ids": [
+        "metric:energy_density"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ion_exchange_capacity",
+      "old_name": "ion exchange capacity",
+      "surface": "ion exchange capacity",
+      "new_ids": [
+        "metric:ion_exchange_capacity"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ion_exchange_capacity",
+      "old_name": "ion exchange capacity",
+      "surface": "IEC",
+      "new_ids": [
+        "metric:ion_exchange_capacity"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ion_exchange_capacity",
+      "old_name": "ion exchange capacity",
+      "surface": "IEC value",
+      "new_ids": [
+        "metric:ion_exchange_capacity"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ion_exchange_capacity",
+      "old_name": "ion exchange capacity",
+      "surface": "ion-exchange capacity",
+      "new_ids": [
+        "metric:ion_exchange_capacity"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:area_resistance",
+      "old_name": "area resistance",
+      "surface": "area resistance",
+      "new_ids": [
+        "metric:area_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:area_resistance",
+      "old_name": "area resistance",
+      "surface": "area-specific resistance",
+      "new_ids": [
+        "metric:area_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:area_resistance",
+      "old_name": "area resistance",
+      "surface": "membrane area resistance",
+      "new_ids": [
+        "metric:area_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ohmic_resistance",
+      "old_name": "ohmic resistance",
+      "surface": "ohmic resistance",
+      "new_ids": [
+        "metric:ohmic_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:ohmic_resistance",
+      "old_name": "ohmic resistance",
+      "surface": "ohmic loss",
+      "new_ids": [],
+      "candidate_ids": [
+        "metric:ohmic_resistance"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:charge_transfer_resistance",
+      "old_name": "charge-transfer resistance",
+      "surface": "charge-transfer resistance",
+      "new_ids": [
+        "metric:charge_transfer_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:charge_transfer_resistance",
+      "old_name": "charge-transfer resistance",
+      "surface": "charge transfer resistance",
+      "new_ids": [
+        "metric:charge_transfer_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:charge_transfer_resistance",
+      "old_name": "charge-transfer resistance",
+      "surface": "Rct",
+      "new_ids": [
+        "metric:charge_transfer_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:peak_separation",
+      "old_name": "peak separation",
+      "surface": "peak separation",
+      "new_ids": [
+        "metric:peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:peak_separation",
+      "old_name": "peak separation",
+      "surface": "CV peak separation",
+      "new_ids": [
+        "metric:peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:peak_separation",
+      "old_name": "peak separation",
+      "surface": "smaller CV peak separation",
+      "new_ids": [
+        "evidence:smaller_cv_peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:peak_separation",
+      "old_name": "peak separation",
+      "surface": "peak-to-peak separation",
+      "new_ids": [
+        "metric:peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:membrane_resistance",
+      "old_name": "membrane resistance",
+      "surface": "membrane resistance",
+      "new_ids": [
+        "metric:membrane_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:membrane_resistance",
+      "old_name": "membrane resistance",
+      "surface": "separator resistance",
+      "new_ids": [
+        "metric:membrane_resistance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:surface_roughness",
+      "old_name": "surface roughness",
+      "surface": "surface roughness",
+      "new_ids": [
+        "metric:surface_roughness"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:surface_roughness",
+      "old_name": "surface roughness",
+      "surface": "roughness",
+      "new_ids": [
+        "metric:surface_roughness"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:contact_angle",
+      "old_name": "contact angle",
+      "surface": "contact angle",
+      "new_ids": [
+        "metric:contact_angle"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:wettability",
+      "old_name": "wettability",
+      "surface": "wettability",
+      "new_ids": [
+        "metric:wettability"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:wettability",
+      "old_name": "wettability",
+      "surface": "surface wettability",
+      "new_ids": [
+        "metric:wettability"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "evidence:smaller_cv_peak_separation",
+      "old_name": "smaller CV peak separation",
+      "surface": "smaller CV peak separation",
+      "new_ids": [
+        "evidence:smaller_cv_peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "evidence:smaller_cv_peak_separation",
+      "old_name": "smaller CV peak separation",
+      "surface": "reduced CV peak separation",
+      "new_ids": [
+        "evidence:smaller_cv_peak_separation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:electrode_polarization",
+      "old_name": "electrode polarization",
+      "surface": "electrode polarization",
+      "new_ids": [
+        "degradation:electrode_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:electrode_polarization",
+      "old_name": "electrode polarization",
+      "surface": "severe electrode polarization",
+      "new_ids": [
+        "degradation:electrode_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:local_polarization",
+      "old_name": "local polarization",
+      "surface": "local polarization",
+      "new_ids": [
+        "degradation:local_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:local_polarization",
+      "old_name": "local polarization",
+      "surface": "localpolarization",
+      "new_ids": [
+        "degradation:local_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:uneven_pb_deposition",
+      "old_name": "uneven Pb deposition",
+      "surface": "uneven Pb deposition",
+      "new_ids": [
+        "degradation:uneven_pb_deposition"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:uneven_pb_deposition",
+      "old_name": "uneven Pb deposition",
+      "surface": "unevenpbdeposition",
+      "new_ids": [
+        "degradation:uneven_pb_deposition"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:uneven_pb_deposition",
+      "old_name": "uneven Pb deposition",
+      "surface": "uneven lead deposition",
+      "new_ids": [
+        "degradation:uneven_pb_deposition"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "polarization voltage",
+      "new_ids": [
+        "metric:polarization_voltage"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "polarization voltage difference",
+      "new_ids": [
+        "metric:polarization_voltage"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "polarization delta",
+      "new_ids": [
+        "metric:polarization_voltage"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "voltage loss",
+      "new_ids": [
+        "metric:voltage_loss"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "voltage drop",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:polarization_voltage",
+      "old_name": "polarization voltage",
+      "surface": "ohmic voltage drop",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:voltage_loss",
+      "old_name": "voltage loss",
+      "surface": "voltage loss",
+      "new_ids": [
+        "metric:voltage_loss"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:voltage_loss",
+      "old_name": "voltage loss",
+      "surface": "voltage-loss",
+      "new_ids": [
+        "metric:voltage_loss"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:capacity_retention",
+      "old_name": "capacity retention",
+      "surface": "capacity retention",
+      "new_ids": [
+        "metric:capacity_retention"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:capacity_retention",
+      "old_name": "capacity retention",
+      "surface": "capacity retention (%)",
+      "new_ids": [
+        "metric:capacity_retention"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:pumping_loss",
+      "old_name": "pumping loss",
+      "surface": "pumping loss",
+      "new_ids": [
+        "metric:pumping_loss"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:pumping_loss",
+      "old_name": "pumping loss",
+      "surface": "pump loss",
+      "new_ids": [
+        "metric:pumping_loss"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:mass_transfer",
+      "old_name": "mass transfer",
+      "surface": "mass transfer",
+      "new_ids": [
+        "metric:mass_transfer"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "metric:mass_transfer",
+      "old_name": "mass transfer",
+      "surface": "electrolyte mass transfer",
+      "new_ids": [
+        "metric:mass_transfer"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:vanadium_crossover",
+      "old_name": "vanadium crossover",
+      "surface": "vanadium crossover",
+      "new_ids": [
+        "degradation:vanadium_crossover"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:vanadium_crossover",
+      "old_name": "vanadium crossover",
+      "surface": "vanadium ion crossover",
+      "new_ids": [
+        "degradation:vanadium_crossover"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:vanadium_crossover",
+      "old_name": "vanadium crossover",
+      "surface": "vanadium species crossover",
+      "new_ids": [
+        "degradation:vanadium_crossover"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:capacity_fading",
+      "old_name": "capacity fading",
+      "surface": "capacity fading",
+      "new_ids": [
+        "degradation:capacity_fading"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:capacity_fading",
+      "old_name": "capacity fading",
+      "surface": "capacity decay",
+      "new_ids": [
+        "degradation:capacity_fading"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:capacity_fading",
+      "old_name": "capacity fading",
+      "surface": "capacity fade",
+      "new_ids": [
+        "degradation:capacity_fading"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:dendrite_growth",
+      "old_name": "dendrite growth",
+      "surface": "dendrite growth",
+      "new_ids": [
+        "degradation:dendrite_growth"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:dendrite_growth",
+      "old_name": "dendrite growth",
+      "surface": "zinc dendrite growth",
+      "new_ids": [],
+      "candidate_ids": [
+        "degradation:dendrite_growth"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:dendrite_growth",
+      "old_name": "dendrite growth",
+      "surface": "dendrite formation",
+      "new_ids": [
+        "degradation:dendrite_growth"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:electrolyte_imbalance",
+      "old_name": "electrolyte imbalance",
+      "surface": "electrolyte imbalance",
+      "new_ids": [
+        "degradation:electrolyte_imbalance"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:mass_transfer_limitation",
+      "old_name": "mass-transfer limitation",
+      "surface": "mass-transfer limitation",
+      "new_ids": [
+        "degradation:mass_transfer_limitation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:mass_transfer_limitation",
+      "old_name": "mass-transfer limitation",
+      "surface": "mass transfer limitation",
+      "new_ids": [
+        "degradation:mass_transfer_limitation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:mass_transfer_limitation",
+      "old_name": "mass-transfer limitation",
+      "surface": "mass-transfer polarization",
+      "new_ids": [
+        "degradation:mass_transfer_limitation"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:concentration_polarization",
+      "old_name": "concentration polarization",
+      "surface": "concentration polarization",
+      "new_ids": [
+        "degradation:concentration_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "degradation:concentration_polarization",
+      "old_name": "concentration polarization",
+      "surface": "concentration overpotential",
+      "new_ids": [
+        "degradation:concentration_polarization"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:current_density",
+      "old_name": "current density",
+      "surface": "current density",
+      "new_ids": [
+        "condition:current_density"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:current_density",
+      "old_name": "current density",
+      "surface": "applied current density",
+      "new_ids": [
+        "condition:current_density"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:vanadium_concentration",
+      "old_name": "vanadium concentration",
+      "surface": "vanadium concentration",
+      "new_ids": [
+        "condition:vanadium_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:vanadium_concentration",
+      "old_name": "vanadium concentration",
+      "surface": "vanadium electrolyte concentration",
+      "new_ids": [
+        "condition:vanadium_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:vanadium_concentration",
+      "old_name": "vanadium concentration",
+      "surface": "vanadium ions concentration",
+      "new_ids": [
+        "condition:vanadium_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:acid_concentration",
+      "old_name": "acid concentration",
+      "surface": "acid concentration",
+      "new_ids": [
+        "condition:acid_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:acid_concentration",
+      "old_name": "acid concentration",
+      "surface": "H2SO4 concentration",
+      "new_ids": [],
+      "candidate_ids": [
+        "condition:acid_concentration"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:acid_concentration",
+      "old_name": "acid concentration",
+      "surface": "sulfuric acid concentration",
+      "new_ids": [],
+      "candidate_ids": [
+        "condition:acid_concentration"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:electrolyte_concentration",
+      "old_name": "electrolyte concentration",
+      "surface": "electrolyte concentration",
+      "new_ids": [
+        "condition:electrolyte_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:bi3_concentration",
+      "old_name": "Bi3+ concentration",
+      "surface": "Bi3+ concentration",
+      "new_ids": [
+        "condition:bi3_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:bi3_concentration",
+      "old_name": "Bi3+ concentration",
+      "surface": "Bi3+ additive concentration",
+      "new_ids": [
+        "condition:bi3_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:bi3_concentration",
+      "old_name": "Bi3+ concentration",
+      "surface": "bismuth additive concentration",
+      "new_ids": [
+        "condition:bi3_concentration"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:temperature",
+      "old_name": "temperature",
+      "surface": "temperature",
+      "new_ids": [
+        "condition:temperature"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:temperature",
+      "old_name": "temperature",
+      "surface": "operating temperature",
+      "new_ids": [
+        "condition:temperature"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:cycle_number",
+      "old_name": "cycle number",
+      "surface": "cycle number",
+      "new_ids": [
+        "condition:cycle_number"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:cycle_number",
+      "old_name": "cycle number",
+      "surface": "cycles",
+      "new_ids": [
+        "condition:cycle_number"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:cycle_number",
+      "old_name": "cycle number",
+      "surface": "cycle",
+      "new_ids": [],
+      "candidate_ids": [
+        "condition:cycle_number"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:flow_rate",
+      "old_name": "flow rate",
+      "surface": "flow rate",
+      "new_ids": [
+        "condition:flow_rate"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:flow_rate",
+      "old_name": "flow rate",
+      "surface": "electrolyte flow rate",
+      "new_ids": [
+        "condition:flow_rate"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:ph",
+      "old_name": "pH",
+      "surface": "pH",
+      "new_ids": [
+        "condition:ph"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "condition:ph",
+      "old_name": "pH",
+      "surface": "pH value",
+      "new_ids": [
+        "condition:ph"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "PFOA",
+      "new_ids": [
+        "pfas:pfoa"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "perfluorooctanoic acid",
+      "new_ids": [
+        "pfas:pfoa_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "perfluorooctanoate",
+      "new_ids": [
+        "pfas:pfoa_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "C8",
+      "new_ids": [],
+      "candidate_ids": [
+        "pfas:pfoa"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "C8-PFCA",
+      "new_ids": [],
+      "candidate_ids": [
+        "pfas:pfoa"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "PFOS",
+      "new_ids": [
+        "pfas:pfos"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctanesulfonic acid",
+      "new_ids": [
+        "pfas:pfos_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctanesulfonate",
+      "new_ids": [
+        "pfas:pfos_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctane sulfonate",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "C8S",
+      "new_ids": [],
+      "candidate_ids": [
+        "pfas:pfos"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "PFBA",
+      "new_ids": [
+        "pfas:pfba"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "perfluorobutanoic acid",
+      "new_ids": [
+        "pfas:pfba_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "perfluorobutanoate",
+      "new_ids": [
+        "pfas:pfba_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "PFBS",
+      "new_ids": [
+        "pfas:pfbs"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutanesulfonic acid",
+      "new_ids": [
+        "pfas:pfbs_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutanesulfonate",
+      "new_ids": [
+        "pfas:pfbs_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutane sulfonate",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "GenX",
+      "new_ids": [
+        "pfas:genx"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "HFPO-DA",
+      "new_ids": [
+        "pfas:hfpo_da_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "hexafluoropropylene oxide dimer acid",
+      "new_ids": [
+        "pfas:hfpo_da_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BaTiO3",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BaTiO₃",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BTO",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "barium titanate",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:pt_bto_bo",
+      "old_name": "Pt/BTO/BO",
+      "surface": "Pt/BTO/BO",
+      "new_ids": [
+        "material:pt_bto_bo_composite"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:pt_bto_bo",
+      "old_name": "Pt/BTO/BO",
+      "surface": "Pt-BTO-BO",
+      "new_ids": [
+        "material:pt_bto_bo_composite"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/alias_registry.yaml",
+      "old_id": "catalyst:pt_bto_bo",
+      "old_name": "Pt/BTO/BO",
+      "surface": "Pt/BaTiO3/BO",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "PFOA",
+      "new_ids": [
+        "pfas:pfoa"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "perfluorooctanoic acid",
+      "new_ids": [
+        "pfas:pfoa_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "perfluorooctanoate",
+      "new_ids": [
+        "pfas:pfoa_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfoa",
+      "old_name": "PFOA",
+      "surface": "C7F15COOH",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "PFOS",
+      "new_ids": [
+        "pfas:pfos"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctane sulfonate",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctanesulfonate",
+      "new_ids": [
+        "pfas:pfos_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfos",
+      "old_name": "PFOS",
+      "surface": "perfluorooctanesulfonic acid",
+      "new_ids": [
+        "pfas:pfos_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "PFBA",
+      "new_ids": [
+        "pfas:pfba"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "perfluorobutanoic acid",
+      "new_ids": [
+        "pfas:pfba_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfba",
+      "old_name": "PFBA",
+      "surface": "perfluorobutanoate",
+      "new_ids": [
+        "pfas:pfba_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "PFBS",
+      "new_ids": [
+        "pfas:pfbs"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutane sulfonate",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutanesulfonate",
+      "new_ids": [
+        "pfas:pfbs_anion"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:pfbs",
+      "old_name": "PFBS",
+      "surface": "perfluorobutanesulfonic acid",
+      "new_ids": [
+        "pfas:pfbs_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "GenX",
+      "new_ids": [
+        "pfas:genx"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "HFPO-DA",
+      "new_ids": [
+        "pfas:hfpo_da_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "hexafluoropropylene oxide dimer acid",
+      "new_ids": [
+        "pfas:hfpo_da_acid"
+      ],
+      "candidate_ids": [],
+      "disposition": "identity_split",
+      "reason": "V2 maps this surface to a distinct identity; legacy equivalence is not inherited."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:genx",
+      "old_name": "GenX",
+      "surface": "GenX chemicals",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:ptfe",
+      "old_name": "PTFE",
+      "surface": "PTFE",
+      "new_ids": [
+        "pfas:ptfe"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:ptfe",
+      "old_name": "PTFE",
+      "surface": "polytetrafluoroethylene",
+      "new_ids": [
+        "pfas:ptfe"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "pfas:ptfe",
+      "old_name": "PTFE",
+      "surface": "Teflon",
+      "new_ids": [],
+      "candidate_ids": [
+        "pfas:ptfe"
+      ],
+      "disposition": "candidate_only",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BaTiO3",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BaTiO₃",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "BTO",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:batio3",
+      "old_name": "BaTiO3",
+      "surface": "barium titanate",
+      "new_ids": [
+        "material:batio3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bifeo3",
+      "old_name": "BiFeO3",
+      "surface": "BiFeO3",
+      "new_ids": [
+        "material:bifeo3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bifeo3",
+      "old_name": "BiFeO3",
+      "surface": "BiFeO₃",
+      "new_ids": [
+        "material:bifeo3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bifeo3",
+      "old_name": "BiFeO3",
+      "surface": "BFO",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bifeo3",
+      "old_name": "BiFeO3",
+      "surface": "bismuth ferrite",
+      "new_ids": [
+        "material:bifeo3"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bdd",
+      "old_name": "BDD",
+      "surface": "BDD",
+      "new_ids": [
+        "material:bdd"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bdd",
+      "old_name": "BDD",
+      "surface": "boron-doped diamond",
+      "new_ids": [
+        "material:bdd"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "catalyst:bdd",
+      "old_name": "BDD",
+      "surface": "boron doped diamond electrode",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:oxygen_vacancy",
+      "old_name": "oxygen vacancy",
+      "surface": "oxygen vacancy",
+      "new_ids": [
+        "feature:oxygen_vacancy"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:oxygen_vacancy",
+      "old_name": "oxygen vacancy",
+      "surface": "oxygen vacancies",
+      "new_ids": [
+        "feature:oxygen_vacancy"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:oxygen_vacancy",
+      "old_name": "oxygen vacancy",
+      "surface": "OV",
+      "new_ids": [
+        "feature:oxygen_vacancy"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:oxygen_vacancy",
+      "old_name": "oxygen vacancy",
+      "surface": "OVs",
+      "new_ids": [
+        "feature:oxygen_vacancy"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:oxygen_vacancy",
+      "old_name": "oxygen vacancy",
+      "surface": "Vo",
+      "new_ids": [
+        "feature:oxygen_vacancy"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:heterojunction",
+      "old_name": "heterojunction",
+      "surface": "heterojunction",
+      "new_ids": [
+        "feature:heterojunction"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:heterojunction",
+      "old_name": "heterojunction",
+      "surface": "heterostructure",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "material_feature:heterojunction",
+      "old_name": "heterojunction",
+      "surface": "heterointerface",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "piezo_property:d33",
+      "old_name": "d33",
+      "surface": "d33",
+      "new_ids": [
+        "property:d33"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "piezo_property:d33",
+      "old_name": "d33",
+      "surface": "piezoelectric coefficient d33",
+      "new_ids": [
+        "property:d33"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "piezo_property:d33",
+      "old_name": "d33",
+      "surface": "d₃₃",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:piezocatalysis",
+      "old_name": "piezocatalysis",
+      "surface": "piezocatalysis",
+      "new_ids": [
+        "process:piezocatalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:piezocatalysis",
+      "old_name": "piezocatalysis",
+      "surface": "piezo-catalysis",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:piezocatalysis",
+      "old_name": "piezocatalysis",
+      "surface": "piezocatalytic degradation",
+      "new_ids": [
+        "process:piezocatalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:piezocatalysis",
+      "old_name": "piezocatalysis",
+      "surface": "piezoelectric catalysis",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:contact_electro_catalysis",
+      "old_name": "contact-electro-catalysis",
+      "surface": "contact-electro-catalysis",
+      "new_ids": [
+        "process:contact_electro_catalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:contact_electro_catalysis",
+      "old_name": "contact-electro-catalysis",
+      "surface": "CEC",
+      "new_ids": [
+        "process:contact_electro_catalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:contact_electro_catalysis",
+      "old_name": "contact-electro-catalysis",
+      "surface": "contact electro catalysis",
+      "new_ids": [
+        "process:contact_electro_catalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "process:contact_electro_catalysis",
+      "old_name": "contact-electro-catalysis",
+      "surface": "contact-electrocatalysis",
+      "new_ids": [
+        "process:contact_electro_catalysis"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "water_matrix:afff",
+      "old_name": "AFFF",
+      "surface": "AFFF",
+      "new_ids": [
+        "matrix:afff"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "water_matrix:afff",
+      "old_name": "AFFF",
+      "surface": "aqueous film-forming foam",
+      "new_ids": [
+        "matrix:afff"
+      ],
+      "candidate_ids": [],
+      "disposition": "seed_equivalence",
+      "reason": "Available as a deterministic seed mapping; independent scientific review is not implied."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "water_matrix:afff",
+      "old_name": "AFFF",
+      "surface": "AFFF-impacted water",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    },
+    {
+      "source": "configs/normalization/pfas.yaml",
+      "old_id": "water_matrix:afff",
+      "old_name": "AFFF",
+      "surface": "AFFF impacted groundwater",
+      "new_ids": [],
+      "candidate_ids": [],
+      "disposition": "not_in_trusted_seed",
+      "reason": "No unconditional equivalence is inherited; retain local provisional identity or review the explicit scoped candidate."
+    }
+  ]
+}

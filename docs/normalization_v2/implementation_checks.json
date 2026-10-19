@@ -1,0 +1,98 @@
+{
+  "checked_at": "2026-10-19T09:19:16.339806+00:00",
+  "status": "development_checkpoint_not_release",
+  "strategy": "registry_offline_v2",
+  "full_v2_accepted": false,
+  "default_strategy_changed": false,
+  "legacy_baseline": {
+    "commit": "1f1aef7358072e8f1714bbddc1f4e3e2d3b19921",
+    "tag": "normalization-legacy-20261019",
+    "checked_sources": 20,
+    "intentional_runtime_changes": [
+      "web-ui/backend/runtime_requests.py"
+    ],
+    "unexpected_changes": []
+  },
+  "source_screen": {
+    "files": 37,
+    "syntax_errors": [],
+    "sensitive_pattern_hits": [],
+    "limitation": "Pattern screening is not a formal secret or repository-history audit."
+  },
+  "source_hashes": {
+    "hyperche/normalization_v2/__init__.py": "a059631253959ba56da7f908fd5416ff5888e552105b224e6668f0b82f1f0cc7",
+    "hyperche/normalization_v2/candidate_index.py": "ddea7abcccfc1212b5afa864a2bae68b128a498911a4555f6e2a5fc3893fc096",
+    "hyperche/normalization_v2/contracts.py": "25a6c8ce311914d1e5d04e68007d3276b9cf62732b7528b1bcb04308787f3757",
+    "hyperche/normalization_v2/decisions.py": "8a9676921a624e2c1bc98ed5f8a298d5ef7bff6c9914a7365dd270dd2f38cff5",
+    "hyperche/normalization_v2/engine.py": "b0e0330c54a82b41e7e9eb537d90e382e8c385a2ca8837ec6e8a969f6670319c",
+    "hyperche/normalization_v2/extraction.py": "8c3d9c2229704761364e73100b4d8acb9e6691f8822449e57578ad9d3657ab66",
+    "hyperche/normalization_v2/facts.py": "fe3cdc2ef7a942666c6210f56d8d89af432d0bda5d0bbb8f6d5553fa08412f22",
+    "hyperche/normalization_v2/ledger.py": "6a8bb66ce8dfa9875236e4025b70a0dbff82447174b72b2251ff3d487d7337a4",
+    "hyperche/normalization_v2/profiles.py": "191b59e4e3f88ff995c6859dbc15800b75de26b615e4f19b61dbaae5e2b00f36",
+    "hyperche/normalization_v2/projections.py": "9790549f89ca80d71c688e2359e826983bfb9f50321a08f67bbd77072ab6d62a",
+    "hyperche/normalization_v2/quantities.py": "fb3257d9d1cdf46d7e26a395547f671438df9cf9c12eabe5fa8fafbfe1d17798",
+    "hyperche/normalization_v2/registry.py": "9affe8c74b5146d1d0ede2501b52bd9ef69437c45510a14cb855371d8599eeb4",
+    "hyperche/normalization_v2/resolver.py": "8ab6a72bec0ba78f7159c95e8c978899cd5cc4ead0b42dadfe5aea4f91ab9edb",
+    "hyperche/normalization_v2/text_policy.py": "72840e7a4f82f14cf83d8bc087fcbecbd3eae05d2b6c302671d22973436689d8",
+    "hyperche/request_leases.py": "b8f9e4dfe5419c55a64c051b63ef31fb7e2b6ee700b363ed64066cad9f3be0ca",
+    "web-ui/backend/runtime_requests.py": "b8646f758a9404041cd8e90618d8e8d95fe5b44f613cc53cc6051ded7e371c47",
+    "tests/normalization_v2/test_contracts.py": "68ab898f6fc4117c6e0cf7443ad6b46fc6c7b6338dba7cdda1bd78c57d2ec904",
+    "tests/normalization_v2/test_decisions.py": "b38f989844821e26c7e950c0c7fabdbcbd72d5757a59aa8dca4de44e8fa21744",
+    "tests/normalization_v2/test_engine.py": "adaee5362d84d9b12965573adc6c34dff52d1e525d3e857dd2d444a772d0f1f9",
+    "tests/normalization_v2/test_extraction.py": "283e3e3b6d52684d4af73fb28d1a5ff9ad105f06bba071b5198f41872eb488ea",
+    "tests/normalization_v2/test_facts.py": "e472cb824a967fe697e4eab97f8019f66928889d722a8e29e87fd33a03ad5893",
+    "tests/normalization_v2/test_ledger.py": "a967b1f8c684c27f98a2300303b439ad76da30dc1d8b1bfbe76218e400223a35",
+    "tests/normalization_v2/test_projections.py": "533dc89d6d2ed5ed074a82d154359b09fcbb9307fa5ffdbb002b9a3335c2d90b",
+    "tests/normalization_v2/test_quantities.py": "cd53f8d647eaa2b7b9e25b226e146d9a130306e8511970e73601835819000d45",
+    "tests/normalization_v2/test_registry.py": "e04db8d0e7fbf55a79983f36c5366ba0e2afd06d011b429745db7c49f81ec3d0",
+    "tests/normalization_v2/test_request_leases.py": "daa8ba7f1f603c0e579e8320160e0f7158ba3014c46eb161b4ea66aecd9684d4",
+    "tests/normalization_v2/test_resolver.py": "cc9fc11b26b54d365ad2273ff8a4aec9839f264c796ef746f0fa1c9daa91ae57",
+    "tests/normalization_v2/test_text_policy.py": "db307988202c40bc6ff4a0a21674f542e9147c2ee56e42d46e7f84bea576f7b6",
+    "configs/normalization_v2/base.yaml": "a20e6ef3961662cd2ada2a00120db2a4c307e8cece8bac0414745d65b422ba0e",
+    "configs/normalization_v2/flow_battery.yaml": "50758512118b237b0fdac3d0ff254588e03f9c35691570092bb839047a087893",
+    "configs/normalization_v2/pfas.yaml": "22cdda81fc19286753bec604acd0ee57a0e2b8530ebe7509005577e7a4b21f03",
+    "configs/normalization_v2/units.yaml": "1cbb140c5886a6d4d1778b11446e03d63f2d7e66ae496f9e4598f6b95d807a6a",
+    "scripts/normalize_registry_offline.py": "942d904b252f1f2851d99bcd7ba468500bb413a3f1fef4b9cd5eb1cfff635e8d",
+    "scripts/run_zcode_delegate.py": "ee3089ced772db658e9cdeb5c14309c77e9489f4fb0abed6450200ebd757faf1",
+    "scripts/audit_normalization_v2_migration.py": "a359f07d502c6f15f8baabde50cb7e35f50794d22a9692cbe04a152cbcc91643",
+    "scripts/curate_normalization_v2_seed.py": "921a8b152a7d6a6a192fff8d7c2cbbb27a62b14fc338d8c71c529aa2088bfe1f",
+    "scripts/check_normalization_v2_checkpoint.py": "bf8c13e33d55c60f7c55d262293a39a659471d1f48e24bdcd25ad4c44cc10a15"
+  },
+  "source_tree_hash": "340a83cb301c21166e8f3185636b9f7ae121ba547e0e6bdb8f6683499fde3efa",
+  "registry": {
+    "entities": 152,
+    "units": 36,
+    "semantic_hash": "ba313edaa7a2f95852e959f6fd224d7e298839c359f20e186175c84f12f44f42",
+    "annotation_status": "machine_curated_not_independent_human_gold"
+  },
+  "selected_test_evidence": "test_result_20261019.json",
+  "case2_preservation": {
+    "status": "passed",
+    "checked": 612,
+    "mismatches": [],
+    "scope": "Historical case2 accepted build/published files and original gold/QA records selected from the pre-alignment manifest",
+    "inventory_sha256": "5d257339fdc553f5c548feae4f03da0f8b5b905e930a084ea649a629cce84862"
+  },
+  "release_gates": {
+    "G01": "insufficient_evidence_for_full_gate",
+    "G02": "insufficient_evidence_for_full_gate",
+    "G03": "insufficient_evidence_for_full_gate",
+    "G04": "insufficient_evidence_for_full_gate",
+    "G05": "insufficient_evidence_for_full_gate",
+    "G06": "insufficient_evidence_for_full_gate",
+    "G07": "insufficient_evidence_for_full_gate",
+    "G08": "insufficient_evidence_for_full_gate",
+    "G09": "insufficient_evidence_for_full_gate",
+    "G10": "insufficient_evidence_for_full_gate",
+    "G11": "insufficient_evidence_for_full_gate",
+    "G12": "insufficient_evidence_for_full_gate",
+    "G13": "insufficient_evidence_for_full_gate",
+    "G14": "insufficient_evidence_for_full_gate"
+  },
+  "limitations": [
+    "Full builder/Web/legacy-import and command-family integration remains incomplete.",
+    "All legacy API callers and hidden SDK retries are not yet integrated with the broker.",
+    "No new real-corpus identity-quality or total-cost experiment was run.",
+    "ZCODE coding requests do not count as normalization or scientific-quality evidence."
+  ]
+}
