@@ -4,7 +4,9 @@ import json
 import re
 import traceback
 import time
-from datetime import datetime
+import hashlib
+from pathlib import Path
+from datetime import datetime, timezone
 from typing import Union
 from collections import Counter, defaultdict
 import warnings
@@ -291,79 +293,80 @@ def _repair_relation_source_span(relation: dict, content: str) -> str:
         f"{''.join(traceback.format_exception(type(error), error, error.__traceback__))}"
     )
 
-def parse_json_entities(json_str: str, chunk_key: str = "") -> list:
-    """
-    Parse JSON format entity output from LLM with enhanced error handling
+def _response_json_values(response: str):
+    """Decode separate JSON values without joining a leading [] to a later array."""
+    cleaned = re.sub(r"```(?:json)?\s*", "", response or "", flags=re.IGNORECASE)
+    decoder = json.JSONDecoder()
+    for candidate in (cleaned, _repair_invalid_json_escapes(cleaned)[0]):
+        candidate = re.sub(r",\s*([}\]])", r"\1", candidate)
+        position = 0
+        while position < len(candidate):
+            match = re.search(r"[\[{]", candidate[position:])
+            if not match:
+                break
+            start = position + match.start()
+            try:
+                value, end = decoder.raw_decode(candidate, start)
+            except json.JSONDecodeError:
+                position = start + 1
+                continue
+            yield value
+            position = end
 
-    Args:
-        json_str: JSON string from LLM
-        chunk_key: Chunk key for error reporting
 
-    Returns:
-        List of entity dictionaries
-    """
-    import re
-
-    # Log the raw response for debugging
-    logger.debug(f"[{chunk_key}] parse_json_entities: Raw response (first 500 chars): {json_str[:500]}")
-
-    # Remove markdown code blocks if present
-    json_str = re.sub(r'```json\s*', '', json_str)
-    json_str = re.sub(r'```\s*', '', json_str)
-    json_str = json_str.strip()
-
-    # Try to extract JSON array from the response
-    json_match = re.search(r'\[.*\]', json_str, re.DOTALL)
-    if not json_match:
-        logger.warning(f"[{chunk_key}] parse_json_entities: No JSON array found in response (first 200 chars): {json_str[:200]}")
-        # Try to find JSON object instead
-        json_match = re.search(r'\{.*\}', json_str, re.DOTALL)
-        if json_match:
-            logger.info(f"[{chunk_key}] parse_json_entities: Found JSON object instead of array, wrapping in array")
-            json_str = f"[{json_match.group()}]"
-            json_match = re.search(r'\[.*\]', json_str, re.DOTALL)
-
-    if not json_match:
-        logger.error(f"[{chunk_key}] parse_json_entities: No valid JSON found, full response (first 1000 chars): {json_str[:1000]}")
-        return []
-
+def _is_valid_empty_entity_extraction(response: str) -> bool:
+    cleaned = re.sub(r"```(?:json)?\s*", "", response or "", flags=re.IGNORECASE).strip()
     try:
-        extracted_json = json_match.group()
-        logger.debug(f"[{chunk_key}] parse_json_entities: Extracted JSON (first 500 chars): {extracted_json[:500]}")
-        entities = json.loads(extracted_json)
-        if not isinstance(entities, list):
-            logger.info(f"[{chunk_key}] parse_json_entities: JSON is not an array, wrapping in list")
-            entities = [entities]
-        logger.debug(f"[{chunk_key}] parse_json_entities: Successfully parsed {len(entities)} entities")
-        return entities
-    except json.JSONDecodeError as e:
-        logger.warning(f"[{chunk_key}] parse_json_entities: JSON decode error at position {e.pos}: {e.msg}")
-        logger.debug(f"[{chunk_key}] parse_json_entities: Problematic JSON (first 500 chars): {json_match.group()[:500]}")
+        return json.loads(cleaned) == []
+    except (json.JSONDecodeError, TypeError):
+        return False
 
-        # Try to fix common JSON issues
+
+def _record_empty_extraction(global_config: dict, chunk_key: str, content: str, response: str):
+    """Keep an auditable record of provider-confirmed empty chunks; retain their text."""
+    working_dir = global_config.get("working_dir")
+    if not working_dir:
+        return
+    payload = {
+        "timestamp": datetime.now(timezone.utc).isoformat(),
+        "chunk_id": chunk_key,
+        "status": "valid_empty_confirmed",
+        "content_sha256": hashlib.sha256(content.encode("utf-8")).hexdigest(),
+        "response_sha256": hashlib.sha256(response.encode("utf-8")).hexdigest(),
+        "confirmation": "same_entity_prompt_force_cache_refresh",
+    }
+    with (Path(working_dir) / "empty_extraction_audit.jsonl").open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(payload, ensure_ascii=False) + "\n")
+
+
+def _has_confirmed_empty_extraction(global_config: dict, chunk_key: str, content: str, response: str) -> bool:
+    path = Path(global_config.get("working_dir", ".")) / "empty_extraction_audit.jsonl"
+    if not path.exists():
+        return False
+    content_hash = hashlib.sha256(content.encode("utf-8")).hexdigest()
+    response_hash = hashlib.sha256(response.encode("utf-8")).hexdigest()
+    for line in path.read_text(encoding="utf-8").splitlines():
         try:
-            fixed_json = json_match.group()
+            item = json.loads(line)
+        except json.JSONDecodeError:
+            continue
+        if (item.get("chunk_id") == chunk_key and item.get("status") == "valid_empty_confirmed"
+                and item.get("content_sha256") == content_hash and item.get("response_sha256") == response_hash):
+            return True
+    return False
 
-            # Fix 1: Remove trailing commas
-            fixed_json = re.sub(r',\s*([}\]])', r'\1', fixed_json)
 
-            # Fix 2: Remove backticks and markdown
-            fixed_json = re.sub(r'```[a-z]*', '', fixed_json)
-            fixed_json = re.sub(r'```', '', fixed_json)
-
-            # Fix 3: Remove extra whitespace
-            fixed_json = re.sub(r'\s+', ' ', fixed_json)
-
-            logger.debug(f"[{chunk_key}] parse_json_entities: Attempting to fix JSON...")
-            entities = json.loads(fixed_json)
-            if not isinstance(entities, list):
-                entities = [entities]
-            logger.info(f"[{chunk_key}] parse_json_entities: Successfully parsed after fixing: {len(entities)} entities")
+def parse_json_entities(json_str: str, chunk_key: str = "") -> list:
+    for value in _response_json_values(json_str):
+        entities = value
+        if isinstance(entities, list) and entities and all(
+            isinstance(item, dict) and (item.get("name") or item.get("node_id")) and item.get("type")
+            for item in entities
+        ):
             return entities
-        except Exception as e2:
-            logger.warning(f"[{chunk_key}] parse_json_entities: Fix attempt failed: {e2}")
-            logger.error(f"[{chunk_key}] parse_json_entities: LLM returned invalid JSON format. Consider switching to a model with better JSON output support.")
-        return []
+    logger.warning("[%s] Entity response has no usable entity array", chunk_key)
+    return []
+
 
 def parse_json_relations(json_str: str, chunk_key: str = "") -> list:
     """
@@ -512,59 +515,19 @@ def parse_json_hyperedges(json_str: str, chunk_key: str = "") -> list:
         return []
 
 def parse_json_combined_relationships(json_str: str, chunk_key: str = "") -> tuple[list, list]:
-    """
-    Parse combined relationship extraction output.
+    for value in _response_json_values(json_str):
+        if not isinstance(value, dict):
+            continue
+        fields = ("low_order_relations", "high_order_hyperedges")
+        if not all(isinstance(value.get(field), list) for field in fields):
+            continue
+        low, high = (value[field] for field in fields)
+        if not all(isinstance(item, dict) for item in low + high):
+            continue
+        logger.info("[%s] Parsed %s low-order relations and %s high-order hyperedges", chunk_key, len(low), len(high))
+        return low, high
+    raise ValueError(f"[{chunk_key}] malformed combined relationship response")
 
-    Expected format:
-    {
-      "low_order_relations": [...],
-      "high_order_hyperedges": [...]
-    }
-    """
-    logger.debug(f"[{chunk_key}] parse_json_combined_relationships: Raw response (first 500 chars): {json_str[:500]}")
-
-    json_str = re.sub(r'```json\s*', '', json_str)
-    json_str = re.sub(r'```\s*', '', json_str)
-    json_str = json_str.strip()
-
-    json_match = re.search(r'\{.*\}', json_str, re.DOTALL)
-    if not json_match:
-        logger.error(f"[{chunk_key}] parse_json_combined_relationships: No JSON object found (first 1000 chars): {json_str[:1000]}")
-        return [], []
-
-    extracted_json = json_match.group()
-    try:
-        data = json.loads(extracted_json)
-    except json.JSONDecodeError as e:
-        logger.warning(f"[{chunk_key}] parse_json_combined_relationships: JSON decode error at position {e.pos}: {e.msg}")
-        try:
-            fixed_json = re.sub(r',\s*([}\]])', r'\1', extracted_json)
-            fixed_json = re.sub(r'\s+', ' ', fixed_json)
-            data = json.loads(fixed_json)
-            logger.info(f"[{chunk_key}] parse_json_combined_relationships: Successfully parsed after fixing")
-        except Exception as e2:
-            logger.warning(f"[{chunk_key}] parse_json_combined_relationships: Fix attempt failed: {e2}")
-            return [], []
-
-    if not isinstance(data, dict):
-        logger.warning(f"[{chunk_key}] parse_json_combined_relationships: Expected object, got {type(data)}")
-        return [], []
-
-    low_relations = data.get("low_order_relations", [])
-    high_relations = data.get("high_order_hyperedges", [])
-
-    if not isinstance(low_relations, list):
-        logger.warning(f"[{chunk_key}] parse_json_combined_relationships: low_order_relations is not a list")
-        low_relations = []
-    if not isinstance(high_relations, list):
-        logger.warning(f"[{chunk_key}] parse_json_combined_relationships: high_order_hyperedges is not a list")
-        high_relations = []
-
-    logger.info(
-        f"[{chunk_key}] parse_json_combined_relationships: Parsed "
-        f"{len(low_relations)} low-order relations and {len(high_relations)} high-order hyperedges"
-    )
-    return low_relations, high_relations
 
 def _repair_invalid_json_escapes(json_text: str) -> tuple[str, int]:
     """Escape JSON-invalid backslashes commonly emitted in chemistry/LaTeX text.
@@ -2324,6 +2287,31 @@ async def _process_json_format_extraction(
             logger.info(f"[{chunk_key}] Step 1: LLM returned {len(entity_result)} chars in {time.perf_counter() - step_start:.2f}s")
             entities_json = parse_json_entities(entity_result, chunk_key)
             logger.info(f"[{chunk_key}] Step 1: Parsed {len(entities_json)} entities from JSON")
+            if not entities_json:
+                if _is_valid_empty_entity_extraction(entity_result) and _has_confirmed_empty_extraction(
+                    global_config, chunk_key, content, entity_result
+                ):
+                    logger.info(f"[{chunk_key}] Using previously provider-confirmed empty extraction for unchanged content")
+                    return [], []
+                # Empty arrays are legitimate (references, publisher notices, etc.),
+                # but old cached empties and malformed responses must be confirmed.
+                logger.info(f"[{chunk_key}] Step 1R: Refreshing empty/unusable entity response with the unchanged prompt")
+                entity_result = await _await_with_llm_heartbeat(
+                    counted_llm_func(entity_prompt, force_cache_refresh=True),
+                    chunk_key=chunk_key,
+                    step="Step 1R",
+                    label="entity response confirmation",
+                )
+                entities_json = parse_json_entities(entity_result, chunk_key)
+                if not entities_json and _is_valid_empty_entity_extraction(entity_result):
+                    _record_empty_extraction(global_config, chunk_key, content, entity_result)
+                    logger.info(
+                        f"[{chunk_key}] LLM call summary: calls={llm_call_count}, "
+                        f"elapsed={time.perf_counter() - chunk_extract_start:.2f}s, status=valid_empty_confirmed"
+                    )
+                    return [], []
+                if not entities_json:
+                    raise ValueError("Provider confirmation still has malformed/unusable entity output")
         except Exception as e:
             _log_step_exception(chunk_key, "Step 1", "Entity extraction error", e)
             logger.info(
@@ -2437,9 +2425,21 @@ async def _process_json_format_extraction(
                     label="combined low/high relationship extraction",
                 )
                 logger.info(f"[{chunk_key}] Step 2: LLM returned {len(combined_result)} chars in {time.perf_counter() - step_start:.2f}s")
-                low_relations_json, high_relations_json = parse_json_combined_relationships(
-                    combined_result, chunk_key
-                )
+                try:
+                    low_relations_json, high_relations_json = parse_json_combined_relationships(
+                        combined_result, chunk_key
+                    )
+                except ValueError:
+                    logger.warning(f"[{chunk_key}] Step 2R: Refreshing malformed relationship response with the unchanged prompt")
+                    combined_result = await _await_with_llm_heartbeat(
+                        counted_llm_func(combined_prompt, force_cache_refresh=True),
+                        chunk_key=chunk_key,
+                        step="Step 2R",
+                        label="relationship response recovery",
+                    )
+                    low_relations_json, high_relations_json = parse_json_combined_relationships(
+                        combined_result, chunk_key
+                    )
                 if low_relations_json:
                     rel_types = Counter(r.get("relation_type", "UNKNOWN") for r in low_relations_json)
                     logger.debug(f"[{chunk_key}] Step 2: Low-order relation types: {dict(rel_types)}")
@@ -3545,6 +3545,10 @@ async def hyper_query(
     context = combine_contexts(relation_context.get("context"), entity_context.get("context"))
 
     contextJson = {
+        # Retrieval-only metadata. Exposing the parsed keywords makes formal
+        # evaluation auditable without changing either upstream branch.
+        "entity_keywords": entity_keywords,
+        "relation_keywords": relation_keywords,
         "entities": deduplicate_by_key(entity_context.get("entities", []) + relation_context.get("entities", []), "entity_name"),
         "hyperedges": deduplicate_by_key(entity_context.get("hyperedges", []) + relation_context.get("hyperedges", []), "entity_set"),
         "text_units": deduplicate_by_key(entity_context.get("text_units", []) + relation_context.get("text_units", []), "content"),

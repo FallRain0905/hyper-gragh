@@ -53,6 +53,11 @@ class JsonKVStorage(BaseKVStorage):
         self._data.update(left_data)
         return left_data
 
+    async def replace(self, data: dict[str, dict]):
+        """Replace diagnosed response-cache entries when explicitly refreshed."""
+        self._data.update(data)
+        return data
+
     async def drop(self):
         self._data = {}
 

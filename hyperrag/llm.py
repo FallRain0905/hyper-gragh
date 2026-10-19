@@ -1,5 +1,6 @@
 import os
 import copy
+import time
 from functools import lru_cache
 import json
 import aioboto3
@@ -73,23 +74,24 @@ async def openai_complete_if_cache(
     api_key=None,
     timeout: float = 600.0,  # 增加到600秒（10分钟）
     **kwargs,
-) -> str:
-    client_kwargs = {"timeout": timeout, "max_retries": 0}
-    if base_url is not None:
-        client_kwargs["base_url"] = _normalize_openai_base_url(base_url, "chat")
-    if api_key:
-        client_kwargs["api_key"] = api_key
-    openai_async_client = AsyncOpenAI(**client_kwargs)
+) -> str | dict[str, Any]:
     hashing_kv: BaseKVStorage = kwargs.pop("hashing_kv", None)
     skip_cache = kwargs.pop("skip_cache", False)
     force_cache_refresh = kwargs.pop("force_cache_refresh", False)
+    aggregate_stream = kwargs.pop("aggregate_stream", False)
+    allow_length_finish = kwargs.pop("allow_length_finish", False)
+    # Callers that need to diagnose provider-side truncation or reasoning
+    # budget exhaustion can request the completion metadata.  Keep the
+    # historical string return value as the default for all existing callers.
+    return_metadata = kwargs.pop("return_metadata", False)
     messages = []
     if system_prompt is not None:
         messages.append({"role": "system", "content": system_prompt})
     messages.extend(history_messages)
     messages.append({"role": "user", "content": prompt})
-    if hashing_kv is not None and not skip_cache and not force_cache_refresh:
+    if hashing_kv is not None:
         args_hash = compute_args_hash(model, messages)
+    if hashing_kv is not None and not skip_cache and not force_cache_refresh:
         if_cache_return = await hashing_kv.get_by_id(args_hash)
         if if_cache_return is not None:
             cached_return = if_cache_return["return"] or ""
@@ -97,19 +99,98 @@ async def openai_complete_if_cache(
                 f"LLM cache hit: model={model}, prompt_chars={len(prompt)}, "
                 f"response_chars={len(cached_return)}"
             )
+            if return_metadata:
+                return {
+                    "content": cached_return,
+                    "finish_reason": "cache_hit",
+                    "reasoning_content": "",
+                    "usage": None,
+                }
             return if_cache_return["return"]
 
-    response = await openai_async_client.chat.completions.create(
-        model=model, messages=messages, **kwargs
-    )
-
+    client_kwargs = {"timeout": timeout, "max_retries": 0}
+    if base_url is not None:
+        client_kwargs["base_url"] = _normalize_openai_base_url(base_url, "chat")
+    if api_key:
+        client_kwargs["api_key"] = api_key
+    openai_async_client = AsyncOpenAI(**client_kwargs)
+    usage = None
+    reasoning_content = ""
+    finish_reason = None
+    try:
+        if aggregate_stream:
+            parts = []
+            reasoning_parts = []
+            stream_started = time.monotonic()
+            last_progress = stream_started
+            event_count = 0
+            stream = await openai_async_client.chat.completions.create(
+                model=model, messages=messages, stream=True, **kwargs
+            )
+            async with stream:
+                async for event in stream:
+                    event_count += 1
+                    if event_count == 1:
+                        logger.info("LLM stream first event: model=%s elapsed=%.2fs", model, time.monotonic() - stream_started)
+                    usage = getattr(event, "usage", None) or usage
+                    if not event.choices:
+                        continue
+                    choice = event.choices[0]
+                    delta = choice.delta
+                    if getattr(delta, "content", None):
+                        parts.append(delta.content)
+                    if getattr(delta, "reasoning_content", None):
+                        reasoning_parts.append(delta.reasoning_content)
+                    if choice.finish_reason:
+                        finish_reason = choice.finish_reason
+                    if time.monotonic() - last_progress >= 60:
+                        logger.info("LLM stream receiving: model=%s events=%s content_chars=%s elapsed=%.2fs", model, event_count, sum(map(len, parts)), time.monotonic() - stream_started)
+                        last_progress = time.monotonic()
+            # A broken stream or a truncated response must never poison the cache.
+            if finish_reason != "stop" and not (allow_length_finish and finish_reason == "length"):
+                raise RuntimeError(f"Incomplete extraction stream: finish_reason={finish_reason!r}")
+            content = "".join(parts)
+            reasoning_content = "".join(reasoning_parts)
+            if not content.strip():
+                if allow_length_finish:
+                    # The existing short-summary callers explicitly reuse their
+                    # original descriptions on None. Reasoning can consume the
+                    # entire small budget; never cache that as an empty answer.
+                    logger.warning("LLM summary has no answer content: model=%s finish_reason=%s; reuse original text", model, finish_reason)
+                    return None
+                raise RuntimeError("Extraction stream completed without answer content")
+            logger.info("LLM stream complete: model=%s, response_chars=%s", model, len(content))
+        else:
+            response = await openai_async_client.chat.completions.create(
+                model=model, messages=messages, **kwargs
+            )
+            choice = response.choices[0]
+            message = choice.message
+            content = message.content or ""
+            finish_reason = getattr(choice, "finish_reason", None)
+            reasoning_content = getattr(message, "reasoning_content", "") or ""
+            usage = getattr(response, "usage", None)
+    finally:
+        close_client = getattr(openai_async_client, "close", None)
+        if callable(close_client):
+            await close_client()
     if hashing_kv is not None and not skip_cache:
-        if force_cache_refresh:
-            args_hash = compute_args_hash(model, messages)
-        await hashing_kv.upsert(
-            {args_hash: {"return": response.choices[0].message.content, "model": model}}
-        )
-    return response.choices[0].message.content
+        payload = {args_hash: {"return": content, "model": model}}
+        replace = getattr(hashing_kv, "replace", None)
+        if force_cache_refresh and callable(replace):
+            await replace(payload)
+        else:
+            await hashing_kv.upsert(payload)
+    if return_metadata:
+        if usage is not None and hasattr(usage, "model_dump"):
+            usage = usage.model_dump()
+        return {
+            "content": content,
+            "finish_reason": finish_reason,
+            "reasoning_content": reasoning_content,
+            "usage": usage,
+        }
+    return content
 
 async def openai_complete_stream_if_cache(
     model,
@@ -379,6 +460,7 @@ async def openai_embedding(
     base_url: str = None,
     api_key: str = None,
     timeout: float = 60.0,
+    dimensions: int | None = None,
 ) -> np.ndarray:
     client_kwargs = {"timeout": timeout, "max_retries": 0}
     if base_url is not None:
@@ -386,9 +468,10 @@ async def openai_embedding(
     if api_key:
         client_kwargs["api_key"] = api_key
     openai_async_client = AsyncOpenAI(**client_kwargs)
-    response = await openai_async_client.embeddings.create(
-        model=model, input=texts, encoding_format="float"
-    )
+    request = {"model": model, "input": texts, "encoding_format": "float"}
+    if dimensions is not None:
+        request["dimensions"] = int(dimensions)
+    response = await openai_async_client.embeddings.create(**request)
     return np.array([dp.embedding for dp in response.data])
 
 

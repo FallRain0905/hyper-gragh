@@ -1,0 +1,18 @@
+high_risk_groups:
+  - canonical_ids: [pfas:pfoa, pfas:pfos, pfas:pfba, pfas:pfbs, pfas:genx, pfas:ptfe]
+negative_pairs:
+  - {left: pfas:pfoa, right: pfas:pfos, reason: distinct_pfas_target}
+  - {left: pfas:pfoa, right: pfas:pfba, reason: distinct_pfas_chain}
+  - {left: pfas:pfoa, right: pfas:pfbs, reason: distinct_pfas_target}
+  - {left: pfas:pfoa, right: pfas:genx, reason: distinct_pfas_target}
+  - {left: pfas:pfoa, right: pfas:ptfe, reason: monomer_polymer_distinction}
+  - {left: pfas:pfos, right: pfas:pfba, reason: distinct_pfas_target}
+  - {left: pfas:pfos, right: pfas:pfbs, reason: distinct_pfas_chain}
+  - {left: pfas:pfos, right: pfas:genx, reason: distinct_pfas_target}
+  - {left: pfas:pfos, right: pfas:ptfe, reason: monomer_polymer_distinction}
+  - {left: pfas:pfba, right: pfas:pfbs, reason: distinct_pfas_target}
+  - {left: pfas:pfba, right: pfas:genx, reason: distinct_pfas_target}
+  - {left: pfas:pfba, right: pfas:ptfe, reason: monomer_polymer_distinction}
+  - {left: pfas:pfbs, right: pfas:genx, reason: distinct_pfas_target}
+  - {left: pfas:pfbs, right: pfas:ptfe, reason: monomer_polymer_distinction}
+  - {left: pfas:genx, right: pfas:ptfe, reason: monomer_polymer_distinction}

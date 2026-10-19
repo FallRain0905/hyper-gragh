@@ -64,6 +64,7 @@ GROUPS = {
 }
 K_EVIDENCE = 5
 EVIDENCE_BUDGET_CHARS = 1500
+EVIDENCE_FORMAT = "legacy"
 
 
 def load_json(path: Path) -> Any:
@@ -950,11 +951,98 @@ Raw support excerpt: {query_focused_excerpt(query, raw, max_tokens=300)}
 """
 
 
-def format_evidence_context(query: str, items: list[dict[str, Any]]) -> str:
+def _field_values(item: dict[str, Any], *keys: str) -> list[str]:
+    values: list[str] = []
+    for key in keys:
+        value = item.get(key)
+        if isinstance(value, list):
+            values.extend(str(part) for part in value if str(part).strip())
+        elif value is not None and str(value).strip():
+            values.append(str(value).strip())
+    return list(dict.fromkeys(values))
+
+
+def _source_spans(item: dict[str, Any]) -> list[str]:
+    spans = _field_values(item, "source_span", "source_spans", "evidence_span", "raw_source_evidence")
+    for instance in item.get("evidence_instances") or []:
+        if not isinstance(instance, dict):
+            continue
+        spans.extend(_field_values(instance, "source_span", "evidence_span", "sentence", "description"))
+    return list(dict.fromkeys(spans))[:6]
+
+
+def format_lossless_evidence_block(index: int, item: dict[str, Any], query: str) -> str:
+    """Serialize evidence while preserving binding fields and source spans.
+
+    This is an opt-in QA formatting mode. It does not alter retrieval, the
+    cache, or the evidence IDs, so it can be used for a paired raw-vs-card
+    ablation on the exact same retrieved items.
+    """
+
+    fields = parse_evidence_fields(item)
+    entities = _field_values(item, "surface_entities", "canonical_entities", "canonical_vertices", "vertices") or fields["entities"]
+    metrics = _field_values(item, "surface_metrics", "canonical_metrics") or fields["metrics"]
+    values = _field_values(item, "values", "atomic_value") or fields["values"]
+    units = _field_values(item, "units", "atomic_unit")
+    conditions = _field_values(item, "conditions", "atomic_condition") or fields["conditions"]
+    source_id = item.get("source_chunk_id") or item.get("source_id") or item.get("id")
+    relation = item.get("relation_type") or item.get("kind") or "TEXT"
+    bindings: list[str] = []
+    atomic_entity = item.get("atomic_entity")
+    atomic_metric = item.get("atomic_metric")
+    atomic_value = item.get("atomic_value")
+    atomic_unit = item.get("atomic_unit")
+    atomic_condition = item.get("atomic_condition")
+    if atomic_entity or atomic_metric or atomic_value:
+        bindings.append(
+            f"subject={atomic_entity or 'not explicitly stated'}; metric={atomic_metric or 'not explicitly stated'}; "
+            f"value={atomic_value or 'not explicitly stated'}; unit={atomic_unit or 'not explicitly stated'}; "
+            f"condition={atomic_condition or 'not explicitly stated'}"
+        )
+    for instance in item.get("evidence_instances") or []:
+        if not isinstance(instance, dict):
+            continue
+        subject = instance.get("entity") or instance.get("subject")
+        metric = instance.get("metric") or instance.get("quantity")
+        value = instance.get("value")
+        unit = instance.get("unit")
+        condition = instance.get("condition") or instance.get("conditions")
+        if any(value is not None for value in (subject, metric, value, unit, condition)):
+            bindings.append(
+                f"subject={subject or 'not explicitly stated'}; metric={metric or 'not explicitly stated'}; "
+                f"value={value or 'not explicitly stated'}; unit={unit or 'not explicitly stated'}; "
+                f"condition={condition or 'not explicitly stated'}"
+            )
+    span_text = "\n".join(f"- {span}" for span in _source_spans(item)) or "- not explicitly stored"
+    return f"""Evidence {index}
+Source chunk: {source_id}
+Relation/Type: {relation}
+Parent hyperedge: {item.get('parent_hyperedge_id') or item.get('id') or 'not explicitly stored'}
+Canonical/Surface entities: {json.dumps(entities, ensure_ascii=False)}
+Metrics: {json.dumps(metrics, ensure_ascii=False)}
+Values: {json.dumps(values, ensure_ascii=False)}
+Units: {json.dumps(units, ensure_ascii=False)}
+Conditions: {json.dumps(conditions, ensure_ascii=False)}
+Metric-value-condition bindings:
+{chr(10).join('- ' + row for row in list(dict.fromkeys(bindings))[:8]) or '- not explicitly stored'}
+Source spans:
+{span_text}
+Query-focused support excerpt: {query_focused_excerpt(query, evidence_text(item), max_tokens=260)}
+"""
+
+
+def format_evidence_context(query: str, items: list[dict[str, Any]], *, evidence_format: str | None = None) -> str:
+    selected_format = evidence_format or EVIDENCE_FORMAT
+    if selected_format not in {"legacy", "lossless"}:
+        raise ValueError(f"unsupported evidence format: {selected_format}")
     parts = []
     used_tokens = 0
     for index, item in enumerate(items, start=1):
-        chunk = format_evidence_block(index, item, query)
+        chunk = (
+            format_lossless_evidence_block(index, item, query)
+            if selected_format == "lossless"
+            else format_evidence_block(index, item, query)
+        )
         chunk_tokens = token_count(chunk)
         if used_tokens + chunk_tokens > EVIDENCE_BUDGET_CHARS:
             break
@@ -1196,6 +1284,7 @@ def main() -> None:
     parser.add_argument("--judge-model")
     parser.add_argument("--judge-base-url")
     parser.add_argument("--evidence-budget-chars", type=int, default=1500)
+    parser.add_argument("--evidence-format", choices=["legacy", "lossless"], default="legacy")
     parser.add_argument("--output-prefix", default="qa_llm_smoke")
     parser.add_argument(
         "--chem-norm-evidence-v2",
@@ -1215,7 +1304,9 @@ def main() -> None:
 
     args.output_dir.mkdir(parents=True, exist_ok=True)
     global EVIDENCE_BUDGET_CHARS
+    global EVIDENCE_FORMAT
     EVIDENCE_BUDGET_CHARS = args.evidence_budget_chars
+    EVIDENCE_FORMAT = args.evidence_format
     generator_pool = LLMClientPool(args.settings, args.provider, model_override=args.model, base_url_override=args.base_url)
     judge_pool = LLMClientPool(
         args.settings,
@@ -1303,7 +1394,7 @@ def main() -> None:
             equivalences,
             enable_hybrid_rerank=bool(GROUPS[group].get("rerank")),
         )
-        evidence_context = format_evidence_context(qa["question"], evidence)
+        evidence_context = format_evidence_context(qa["question"], evidence, evidence_format=EVIDENCE_FORMAT)
         generated = complete_valid_json(
             generator_pool,
             generation_prompt(qa, evidence_context),
@@ -1445,6 +1536,7 @@ def main() -> None:
                 "temperature": args.temperature,
                 "top_p": args.top_p,
                 "evidence_budget_chars": EVIDENCE_BUDGET_CHARS,
+                "evidence_format": EVIDENCE_FORMAT,
                 "chem_norm_evidence_v2": args.chem_norm_evidence_v2,
                 "cache_root": str(cache_root),
                 "question_count": len(qa_set),

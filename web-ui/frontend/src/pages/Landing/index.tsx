@@ -5,7 +5,6 @@ import { Link, useNavigate } from 'react-router-dom'
 import { message } from 'antd'
 import {
   ArrowRight,
-  Atom,
   Database,
   FlaskConical,
   KeyRound,
@@ -18,14 +17,6 @@ import { authStore } from '@/store/auth'
 import { PUBLIC_DEMO } from '@/config/publicDemo'
 
 type AuthMode = 'login' | 'register'
-
-const nodes = [
-  { label: 'Electrolyte', left: '13%', top: '22%', color: 'bg-blue-500' },
-  { label: 'Membrane', left: '66%', top: '14%', color: 'bg-violet-500' },
-  { label: 'Efficiency', left: '72%', top: '62%', color: 'bg-emerald-500' },
-  { label: 'Vanadium', left: '18%', top: '68%', color: 'bg-amber-500' },
-  { label: 'Flow Cell', left: '43%', top: '43%', color: 'bg-slate-950' },
-]
 
 const Landing = () => {
   const navigate = useNavigate()
@@ -95,16 +86,9 @@ const Landing = () => {
             {[{icon:<Network className="h-4 w-4"/>,text:'超图原生组织'},{icon:<Search className="h-4 w-4"/>,text:'证据可追溯'},{icon:<ShieldCheck className="h-4 w-4"/>,text:'个人空间隔离'}].map(item => <div key={item.text} className="hyperche-card flex items-center gap-2 rounded-2xl border border-slate-200 bg-white/80 px-3.5 py-2.5 text-sm font-medium text-slate-700 shadow-sm backdrop-blur">{item.icon}{item.text}</div>)}
           </div>
 
-          <div className="mt-9 grid gap-4 sm:grid-cols-[1.15fr_.85fr]">
-            <div className="hyperche-card relative min-h-64 overflow-hidden rounded-[1.75rem] border border-slate-200 bg-white/85 p-5 shadow-sm backdrop-blur">
-              <div className="flex items-center justify-between"><div><p className="text-xs font-semibold uppercase tracking-[0.18em] text-blue-600">Live research map</p><h2 className="mt-1 font-semibold text-slate-900">液流电池知识网络</h2></div><div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-blue-50 text-blue-700"><Atom className="h-5 w-5" /></div></div>
-              <svg className="absolute inset-x-5 bottom-5 top-20 h-[calc(100%-6.25rem)] w-[calc(100%-2.5rem)]" viewBox="0 0 100 70" preserveAspectRatio="none"><g stroke="rgba(100,116,139,.35)" strokeWidth=".5"><path d="M18 18 L48 36 L70 13 M48 36 L76 54 M48 36 L20 57 M20 57 L76 54"/><path d="M18 18 Q45 5 70 13" strokeDasharray="2 2"/></g></svg>
-              <div className="absolute inset-x-5 bottom-5 top-20">{nodes.map((node,index) => <div key={node.label} className="hyperche-node absolute -translate-x-1/2 -translate-y-1/2" style={{left:node.left,top:node.top,animationDelay:`${index*0.35}s`}}><span className={`mx-auto block h-3 w-3 rounded-full ${node.color} ring-4 ring-white shadow-md`} /><span className="mt-1.5 block whitespace-nowrap rounded-lg border border-slate-200 bg-white/90 px-2 py-1 text-[10px] font-medium text-slate-600 shadow-sm">{node.label}</span></div>)}</div>
-            </div>
-            <div className="space-y-4">
-              <div className="hyperche-card rounded-[1.75rem] border border-slate-200 bg-white/85 p-5 shadow-sm backdrop-blur"><div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700"><Database className="h-5 w-5"/></span><div><p className="text-xs text-slate-400">Cache status</p><p className="font-semibold text-slate-900">Flow Battery · Ready</p></div></div><div className="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="hyperche-shimmer h-full w-full rounded-full bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500" /></div></div>
-              <div className="hyperche-card rounded-[1.75rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-sm"><FlaskConical className="h-5 w-5 text-blue-300"/><p className="mt-5 text-xs text-slate-400">Evidence-linked answer</p><p className="mt-1 text-sm font-medium leading-6">“对比不同电解液条件下的库仑效率，并定位原始证据。”</p><Link to={PUBLIC_DEMO.route} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-blue-300 hover:text-blue-200">查看公开实例 <ArrowRight className="h-3.5 w-3.5"/></Link></div>
-            </div>
+          <div className="mt-9 grid gap-4 sm:grid-cols-2">
+            <div className="hyperche-card rounded-[1.75rem] border border-slate-200 bg-white/85 p-5 shadow-sm backdrop-blur"><div className="flex items-center gap-3"><span className="flex h-10 w-10 items-center justify-center rounded-2xl bg-emerald-50 text-emerald-700"><Database className="h-5 w-5"/></span><div><p className="text-xs text-slate-400">Cache status</p><p className="font-semibold text-slate-900">Flow Battery · Ready</p></div></div><div className="mt-4 h-1.5 overflow-hidden rounded-full bg-slate-100"><div className="hyperche-shimmer h-full w-full rounded-full bg-gradient-to-r from-emerald-500 via-blue-500 to-emerald-500" /></div></div>
+            <div className="hyperche-card rounded-[1.75rem] border border-slate-200 bg-slate-950 p-5 text-white shadow-sm"><FlaskConical className="h-5 w-5 text-blue-300"/><p className="mt-5 text-xs text-slate-400">Evidence-linked answer</p><p className="mt-1 text-sm font-medium leading-6">“对比不同电解液条件下的库仑效率，并定位原始证据。”</p><Link to={PUBLIC_DEMO.route} className="mt-4 inline-flex items-center gap-1.5 text-xs font-semibold text-blue-300 hover:text-blue-200">查看公开实例 <ArrowRight className="h-3.5 w-3.5"/></Link></div>
           </div>
         </section>
 

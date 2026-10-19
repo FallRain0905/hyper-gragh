@@ -5,7 +5,7 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: true
     index_profile: dual_concat
 
@@ -45,7 +45,7 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: true
     index_profile: dual_concat
 
@@ -55,7 +55,7 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: true
     index_profile: dual_separate
 
@@ -65,7 +65,7 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: false
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: true
     index_profile: dual_concat
 
@@ -85,7 +85,7 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: false
     index_profile: dual_concat
 
@@ -95,6 +95,6 @@ modes:
     enable_one_pass_extraction: true
     enable_entity_normalization: true
     enable_measurement_instances: true
-    enable_efu_repair: true
+    enable_efu_repair: false
     enable_hybrid_rerank: true
     index_profile: dual_concat

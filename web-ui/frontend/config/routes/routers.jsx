@@ -12,6 +12,8 @@ import HyperDB from '@/pages/Hyper/DB'
 import Setting from '@/pages/Setting'
 import Admin from '@/pages/Admin'
 import DocumentConvert from '@/pages/DocumentConvert'
+import PromptStudio from '@/pages/Prompts'
+import Providers from '@/pages/Providers'
 import { PUBLIC_DEMO } from '@/config/publicDemo'
 import {
   DatabaseOutlined,
@@ -22,6 +24,8 @@ import {
   SettingOutlined,
   SafetyCertificateOutlined,
   SmileFilled,
+  ApiOutlined,
+  FileTextOutlined,
 } from '@ant-design/icons'
 import { Navigate } from 'react-router-dom'
 
@@ -87,16 +91,22 @@ export const routers = [
         element: <Files />,
       },
       {
-        path: '/app/API',
-        name: 'API 文档',
-        hideInMenu: true,
-        element: <Navigate replace to="/app/Hyper/chat" />,
-      },
-      {
         path: '/app/convert',
         name: '文档转换',
         icon: <FileAddOutlined />,
         element: <DocumentConvert />,
+      },
+      {
+        path: '/app/prompts',
+        name: '领域提示词',
+        icon: <FileTextOutlined />,
+        element: <PromptStudio />,
+      },
+      {
+        path: '/app/providers',
+        name: 'API 渠道',
+        icon: <ApiOutlined />,
+        element: <Providers />,
       },
       {
         path: '/app/Setting',
@@ -119,6 +129,8 @@ export const routers = [
   { path: '/Hyper/files', element: <Navigate replace to="/app/Hyper/files" /> },
   { path: '/API', element: <Navigate replace to="/app/Hyper/chat" /> },
   { path: '/convert', element: <Navigate replace to="/app/convert" /> },
+  { path: '/prompts', element: <Navigate replace to="/app/prompts" /> },
+  { path: '/providers', element: <Navigate replace to="/app/providers" /> },
   { path: '/Setting', element: <Navigate replace to="/app/Setting" /> },
   { path: '/admin', element: <Navigate replace to="/app/admin" /> },
   { path: '*', element: <NotFoundPage /> },

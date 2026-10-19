@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import asyncio
+from contextlib import asynccontextmanager
 from datetime import datetime, timezone
 import hashlib
 import json
@@ -27,7 +28,7 @@ for _stream in (sys.stdout, sys.stderr):
 from hyperrag import HyperRAG
 from hyperrag.experiment import resolve_experiment_mode, write_run_config
 from hyperrag.llm import openai_complete_if_cache, openai_embedding
-from hyperrag.utils import EmbeddingFunc, logger
+from hyperrag.utils import EmbeddingFunc, compute_args_hash, logger
 
 
 def text_hash(text: str) -> str:
@@ -159,7 +160,8 @@ def load_completed_doc_ids(cache_dir: Path, progress_path: Path) -> set[str]:
                             chunk_docs.add(str(doc_id))
         except Exception as exc:
             print(f"[BuildExperiment] warning: failed to read existing text chunks: {exc}", flush=True)
-    completed.update(chunk_docs)
+    # A few stored chunks alone do not establish document completion.
+    completed.intersection_update(chunk_docs)
 
     progress_completed = set()
     if progress_path.exists():
@@ -225,7 +227,7 @@ def load_llm_provider_entries(*, default_model: str, default_base_url: str | Non
     if not isinstance(providers, list):
         raise RuntimeError("LLM_PROVIDER_CONFIG must be a provider array or an object with providers=[...].")
 
-    entries = []
+    provider_groups = []
     for provider_index, provider in enumerate(providers):
         if not isinstance(provider, dict) or provider.get("enabled", True) is False:
             continue
@@ -235,8 +237,9 @@ def load_llm_provider_entries(*, default_model: str, default_base_url: str | Non
         keys = _split_provider_keys(
             provider.get("api_keys", provider.get("apiKeys", provider.get("apiKey", "")))
         )
+        provider_entries = []
         for key_index, key in enumerate(keys):
-            entries.append(
+            provider_entries.append(
                 {
                     "provider": name,
                     "model": model,
@@ -246,6 +249,16 @@ def load_llm_provider_entries(*, default_model: str, default_base_url: str | Non
                     "key_total": len(keys),
                 }
             )
+        if provider_entries:
+            provider_groups.append(provider_entries)
+    # Alternate providers before cycling their keys, so one service does not
+    # receive the entire first wave of concurrent requests.
+    entries = [
+        group[key_index]
+        for key_index in range(max((len(group) for group in provider_groups), default=0))
+        for group in provider_groups
+        if key_index < len(group)
+    ]
     if not entries:
         raise RuntimeError("LLM_PROVIDER_CONFIG did not contain any enabled provider keys.")
     return entries
@@ -259,12 +272,24 @@ class AsyncKeyPool:
         self.name = name
         self._index = 0
         self._lock = asyncio.Lock()
+        self._available = asyncio.Queue()
+        for index in range(len(items)):
+            self._available.put_nowait(index)
 
     async def next(self) -> tuple[int, Any]:
         async with self._lock:
             idx = self._index % len(self.items)
             self._index += 1
             return idx, self.items[idx]
+
+    @asynccontextmanager
+    async def lease(self):
+        """Keep a key reserved until its HTTP request finishes or is cancelled."""
+        index = await self._available.get()
+        try:
+            yield index, self.items[index]
+        finally:
+            self._available.put_nowait(index)
 
 
 def positive_int_env(name: str, default: int) -> int:
@@ -277,17 +302,34 @@ def positive_int_env(name: str, default: int) -> int:
         raise RuntimeError(f"{name} must be an integer, got {value!r}") from exc
 
 
-def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], timeout: float):
+def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], timeout: float,
+                   max_async: int = 10, transport: str = "standard"):
+    if max_async < 1 or transport not in {"standard", "stream"}:
+        raise ValueError("LLM concurrency must be positive and transport must be standard or stream")
     entries = load_llm_provider_entries(default_model=model, default_base_url=base_url, default_api_keys=api_keys)
     pool = AsyncKeyPool(entries, name="LLM provider pool")
     request_counter = 0
+    request_slots = asyncio.Semaphore(max_async)
+    network_active = 0
 
     def log_pool(message: str) -> None:
         print(message, flush=True)
         logger.info(message)
 
     async def llm_func(prompt: str, system_prompt=None, history_messages=None, **kwargs):
-        nonlocal request_counter
+        nonlocal request_counter, network_active
+        # A cached response consumes neither an HTTP slot nor a key rotation.
+        hashing_kv = kwargs.get("hashing_kv")
+        if hashing_kv is not None and not kwargs.get("skip_cache") and not kwargs.get("force_cache_refresh"):
+            messages = ([] if system_prompt is None else [{"role": "system", "content": system_prompt}])
+            messages += list(history_messages or []) + [{"role": "user", "content": prompt}]
+            cached = await hashing_kv.get_by_id(compute_args_hash(model, messages))
+            if cached is not None:
+                content = cached["return"] or ""
+                log_pool(f"[LLMPool] CACHE HIT model={model} prompt_chars={len(prompt or '')} response_chars={len(content)}")
+                if kwargs.get("return_metadata"):
+                    return {"content": content, "finish_reason": "cache_hit", "reasoning_content": "", "usage": None}
+                return cached["return"]
         request_counter += 1
         request_id = request_counter
         attempts = max(1, min(len(entries), positive_int_env("LLM_KEY_ATTEMPTS", len(entries))))
@@ -299,46 +341,45 @@ def build_llm_func(*, model: str, base_url: str | None, api_keys: list[str], tim
             f"max_attempts={attempts} timeout={timeout:.1f}s"
         )
         for attempt in range(attempts):
-            entry_index, entry = await pool.next()
-            attempt_start = time.perf_counter()
-            provider = entry.get("provider") or "unknown"
-            key_slot = entry.get("key_index", 0) + 1
-            key_total = entry.get("key_total", "?")
-            log_pool(
-                f"[LLMPool] ATTEMPT START id={request_id} attempt={attempt + 1}/{attempts} "
-                f"provider={provider} entry={entry_index + 1}/{len(entries)} "
-                f"key_slot={key_slot}/{key_total} model={entry['model']}"
-            )
-            try:
-                response = await openai_complete_if_cache(
-                    entry["model"],
-                    prompt,
-                    system_prompt=system_prompt,
-                    history_messages=history_messages or [],
-                    base_url=entry.get("base_url"),
-                    api_key=entry["api_key"],
-                    timeout=timeout,
-                    **kwargs,
-                )
-                log_pool(
-                    f"[LLMPool] ATTEMPT DONE id={request_id} attempt={attempt + 1}/{attempts} "
-                    f"provider={provider} entry={entry_index + 1}/{len(entries)} "
-                    f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
-                    f"response_chars={len(response) if isinstance(response, str) else 0}"
-                )
-                log_pool(
-                    f"[LLMPool] REQUEST DONE id={request_id} "
-                    f"elapsed={time.perf_counter() - request_start:.2f}s"
-                )
-                return response
-            except Exception as exc:
-                last_exc = exc
-                log_pool(
-                    f"[LLMPool] ATTEMPT FAILED id={request_id} attempt={attempt + 1}/{attempts} "
-                    f"provider={provider} entry={entry_index + 1}/{len(entries)} "
-                    f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
-                    f"error={type(exc).__name__}: {exc}"
-                )
+            async with request_slots:
+                async with pool.lease() as (entry_index, entry):
+                    attempt_start = time.perf_counter()
+                    provider = entry.get("provider") or "unknown"
+                    key_slot = entry.get("key_index", 0) + 1
+                    key_total = entry.get("key_total", "?")
+                    network_active += 1
+                    log_pool(
+                        f"[LLMPool] ATTEMPT START id={request_id} attempt={attempt + 1}/{attempts} "
+                        f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                        f"key_slot={key_slot}/{key_total} model={entry['model']} "
+                        f"network_active={network_active}/{max_async} key_active=1 transport={transport}"
+                    )
+                    try:
+                        response = await openai_complete_if_cache(
+                            entry["model"], prompt, system_prompt=system_prompt,
+                            history_messages=history_messages or [], base_url=entry.get("base_url"),
+                            api_key=entry["api_key"], timeout=timeout,
+                            aggregate_stream=transport == "stream",
+                            allow_length_finish=kwargs.get("max_tokens") is not None, **kwargs,
+                        )
+                        log_pool(
+                            f"[LLMPool] ATTEMPT DONE id={request_id} attempt={attempt + 1}/{attempts} "
+                            f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                            f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
+                            f"response_chars={len(response) if isinstance(response, str) else 0}"
+                        )
+                        log_pool(f"[LLMPool] REQUEST DONE id={request_id} elapsed={time.perf_counter() - request_start:.2f}s")
+                        return response
+                    except Exception as exc:
+                        last_exc = exc
+                        log_pool(
+                            f"[LLMPool] ATTEMPT FAILED id={request_id} attempt={attempt + 1}/{attempts} "
+                            f"provider={provider} entry={entry_index + 1}/{len(entries)} "
+                            f"key_slot={key_slot}/{key_total} elapsed={time.perf_counter() - attempt_start:.2f}s "
+                            f"error={type(exc).__name__}: {exc}"
+                        )
+                    finally:
+                        network_active -= 1
         log_pool(
             f"[LLMPool] REQUEST FAILED id={request_id} "
             f"elapsed={time.perf_counter() - request_start:.2f}s attempts={attempts} "
@@ -390,6 +431,8 @@ async def amain() -> None:
     parser.add_argument("--doc-start", type=int, default=None, help="Only include files whose numeric index is >= this value.")
     parser.add_argument("--doc-end", type=int, default=None, help="Only include files whose numeric index is <= this value.")
     parser.add_argument("--resume", action="store_true", help="Skip documents already completed in this cache.")
+    parser.add_argument("--max-passes", type=int, default=1, help="Retry incomplete documents for at most this many passes, reusing successful response caches.")
+    parser.add_argument("--llm-transport", choices=("standard", "stream"), default="standard", help="Aggregate complete streamed responses for gateways that time out buffered requests.")
     parser.add_argument("--manifest", type=Path, default=None, help="Optional corpus_manifest.jsonl output path.")
     parser.add_argument("--llm-timeout", type=float, default=float(os.getenv("LLM_TIMEOUT", "600")))
     parser.add_argument("--embedding-timeout", type=float, default=float(os.getenv("EMB_TIMEOUT", "120")))
@@ -399,6 +442,8 @@ async def amain() -> None:
     parser.add_argument("--entity-extract-max-gleaning", type=int, default=positive_int_env("ENTITY_EXTRACT_MAX_GLEANING", 0))
     parser.add_argument("--disable-one-pass-extraction", action="store_true", help="Use legacy JSON entity-then-relationship extraction.")
     args = parser.parse_args()
+    if args.max_passes < 1:
+        parser.error("--max-passes must be at least 1")
 
     llm_api_keys = split_key_pool(env_required("LLM_API_KEY"))
     llm_base_url = os.getenv("LLM_BASE_URL")
@@ -407,6 +452,17 @@ async def amain() -> None:
     emb_base_url = os.getenv("EMB_BASE_URL")
     emb_model = env_required("EMB_MODEL")
     emb_dim = positive_int_env("EMB_DIM", 2560)
+    provider_entries = load_llm_provider_entries(
+        default_model=llm_model, default_base_url=llm_base_url, default_api_keys=llm_api_keys
+    )
+    provider_summaries = {}
+    for entry in provider_entries:
+        provider_id = (entry["provider"], entry["base_url"], entry["model"])
+        summary = provider_summaries.setdefault(provider_id, {
+            "name": entry["provider"], "base_url": entry["base_url"],
+            "model": entry["model"], "api_key_count": 0,
+        })
+        summary["api_key_count"] += 1
 
     resolved = resolve_experiment_mode(args.mode, domain=args.domain)
     cache_dir = args.cache_dir
@@ -419,15 +475,28 @@ async def amain() -> None:
         "doc_start": args.doc_start,
         "doc_end": args.doc_end,
         "resume": args.resume,
+        "max_passes": args.max_passes,
+        "empty_entity_policy": "strict_json_array_provider_confirmation_with_audit",
         "corpus_manifest_path": str(manifest_path.resolve()),
         "build_progress_path": str(progress_path.resolve()),
         "index_profile": resolved.get("index_profile"),
-        "llm": {"model": llm_model, "base_url": llm_base_url, "api_key_count": len(llm_api_keys)},
+        "llm": {
+            "model": llm_model, "base_url": llm_base_url,
+            "api_key_count": len(provider_entries),
+            "max_async": args.llm_max_async,
+            "providers": list(provider_summaries.values()),
+            "rotation": "provider_interleaved_available_key_queue",
+            "per_credential_max_async": 1,
+            "cache_hit_consumes_rotation": False,
+            "transport": args.llm_transport,
+        },
         "embedding": {
             "model": emb_model,
             "base_url": emb_base_url,
             "api_key_count": len(emb_api_keys),
             "embedding_dim": emb_dim,
+            "max_async": args.embedding_max_async,
+            "batch_num": args.embedding_batch_num,
         },
         "chunk_size": args.chunk_size,
         "chunk_overlap": args.chunk_overlap,
@@ -472,6 +541,8 @@ async def amain() -> None:
             base_url=llm_base_url,
             api_keys=llm_api_keys,
             timeout=args.llm_timeout,
+            max_async=args.llm_max_async,
+            transport=args.llm_transport,
         ),
         "llm_model_max_async": args.llm_max_async,
         "embedding_func": build_embedding_func(
@@ -499,75 +570,100 @@ async def amain() -> None:
         print(f"[BuildExperiment] resume enabled; completed docs detected={len(completed_doc_ids)}", flush=True)
 
     total = len(documents)
-    success_count = 0
-    error_count = 0
-    failed_doc_ids: list[str] = []
-    for index, doc in enumerate(documents, start=1):
-        doc_id = str(doc["doc_id"])
-        if args.resume and doc_id in completed_doc_ids:
-            print(f"[BuildExperiment] skip completed {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
+    for pass_number in range(1, args.max_passes + 1):
+        if args.resume or pass_number > 1:
+            completed_doc_ids = load_completed_doc_ids(cache_dir, progress_path)
+        print(f"[BuildExperiment] pass {pass_number}/{args.max_passes}: complete={len(completed_doc_ids)}/{total}", flush=True)
+        success_count = 0
+        error_count = 0
+        failed_doc_ids: list[str] = []
+        for index, doc in enumerate(documents, start=1):
+            doc_id = str(doc["doc_id"])
+            if (args.resume or pass_number > 1) and doc_id in completed_doc_ids:
+                print(f"[BuildExperiment] skip completed {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
+                append_jsonl(
+                    progress_path,
+                    {
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "status": "skipped",
+                        "doc_id": doc_id,
+                        "source_file": doc.get("source_file", ""),
+                        "reason": "resume_completed",
+                    },
+                )
+                continue
+            print(f"[BuildExperiment] start {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
             append_jsonl(
                 progress_path,
                 {
                     "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "status": "skipped",
-                    "doc_id": doc_id,
-                    "source_file": doc.get("source_file", ""),
-                    "reason": "resume_completed",
-                },
-            )
-            continue
-        print(f"[BuildExperiment] start {index}/{total}: {doc_id} {doc.get('source_file', '')}", flush=True)
-        append_jsonl(
-            progress_path,
-            {
-                "timestamp": datetime.now(timezone.utc).isoformat(),
-                "status": "start",
-                "doc_id": doc_id,
-                "source_file": doc.get("source_file", ""),
-                "text_hash": doc.get("text_hash", ""),
-            },
-        )
-        try:
-            await rag.ainsert(doc)
-            append_jsonl(
-                progress_path,
-                {
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "status": "success",
+                    "status": "start",
                     "doc_id": doc_id,
                     "source_file": doc.get("source_file", ""),
                     "text_hash": doc.get("text_hash", ""),
                 },
             )
-            print(f"[BuildExperiment] success {index}/{total}: {doc_id}", flush=True)
-            success_count += 1
-        except Exception as exc:
-            error_count += 1
-            failed_doc_ids.append(doc_id)
-            append_jsonl(
-                progress_path,
-                {
-                    "timestamp": datetime.now(timezone.utc).isoformat(),
-                    "status": "error",
-                    "doc_id": doc_id,
-                    "source_file": doc.get("source_file", ""),
-                    "error_type": type(exc).__name__,
-                    "error": str(exc),
-                },
-            )
-            print(f"[BuildExperiment] error {index}/{total}: {doc_id}: {type(exc).__name__}: {exc}", flush=True)
-            print(
-                f"[BuildExperiment] continuing after failed document {doc_id}; "
-                "it remains incomplete and will be retried by the next --resume run",
-                flush=True,
-            )
-            continue
-    print(
-        f"[BuildExperiment] cache build pass complete: {cache_dir.resolve()} "
-        f"success={success_count} errors={error_count} failed_docs={failed_doc_ids}",
-        flush=True,
-    )
+            try:
+                await rag.ainsert(doc)
+                append_jsonl(
+                    progress_path,
+                    {
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "status": "success",
+                        "doc_id": doc_id,
+                        "source_file": doc.get("source_file", ""),
+                        "text_hash": doc.get("text_hash", ""),
+                    },
+                )
+                print(f"[BuildExperiment] success {index}/{total}: {doc_id}", flush=True)
+                success_count += 1
+            except Exception as exc:
+                error_count += 1
+                failed_doc_ids.append(doc_id)
+                append_jsonl(
+                    progress_path,
+                    {
+                        "timestamp": datetime.now(timezone.utc).isoformat(),
+                        "status": "error",
+                        "doc_id": doc_id,
+                        "source_file": doc.get("source_file", ""),
+                        "error_type": type(exc).__name__,
+                        "error": str(exc),
+                    },
+                )
+                print(f"[BuildExperiment] error {index}/{total}: {doc_id}: {type(exc).__name__}: {exc}", flush=True)
+                print(
+                    f"[BuildExperiment] continuing after failed document {doc_id}; "
+                    "it remains incomplete and will be retried by a later recovery pass or --resume run",
+                    flush=True,
+                )
+                continue
+        print(
+            f"[BuildExperiment] cache build pass complete: {cache_dir.resolve()} "
+            f"success={success_count} errors={error_count} failed_docs={failed_doc_ids}",
+            flush=True,
+        )
+        completed_now = load_completed_doc_ids(cache_dir, progress_path)
+        remaining = sorted({str(doc["doc_id"]) for doc in documents} - completed_now)
+        summary = {
+            "timestamp": datetime.now(timezone.utc).isoformat(),
+            "status": "incomplete" if remaining else "complete",
+            "mode": args.mode,
+            "total_documents": total,
+            "completed_documents": total - len(remaining),
+            "remaining_doc_ids": remaining,
+            "pass_number": pass_number,
+            "max_passes": args.max_passes,
+            "failed_this_pass": failed_doc_ids,
+            "empty_entity_policy": extra["empty_entity_policy"],
+        }
+        (cache_dir / "build_summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2), encoding="utf-8")
+        if not remaining:
+            print(f"[BuildExperiment] All {total} documents stored; full cache validation is still required before publication", flush=True)
+            return
+        print(f"[BuildExperiment] Incomplete documents remaining={len(remaining)}: {remaining}", flush=True)
+    raise RuntimeError(f"Cache remains incomplete after {args.max_passes} passes: {remaining}")
+
 
 
 def main() -> None:

@@ -182,6 +182,11 @@ cython_debug/
 
 # web-ui runtime files
 web-ui/backend/settings.json
+# One-time backup written when plaintext platform secrets are migrated into the
+# encrypted channel registry; it still contains credentials and must not be committed.
+web-ui/backend/*.secrets-backup
+web-ui/backend/settings.json.*
+web-ui/backend/runtime/
 web-ui/backend/uploads/
 web-ui/backend/files.db
 web-ui/backend/*.db
@@ -230,27 +235,10 @@ outputs/
 _test_*
 _posthoc*
 
-# Local benchmark/research scratch files not required by the Web UI deployment
-/hyperche/normalization/posthoc_cache.py
-/scripts/build_shared_retrieval_pool.py
-/scripts/curate_retrieval_benchmark.py
-/scripts/evaluate_shared_retrieval_qrels.py
-/scripts/generate_llm_qrels_review.py
-/scripts/llm_judge_retrieval_results.mjs
-/scripts/llm_judge_shared_retrieval_pool.mjs
-/scripts/migrate_relationship_vdb_stable_ids.py
-/scripts/normalize_cache_posthoc.py
-/scripts/run_hyper_base_retrieval_benchmark.py
-/scripts/run_qa_formal_llm.py
-/scripts/run_retrieval_formal_four_groups.py
+# Keep normalization, benchmark implementations and their regression tests
+# versioned so the legacy workflow can be restored from Git alone.
+# Local editor backups remain excluded.
 /scripts/run_retrieval_formal_four_groups.py.orig
-/scripts/structured_graph_retrieval.py
-/scripts/upstream_hyper_query_retrieval.py
-/tests/test_posthoc_normalization.py
-/tests/test_qa_formal_runner.py
-/tests/test_relationship_vector_id.py
-/tests/test_retrieval_formal_runner.py
 /tests/test_retrieval_formal_runner.py.orig
-/tests/test_structured_graph_retrieval.py
-/tests/test_upstream_hyper_query_retrieval.py
+/tests/test_upstream_hyper_query_retrieval.py.orig
 /tests/test_upstream_hyper_query_retrieval.py.orig

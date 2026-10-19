@@ -120,6 +120,10 @@ class HyperRAG:
     query_mode: str = "hyper"
     index_profile: str = "dual_concat"
     corpus_manifest_path: str = ""
+    # Extra provenance written into run_config.json; the web platform records
+    # the prompt pack version that a knowledge base was built with.
+    extra_run_config: dict = field(default_factory=dict)
+    persist_run_config: bool = True
 
     def __post_init__(self):
         if not os.path.exists(self.working_dir):
@@ -139,28 +143,30 @@ class HyperRAG:
         try:
             from .experiment import write_run_config
 
-            write_run_config(
-                self.working_dir,
-                {
-                    "experiment_mode": self.experiment_mode,
-                    "query_mode": self.query_mode,
-                    "prompt_profile": self.prompt_profile,
-                    "domain": self.domain,
-                    "effective_domain": self.domain,
-                    "enable_one_pass_extraction": self.enable_one_pass_extraction,
-                    "enable_entity_normalization": self.enable_entity_normalization,
-                    "enable_measurement_instances": self.enable_measurement_instances,
-                    "enable_efu_repair": self.enable_efu_repair,
-                    "enable_hybrid_rerank": self.enable_hybrid_rerank,
-                    "index_profile": self.index_profile,
-                    "chunk_token_size": self.chunk_token_size,
-                    "chunk_overlap_token_size": self.chunk_overlap_token_size,
-                    "max_entities_per_chunk": self.max_entities_per_chunk,
-                    "tiktoken_model_name": self.tiktoken_model_name,
-                    "corpus_manifest_path": self.corpus_manifest_path,
-                    "corpus_id": os.path.basename(os.path.normpath(self.working_dir)),
-                },
-            )
+            if self.persist_run_config:
+                write_run_config(
+                    self.working_dir,
+                    {
+                        "experiment_mode": self.experiment_mode,
+                        "query_mode": self.query_mode,
+                        "prompt_profile": self.prompt_profile,
+                        "domain": self.domain,
+                        "effective_domain": self.domain,
+                        "enable_one_pass_extraction": self.enable_one_pass_extraction,
+                        "enable_entity_normalization": self.enable_entity_normalization,
+                        "enable_measurement_instances": self.enable_measurement_instances,
+                        "enable_efu_repair": self.enable_efu_repair,
+                        "enable_hybrid_rerank": self.enable_hybrid_rerank,
+                        "index_profile": self.index_profile,
+                        "chunk_token_size": self.chunk_token_size,
+                        "chunk_overlap_token_size": self.chunk_overlap_token_size,
+                        "max_entities_per_chunk": self.max_entities_per_chunk,
+                        "tiktoken_model_name": self.tiktoken_model_name,
+                        "corpus_manifest_path": self.corpus_manifest_path,
+                        "corpus_id": os.path.basename(os.path.normpath(self.working_dir)),
+                    },
+                    extra=dict(self.extra_run_config or {}),
+                )
         except Exception as exc:
             logger.warning(f"Failed to write run_config.json: {exc}")
 
@@ -399,8 +405,6 @@ class HyperRAG:
             # ----------------------------------------------------------------------------
             logger.info(f"[New Chunks] inserting {len(inserting_chunks)} chunks")
 
-            await self.chunks_vdb.upsert(inserting_chunks)
-            # ----------------------------------------------------------------------------
             logger.info("[Entity Extraction]...")
             maybe_new_kg = await extract_entities(
                 inserting_chunks,
@@ -416,6 +420,8 @@ class HyperRAG:
                 return
             # ----------------------------------------------------------------------------
             self.chunk_entity_relation_hypergraph = maybe_new_kg
+            # Do not leave chunk-only vectors behind when document extraction fails.
+            await self.chunks_vdb.upsert(inserting_chunks)
             await self.full_docs.upsert(new_docs)
             await self.text_chunks.upsert(inserting_chunks)
         finally:
